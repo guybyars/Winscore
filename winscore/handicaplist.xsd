@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
+	elementFormDefault="unqualified">
+	<xs:element name="HandicapList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Codes" />
+				<xs:element ref="AircraftList" />
+			</xs:sequence>
+			<xs:attribute name="Title" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Codes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="Code" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Code">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ID" />
+				<xs:element ref="Description" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ID" type="xs:NCName" />
+	<xs:element name="Description" type="xs:NCName" />
+	<xs:element name="AircraftList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="Aircraft" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Aircraft">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Manufacturer" />
+				<xs:element ref="Model" />
+				<xs:element ref="Notes" />
+				<xs:element ref="Span" />
+				<xs:element ref="Handicap" />
+				<xs:element ref="Weight" />
+				<xs:element ref="Modified" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Manufacturer" type="xs:string" />
+	<xs:element name="Model" type="xs:string" />
+	<xs:element name="Notes" type="xs:string" />
+	<xs:element name="Span" type="xs:decimal" />
+	<xs:element name="Handicap" type="xs:decimal" />
+	<xs:element name="Weight" type="xs:integer" />
+</xs:schema>

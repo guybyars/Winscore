@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<Winscore><Contestants><Contestant>
+	<CID>SM</CID>
+	<FirstName>John</FirstName>
+	<LastName>Seymour</LastName>
+	<Glider>ASG-29-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>667404</SSANumber>
+	<Address1>34 Merwin Brook Rd</Address1>
+	<City>Brookfield Ctr</City>
+	<State>CT</State>
+	<Zip>06804-3016</Zip></Contestant><Contestant>
+	<CID>2P</CID>
+	<FirstName>Penn</FirstName>
+	<LastName>Smith</LastName>
+	<Glider>ASW-27</Glider>
+	<ClassID>1</ClassID>
+	<Class>15 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>789674</SSANumber>
+	<Address1>3856 Carvins Cove Road</Address1>
+	<City>Salem</City>
+	<State>VA</State>
+	<Zip>24153-2512</Zip></Contestant><Contestant>
+	<CID>LX</CID>
+	<FirstName>John</FirstName>
+	<LastName>Murray</LastName>
+	<Glider>ASG-29-18E</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>898394</SSANumber>
+	<Address1>398 Miami St</Address1>
+	<City>Waynesville</City>
+	<State>OH</State>
+	<Zip>45068</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>UH</CID>
+	<FirstName>Henry</FirstName>
+	<LastName>Nixon</LastName>
+	<Glider>ASG-29-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>541699</SSANumber>
+	<Address1>42 Lenape Trl</Address1>
+	<City>Wayne</City>
+	<State>NJ</State>
+	<Zip>07470</Zip></Contestant><Contestant>
+	<CID>QT</CID>
+	<FirstName>John</FirstName>
+	<LastName>Godfrey</LastName>
+	<Glider>ASW-27</Glider>
+	<ClassID>1</ClassID>
+	<Class>15 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>438545</SSANumber>
+	<Address1>3705 Windy Hill Road</Address1>
+	<City>Chapel Hill</City>
+	<State>NC</State>
+	<Zip>27514-9608</Zip></Contestant><Contestant>
+	<CID>W3</CID>
+	<FirstName>Tim</FirstName>
+	<LastName>Welles</LastName>
+	<Glider>Ventus 2cT-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>790176</SSANumber>
+	<Address1>PO Box 448</Address1>
+	<City>Horseheads</City>
+	<State>NY</State>
+	<Zip>14845-0448</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>J7</CID>
+	<FirstName>Herb</FirstName>
+	<LastName>Kilian</LastName>
+	<Glider>LS-8-15</Glider>
+	<ClassID>0</ClassID>
+	<Class>Standard Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>861646</SSANumber>
+	<Address1>3841 Glendenning Road</Address1>
+	<City>Downers Grove</City>
+	<State>IL</State>
+	<Zip>60515-1525</Zip></Contestant><Contestant>
+	<CID>C5</CID>
+	<FirstName>Colin</FirstName>
+	<LastName>Mead</LastName>
+	<Glider>ASW-19</Glider>
+	<ClassID>1</ClassID>
+	<Class>15 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>696420</SSANumber>
+	<Address1>10 N. Roscoe Blvd</Address1>
+	<City>Ponte Vedra Beach</City>
+	<State>FL</State>
+	<Zip>32082</Zip></Contestant><Contestant>
+	<CID>8H</CID>
+	<FirstName>Al</FirstName>
+	<LastName>Tyler</LastName>
+	<Glider>ASG-29-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>694118</SSANumber>
+	<Address1>P O Box 65</Address1>
+	<City>Wagener</City>
+	<State>SC</State>
+	<Zip>29164</Zip></Contestant><Contestant>
+	<CID>LBL</CID>
+	<FirstName>Baude</FirstName>
+	<LastName>Litt</LastName>
+	<Glider>LS-8-15</Glider>
+	<ClassID>0</ClassID>
+	<Class>Standard Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>896513</SSANumber>
+	<Address1>3330 Garfield Street NW</Address1>
+	<City>Washington</City>
+	<State>DC</State>
+	<Zip>20008</Zip></Contestant><Contestant>
+	<CID>KS</CID>
+	<FirstName>Karl</FirstName>
+	<LastName>Striedieck</LastName>
+	<Glider>ASW-27</Glider>
+	<ClassID>1</ClassID>
+	<Class>15 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>721212</SSANumber>
+	<Address1>483 Eagle Field Road</Address1>
+	<City>Port Matilda</City>
+	<State>PA</State>
+	<Zip>16870</Zip></Contestant><Contestant>
+	<CID>2H</CID>
+	<FirstName>Jim</FirstName>
+	<LastName>Frantz</LastName>
+	<Glider>Discus 2b</Glider>
+	<ClassID>0</ClassID>
+	<Class>Standard Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>242551</SSANumber>
+	<Address1>1525 Red Lane</Address1>
+	<City>Salem</City>
+	<State>VA</State>
+	<Zip>24153</Zip></Contestant><Contestant>
+	<CID>N1L</CID>
+	<FirstName>Eric</FirstName>
+	<LastName>Lambert</LastName>
+	<Glider>Ventus b-15</Glider>
+	<ClassID>1</ClassID>
+	<Class>15 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>896976</SSANumber>
+	<Address1>2607 St. Regis Drive</Address1>
+	<City>N Chesterfield</City>
+	<State>VA</State>
+	<Zip>23236</Zip>
+	<Options>160</Options></Contestant><Contestant>
+	<CID>JAT</CID>
+	<FirstName>Jeffrey</FirstName>
+	<LastName>Thome</LastName>
+	<Glider>ASW-20</Glider>
+	<ClassID>1</ClassID>
+	<Class>15 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>738964</SSANumber>
+	<Address1>1781 N 204th Avenue</Address1>
+	<City>Hesperia</City>
+	<State>MI</State>
+	<Zip>49421</Zip></Contestant><Contestant>
+	<CID>AE</CID>
+	<FirstName>Jim</FirstName>
+	<LastName>Garrison</LastName>
+	<Glider>ASG-29-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>171344</SSANumber>
+	<Address1>715 Lochridge Lane</Address1>
+	<City>Earlysville</City>
+	<State>VA</State>
+	<Zip>22936</Zip>
+	<Options>32</Options></Contestant><Contestant>
+	<CID>MD</CID>
+	<FirstName>Mamad</FirstName>
+	<LastName>Takallu</LastName>
+	<Glider>ASW-27</Glider>
+	<ClassID>1</ClassID>
+	<Class>15 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>221988</SSANumber>
+	<Address1>P O Box 8401</Address1>
+	<City>Norfolk</City>
+	<State>VA</State>
+	<Zip>23503</Zip></Contestant><Contestant>
+	<CID>OO</CID>
+	<FirstName>David</FirstName>
+	<LastName>Bargainnier</LastName>
+	<Glider>Ventus 2b</Glider>
+	<ClassID>1</ClassID>
+	<Class>15 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>16030</SSANumber>
+	<Address1>49 Estella Drive</Address1>
+	<City>Reedsville</City>
+	<State>PA</State>
+	<Zip>17084</Zip></Contestant><Contestant>
+	<CID>P8</CID>
+	<FirstName>Skip</FirstName>
+	<LastName>Pate</LastName>
+	<Glider>LAK-17AT-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>568058</SSANumber>
+	<Address1>4460 3rd St NW</Address1>
+	<City>Hickory</City>
+	<State>NC</State>
+	<Zip>28601</Zip></Contestant><Contestant>
+	<CID>T8</CID>
+	<FirstName>Evan</FirstName>
+	<LastName>Ludeman</LastName>
+	<Glider>ASW-20B-15</Glider>
+	<ClassID>1</ClassID>
+	<Class>15 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>861074</SSANumber>
+	<Address1>118 Thornton Rd</Address1>
+	<City>New Boston</City>
+	<State>NH</State>
+	<Zip>03070</Zip>
+	<Options>32</Options></Contestant><Contestant>
+	<CID>EA</CID>
+	<FirstName>Daniel</FirstName>
+	<LastName>MacMonagle</LastName>
+	<Glider>ASW-20C-15</Glider>
+	<ClassID>1</ClassID>
+	<Class>15 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>78838</SSANumber>
+	<Address1>35 Warren St</Address1>
+	<City>Stoneham</City>
+	<State>MA</State>
+	<Zip>02180</Zip></Contestant></Contestants></Winscore>

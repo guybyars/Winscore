@@ -1,0 +1,22 @@
+Microsoft (R) Help Compiler
+HCRTF 4.02.0034
+Copyright (c) Microsoft Corp 1990 - 1995. All rights reserved.
+winscore.hpj
+    HC3037: Warning: D:\projects\winscore\hlp\Winscore.hm : 
+	The map value for "HIDR_NOCONTEST" is the same as the map value for "HIDR_WINSCOTYPE".
+    HC3096: Warning: topic #1 of D:\projects\winscore\hlp\winscore.rtf : 
+	The font name "Gill Sans MT Ext Condensed Bold CE" is longer than 31 characters.
+    HC3096: Warning: topic #1 of D:\projects\winscore\hlp\winscore.rtf : 
+	The font name "Tw Cen MT Condensed Extra Bold CE" is longer than 31 characters.
+    HC3025: Warning: topic #25 of D:\projects\winscore\hlp\winscore.rtf : 
+	Jump to undefined Topic ID: "Flight_Display".
+34	Topics
+13	Jumps
+34	Keywords
+1	Bitmap
+
+
+Created D:\projects\winscore\hlp\winscore.hlp, 547,683 bytes
+Bitmaps: 469,444 bytes
+Compile time: 0 minutes, 0 seconds
+3 notes, 4 warnings

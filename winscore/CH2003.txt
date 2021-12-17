@@ -1,0 +1,383 @@
+2003 SAILPLANE HANDICAP LIST - SORTED BY HANDICAP					
+                         					
+Notes:					
+F - Fixed gear (when both fixed and retractable variants exist)					
+R - Retractable gear (when both fixed and retractable variants exist)					
+M - Motorized sailplane					
+S - Standard Class sailplane					
+W- Equipped with manufacturer-supplied winglets  (please correct said					
+weights)					
+Motorgliders flying with their engine removed use standard glider					
+handicaps and weights					
+
+Manufacturer	Model	Notes	Span	Handicap	Weight
+Schleicher	ASH-25E	MW	25	0.740	1653
+Schleicher	ASH-25M	MW	25.6	0.743	1653
+Schleicher	ASH-25M	M	25	0.744	1653
+Schempp-Hirth	Nimbus 3DM	M	24.6	0.750	1653
+Schempp-Hirth	Nimbus 3DT	M	24.6	0.751	1653
+Schleicher	ASH-25	W	25	0.766	1538
+Schleicher	ASH-25		25	0.768	1528
+Schempp-Hirth	Nimbus 3D		24.6	0.769	1569
+Schempp-Hirth	Nimbus 4DM	M	26.4	0.770	1653
+Schempp-Hirth	Nimbus 4D		26.5	0.776	1637
+Schempp-Hirth	Nimbus 4M	M	26.4	0.778	1584
+Schleicher	ASW-22BE	M	25	0.780	1429
+Schleicher	ASW-22BLE	M	26.4	0.787	1425
+Schleicher	ASW-22B		25	0.795	1278
+Schempp-Hirth	Nimbus 4T	M	26.4	0.805	1386
+Schempp-Hirth	Nimbus 3T	M	25.5	0.806	1264
+Schempp-Hirth	Nimbus 3		25.5	0.807	1146
+Schempp-Hirth	Nimbus 3T	M	24.5	0.809	1271
+Schempp-Hirth	Nimbus 4		26.4	0.810	1316
+Schempp-Hirth	Nimbus 3		24.5	0.815	1161
+Schempp-Hirth	Nimbus 3		22.9	0.818	1153
+Schempp-Hirth	Nimbus 2M	M	20.3	0.828	1279
+Glasflugel	604		23.5	0.835	1270
+DG Flugzeugbau	DG-505MB	M	22	0.837	1653
+Schleicher	ASH-26E	M	18	0.843	1098
+Rolladen-Schneider	LS-9	M	18	0.845	1030
+Schempp-Hirth	Ventus 2CM	M	18	0.845	1077
+Schempp-Hirth	Ventus CM	M	17.6	0.847	983
+DG Flugzeugbau	DG-800	M	18	0.849	1050
+DG Flugzeugbau	DG-800	MW	18	0.849	1050
+DG Flugzeugbau	DG-600M	M	18	0.850	1001
+DG Flugzeugbau	DG-800B	MW	18	0.850	1050
+DG Flugzeugbau	DG-600M	M	17	0.852	1004
+Slingsby	T-59D Kestrel		19	0.859	993
+Rolladen-Schneider	LS-6C		18	0.860	865
+DG Flugzeugbau	DG-500M	M	22	0.863	1653
+Glasflugel	604		22	0.865	1257
+PZL Bielsko	SZD-42A Jantar 2		20.5	0.865	1063
+PZL Bielsko	SZD-42A Jantar 2B		20.5	0.865	1063
+Schempp-Hirth	Ventus 2C		18	0.865	853
+Schleicher	ASW-17		20.1	0.865	1150
+Sportina Aviacija	LAK-12		20.4	0.865	1059
+Schempp-Hirth	Ventus 2CM	MW	15	0.868	1050
+Schleicher	ASH-26		18	0.868	897
+DG Flugzeugbau	DG-600		18	0.870	835
+Schempp-Hirth	Janus CM	M	20	0.870	1543
+Schempp-Hirth	"Nimbus 2, 2C"		20.3	0.870	1087
+Schempp-Hirth	Ventus BT	M	16.6	0.870	920
+Schempp-Hirth	Ventus CM	M	15	0.870	948
+Schleicher	ASW-12		18.3	0.870	948
+Schempp-Hirth	Ventus BT	M	15	0.872	940
+Flug & Fahrzeugwerke	Diamant		22	0.873	912
+Rolladen-Schneider	LS-6C		17.5	0.873	860
+Rolladen-Schneider	LS-8	W	18	0.873	840
+Schempp-Hirth	Janus CT	M	20	0.873	1523
+Sportina Aviacija	LAK-17		18	0.873	790
+DG Flugzeugbau	DG-800S		18	0.875	845
+Flug & Fahrzeugwerke	Diamant		19.1	0.875	905
+Schempp-Hirth	Ventus C		17.6	0.875	830
+Schleicher	ASW-20B		16.6	0.875	870
+DG Flugzeugbau	DG-505MB	MW	20	0.878	1653
+Schempp-Hirth	"Ventus B, CB"		16.6	0.878	820
+Schleicher	ASW-20C		16.6	0.878	850
+Schempp-Hirth	"Ventus A, CA"		16.6	0.879	790
+ASC	Falcon		18	0.880	885
+PZL Bielsko	SZD-56-1 Diana		15	0.880	666
+Rolladen-Schneider	LS-9	M	15	0.880	1020
+Schleicher	ASW-27	W	15	0.880	788
+DG Flugzeugbau	DG-500		22	0.881	1456
+Glasflugel	"BS-1, 1B"		18	0.882	1014
+DG Flugzeugbau	DG-400	M	17	0.883	979
+Schempp-Hirth	Ventus 2A		15	0.883	780
+Schempp-Hirth	Ventus 2B		15	0.884	805
+DG Flugzeugbau	DG-400	M	15	0.885	970
+DG Flugzeugbau	DG-600M	M	15	0.885	993
+DG Flugzeugbau	DG-800	MW	15	0.885	1031
+DG Flugzeugbau	DG-800B	MW	15	0.885	1031
+Schempp-Hirth	Ventus 2C		15	0.885	832
+Stemme	"S-10, 10V, 10VT"	M	23	0.886	1653
+DG Flugzeugbau	DG-800	M	15	0.890	1031
+DG Flugzeugbau	DG-800S	M	15	0.890	1038
+Schempp-Hirth	Discus BT	MS	15	0.890	940
+Schempp-Hirth	Duo Discus		20	0.894	1384
+DG Flugzeugbau	DG-500		20	0.894	1379
+DG Flugzeugbau	DG-505 Elan Orion		20	0.894	1385
+DG Flugzeugbau	DG1000		20	0.894	1385
+Caproni	A-21SJ	M	20.4	0.895	1653
+Schempp-Hirth	Discus BM	MS	15	0.895	978
+Schempp-Hirth	Janus C		20	0.896	1384
+Schleicher	ASW-24E	MS	15	0.897	911
+Rolladen-Schneider	LS-6C		15	0.898	838
+Rolladen-Schneider	LS-6		15	0.899	816
+Schempp-Hirth	"Ventus B, CB"		15	0.899	810
+Sportina Aviacija	LAK-17A		15	0.899	750
+DG Flugzeugbau	DG-600		15	0.900	850
+Flug & Fahrzeugwerke	Diamant		18	0.900	897
+Masak	Scimitar	W	15	0.900	870
+Schempp-Hirth	"Ventus A, CA"		15	0.900	780
+Schleicher	ASW-20B		15	0.900	880
+Schleicher	ASW-20C		15	0.902	850
+Centrair	ASW-20F		15	0.903	838
+Issoire	PIK-30M	M	17	0.903	1014
+Schleicher	ASW-20		15	0.903	830
+Schempp-Hirth	Cirrus		18.3	0.905	832
+DG Flugzeugbau	DG-500		18	0.906	1362
+DG Flugzeugbau	DG1000		18	0.906	1370
+ASC	Falcon		15	0.908	845
+DG Flugzeugbau	DG-505 Elan Orion		17.2	0.910	1357
+Glasflugel	401 Kestrel		17	0.910	838
+Schempp-Hirth	Cirrus		17.7	0.910	838
+Schempp-Hirth	Janus B	F	18.2	0.917	1330
+IAR Brasov	IS-32		20	0.918	1301
+DG Flugzeugbau	DG-202/15-17		17	0.920	818
+Caproni	A-21		20.4	0.922	1460
+Caproni	A-21J	M	20.4	0.922	1460
+DG Flugzeugbau	DG-200		17	0.925	818
+DG Flugzeugbau	DG-505 Elan Orion		17.2	0.925	1379
+Eiri Avion	PIK-20E	M	15	0.925	964
+Flug & Fahrzeugwerke	Diamant		16.5	0.925	877
+Rolladen-Schneider	LS-8	SW	15	0.925	860
+Schempp-Hirth	Discus 2A	S	15	0.925	780
+Schleicher	ASW-28	WS	15	0.925	760
+Schempp-Hirth	Discus 2B	S	15	0.926	790
+IAR Brasov	IS-29E3		20	0.930	1046
+Prue	IIA		18.3	0.930	1350
+PZL Bielsko	SZD-38A Jantar 1		19	0.930	890
+DG Flugzeugbau	DG-202/15-17		15	0.935	812
+IAR Brasov	IS-29E2		19	0.935	970
+Rolladen-Schneider	LS-3		17	0.935	838
+Schleicher	ASW-24B	S	15	0.935	788
+Group Genesis	Genesis II	S	15	0.939	825
+Schempp-Hirth	"Discus A,B,CS"	S	15	0.939	790
+DG Flugzeugbau	DG-303	S	15	0.940	805
+IAR Brasov	IS-29E		17.6	0.940	893
+Oldershaw	O-3		20	0.940	1035
+Rolladen-Schneider	LS-7	SW	15	0.940	785
+Schleicher	ASW-24	S	15	0.940	772
+PZL Bielsko	SZD-55-1	S	15	0.941	740
+ASC	Spirit	S	15	0.942	775
+DG Flugzeugbau	DG-202		15	0.945	795
+Glasflugel	H-301 Schuemann Libelle		15	0.945	662
+Group Genesis	Genesis I	S	15	0.945	905
+Glasflugel	304		15	0.950	786
+Glasflugel	304CZ		15	0.950	790
+IAR Brasov	IS-29G		16.5	0.950	816
+Rolladen-Schneider	"LS-4, LS-4a"	S	15	0.950	795
+DG Flugzeugbau	DG-200		15	0.952	772
+Rolladen-Schneider	LS-3		15	0.952	845
+Rolladen-Schneider	LS-3A		15	0.953	830
+Centrair	Pegasus 101A	S	15	0.955	829
+Centrair	Pegasus 101B	S	15	0.955	840
+Centrair	Pegasus 101D	S	15	0.955	840
+DG Flugzeugbau	DG-300	S	15	0.960	794
+DG Flugzeugbau	DG-505 Elan Trainer	F	18	0.962	1357
+Centrair	Pegasus 101AP	SW	15	0.965	837
+Centrair	Pegasus 101BP	SW	15	0.965	848
+Applebay	Zuni II		15	0.970	790
+Bolkow	Phoebus C		17	0.970	798
+Eiri Avion	PIK-20B		15	0.970	780
+Glasflugel	303 Mosquito		15	0.970	801
+PZL Bielsko	SZD-41A Jantar Std	S	15	0.970	848
+Schleicher	"ASW-19, 19B"	S	15	0.970	800
+Slingsby	T-65 Vega		15	0.970	790
+Applebay	Zuni		15	0.975	890
+Eiri Avion	PIK-20		15	0.975	768
+Eiri Avion	PIK-20D		15	0.975	768
+Grob	G-104 Speed Astir		15	0.975	849
+PZL Bielsko	SZD-59 Standard	S	15	0.975	882
+Schweizer	SGS 1-35A	R	15	0.975	840
+Grob	G-103C Twin III SL	M	18	0.976	1556
+Schempp-Hirth	"Mini-Nimbus A, B"		15	0.976	780
+Eiri Avion	PIK-20D-78		15	0.977	750
+Schempp-Hirth	Mini-Nimbus C		15	0.977	768
+Flug & Fahrzeugwerke	Diamant		15	0.980	867
+Glasflugel	206 Hornet	S	15	0.980	765
+Schleicher	ASW-17		15	0.980	1135
+Glasflugel	H-301 Libelle		15	0.983	662
+DG Flugzeugbau	DG-300 Club	FS	15	0.985	821
+PZL Bielsko	SZD-48-3 Jantar Std 3	S	15	0.990	858
+Schempp-Hirth	Std Cirrus 75 & 76	S	15	0.995	744
+Schempp-Hirth	Std Cirrus	S	15	1.000	744
+Schleicher	"ASW-15, 15B"	S	15	1.000	770
+Laister	"LP-15, 15B Nugget"	S	15	1.010	713
+Fibrera	KK-1E Utu	S	15	1.011	710
+Glasflugel	H-201 Std Libelle	S	15	1.013	675
+Schweizer	SGS 1-35	R	15	1.013	660
+Berkshire	Concept-70	S	15	1.015	830
+Rolladen-Schneider	"LS-1B, 1C, 1F"	S	15	1.019	772
+Slingsby	HP-14C		18	1.021	840
+PZL Bielsko	SZD-37 Cobra		17	1.023	915
+Bolkow	"Phoebus A, B"	S	15	1.025	772
+Centrair	Pegasus 101 Club	FS	15	1.025	818
+Schreder	HP-14T		16.6	1.025	749
+Schreder	HP-12A		16.6	1.034	755
+Schreder	HP-13H		16.6	1.034	729
+Schreder	HP-14		16.6	1.034	729
+DG Flugzeugbau	DG-101G	S	15	1.036	780
+Schreder	HP-19		15	1.036	745
+DG Flugzeugbau	DG-100	S	15	1.038	772
+Issoire	Edelweiss C-30S	S	15	1.038	830
+DG Flugzeugbau	DG-100 Club	FS	15	1.043	768
+DG Flugzeugbau	DG-101 Club	FS	15	1.043	768
+Grob	G-103C Twin III		18	1.050	1323
+Priess	RHJ-9		18.3	1.050	1100
+Grob	G-102 Standard	S	15	1.051	827
+Grob	G-102 Astir	S	15	1.052	827
+Grob	G-102 Club	FS	15	1.058	820
+Gehrlein	GP-1	S	15	1.060	662
+Schleicher	ASK-23	FS	15	1.060	795
+Apis	M-15	MW	15	1.060	600
+Schreder	HP-16T		15	1.063	745
+Schreder	"HP-18, 18A"		15	1.063	745
+Schreder    RS-15    			15	1.063	721
+Schweizer	SGS 1-35 Club	F	15	1.070	685
+PZL Bielsko	SZD-59 Acro	S	13.2	1.075	820
+Slingsby	T-51 Dart-17R		17	1.087	730
+Slingsby	T-51 Dart-15/17		17	1.088	750
+Slingsby	T-51 Dart-17		17	1.088	730
+IAR Brasov	IS-29D2	S	15	1.089	794
+Prue	UHP-1		17.4	1.089	755
+PZL Bielsko	SZD-36A Cobra	S	15	1.089	856
+Schreder	HP-10		14.6	1.089	780
+Schreder	HP-11		15.9	1.090	680
+Apis	15	SW	15	1.090	508
+Prue	II		19.7	1.100	1570
+PZL Bielsko	SZD-36 Cobra	S	15	1.100	907
+Start+Flug	H101 Salto	S	15	1.100	617
+Elfe	S-3	S	15	1.100	710
+PZL Bielsko	SZD-30 Pirat	S	15	1.111	816
+Niemi	"Sisu-1, 1A"		15.2	1.115	765
+PZL Bielsko	SZD-32A Foka 5	S	15	1.115	772
+Schempp-Hirth	Austria SH-1	RS	15	1.115	800
+Grob	G-103 Twin Astir		17.5	1.140	1334
+Schempp-Hirth	Austria SHK	R	17	1.140	816
+Schreder	HP-15/18		18	1.140	745
+Glasflugel	205 Club Libelle	F	15	1.141	710
+PZL Bielsko	SZD-51-1 Junior	FS	15	1.150	798
+IAR Brasov	IS-28	S	15	1.154	1124
+Grob	G-103A Twin II	F	17.5	1.155	1279
+Laister	LP-49	S	15	1.158	780
+PZL Bielsko	SZD-24C Foka 4	S	15	1.160	805
+IAR Brasov	IS-30		17	1.167	1301
+Windward	SparrowHawk		13	1.170	415
+AviaStroitel	Russia AC-5M	M	12.6	1.175	591
+Alisport	"Silent IN, AE1"	M	12	1.180	639
+Schleicher	ASK-21		17	1.180	1273
+Schreder	HP-15		15	1.180	611
+Start+Flug	H101 Salto		13.6	1.180	630
+AviaStroitel	Russia AC-4C	R	12.6	1.185	551
+Pilatus	B-4	RS	15	1.190	772
+PZL Swidnik	PW-6		16	1.190	1212
+Schweizer	SGS 1-34R	RS	15	1.190	800
+Slingsby	T-50 Skylark 4		18.2	1.190	829
+Apis	WR-13	W	13	1.190	500
+AviaStroitel	"Russia AC-4A, 4B"	F	12.6	1.193	551
+Priess	RHJ-8		17.7	1.200	1000
+Scheibe	SFS-34B		15.8	1.200	1190
+Schweizer	SGS 1-34	FS	15	1.200	780
+Priess	RHJ-7		17.2	1.205	975
+PZL Swidnik	PW-5 Smyk		13.5	1.206	661
+Alisport	Silent		12	1.210	530
+Schweizer	SGS 1-24		16.9	1.220	785
+Slingsby	T-51 Dart-15	S	15	1.220	750
+Schleicher	Ka-6E	S	15	1.220	663
+IAR Brasov	IS-28B2		17	1.230	1357
+Slingsby	T-51 Dart-15/17	S	15	1.230	780
+Scheibe	"Zugvogel III, IIIA, IIIB"		17	1.233	805
+Schweizer	SGS 1-29	S	15	1.233	750
+LET	L-33 Solo		14.1	1.260	728
+Schneider	ES-60 Boomerang	S	15	1.260	765
+Scheibe	SF-27	S	15	1.270	706
+Oberlerchner	MG-23		16.4	1.274	794
+Schweizer	SGS 2-25		18.3	1.274	1450
+Vliegtuigbouw	Sagitta		17	1.280	800
+Aer Pegaso	M-100S	S	15	1.287	694
+PZL Bielsko	SZD-50-3 Puchacz		16.7	1.287	1269
+IAR Brasov	"IS-28B, 28B1"		17	1.300	1301
+Miller	Tern II		15.5	1.300	800
+PZL	Swift S-1		12.7	1.300	925
+Slingsby	T-43 Skylark 3	F	18.2	1.300	830
+Schleicher	Ka-6CR	S	15	1.300	683
+Schweizer	SGS 1-36		14.1	1.314	710
+Lehtovaara	PIK-16C Vasama	S	15	1.341	670
+Prue	Standard	S	15	1.342	696
+Vliegtuigbouw	Sagitta		17.8	1.342	705
+Briegleb	BG-12/16		15.2	1.349	790
+Briegleb	BG-12A	S	15	1.349	860
+Briegleb	BG-12B		15.2	1.349	800
+Briegleb	BG-12BD	S	15	1.349	750
+Austrian Aero Club	Std Austria	S	15	1.350	772
+Briegleb	BG-12C		15.2	1.350	750
+Briegleb	FM-1		15.5	1.350	750
+Scheibe	SF-27M	M	15	1.356	816
+Schweizer	"SGS 1-23G, 23H, 23HM"		16.1	1.356	750
+Schweizer	SGS 1-23H	S	15	1.356	750
+Schweizer	"SGS 1-23E, 23F"		16.1	1.360	744
+PZL Krosno	KR-03A Puchatek		16.4	1.370	1190
+Scheibe	SF-26 Standard	S	15	1.370	684
+Schneider	ES-59 Arrow		13.2	1.370	616
+Aeromot	AMT-100 Ximango	M	17.5	1.380	1653
+Schleicher	ASK-13		16	1.380	1060
+Schweizer	SGS 1-23D	S	15	1.380	744
+Laister	LP-46		13.6	1.384	750
+Miller	Tern		16.5	1.384	700
+Grob	G-109B	M	17.4	1.390	1653
+DSK Aviation	BJ-1B Duster		14.5	1.395	620
+Scheibe	L-Spatz 55	S	15	1.398	592
+LET	L-13J Motor-Blanik	M	16.2	1.400	1246
+MDM	MDM-1 Fox		14	1.400	1236
+Slingsby	"T-53, 53B"		16.9	1.412	1260
+DSK Aviation	BJ-1B Duster		13	1.426	620
+Aeromot	AMT-200 Super Ximango	M	17.5	1.430	1653
+Fournier	RF-10	M	17.7	1.430	1653
+IAR Brasov	IS-28-M2	M	17	1.430	1653
+Sportavia	SFS-31 Milan	M	15	1.430	968
+Scheibe	Bergfalke III		16.6	1.440	1025
+TWI	Taifun 17E	M	17	1.440	1653
+Marske	P-2		15	1.440	600
+IAR Brasov	IS-28-M1	M	18	1.450	1500
+LET	L-23 Super Blanik		18.2	1.450	1124
+Schleicher	"Ka-8, 8B"	S	15	1.454	663
+Maupin	Windrose		15	1.460	740
+LET	L-13 Blanik		16.2	1.460	1102
+Prue	215		12.2	1.468	540
+Schweizer	SGS 1-21		15.5	1.468	720
+CVT-100			16	1.470	980
+Grob	G-109	M	16.6	1.470	1653
+Schleicher	Ka-7		16	1.490	1056
+Scheibe	SF-25C-S Falke 76	F	15.3	1.500	1345
+Schweizer	SGS 2-32		17.4	1.500	1080
+Sportavia	RF-5B Sperber	M	17	1.520	1505
+Peterson	J-4 Javelin		14.9	1.530	804
+Schweizer	SGU 2-12		16.6	1.540	1200
+Hall	Cherokee II		12.2	1.543	530
+Champion	Freedom Falcon	M	12.8	1.550	780
+LET	L-23 Super Blanik		16.2	1.550	1124
+PZL Bielsko	SZD-22C Mucha Std	S	15	1.550	772
+Scheibe	SF-25B Falke	M	15.3	1.550	1170
+PZL Bielsko	SZD-45 Ogar	M	17.5	1.555	1540
+HOAC	H-36 Dimona	M	16.2	1.560	1653
+HOAC	HK-36 Super Dimona	M	16	1.560	1653
+Schweizer	SGS 1-21		15.5	1.560	720
+LET	L-13 Blanik		14.1	1.580	1102
+Schweizer	"SGS 1-23, 23B, 23C"		13.4	1.580	650
+Marske	Pioneer IID		13	1.584	630
+Rutan	Solitaire		12.7	1.600	645
+Schweizer	"SGS 1-26D, 26E"		12.2	1.600	695
+Scheibe	SF-24 Motorspatz	M	14.1	1.613	761
+LET	L-13 Vivat SDM/SDL	M	16.8	1.628	1587
+LET	L-13 Vivat SHE/SL	M	16.8	1.628	1629
+Fournier	RF-4D	M	11.3	1.650	860
+Laister-Kaufmann	LK-10A		15.2	1.650	875
+Schweizer	"SGS 1-26A, 26B, 26C"		12.2	1.650	575
+Maupin	Windrose		12.7	1.670	600
+Scheibe	SF-28A Tandem Falke	M	16.3	1.673	1344
+Marske	Pioneer IID	W	13	1.700	630
+Monnett	Monerai		12.8	1.720	450
+Monnett	Monerai		12	1.730	450
+Bowlus	BS-100 Super Albatross		13.7	1.748	645
+Haig	American Eaglet	M	11	1.748	360
+Maupin	Woodstock		13.1	1.750	510
+Monnett	Monerai		11	1.750	450
+Maupin	Woodstock		11.9	1.809	455
+Schweizer	"SGS 2-33, 33A"		15.5	1.840	1080
+Frankfort	Cinema II		14.1	1.850	920
+Schleicher	Ka-4		13	1.902	900
+Bowlus	BA-100 Baby Albatross		13.6	1.966	505
+Schweizer	"SGS 2-22, 22A, 22C, 22E"		13.1	2.000	900
+Schweizer	SGU 1-20		13.1	2.010	628
+GAPA 	PW-2		10	2.150	485

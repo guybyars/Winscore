@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a2bc6278-8ffe-4a6e-9e58-408c0a4b86e9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9e2d31cb-a5db-47c7-afda-49bdfafcf23a}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{1ef3a598-814e-427f-888c-3b2a5700ed03}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ACComboBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AddTurnpointDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AlternateStartDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Averager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bitmappicture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CalculateDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeTurnpointLocDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassAssignedPointsPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassListCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassPostPointsPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassPropSheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassTabCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Contestant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ContestantAddress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ContestantDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ContestantList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ContestantsFromSSA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ContestInfoDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ContestSettingsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CopyScoresheetDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DescriptionDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DetailedScoreInfoDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DontShowDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditFlightDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EventList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExcludeContestantsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportFlightFileDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportScoresheetDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExportSuccessDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FDRAnalysisSettingsPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FDRecorder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FDRecorderInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FDRSettingsPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FDRSettingsPropSheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FixList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Flight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlightAnalysisDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlightDisplayDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlightList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlightLogTransferSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlightSearchFoldersDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlightStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GateDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GliderInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GliderInfoList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Global_Functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridPositionsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HandicapCalcDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HScrollListBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IGCFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImportFlightsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImportFlightSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InvalidLeg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InvalidLegDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InvalidLegList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LandingCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LandingCardList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LandingLocationDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LandoutDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListVwEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LocalMachineRegistry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Location.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Median.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Penality.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PenalityDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PenalityList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlannerDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintGridDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizingDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreRecordList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreReportDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreServerDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreSheetListCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowWarningsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SortListCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Splash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StringHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SUA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SUAUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Summary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sxbutton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="taskcontrol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskDisplayDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskInfoDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskTimeDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskTurnpointsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Turnpoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnpointArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnpointCombo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnpointEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnpointListCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnpointPickerDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WindDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Winscore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinscoreDlgBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinscoreDoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinscoreFonts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinscoreListCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinscoreView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wsbaro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WSClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WSSingleDocTemplate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wsview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XMLMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinscoreBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WSTreeItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SSAPicker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SSAContestLoginDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Contestant1Dlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoScoreDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EmailSettingsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Warning.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskLibraryDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectClassDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NoLogFoundStatus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModulVer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IGCDirectories.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AutosaveOptionsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MAKEHELP.BAT">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\cursor1.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\icon2.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Logo2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\SmallLogo.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Splash.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Splsh16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Winscore.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Winscore.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\WinscoreDoc.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\inetdownload.avi" />
+    <None Include="res\upload.avi" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="resource.hm">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="res\bmp00002.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Winscore.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ACComboBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddTurnpointDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AlternateStartDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Averager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bitmappicture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculateDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeTurnpointLocDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassAssignedPointsPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassListCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassPostPointsPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassPropSheet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassTabCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Contestant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContestantAddress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContestantDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContestantList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContestantsFromSSA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContestInfoDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ContestSettingsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CopyScoresheetDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DescriptionDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DetailedScoreInfoDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DontShowDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditFlightDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExcludeContestantsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportFlightFileDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportScoresheetDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExportSuccessDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FDRAnalysisSettingsPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FDRecorder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FDRecorderInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FDRSettingsPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FDRSettingsPropSheet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FixList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Flight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlightAnalysisDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlightDisplayDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlightList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlightLogTransferSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlightSearchFoldersDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlightStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GateDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GliderInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GliderInfoList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Global_Prototypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridPositionsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HandicapCalcDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HScrollListBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IGCFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImportDataDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImportFlightsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImportFlightSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidLeg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidLegDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidLegList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LandingCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LandingCardList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LandingLocationDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LandoutDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListVwEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LocalMachineRegistry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Location.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Median.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Penality.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PenalityDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PenalityList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlannerDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PreviewDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrintGridDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResizingDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreRecordList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreReportDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreServerDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreSheetListCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowWarningsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SortListCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Splash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SUA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="suautil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Summary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sxbutton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="taskcontrol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskDisplayDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskInfoDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskTimeDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskTurnpointsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Turnpoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnpointArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnpointCombo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnpointEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnpointListCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnpointPickerDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WindDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Winscore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinscoreDefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinscoreDlgBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinscoreDoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinscoreFonts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinscoreListCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinscoreView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wsbaro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WSClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WSSingleDocTemplate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wsview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XMLMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinscoreBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WSTreeItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SSAPicker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SSAContestLoginDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Contestant1Dlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoScoreDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EmailSettingsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Warning.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskLibraryDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectClassDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NoLogFoundStatus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wsversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModulVer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IGCDirectories.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AutosaveOptionsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

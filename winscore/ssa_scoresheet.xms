@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="SSA_Scoresheet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Title"/>
+        <xs:element ref="Location"/>
+        <xs:element ref="Date"/>
+        <xs:element ref="Units"/>
+        <xs:element maxOccurs="unbounded" ref="Class"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Title" type="xs:string"/>
+  <xs:element name="Location" type="xs:string"/>
+  <xs:element name="Date">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="yr"/>
+        <xs:element ref="mon"/>
+        <xs:element ref="day"/>
+        <xs:element ref="full"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="yr" type="xs:integer"/>
+  <xs:element name="mon" type="xs:integer"/>
+  <xs:element name="day" type="xs:integer"/>
+  <xs:element name="full" type="xs:string"/>
+  <xs:element name="Units">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Distance"/>
+        <xs:element ref="Altitude"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Altitude" type="xs:NCName"/>
+  <xs:element name="Class">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name"/>
+        <xs:element ref="Status"/>
+        <xs:element ref="Handicapped"/>
+        <xs:element ref="Task"/>
+        <xs:element ref="ScoreRecords"/>
+        <xs:element ref="Codes"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Handicapped" type="xs:NCName"/>
+  <xs:element name="Task">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Status"/>
+        <xs:element ref="Type"/>
+        <xs:element ref="TaskOpenTime"/>
+        <xs:element ref="MinimumTaskTime"/>
+        <xs:element ref="StartGate"/>
+        <xs:element ref="Turnpoints"/>
+        <xs:element ref="FinishGate"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TaskOpenTime" type="xs:NMTOKEN"/>
+  <xs:element name="MinimumTaskTime" type="xs:NMTOKEN"/>
+  <xs:element name="StartGate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ID"/>
+        <xs:element ref="Name"/>
+        <xs:element ref="Type"/>
+        <xs:element ref="Height"/>
+        <xs:element ref="Radius"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Turnpoints">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="ID"/>
+        <xs:element ref="Name"/>
+        <xs:element ref="Radius"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinishGate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ID"/>
+        <xs:element ref="Name"/>
+        <xs:element ref="Type"/>
+        <xs:element ref="Base"/>
+        <xs:element ref="Height"/>
+        <xs:element ref="Radius"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Base" type="xs:integer"/>
+  <xs:element name="ScoreRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ScoreRecord"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ScoreRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CID"/>
+        <xs:element ref="FirstName"/>
+        <xs:element ref="LastName"/>
+        <xs:element ref="Glider"/>
+        <xs:element ref="DayRank"/>
+        <xs:element ref="CumRank"/>
+        <xs:element ref="Points"/>
+        <xs:element ref="CPoints"/>
+        <xs:element minOccurs="0" ref="TOC"/>
+        <xs:element ref="Distance"/>
+        <xs:element minOccurs="0" ref="HDistance"/>
+        <xs:element minOccurs="0" ref="Speed"/>
+        <xs:element minOccurs="0" ref="HSpeed"/>
+        <xs:element minOccurs="0" ref="Codes"/>
+        <xs:element minOccurs="0" ref="Penalty"/>
+        <xs:element minOccurs="0" ref="AcheivedTurnpoints"/>
+		<xs:element minOccurs="0" ref="StartTime"/>
+		<xs:element minOccurs="0" ref="FinishTime"/>
+        <xs:element ref="IGCFileName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CID" type="xs:NMTOKEN"/>
+  <xs:element name="FirstName" type="xs:NCName"/>
+  <xs:element name="LastName" type="xs:NCName"/>
+  <xs:element name="Glider" type="xs:string"/>
+  <xs:element name="DayRank" type="xs:integer"/>
+  <xs:element name="CumRank" type="xs:integer"/>
+  <xs:element name="Points" type="xs:integer"/>
+  <xs:element name="CPoints" type="xs:integer"/>
+  <xs:element name="TOC" type="xs:NMTOKEN"/>
+  <xs:element name="HDistance" type="xs:decimal"/>
+  <xs:element name="Speed" type="xs:decimal"/>
+  <xs:element name="HSpeed" type="xs:decimal"/>
+  <xs:element name="Penalty" type="xs:integer"/>
+  <xs:element name="AcheivedTurnpoints" type="xs:string"/>
+  <xs:element name="IGCFileName" type="xs:NMTOKEN"/>
+  <xs:element name="Distance" type="xs:NMTOKEN"/>
+  <xs:element name="Name" type="xs:string"/>
+  <xs:element name="Status" type="xs:string"/>
+  <xs:element name="Type" type="xs:string"/>
+  <xs:element name="ID" type="xs:NMTOKEN"/>
+  <xs:element name="Height" type="xs:integer"/>
+  <xs:element name="Radius" type="xs:decimal"/>
+  <xs:element name="Codes">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Code"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Code">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ID"/>
+        <xs:element ref="Reason"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reason" type="xs:string"/>
+</xs:schema>

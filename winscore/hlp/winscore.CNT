@@ -1,0 +1,36 @@
+:Base winscore.HLP
+1 Winscore General Topics
+2 Conditions of Use=Conditions_of_Use
+2 Getting Around in Winscore=Getting_Around_in_Winscore
+2 Previewing and Printing=Previewing_and_Printing
+2 Winscore Registration=HID_REGISTER_WINSCORE
+2 Contacting the Author=Contacting_the_Author
+1 Flight Log Analysis
+2 Automatic Flight Analysis Setup=Notes_about_automatic_flight_analysis
+2 Importing Flight Logs=Importing_Flight_Logs
+2 Flight Log Management=Flight_Log_Management
+2 Flight Display=HID_FLIGHT_DISPLAY
+2 Troubleshooting Automatic Flight Analysis=Troubleshooting_Automatic_Flight_Analysis
+1 Contest Setup
+2 Start a new Contest=Start_a_new_Contest
+2 Control Point Management=Control_Point_Management
+2 Contestant Management=Contestant_Management
+2 Takeoff Grid Positions=Takeoff_Grid_Positions
+2 Printing Takeoff Grid Positions=Printing_Takeoff_Grid_Positions
+2 Invalid Task Leg Management=Invalid_Task_Leg_Management
+2 Control Point Distance Grid=Control_Point_Distance_Grid
+1 Tasking
+2 Task Planning=HID_PLAN_TASKS
+2 Task Management=Task_Management
+2 How To Make a contest day official=How_To_Make_a_contest_day_official
+2 How To Make a day a "no contest"day=How_To_Make_a_day_a_no_contest_day
+1 Contest Day
+2 Manage Times=Manage_Times
+2 Landing Cards=Landing_Cards
+2 Penalties and Score Adjustments=Penalties_and_Score_Adjustments
+2 Viewing Score Information=Viewing_Score_Information
+2 How to send scoresheets to the SSA=How_to_send_scoresheets_to_the_SSA
+1 Import/Export Data
+2 Exporting Scoresheets=Exporting_Scoresheets
+2 How to send scoresheets to the SSA=How_to_send_scoresheets_to_the_SSA
+2 How to export a Winscore Flight File=How_to_export_a_Winscore_Flight_File

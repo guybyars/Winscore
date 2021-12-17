@@ -1,0 +1,1089 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CAboutDlg" Collapsed="true">
+    <Position X="43" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAIBAABAAAAACAAAAAAAAAgAAAgAAQAA=</HashCode>
+      <FileName>Winscore.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CACComboBox" Collapsed="true">
+    <Position X="44.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAIAAAAgAAAAAAAAAAAAAAQAAAAQAAAAAAAA=</HashCode>
+      <FileName>ACComboBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAddTurnpointDlg" Collapsed="true">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EYyAQCmAAAEhgACAaBQApiUJFAi4BEBIAGbQQYEkACI=</HashCode>
+      <FileName>AddTurnpointDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAlternateStartDlg" Collapsed="true">
+    <Position X="46.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAEAAAAAAABAADAEAAABAAAAAAAAAIAAgQAAAAA=</HashCode>
+      <FileName>AlternateStartDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAutoExport" Collapsed="true">
+    <Position X="48.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAECCAAAAAIAABAAAAABAAAAgAAICAAAAAAAAAA=</HashCode>
+      <FileName>AutoExport.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAverager" Collapsed="true">
+    <Position X="50" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAASgQAAAAAAAAAAAAAAAAAAAAgACgAAAA=</HashCode>
+      <FileName>Averager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CBitmapPicture" Collapsed="true">
+    <Position X="51.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAEAAAAAEAgAAQAEAAgAAEAIAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>bitmappicture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCalculateDlg" Collapsed="true">
+    <Position X="29.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAACEQQAEAAAEMEBACABAAACAACAgIAAAAAAAIAAA=</HashCode>
+      <FileName>CalculateDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CChangeTurnpointLocDlg" Collapsed="true">
+    <Position X="36" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CACAAAEEgAMCoAACBBAQAQAABAACAAAAAAgGAACIAAA=</HashCode>
+      <FileName>ChangeTurnpointLocDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CClassAssignedPointsPropPage" Collapsed="true">
+    <Position X="53.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAgABFABAAggAAAQBAAAAABAgAAAIQAAAhAAgAAAAA=</HashCode>
+      <FileName>ClassAssignedPointsPropPage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CClassListCtrl" Collapsed="true">
+    <Position X="55.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAwAgggICACAQgAQAAAIABAEBCAECEAAAgIAFEQAAA=</HashCode>
+      <FileName>ClassListCtrl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CClassPostPointsPropPage" Collapsed="true">
+    <Position X="57" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAAAAFABAQigAAAQBAAAAABAgAABIAAQAhAAgAAAAA=</HashCode>
+      <FileName>ClassPostPointsPropPage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CClassPropPage" Collapsed="true">
+    <Position X="58.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAQAABAAAAABAABEAAQAAAQACEAAQAA=</HashCode>
+      <FileName>ClassPropPage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CClassPropSheet" Collapsed="true">
+    <Position X="60.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAIAAAAACAAAAAAAAAAAAAACAAAIAAAA=</HashCode>
+      <FileName>ClassPropSheet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CClassTabCtrl" Collapsed="true">
+    <Position X="43" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAAAA=</HashCode>
+      <FileName>ClassTabCtrl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CContestant" Collapsed="true">
+    <Position X="44.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAoQBQAAkgICAAIMAAoGAkAAIGZAEIAgiAowAqBUQIA=</HashCode>
+      <FileName>Contestant.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CContestantAddress" Collapsed="true">
+    <Position X="46.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEADAAAAABAAAAIAAAAAAAAIAEAIA=</HashCode>
+      <FileName>ContestantAddress.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CContestantDlg" Collapsed="true">
+    <Position X="18" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQCQBSEkmPPLAAcEKJASgAACJkAKUAAjJQRZwIAVAZg=</HashCode>
+      <FileName>ContestantDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CContestantList" Collapsed="true">
+    <Position X="48.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAACAAAAACAAkIIEAQEAAAQAQgAAIgACggICAAEAA=</HashCode>
+      <FileName>ContestantList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CContestantsFromSSA" Collapsed="true">
+    <Position X="27" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAECEAAAEAAAAAABAACAQBAAIAAAAAAAAAAAAIAQg=</HashCode>
+      <FileName>ContestantsFromSSA.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CContestInfoDlg" Collapsed="true">
+    <Position X="50" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICEAAAEQAAYgAEoAIBAAAAABAEAgBAB0AAAQCAKIgAA=</HashCode>
+      <FileName>ContestInfoDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CContestSettingsDlg" Collapsed="true">
+    <Position X="51.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAQAAAAABAAAAAAAAAAAAAIEAAgAAAAAAA=</HashCode>
+      <FileName>ContestSettingsDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCopyScoresheetDlg" Collapsed="true">
+    <Position X="53.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAEAAAAAAAAgABAAAAABAQAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>CopyScoresheetDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CDescriptionDlg" Collapsed="true">
+    <Position X="38.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCAAAEEAAEAAgAAABAAAAAAAAQAAAAAAAAARAAAAAA=</HashCode>
+      <FileName>DescriptionDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CDetailedScoreInfoDlg" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAEQAEFAAAAAABAEAAAAAAAAAAAIAIAAAAAIAAA=</HashCode>
+      <FileName>DetailedScoreInfoDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CDirDialog" Collapsed="true">
+    <Position X="55.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABACAAAABEAAQAEAAEAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>DirDialog.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CDontShowDlg" Collapsed="true">
+    <Position X="57" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEIAAAAEAAAABAAAAABIAggQAAADAAAAAAAAAA=</HashCode>
+      <FileName>DontShowDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEditFlightDlg" Collapsed="true">
+    <Position X="58.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>imQBBAtEgBIggiCHMRACGGEJRgKBYAEwJIRAUBCIAAo=</HashCode>
+      <FileName>EditFlightDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEventList" Collapsed="true">
+    <Position X="43" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEAgAAAAAAAAAEIJAAABAABQAAgASIAACAgAACAAAA=</HashCode>
+      <FileName>EventList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CExcludeContestantsDlg" Collapsed="true">
+    <Position X="44.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAgAAABAEAAARAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>ExcludeContestantsDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CExportFlightFileDlg" Collapsed="true">
+    <Position X="46.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABQEAAAAAAAEEABAAggARAAAAgAwAgAIAAAIIAAA=</HashCode>
+      <FileName>ExportFlightFileDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CExportScoresheetDlg" Collapsed="true">
+    <Position X="48.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQEAAQEEAAAEAAAEABAAAAAhBAFBAAgAAAgAACFIYAA=</HashCode>
+      <FileName>ExportScoresheetDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CExportSuccessDlg" Collapsed="true">
+    <Position X="50" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAABAAAAAAAAAAAEAAAAgAAAAAAAA=</HashCode>
+      <FileName>ExportSuccessDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFDRAnalysisSettingsPropPage" Collapsed="true">
+    <Position X="51.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAEAAAAAAABDABAIAAABAAAgASgAAAAAAAAAQAA=</HashCode>
+      <FileName>FDRAnalysisSettingsPropPage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFDRecorder" Collapsed="true">
+    <Position X="53.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>FDRecorder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFDRecorderInfo" Collapsed="true">
+    <Position X="55.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>FDRecorderInfo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFDRSettings" Collapsed="true">
+    <Position X="57" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACEDAAAgAAQACBgIEAABABBBIAAABABAAAgQAAg=</HashCode>
+      <FileName>FDRSettings.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFDRSettingsPropPage" Collapsed="true">
+    <Position X="58.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAygkAAAAAAAgCIBCAAAABAAAAAAAQAAAAAQIBQAA=</HashCode>
+      <FileName>FDRSettingsPropPage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFDRSettingsPropSheet" Collapsed="true">
+    <Position X="60.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAALAAAFAAAAAAAAAABAAAAAAAAAAIAAA=</HashCode>
+      <FileName>FDRSettingsPropSheet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFix" Collapsed="true">
+    <Position X="43" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACYAAAAEAAAAEACAAAAAgACAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Fix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFixList" Collapsed="true">
+    <Position X="44.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAABAAAABgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FixList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFlight" Collapsed="true">
+    <Position X="3.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>8NdiuuvU2wcpbci6oTlrpqcEQD5g1Z6m/soQISEcngo=</HashCode>
+      <FileName>Flight.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFlightAnalysisDlg" Collapsed="true">
+    <Position X="20.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iACkAAkRAAEAgAAAoDAEACAxAIICAAAAYAIAEAAEgQA=</HashCode>
+      <FileName>FlightAnalysisDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFlightDisplayDlg" Collapsed="true">
+    <Position X="22.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAGABAEEBAEQgQggApAIACIYACoAAAEAQCEIiAAIABA=</HashCode>
+      <FileName>FlightDisplayDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFlightList" Collapsed="true">
+    <Position X="46.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAIEBAFIIEAABAAAwAIhAAIgAQAAACAAAAA=</HashCode>
+      <FileName>FlightList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFlightLogTransferSettings" Collapsed="true">
+    <Position X="48.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAFAAgEACAAAABAAAAABAAIAAAAAAAAACAAIkAA=</HashCode>
+      <FileName>FlightLogTransferSettings.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFlightSearchFoldersDlg" Collapsed="true">
+    <Position X="50" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAOAAgAAAEACABEQAIABAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>FlightSearchFoldersDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFlightStream" Collapsed="true">
+    <Position X="51.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAgAEAEAAgABAACAAAAAAAiAAAAAABAAAAAIAAgA=</HashCode>
+      <FileName>FlightStream.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFTPException" Collapsed="true">
+    <Position X="55.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAA=</HashCode>
+      <FileName>FTPClient.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFTPClient" Collapsed="true">
+    <Position X="53.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgACAAIAKAAAAQAAAICEgAAAAEAAAAAAEQBAAIABA=</HashCode>
+      <FileName>FTPClient.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CFTPUpload" Collapsed="true">
+    <Position X="57" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAEAAAAAABBAACgEgACAgAAAAAAAAAABAAAAEACAA=</HashCode>
+      <FileName>FTPUpload.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CGate" Collapsed="true">
+    <Position X="58.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAAFUAIEAAiEQAIISRABQBAQCQA4AAgQRAggiqwAAE=</HashCode>
+      <FileName>Gate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CGateDlg" Collapsed="true">
+    <Position X="60.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gICAAAESAAAEEAAABBAIAAAJQAEAAABATAABABJIQgA=</HashCode>
+      <FileName>GateDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CGliderInfo" Collapsed="true">
+    <Position X="43" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAoAAEIAABAAAAAAICAoCAAIAAAgAAAAAAA=</HashCode>
+      <FileName>GliderInfo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CGliderInfoList" Collapsed="true">
+    <Position X="44.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAhCAAQBAAEABAAAAAAAEAAAAAAAABAAAAAA=</HashCode>
+      <FileName>GliderInfoList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CGridPositionsDlg" Collapsed="true">
+    <Position X="48.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEEAAAAAAAAEBACAAABAAAACAAAAAAAACQIAAA=</HashCode>
+      <FileName>GridPositionsDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CHandicapCalcDlg" Collapsed="true">
+    <Position X="50" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAEEBADogAEIACBCEIJABMAADEADBABAABAAgAAA=</HashCode>
+      <FileName>HandicapCalcDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CHScrollListBox" Collapsed="true">
+    <Position X="51.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAIEBAAAAAAABAAAQIAAgAAQAAAAABAAAAAAAAAgAA=</HashCode>
+      <FileName>HScrollListBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CIGCFile" Collapsed="true">
+    <Position X="3.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCACLSAxACJFAEaAQ0KYAwTECGoQACEGLEISkGAAAYQ=</HashCode>
+      <FileName>IGCFile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CImportDataDlg" Collapsed="true">
+    <Position X="53.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIAEgAAAIAAMAABAAARAAAACAAAACIAABABIIAAA=</HashCode>
+      <FileName>ImportDataDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CImportFlightsDlg" Collapsed="true">
+    <Position X="55.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAIEAAAAAEBFAAJQAAAAhSACACAiAAAIEAAIIAgA=</HashCode>
+      <FileName>ImportFlightsDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CImportFlightSettings" Collapsed="true">
+    <Position X="57" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAEAAAAAAAAAABAAAAABAAKEgAAAAAABAAIBAAA=</HashCode>
+      <FileName>ImportFlightSettings.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CInvalidLeg" Collapsed="true">
+    <Position X="58.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAgEAAAAAAAAAAAAAAACAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>InvalidLeg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CInvalidLegDlg" Collapsed="true">
+    <Position X="60.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAEIKEAAAAAAAAAKBAAAAgRAAAQgABAAAQAAAIYAAA=</HashCode>
+      <FileName>InvalidLegDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CInvalidLegList" Collapsed="true">
+    <Position X="43" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAQgAAAEMYAAAAAAAQAAgAAIAACEgAAAAAAA=</HashCode>
+      <FileName>InvalidLegList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLandingCard" Collapsed="true">
+    <Position X="44.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAgRCEAAIAAEKCQBAEAEARGBSAAAkCzIAIASEpAA=</HashCode>
+      <FileName>LandingCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLandingCardDlg" Collapsed="true">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GHSQcKXESANMQAWEER4QxMAVDEzCAggBARQRIDEoDAQ=</HashCode>
+      <FileName>LandingCardDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLandingCardList" Collapsed="true">
+    <Position X="46.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAVAIAgAAAAAQAIgEQIAAAAgAAAAAAA=</HashCode>
+      <FileName>LandingCardList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLandingLocationDlg" Collapsed="true">
+    <Position X="48.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAISEACAAAAAACIxIEgAQBAAAEAAAAIBAAAAIIgAA=</HashCode>
+      <FileName>LandingLocationDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLandoutDlg" Collapsed="true">
+    <Position X="50" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEoYFkAAAJAAAIAkFUAAiwBBAEIJUBIAIQAAMAoECI=</HashCode>
+      <FileName>LandoutDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CListViewEx" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASigIigAwEAAgACAkEAgAAAgAAAAAAAAAJAQAAAAAI=</HashCode>
+      <FileName>ListVwEx.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLocalMachineRegistry" Collapsed="true">
+    <Position X="51.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIIAAAAAAAAAACGAIAAAAAgBAAEAAAgAAAAAAAAAKEA=</HashCode>
+      <FileName>LocalMachineRegistry.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLocation" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGUQQBAAAoAgABCAAEFEAQKAACAAAEAIAAAqACAgAEA=</HashCode>
+      <FileName>Location.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CMainFrame" Collapsed="true">
+    <Position X="53.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABYCKEGAAgAhAAACAEAzEAAgWAAAggAAEgAAQRQABE=</HashCode>
+      <FileName>MainFrm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CMedian" Collapsed="true">
+    <Position X="55.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAACAAAAIAAAAAABAAAIAAAAABAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Median.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPenality" Collapsed="true">
+    <Position X="57" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAEAAAAAAAEABEIAAAEAACACAAAAAAEAACABAAA=</HashCode>
+      <FileName>Penality.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPenalityDlg" Collapsed="true">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQSBgCMQgAECAAAEKBAAEYAJAICQABAAFAfAgBAIggE=</HashCode>
+      <FileName>PenalityDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPenalityList" Collapsed="true">
+    <Position X="58.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAFAIEAgBAAwQAAgAQMAQAAgACAAAAA=</HashCode>
+      <FileName>PenalityList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPlannerDlg" Collapsed="true">
+    <Position X="13.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAjAAEEEIAGAIEQAEBAAACBBEAIAAAAABAAAAACoBAA=</HashCode>
+      <FileName>PlannerDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPosition" Collapsed="true">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJAEgwAAQECAMAAASBAEAABQAiIAQQCAQIADAAABYA=</HashCode>
+      <FileName>Position.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPreviewDlg" Collapsed="true">
+    <Position X="60.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAIAAABABAAABAAAAAgAAAAAAIAAIAAA=</HashCode>
+      <FileName>PreviewDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CGridData" Collapsed="true">
+    <Position X="46.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAgAAAiAAAAAAAABgAEAAQgAAAA=</HashCode>
+      <FileName>PrintGridDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CPrintGridDlg" Collapsed="true">
+    <Position X="43" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAFAISkAAAAAAAAAARASAAEBAAABAEAAAAEAIgAYDAA=</HashCode>
+      <FileName>PrintGridDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CProgressBar" Collapsed="true">
+    <Position X="44.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgBAAAAAAAAQAAAAAAAAIgABAAAAJAAAQAAAAAAAAA=</HashCode>
+      <FileName>ProgressBar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CProgressDlg" Collapsed="true">
+    <Position X="46.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoABQCECARBAAAMAAFAAAJCBwAAwAEAAAAgAAAAAAAU=</HashCode>
+      <FileName>ProgressDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CRealtimeDlg" Collapsed="true">
+    <Position X="40.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAEABAVAkAEIAZAAAIAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>RealtimeDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CRealtimeInfoDlg" Collapsed="true">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAGAAAEgAAAEIBAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>RealtimeInfoDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CRealTimePropPage" Collapsed="true">
+    <Position X="48.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAEAAAAAABBAABAAAAABAAAAAAAAAAAAAAAAJAA=</HashCode>
+      <FileName>RealTimePropPage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CResizingDialog" Collapsed="true">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCCBAoMAIEEAAAAQAAAAAKAAACAAEAQBAAABAAAMAAA=</HashCode>
+      <FileName>ResizingDialog.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CScoreRecord" Collapsed="true">
+    <Position X="50" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CFAAQAQCCAAQAIMCDCCDMwRCgDCCACAQABAYaCAAAgY=</HashCode>
+      <FileName>ScoreRecord.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CScoreRecordList" Collapsed="true">
+    <Position X="51.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAIAAAAAAAABQIECBAAAAIQEgAAIhAEAAACAAAQg=</HashCode>
+      <FileName>ScoreRecordList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CScoreReportDlg" Collapsed="true">
+    <Position X="15.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAEAAAEAAgAAABAAAAABAAAAACAAAQIAAAAAAAA=</HashCode>
+      <FileName>ScoreReportDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CScoreServerDlg" Collapsed="true">
+    <Position X="53.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARFCBiEAIQAIIAEEUBYEAAABAAAAAAAwAAIFggAJAAI=</HashCode>
+      <FileName>ScoreServerDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CScoreSheetListCtrl" Collapsed="true">
+    <Position X="55.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACDIEAAAAAAAAAAAZAACAAACAAAAAAAAAAEgAAAA=</HashCode>
+      <FileName>ScoreSheetListCtrl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CServerSettings" Collapsed="true">
+    <Position X="57" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A1AAACEAAAgAAAAIABAAAAARAAAIgAAQAABQAQAAAsA=</HashCode>
+      <FileName>ServerSettings.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CShowWarningsDlg" Collapsed="true">
+    <Position X="31.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CACAIAEAAAEAAAAAABAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShowWarningsDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSortListCtrl" Collapsed="true">
+    <Position X="58.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAABAAAgAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SortListCtrl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSplashWnd" Collapsed="true">
+    <Position X="60.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiAAAAAAAAAAEEAxIAAAAAAACAAAEAAAAAQBAABAAA=</HashCode>
+      <FileName>Splash.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StringHelper" Collapsed="true">
+    <Position X="48.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAkAACAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>StringHelper.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSUASection" Collapsed="true">
+    <Position X="43" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAABAAAAAAAAAAAAAAAESAAAAAAAAAQAABAAA=</HashCode>
+      <FileName>SUA.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSUASubSection" Collapsed="true">
+    <Position X="46.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAgAAAAAAAAAAAAAAAEACAAQAAAAAAAAAAAiAABABA=</HashCode>
+      <FileName>SUA.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSUASectionArray" Collapsed="true">
+    <Position X="44.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIgAADAAAIAAAAAAAA=</HashCode>
+      <FileName>SUA.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSummary" Collapsed="true">
+    <Position X="48.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYCABAIAgACAAAgADABYAUAlADQAAAAACAgEAQBAAgA=</HashCode>
+      <FileName>Summary.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSXButton" Collapsed="true">
+    <Position X="50" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAAAQAAOJEQAAERAgSIAAIAECKIAACBgACgQUAA=</HashCode>
+      <FileName>Sxbutton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTask" Collapsed="true">
+    <Position X="51.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MBVAAoRAwABLA9EICAASAAABgKICQCkGCAAiACABpQA=</HashCode>
+      <FileName>Task.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTaskControl" Collapsed="true">
+    <Position X="53.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAIIABAAABBBEBEAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>taskcontrol.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTaskDisplayDlg" Collapsed="true">
+    <Position X="24.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAEAAAEAgAABABAAACAAAAAAAEAAAAACAAAIAAA=</HashCode>
+      <FileName>TaskDisplayDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTaskDlg" Collapsed="true">
+    <Position X="55.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBBBQGGAAIgFBABUABAABAQEAgAaWChQAAZQgBBpBBA=</HashCode>
+      <FileName>TaskDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTaskInfoDlg" Collapsed="true">
+    <Position X="33.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAEAAAEAAAAAAJAAAAABCAAAAAAAAAACAAAgCAA=</HashCode>
+      <FileName>TaskInfoDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTaskList" Collapsed="true">
+    <Position X="57" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAEBAIEggBAAAwAAgIQIAAAAgACBAAAA=</HashCode>
+      <FileName>TaskList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTaskTimeDlg" Collapsed="true">
+    <Position X="58.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAIAAABAABAJAAABAAAAAEAAAgAAAAAIAAA=</HashCode>
+      <FileName>TaskTimeDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTaskTurnpointsDlg" Collapsed="true">
+    <Position X="60.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FAAQAAEIAAAAAIBAABAAAAAJCAAAAAABEAAAAEAIAAA=</HashCode>
+      <FileName>TaskTurnpointsDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTimeDlg" Collapsed="true">
+    <Position X="43" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQZNICGQAEAAAAEEKBAAAAAEBABQCggEAAQRAABICAA=</HashCode>
+      <FileName>TimeDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTurnpoint" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQIAQAAAAAABAAICAkgAQgACQAAAAACAIBQCEFQQA=</HashCode>
+      <FileName>Turnpoint.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTurnpointArray" Collapsed="true">
+    <Position X="44.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAACgAAAAAEAAQAIIEAAAAQBABMkEABAKCggACAAAAA=</HashCode>
+      <FileName>TurnpointArray.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTurnpointCombo" Collapsed="true">
+    <Position X="46.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAABCIEAAAAAAAAAABAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>TurnpointCombo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTurnpointEdit" Collapsed="true">
+    <Position X="48.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAABCAAA=</HashCode>
+      <FileName>TurnpointEdit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTurnpointListCtrl" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAwYAEQMAEAICIBABBAAAFAAAABAAIAAiEACFEI=</HashCode>
+      <FileName>TurnpointListCtrl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTurnpointPickerDlg" Collapsed="true">
+    <Position X="50" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAQBAMCAAAAAAAAAAAAAAAAAMAAAA=</HashCode>
+      <FileName>TurnpointPickerDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWindDlg" Collapsed="true">
+    <Position X="51.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEQAAIAAAAAABAAEAABAAAAAgAAIAAAAAAAAAA=</HashCode>
+      <FileName>WindDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWinscoreApp" Collapsed="true">
+    <Position X="53.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAQAAgAAAAAAAABAAAAACQAAAABAAAAAAE=</HashCode>
+      <FileName>Winscore.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWinscoreDlgBar" Collapsed="true">
+    <Position X="55.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCBAAAAAAgAAAAAAAAAAAAIAAAMAQQBABAAAAABA=</HashCode>
+      <FileName>WinscoreDlgBar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWinscoreDoc" Collapsed="true">
+    <Position X="57" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>LDEQAIA4GiABP4PJO0AggFwISCwgYiEABc4k7LICqAI=</HashCode>
+      <FileName>WinscoreDoc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEvent" Collapsed="true">
+    <Position X="60.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEEAAQAIAAAAAAABQCBCAAAAAAIkAAAAAAA=</HashCode>
+      <FileName>WinscoreEvent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWinscoreListCtrl" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCgAgwAgFAAAAAAEACgAAQAAAAAAAAAAJAQAAEAgI=</HashCode>
+      <FileName>WinscoreListCtrl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWinscoreView" Collapsed="true">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>lgILCqQIRgFDuIMqG5JFO0mdIwdJgayMdq87p2QcF4Y=</HashCode>
+      <FileName>WinscoreView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWSBaro" Collapsed="true">
+    <Position X="58.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAYCQgEEAAAEAAAAAAAAACUQGEAQgIAAAIAA=</HashCode>
+      <FileName>wsbaro.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWSClass" Collapsed="true">
+    <Position X="60.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AETAMBUIFAAAATACEEACAAAIACBEABcEgQCgTKgDxgA=</HashCode>
+      <FileName>WSClass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWSSingleDocTemplate" Collapsed="true">
+    <Position X="43" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>WSSingleDocTemplate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWSView" Collapsed="true">
+    <Position X="44.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A0AGMigYAwGDCEECIAIgJUKQFDAEAM2gEC0gCBIAxCA=</HashCode>
+      <FileName>wsview.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CXMLMgr" Collapsed="true">
+    <Position X="46.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIABgICAAAgGoQJMABMFAAEgACNCgAKIAAAAYxwAgEI=</HashCode>
+      <FileName>XMLMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="ProcValidateLog" Collapsed="true">
+    <Position X="44.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Global_Functions.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="ProcInitializeDLL" Collapsed="true">
+    <Position X="43" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Global_Functions.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="EFlightStatus" Collapsed="true">
+    <Position X="55.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAAAgEAAAAAAAACAAAAAAQAAAAQAAAAAAAgAAAA=</HashCode>
+      <FileName>Flight.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ELatDirection" Collapsed="true">
+    <Position X="58.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Location.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ELongDirection" Collapsed="true">
+    <Position X="43" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Location.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EFieldID" Collapsed="true">
+    <Position X="53.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAEAgEAAADAAAAFAAAAAAECgAAAFAECAASA=</HashCode>
+      <FileName>Winscore.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EEventType" Collapsed="true">
+    <Position X="50" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAgAAEAAAAAAAAEAAAAIAA=</HashCode>
+      <FileName>Winscore.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EPenality" Collapsed="true">
+    <Position X="46.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAGAgAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Winscore.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ESortBy" Collapsed="true">
+    <Position X="51.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Winscore.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EScoresheetType" Collapsed="true">
+    <Position X="50" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Winscore.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EPrintSelection" Collapsed="true">
+    <Position X="48.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAABAAAAAAAAAAAAAACAACBAAAAAAAAAAIAAQ=</HashCode>
+      <FileName>Winscore.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EExportType" Collapsed="true">
+    <Position X="51.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Winscore.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EViews" Collapsed="true">
+    <Position X="60.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAABABAAAAAAAIAACAAAIAACAAAAAAAAA=</HashCode>
+      <FileName>Winscore.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EGateType" Collapsed="true">
+    <Position X="57" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAQ=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ETraceDisplayType" Collapsed="true">
+    <Position X="57" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EUnits" Collapsed="true">
+    <Position X="58.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAACAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EAltUnits" Collapsed="true">
+    <Position X="43" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAA=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EStatus" Collapsed="true">
+    <Position X="53.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAQABAAAAAAAAAAAAAAAAAAIAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ETaskType" Collapsed="true">
+    <Position X="55.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAEgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EContest" Collapsed="true">
+    <Position X="46.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ENudgeView" Collapsed="true">
+    <Position X="44.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACgAAAAAAAAAAABAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ECoordFormat" Collapsed="true">
+    <Position X="48.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EClass" Collapsed="true">
+    <Position X="44.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAACAAEAQAEAAAAAAgAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ELogTime" Collapsed="true">
+    <Position X="60.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>WinscoreDefs.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

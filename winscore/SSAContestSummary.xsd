@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SSA_Summary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CreationTime" type="xs:string" />
+        <xs:element name="Title" type="xs:string" />
+        <xs:element name="Location" type="xs:string" />
+        <xs:element name="Units">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Distance" type="xs:string" />
+              <xs:element name="Altitude" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Classes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Class">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string" />
+                    <xs:element name="Tasks">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Task">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Date">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="yr" type="xs:unsignedShort" />
+                                      <xs:element name="mon" type="xs:unsignedByte" />
+                                      <xs:element name="day" type="xs:unsignedByte" />
+                                      <xs:element name="full" type="xs:string" />
+                                      <xs:element name="Mon" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Status" type="xs:string" />
+                                <xs:element name="Type" type="xs:string" />
+                                <xs:element name="TaskOpenTime" type="xs:string" />
+                                <xs:element name="MinimumTaskTime" type="xs:string" />
+                                <xs:element name="StartGate">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ID" type="xs:unsignedByte" />
+                                      <xs:element name="Name" type="xs:string" />
+                                      <xs:element name="Type" type="xs:string" />
+                                      <xs:element name="Height" type="xs:unsignedShort" />
+                                      <xs:element name="Radius" type="xs:decimal" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Turnpoints">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Turnpoint">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="ID" type="xs:unsignedByte" />
+                                            <xs:element name="Name" type="xs:string" />
+                                            <xs:element name="Radius" type="xs:decimal" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="FinishGate">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ID" type="xs:unsignedByte" />
+                                      <xs:element name="Name" type="xs:string" />
+                                      <xs:element name="Type" type="xs:string" />
+                                      <xs:element name="Base" type="xs:unsignedShort" />
+                                      <xs:element name="Height" type="xs:unsignedShort" />
+                                      <xs:element name="Radius" type="xs:decimal" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="MinDistance" type="xs:decimal" />
+                                <xs:element name="Distance" type="xs:decimal" />
+                                <xs:element name="MaxDistance" type="xs:decimal" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ScoreRecords">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="ScoreRecord">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Contestant">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="CID" type="xs:string" />
+                                      <xs:element name="FirstName" type="xs:string" />
+                                      <xs:element name="LastName" type="xs:string" />
+                                      <xs:element name="Glider" type="xs:string" />
+                                      <xs:element name="Class" type="xs:string" />
+                                      <xs:element minOccurs="0" name="Motorized" type="xs:string" />
+                                      <xs:element name="Status" type="xs:string" />
+                                      <xs:element name="SSANumber" type="xs:unsignedInt" />
+                                      <xs:element name="Address1" type="xs:string" />
+                                      <xs:element name="City" type="xs:string" />
+                                      <xs:element name="State" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="CumulativeRank" type="xs:string" />
+                                <xs:element name="CumulativePoints" type="xs:unsignedShort" />
+                                <xs:element name="Days">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Day">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Date">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="yr" type="xs:unsignedShort" />
+                                                  <xs:element name="mon" type="xs:unsignedByte" />
+                                                  <xs:element name="day" type="xs:unsignedByte" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Rank" type="xs:unsignedByte" />
+                                            <xs:element name="Points" type="xs:unsignedShort" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SSA_Scoresheet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CreationTime" type="xs:string" />
+        <xs:element name="ProgramVersion" type="xs:string" />  
+        <xs:element name="Title" type="xs:string" />
+        <xs:element name="Location" type="xs:string" />
+        <xs:element name="Date">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="yr" type="xs:unsignedShort" />
+              <xs:element name="mon" type="xs:unsignedByte" />
+              <xs:element name="day" type="xs:unsignedByte" />
+              <xs:element name="full" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Units">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Distance" type="xs:string" />
+              <xs:element name="Altitude" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Class">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="Status" type="xs:string" />
+              <xs:element name="Handicapped" type="xs:string" />
+              <xs:element name="Task">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Status" type="xs:string" />
+                    <xs:element name="Type" type="xs:string" />
+                    <xs:element name="TaskOpenTime" type="xs:string" />
+                    <xs:element name="MinimumTaskTime" type="xs:string" />
+                    <xs:element name="StartGate">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ID" type="xs:unsignedByte" />
+                          <xs:element name="Name" type="xs:string" />
+                          <xs:element name="Type" type="xs:string" />
+                          <xs:element name="Height" type="xs:unsignedShort" />
+                          <xs:element name="Radius" type="xs:decimal" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Turnpoints">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Turnpoint">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ID" type="xs:unsignedByte" />
+                                <xs:element name="Name" type="xs:string" />
+                                <xs:element name="Radius" type="xs:decimal" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FinishGate">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ID" type="xs:unsignedByte" />
+                          <xs:element name="Name" type="xs:string" />
+                          <xs:element name="Type" type="xs:string" />
+                          <xs:element name="Base" type="xs:unsignedShort" />
+                          <xs:element name="Height" type="xs:unsignedShort" />
+                          <xs:element name="Radius" type="xs:decimal" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="MinDistance" type="xs:decimal" />
+                    <xs:element name="Distance" type="xs:decimal" />
+                    <xs:element name="MaxDistance" type="xs:decimal" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ScoreRecords">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="ScoreRecord">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SSANumber" type="xs:unsignedInt" />
+                          <xs:element name="CID" type="xs:string" />
+                          <xs:element name="FirstName" type="xs:string" />
+                          <xs:element name="LastName" type="xs:string" />
+                          <xs:element name="Glider" type="xs:string" />
+                          <xs:element name="DayRank" type="xs:unsignedByte" />
+                          <xs:element name="CumRank" type="xs:unsignedByte" />
+                          <xs:element name="Points" type="xs:unsignedShort" />
+                          <xs:element name="CPoints" type="xs:unsignedShort" />
+                          <xs:element name="TOC" type="xs:string" />
+                          <xs:element minOccurs="0" name="Distance" type="xs:decimal" />
+                          <xs:element minOccurs="0" name="HDistance" type="xs:decimal" />
+                          <xs:element minOccurs="0" name="Speed" type="xs:decimal" />
+                          <xs:element minOccurs="0" name="HSpeed" type="xs:decimal" />
+                          <xs:element minOccurs="0" name="Codes" type="xs:string" />
+                          <xs:element name="Penalty" type="xs:string" />
+                          <xs:element minOccurs="0" name="StartTime" type="xs:string" />
+                          <xs:element minOccurs="0" name="FinishTime" type="xs:string" />
+                          <xs:element minOccurs="0" name="AcheivedTurnpoints" type="xs:string" />
+                          <xs:element minOccurs="0" name="IGCFileName" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Codes">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="Code">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ID" type="xs:string" />
+                          <xs:element name="Reason" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

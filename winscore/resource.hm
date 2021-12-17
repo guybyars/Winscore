@@ -1,0 +1,5 @@
+// Microsoft Visual C++ generated Help ID include file.
+// Used by Winscore.rc
+//
+#define HID_PLAN_TASKS                  0x80b10004    // IDD_TASK_PLANNER
+#define HID_REGISTER_WINSCORE           0x80de04b7    // IDD_REGISTER
