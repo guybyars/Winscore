@@ -1,0 +1,109 @@
+﻿Build started 4/15/21 7:33:14 PM.
+     1>Project "C:\projects\wsview\WSView.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\Release\WSView.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       Midl:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\midl.exe /D NDEBUG /mktyplib203 /W1 /nologo /char signed /env win32 /h "WSView_h.h" /tlb ".\Release/WSView.tlb" WSView.odl 
+         Processing .\WSView.odl
+         WSView.odl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oaidl.idl
+         oaidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\objidl.idl
+         objidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\unknwn.idl
+         unknwn.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\wtypes.idl
+         wtypes.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\basetsd.h
+         basetsd.h
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\guiddef.h
+         guiddef.h
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oaidl.acf
+         oaidl.acf
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _MBCS /D _AFXDLL /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\Release/WSView.pch" /Fo".\Release/" /Fd".\Release/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _MBCS /D _AFXDLL /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\Release/WSView.pch" /Fo".\Release/" /Fd".\Release/vc100.pdb" /Gd /TP /analyze- /errorReport:prompt 2DTransform.cpp 3DTransformation.cpp BaroMeasureDlg.cpp BaroPoint.cpp BaroTrace.cpp BaroTraceGroup.cpp BaroZoom.cpp ControlPoint.cpp Cursor.cpp Fix.cpp FontCombo.cpp HitList.cpp Location.cpp MeasuringDlg.cpp ModulVer.cpp SUA.cpp TipWnd.cpp Trace.cpp TraceGroup.cpp TracesPropPage.cpp WSBaroCtl.cpp WSBaroPpg.cpp WSView.cpp WSViewAboutDlg.cpp WSViewCtl.cpp wsviewinterface.cpp WSViewPpg.cpp xyzoom.cpp
+         2DTransform.cpp
+         3DTransformation.cpp
+         BaroMeasureDlg.cpp
+         BaroPoint.cpp
+         BaroTrace.cpp
+         BaroTraceGroup.cpp
+         BaroZoom.cpp
+         ControlPoint.cpp
+         Cursor.cpp
+         Fix.cpp
+         FontCombo.cpp
+         HitList.cpp
+         Location.cpp
+         MeasuringDlg.cpp
+         ModulVer.cpp
+         SUA.cpp
+         TipWnd.cpp
+         Trace.cpp
+         TraceGroup.cpp
+         TracesPropPage.cpp
+         Generating Code...
+         Compiling...
+         WSBaroCtl.cpp
+         WSBaroPpg.cpp
+         WSView.cpp
+         WSViewAboutDlg.cpp
+         WSViewCtl.cpp
+         wsviewinterface.cpp
+         WSViewPpg.cpp
+         xyzoom.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _AFXDLL /D NDEBUG /D _AFXDLL /l"0x0409" /I.\Release\ /nologo /fo".\Release\WSView.res" WSView.rc 
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release/WSView.ocx" /INCREMENTAL:NO /NOLOGO glu32.lib /DEF:".\WSView.def" /MANIFEST /ManifestFile:".\Release\WSView.ocx.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:".\Release/WSView.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Release/WSView.lib" /MACHINE:X86 /DLL .\Release\WSView.res
+         .\Release/2DTransform.obj
+         .\Release/3DTransformation.obj
+         .\Release/BaroMeasureDlg.obj
+         .\Release/BaroPoint.obj
+         .\Release/BaroTrace.obj
+         .\Release/BaroTraceGroup.obj
+         .\Release/BaroZoom.obj
+         .\Release/ControlPoint.obj
+         .\Release/Cursor.obj
+         .\Release/Fix.obj
+         .\Release/FontCombo.obj
+         .\Release/HitList.obj
+         .\Release/Location.obj
+         .\Release/MeasuringDlg.obj
+         .\Release/ModulVer.obj
+         .\Release/StdAfx.obj
+         .\Release/SUA.obj
+         .\Release/TipWnd.obj
+         .\Release/Trace.obj
+         .\Release/TraceGroup.obj
+         .\Release/TracesPropPage.obj
+         .\Release/WSBaroCtl.obj
+         .\Release/WSBaroPpg.obj
+         .\Release/WSView.obj
+         .\Release/WSViewAboutDlg.obj
+         .\Release/WSViewCtl.obj
+         .\Release/wsviewinterface.obj
+         .\Release/WSViewPpg.obj
+         .\Release/xyzoom.obj /MACHINE:I386 
+            Creating library .\Release/WSView.lib and object .\Release/WSView.exp
+         WSView.vcxproj -> C:\projects\wsview\.\Release\WSView.ocx
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:".\Release/WSView.ocx;#2" /manifest .\Release\WSView.ocx.intermediate.manifest "c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+       CustomBuildStep:
+         Description: Registering ActiveX Control...
+         regsvr32 /s /c "C:\projects\wsview\.\Release\WSView.ocx"
+         echo regsvr32 exec. time > ".\Release\regsvr32.trg"
+         
+         :VCEnd
+       FinalizeBuildStatus:
+         Deleting file ".\Release\WSView.unsuccessfulbuild".
+         Touching ".\Release\WSView.lastbuildstate".
+     1>Done Building Project "C:\projects\wsview\WSView.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:08.11

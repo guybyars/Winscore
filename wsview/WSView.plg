@@ -1,0 +1,105 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: WSView - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "midl.exe /nologo /D "_DEBUG" /tlb "Debug/WSView.tlb" /mktyplib203 /win32 "D:\Projects\wsview\WSView.odl""
+Creating command line "rc.exe /l 0x409 /fo"Debug/WSView.res" /i "Debug" /d "_DEBUG" /d "_AFXDLL" "D:\Projects\wsview\WSView.rc"" 
+Creating temporary file "C:\DOCUME~1\GUYFOR~1\LOCALS~1\Temp\RSP14C.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fp"Debug/WSView.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Projects\wsview\MeasuringDlg.cpp"
+"D:\Projects\wsview\Trace.cpp"
+"D:\Projects\wsview\WSViewCtl.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\GUYFOR~1\LOCALS~1\Temp\RSP14C.tmp" 
+Creating temporary file "C:\DOCUME~1\GUYFOR~1\LOCALS~1\Temp\RSP14D.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/WSView.pdb" /debug /machine:I386 /def:".\WSView.def" /out:"Debug/WSView.ocx" /implib:"Debug/WSView.lib" /pdbtype:sept 
+.\Debug\2DTransform.obj
+.\Debug\3DTransformation.obj
+.\Debug\BaroMeasureDlg.obj
+.\Debug\BaroPoint.obj
+.\Debug\BaroTrace.obj
+.\Debug\BaroTraceGroup.obj
+.\Debug\BaroZoom.obj
+.\Debug\ControlPoint.obj
+.\Debug\Cursor.obj
+.\Debug\Fix.obj
+.\Debug\FontCombo.obj
+.\Debug\HitList.obj
+.\Debug\Location.obj
+.\Debug\MeasuringDlg.obj
+.\Debug\ModulVer.obj
+.\Debug\StdAfx.obj
+.\Debug\SUA.obj
+.\Debug\TipWnd.obj
+.\Debug\Trace.obj
+.\Debug\TraceGroup.obj
+.\Debug\TracesPropPage.obj
+.\Debug\WSBaroCtl.obj
+.\Debug\WSBaroPpg.obj
+.\Debug\WSView.obj
+.\Debug\WSViewAboutDlg.obj
+.\Debug\WSViewCtl.obj
+.\Debug\wsviewinterface.obj
+.\Debug\WSViewPpg.obj
+.\Debug\xyzoom.obj
+.\Debug\WSView.res
+]
+Creating command line "link.exe @C:\DOCUME~1\GUYFOR~1\LOCALS~1\Temp\RSP14D.tmp"
+Creating temporary file "C:\DOCUME~1\GUYFOR~1\LOCALS~1\Temp\RSP14E.bat" with contents
+[
+@echo off
+regsvr32 /s /c ".\Debug\WSView.ocx"
+echo regsvr32 exec. time > ".\Debug\regsvr32.trg"
+]
+Creating command line "C:\DOCUME~1\GUYFOR~1\LOCALS~1\Temp\RSP14E.bat"
+Creating Type Library...
+Processing D:\Projects\wsview\WSView.odl
+WSView.odl
+Processing D:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\oaidl.idl
+oaidl.idl
+Processing D:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\objidl.idl
+objidl.idl
+Processing D:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\unknwn.idl
+unknwn.idl
+Processing D:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\wtypes.idl
+wtypes.idl
+D:\Projects\wsview\WSView.odl(48) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'bVisible' of Procedure 'SetPilotVisibility' ( Dispinterface '_DWSBaro' ) ]
+D:\Projects\wsview\WSView.odl(115) : warning MIDL2039 : interface does not conform to [oleautomation] attribute : [ Parameter 'bVisible' of Procedure 'SetPilotVisibility' ( Dispinterface '_DWSView' ) ]
+Compiling resources...
+Compiling...
+Trace.cpp
+WSViewCtl.cpp
+D:\Projects\wsview\WSViewCtl.cpp(1965) : warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+D:\Projects\wsview\WSViewCtl.cpp(2824) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+D:\Projects\wsview\WSViewCtl.cpp(2824) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+D:\Projects\wsview\WSViewCtl.cpp(2825) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+D:\Projects\wsview\WSViewCtl.cpp(2825) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+D:\Projects\wsview\WSViewCtl.cpp(3158) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Projects\wsview\WSViewCtl.cpp(3164) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Projects\wsview\WSViewCtl.cpp(3170) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Projects\wsview\WSViewCtl.cpp(3176) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Projects\wsview\WSViewCtl.cpp(3182) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Projects\wsview\WSViewCtl.cpp(3190) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Projects\wsview\WSViewCtl.cpp(3195) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+Generating Code...
+Compiling...
+MeasuringDlg.cpp
+Generating Code...
+Linking...
+   Creating library Debug/WSView.lib and object Debug/WSView.exp
+<h3>Output Window</h3>
+Registering ActiveX Control...
+
+
+
+<h3>Results</h3>
+WSView.ocx - 0 error(s), 14 warning(s)
+</pre>
+</body>
+</html>

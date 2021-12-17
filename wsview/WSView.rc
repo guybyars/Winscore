@@ -1,0 +1,376 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""WSView.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 5,0,0,2
+ PRODUCTVERSION 5,0,0,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "gfbyars.com"
+            VALUE "FileDescription", "Winscore  ActiveX Control Module"
+            VALUE "FileVersion", "5.0.0.2"
+            VALUE "InternalName", "WSView"
+            VALUE "LegalCopyright", "Copyright (C) 2018"
+            VALUE "OriginalFilename", "WSView.OCX"
+            VALUE "ProductName", "Winscore ActiveX Control Module"
+            VALUE "ProductVersion", "5.0.0.2"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_WSVIEW              BITMAP                  "WSViewCtl.bmp"
+IDB_WSBARO              BITMAP                  "WSBaroCtl.bmp"
+IDB_WSVIEW32            BITMAP                  "wsview32.bmp"
+IDB_GLYPHS              BITMAP                  "printer.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_WSVIEW DIALOG 0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_BACKGROUND_COLOR,"Static",SS_BITMAP | SS_CENTERIMAGE | SS_SUNKEN | WS_BORDER,105,18,28,12
+    PUSHBUTTON      "Change...",IDC_CHANGE_BACKGROUND_BUTTON,140,18,45,14
+    PUSHBUTTON      "Reset",IDC_RESETBUTTON,193,93,50,14
+    CONTROL         "Slider1",IDC_ALTSLIDER,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,212,17,14,64
+    COMBOBOX        IDC_COLOR_COMBO,16,18,81,132,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Vertical Scale",IDC_VERTSCALEGROUP,195,7,48,77
+    CONTROL         "Map Display",IDC_SCENERY_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,78,140,10
+    LTEXT           "Font:",IDC_STATIC,7,52,39,8
+    COMBOBOX        IDC_FONT_COMBO,47,50,97,176,CBS_DROPDOWN | CBS_OWNERDRAWFIXED | CBS_SORT | CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Color",IDC_STATIC,7,7,184,31
+END
+
+IDD_PROPPAGE_WSBARO DIALOG 0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of WSBaro Control on this dialog.",IDC_STATIC,7,25,229,16
+END
+
+IDD_ABOUTBOX_WSBARO DIALOG 34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About WSBaro Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            1,IDC_STATIC,10,10,20,20
+    LTEXT           "WSBaro Control, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 2018, ",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_WSVIEWCTL DIALOG 0, 0, 267, 51
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About WSView Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,230,7,30,14
+    CONTROL         207,IDC_STATIC,"Static",SS_BITMAP,10,10,8,8
+    LTEXT           "WSView ActiveX Control, Version",IDC_VERSION_TEXT,40,10,170,8
+    LTEXT           "Copyright (C) 2018, Guy Byars",IDC_STATIC,40,25,170,8
+END
+
+IDD_OLE_PROPPAGE_TRACES DIALOG 0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Display Length",IDC_DISPLAY_LENGTH_TEXT,18,22,80,8
+    EDITTEXT        IDC_DISPLAY_LENGTH,99,17,50,14,ES_AUTOHSCROLL
+    LTEXT           "Minutes",IDC_MINUTES_TEXT,160,23,30,8
+    CONTROL         "Show fix points",IDC_FIX_POINTS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,36,94,10
+    CONTROL         "Different Colors for Climbs and Descents",IDC_DIFFERENT_COLOR_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,51,171,10
+    CONTROL         "Show entire trace",IDC_FULL_TRACE_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,7,91,10
+END
+
+IDD_MEASURING DIALOG 0, 0, 76, 69
+STYLE DS_SETFONT | DS_3DLOOK | WS_POPUP | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Static",IDC_OUTPUT,4,2,68,8
+    LTEXT           "Static",IDC_TIME,4,12,71,8
+    LTEXT           "Static",IDC_SPEED,4,22,71,8
+    LTEXT           "Static",IDC_ALTITUDE,4,32,71,8
+    LTEXT           "Static",IDC_AVEROC,4,42,71,8
+    LTEXT           "Static",IDC_TURNPOINT_TEXT,4,52,71,8
+END
+
+IDD_BARO_MEASURE DIALOG 0, 0, 187, 110
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Barogram Data"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,3,3,180,88
+    PUSHBUTTON      "Copy to Clipboard",IDC_COPY,54,94,79,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_PROPPAGE_WSVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+
+    IDD_PROPPAGE_WSBARO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_ABOUTBOX_WSBARO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_WSVIEWCTL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_OLE_PROPPAGE_TRACES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_MEASURING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 69
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 62
+    END
+
+    IDD_BARO_MEASURE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_WSVIEW DLGINIT
+BEGIN
+    IDC_COLOR_COMBO, 0x403, 17, 0
+0x6142, 0x6b63, 0x7267, 0x756f, 0x646e, 0x4320, 0x6c6f, 0x726f, "\000" 
+    IDC_COLOR_COMBO, 0x403, 11, 0
+0x6154, 0x6b73, 0x4320, 0x6c6f, 0x726f, "\000" 
+    IDC_COLOR_COMBO, 0x403, 19, 0
+0x7453, 0x7261, 0x2074, 0x6943, 0x6372, 0x656c, 0x4320, 0x6c6f, 0x726f, 
+"\000" 
+    IDC_COLOR_COMBO, 0x403, 20, 0
+0x6946, 0x696e, 0x6873, 0x4320, 0x7269, 0x6c63, 0x2065, 0x6f43, 0x6f6c, 
+0x0072, 
+    IDC_COLOR_COMBO, 0x403, 18, 0
+0x7254, 0x6361, 0x2065, 0x6c43, 0x6d69, 0x2062, 0x6f43, 0x6f6c, 0x0072, 
+
+    IDC_COLOR_COMBO, 0x403, 15, 0
+0x6157, 0x7079, 0x696f, 0x746e, 0x4320, 0x6c6f, 0x726f, "\000" 
+    IDC_COLOR_COMBO, 0x403, 15, 0
+0x6941, 0x7372, 0x6170, 0x6563, 0x4320, 0x6c6f, 0x726f, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "WSBaro.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_POPUP_MENU MENU
+BEGIN
+    MENUITEM "Zoom",                        ID_POPUP_ZOOMWINDOW
+    MENUITEM "Zoom Out",                    ID_ZOOMOUT
+    MENUITEM "Reset",                       ID_POPUP_AUTOSCALE
+    MENUITEM "Measure",                     ID_MEASURE
+    MENUITEM "Copy",                        ID_POPUP_COPY
+    MENUITEM "Save As...",                  ID_SAVEAS
+    MENUITEM SEPARATOR
+    MENUITEM "Properties...",               ID_POPUP_PROPERTIES
+END
+
+IDR_POPUP_MENU_DEMO MENU
+BEGIN
+    MENUITEM "Zoom Out",                    ID_ZOOMOUT
+    MENUITEM "Zoom",                        ID_POPUP_ZOOMWINDOW
+    MENUITEM "Reset",                       ID_POPUP_AUTOSCALE
+    MENUITEM SEPARATOR
+    MENUITEM "Properties...",               ID_POPUP_PROPERTIES
+END
+
+IDR_BARO_POPUP MENU
+BEGIN
+    MENUITEM "Measure",                     ID_BARO_MEASURE
+    MENUITEM "Zoom",                        ID_BARO_ZOOM
+    MENUITEM "Reset",                       ID_BARO_RESET
+END
+
+IDR_BARO_POPUP_DEMO MENU
+BEGIN
+    MENUITEM "Zoom",                        ID_BARO_ZOOM
+    MENUITEM "Reset",                       ID_BARO_RESET
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND                CURSOR                  "arrow.cur"
+IDC_ROTATE              CURSOR                  "cursor1.cur"
+IDC_MEASURE             CURSOR                  "cur00001.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_WSVIEW              "Display"
+    IDS_WSVIEW_PPG          "WSView Property Page"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_WSVIEW_PPG_CAPTION  "General"
+    IDS_WSBARO_PPG          "WSBaro Property Page"
+    IDS_WSBARO_PPG_CAPTION  "General"
+    IDS_WSBARO              "WSBaro Control"
+    IDS_WSVIEW_TRACE_PPG_CAPTION "Traces"
+END
+
+STRINGTABLE
+BEGIN
+    ID_ABOUT_BOX            "Lists program version information"
+    IDS_TRACEPROPPAGE       "Trace Prop Page"
+    ID_BARO_MEASURE         "Drag to measure between two barogram points/nMeasure between two points"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "WSView.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
