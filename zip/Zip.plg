@@ -1,0 +1,64 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Zip - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\GUYB~1.THO\LOCALS~1\Temp\RSP148.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "ZLIB_DLL" /D "_AFXDLL" /Fp"Release/Zip.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\Projects\zipapi\Zip\AutoBuffer.cpp"
+"D:\Projects\zipapi\Zip\BigFile.cpp"
+"D:\Projects\zipapi\Zip\CentralDir.cpp"
+"D:\Projects\zipapi\Zip\FileHeader.cpp"
+"D:\Projects\zipapi\Zip\ZipArchive.cpp"
+"D:\Projects\zipapi\Zip\ZipException.cpp"
+"D:\Projects\zipapi\Zip\ZipInternalInfo.cpp"
+"D:\Projects\zipapi\Zip\ZipStorage.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\GUYB~1.THO\LOCALS~1\Temp\RSP148.tmp" 
+Creating temporary file "C:\DOCUME~1\GUYB~1.THO\LOCALS~1\Temp\RSP149.tmp" with contents
+[
+/nologo /MD /W4 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "ZLIB_DLL" /D "_AFXDLL" /Fp"Release/Zip.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\Projects\zipapi\Zip\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\GUYB~1.THO\LOCALS~1\Temp\RSP149.tmp" 
+Creating temporary file "C:\DOCUME~1\GUYB~1.THO\LOCALS~1\Temp\RSP14A.tmp" with contents
+[
+/nologo /out:"Release\Zip.lib" 
+.\Release\AutoBuffer.obj
+.\Release\BigFile.obj
+.\Release\CentralDir.obj
+.\Release\FileHeader.obj
+.\Release\StdAfx.obj
+.\Release\ZipArchive.obj
+.\Release\ZipException.obj
+.\Release\ZipInternalInfo.obj
+.\Release\ZipStorage.obj
+.\zlib.lib
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\GUYB~1.THO\LOCALS~1\Temp\RSP14A.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+AutoBuffer.cpp
+BigFile.cpp
+CentralDir.cpp
+FileHeader.cpp
+ZipArchive.cpp
+ZipException.cpp
+ZipInternalInfo.cpp
+ZipStorage.cpp
+Generating Code...
+Creating library...
+
+
+
+<h3>Results</h3>
+Zip.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
