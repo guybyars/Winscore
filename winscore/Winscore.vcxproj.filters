@@ -369,109 +369,36 @@
     <ClCompile Include="XMLMgr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WinscoreBar.cpp">
+    <ClCompile Include="FDRSettings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WSTreeItem.cpp">
+    <ClCompile Include="FTPClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SSAPicker.cpp">
+    <ClCompile Include="FTPUpload.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SSAContestLoginDlg.cpp">
+    <ClCompile Include="LandingCardDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Contestant1Dlg.cpp">
+    <ClCompile Include="RealtimeDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AutoScoreDlg.cpp">
+    <ClCompile Include="RealtimeInfoDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EmailSettingsDlg.cpp">
+    <ClCompile Include="RealTimePropPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Warning.cpp">
+    <ClCompile Include="ServerSettings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TaskLibraryDlg.cpp">
+    <ClCompile Include="TimeDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SelectClassDlg.cpp">
+    <ClCompile Include="WinscoreEvent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NoLogFoundStatus.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ModulVer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UIThread.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="IGCDirectories.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AutosaveOptionsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="MAKEHELP.BAT">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="res\bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\cursor1.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon2.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Logo2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\SmallLogo.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Splash.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Splsh16.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Toolbar.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Winscore.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Winscore.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\WinscoreDoc.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\inetdownload.avi" />
-    <None Include="res\upload.avi" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="resource.hm">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="res\bmp00002.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ClassDiagram2.cd" />
-    <None Include="ClassDiagram3.cd" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Winscore.rc">
@@ -845,53 +772,88 @@
     <ClInclude Include="XMLMgr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WinscoreBar.h">
+    <ClInclude Include="FDRSettings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WSTreeItem.h">
+    <ClInclude Include="FTPClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SSAPicker.h">
+    <ClInclude Include="FTPUpload.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SSAContestLoginDlg.h">
+    <ClInclude Include="LandingCardDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Contestant1Dlg.h">
+    <ClInclude Include="RealtimeDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AutoScoreDlg.h">
+    <ClInclude Include="RealtimeInfoDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EmailSettingsDlg.h">
+    <ClInclude Include="RealTimePropPage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Warning.h">
+    <ClInclude Include="ServerSettings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskLibraryDlg.h">
+    <ClInclude Include="TimeDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SelectClassDlg.h">
+    <ClInclude Include="WinscoreEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NoLogFoundStatus.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="wsversion.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ModulVer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UIThread.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IGCDirectories.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AutosaveOptionsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="MAKEHELP.BAT">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\cursor1.cur">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\icon2.ico">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\Logo2.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\SmallLogo.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\Splash.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Splsh16.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\Winscore.ico">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\Winscore.rc2">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\WinscoreDoc.ico">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\inetdownload.avi" />
+    <CustomBuild Include="res\upload.avi" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Chilkat\lib\ChilkatRelMt.lib" />
+    <Library Include="Chilkat\lib\CkBaseRelMt.lib" />
   </ItemGroup>
 </Project>

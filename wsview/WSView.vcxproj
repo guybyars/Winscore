@@ -23,18 +23,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0F5CE740-6734-439D-A42B-EE9BCE0B63C5}</ProjectGuid>
-    <SccProjectName>"$/WSView", MPAAAAAA</SccProjectName>
-    <SccAuxPath />
-    <SccLocalPath>.</SccLocalPath>
-    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
     <Keyword>MFCProj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>Dynamic</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -46,277 +55,297 @@
     <UseOfMfc>Static</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseOfMfc>Dynamic</UseOfMfc>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseOfMfc>Dynamic</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup>
-    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">.\ReleaseU\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">.\ReleaseU\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">.\WSView___Win32_Release_Min_Dep\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">.\WSView___Win32_Release_Min_Dep\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">.\DebugU\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">.\DebugU\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">true</LinkIncremental>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.ocx</TargetExt>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">
+    <OutDir>.\WSView___Win32_Release_Min_Dep\</OutDir>
+    <IntDir>.\WSView___Win32_Release_Min_Dep\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\Release/WSView.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
-      <ObjectFileName>.\Release/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-    </ClCompile>
-    <CustomBuildStep>
-      <Message>Registering ActiveX Control...</Message>
-      <Command>regsvr32 /s /c "$(TargetPath)"
-echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
-</Command>
-      <Outputs>$(OutDir)regsvr32.trg;%(Outputs)</Outputs>
-    </CustomBuildStep>
-    <Link>
-      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>.\Release/WSView.ocx</OutputFile>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
-      <ProgramDatabaseFile>.\Release/WSView.pdb</ProgramDatabaseFile>
-      <SubSystem>Windows</SubSystem>
-      <ImportLibrary>.\Release/WSView.lib</ImportLibrary>
-    </Link>
-    <Midl>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MkTypLibCompatible>true</MkTypLibCompatible>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\Release/WSView.tlb</TypeLibraryName>
-    </Midl>
-    <ResourceCompile>
-      <PreprocessorDefinitions>_AFXDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0409</Culture>
-    </ResourceCompile>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
-    <ClCompile>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\ReleaseU/WSView.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\ReleaseU/</AssemblerListingLocation>
-      <ObjectFileName>.\ReleaseU/</ObjectFileName>
-      <ProgramDataBaseFileName>.\ReleaseU/</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-    </ClCompile>
-    <CustomBuildStep>
-      <Message>Registering ActiveX Control...</Message>
-      <Command>regsvr32 /s /c "$(TargetPath)"
-echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
-</Command>
-      <Outputs>$(OutDir)regsvr32.trg;%(Outputs)</Outputs>
-    </CustomBuildStep>
-    <Link>
-      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
-      <OutputFile>.\ReleaseU/WSView.ocx</OutputFile>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
-      <ProgramDatabaseFile>.\ReleaseU/WSView.pdb</ProgramDatabaseFile>
-      <SubSystem>Windows</SubSystem>
-      <ImportLibrary>.\ReleaseU/WSView.lib</ImportLibrary>
-    </Link>
-    <Midl>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MkTypLibCompatible>true</MkTypLibCompatible>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\ReleaseU/WSView.tlb</TypeLibraryName>
-    </Midl>
-    <ResourceCompile>
-      <PreprocessorDefinitions>_AFXDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0409</Culture>
-    </ResourceCompile>
-  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <OutDir>.\DebugU\</OutDir>
+    <IntDir>.\DebugU\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <OutDir>.\ReleaseU\</OutDir>
+    <IntDir>.\ReleaseU\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">
     <ClCompile>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\WSView___Win32_Release_Min_Dep\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\WSView___Win32_Release_Min_Dep\WSView.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\WSView___Win32_Release_Min_Dep/WSView.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\WSView___Win32_Release_Min_Dep/</AssemblerListingLocation>
-      <ObjectFileName>.\WSView___Win32_Release_Min_Dep/</ObjectFileName>
-      <ProgramDataBaseFileName>.\WSView___Win32_Release_Min_Dep/</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ObjectFileName>.\WSView___Win32_Release_Min_Dep\</ObjectFileName>
+      <ProgramDataBaseFileName>.\WSView___Win32_Release_Min_Dep\</ProgramDataBaseFileName>
     </ClCompile>
-    <CustomBuildStep>
-      <Message>Registering ActiveX Control...</Message>
-      <Command>regsvr32 /s /c "$(TargetPath)"
-echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
-</Command>
-      <Outputs>$(OutDir)regsvr32.trg;%(Outputs)</Outputs>
-    </CustomBuildStep>
-    <Link>
-      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>.\WSView___Win32_Release_Min_Dep/WSView.ocx</OutputFile>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
-      <ProgramDatabaseFile>.\WSView___Win32_Release_Min_Dep/WSView.pdb</ProgramDatabaseFile>
-      <SubSystem>Windows</SubSystem>
-      <ImportLibrary>.\WSView___Win32_Release_Min_Dep/WSView.lib</ImportLibrary>
-    </Link>
     <Midl>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\WSView___Win32_Release_Min_Dep\WSView.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\WSView___Win32_Release_Min_Dep/WSView.tlb</TypeLibraryName>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\WSView___Win32_Release_Min_Dep\WSView.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\WSView___Win32_Release_Min_Dep\WSView.ocx</OutputFile>
+      <ImportLibrary>.\WSView___Win32_Release_Min_Dep\WSView.lib</ImportLibrary>
+      <AdditionalDependencies>glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
+    </Link>
+    <CustomBuildStep>
+      <Command>regsvr32 /s /c "$(TargetPath)" 
+echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
+      <Message>Registering ActiveX Control...</Message>
+      <Outputs>$(OutDir)\regsvr32.trg;%(Outputs)</Outputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_WINDLL;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\WSView.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\Debug/WSView.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
-      <ObjectFileName>.\Debug/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
-    <CustomBuildStep>
-      <Message>Registering ActiveX Control...</Message>
-      <Command>regsvr32 /s /c "$(TargetPath)"
-echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
-</Command>
-      <Outputs>$(OutDir)regsvr32.trg;%(Outputs)</Outputs>
-    </CustomBuildStep>
-    <Link>
-      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
-      <OutputFile>.\Debug/WSView.ocx</OutputFile>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\Debug/WSView.pdb</ProgramDatabaseFile>
-      <SubSystem>Windows</SubSystem>
-      <ImportLibrary>.\Debug/WSView.lib</ImportLibrary>
-    </Link>
     <Midl>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\WSView.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\Debug/WSView.tlb</TypeLibraryName>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\WSView.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Debug\WSView.ocx</OutputFile>
+      <ImportLibrary>.\Debug\WSView.lib</ImportLibrary>
+      <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
+    </Link>
+    <CustomBuildStep>
+      <Command>regsvr32 /s /c "$(TargetPath)" 
+echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
+      <Message>Registering ActiveX Control...</Message>
+      <Outputs>$(OutDir)\regsvr32.trg;%(Outputs)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_WINDLL;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\WSView.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\WSView.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\WSView.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\Release\WSView.ocx</OutputFile>
+      <ImportLibrary>.\Release\WSView.lib</ImportLibrary>
+      <AdditionalDependencies>glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
+    </Link>
+    <CustomBuildStep>
+      <Command>regsvr32 /s /c "$(TargetPath)" 
+echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
+      <Message>Registering ActiveX Control...</Message>
+      <Outputs>$(OutDir)\regsvr32.trg;%(Outputs)</Outputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
     <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_WINDLL;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\DebugU\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\DebugU\WSView.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\DebugU/WSView.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\DebugU/</AssemblerListingLocation>
-      <ObjectFileName>.\DebugU/</ObjectFileName>
-      <ProgramDataBaseFileName>.\DebugU/</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ObjectFileName>.\DebugU\</ObjectFileName>
+      <ProgramDataBaseFileName>.\DebugU\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
-    <CustomBuildStep>
-      <Message>Registering ActiveX Control...</Message>
-      <Command>regsvr32 /s /c "$(TargetPath)"
-echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
-</Command>
-      <Outputs>$(OutDir)regsvr32.trg;%(Outputs)</Outputs>
-    </CustomBuildStep>
-    <Link>
-      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
-      <OutputFile>.\DebugU/WSView.ocx</OutputFile>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\DebugU/WSView.pdb</ProgramDatabaseFile>
-      <SubSystem>Windows</SubSystem>
-      <ImportLibrary>.\DebugU/WSView.lib</ImportLibrary>
-    </Link>
     <Midl>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\DebugU\WSView.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\DebugU/WSView.tlb</TypeLibraryName>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\DebugU\WSView.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\DebugU\WSView.ocx</OutputFile>
+      <ImportLibrary>.\DebugU\WSView.lib</ImportLibrary>
+      <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
+    </Link>
+    <CustomBuildStep>
+      <Command>regsvr32 /s /c "$(TargetPath)" 
+echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
+      <Message>Registering ActiveX Control...</Message>
+      <Outputs>$(OutDir)\regsvr32.trg;%(Outputs)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_WINDLL;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\ReleaseU\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\ReleaseU\WSView.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\ReleaseU\</ObjectFileName>
+      <ProgramDataBaseFileName>.\ReleaseU\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\ReleaseU\WSView.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\ReleaseU\WSView.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LinkDLL>true</LinkDLL>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\ReleaseU\WSView.ocx</OutputFile>
+      <ImportLibrary>.\ReleaseU\WSView.lib</ImportLibrary>
+      <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
+    </Link>
+    <CustomBuildStep>
+      <Command>regsvr32 /s /c "$(TargetPath)" 
+echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
+      <Message>Registering ActiveX Control...</Message>
+      <Outputs>$(OutDir)\regsvr32.trg;%(Outputs)</Outputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="2DTransform.cpp" />
@@ -335,11 +364,16 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
     <ClCompile Include="MeasuringDlg.cpp" />
     <ClCompile Include="ModulVer.cpp" />
     <ClCompile Include="StdAfx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">stdafx.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="SUA.cpp" />
     <ClCompile Include="TipWnd.cpp" />
@@ -356,38 +390,33 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg"
     <ClCompile Include="xyzoom.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="WSView.def" />
-    <None Include="arrow.cur" />
-    <None Include="cur00001.cur" />
-    <None Include="cursor1.cur" />
-    <None Include="printer.bmp" />
-    <None Include="WSBaro.ico" />
-    <None Include="WSBaroCtl.bmp" />
-    <None Include="wsview32.bmp" />
-    <None Include="WSViewCtl.bmp" />
-    <None Include="ReadMe.txt" />
+    <CustomBuild Include="WSView.def" />
+    <CustomBuild Include="arrow.cur" />
+    <CustomBuild Include="cur00001.cur" />
+    <CustomBuild Include="cursor1.cur" />
+    <CustomBuild Include="printer.bmp" />
+    <CustomBuild Include="WSBaro.ico" />
+    <CustomBuild Include="WSBaroCtl.bmp" />
+    <CustomBuild Include="wsview32.bmp" />
+    <CustomBuild Include="WSViewCtl.bmp" />
+    <CustomBuild Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="WSView.odl">
-      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WSView_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">WSView_h.h</HeaderFileName>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Win32</TargetEnvironment>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WSView_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WSView_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">WSView_h.h</HeaderFileName>
     </Midl>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WSView.rc">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OUTDIR)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">$(OUTDIR)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OUTDIR)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">$(OUTDIR)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">$(OUTDIR)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
