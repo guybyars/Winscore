@@ -85,13 +85,13 @@
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
-    <IntDir>.\Debug\</IntDir>
+    <OutDir>..\..\build\wsview\Debug\</OutDir>
+    <IntDir>..\..\build\wsview\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\Release\</OutDir>
-    <IntDir>.\Release\</IntDir>
+    <OutDir>..\..\build\wsview\Release\</OutDir>
+    <IntDir>..\..\build\wsview\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
@@ -163,18 +163,18 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
       <MinimalRebuild>true</MinimalRebuild>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_WINDLL;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
-      <PrecompiledHeaderOutputFile>.\Debug\WSView.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>..\..\build\wsview\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>..\..\build\wsview\Debug\WSView.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <ObjectFileName>.\Debug\</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <ObjectFileName>..\..\build\wsview\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\build\wsview\Debug\</ProgramDataBaseFileName>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\Debug\WSView.tlb</TypeLibraryName>
+      <TypeLibraryName>..\..\build\wsview\Debug\WSView.tlb</TypeLibraryName>
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
@@ -191,12 +191,12 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
       <LinkDLL>true</LinkDLL>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>.\Debug\WSView.ocx</OutputFile>
-      <ImportLibrary>.\Debug\WSView.lib</ImportLibrary>
+      <OutputFile>..\..\build\wsview\Debug\WSView.ocx</OutputFile>
+      <ImportLibrary>..\..\build\wsview\debug\WSView.lib</ImportLibrary>
       <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
     </Link>
     <CustomBuildStep>
-      <Command>regsvr32 /s /c "$(TargetPath)" 
+      <Command>regsvr32 /s /c "..\..\build\wsview\Debug\WSView.ocx" 
 echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
       <Message>Registering ActiveX Control...</Message>
       <Outputs>$(OutDir)\regsvr32.trg;%(Outputs)</Outputs>
@@ -212,17 +212,17 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_WINDLL;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
-      <PrecompiledHeaderOutputFile>.\Release\WSView.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>..\..\build\wsview\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>..\..\build\wsview\Release\WSView.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <ObjectFileName>.\Release\</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <ObjectFileName>..\..\build\wsview\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\build\wsview\Release\</ProgramDataBaseFileName>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\Release\WSView.tlb</TypeLibraryName>
+      <TypeLibraryName>..\..\build\wsview\Release\WSView.tlb</TypeLibraryName>
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
@@ -238,13 +238,13 @@ echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <LinkDLL>true</LinkDLL>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>.\Release\WSView.ocx</OutputFile>
-      <ImportLibrary>.\Release\WSView.lib</ImportLibrary>
+      <OutputFile>..\..\build\wsview\Release\WSView.ocx</OutputFile>
+      <ImportLibrary>..\..\build\wsview\debug\WSView.lib</ImportLibrary>
       <AdditionalDependencies>glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
     </Link>
     <CustomBuildStep>
-      <Command>regsvr32 /s /c "$(TargetPath)" 
+      <Command>regsvr32 /s /c "..\..\build\wsview\Release\WSView.ocx" 
 echo regsvr32 exec. time &gt; "$(OutDir)regsvr32.trg" </Command>
       <Message>Registering ActiveX Control...</Message>
       <Outputs>$(OutDir)\regsvr32.trg;%(Outputs)</Outputs>

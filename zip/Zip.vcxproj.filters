@@ -69,10 +69,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Appnote.txt" />
-    <None Include="Readme.txt" />
+    <Library Include="zlib.lib" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="zlib.lib" />
+    <CustomBuild Include="Appnote.txt" />
+    <CustomBuild Include="Readme.txt" />
+    <CustomBuild Include="Zip.htm" />
   </ItemGroup>
 </Project>

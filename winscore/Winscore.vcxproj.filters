@@ -13,6 +13,9 @@
       <UniqueIdentifier>{1ef3a598-814e-427f-888c-3b2a5700ed03}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
+    <Filter Include="Header Files\Chilkat">
+      <UniqueIdentifier>{b783157e-97f6-41fd-a71e-e761a9481bda}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ACComboBox.cpp">
@@ -372,31 +375,46 @@
     <ClCompile Include="FDRSettings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FTPClient.cpp">
+    <ClCompile Include="SSAPicker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FTPUpload.cpp">
+    <ClCompile Include="IGCDirectories.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LandingCardDlg.cpp">
+    <ClCompile Include="Warning.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RealtimeDlg.cpp">
+    <ClCompile Include="AutosaveOptionsDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RealtimeInfoDlg.cpp">
+    <ClCompile Include="NoLogFoundStatus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RealTimePropPage.cpp">
+    <ClCompile Include="SelectClassDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ServerSettings.cpp">
+    <ClCompile Include="ModulVer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TimeDlg.cpp">
+    <ClCompile Include="SSAContestLoginDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WinscoreEvent.cpp">
+    <ClCompile Include="WinscoreBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskLibraryDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WSTreeItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoScoreDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Contestant1Dlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EmailSettingsDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -775,32 +793,1217 @@
     <ClInclude Include="FDRSettings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FTPClient.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FTPUpload.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="LandingCardDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RealtimeDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RealtimeInfoDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RealTimePropPage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ServerSettings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TimeDlg.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Chilkat\include\C_CkRarEntry.h">
+      <Filter>Header Files\Chilkat</Filter>
     </ClInclude>
-    <ClInclude Include="WinscoreEvent.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Chilkat\include\C_CkRest.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkRestW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkRsa.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkRsaW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkRss.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkRssW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkScp.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkScpW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkServerSentEvent.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkServerSentEventW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSettings.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSFtp.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSFtpDir.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSFtpDirW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSFtpFile.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSFtpFileW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSFtpW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSocket.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSocketW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSpider.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSpiderW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSsh.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSshKey.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSshKeyW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSshTunnel.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSshTunnelW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkSshW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkStream.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkStreamW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkString.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkStringArray.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkStringArrayW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkStringBuilder.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkStringBuilderW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkStringTable.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkStringTableW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkTar.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkTarW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkTask.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkTaskChain.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkTaskChainW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkTaskW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkTrustedRoots.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkTrustedRootsW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkUnixCompress.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkUnixCompressW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkUpload.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkUploadW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkUrl.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkUrlW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkXml.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkXmlCertVault.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkXmlCertVaultW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkXmlW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkXmp.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkXmpW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkZip.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkZipCrc.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkZipCrcW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkZipEntry.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkZipEntryW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkZipW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_Pfx.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_PfxW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\FileTime.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\int64.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\SystemTime.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDkimW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDsa.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDsaW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDtObj.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDtObjW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkEcc.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkEccW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkEmail.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkEmailBundle.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkEmailBundleW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkEmailW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkFileAccess.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkFileAccessW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkFtp2.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkFtp2W.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkGlobal.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkGlobalW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkGzip.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkGzipW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHashtable.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHashtableW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHtmlToText.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHtmlToTextW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHtmlToXml.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHtmlToXmlW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHttp.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHttpRequest.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHttpRequestW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHttpResponse.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHttpResponseW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkHttpW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkImap.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkImapW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkJavaKeyStore.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkJavaKeyStoreW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkJsonArray.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkJsonArrayW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkJsonObject.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkJsonObjectW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkJwt.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkJwtW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkKeyContainer.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkKeyContainerW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkLog.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkLogW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkMailboxes.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkMailboxesW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkMailMan.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkMailManW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkMessageSet.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkMessageSetW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkMht.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkMhtW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkMime.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkMimeW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkNtlm.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkNtlmW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkOAuth1.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkOAuth1W.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkOAuth2.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkOAuth2W.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkPem.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkPemW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkPfx.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkPfxW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkPrivateKey.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkPrivateKeyW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkPrng.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkPrngW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkPublicKey.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkPublicKeyW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkRar.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_BinData.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_BinDataW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAsn.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAsnW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAtom.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAtomW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAuthAws.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAuthAwsW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAuthAzureAD.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAuthAzureADW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAuthAzureStorage.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAuthAzureStorageW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAuthGoogle.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkAuthGoogleW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkBinData.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkBinDataW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkBounce.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkBounceW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkByteData.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkBz2.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkBz2W.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCache.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCacheW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCert.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCertChain.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCertChainW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCertStore.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCertStoreW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCertW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCgi.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCgiW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCharset.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCharsetW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCompression.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCompressionW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCreateCS.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCreateCSW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCrypt2.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCrypt2W.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCsp.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCspW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCsv.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkCsvW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDateTime.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDateTimeW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDh.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDhW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDirTree.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDirTreeW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\C_CkDkim.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\ck_inttypes.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkUnixCompressW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkUpload.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkUploadW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkUrl.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkUrlW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkWideCharBase.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkXml.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkXmlCertVault.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkXmlCertVaultW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkXmlW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkXmp.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkXmpW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkZip.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkZipCrc.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkZipCrcW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkZipEntry.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkZipEntryW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkZipProgress.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkZipProgressW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkZipW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkObject.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkObjectArray.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkPem.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkPemW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkPfx.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkPfxW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkPrivateKey.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkPrivateKeyW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkPrng.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkPrngW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkPublicKey.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkPublicKeyW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkRar.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkRarEntry.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkRegistry.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkRest.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkRestW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkRsa.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkRsaW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkRss.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkRssW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkScp.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkScpW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkServerSentEvent.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkServerSentEventW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkService.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSettings.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSFtp.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSFtpDir.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSFtpDirW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSFtpFile.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSFtpFileW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSFtpProgress.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSFtpProgressW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSFtpW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSocket.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSocketW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSpider.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSpiderW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSsh.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSshKey.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSshKeyW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSshTunnel.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSshTunnelW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkSshW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkStream.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkStreamW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkString.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkStringArray.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkStringArrayW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkStringBuilder.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkStringBuilderW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkStringTable.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkStringTableW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkTar.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkTarProgress.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkTarProgressW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkTarW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkTask.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkTaskChain.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkTaskChainW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkTaskW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkTrustedRoots.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkTrustedRootsW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkUnixCompress.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkFtp2.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkFtp2Progress.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkFtp2ProgressW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkFtp2W.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkGlobal.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkGlobalW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkGzip.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkGzipW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHashtable.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHashtableW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHtmlToText.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHtmlToTextW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHtmlToXml.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHtmlToXmlW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHttp.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHttpProgress.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHttpProgressW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHttpRequest.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHttpRequestW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHttpResponse.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHttpResponseW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkHttpW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkImap.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkImapW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkJavaKeyStore.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkJavaKeyStoreW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkJsonArray.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkJsonArrayW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkJsonObject.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkJsonObjectW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkJwt.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkJwtW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkKeyContainer.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkKeyContainerW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkLog.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkLogW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMailboxes.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMailboxesW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMailMan.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMailManProgress.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMailManProgressW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMailManW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMessageSet.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMessageSetW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMht.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMhtW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMime.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMimeW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkMultiByteBase.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkNtlm.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkNtlmW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkOAuth1.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkOAuth1W.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkOAuth2.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkOAuth2W.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAsn.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAsnW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAtom.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAtomW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAuthAws.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAuthAwsW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAuthAzureAD.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAuthAzureADW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAuthAzureStorage.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAuthAzureStorageW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAuthGoogle.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkAuthGoogleW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkBaseProgress.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkBaseProgressW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkBinData.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkBinDataW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkBounce.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkBounceW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkByteData.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkBz2.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkBz2W.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCache.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCacheW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCert.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCertChain.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCertChainW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCertStore.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCertStoreW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCertW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCgi.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCgiW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCharset.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCharsetW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkClassWithCallbacks.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkClassWithCallbacksW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCompression.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCompressionW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCreateCS.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCreateCSW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCrypt2.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCrypt2W.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCsp.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCspW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCsv.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkCsvW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDateTime.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDateTimeW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDh.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDhW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDirTree.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDirTreeW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDkim.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDkimW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDsa.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDsaW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDtObj.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkDtObjW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkEcc.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkEccW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkEmail.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkEmailBundle.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkEmailBundleW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkEmailW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkFileAccess.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\CkFileAccessW.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\allC.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\allUnicode.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\allUnicodeC.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\Chilkat_C.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="Chilkat\include\chilkatDefs.h">
+      <Filter>Header Files\Chilkat</Filter>
+    </ClInclude>
+    <ClInclude Include="AutosaveOptionsDlg.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -851,9 +2054,5 @@
     </CustomBuild>
     <CustomBuild Include="res\inetdownload.avi" />
     <CustomBuild Include="res\upload.avi" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="Chilkat\lib\ChilkatRelMt.lib" />
-    <Library Include="Chilkat\lib\CkBaseRelMt.lib" />
   </ItemGroup>
 </Project>

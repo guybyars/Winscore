@@ -49,13 +49,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\Release\</OutDir>
-    <IntDir>.\Release\</IntDir>
+    <OutDir>..\..\build\winscore\Release\</OutDir>
+    <IntDir>..\..\build\winscore\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
-    <IntDir>.\Debug\</IntDir>
+    <OutDir>..\..\build\winscore\Debug\</OutDir>
+    <IntDir>..\..\build\winscore\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -68,14 +68,14 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
       <TreatWarningAsError>false</TreatWarningAsError>
-      <AdditionalIncludeDirectories>../zip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Chilkat/include;../zip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
-      <PrecompiledHeaderOutputFile>.\Release\Winscore.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>..\..\build\winscore\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>..\..\build\winscore\Release\Winscore.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <ObjectFileName>.\Release\</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <ObjectFileName>..\..\build\winscore\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\build\winscore\Release\</ProgramDataBaseFileName>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -91,15 +91,17 @@
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Release\Winscore.bsc</OutputFile>
+      <OutputFile>..\..\build\winscore\Release\Winscore.bsc</OutputFile>
     </Bscmake>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>.\Release\Winscore.exe</OutputFile>
-      <AdditionalDependencies>CAItrans.lib;../zip/release/zip.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <OutputFile>..\..\build\winscore\Release\Winscore.exe</OutputFile>
+      <AdditionalDependencies>CAItrans.lib;..\..\build\zip\Release\zip.lib;Chilkat/lib/ChilkatRelDll.lib;crypt32.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -112,15 +114,15 @@
       <WarningLevel>Level3</WarningLevel>
       <MinimalRebuild>true</MinimalRebuild>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <AdditionalIncludeDirectories>../zip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Chilkat/include;../zip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <AssemblerListingLocation>..\..\build\winscore\Debug\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
-      <PrecompiledHeaderOutputFile>.\Debug\Winscore.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>..\..\build\winscore\Debug\Winscore.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <ObjectFileName>.\Debug\</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <ObjectFileName>..\..\build\winscore\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\build\winscore\Debug\</ProgramDataBaseFileName>
     </ClCompile>
     <PreLinkEvent>
       <Command>Makehelp.bat</Command>
@@ -140,14 +142,17 @@
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Debug\Winscore.bsc</OutputFile>
+      <OutputFile>..\..\build\winscore\Debug\Winscore.bsc</OutputFile>
     </Bscmake>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>.\Debug\Winscore.exe</OutputFile>
-      <AdditionalDependencies>mfc42d.lib;caitrans.lib;../zip/debug/zip.lib;crypt32.lib;wininet.lib;rpcrt4.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\build\winscore\Debug\Winscore.exe</OutputFile>
+      <AdditionalDependencies>caitrans.lib;../../build/zip/debug/zip.lib;crypt32.lib;Chilkat/lib/ChilkatDbgDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -155,6 +160,8 @@
     <ClCompile Include="AddTurnpointDlg.cpp" />
     <ClCompile Include="AlternateStartDlg.cpp" />
     <ClCompile Include="AutoExport.cpp" />
+    <ClCompile Include="AutosaveOptionsDlg.cpp" />
+    <ClCompile Include="AutoScoreDlg.cpp" />
     <ClCompile Include="Averager.cpp" />
     <ClCompile Include="bitmappicture.cpp" />
     <ClCompile Include="CalculateDlg.cpp" />
@@ -166,6 +173,7 @@
     <ClCompile Include="ClassPropSheet.cpp" />
     <ClCompile Include="ClassTabCtrl.cpp" />
     <ClCompile Include="Contestant.cpp" />
+    <ClCompile Include="Contestant1Dlg.cpp" />
     <ClCompile Include="ContestantAddress.cpp" />
     <ClCompile Include="ContestantDlg.cpp" />
     <ClCompile Include="ContestantList.cpp" />
@@ -178,6 +186,7 @@
     <ClCompile Include="DirDialog.cpp" />
     <ClCompile Include="DontShowDlg.cpp" />
     <ClCompile Include="EditFlightDlg.cpp" />
+    <ClCompile Include="EmailSettingsDlg.cpp" />
     <ClCompile Include="EventList.cpp" />
     <ClCompile Include="ExcludeContestantsDlg.cpp" />
     <ClCompile Include="ExportFlightFileDlg.cpp" />
@@ -198,8 +207,6 @@
     <ClCompile Include="FlightLogTransferSettings.cpp" />
     <ClCompile Include="FlightSearchFoldersDlg.cpp" />
     <ClCompile Include="FlightStream.cpp" />
-    <ClCompile Include="FTPClient.cpp" />
-    <ClCompile Include="FTPUpload.cpp" />
     <ClCompile Include="Gate.cpp" />
     <ClCompile Include="GateDlg.cpp" />
     <ClCompile Include="GliderInfo.cpp" />
@@ -208,6 +215,7 @@
     <ClCompile Include="GridPositionsDlg.cpp" />
     <ClCompile Include="HandicapCalcDlg.cpp" />
     <ClCompile Include="HScrollListBox.cpp" />
+    <ClCompile Include="IGCDirectories.cpp" />
     <ClCompile Include="IGCFile.cpp" />
     <ClCompile Include="ImportFlightsDlg.cpp" />
     <ClCompile Include="ImportFlightSettings.cpp" />
@@ -215,7 +223,6 @@
     <ClCompile Include="InvalidLegDlg.cpp" />
     <ClCompile Include="InvalidLegList.cpp" />
     <ClCompile Include="LandingCard.cpp" />
-    <ClCompile Include="LandingCardDlg.cpp" />
     <ClCompile Include="LandingCardList.cpp" />
     <ClCompile Include="LandingLocationDlg.cpp" />
     <ClCompile Include="LandoutDlg.cpp" />
@@ -224,6 +231,8 @@
     <ClCompile Include="Location.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="Median.cpp" />
+    <ClCompile Include="ModulVer.cpp" />
+    <ClCompile Include="NoLogFoundStatus.cpp" />
     <ClCompile Include="Penality.cpp" />
     <ClCompile Include="PenalityDlg.cpp" />
     <ClCompile Include="PenalityList.cpp" />
@@ -232,19 +241,18 @@
     <ClCompile Include="PrintGridDlg.cpp" />
     <ClCompile Include="ProgressBar.cpp" />
     <ClCompile Include="ProgressDlg.cpp" />
-    <ClCompile Include="RealtimeDlg.cpp" />
-    <ClCompile Include="RealtimeInfoDlg.cpp" />
-    <ClCompile Include="RealTimePropPage.cpp" />
     <ClCompile Include="ResizingDialog.cpp" />
     <ClCompile Include="ScoreRecord.cpp" />
     <ClCompile Include="ScoreRecordList.cpp" />
     <ClCompile Include="ScoreReportDlg.cpp" />
     <ClCompile Include="ScoreServerDlg.cpp" />
     <ClCompile Include="ScoreSheetListCtrl.cpp" />
-    <ClCompile Include="ServerSettings.cpp" />
+    <ClCompile Include="SelectClassDlg.cpp" />
     <ClCompile Include="ShowWarningsDlg.cpp" />
     <ClCompile Include="SortListCtrl.cpp" />
     <ClCompile Include="Splash.cpp" />
+    <ClCompile Include="SSAContestLoginDlg.cpp" />
+    <ClCompile Include="SSAPicker.cpp" />
     <ClCompile Include="StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
@@ -261,27 +269,29 @@
     <ClCompile Include="TaskDisplayDlg.cpp" />
     <ClCompile Include="TaskDlg.cpp" />
     <ClCompile Include="TaskInfoDlg.cpp" />
+    <ClCompile Include="TaskLibraryDlg.cpp" />
     <ClCompile Include="TaskList.cpp" />
     <ClCompile Include="TaskTimeDlg.cpp" />
     <ClCompile Include="TaskTurnpointsDlg.cpp" />
-    <ClCompile Include="TimeDlg.cpp" />
     <ClCompile Include="Turnpoint.cpp" />
     <ClCompile Include="TurnpointArray.cpp" />
     <ClCompile Include="TurnpointCombo.cpp" />
     <ClCompile Include="TurnpointEdit.cpp" />
     <ClCompile Include="TurnpointListCtrl.cpp" />
     <ClCompile Include="TurnpointPickerDlg.cpp" />
+    <ClCompile Include="Warning.cpp" />
     <ClCompile Include="WindDlg.cpp" />
     <ClCompile Include="Winscore.cpp" />
+    <ClCompile Include="WinscoreBar.cpp" />
     <ClCompile Include="WinscoreDlgBar.cpp" />
     <ClCompile Include="WinscoreDoc.cpp" />
-    <ClCompile Include="WinscoreEvent.cpp" />
     <ClCompile Include="WinscoreFonts.cpp" />
     <ClCompile Include="WinscoreListCtrl.cpp" />
     <ClCompile Include="WinscoreView.cpp" />
     <ClCompile Include="wsbaro.cpp" />
     <ClCompile Include="WSClass.cpp" />
     <ClCompile Include="WSSingleDocTemplate.cpp" />
+    <ClCompile Include="WSTreeItem.cpp" />
     <ClCompile Include="wsview.cpp" />
     <ClCompile Include="XMLMgr.cpp" />
   </ItemGroup>
@@ -320,10 +330,412 @@
     <ClInclude Include="AddTurnpointDlg.h" />
     <ClInclude Include="AlternateStartDlg.h" />
     <ClInclude Include="AutoExport.h" />
+    <ClInclude Include="AutosaveOptionsDlg.h" />
     <ClInclude Include="Averager.h" />
     <ClInclude Include="bitmappicture.h" />
     <ClInclude Include="CalculateDlg.h" />
     <ClInclude Include="ChangeTurnpointLocDlg.h" />
+    <ClInclude Include="Chilkat\include\allC.h" />
+    <ClInclude Include="Chilkat\include\allUnicode.h" />
+    <ClInclude Include="Chilkat\include\allUnicodeC.h" />
+    <ClInclude Include="Chilkat\include\chilkatDefs.h" />
+    <ClInclude Include="Chilkat\include\Chilkat_C.h" />
+    <ClInclude Include="Chilkat\include\CkAsn.h" />
+    <ClInclude Include="Chilkat\include\CkAsnW.h" />
+    <ClInclude Include="Chilkat\include\CkAtom.h" />
+    <ClInclude Include="Chilkat\include\CkAtomW.h" />
+    <ClInclude Include="Chilkat\include\CkAuthAws.h" />
+    <ClInclude Include="Chilkat\include\CkAuthAwsW.h" />
+    <ClInclude Include="Chilkat\include\CkAuthAzureAD.h" />
+    <ClInclude Include="Chilkat\include\CkAuthAzureADW.h" />
+    <ClInclude Include="Chilkat\include\CkAuthAzureStorage.h" />
+    <ClInclude Include="Chilkat\include\CkAuthAzureStorageW.h" />
+    <ClInclude Include="Chilkat\include\CkAuthGoogle.h" />
+    <ClInclude Include="Chilkat\include\CkAuthGoogleW.h" />
+    <ClInclude Include="Chilkat\include\CkBaseProgress.h" />
+    <ClInclude Include="Chilkat\include\CkBaseProgressW.h" />
+    <ClInclude Include="Chilkat\include\CkBinData.h" />
+    <ClInclude Include="Chilkat\include\CkBinDataW.h" />
+    <ClInclude Include="Chilkat\include\CkBounce.h" />
+    <ClInclude Include="Chilkat\include\CkBounceW.h" />
+    <ClInclude Include="Chilkat\include\CkByteData.h" />
+    <ClInclude Include="Chilkat\include\CkBz2.h" />
+    <ClInclude Include="Chilkat\include\CkBz2W.h" />
+    <ClInclude Include="Chilkat\include\CkCache.h" />
+    <ClInclude Include="Chilkat\include\CkCacheW.h" />
+    <ClInclude Include="Chilkat\include\CkCert.h" />
+    <ClInclude Include="Chilkat\include\CkCertChain.h" />
+    <ClInclude Include="Chilkat\include\CkCertChainW.h" />
+    <ClInclude Include="Chilkat\include\CkCertStore.h" />
+    <ClInclude Include="Chilkat\include\CkCertStoreW.h" />
+    <ClInclude Include="Chilkat\include\CkCertW.h" />
+    <ClInclude Include="Chilkat\include\CkCgi.h" />
+    <ClInclude Include="Chilkat\include\CkCgiW.h" />
+    <ClInclude Include="Chilkat\include\CkCharset.h" />
+    <ClInclude Include="Chilkat\include\CkCharsetW.h" />
+    <ClInclude Include="Chilkat\include\CkClassWithCallbacks.h" />
+    <ClInclude Include="Chilkat\include\CkClassWithCallbacksW.h" />
+    <ClInclude Include="Chilkat\include\CkCompression.h" />
+    <ClInclude Include="Chilkat\include\CkCompressionW.h" />
+    <ClInclude Include="Chilkat\include\CkCreateCS.h" />
+    <ClInclude Include="Chilkat\include\CkCreateCSW.h" />
+    <ClInclude Include="Chilkat\include\CkCrypt2.h" />
+    <ClInclude Include="Chilkat\include\CkCrypt2W.h" />
+    <ClInclude Include="Chilkat\include\CkCsp.h" />
+    <ClInclude Include="Chilkat\include\CkCspW.h" />
+    <ClInclude Include="Chilkat\include\CkCsv.h" />
+    <ClInclude Include="Chilkat\include\CkCsvW.h" />
+    <ClInclude Include="Chilkat\include\CkDateTime.h" />
+    <ClInclude Include="Chilkat\include\CkDateTimeW.h" />
+    <ClInclude Include="Chilkat\include\CkDh.h" />
+    <ClInclude Include="Chilkat\include\CkDhW.h" />
+    <ClInclude Include="Chilkat\include\CkDirTree.h" />
+    <ClInclude Include="Chilkat\include\CkDirTreeW.h" />
+    <ClInclude Include="Chilkat\include\CkDkim.h" />
+    <ClInclude Include="Chilkat\include\CkDkimW.h" />
+    <ClInclude Include="Chilkat\include\CkDsa.h" />
+    <ClInclude Include="Chilkat\include\CkDsaW.h" />
+    <ClInclude Include="Chilkat\include\CkDtObj.h" />
+    <ClInclude Include="Chilkat\include\CkDtObjW.h" />
+    <ClInclude Include="Chilkat\include\CkEcc.h" />
+    <ClInclude Include="Chilkat\include\CkEccW.h" />
+    <ClInclude Include="Chilkat\include\CkEmail.h" />
+    <ClInclude Include="Chilkat\include\CkEmailBundle.h" />
+    <ClInclude Include="Chilkat\include\CkEmailBundleW.h" />
+    <ClInclude Include="Chilkat\include\CkEmailW.h" />
+    <ClInclude Include="Chilkat\include\CkFileAccess.h" />
+    <ClInclude Include="Chilkat\include\CkFileAccessW.h" />
+    <ClInclude Include="Chilkat\include\CkFtp2.h" />
+    <ClInclude Include="Chilkat\include\CkFtp2Progress.h" />
+    <ClInclude Include="Chilkat\include\CkFtp2ProgressW.h" />
+    <ClInclude Include="Chilkat\include\CkFtp2W.h" />
+    <ClInclude Include="Chilkat\include\CkGlobal.h" />
+    <ClInclude Include="Chilkat\include\CkGlobalW.h" />
+    <ClInclude Include="Chilkat\include\CkGzip.h" />
+    <ClInclude Include="Chilkat\include\CkGzipW.h" />
+    <ClInclude Include="Chilkat\include\CkHashtable.h" />
+    <ClInclude Include="Chilkat\include\CkHashtableW.h" />
+    <ClInclude Include="Chilkat\include\CkHtmlToText.h" />
+    <ClInclude Include="Chilkat\include\CkHtmlToTextW.h" />
+    <ClInclude Include="Chilkat\include\CkHtmlToXml.h" />
+    <ClInclude Include="Chilkat\include\CkHtmlToXmlW.h" />
+    <ClInclude Include="Chilkat\include\CkHttp.h" />
+    <ClInclude Include="Chilkat\include\CkHttpProgress.h" />
+    <ClInclude Include="Chilkat\include\CkHttpProgressW.h" />
+    <ClInclude Include="Chilkat\include\CkHttpRequest.h" />
+    <ClInclude Include="Chilkat\include\CkHttpRequestW.h" />
+    <ClInclude Include="Chilkat\include\CkHttpResponse.h" />
+    <ClInclude Include="Chilkat\include\CkHttpResponseW.h" />
+    <ClInclude Include="Chilkat\include\CkHttpW.h" />
+    <ClInclude Include="Chilkat\include\CkImap.h" />
+    <ClInclude Include="Chilkat\include\CkImapW.h" />
+    <ClInclude Include="Chilkat\include\CkJavaKeyStore.h" />
+    <ClInclude Include="Chilkat\include\CkJavaKeyStoreW.h" />
+    <ClInclude Include="Chilkat\include\CkJsonArray.h" />
+    <ClInclude Include="Chilkat\include\CkJsonArrayW.h" />
+    <ClInclude Include="Chilkat\include\CkJsonObject.h" />
+    <ClInclude Include="Chilkat\include\CkJsonObjectW.h" />
+    <ClInclude Include="Chilkat\include\CkJwt.h" />
+    <ClInclude Include="Chilkat\include\CkJwtW.h" />
+    <ClInclude Include="Chilkat\include\CkKeyContainer.h" />
+    <ClInclude Include="Chilkat\include\CkKeyContainerW.h" />
+    <ClInclude Include="Chilkat\include\CkLog.h" />
+    <ClInclude Include="Chilkat\include\CkLogW.h" />
+    <ClInclude Include="Chilkat\include\CkMailboxes.h" />
+    <ClInclude Include="Chilkat\include\CkMailboxesW.h" />
+    <ClInclude Include="Chilkat\include\CkMailMan.h" />
+    <ClInclude Include="Chilkat\include\CkMailManProgress.h" />
+    <ClInclude Include="Chilkat\include\CkMailManProgressW.h" />
+    <ClInclude Include="Chilkat\include\CkMailManW.h" />
+    <ClInclude Include="Chilkat\include\CkMessageSet.h" />
+    <ClInclude Include="Chilkat\include\CkMessageSetW.h" />
+    <ClInclude Include="Chilkat\include\CkMht.h" />
+    <ClInclude Include="Chilkat\include\CkMhtW.h" />
+    <ClInclude Include="Chilkat\include\CkMime.h" />
+    <ClInclude Include="Chilkat\include\CkMimeW.h" />
+    <ClInclude Include="Chilkat\include\CkMultiByteBase.h" />
+    <ClInclude Include="Chilkat\include\CkNtlm.h" />
+    <ClInclude Include="Chilkat\include\CkNtlmW.h" />
+    <ClInclude Include="Chilkat\include\CkOAuth1.h" />
+    <ClInclude Include="Chilkat\include\CkOAuth1W.h" />
+    <ClInclude Include="Chilkat\include\CkOAuth2.h" />
+    <ClInclude Include="Chilkat\include\CkOAuth2W.h" />
+    <ClInclude Include="Chilkat\include\CkObject.h" />
+    <ClInclude Include="Chilkat\include\CkObjectArray.h" />
+    <ClInclude Include="Chilkat\include\CkPem.h" />
+    <ClInclude Include="Chilkat\include\CkPemW.h" />
+    <ClInclude Include="Chilkat\include\CkPfx.h" />
+    <ClInclude Include="Chilkat\include\CkPfxW.h" />
+    <ClInclude Include="Chilkat\include\CkPrivateKey.h" />
+    <ClInclude Include="Chilkat\include\CkPrivateKeyW.h" />
+    <ClInclude Include="Chilkat\include\CkPrng.h" />
+    <ClInclude Include="Chilkat\include\CkPrngW.h" />
+    <ClInclude Include="Chilkat\include\CkPublicKey.h" />
+    <ClInclude Include="Chilkat\include\CkPublicKeyW.h" />
+    <ClInclude Include="Chilkat\include\CkRar.h" />
+    <ClInclude Include="Chilkat\include\CkRarEntry.h" />
+    <ClInclude Include="Chilkat\include\CkRegistry.h" />
+    <ClInclude Include="Chilkat\include\CkRest.h" />
+    <ClInclude Include="Chilkat\include\CkRestW.h" />
+    <ClInclude Include="Chilkat\include\CkRsa.h" />
+    <ClInclude Include="Chilkat\include\CkRsaW.h" />
+    <ClInclude Include="Chilkat\include\CkRss.h" />
+    <ClInclude Include="Chilkat\include\CkRssW.h" />
+    <ClInclude Include="Chilkat\include\CkScp.h" />
+    <ClInclude Include="Chilkat\include\CkScpW.h" />
+    <ClInclude Include="Chilkat\include\CkServerSentEvent.h" />
+    <ClInclude Include="Chilkat\include\CkServerSentEventW.h" />
+    <ClInclude Include="Chilkat\include\CkService.h" />
+    <ClInclude Include="Chilkat\include\CkSettings.h" />
+    <ClInclude Include="Chilkat\include\CkSFtp.h" />
+    <ClInclude Include="Chilkat\include\CkSFtpDir.h" />
+    <ClInclude Include="Chilkat\include\CkSFtpDirW.h" />
+    <ClInclude Include="Chilkat\include\CkSFtpFile.h" />
+    <ClInclude Include="Chilkat\include\CkSFtpFileW.h" />
+    <ClInclude Include="Chilkat\include\CkSFtpProgress.h" />
+    <ClInclude Include="Chilkat\include\CkSFtpProgressW.h" />
+    <ClInclude Include="Chilkat\include\CkSFtpW.h" />
+    <ClInclude Include="Chilkat\include\CkSocket.h" />
+    <ClInclude Include="Chilkat\include\CkSocketW.h" />
+    <ClInclude Include="Chilkat\include\CkSpider.h" />
+    <ClInclude Include="Chilkat\include\CkSpiderW.h" />
+    <ClInclude Include="Chilkat\include\CkSsh.h" />
+    <ClInclude Include="Chilkat\include\CkSshKey.h" />
+    <ClInclude Include="Chilkat\include\CkSshKeyW.h" />
+    <ClInclude Include="Chilkat\include\CkSshTunnel.h" />
+    <ClInclude Include="Chilkat\include\CkSshTunnelW.h" />
+    <ClInclude Include="Chilkat\include\CkSshW.h" />
+    <ClInclude Include="Chilkat\include\CkStream.h" />
+    <ClInclude Include="Chilkat\include\CkStreamW.h" />
+    <ClInclude Include="Chilkat\include\CkString.h" />
+    <ClInclude Include="Chilkat\include\CkStringArray.h" />
+    <ClInclude Include="Chilkat\include\CkStringArrayW.h" />
+    <ClInclude Include="Chilkat\include\CkStringBuilder.h" />
+    <ClInclude Include="Chilkat\include\CkStringBuilderW.h" />
+    <ClInclude Include="Chilkat\include\CkStringTable.h" />
+    <ClInclude Include="Chilkat\include\CkStringTableW.h" />
+    <ClInclude Include="Chilkat\include\CkTar.h" />
+    <ClInclude Include="Chilkat\include\CkTarProgress.h" />
+    <ClInclude Include="Chilkat\include\CkTarProgressW.h" />
+    <ClInclude Include="Chilkat\include\CkTarW.h" />
+    <ClInclude Include="Chilkat\include\CkTask.h" />
+    <ClInclude Include="Chilkat\include\CkTaskChain.h" />
+    <ClInclude Include="Chilkat\include\CkTaskChainW.h" />
+    <ClInclude Include="Chilkat\include\CkTaskW.h" />
+    <ClInclude Include="Chilkat\include\CkTrustedRoots.h" />
+    <ClInclude Include="Chilkat\include\CkTrustedRootsW.h" />
+    <ClInclude Include="Chilkat\include\CkUnixCompress.h" />
+    <ClInclude Include="Chilkat\include\CkUnixCompressW.h" />
+    <ClInclude Include="Chilkat\include\CkUpload.h" />
+    <ClInclude Include="Chilkat\include\CkUploadW.h" />
+    <ClInclude Include="Chilkat\include\CkUrl.h" />
+    <ClInclude Include="Chilkat\include\CkUrlW.h" />
+    <ClInclude Include="Chilkat\include\CkWideCharBase.h" />
+    <ClInclude Include="Chilkat\include\CkXml.h" />
+    <ClInclude Include="Chilkat\include\CkXmlCertVault.h" />
+    <ClInclude Include="Chilkat\include\CkXmlCertVaultW.h" />
+    <ClInclude Include="Chilkat\include\CkXmlW.h" />
+    <ClInclude Include="Chilkat\include\CkXmp.h" />
+    <ClInclude Include="Chilkat\include\CkXmpW.h" />
+    <ClInclude Include="Chilkat\include\CkZip.h" />
+    <ClInclude Include="Chilkat\include\CkZipCrc.h" />
+    <ClInclude Include="Chilkat\include\CkZipCrcW.h" />
+    <ClInclude Include="Chilkat\include\CkZipEntry.h" />
+    <ClInclude Include="Chilkat\include\CkZipEntryW.h" />
+    <ClInclude Include="Chilkat\include\CkZipProgress.h" />
+    <ClInclude Include="Chilkat\include\CkZipProgressW.h" />
+    <ClInclude Include="Chilkat\include\CkZipW.h" />
+    <ClInclude Include="Chilkat\include\ck_inttypes.h" />
+    <ClInclude Include="Chilkat\include\C_BinData.h" />
+    <ClInclude Include="Chilkat\include\C_BinDataW.h" />
+    <ClInclude Include="Chilkat\include\C_CkAsn.h" />
+    <ClInclude Include="Chilkat\include\C_CkAsnW.h" />
+    <ClInclude Include="Chilkat\include\C_CkAtom.h" />
+    <ClInclude Include="Chilkat\include\C_CkAtomW.h" />
+    <ClInclude Include="Chilkat\include\C_CkAuthAws.h" />
+    <ClInclude Include="Chilkat\include\C_CkAuthAwsW.h" />
+    <ClInclude Include="Chilkat\include\C_CkAuthAzureAD.h" />
+    <ClInclude Include="Chilkat\include\C_CkAuthAzureADW.h" />
+    <ClInclude Include="Chilkat\include\C_CkAuthAzureStorage.h" />
+    <ClInclude Include="Chilkat\include\C_CkAuthAzureStorageW.h" />
+    <ClInclude Include="Chilkat\include\C_CkAuthGoogle.h" />
+    <ClInclude Include="Chilkat\include\C_CkAuthGoogleW.h" />
+    <ClInclude Include="Chilkat\include\C_CkBinData.h" />
+    <ClInclude Include="Chilkat\include\C_CkBinDataW.h" />
+    <ClInclude Include="Chilkat\include\C_CkBounce.h" />
+    <ClInclude Include="Chilkat\include\C_CkBounceW.h" />
+    <ClInclude Include="Chilkat\include\C_CkByteData.h" />
+    <ClInclude Include="Chilkat\include\C_CkBz2.h" />
+    <ClInclude Include="Chilkat\include\C_CkBz2W.h" />
+    <ClInclude Include="Chilkat\include\C_CkCache.h" />
+    <ClInclude Include="Chilkat\include\C_CkCacheW.h" />
+    <ClInclude Include="Chilkat\include\C_CkCert.h" />
+    <ClInclude Include="Chilkat\include\C_CkCertChain.h" />
+    <ClInclude Include="Chilkat\include\C_CkCertChainW.h" />
+    <ClInclude Include="Chilkat\include\C_CkCertStore.h" />
+    <ClInclude Include="Chilkat\include\C_CkCertStoreW.h" />
+    <ClInclude Include="Chilkat\include\C_CkCertW.h" />
+    <ClInclude Include="Chilkat\include\C_CkCgi.h" />
+    <ClInclude Include="Chilkat\include\C_CkCgiW.h" />
+    <ClInclude Include="Chilkat\include\C_CkCharset.h" />
+    <ClInclude Include="Chilkat\include\C_CkCharsetW.h" />
+    <ClInclude Include="Chilkat\include\C_CkCompression.h" />
+    <ClInclude Include="Chilkat\include\C_CkCompressionW.h" />
+    <ClInclude Include="Chilkat\include\C_CkCreateCS.h" />
+    <ClInclude Include="Chilkat\include\C_CkCreateCSW.h" />
+    <ClInclude Include="Chilkat\include\C_CkCrypt2.h" />
+    <ClInclude Include="Chilkat\include\C_CkCrypt2W.h" />
+    <ClInclude Include="Chilkat\include\C_CkCsp.h" />
+    <ClInclude Include="Chilkat\include\C_CkCspW.h" />
+    <ClInclude Include="Chilkat\include\C_CkCsv.h" />
+    <ClInclude Include="Chilkat\include\C_CkCsvW.h" />
+    <ClInclude Include="Chilkat\include\C_CkDateTime.h" />
+    <ClInclude Include="Chilkat\include\C_CkDateTimeW.h" />
+    <ClInclude Include="Chilkat\include\C_CkDh.h" />
+    <ClInclude Include="Chilkat\include\C_CkDhW.h" />
+    <ClInclude Include="Chilkat\include\C_CkDirTree.h" />
+    <ClInclude Include="Chilkat\include\C_CkDirTreeW.h" />
+    <ClInclude Include="Chilkat\include\C_CkDkim.h" />
+    <ClInclude Include="Chilkat\include\C_CkDkimW.h" />
+    <ClInclude Include="Chilkat\include\C_CkDsa.h" />
+    <ClInclude Include="Chilkat\include\C_CkDsaW.h" />
+    <ClInclude Include="Chilkat\include\C_CkDtObj.h" />
+    <ClInclude Include="Chilkat\include\C_CkDtObjW.h" />
+    <ClInclude Include="Chilkat\include\C_CkEcc.h" />
+    <ClInclude Include="Chilkat\include\C_CkEccW.h" />
+    <ClInclude Include="Chilkat\include\C_CkEmail.h" />
+    <ClInclude Include="Chilkat\include\C_CkEmailBundle.h" />
+    <ClInclude Include="Chilkat\include\C_CkEmailBundleW.h" />
+    <ClInclude Include="Chilkat\include\C_CkEmailW.h" />
+    <ClInclude Include="Chilkat\include\C_CkFileAccess.h" />
+    <ClInclude Include="Chilkat\include\C_CkFileAccessW.h" />
+    <ClInclude Include="Chilkat\include\C_CkFtp2.h" />
+    <ClInclude Include="Chilkat\include\C_CkFtp2W.h" />
+    <ClInclude Include="Chilkat\include\C_CkGlobal.h" />
+    <ClInclude Include="Chilkat\include\C_CkGlobalW.h" />
+    <ClInclude Include="Chilkat\include\C_CkGzip.h" />
+    <ClInclude Include="Chilkat\include\C_CkGzipW.h" />
+    <ClInclude Include="Chilkat\include\C_CkHashtable.h" />
+    <ClInclude Include="Chilkat\include\C_CkHashtableW.h" />
+    <ClInclude Include="Chilkat\include\C_CkHtmlToText.h" />
+    <ClInclude Include="Chilkat\include\C_CkHtmlToTextW.h" />
+    <ClInclude Include="Chilkat\include\C_CkHtmlToXml.h" />
+    <ClInclude Include="Chilkat\include\C_CkHtmlToXmlW.h" />
+    <ClInclude Include="Chilkat\include\C_CkHttp.h" />
+    <ClInclude Include="Chilkat\include\C_CkHttpRequest.h" />
+    <ClInclude Include="Chilkat\include\C_CkHttpRequestW.h" />
+    <ClInclude Include="Chilkat\include\C_CkHttpResponse.h" />
+    <ClInclude Include="Chilkat\include\C_CkHttpResponseW.h" />
+    <ClInclude Include="Chilkat\include\C_CkHttpW.h" />
+    <ClInclude Include="Chilkat\include\C_CkImap.h" />
+    <ClInclude Include="Chilkat\include\C_CkImapW.h" />
+    <ClInclude Include="Chilkat\include\C_CkJavaKeyStore.h" />
+    <ClInclude Include="Chilkat\include\C_CkJavaKeyStoreW.h" />
+    <ClInclude Include="Chilkat\include\C_CkJsonArray.h" />
+    <ClInclude Include="Chilkat\include\C_CkJsonArrayW.h" />
+    <ClInclude Include="Chilkat\include\C_CkJsonObject.h" />
+    <ClInclude Include="Chilkat\include\C_CkJsonObjectW.h" />
+    <ClInclude Include="Chilkat\include\C_CkJwt.h" />
+    <ClInclude Include="Chilkat\include\C_CkJwtW.h" />
+    <ClInclude Include="Chilkat\include\C_CkKeyContainer.h" />
+    <ClInclude Include="Chilkat\include\C_CkKeyContainerW.h" />
+    <ClInclude Include="Chilkat\include\C_CkLog.h" />
+    <ClInclude Include="Chilkat\include\C_CkLogW.h" />
+    <ClInclude Include="Chilkat\include\C_CkMailboxes.h" />
+    <ClInclude Include="Chilkat\include\C_CkMailboxesW.h" />
+    <ClInclude Include="Chilkat\include\C_CkMailMan.h" />
+    <ClInclude Include="Chilkat\include\C_CkMailManW.h" />
+    <ClInclude Include="Chilkat\include\C_CkMessageSet.h" />
+    <ClInclude Include="Chilkat\include\C_CkMessageSetW.h" />
+    <ClInclude Include="Chilkat\include\C_CkMht.h" />
+    <ClInclude Include="Chilkat\include\C_CkMhtW.h" />
+    <ClInclude Include="Chilkat\include\C_CkMime.h" />
+    <ClInclude Include="Chilkat\include\C_CkMimeW.h" />
+    <ClInclude Include="Chilkat\include\C_CkNtlm.h" />
+    <ClInclude Include="Chilkat\include\C_CkNtlmW.h" />
+    <ClInclude Include="Chilkat\include\C_CkOAuth1.h" />
+    <ClInclude Include="Chilkat\include\C_CkOAuth1W.h" />
+    <ClInclude Include="Chilkat\include\C_CkOAuth2.h" />
+    <ClInclude Include="Chilkat\include\C_CkOAuth2W.h" />
+    <ClInclude Include="Chilkat\include\C_CkPem.h" />
+    <ClInclude Include="Chilkat\include\C_CkPemW.h" />
+    <ClInclude Include="Chilkat\include\C_CkPfx.h" />
+    <ClInclude Include="Chilkat\include\C_CkPfxW.h" />
+    <ClInclude Include="Chilkat\include\C_CkPrivateKey.h" />
+    <ClInclude Include="Chilkat\include\C_CkPrivateKeyW.h" />
+    <ClInclude Include="Chilkat\include\C_CkPrng.h" />
+    <ClInclude Include="Chilkat\include\C_CkPrngW.h" />
+    <ClInclude Include="Chilkat\include\C_CkPublicKey.h" />
+    <ClInclude Include="Chilkat\include\C_CkPublicKeyW.h" />
+    <ClInclude Include="Chilkat\include\C_CkRar.h" />
+    <ClInclude Include="Chilkat\include\C_CkRarEntry.h" />
+    <ClInclude Include="Chilkat\include\C_CkRest.h" />
+    <ClInclude Include="Chilkat\include\C_CkRestW.h" />
+    <ClInclude Include="Chilkat\include\C_CkRsa.h" />
+    <ClInclude Include="Chilkat\include\C_CkRsaW.h" />
+    <ClInclude Include="Chilkat\include\C_CkRss.h" />
+    <ClInclude Include="Chilkat\include\C_CkRssW.h" />
+    <ClInclude Include="Chilkat\include\C_CkScp.h" />
+    <ClInclude Include="Chilkat\include\C_CkScpW.h" />
+    <ClInclude Include="Chilkat\include\C_CkServerSentEvent.h" />
+    <ClInclude Include="Chilkat\include\C_CkServerSentEventW.h" />
+    <ClInclude Include="Chilkat\include\C_CkSettings.h" />
+    <ClInclude Include="Chilkat\include\C_CkSFtp.h" />
+    <ClInclude Include="Chilkat\include\C_CkSFtpDir.h" />
+    <ClInclude Include="Chilkat\include\C_CkSFtpDirW.h" />
+    <ClInclude Include="Chilkat\include\C_CkSFtpFile.h" />
+    <ClInclude Include="Chilkat\include\C_CkSFtpFileW.h" />
+    <ClInclude Include="Chilkat\include\C_CkSFtpW.h" />
+    <ClInclude Include="Chilkat\include\C_CkSocket.h" />
+    <ClInclude Include="Chilkat\include\C_CkSocketW.h" />
+    <ClInclude Include="Chilkat\include\C_CkSpider.h" />
+    <ClInclude Include="Chilkat\include\C_CkSpiderW.h" />
+    <ClInclude Include="Chilkat\include\C_CkSsh.h" />
+    <ClInclude Include="Chilkat\include\C_CkSshKey.h" />
+    <ClInclude Include="Chilkat\include\C_CkSshKeyW.h" />
+    <ClInclude Include="Chilkat\include\C_CkSshTunnel.h" />
+    <ClInclude Include="Chilkat\include\C_CkSshTunnelW.h" />
+    <ClInclude Include="Chilkat\include\C_CkSshW.h" />
+    <ClInclude Include="Chilkat\include\C_CkStream.h" />
+    <ClInclude Include="Chilkat\include\C_CkStreamW.h" />
+    <ClInclude Include="Chilkat\include\C_CkString.h" />
+    <ClInclude Include="Chilkat\include\C_CkStringArray.h" />
+    <ClInclude Include="Chilkat\include\C_CkStringArrayW.h" />
+    <ClInclude Include="Chilkat\include\C_CkStringBuilder.h" />
+    <ClInclude Include="Chilkat\include\C_CkStringBuilderW.h" />
+    <ClInclude Include="Chilkat\include\C_CkStringTable.h" />
+    <ClInclude Include="Chilkat\include\C_CkStringTableW.h" />
+    <ClInclude Include="Chilkat\include\C_CkTar.h" />
+    <ClInclude Include="Chilkat\include\C_CkTarW.h" />
+    <ClInclude Include="Chilkat\include\C_CkTask.h" />
+    <ClInclude Include="Chilkat\include\C_CkTaskChain.h" />
+    <ClInclude Include="Chilkat\include\C_CkTaskChainW.h" />
+    <ClInclude Include="Chilkat\include\C_CkTaskW.h" />
+    <ClInclude Include="Chilkat\include\C_CkTrustedRoots.h" />
+    <ClInclude Include="Chilkat\include\C_CkTrustedRootsW.h" />
+    <ClInclude Include="Chilkat\include\C_CkUnixCompress.h" />
+    <ClInclude Include="Chilkat\include\C_CkUnixCompressW.h" />
+    <ClInclude Include="Chilkat\include\C_CkUpload.h" />
+    <ClInclude Include="Chilkat\include\C_CkUploadW.h" />
+    <ClInclude Include="Chilkat\include\C_CkUrl.h" />
+    <ClInclude Include="Chilkat\include\C_CkUrlW.h" />
+    <ClInclude Include="Chilkat\include\C_CkXml.h" />
+    <ClInclude Include="Chilkat\include\C_CkXmlCertVault.h" />
+    <ClInclude Include="Chilkat\include\C_CkXmlCertVaultW.h" />
+    <ClInclude Include="Chilkat\include\C_CkXmlW.h" />
+    <ClInclude Include="Chilkat\include\C_CkXmp.h" />
+    <ClInclude Include="Chilkat\include\C_CkXmpW.h" />
+    <ClInclude Include="Chilkat\include\C_CkZip.h" />
+    <ClInclude Include="Chilkat\include\C_CkZipCrc.h" />
+    <ClInclude Include="Chilkat\include\C_CkZipCrcW.h" />
+    <ClInclude Include="Chilkat\include\C_CkZipEntry.h" />
+    <ClInclude Include="Chilkat\include\C_CkZipEntryW.h" />
+    <ClInclude Include="Chilkat\include\C_CkZipW.h" />
+    <ClInclude Include="Chilkat\include\C_Pfx.h" />
+    <ClInclude Include="Chilkat\include\C_PfxW.h" />
+    <ClInclude Include="Chilkat\include\FileTime.h" />
+    <ClInclude Include="Chilkat\include\int64.h" />
+    <ClInclude Include="Chilkat\include\SystemTime.h" />
     <ClInclude Include="ClassAssignedPointsPropPage.h" />
     <ClInclude Include="ClassListCtrl.h" />
     <ClInclude Include="ClassPostPointsPropPage.h" />
@@ -363,8 +775,6 @@
     <ClInclude Include="FlightLogTransferSettings.h" />
     <ClInclude Include="FlightSearchFoldersDlg.h" />
     <ClInclude Include="FlightStream.h" />
-    <ClInclude Include="FTPClient.h" />
-    <ClInclude Include="FTPUpload.h" />
     <ClInclude Include="Gate.h" />
     <ClInclude Include="GateDlg.h" />
     <ClInclude Include="GliderInfo.h" />
@@ -399,9 +809,6 @@
     <ClInclude Include="PrintGridDlg.h" />
     <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="ProgressDlg.h" />
-    <ClInclude Include="RealtimeDlg.h" />
-    <ClInclude Include="RealtimeInfoDlg.h" />
-    <ClInclude Include="RealTimePropPage.h" />
     <ClInclude Include="ResizingDialog.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ScoreRecord.h" />
@@ -427,7 +834,6 @@
     <ClInclude Include="TaskList.h" />
     <ClInclude Include="TaskTimeDlg.h" />
     <ClInclude Include="TaskTurnpointsDlg.h" />
-    <ClInclude Include="TimeDlg.h" />
     <ClInclude Include="Turnpoint.h" />
     <ClInclude Include="TurnpointArray.h" />
     <ClInclude Include="TurnpointCombo.h" />
@@ -439,7 +845,6 @@
     <ClInclude Include="WinscoreDefs.h" />
     <ClInclude Include="WinscoreDlgBar.h" />
     <ClInclude Include="WinscoreDoc.h" />
-    <ClInclude Include="WinscoreEvent.h" />
     <ClInclude Include="WinscoreFonts.h" />
     <ClInclude Include="WinscoreListCtrl.h" />
     <ClInclude Include="WinscoreView.h" />
@@ -448,10 +853,6 @@
     <ClInclude Include="WSSingleDocTemplate.h" />
     <ClInclude Include="wsview.h" />
     <ClInclude Include="XMLMgr.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="Chilkat\lib\ChilkatRelMt.lib" />
-    <Library Include="Chilkat\lib\CkBaseRelMt.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
