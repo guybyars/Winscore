@@ -27,19 +27,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_08DE51C89FBF4938B1B36BE918EF31BF"
-        "OwnerKey" = "8:_1E9B803EAE364809917BEFD649CDC4C2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_0C8A51078DA14C64BD255002B324CF2F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1E9B803EAE364809917BEFD649CDC4C2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,13 +39,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_23443020BB833642AE1947A8710DBAE5"
-        "OwnerKey" = "8:_1E9B803EAE364809917BEFD649CDC4C2"
+        "MsmKey" = "8:_247A77FCBD9449BB8E1595EF33F9A3A3"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_247A77FCBD9449BB8E1595EF33F9A3A3"
+        "MsmKey" = "8:_27D5846B737E44CF82B5EDC3A4B8152D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -99,6 +87,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_621D3913FE3F49A692741ABD3B118E80"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_683C33110D224A8B9C8362E68D5B1CD1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -119,12 +113,6 @@
         {
         "MsmKey" = "8:_74AE71F9959646EA930D418BA09BF6C6"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_772776E7745C421C8A41A4D0656110FE"
-        "OwnerKey" = "8:_1E9B803EAE364809917BEFD649CDC4C2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -159,18 +147,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8C7666ABA0C044DE9F97108EC0C47D2F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8FDBC285DDB1C8DA860860ABD0F2D7BA"
-        "OwnerKey" = "8:_1E9B803EAE364809917BEFD649CDC4C2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_994E51E872DC4DABBF812E60F0E4C054"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -191,12 +167,6 @@
         {
         "MsmKey" = "8:_B1747BA411EA437193B916EB2EEB47E5"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B68861C7582448261C28DEC4608D5C39"
-        "OwnerKey" = "8:_1E9B803EAE364809917BEFD649CDC4C2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -235,18 +205,6 @@
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1E9B803EAE364809917BEFD649CDC4C2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FA5101E65C8947F9B0A621D7586417AF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
     }
     "Configurations"
     {
@@ -255,7 +213,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\Winscore_Installer.msi"
+        "OutputFilename" = "8:..\\..\\build\\Winscore_Installer\\Debug\\Winscore_Installer.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -292,7 +250,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\Winscore_Installer.msi"
+        "OutputFilename" = "8:..\\..\\build\\\\Winscore_Installer\\Release\\Winscore_Installer.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -452,6 +410,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_27D5846B737E44CF82B5EDC3A4B8152D"
+            {
+            "SourcePath" = "8:..\\..\\build\\wsview\\Release\\WSView.ocx"
+            "TargetName" = "8:WSView.ocx"
+            "Tag" = "8:"
+            "Folder" = "8:_CA60643468E74A959437FD48B10A112E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:4"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_29A92DC381644E9FBCA7FFB8E205C082"
             {
             "SourcePath" = "8:..\\Winscore\\bin\\igc-pes.dll"
@@ -556,6 +534,26 @@
             {
             "SourcePath" = "8:..\\Winscore\\res\\icon1.ico"
             "TargetName" = "8:icon1.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_F83E88FD506A4999A676C7E71BB25993"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_621D3913FE3F49A692741ABD3B118E80"
+            {
+            "SourcePath" = "8:..\\..\\build\\winscore\\Release\\Winscore.exe"
+            "TargetName" = "8:Winscore.exe"
             "Tag" = "8:"
             "Folder" = "8:_F83E88FD506A4999A676C7E71BB25993"
             "Condition" = "8:"
@@ -736,26 +734,6 @@
             {
             "SourcePath" = "8:..\\winscore\\bin\\IGC-CU.dll"
             "TargetName" = "8:IGC-CU.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_CA60643468E74A959437FD48B10A112E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C7666ABA0C044DE9F97108EC0C47D2F"
-            {
-            "SourcePath" = "8:..\\Caitrans\\Release\\CAITrans.dll"
-            "TargetName" = "8:CAITrans.dll"
             "Tag" = "8:"
             "Folder" = "8:_CA60643468E74A959437FD48B10A112E"
             "Condition" = "8:"
@@ -1039,15 +1017,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Winscore"
-        "ProductCode" = "8:{F721CC7B-9E2A-4EFD-8D71-033D08DC7CFD}"
-        "PackageCode" = "8:{0818AC24-7842-4C73-9A7A-68D67A009BBD}"
+        "ProductCode" = "8:{17F7E1EA-D40A-4C6B-8872-6F09B8EFB9ED}"
+        "PackageCode" = "8:{8F249C0F-0D26-48C2-8BD6-5BF8D74CFB78}"
         "UpgradeCode" = "8:{78DE0A0C-0F84-4834-BB73-0C14D813A698}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:21.0.14"
+        "ProductVersion" = "8:22.0.0"
         "Manufacturer" = "8:Guy Ford Byars"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1160,7 +1138,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_41C3D780C8D1490897D792A17817A652"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2C1375901047449FB9140B7D40D7CA99"
             {
             "Name" = "8:Winscore"
             "Arguments" = "8:"
@@ -1168,13 +1146,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_1E9B803EAE364809917BEFD649CDC4C2"
+            "Target" = "8:_621D3913FE3F49A692741ABD3B118E80"
             "Folder" = "8:_C64553018AA04658B861DE8551E6CCEE"
             "WorkingFolder" = "8:_F83E88FD506A4999A676C7E71BB25993"
             "Icon" = "8:_5D5D07AA4D2148EBB163FB57C76B89E8"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EC1D399FB4F1466CAA7F531ECC308EEC"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3420D857C9D44E7FB07CF42CD77F0CD5"
             {
             "Name" = "8:Winscore"
             "Arguments" = "8:"
@@ -1182,7 +1160,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_1E9B803EAE364809917BEFD649CDC4C2"
+            "Target" = "8:_621D3913FE3F49A692741ABD3B118E80"
             "Folder" = "8:_32CA56D0C0BA455BA4AF169DC943ACA0"
             "WorkingFolder" = "8:_F83E88FD506A4999A676C7E71BB25993"
             "Icon" = "8:_5D5D07AA4D2148EBB163FB57C76B89E8"
@@ -1587,62 +1565,6 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_1E9B803EAE364809917BEFD649CDC4C2"
-            {
-            "SourcePath" = "8:..\\winscore\\Release\\Winscore.exe"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_F83E88FD506A4999A676C7E71BB25993"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Release|Win32"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{1B369DE4-E14C-40D1-BDB7-DB5293FAB34E}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_FA5101E65C8947F9B0A621D7586417AF"
-            {
-            "SourcePath" = "8:..\\wsview\\Release\\WSView.ocx"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_F83E88FD506A4999A676C7E71BB25993"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:4"
-            "OutputConfiguration" = "8:Release|Win32"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{0F5CE740-6734-439D-A42B-EE9BCE0B63C5}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
         }
     }
 }
