@@ -851,10 +851,19 @@
     <ClInclude Include="wsbaro.h" />
     <ClInclude Include="WSClass.h" />
     <ClInclude Include="WSSingleDocTemplate.h" />
+    <ClInclude Include="wsversion.h" />
     <ClInclude Include="wsview.h" />
     <ClInclude Include="XMLMgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\bmp00002.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Winscore.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

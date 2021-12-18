@@ -2,9 +2,9 @@
 #define WSVERSION_H_INCLUDED_
 
 //#define	WINSCOREBETA         1
-#define CURRENTYEAR			 2021
-#define WINSCOREVERSION		_T("2021 Rev 15")
-#define SHORTVERSION			 _T("Rev 15")
+#define CURRENTYEAR			 2022
+#define WINSCOREVERSION		_T("2022 Beta 0")
+#define SHORTVERSION			 _T("Beta 0")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 

@@ -2005,6 +2005,9 @@
     <ClInclude Include="AutosaveOptionsDlg.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="wsversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="MAKEHELP.BAT">
@@ -2054,5 +2057,10 @@
     </CustomBuild>
     <CustomBuild Include="res\inetdownload.avi" />
     <CustomBuild Include="res\upload.avi" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\bmp00002.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
