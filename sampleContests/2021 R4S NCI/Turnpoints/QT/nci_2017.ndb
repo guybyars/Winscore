@@ -1,0 +1,130 @@
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+!                                                                              +
+!                   Control Points for New Castle, Virginia                    +
+!                                                                              +
+!                    ILEC SN10 PC-database-file, version 4                     +
+!                                                                              +
+!                             Region 4 South, 2017                             +
+!                                                                              +
+!                          Contributed by John Godrey                          +
+!                      Contribution date was 22 July 2017                      +
+!               File created Saturday, 22 July 2017 at 23:08 GMT               +
+!                                                                              +
+!          Available from the Worldwide Soaring Turnpoint Exchange at          +
+!                            http://soaringweb.org/TP                          +
+!                  or http://soaring.guenther-eichhorn.com/TP                  +
+!                      or http://soaring.geichhorn.com/TP                      +
+!                      or http://serkowski.com/soaring/TP                      +
+!                     or http://soaring.silentflight.ca/TP                     +
+!                       or http://soaring.gahsys.com/TP                        +
+!                                                                              +
+!                        See also the outlanding sites                         +
+!                                                                              +
+!                            Time zone: US/Eastern                             +
+!          Summer offset from GMT is -4:00, and in Winter it is -5:00          +
+!                                                                              +
+!                       UNOFFICIAL, USE AT YOUR OWN RISK                       +
+!                                                                              +
+!           Do not use for navigation, for flight verification only.           +
+!                                                                              +
+!       Always consult the relevant publications for current and correct       +
+!   information. This service is provided free of charge with no warrantees,   +
+!                            expressed or implied.                             +
+!                        User assumes all risk of use.                         +
+!                                                                              +
+!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+V NADLERNAV4
+H " New Castle, VA File     22Jul17Waypoints22Jul17John Godrey (QT)" , Timezone -4:00 , Magvar 8.3 , Home "25NwCst"
+P  "99FnCln", 37:28:46 N , 80:06:08 W , 1320F , FAL , VA85 , "Finish Cylinder        PVT      18/36 100W PRI-HF (VA85)|RY 18/36:2400x100-TURF-"
+P  "98FinGt", 37:28:45 N , 80:06:22 W , 1320F , FAL , VA85 , "  Finish Gate     18/36 Finish         PVT      18/36 100W 18/36, 2400 x 100, tu"
+P  "97Str N", 37:28:46 N , 80:06:08 W , 1320F , SAL , VA85 , "   Start NCI        Airstrip           PVT      18/36 100W 18 / 36, 2400 x 100, "
+P  "01Str A", 37:31:50 N , 80:02:16 W , 1320F , S , U , "  Alt Start A     5 NE of NCI      5 NE of NCI"
+P  "02Str B", 37:25:41 N , 80:09:59 W , 1320F , S , U , "  Alt Start B     5 SW of NCI      5 SW of NCI"
+P  "03BlcnD", 37:38:50 N , 79:25:29 W , 820F , LT , U , " Balcony Downs      Airstrip        Airstrip"
+P  "04BgHll", 37:43:52 N , 79:48:40 W , 1620F , TAL , 44VA , "    Big Hill        Airstrip           PVT      03/21 100W PRI-T (44VA)|RY 03/21"
+P  "05BgWlk", 37:02:33 N , 81:08:12 W , 2950F , T , U , "   Big Walker     I-77 Tunnel      I-77 Tunnel"
+P  "06Blcks", 37:12:28 N , 80:24:30 W , 2132F , TAL , BCB , "   Blacksburg     12/30 123.05  AW33.325 CT23.0512/30 100W PUB-T (BCB)|CTAF:123."
+P  "07Bchnn", 37:31:28 N , 79:42:25 W , 830F , T , U , "    Buchanan      I-81 Bridge      I-81 Bridge"
+P  "08CtwbV", 37:17:03 N , 80:18:03 W , 1850F , TAL , VA10 , " Catawba Valley     Airstrip           PVT      05/23 100W PRI-T (VA10)|RY 05/23"
+P  "09Cvngt", 37:45:34 N , 80:00:04 W , 1250F , T , U , "   Covington        Factory          Factory"
+P  "10Crgsv", 38:04:43 N , 79:22:59 W , 1550F , T , U , "  Craigsville     Town Center      Town Center"
+P  "11EglRc", 37:39:52 N , 79:48:35 W , 1200F , TAL , 79VG , "   Eagle Rock      07/25 27A           PVT      07/25 32W PRI-T (79VG)|RY 07/25:"
+P  "12ERivr", 37:16:52 N , 81:07:29 W , 2725F , T , U , "   East River     I-77 Tunnel      I-77 Tunnel"
+P  "13GpMll", 37:33:44 N , 80:24:29 W , 2360F , T , U , "   Gap Mills      Town Center      Town Center"
+P  "14Hllsv", 36:45:58 N , 80:49:25 W , 2693F , TAL , HLX , "   Hillsville     16/34 122.80  AW18.375 CT22.8 01/19 75W PUB-T (HLX)|CTAF:122.8"
+P  "15Hintn", 37:40:46 N , 80:42:37 W , 1520F , TAL , WV77 , "     Hinton       10/28 122.90         PVT      10/28 25W PRI-T (WV77)|RY 10/28:"
+P  "16Ingll", 37:57:05 N , 79:50:02 W , 3793F , TAL , HSP , "    Ingalls       06/24 122.70   AW18.8 CT23.0  07/25 100W PUB-T (HSP)|CTAF:123."
+P  "17Lxngt", 37:47:33 N , 79:26:14 W , 950F , T , U , "   Lexington          VMI              VMI"
+P  "18Maggi", 37:25:29 N , 80:22:41 W , 1820F , T , U , "     Maggie           Silo            Silo"
+P  "19Marin", 36:54:06 N , 81:32:32 W , 3907F , T , U , "     Marion          Towers          Towers"
+P  "20McCFl", 37:14:42 N , 80:36:24 W , 1660F , T , U , "  McCoy Falls    New River Gap      Newrvrgap"
+P  "21Mllbr", 37:59:45 N , 79:37:22 W , 1310F , T , U , "Millboro Springs  Town Center      Town Center"
+P  "22Montr", 38:24:43 N , 79:34:47 W , 3048F , T , U , "    Monterey       Crossroads      Crossroads"
+P  "23MtnLk", 37:21:19 N , 80:32:12 W , 3925F , T , U , " Mountain Lake       Hotel            Hotel"
+P  "24Nrrws", 37:20:19 N , 80:48:18 W , 1558F , T , U , "    Narrows       School Track     Schooltrack"
+P  "25NwCst", 37:28:46 N , 80:06:08 W , 1320F , TAL , VA85 , "   New Castle       Airstrip           PVT      18/36 100W PRI-HT (VA85)|RY 18/3"
+P  "26NwLnd", 37:16:19 N , 79:20:09 W , 849F , TAL , W90 , "   New London       Airport          CT22.8     18/36 40W PUB-T (W90)|CTAF:122.8"
+P  "27NwRvr", 37:08:14 N , 80:40:43 W , 2106F , TAL , PSK , "   New River      06/24 122.70  AW27.375 CT22.7 06/24 150W PUB-T (PSK)|CTAF:122."
+P  "28Orskn", 37:36:59 N , 79:59:01 W , 1170F , T , U , "    Oriskany         Church          Church"
+P  "29Pkstt", 37:26:48 N , 79:36:11 W , 2500F , T , U , "  Peaks Otter        Lodge            Lodge"
+P  "30Rdfrd", 37:05:41 N , 80:30:32 W , 2090F , T , U , "    Radford         Hospital        Hospital"
+P  "31Rvrwd", 37:47:47 N , 79:46:00 W , 1020F , TAL , 0VA2 , "   Riverwood        Airstrip           PVT      14/32 70W PRI-T (0VA2)|RY 14/32:"
+P  "32SwtSp", 37:37:42 N , 80:14:29 W , 1998F , T , U , " Sweet Springs       Hotel            Hotel"
+P  "33Tzwll", 37:09:02 N , 81:27:15 W , 2900F , T , U , "Tazewell County     Cemetary        Cemetary"
+P  "34UnnWV", 37:35:29 N , 80:32:37 W , 2070F , T , U , "    Union WV      Town Center      Town Center"
+P  "35Wnsbr", 38:04:37 N , 78:56:39 W , 1437F , TAL , W13 , "   Waynesboro        123.05     AW18.625 CT23.0506/24 50W PUB-T (W13)|CTAF:123.0"
+P  "36Wtsnd", 37:21:04 N , 80:20:53 W , U , T , U , "    Wits End"
+P  "Barrows", 37:29:31 N , 79:55:43 W , 1100F , AL , VA04 , "    Barrows         8/26 21T           PVT      08/26 40W PRI (VA04)|RY 08/26:21"
+P  "BathAlm", 38:03:09 N , 79:43:44 W , 1779F , AL , 9VA0 , "   Bath Alum           PVT      E/W 150W PRI (9VA0)|RY E/W:3500x50-ASPH|RY E/W: "
+P  "BlckBrg", 37:36:56 N , 79:30:19 W , 808F , AL , 5VG1 , "  Black Bridge         PVT      07/25 60W PRI (5VG1)|RY 07/25:1200x60-TURF|MGR: "
+P  "Blugrss", 37:03:43 N , 81:11:30 W , 2660F , L , U , "   Bluegrass      09/27  1400x"
+P  "BrkHllF", 37:55:41 N , 79:10:41 W , 1600F , AL , VA00 , "Brook Hill Farm     3/21 20T           PVT      03/21 75W PRI (VA00)|RY 03/21:20"
+P  "Bundorn", 37:58:06 N , 78:40:56 W , 840F , AL , VA18 , "    Bundoran           PVT           UN22.8     15/33 100W PRI (VA18)|RY 15/33:3"
+P  "BrksGrd", 37:05:44 N , 81:22:09 W , 3060F , AL , VA07 , " Burkes Garden      6/24 25A           PVT      06/24 50W PRI (VA07)|RY 06/24:25"
+P  "BrntChm", 37:04:32 N , 79:49:38 W , 1034F , AL , 70VA , " Burnt Chimney         PVT      06/24 50W PRI (70VA)|RY 06/24:1800x50-TURF-LGT|F"
+P  "Cathro", 37:55:41 N , 78:33:05 W , 520F , L , U , "     Cathro         15/33 10T"
+P  "Chrltts", 38:08:19 N , 78:27:10 W , 639F , AL , CHO , "Charlottesville AW18.425 CT24.5+UN22.95 AT18.42503/21 150W PUB (CHO)|TWR:124.5|A"
+P  "Collins", 36:37:30 N , 80:10:14 W , 1100F , AL , VG16 , "    Collins            PVT      17/35 75W PRI (VG16)|RY 17/35:1900x75-TURF|MGR: "
+P  "CttnwdF", 38:04:52 N , 78:41:44 W , 690F , AL , 87VA , "Cottonwood Farm        PVT      15/33 50W PRI (87VA)|RY 15/33:1000x50-TURF|RY15/"
+P  "DrCrkFr", 38:28:17 N , 79:48:20 W , 2650F , AL , WV00 , "Deer Creek Farm        PVT      04/22 60W PRI (WV00)|RY 04/22:3300x60-TURF-RP22|"
+P  "DeerRun", 36:59:39 N , 80:27:16 W , 2400F , AL , VA06 , "    Deer Run        9/27 23T           PVT      09/27 60W PRI (VA06)|RY 09/27:23"
+P  "Falwell", 37:22:41 N , 79:07:20 W , 939F , AL , W24 , "    Falwell          CT23.0     10/28 50W PUB (W24)|CTAF:123.000|RY 10/28:2932x5"
+P  "Fergusn", 37:07:05 N , 79:47:19 W , 1050F , AL , 81VA , "    Ferguson           PVT      13/31 30W PRI (81VA)|RY 13/31:1600x30-TURF|MGR: "
+P  "Fincstl", 37:31:20 N , 79:51:07 W , 1140F , AL , VA83 , "   Fincastle       11/29 30T           PVT      11/29 150W PRI (VA83)|RY 11/29:3"
+P  "Flatwds", 37:44:18 N , 78:57:44 W , 840F , AL , 8VA6 , "   Flatwoods        3/21 14T           PVT      03/21 120W PRI (8VA6)|RY 03/21:1"
+P  "FlchrFm", 37:43:27 N , 79:05:57 W , 980F , AL , VG06 , "FulcherFamilFrms       PVT      11/29 100W PRI (VG06)|RY 11/29:3000x100-TURF|MGR"
+P  "HnnhFld", 38:23:54 N , 79:36:01 W , 3048F , AL , 7VA9 , "  Hannah Field     Crossroads          PVT      04/22 75W PRI (7VA9)|RY 04/22:23"
+P  "HawkRdg", 37:17:20 N , 79:26:50 W , 760F , AL , 20VG , "   Hawk Ridge          PVT      05/23 60W PRI (20VG)|RY 05/23:2100x60-TURF|MGR: "
+P  "HopAlng", 37:47:23 N , 79:46:15 W , 1040F , AL , 12VA , "   Hop Along       14/32 22T           PVT      14/32 50W PRI (12VA)|RY 14/32:21"
+P  "JhnsnFx", 37:14:01 N , 79:35:07 W , 900F , AL , 0VA1 , "  Johnson Fox      14/32 20T           PVT      14/32 50W PRI (0VA1)|RY 14/32:20"
+P  "Lakeviw", 37:07:07 N , 79:36:10 W , 1020F , AL , VA68 , "    Lakeview           PVT      04/22 60W PRI (VA68)|RY 04/22:1600x60-TURF-RP22|"
+P  "Lewsbrg", 37:51:30 N , 80:23:58 W , 2302F , AL , LWB , "   Lewisburg       4/22 18.9    AW21.4 CT18.9  +UN22.95         04/22 150W PUB ("
+P  "Lnchbrg", 37:19:36 N , 79:12:02 W , 938F , AL , LYH , "   Lynchburg       4/22 27.65   AW19.8 CT27.65 +UN22.95 AT19.8  04/22 150W PUB ("
+P  "MrcrCnt", 37:17:45 N , 81:12:28 W , 2857F , AL , BLF , " Mercer County     5/23 22.9    AW32.725 CT22.9 05/23 100W PUB (BLF)|CTAF:122.90"
+P  "Micro", 36:44:08 N , 80:26:57 W , 2950F , AL , 1VA1 , "     Micro          8/26 30T           PVT      08/26 70W PRI (1VA1)|RY 08/26:29"
+P  "Miller", 37:19:40 N , 79:24:17 W , 760F , AL , 91VA , "     Miller         5/23 19T           PVT      05/23 70W PRI (91VA)|RY 05/23:18"
+P  "MtnEmpr", 36:53:41 N , 81:21:00 W , 2559F , AL , MKJ , "Mountain Empire    8/26 22.7    AW23.875 CT22.7 08/26 75W PUB (MKJ)|CTAF:122.700"
+P  "Nashs", 37:23:23 N , 78:48:49 W , 785F , AL , 10VA , "     Nashs             PVT      05/23 20W Pvd, Rd conn. drvwys, PRI (10VA)|RY 05"
+P  "NRGrnBn", 38:25:50 N , 79:49:32 W , 2710F , AL , WV52 , "NRAO Green Bank    12/30 22.8          PVT           UN22.8     12/30 50W PRI (W"
+P  "Ptrstwn", 37:24:04 N , 80:48:26 W , 1590F , L , U , "   Peterstown      18/36 20T        18/36 20T"
+P  "RdBrdsr", 37:06:46 N , 79:36:33 W , 940F , AL , 2VA0 , "Red BirdsAiryard       PVT      05/23 70W PRI (2VA0)|RY 05/23:1800x70-TURF|MGR: "
+P  "RvrFrmr", 37:40:42 N , 79:48:18 W , 1000F , AL , 79VG , "  River Farmer    Avoid Fields         PVT      07/25 32W Avoid Fields"
+P  "Roanoke", 37:19:32 N , 79:58:32 W , 1176F , AL , ROA , "    Roanoke        6/24 22.95   TW18.3 UN22.95 +AT32.375        06/24 150W PUB ("
+P  "RbnsnPr", 37:20:54 N , 79:34:19 W , 850F , AL , VG25 , "Robinson Private    E/W 28T            PVT      05/23 100W PRI (VG25)|RY 05/23:2"
+P  "Rockfsh", 37:52:46 N , 78:53:37 W , 760F , AL , VG22 , "Rockfish Airpark   6/24 22.7           PVT           UN22.7     06/24 40W PRI (V"
+P  "Root", 38:10:23 N , 78:58:09 W , 1290F , AL , 82VA , "      Root             PVT      10/28 100W PRI (82VA)|RY 10/28:2200x100-TURF|RY1"
+P  "ShnndhV", 38:15:50 N , 78:53:47 W , 1201F , AL , SHD , "ShenandoahValleyAW24.925 CT23.0 05/23 150W PUB (SHD)|CTAF:123.000|AWOS:124.925|R"
+P  "Singltn", 38:12:38 N , 79:42:48 W , 2060F , AL , 97VA , "   Singleton        5/23 16T           PVT      05/23 50W PRI (97VA)|RY 05/23:16"
+P  "Smith", 38:18:09 N , 79:30:29 W , 2020F , L , U , "     Smith          3/21 26T        3/21 26T"
+P  "SmthMtn", 37:06:28 N , 79:35:33 W , 892F , AL , W91 , "  Smith Mtn Lk      CT22.975    05/23 50W PUB (W91)|CTAF:122.800|RY 05/23:3058x5"
+P  "Sprngwd", 37:33:14 N , 79:44:59 W , 1000F , AL , 08VA , " Springwood GP      9/27 15T           PVT      09/27 50W PRI (08VA)|RY 09/27:18"
+P  "Starr", 37:39:34 N , 78:55:20 W , 640F , AL , 4VA5 , "     Starr             PVT      04/22 100W PRI (4VA5)|RY 04/22:2000x100-TURF|OWN"
+P  "Tazewel", 37:03:50 N , 81:47:54 W , 2652F , AL , JFZ , "Tazewell County    7/25 23.05   AW18.075 CT23.0507/25 75W PUB (JFZ)|CTAF:123.050"
+P  "TBD", 37:32:17 N , 80:09:33 W , 1720F , L , U , "      TBD          01/19 12T     Three Barking Dogs LAND NORTH dogleg to right a"
+P  "Tmbrddl", 37:32:11 N , 79:01:24 W , 810F , AL , 93VA , "  Timberdoodle         PVT      04/22 75W PRI (93VA)|RY 04/22:1400x75-TURF|MGR: "
+P  "Trssmrk", 37:17:05 N , 80:04:11 W , 1020F , AL , 6VA4 , "   Trussmark       12/30 14T           PVT      12/30 60W PRI (6VA4)|RY 12/30:14"
+P  "TwinRvr", 37:40:46 N , 79:25:13 W , 720F , AL , VA63 , "   Twin River       6/24 30T           PVT      06/24 40W PRI (VA63)|RY 06/24:30"
+P  "TyeRivr", 37:39:30 N , 78:56:44 W , 650F , AL , 1VA3 , "   Tye River           PVT      04/22 100W PRI (1VA3)|RY 04/22:1750x100-TURF|MGR"
+P  "WhtkStn", 36:48:28 N , 81:42:04 W , 2100F , AL , VA11 , "White Oak Stand    13/31 17T           PVT      13/31 80W PRI (VA11)|RY 13/31:17"
+P  "WllwBnd", 37:32:44 N , 80:32:03 W , 2150F , AL , 2WV5 , "  Willow Bend          PVT      03/21 40W PRI (2WV5)|RY 03/21:1540x40-TURF|MGR: "
+P  "Worley", 36:57:00 N , 79:52:46 W , 1219F , AL , 0VA4 , "     Worley            PVT      17/35 90W PRI (0VA4)|RY 17/35:2100x90-TURF|OWN:D"

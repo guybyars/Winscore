@@ -1,0 +1,229 @@
+#                   Control Points for New Castle, Virginia                     
+#                                                                               
+#                             Region 4 South, 2017                              
+#                                                                               
+#                                G7toWin format                                 
+#                                                                               
+#                          Contributed by John Godrey                           
+#                      Contribution date was 22 July 2017                       
+#               File created Saturday, 22 July 2017 at 23:08 GMT                
+#                                                                               
+#          Available from the Worldwide Soaring Turnpoint Exchange at           
+#                            http://soaringweb.org/TP                           
+#                  or http://soaring.guenther-eichhorn.com/TP                   
+#                      or http://soaring.geichhorn.com/TP                       
+#                      or http://serkowski.com/soaring/TP                       
+#                     or http://soaring.silentflight.ca/TP                      
+#                       or http://soaring.gahsys.com/TP                         
+#                                                                               
+#                Datum: 100 ( WGS84 ), Magnetic variation: 8.3W                 
+#                                                                               
+#                            Time zone: US/Eastern                              
+#          Summer offset from GMT is -4:00, and in Winter it is -5:00           
+#                                                                               
+#                                                                               
+#                       UNOFFICIAL, USE AT YOUR OWN RISK                        
+#                                                                               
+#           Do not use for navigation, for flight verification only.            
+#                                                                               
+#       Always consult the relevant publications for current and correct        
+#   information. This service is provided free of charge with no warrantees,    
+#                            expressed or implied.                              
+#                        User assumes all risk of use.                          
+#                                                                               
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Version 2
+#Sat Jul 22 23:08:41 2017 GMT
+D WGS-84
+M DMM
+Z 0.000000
+! -r cblack -r tt -r sn
+! -w coblack -w ctblue -w sovs -w stvs -w ane
+! -t cblack -t wt -t sn
+! -p ly -p fn -p cblack -p wt -p ablack -p sn
+W  01              N37 31.8333 W080 02.2667 Sat Jul 22 23:08:41 2017 ALT START A    1320F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  02              N37 25.6833 W080 09.9833 Sat Jul 22 23:08:41 2017 ALT START B    1320F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  03              N37 38.8333 W079 25.4833 Sat Jul 22 23:08:41 2017 BALCONY DOWNS   820F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  04              N37 43.8667 W079 48.6667 Sat Jul 22 23:08:41 2017 BIG HILL       1620F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  05              N37 02.5500 W081 08.2000 Sat Jul 22 23:08:41 2017 BIG WALKER     2950F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  06              N37 12.4667 W080 24.5000 Sat Jul 22 23:08:41 2017 BLACKSBURG     2132F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  07              N37 31.4667 W079 42.4167 Sat Jul 22 23:08:41 2017 BUCHANAN        830F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  08              N37 17.0500 W080 18.0500 Sat Jul 22 23:08:41 2017 CATAWBA VALLEY 1850F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  09              N37 45.5667 W080 00.0667 Sat Jul 22 23:08:41 2017 COVINGTON      1250F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  10              N38 04.7167 W079 22.9833 Sat Jul 22 23:08:41 2017 CRAIGSVILLE    1550F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  11              N37 39.8667 W079 48.5833 Sat Jul 22 23:08:41 2017 EAGLE ROCK     1200F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  12              N37 16.8667 W081 07.4833 Sat Jul 22 23:08:41 2017 EAST RIVER     2725F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  13              N37 33.7333 W080 24.4833 Sat Jul 22 23:08:41 2017 GAP MILLS      2360F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  14              N36 45.9667 W080 49.4167 Sat Jul 22 23:08:41 2017 HILLSVILLE     2693F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  15              N37 40.7667 W080 42.6167 Sat Jul 22 23:08:41 2017 HINTON         1520F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  16              N37 57.0833 W079 50.0333 Sat Jul 22 23:08:41 2017 INGALLS        3793F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  17              N37 47.5500 W079 26.2333 Sat Jul 22 23:08:41 2017 LEXINGTON       950F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  18              N37 25.4833 W080 22.6833 Sat Jul 22 23:08:41 2017 MAGGIE         1820F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  19              N36 54.1000 W081 32.5333 Sat Jul 22 23:08:41 2017 MARION         3907F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  20              N37 14.7000 W080 36.4000 Sat Jul 22 23:08:41 2017 MCCOY FALLS    1660F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  21              N37 59.7500 W079 37.3667 Sat Jul 22 23:08:41 2017 MILLBOROSPRNGS 1310F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  22              N38 24.7167 W079 34.7833 Sat Jul 22 23:08:41 2017 MONTEREY       3048F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  23              N37 21.3167 W080 32.2000 Sat Jul 22 23:08:41 2017 MOUNTAIN LAKE  3925F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  24              N37 20.3167 W080 48.3000 Sat Jul 22 23:08:41 2017 NARROWS        1558F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  25              N37 28.7667 W080 06.1333 Sat Jul 22 23:08:41 2017 NEW CASTLE     1320F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  26              N37 16.3167 W079 20.1500 Sat Jul 22 23:08:41 2017 NEW LONDON      849F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  27              N37 08.2333 W080 40.7167 Sat Jul 22 23:08:41 2017 NEW RIVER      2106F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  28              N37 36.9833 W079 59.0167 Sat Jul 22 23:08:41 2017 ORISKANY       1170F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  29              N37 26.8000 W079 36.1833 Sat Jul 22 23:08:41 2017 PEAKS OTTER    2500F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  30              N37 05.6833 W080 30.5333 Sat Jul 22 23:08:41 2017 RADFORD        2090F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  31              N37 47.7833 W079 46.0000 Sat Jul 22 23:08:41 2017 RIVERWOOD      1020F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  32              N37 37.7000 W080 14.4833 Sat Jul 22 23:08:41 2017 SWEET SPRINGS  1998F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  33              N37 09.0333 W081 27.2500 Sat Jul 22 23:08:41 2017 TAZEWELLCOUNTY 2900F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  34              N37 35.4833 W080 32.6167 Sat Jul 22 23:08:41 2017 UNION WV       2070F^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  35              N38 04.6167 W078 56.6500 Sat Jul 22 23:08:41 2017 WAYNESBORO     1437F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  36              N37 21.0667 W080 20.8833 Sat Jul 22 23:08:41 2017 WITS END            ^   18^Black       ^S+N^0
+c4 ;;;;255;155;
+W  97              N37 28.7667 W080 06.1333 Sat Jul 22 23:08:41 2017 START NCI      1320F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  98              N37 28.7500 W080 06.3667 Sat Jul 22 23:08:41 2017 FINISH GATE    1320F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  99              N37 28.7667 W080 06.1333 Sat Jul 22 23:08:41 2017 FINISHCYLINDE  1320F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  BARRWS          N37 29.5167 W079 55.7167 Sat Jul 22 23:08:41 2017 BARROWS        1100F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  BATHLM          N38 03.1500 W079 43.7333 Sat Jul 22 23:08:41 2017 BATH ALUM      1779F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  BLCKBR          N37 36.9333 W079 30.3167 Sat Jul 22 23:08:41 2017 BLACK BRIDGE    808F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  BLGRSS          N37 03.7167 W081 11.5000 Sat Jul 22 23:08:41 2017 BLUEGRASS      2660F^16390^Black       ^S+N^0
+c4 ;;;;255;155;
+W  BRKHLL          N37 55.6833 W079 10.6833 Sat Jul 22 23:08:41 2017 BROOK HILLFARM 1600F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  BRKSGR          N37 05.7333 W081 22.1500 Sat Jul 22 23:08:41 2017 BURKES GARDEN  3060F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  BRNTCH          N37 04.5333 W079 49.6333 Sat Jul 22 23:08:41 2017 BURNT CHIMNEY  1034F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  BUNDRN          N37 58.1000 W078 40.9333 Sat Jul 22 23:08:41 2017 BUNDORAN        840F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  CATHRO          N37 55.6833 W078 33.0833 Sat Jul 22 23:08:41 2017 CATHRO          520F^16390^Black       ^S+N^0
+c4 ;;;;255;155;
+W  CHRLTT          N38 08.3167 W078 27.1667 Sat Jul 22 23:08:41 2017 CHARLOTTESVILLE 639F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  COLLNS          N36 37.5000 W080 10.2333 Sat Jul 22 23:08:41 2017 COLLINS        1100F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  CTTNWD          N38 04.8667 W078 41.7333 Sat Jul 22 23:08:41 2017 COTTONWOOD FARM 690F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  DEERRN          N36 59.6500 W080 27.2667 Sat Jul 22 23:08:41 2017 DEER RUN       2400F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  DRCRKF          N38 28.2833 W079 48.3333 Sat Jul 22 23:08:41 2017 DEER CREEKFARM 2650F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  FALWLL          N37 22.6833 W079 07.3333 Sat Jul 22 23:08:41 2017 FALWELL         939F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  FERGSN          N37 07.0833 W079 47.3167 Sat Jul 22 23:08:41 2017 FERGUSON       1050F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  FLCHRF          N37 43.4500 W079 05.9500 Sat Jul 22 23:08:41 2017 FULCHERFAMLFRMS 980F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  FLTWDS          N37 44.3000 W078 57.7333 Sat Jul 22 23:08:41 2017 FLATWOODS       840F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  FNCSTL          N37 31.3333 W079 51.1167 Sat Jul 22 23:08:41 2017 FINCASTLE      1140F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  HNNHFL          N38 23.9000 W079 36.0167 Sat Jul 22 23:08:41 2017 HANNAH FIELD   3048F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  HOPLNG          N37 47.3833 W079 46.2500 Sat Jul 22 23:08:41 2017 HOP ALONG      1040F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  HWKRDG          N37 17.3333 W079 26.8333 Sat Jul 22 23:08:41 2017 HAWK RIDGE      760F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  JHNSNF          N37 14.0167 W079 35.1167 Sat Jul 22 23:08:41 2017 JOHNSON FOX     900F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  LAKEVW          N37 07.1167 W079 36.1667 Sat Jul 22 23:08:41 2017 LAKEVIEW       1020F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  LNCHBR          N37 19.6000 W079 12.0333 Sat Jul 22 23:08:41 2017 LYNCHBURG       938F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  LWSBRG          N37 51.5000 W080 23.9667 Sat Jul 22 23:08:41 2017 LEWISBURG      2302F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  MICRO           N36 44.1333 W080 26.9500 Sat Jul 22 23:08:41 2017 MICRO          2950F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  MILLER          N37 19.6667 W079 24.2833 Sat Jul 22 23:08:41 2017 MILLER          760F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  MRCRCN          N37 17.7500 W081 12.4667 Sat Jul 22 23:08:41 2017 MERCER COUNTY  2857F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  MTNMPR          N36 53.6833 W081 21.0000 Sat Jul 22 23:08:41 2017 MTN EMPIRE     2559F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  NASHS           N37 23.3833 W078 48.8167 Sat Jul 22 23:08:41 2017 NASHS           785F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  NRGRNB          N38 25.8333 W079 49.5333 Sat Jul 22 23:08:41 2017 NRAO GREENBANK 2710F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  PTRSTW          N37 24.0667 W080 48.4333 Sat Jul 22 23:08:41 2017 PETERSTOWN     1590F^16390^Black       ^S+N^0
+c4 ;;;;255;155;
+W  RBNSNP          N37 20.9000 W079 34.3167 Sat Jul 22 23:08:41 2017 ROBINSONPRIVATE 850F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  RCKFSH          N37 52.7667 W078 53.6167 Sat Jul 22 23:08:41 2017 ROCKFISH AP     760F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  RDBRDS          N37 06.7667 W079 36.5500 Sat Jul 22 23:08:41 2017 REDBIRDSAIRYARD 940F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  ROANOK          N37 19.5333 W079 58.5333 Sat Jul 22 23:08:41 2017 ROANOKE        1176F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  ROOT            N38 10.3833 W078 58.1500 Sat Jul 22 23:08:41 2017 ROOT           1290F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  RVRFRM          N37 40.7000 W079 48.3000 Sat Jul 22 23:08:41 2017 RIVER FARMER   1000F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  SHNNDH          N38 15.8333 W078 53.7833 Sat Jul 22 23:08:41 2017 SHENANDOAHVALL 1201F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  SMITH           N38 18.1500 W079 30.4833 Sat Jul 22 23:08:41 2017 SMITH          2020F^16390^Black       ^S+N^0
+c4 ;;;;255;155;
+W  SMTHMT          N37 06.4667 W079 35.5500 Sat Jul 22 23:08:41 2017 SMITH MTN LK    892F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  SNGLTN          N38 12.6333 W079 42.8000 Sat Jul 22 23:08:41 2017 SINGLETON      2060F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  SPRNGW          N37 33.2333 W079 44.9833 Sat Jul 22 23:08:41 2017 SPRINGWOOD GP  1000F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  STARR           N37 39.5667 W078 55.3333 Sat Jul 22 23:08:41 2017 STARR           640F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  TAZEWE          N37 03.8333 W081 47.9000 Sat Jul 22 23:08:41 2017 TAZEWELLCOUNT2 2652F^16384^Black       ^S+N^0
+c4 ;;;;255;155;
+W  TBD             N37 32.2833 W080 09.5500 Sat Jul 22 23:08:41 2017 TBD            1720F^16390^Black       ^S+N^0
+c4 ;;;;255;155;
+W  TMBRDD          N37 32.1833 W079 01.4000 Sat Jul 22 23:08:41 2017 TIMBERDOODLE    810F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  TRSSMR          N37 17.0833 W080 04.1833 Sat Jul 22 23:08:41 2017 TRUSSMARK      1020F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  TWNRVR          N37 40.7667 W079 25.2167 Sat Jul 22 23:08:41 2017 TWIN RIVER      720F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  TYERVR          N37 39.5000 W078 56.7333 Sat Jul 22 23:08:41 2017 TYE RIVER       650F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  WHTKST          N36 48.4667 W081 42.0667 Sat Jul 22 23:08:41 2017 WHITE OAKSTAND 2100F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  WLLWBN          N37 32.7333 W080 32.0500 Sat Jul 22 23:08:41 2017 WILLOW BEND    2150F^16389^Black       ^S+N^0
+c4 ;;;;255;155;
+W  WORLEY          N36 57.0000 W079 52.7667 Sat Jul 22 23:08:41 2017 WORLEY         1219F^16389^Black       ^S+N^0
+c4 ;;;;255;155;

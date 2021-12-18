@@ -1,0 +1,118 @@
+      Map marking information for New Castle, Virginia
+
+                Courtesy of John Godrey (QT)
+
+
+      Non‐Control Point Waypoints are indicated by a *
+
+
+
+      Latitude range:     36   37.5   to     38   28.3
+     Longitude range:    ‐81   47.9   to    ‐78   27.2
+
+
+      File created Saturday, 22 July 2017 at 23:08 GMT
+
+              UNOFFICIAL, USE AT YOUR OWN RISK
+
+  Do not use for navigation, for flight verification only.
+
+Always consult the relevant publications for current and correct
+information. This service is provided free of charge with no warrantees,
+                   expressed or implied.
+               User assumes all risk of use.
+
+
+          Way Point           Latitude        Longitude      Distance   Bearing    Description
+*    White Oak Stand        36   48.5   N    81   42.1   W     100        243     13/31 17T
+19   Marion                 36   54.1   N    81   32.5   W      89        244     Towers
+*    Mountain Empire        36   53.7   N    81   21.0   W      80        240     8/26 22.7
+14   Hillsville             36   46.0   N    80   49.4   W      63        219     16/34 122.80
+*    Deer Run               36   59.6   N    80   27.3   W      39        210     9/27 23T
+*    Micro                  36   44.1   N    80   26.9   W      55        201     8/26 30T
+*    Collins                36   37.5   N    80   10.2   W      59        184
+*    Worley                 36   57.0   N    79   52.8   W      39        161
+*    Tazewell County        37    3.8   N    81   47.9   W      98        253     7/25 23.05
+33   Tazewell County        37    9.0   N    81   27.2   W      78        253     Cemetary
+*    Burkes Garden          37    5.7   N    81   22.1   W      75        250     6/24 25A
+*    Mercer County          37   17.8   N    81   12.5   W      62        259     5/23 22.9
+*    Bluegrass              37    3.7   N    81   11.5   W      66        245
+ 5   Big Walker             37    2.5   N    81    8.2   W      64        242     I‐77 Tunnel
+12   East River             37   16.9   N    81    7.5   W      58        257     I‐77 Tunnel
+*    Peterstown             37   24.1   N    80   48.4   W      39        262     18/36 20T
+24   Narrows                37   20.3   N    80   48.3   W      40        256     School Track
+27   New River              37    8.2   N    80   40.7   W      40        233     06/24 122.70
+20   McCoy Falls            37   14.7   N    80   36.4   W      32        240     New River Gap
+23   Mountain Lake          37   21.3   N    80   32.2   W      25        250     Hotel
+30   Radford                37    5.7   N    80   30.5   W      35        220     Hospital
+ 6   Blacksburg             37   12.5   N    80   24.5   W      25        222     12/30 123.05
+18   Maggie                 37   25.5   N    80   22.7   W      16        256     Silo
+36   Wits End               37   21.1   N    80   20.9   W      16        237
+ 8   Catawba Valley         37   17.1   N    80   18.1   W      17        219     Airstrip
+ 2   Alt Start B            37   25.7   N    80   10.0   W       5.0      225     5 SW of NCI
+98   Finish Gate            37   28.8   N    80    6.4   W       0.2      265     18/36 Finish
+25   New Castle             37   28.8   N    80    6.1   W                        Airstrip
+99   Finish Cylinder        37   28.8   N    80    6.1   W
+*    Trussmark              37   17.1   N    80    4.2   W      14        172     12/30 14T
+*    Roanoke                37   19.5   N    79   58.5   W      13        147     6/24 22.95
+*    Barrows                37   29.5   N    79   55.7   W       9.6       85     8/26 21T
+*    Burnt Chimney          37    4.5   N    79   49.6   W      32        151
+*    Ferguson               37    7.1   N    79   47.3   W      30        145
+*    Red Birds Airyard      37    6.8   N    79   36.5   W      37        133
+29   Peaks Otter            37   26.8   N    79   36.2   W      27         95     Lodge
+*    Lakeview               37    7.1   N    79   36.2   W      37        132
+*    Smith Mountain Lake    37    6.5   N    79   35.5   W      38        132
+*    Johnson Fox            37   14.0   N    79   35.1   W      33        121     14/32 20T
+*    Robinson Private       37   20.9   N    79   34.3   W      30        107     E/W 28T
+*    Hawk Ridge             37   17.3   N    79   26.8   W      38        110
+*    Miller                 37   19.7   N    79   24.3   W      40        105     5/23 19T
+26   New London             37   16.3   N    79   20.1   W      44        109     Airport
+*    Lynchburg              37   19.6   N    79   12.0   W      51        102     4/22 27.65
+*    Falwell                37   22.7   N    79    7.3   W      54         97
+*    Nashs                  37   23.4   N    78   48.8   W      71         95
+15   Hinton                 37   40.8   N    80   42.6   W      36        293     10/28 122.90
+34   Union WV               37   35.5   N    80   32.6   W      25        288     Town Center
+*    Willow Bend            37   32.7   N    80   32.0   W      24        281
+13   Gap Mills              37   33.7   N    80   24.5   W      18        289     Town Center
+*    Lewisburg              37   51.5   N    80   24.0   W      31        328     4/22 18.9
+32   Sweet Springs          37   37.7   N    80   14.5   W      13        324     Hotel
+*    TBD                    37   32.3   N    80    9.6   W       5.1      322     01/19 12T
+ 1   Alt Start A            37   31.8   N    80    2.3   W       5.0       45     5 NE of NCI
+ 9   Covington              37   45.6   N    80    0.1   W      20         16     Factory
+28   Oriskany               37   37.0   N    79   59.0   W      11         34     Church
+*    Fincastle              37   31.3   N    79   51.1   W      14         78     11/29 30T
+16   Ingalls                37   57.1   N    79   50.0   W      36         24     06/24 122.70
+ 4   Big Hill               37   43.9   N    79   48.7   W      24         42     Airstrip
+11   Eagle Rock             37   39.9   N    79   48.6   W      20         51     07/25 27A
+*    River Farmer           37   40.7   N    79   48.3   W      21         50     Avoid Fields
+*    Hop Along              37   47.4   N    79   46.2   W      28         40     14/32 22T
+31   Riverwood              37   47.8   N    79   46.0   W      29         40     Airstrip
+*    Springwood GP          37   33.2   N    79   45.0   W      20         75     9/27 15T
+ 7   Buchanan               37   31.5   N    79   42.4   W      22         82     I‐81 Bridge
+21   Millboro Springs       37   59.8   N    79   37.4   W      44         36     Town Center
+*    Black Bridge           37   36.9   N    79   30.3   W      34         74
+17   Lexington              37   47.5   N    79   26.2   W      42         59     VMI
+ 3   Balcony Downs          37   38.8   N    79   25.5   W      39         72     Airstrip
+*    Twin River             37   40.8   N    79   25.2   W      40         69     6/24 30T
+*    Brook Hill Farm        37   55.7   N    79   10.7   W      59         58     3/21 20T
+*    Fulcher Family Farms   37   43.5   N    79    6.0   W      57         73
+*    Timberdoodle           37   32.2   N    79    1.4   W      59         86
+*    Flatwoods              37   44.3   N    78   57.7   W      65         74     3/21 14T
+*    Tye River              37   39.5   N    78   56.7   W      65         79
+*    Starr                  37   39.6   N    78   55.3   W      66         79
+*    Rockfish Airpark       37   52.8   N    78   53.6   W      72         67     6/24 22.7
+*    Bundoran               37   58.1   N    78   40.9   W      85         66
+*    Cathro                 37   55.7   N    78   33.1   W      90         69
+*    NRAO Green Bank        38   25.8   N    79   49.5   W      67         13     12/30 22.8
+*    Deer Creek Farm        38   28.3   N    79   48.3   W      70         13
+*    Bath Alum              38    3.1   N    79   43.7   W      45         27
+*    Singleton              38   12.6   N    79   42.8   W      55         23     5/23 16T
+*    Hannah Field           38   23.9   N    79   36.0   W      69         23     Crossroads
+22   Monterey               38   24.7   N    79   34.8   W      70         24     Crossroads
+*    Smith                  38   18.1   N    79   30.5   W      65         29     3/21 26T
+10   Craigsville            38    4.7   N    79   23.0   W      57         43     Town Center
+*    Root                   38   10.4   N    78   58.1   W      78         52
+35   Waynesboro             38    4.6   N    78   56.6   W      76         57     123.05
+*    Shenandoah Valley      38   15.8   N    78   53.8   W      85         50
+*    Cottonwood Farm        38    4.9   N    78   41.7   W      87         61
+*    Charlottesville        38    8.3   N    78   27.2   W     101         63

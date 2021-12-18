@@ -1,0 +1,4141 @@
+<?xml version="1.0"?>
+<Winscore>
+	<Version>2021 Rev 9</Version>
+	<Name>Region 5 South</Name>
+	<Location>Cordele, GA</Location>
+	<Contesttype>1</Contesttype>
+	<Units>0</Units>
+	<NumberOfDays>6</NumberOfDays>
+	<SSAID>2485</SSAID>
+	<CoordinateFormat>1</CoordinateFormat>
+	<Datum>1</Datum><startdate>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>7</day></startdate><practicedate1>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></practicedate1><practicedate2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>6</day></practicedate2><Classes><Class>
+	<Name>Sports Class</Name>
+	<ClassID>2</ClassID>
+	<Handicapped>1</Handicapped>
+	<UseShortTask>1</UseShortTask>
+	<UseComplRatio>1</UseComplRatio>
+	<UseingWDSA>0</UseingWDSA>
+	<AirfieldBonus>25</AirfieldBonus>
+	<NoFinisherPoints_ASGNED>400</NoFinisherPoints_ASGNED>
+	<MDP_M_ASGNED>-0.2</MDP_M_ASGNED>
+	<MDP_B_ASGNED>0.8</MDP_B_ASGNED>
+	<MSP_M_ASGNED>660</MSP_M_ASGNED>
+	<MSP_B_ASGNED>600</MSP_B_ASGNED>
+	<NoFinisherPoints_POST>400</NoFinisherPoints_POST>
+	<MDP_M_POST>-0.2</MDP_M_POST>
+	<MDP_B_POST>0.8</MDP_B_POST>
+	<MSP_M_POST>500</MSP_M_POST>
+	<MSP_B_POST>600</MSP_B_POST>
+	<SMTD>34.73562763163103</SMTD>
+	<SMTT>5400</SMTT>
+	<ContestType>1</ContestType>
+	<D1>134.8982408205502</D1>
+	<Dm>53.95929632822</Dm></Class><Class>
+	<Name>18 Meter</Name>
+	<ClassID>5</ClassID>
+	<Handicapped>0</Handicapped>
+	<UseShortTask>1</UseShortTask>
+	<UseComplRatio>1</UseComplRatio>
+	<UseingWDSA>0</UseingWDSA>
+	<AirfieldBonus>25</AirfieldBonus>
+	<NoFinisherPoints_ASGNED>400</NoFinisherPoints_ASGNED>
+	<MDP_M_ASGNED>-0.2</MDP_M_ASGNED>
+	<MDP_B_ASGNED>0.8</MDP_B_ASGNED>
+	<MSP_M_ASGNED>660</MSP_M_ASGNED>
+	<MSP_B_ASGNED>600</MSP_B_ASGNED>
+	<NoFinisherPoints_POST>400</NoFinisherPoints_POST>
+	<MDP_M_POST>-0.2</MDP_M_POST>
+	<MDP_B_POST>0.8</MDP_B_POST>
+	<MSP_M_POST>500</MSP_M_POST>
+	<MSP_B_POST>600</MSP_B_POST>
+	<SMTD>43.41953453953879</SMTD>
+	<SMTT>7200</SMTT>
+	<ContestType>1</ContestType>
+	<D1>188.85753714876995</D1>
+	<Dm>75.54301485950798</Dm></Class><Class>
+	<Name>FAI Handicapped</Name>
+	<ClassID>6</ClassID>
+	<Handicapped>1</Handicapped>
+	<UseShortTask>1</UseShortTask>
+	<UseComplRatio>1</UseComplRatio>
+	<UseingWDSA>0</UseingWDSA>
+	<AirfieldBonus>25</AirfieldBonus>
+	<NoFinisherPoints_ASGNED>400</NoFinisherPoints_ASGNED>
+	<MDP_M_ASGNED>-0.2</MDP_M_ASGNED>
+	<MDP_B_ASGNED>0.8</MDP_B_ASGNED>
+	<MSP_M_ASGNED>660</MSP_M_ASGNED>
+	<MSP_B_ASGNED>600</MSP_B_ASGNED>
+	<NoFinisherPoints_POST>400</NoFinisherPoints_POST>
+	<MDP_M_POST>-0.2</MDP_M_POST>
+	<MDP_B_POST>0.8</MDP_B_POST>
+	<MSP_M_POST>500</MSP_M_POST>
+	<MSP_B_POST>600</MSP_B_POST>
+	<SMTD>34.73562763163103</SMTD>
+	<SMTT>7200</SMTT>
+	<ContestType>1</ContestType>
+	<D1>134.89824082054997</D1>
+	<Dm>53.95929632821999</Dm></Class></Classes><Waypoints><Waypoint>
+	<ID>1</ID>
+	<Name>Start Cordel</Name>
+	<Lat>31  59.400 N</Lat>
+	<Long>83  46.517 W</Long>
+	<Attributes> S A </Attributes>
+	<Elevation>310</Elevation></Waypoint><Waypoint>
+	<ID>2</ID>
+	<Name>FINISHCORDE</Name>
+	<Lat>31  59.400 N</Lat>
+	<Long>83  46.517 W</Long>
+	<Attributes> H F A </Attributes>
+	<Elevation>310</Elevation></Waypoint><Waypoint>
+	<ID>3</ID>
+	<Name>Cordele</Name>
+	<Lat>31  59.400 N</Lat>
+	<Long>83  46.517 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>310</Elevation></Waypoint><Waypoint>
+	<ID>4</ID>
+	<Name>Adel</Name>
+	<Lat>31  07.950 N</Lat>
+	<Long>83  27.500 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>236</Elevation></Waypoint><Waypoint>
+	<ID>5</ID>
+	<Name>Alapha</Name>
+	<Lat>31  22.883 N</Lat>
+	<Long>83  13.483 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>295</Elevation></Waypoint><Waypoint>
+	<ID>6</ID>
+	<Name>Albany</Name>
+	<Lat>31  31.767 N</Lat>
+	<Long>84  11.983 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>197</Elevation></Waypoint><Waypoint>
+	<ID>7</ID>
+	<Name>Alma</Name>
+	<Lat>31  31.733 N</Lat>
+	<Long>82  30.117 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>200</Elevation></Waypoint><Waypoint>
+	<ID>8</ID>
+	<Name>Americus</Name>
+	<Lat>32  06.383 N</Lat>
+	<Long>84  11.600 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>466</Elevation></Waypoint><Waypoint>
+	<ID>9</ID>
+	<Name>Andrews</Name>
+	<Lat>31  24.933 N</Lat>
+	<Long>84  42.783 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>245</Elevation></Waypoint><Waypoint>
+	<ID>10</ID>
+	<Name>Ashburn</Name>
+	<Lat>31  40.950 N</Lat>
+	<Long>83  37.883 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>389</Elevation></Waypoint><Waypoint>
+	<ID>11</ID>
+	<Name>Bainbridge</Name>
+	<Lat>30  58.300 N</Lat>
+	<Long>84  38.250 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>141</Elevation></Waypoint><Waypoint>
+	<ID>12</ID>
+	<Name>Baxley</Name>
+	<Lat>31  42.833 N</Lat>
+	<Long>82  23.633 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>201</Elevation></Waypoint><Waypoint>
+	<ID>13</ID>
+	<Name>BeckleyDustr</Name>
+	<Lat>32  30.067 N</Lat>
+	<Long>83  56.000 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>425</Elevation></Waypoint><Waypoint>
+	<ID>14</ID>
+	<Name>Berrien</Name>
+	<Lat>31  12.750 N</Lat>
+	<Long>83  13.583 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>239</Elevation></Waypoint><Waypoint>
+	<ID>15</ID>
+	<Name>Blakely</Name>
+	<Lat>31  23.667 N</Lat>
+	<Long>84  53.950 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>213</Elevation></Waypoint><Waypoint>
+	<ID>16</ID>
+	<Name>Buena Vista</Name>
+	<Lat>32  16.767 N</Lat>
+	<Long>84  30.000 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>682</Elevation></Waypoint><Waypoint>
+	<ID>17</ID>
+	<Name>Butler</Name>
+	<Lat>32  34.183 N</Lat>
+	<Long>84  14.717 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>667</Elevation></Waypoint><Waypoint>
+	<ID>18</ID>
+	<Name>Cairo Grady</Name>
+	<Lat>30  53.283 N</Lat>
+	<Long>84  09.283 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>265</Elevation></Waypoint><Waypoint>
+	<ID>19</ID>
+	<Name>Camilla</Name>
+	<Lat>31  12.717 N</Lat>
+	<Long>84  14.583 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>175</Elevation></Waypoint><Waypoint>
+	<ID>20</ID>
+	<Name>China Hill</Name>
+	<Lat>31  51.167 N</Lat>
+	<Long>83  05.200 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>250</Elevation></Waypoint><Waypoint>
+	<ID>21</ID>
+	<Name>Cochran</Name>
+	<Lat>32  23.783 N</Lat>
+	<Long>83  16.783 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>336</Elevation></Waypoint><Waypoint>
+	<ID>22</ID>
+	<Name>CrossRodsFrm</Name>
+	<Lat>32  26.800 N</Lat>
+	<Long>84  12.533 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>438</Elevation></Waypoint><Waypoint>
+	<ID>23</ID>
+	<Name>Crystal Lake</Name>
+	<Lat>31  39.933 N</Lat>
+	<Long>83  26.833 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>327</Elevation></Waypoint><Waypoint>
+	<ID>24</ID>
+	<Name>Cuthbert</Name>
+	<Lat>31  41.867 N</Lat>
+	<Long>84  49.600 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>457</Elevation></Waypoint><Waypoint>
+	<ID>25</ID>
+	<Name>Dawson</Name>
+	<Lat>31  44.350 N</Lat>
+	<Long>84  24.833 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>321</Elevation></Waypoint><Waypoint>
+	<ID>26</ID>
+	<Name>Donalsonvill</Name>
+	<Lat>31  00.417 N</Lat>
+	<Long>84  52.650 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>148</Elevation></Waypoint><Waypoint>
+	<ID>27</ID>
+	<Name>DoubleRDustr</Name>
+	<Lat>31  11.517 N</Lat>
+	<Long>84  43.567 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>164</Elevation></Waypoint><Waypoint>
+	<ID>28</ID>
+	<Name>Douglas</Name>
+	<Lat>31  28.350 N</Lat>
+	<Long>82  51.867 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>257</Elevation></Waypoint><Waypoint>
+	<ID>29</ID>
+	<Name>Dublin</Name>
+	<Lat>32  33.433 N</Lat>
+	<Long>82  59.100 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>310</Elevation></Waypoint><Waypoint>
+	<ID>30</ID>
+	<Name>Eastman</Name>
+	<Lat>32  12.450 N</Lat>
+	<Long>83  07.817 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>305</Elevation></Waypoint><Waypoint>
+	<ID>31</ID>
+	<Name>Everidge</Name>
+	<Lat>32  13.183 N</Lat>
+	<Long>83  51.317 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>450</Elevation></Waypoint><Waypoint>
+	<ID>32</ID>
+	<Name>Finlayson</Name>
+	<Lat>30  37.000 N</Lat>
+	<Long>83  39.150 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>150</Elevation></Waypoint><Waypoint>
+	<ID>33</ID>
+	<Name>Fitzgerald</Name>
+	<Lat>31  40.583 N</Lat>
+	<Long>83  16.483 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>365</Elevation></Waypoint><Waypoint>
+	<ID>34</ID>
+	<Name>FoxRun Farm</Name>
+	<Lat>32  34.083 N</Lat>
+	<Long>84  24.200 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>650</Elevation></Waypoint><Waypoint>
+	<ID>35</ID>
+	<Name>HartleyChrch</Name>
+	<Lat>31  53.783 N</Lat>
+	<Long>83  36.833 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>430</Elevation></Waypoint><Waypoint>
+	<ID>36</ID>
+	<Name>Hawkinsville</Name>
+	<Lat>32  17.000 N</Lat>
+	<Long>83  25.967 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>270</Elevation></Waypoint><Waypoint>
+	<ID>37</ID>
+	<Name>Hayes</Name>
+	<Lat>31  50.383 N</Lat>
+	<Long>84  28.900 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>401</Elevation></Waypoint><Waypoint>
+	<ID>38</ID>
+	<Name>Hazelhurst</Name>
+	<Lat>31  52.800 N</Lat>
+	<Long>82  38.567 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>255</Elevation></Waypoint><Waypoint>
+	<ID>39</ID>
+	<Name>Landfill</Name>
+	<Lat>31  51.967 N</Lat>
+	<Long>83  45.483 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>375</Elevation></Waypoint><Waypoint>
+	<ID>40</ID>
+	<Name>Leesburg</Name>
+	<Lat>31  46.250 N</Lat>
+	<Long>84  07.500 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>260</Elevation></Waypoint><Waypoint>
+	<ID>41</ID>
+	<Name>Lilly</Name>
+	<Lat>32  09.000 N</Lat>
+	<Long>83  51.917 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>352</Elevation></Waypoint><Waypoint>
+	<ID>42</ID>
+	<Name>McRae</Name>
+	<Lat>32  05.817 N</Lat>
+	<Long>82  52.767 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>203</Elevation></Waypoint><Waypoint>
+	<ID>43</ID>
+	<Name>Montezuma</Name>
+	<Lat>32  17.767 N</Lat>
+	<Long>84  00.500 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>339</Elevation></Waypoint><Waypoint>
+	<ID>44</ID>
+	<Name>Moultrie</Name>
+	<Lat>31  04.717 N</Lat>
+	<Long>83  47.983 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>294</Elevation></Waypoint><Waypoint>
+	<ID>45</ID>
+	<Name>Oak Ridge</Name>
+	<Lat>31  22.000 N</Lat>
+	<Long>83  45.300 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>350</Elevation></Waypoint><Waypoint>
+	<ID>46</ID>
+	<Name>Perry</Name>
+	<Lat>32  30.217 N</Lat>
+	<Long>83  46.033 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>419</Elevation></Waypoint><Waypoint>
+	<ID>47</ID>
+	<Name>Peterson</Name>
+	<Lat>32  05.433 N</Lat>
+	<Long>84  22.333 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>526</Elevation></Waypoint><Waypoint>
+	<ID>48</ID>
+	<Name>Pinebloom</Name>
+	<Lat>31  24.183 N</Lat>
+	<Long>84  19.367 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>170</Elevation></Waypoint><Waypoint>
+	<ID>49</ID>
+	<Name>Pineview</Name>
+	<Lat>32  06.667 N</Lat>
+	<Long>83  30.083 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>280</Elevation></Waypoint><Waypoint>
+	<ID>50</ID>
+	<Name>Quitman</Name>
+	<Lat>30  48.283 N</Lat>
+	<Long>83  35.167 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>180</Elevation></Waypoint><Waypoint>
+	<ID>51</ID>
+	<Name>Reidsville</Name>
+	<Lat>32  03.533 N</Lat>
+	<Long>82  09.100 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>195</Elevation></Waypoint><Waypoint>
+	<ID>52</ID>
+	<Name>Roberta</Name>
+	<Lat>32  42.833 N</Lat>
+	<Long>84  01.650 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>505</Elevation></Waypoint><Waypoint>
+	<ID>53</ID>
+	<Name>Rochelle</Name>
+	<Lat>31  56.217 N</Lat>
+	<Long>83  27.400 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>322</Elevation></Waypoint><Waypoint>
+	<ID>54</ID>
+	<Name>Shilo</Name>
+	<Lat>30  55.867 N</Lat>
+	<Long>83  23.017 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>211</Elevation></Waypoint><Waypoint>
+	<ID>55</ID>
+	<Name>Soperton</Name>
+	<Lat>32  23.250 N</Lat>
+	<Long>82  33.800 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>345</Elevation></Waypoint><Waypoint>
+	<ID>56</ID>
+	<Name>Sylvester</Name>
+	<Lat>31  33.133 N</Lat>
+	<Long>83  53.700 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>403</Elevation></Waypoint><Waypoint>
+	<ID>57</ID>
+	<Name>Thomasville</Name>
+	<Lat>30  53.717 N</Lat>
+	<Long>83  53.250 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>264</Elevation></Waypoint><Waypoint>
+	<ID>58</ID>
+	<Name>Tifton</Name>
+	<Lat>31  25.233 N</Lat>
+	<Long>83  29.150 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>355</Elevation></Waypoint><Waypoint>
+	<ID>59</ID>
+	<Name>TyTy Poultry</Name>
+	<Lat>31  17.017 N</Lat>
+	<Long>83  35.417 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>258</Elevation></Waypoint><Waypoint>
+	<ID>60</ID>
+	<Name>Unadilla</Name>
+	<Lat>32  14.167 N</Lat>
+	<Long>83  44.300 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>366</Elevation></Waypoint><Waypoint>
+	<ID>61</ID>
+	<Name>Vet Mem Park</Name>
+	<Lat>31  57.900 N</Lat>
+	<Long>83  55.783 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>315</Elevation></Waypoint><Waypoint>
+	<ID>62</ID>
+	<Name>Vidalia</Name>
+	<Lat>32  11.383 N</Lat>
+	<Long>82  21.950 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>275</Elevation></Waypoint><Waypoint>
+	<ID>63</ID>
+	<Name>Vienna</Name>
+	<Lat>32  05.483 N</Lat>
+	<Long>83  47.783 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>326</Elevation></Waypoint><Waypoint>
+	<ID>64</ID>
+	<Name>Warwick</Name>
+	<Lat>31  50.217 N</Lat>
+	<Long>83  55.417 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>315</Elevation></Waypoint><Waypoint>
+	<ID>65</ID>
+	<Name>Westbrook</Name>
+	<Lat>32  02.850 N</Lat>
+	<Long>84  44.400 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>550</Elevation></Waypoint><Waypoint>
+	<ID>66</ID>
+	<Name>WhiskyIsland</Name>
+	<Lat>32  02.150 N</Lat>
+	<Long>83  57.333 W</Long>
+	<Attributes> T </Attributes>
+	<Elevation>277</Elevation></Waypoint><Waypoint>
+	<ID>67</ID>
+	<Name>Whitehall</Name>
+	<Lat>32  29.933 N</Lat>
+	<Long>83  11.050 W</Long>
+	<Attributes> A T </Attributes>
+	<Elevation>350</Elevation></Waypoint><Waypoint>
+	<ID>71</ID>
+	<Name>Start NE</Name>
+	<Lat>32  03.000 N</Lat>
+	<Long>83  43.000 W</Long>
+	<Attributes> S </Attributes>
+	<Elevation>310</Elevation></Waypoint><Waypoint>
+	<ID>72</ID>
+	<Name>Start SE</Name>
+	<Lat>31  56.000 N</Lat>
+	<Long>83  43.000 W</Long>
+	<Attributes> S </Attributes>
+	<Elevation>310</Elevation></Waypoint><Waypoint>
+	<ID>73</ID>
+	<Name>Start SW</Name>
+	<Lat>31  56.000 N</Lat>
+	<Long>83  50.000 W</Long>
+	<Attributes> S </Attributes>
+	<Elevation>310</Elevation></Waypoint><Waypoint>
+	<ID>74</ID>
+	<Name>Start NW</Name>
+	<Lat>32  03.000 N</Lat>
+	<Long>83  50.000 W</Long>
+	<Attributes> S </Attributes>
+	<Elevation>310</Elevation></Waypoint><Waypoint>
+	<ID>100</ID>
+	<Name>AbbevilleMun</Name>
+	<Lat>31  36.017 N</Lat>
+	<Long>85  14.300 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>469</Elevation></Waypoint><Waypoint>
+	<ID>101</ID>
+	<Name>Alcovy</Name>
+	<Lat>33  40.500 N</Lat>
+	<Long>83  45.783 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>750</Elevation></Waypoint><Waypoint>
+	<ID>102</ID>
+	<Name>Anderson</Name>
+	<Lat>31  01.183 N</Lat>
+	<Long>84  23.733 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>138</Elevation></Waypoint><Waypoint>
+	<ID>103</ID>
+	<Name>Angels Field</Name>
+	<Lat>30  28.867 N</Lat>
+	<Long>84  05.217 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>160</Elevation></Waypoint><Waypoint>
+	<ID>104</ID>
+	<Name>AntiqueAcres</Name>
+	<Lat>33  06.000 N</Lat>
+	<Long>84  03.517 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>800</Elevation></Waypoint><Waypoint>
+	<ID>105</ID>
+	<Name>B and L</Name>
+	<Lat>33  09.367 N</Lat>
+	<Long>84  25.867 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>843</Elevation></Waypoint><Waypoint>
+	<ID>106</ID>
+	<Name>Baldwin Co</Name>
+	<Lat>33  09.250 N</Lat>
+	<Long>83  14.483 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>385</Elevation></Waypoint><Waypoint>
+	<ID>107</ID>
+	<Name>Bird Field</Name>
+	<Lat>30  37.350 N</Lat>
+	<Long>83  15.567 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>150</Elevation></Waypoint><Waypoint>
+	<ID>108</ID>
+	<Name>Bivins</Name>
+	<Lat>31  11.117 N</Lat>
+	<Long>82  16.400 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>134</Elevation></Waypoint><Waypoint>
+	<ID>109</ID>
+	<Name>BlackCrekPss</Name>
+	<Lat>30  30.050 N</Lat>
+	<Long>84  04.683 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>95</Elevation></Waypoint><Waypoint>
+	<ID>110</ID>
+	<Name>BlssngsLndng</Name>
+	<Lat>31  18.183 N</Lat>
+	<Long>85  31.617 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>400</Elevation></Waypoint><Waypoint>
+	<ID>111</ID>
+	<Name>Bradley</Name>
+	<Lat>29  55.550 N</Lat>
+	<Long>82  41.600 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>80</Elevation></Waypoint><Waypoint>
+	<ID>112</ID>
+	<Name>Brantley Co</Name>
+	<Lat>31  12.367 N</Lat>
+	<Long>81  54.367 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>85</Elevation></Waypoint><Waypoint>
+	<ID>113</ID>
+	<Name>Brock</Name>
+	<Lat>30  59.983 N</Lat>
+	<Long>84  30.367 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>130</Elevation></Waypoint><Waypoint>
+	<ID>114</ID>
+	<Name>Broken Ranch</Name>
+	<Lat>33  09.567 N</Lat>
+	<Long>83  54.250 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>620</Elevation></Waypoint><Waypoint>
+	<ID>115</ID>
+	<Name>BrooklnMdwmr</Name>
+	<Lat>33  05.867 N</Lat>
+	<Long>83  24.283 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>500</Elevation></Waypoint><Waypoint>
+	<ID>116</ID>
+	<Name>Brown Field</Name>
+	<Lat>33  03.417 N</Lat>
+	<Long>84  20.550 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>864</Elevation></Waypoint><Waypoint>
+	<ID>117</ID>
+	<Name>Buckner</Name>
+	<Lat>30  05.767 N</Lat>
+	<Long>82  55.483 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>90</Elevation></Waypoint><Waypoint>
+	<ID>118</ID>
+	<Name>BuddysAgSrvc</Name>
+	<Lat>30  07.350 N</Lat>
+	<Long>82  58.067 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>100</Elevation></Waypoint><Waypoint>
+	<ID>119</ID>
+	<Name>Byromville</Name>
+	<Lat>32  10.583 N</Lat>
+	<Long>83  53.833 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>354</Elevation></Waypoint><Waypoint>
+	<ID>120</ID>
+	<Name>CameronField</Name>
+	<Lat>32  32.950 N</Lat>
+	<Long>83  49.633 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>479</Elevation></Waypoint><Waypoint>
+	<ID>121</ID>
+	<Name>Cannon Creek</Name>
+	<Lat>30  09.217 N</Lat>
+	<Long>82  39.983 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>125</Elevation></Waypoint><Waypoint>
+	<ID>122</ID>
+	<Name>Cauleys</Name>
+	<Lat>32  19.767 N</Lat>
+	<Long>82  38.100 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>251</Elevation></Waypoint><Waypoint>
+	<ID>123</ID>
+	<Name>CharlottsFld</Name>
+	<Lat>30  28.650 N</Lat>
+	<Long>84  02.083 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>80</Elevation></Waypoint><Waypoint>
+	<ID>124</ID>
+	<Name>ChinaberryRc</Name>
+	<Lat>32  41.617 N</Lat>
+	<Long>82  53.933 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>295</Elevation></Waypoint><Waypoint>
+	<ID>125</ID>
+	<Name>Chipola AP</Name>
+	<Lat>30  53.300 N</Lat>
+	<Long>85  10.067 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>125</Elevation></Waypoint><Waypoint>
+	<ID>126</ID>
+	<Name>Circle P</Name>
+	<Lat>30  06.200 N</Lat>
+	<Long>83  27.017 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>83</Elevation></Waypoint><Waypoint>
+	<ID>127</ID>
+	<Name>Circle T</Name>
+	<Lat>33  12.333 N</Lat>
+	<Long>83  54.750 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>545</Elevation></Waypoint><Waypoint>
+	<ID>128</ID>
+	<Name>ClaxtonEvnsC</Name>
+	<Lat>32  11.700 N</Lat>
+	<Long>81  52.167 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>112</Elevation></Waypoint><Waypoint>
+	<ID>129</ID>
+	<Name>Clayton Muni</Name>
+	<Lat>31  53.000 N</Lat>
+	<Long>85  29.117 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>435</Elevation></Waypoint><Waypoint>
+	<ID>130</ID>
+	<Name>Coates</Name>
+	<Lat>31  29.483 N</Lat>
+	<Long>85  01.000 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>310</Elevation></Waypoint><Waypoint>
+	<ID>131</ID>
+	<Name>CookseBrthrs</Name>
+	<Lat>30  12.700 N</Lat>
+	<Long>83  03.267 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>90</Elevation></Waypoint><Waypoint>
+	<ID>132</ID>
+	<Name>CovingtonMun</Name>
+	<Lat>33  37.933 N</Lat>
+	<Long>83  50.850 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>809</Elevation></Waypoint><Waypoint>
+	<ID>133</ID>
+	<Name>DJ Farm</Name>
+	<Lat>30  27.367 N</Lat>
+	<Long>83  08.650 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>85</Elevation></Waypoint><Waypoint>
+	<ID>134</ID>
+	<Name>Darlas AS</Name>
+	<Lat>32  40.817 N</Lat>
+	<Long>82  28.750 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>320</Elevation></Waypoint><Waypoint>
+	<ID>135</ID>
+	<Name>Daystar</Name>
+	<Lat>31  20.783 N</Lat>
+	<Long>82  07.783 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>105</Elevation></Waypoint><Waypoint>
+	<ID>136</ID>
+	<Name>DeerfldLndng</Name>
+	<Lat>33  13.083 N</Lat>
+	<Long>83  19.033 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>445</Elevation></Waypoint><Waypoint>
+	<ID>137</ID>
+	<Name>Dothan</Name>
+	<Lat>31  19.267 N</Lat>
+	<Long>85  26.967 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>401</Elevation></Waypoint><Waypoint>
+	<ID>138</ID>
+	<Name>Double OFarm</Name>
+	<Lat>31  32.100 N</Lat>
+	<Long>84  00.133 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>297</Elevation></Waypoint><Waypoint>
+	<ID>139</ID>
+	<Name>Dream Team</Name>
+	<Lat>33  35.850 N</Lat>
+	<Long>83  31.067 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>604</Elevation></Waypoint><Waypoint>
+	<ID>140</ID>
+	<Name>Duke Strip 2</Name>
+	<Lat>32  22.900 N</Lat>
+	<Long>83  03.583 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>340</Elevation></Waypoint><Waypoint>
+	<ID>141</ID>
+	<Name>EaglesLandng</Name>
+	<Lat>33  09.600 N</Lat>
+	<Long>84  21.917 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>980</Elevation></Waypoint><Waypoint>
+	<ID>142</ID>
+	<Name>Esthrbrkrdrm</Name>
+	<Lat>30  37.467 N</Lat>
+	<Long>83  17.217 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>100</Elevation></Waypoint><Waypoint>
+	<ID>143</ID>
+	<Name>EufaulWdnFld</Name>
+	<Lat>31  57.083 N</Lat>
+	<Long>85  07.733 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>285</Elevation></Waypoint><Waypoint>
+	<ID>144</ID>
+	<Name>FlrdShrffsBs</Name>
+	<Lat>30  24.933 N</Lat>
+	<Long>83  00.983 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>93</Elevation></Waypoint><Waypoint>
+	<ID>145</ID>
+	<Name>Flying CFarm</Name>
+	<Lat>29  57.950 N</Lat>
+	<Long>82  52.367 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>75</Elevation></Waypoint><Waypoint>
+	<ID>146</ID>
+	<Name>Flying H Rc</Name>
+	<Lat>33  06.883 N</Lat>
+	<Long>84  26.950 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>800</Elevation></Waypoint><Waypoint>
+	<ID>147</ID>
+	<Name>Flying N</Name>
+	<Lat>33  10.633 N</Lat>
+	<Long>84  44.917 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>870</Elevation></Waypoint><Waypoint>
+	<ID>148</ID>
+	<Name>Folsom</Name>
+	<Lat>30  40.350 N</Lat>
+	<Long>85  05.000 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>155</Elevation></Waypoint><Waypoint>
+	<ID>149</ID>
+	<Name>FrttknsnPlnt</Name>
+	<Lat>30  11.767 N</Lat>
+	<Long>83  18.550 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>90</Elevation></Waypoint><Waypoint>
+	<ID>150</ID>
+	<Name>Fox Field</Name>
+	<Lat>29  53.367 N</Lat>
+	<Long>82  47.917 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>72</Elevation></Waypoint><Waypoint>
+	<ID>151</ID>
+	<Name>FreedomField</Name>
+	<Lat>31  06.967 N</Lat>
+	<Long>85  37.533 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>285</Elevation></Waypoint><Waypoint>
+	<ID>152</ID>
+	<Name>Grayhill</Name>
+	<Lat>32  56.917 N</Lat>
+	<Long>85  03.233 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>750</Elevation></Waypoint><Waypoint>
+	<ID>153</ID>
+	<Name>GrffnSpldngC</Name>
+	<Lat>33  13.617 N</Lat>
+	<Long>84  16.500 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>958</Elevation></Waypoint><Waypoint>
+	<ID>154</ID>
+	<Name>HaciendadeGa</Name>
+	<Lat>32  39.800 N</Lat>
+	<Long>82  04.517 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>328</Elevation></Waypoint><Waypoint>
+	<ID>155</ID>
+	<Name>Harris Co</Name>
+	<Lat>32  50.450 N</Lat>
+	<Long>84  52.950 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>902</Elevation></Waypoint><Waypoint>
+	<ID>156</ID>
+	<Name>Hart</Name>
+	<Lat>30  56.783 N</Lat>
+	<Long>85  16.433 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>125</Elevation></Waypoint><Waypoint>
+	<ID>157</ID>
+	<Name>Hay Field</Name>
+	<Lat>33  31.033 N</Lat>
+	<Long>83  26.383 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>650</Elevation></Waypoint><Waypoint>
+	<ID>158</ID>
+	<Name>Headland Mun</Name>
+	<Lat>31  21.850 N</Lat>
+	<Long>85  18.750 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>359</Elevation></Waypoint><Waypoint>
+	<ID>159</ID>
+	<Name>Hia</Name>
+	<Lat>32  33.733 N</Lat>
+	<Long>81  51.467 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>238</Elevation></Waypoint><Waypoint>
+	<ID>160</ID>
+	<Name>HiddenSprngs</Name>
+	<Lat>31  29.567 N</Lat>
+	<Long>85  32.050 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>346</Elevation></Waypoint><Waypoint>
+	<ID>161</ID>
+	<Name>Hodges Field</Name>
+	<Lat>32  07.417 N</Lat>
+	<Long>84  07.800 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>455</Elevation></Waypoint><Waypoint>
+	<ID>162</ID>
+	<Name>Homerville</Name>
+	<Lat>31  03.417 N</Lat>
+	<Long>82  46.517 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>187</Elevation></Waypoint><Waypoint>
+	<ID>163</ID>
+	<Name>Hutto Farm</Name>
+	<Lat>32  41.000 N</Lat>
+	<Long>83  51.417 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>620</Elevation></Waypoint><Waypoint>
+	<ID>164</ID>
+	<Name>IngallsField</Name>
+	<Lat>30  35.433 N</Lat>
+	<Long>84  01.833 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>183</Elevation></Waypoint><Waypoint>
+	<ID>165</ID>
+	<Name>JffrsnLndngs</Name>
+	<Lat>30  35.083 N</Lat>
+	<Long>83  42.483 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>120</Elevation></Waypoint><Waypoint>
+	<ID>166</ID>
+	<Name>JesupWayneCo</Name>
+	<Lat>31  33.233 N</Lat>
+	<Long>81  52.950 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>107</Elevation></Waypoint><Waypoint>
+	<ID>167</ID>
+	<Name>Jordans</Name>
+	<Lat>31  26.317 N</Lat>
+	<Long>84  42.500 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>250</Elevation></Waypoint><Waypoint>
+	<ID>168</ID>
+	<Name>Kenndntrntnl</Name>
+	<Lat>33  31.600 N</Lat>
+	<Long>83  38.333 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>695</Elevation></Waypoint><Waypoint>
+	<ID>169</ID>
+	<Name>KilpatrckFrm</Name>
+	<Lat>30  43.650 N</Lat>
+	<Long>84  55.067 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>160</Elevation></Waypoint><Waypoint>
+	<ID>170</ID>
+	<Name>Kirkland</Name>
+	<Lat>30  58.917 N</Lat>
+	<Long>85  29.550 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>180</Elevation></Waypoint><Waypoint>
+	<ID>171</ID>
+	<Name>KitchensFild</Name>
+	<Lat>33  08.067 N</Lat>
+	<Long>84  15.250 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>800</Elevation></Waypoint><Waypoint>
+	<ID>172</ID>
+	<Name>Kittyhwkstts</Name>
+	<Lat>30  20.333 N</Lat>
+	<Long>83  08.650 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>90</Elevation></Waypoint><Waypoint>
+	<ID>173</ID>
+	<Name>LT Landing</Name>
+	<Lat>32  22.733 N</Lat>
+	<Long>83  05.283 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>286</Elevation></Waypoint><Waypoint>
+	<ID>174</ID>
+	<Name>LagrangeCllw</Name>
+	<Lat>33  00.533 N</Lat>
+	<Long>85  04.350 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>694</Elevation></Waypoint><Waypoint>
+	<ID>175</ID>
+	<Name>Lake City AP</Name>
+	<Lat>30  02.633 N</Lat>
+	<Long>82  36.233 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>120</Elevation></Waypoint><Waypoint>
+	<ID>176</ID>
+	<Name>Lakeview AS</Name>
+	<Lat>30  31.533 N</Lat>
+	<Long>83  51.500 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>156</Elevation></Waypoint><Waypoint>
+	<ID>177</ID>
+	<Name>Lanett</Name>
+	<Lat>32  48.717 N</Lat>
+	<Long>85  13.783 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>624</Elevation></Waypoint><Waypoint>
+	<ID>178</ID>
+	<Name>Lawrence</Name>
+	<Lat>30  42.917 N</Lat>
+	<Long>85  01.550 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>130</Elevation></Waypoint><Waypoint>
+	<ID>179</ID>
+	<Name>Lazyboy</Name>
+	<Lat>29  58.550 N</Lat>
+	<Long>82  54.433 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>45</Elevation></Waypoint><Waypoint>
+	<ID>180</ID>
+	<Name>LibertyField</Name>
+	<Lat>31  17.400 N</Lat>
+	<Long>85  32.433 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>363</Elevation></Waypoint><Waypoint>
+	<ID>181</ID>
+	<Name>Little River</Name>
+	<Lat>30  06.900 N</Lat>
+	<Long>82  54.533 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>90</Elevation></Waypoint><Waypoint>
+	<ID>182</ID>
+	<Name>LttlTbsfkCrk</Name>
+	<Lat>32  59.033 N</Lat>
+	<Long>84  05.733 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>755</Elevation></Waypoint><Waypoint>
+	<ID>183</ID>
+	<Name>LouisvilleMn</Name>
+	<Lat>32  59.150 N</Lat>
+	<Long>82  23.083 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>328</Elevation></Waypoint><Waypoint>
+	<ID>184</ID>
+	<Name>Lumar Field</Name>
+	<Lat>30  07.850 N</Lat>
+	<Long>83  32.967 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>65</Elevation></Waypoint><Waypoint>
+	<ID>185</ID>
+	<Name>M K Field</Name>
+	<Lat>33  10.117 N</Lat>
+	<Long>84  49.817 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>866</Elevation></Waypoint><Waypoint>
+	<ID>186</ID>
+	<Name>MaconDowntwn</Name>
+	<Lat>32  49.300 N</Lat>
+	<Long>83  33.717 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>437</Elevation></Waypoint><Waypoint>
+	<ID>187</ID>
+	<Name>Madison Co</Name>
+	<Lat>30  26.583 N</Lat>
+	<Long>83  18.667 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>150</Elevation></Waypoint><Waypoint>
+	<ID>188</ID>
+	<Name>Madison Muni</Name>
+	<Lat>33  36.733 N</Lat>
+	<Long>83  27.633 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>694</Elevation></Waypoint><Waypoint>
+	<ID>189</ID>
+	<Name>Mallory</Name>
+	<Lat>30  57.050 N</Lat>
+	<Long>83  14.050 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>202</Elevation></Waypoint><Waypoint>
+	<ID>190</ID>
+	<Name>Marianna Mun</Name>
+	<Lat>30  50.267 N</Lat>
+	<Long>85  10.917 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>110</Elevation></Waypoint><Waypoint>
+	<ID>191</ID>
+	<Name>Mcclellan</Name>
+	<Lat>30  46.733 N</Lat>
+	<Long>83  12.117 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>229</Elevation></Waypoint><Waypoint>
+	<ID>192</ID>
+	<Name>Mclendon</Name>
+	<Lat>31  35.167 N</Lat>
+	<Long>84  47.433 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>360</Elevation></Waypoint><Waypoint>
+	<ID>193</ID>
+	<Name>MclendonFild</Name>
+	<Lat>32  40.017 N</Lat>
+	<Long>84  57.933 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>650</Elevation></Waypoint><Waypoint>
+	<ID>194</ID>
+	<Name>Metter</Name>
+	<Lat>32  22.433 N</Lat>
+	<Long>82  04.883 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>197</Elevation></Waypoint><Waypoint>
+	<ID>195</ID>
+	<Name>MiamiVallFrm</Name>
+	<Lat>32  32.933 N</Lat>
+	<Long>83  48.117 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>468</Elevation></Waypoint><Waypoint>
+	<ID>196</ID>
+	<Name>MiddleGeorgi</Name>
+	<Lat>32  41.567 N</Lat>
+	<Long>83  38.950 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>354</Elevation></Waypoint><Waypoint>
+	<ID>197</ID>
+	<Name>Midville X</Name>
+	<Lat>32  50.717 N</Lat>
+	<Long>82  16.250 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>265</Elevation></Waypoint><Waypoint>
+	<ID>198</ID>
+	<Name>Millen</Name>
+	<Lat>32  53.583 N</Lat>
+	<Long>81  57.917 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>240</Elevation></Waypoint><Waypoint>
+	<ID>199</ID>
+	<Name>MonroeWaltnC</Name>
+	<Lat>33  46.950 N</Lat>
+	<Long>83  41.567 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>875</Elevation></Waypoint><Waypoint>
+	<ID>200</ID>
+	<Name>MonticllSkRc</Name>
+	<Lat>33  19.950 N</Lat>
+	<Long>83  43.617 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>690</Elevation></Waypoint><Waypoint>
+	<ID>201</ID>
+	<Name>Moody AFB</Name>
+	<Lat>30  58.117 N</Lat>
+	<Long>83  11.583 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>235</Elevation></Waypoint><Waypoint>
+	<ID>202</ID>
+	<Name>Moss Meadows</Name>
+	<Lat>30  14.250 N</Lat>
+	<Long>82  54.383 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>155</Elevation></Waypoint><Waypoint>
+	<ID>203</ID>
+	<Name>Neely Farms</Name>
+	<Lat>33  31.883 N</Lat>
+	<Long>83  47.517 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>720</Elevation></Waypoint><Waypoint>
+	<ID>204</ID>
+	<Name>NAmericnFrms</Name>
+	<Lat>30  57.883 N</Lat>
+	<Long>85  04.167 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>130</Elevation></Waypoint><Waypoint>
+	<ID>205</ID>
+	<Name>Obrien E/W</Name>
+	<Lat>30  02.900 N</Lat>
+	<Long>82  58.483 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>55</Elevation></Waypoint><Waypoint>
+	<ID>206</ID>
+	<Name>OzarkBlckwll</Name>
+	<Lat>31  25.917 N</Lat>
+	<Long>85  37.233 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>358</Elevation></Waypoint><Waypoint>
+	<ID>207</ID>
+	<Name>Paces SFarms</Name>
+	<Lat>32  48.533 N</Lat>
+	<Long>82  23.117 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>275</Elevation></Waypoint><Waypoint>
+	<ID>208</ID>
+	<Name>PasoFinoFarm</Name>
+	<Lat>30  52.833 N</Lat>
+	<Long>83  24.867 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>225</Elevation></Waypoint><Waypoint>
+	<ID>209</ID>
+	<Name>PechtrLndngs</Name>
+	<Lat>32  34.217 N</Lat>
+	<Long>83  43.317 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>447</Elevation></Waypoint><Waypoint>
+	<ID>210</ID>
+	<Name>Pittman Oaks</Name>
+	<Lat>30  25.500 N</Lat>
+	<Long>83  02.900 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>83</Elevation></Waypoint><Waypoint>
+	<ID>211</ID>
+	<Name>Pratt</Name>
+	<Lat>30  25.533 N</Lat>
+	<Long>83  34.567 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>100</Elevation></Waypoint><Waypoint>
+	<ID>212</ID>
+	<Name>PrattLanding</Name>
+	<Lat>31  03.867 N</Lat>
+	<Long>85  26.367 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>184</Elevation></Waypoint><Waypoint>
+	<ID>213</ID>
+	<Name>Prattsburg</Name>
+	<Lat>32  43.700 N</Lat>
+	<Long>84  21.417 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>554</Elevation></Waypoint><Waypoint>
+	<ID>214</ID>
+	<Name>Quincy Muni</Name>
+	<Lat>30  35.867 N</Lat>
+	<Long>84  33.450 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>225</Elevation></Waypoint><Waypoint>
+	<ID>215</ID>
+	<Name>RainbowField</Name>
+	<Lat>32  49.967 N</Lat>
+	<Long>84  32.267 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>780</Elevation></Waypoint><Waypoint>
+	<ID>216</ID>
+	<Name>Raju</Name>
+	<Lat>32  04.283 N</Lat>
+	<Long>84  42.867 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>625</Elevation></Waypoint><Waypoint>
+	<ID>217</ID>
+	<Name>RedBarnAcres</Name>
+	<Lat>30  10.600 N</Lat>
+	<Long>82  59.867 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>104</Elevation></Waypoint><Waypoint>
+	<ID>218</ID>
+	<Name>Richter AP</Name>
+	<Lat>31  44.900 N</Lat>
+	<Long>83  34.367 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>356</Elevation></Waypoint><Waypoint>
+	<ID>219</ID>
+	<Name>RidgeviewFrm</Name>
+	<Lat>33  04.833 N</Lat>
+	<Long>84  21.550 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>854</Elevation></Waypoint><Waypoint>
+	<ID>220</ID>
+	<Name>Robins AFB</Name>
+	<Lat>32  38.417 N</Lat>
+	<Long>83  35.517 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>295</Elevation></Waypoint><Waypoint>
+	<ID>221</ID>
+	<Name>RckFrdSTLprt</Name>
+	<Lat>30  29.783 N</Lat>
+	<Long>83  23.700 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>113</Elevation></Waypoint><Waypoint>
+	<ID>222</ID>
+	<Name>RuttenDustng</Name>
+	<Lat>30  40.967 N</Lat>
+	<Long>84  22.383 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>376</Elevation></Waypoint><Waypoint>
+	<ID>223</ID>
+	<Name>S + SLanding</Name>
+	<Lat>33  09.733 N</Lat>
+	<Long>84  19.233 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>900</Elevation></Waypoint><Waypoint>
+	<ID>224</ID>
+	<Name>SandrsvllKln</Name>
+	<Lat>32  58.000 N</Lat>
+	<Long>82  50.283 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>438</Elevation></Waypoint><Waypoint>
+	<ID>225</ID>
+	<Name>Saranac Farm</Name>
+	<Lat>30  39.150 N</Lat>
+	<Long>84  28.483 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>230</Elevation></Waypoint><Waypoint>
+	<ID>226</ID>
+	<Name>Sawyer Farm</Name>
+	<Lat>31  28.483 N</Lat>
+	<Long>85  00.167 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>350</Elevation></Waypoint><Waypoint>
+	<ID>227</ID>
+	<Name>SebastianCov</Name>
+	<Lat>33  27.250 N</Lat>
+	<Long>83  16.667 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>490</Elevation></Waypoint><Waypoint>
+	<ID>228</ID>
+	<Name>Sehoy</Name>
+	<Lat>32  13.283 N</Lat>
+	<Long>85  28.300 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>331</Elevation></Waypoint><Waypoint>
+	<ID>229</ID>
+	<Name>Seven Lakes</Name>
+	<Lat>33  19.467 N</Lat>
+	<Long>83  54.983 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>630</Elevation></Waypoint><Waypoint>
+	<ID>230</ID>
+	<Name>Sikes Farm</Name>
+	<Lat>32  13.367 N</Lat>
+	<Long>82  07.883 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>232</Elevation></Waypoint><Waypoint>
+	<ID>231</ID>
+	<Name>SleepyHollow</Name>
+	<Lat>33  41.583 N</Lat>
+	<Long>83  39.467 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>750</Elevation></Waypoint><Waypoint>
+	<ID>232</ID>
+	<Name>Smith Field</Name>
+	<Lat>32  36.133 N</Lat>
+	<Long>83  45.250 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>475</Elevation></Waypoint><Waypoint>
+	<ID>233</ID>
+	<Name>Snow Hill AS</Name>
+	<Lat>32  15.783 N</Lat>
+	<Long>83  47.233 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>465</Elevation></Waypoint><Waypoint>
+	<ID>234</ID>
+	<Name>South 1 Ten</Name>
+	<Lat>31  10.717 N</Lat>
+	<Long>83  13.600 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>225</Elevation></Waypoint><Waypoint>
+	<ID>235</ID>
+	<Name>SouthernAgAv</Name>
+	<Lat>32  19.717 N</Lat>
+	<Long>81  45.317 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>180</Elevation></Waypoint><Waypoint>
+	<ID>236</ID>
+	<Name>SouthernOaks</Name>
+	<Lat>33  43.883 N</Lat>
+	<Long>83  28.183 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>695</Elevation></Waypoint><Waypoint>
+	<ID>237</ID>
+	<Name>Spence</Name>
+	<Lat>31  08.267 N</Lat>
+	<Long>83  42.250 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>292</Elevation></Waypoint><Waypoint>
+	<ID>238</ID>
+	<Name>SpratlingFld</Name>
+	<Lat>32  14.550 N</Lat>
+	<Long>85  36.067 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>368</Elevation></Waypoint><Waypoint>
+	<ID>239</ID>
+	<Name>SquiresAvRch</Name>
+	<Lat>30  30.767 N</Lat>
+	<Long>83  11.900 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>110</Elevation></Waypoint><Waypoint>
+	<ID>240</ID>
+	<Name>SttsbrBllchC</Name>
+	<Lat>32  28.967 N</Lat>
+	<Long>81  44.217 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>187</Elevation></Waypoint><Waypoint>
+	<ID>241</ID>
+	<Name>Sunbelt</Name>
+	<Lat>31  06.683 N</Lat>
+	<Long>83  41.050 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>230</Elevation></Waypoint><Waypoint>
+	<ID>242</ID>
+	<Name>Sunset Strip</Name>
+	<Lat>33  44.000 N</Lat>
+	<Long>83  49.133 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>780</Elevation></Waypoint><Waypoint>
+	<ID>243</ID>
+	<Name>SuwanneeBell</Name>
+	<Lat>30  05.550 N</Lat>
+	<Long>83  05.133 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>50</Elevation></Waypoint><Waypoint>
+	<ID>244</ID>
+	<Name>Suwannee Co</Name>
+	<Lat>30  18.017 N</Lat>
+	<Long>83  01.467 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>103</Elevation></Waypoint><Waypoint>
+	<ID>245</ID>
+	<Name>SuwanneeFrms</Name>
+	<Lat>30  05.433 N</Lat>
+	<Long>83  03.267 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>50</Elevation></Waypoint><Waypoint>
+	<ID>246</ID>
+	<Name>SwainsbrGRg.</Name>
+	<Lat>32  36.550 N</Lat>
+	<Long>82  22.200 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>327</Elevation></Waypoint><Waypoint>
+	<ID>247</ID>
+	<Name>Takle Field</Name>
+	<Lat>33  02.500 N</Lat>
+	<Long>84  24.750 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>850</Elevation></Waypoint><Waypoint>
+	<ID>248</ID>
+	<Name>TllhssCmmrcl</Name>
+	<Lat>30  32.833 N</Lat>
+	<Long>84  22.433 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>155</Elevation></Waypoint><Waypoint>
+	<ID>249</ID>
+	<Name>Taylor Field</Name>
+	<Lat>33  43.450 N</Lat>
+	<Long>83  34.017 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>710</Elevation></Waypoint><Waypoint>
+	<ID>250</ID>
+	<Name>ThackerField</Name>
+	<Lat>33  02.683 N</Lat>
+	<Long>84  23.900 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>920</Elevation></Waypoint><Waypoint>
+	<ID>251</ID>
+	<Name>The Farm</Name>
+	<Lat>32  40.467 N</Lat>
+	<Long>82  46.267 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>375</Elevation></Waypoint><Waypoint>
+	<ID>252</ID>
+	<Name>The Trails</Name>
+	<Lat>30  06.550 N</Lat>
+	<Long>83  11.317 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>45</Elevation></Waypoint><Waypoint>
+	<ID>253</ID>
+	<Name>ThomastnpsnC</Name>
+	<Lat>32  57.300 N</Lat>
+	<Long>84  15.850 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>798</Elevation></Waypoint><Waypoint>
+	<ID>254</ID>
+	<Name>Thompson AF</Name>
+	<Lat>29  59.000 N</Lat>
+	<Long>82  50.133 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>110</Elevation></Waypoint><Waypoint>
+	<ID>255</ID>
+	<Name>Three MS</Name>
+	<Lat>33  11.150 N</Lat>
+	<Long>84  22.083 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>890</Elevation></Waypoint><Waypoint>
+	<ID>256</ID>
+	<Name>Toland</Name>
+	<Lat>33  09.833 N</Lat>
+	<Long>84  12.817 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>800</Elevation></Waypoint><Waypoint>
+	<ID>257</ID>
+	<Name>TrkScrtchPln</Name>
+	<Lat>30  24.217 N</Lat>
+	<Long>83  48.600 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>115</Elevation></Waypoint><Waypoint>
+	<ID>258</ID>
+	<Name>UnnSprngsFrn</Name>
+	<Lat>32  10.017 N</Lat>
+	<Long>85  48.583 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>300</Elevation></Waypoint><Waypoint>
+	<ID>259</ID>
+	<Name>Vada</Name>
+	<Lat>31  04.350 N</Lat>
+	<Long>84  23.600 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>140</Elevation></Waypoint><Waypoint>
+	<ID>260</ID>
+	<Name>ValdostaRgnl</Name>
+	<Lat>30  46.883 N</Lat>
+	<Long>83  16.567 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>203</Elevation></Waypoint><Waypoint>
+	<ID>261</ID>
+	<Name>Vintage Fld</Name>
+	<Lat>33  08.000 N</Lat>
+	<Long>84  22.650 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>873</Elevation></Waypoint><Waypoint>
+	<ID>262</ID>
+	<Name>Viola Farm</Name>
+	<Lat>30  43.417 N</Lat>
+	<Long>84  32.467 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>285</Elevation></Waypoint><Waypoint>
+	<ID>263</ID>
+	<Name>WrmSprngsRsv</Name>
+	<Lat>32  56.317 N</Lat>
+	<Long>84  41.783 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>882</Elevation></Waypoint><Waypoint>
+	<ID>264</ID>
+	<Name>WarnerRobins</Name>
+	<Lat>32  33.567 N</Lat>
+	<Long>83  40.500 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>409</Elevation></Waypoint><Waypoint>
+	<ID>265</ID>
+	<Name>Watson Farm</Name>
+	<Lat>30  36.717 N</Lat>
+	<Long>84  38.500 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>275</Elevation></Waypoint><Waypoint>
+	<ID>266</ID>
+	<Name>WaverlyLndng</Name>
+	<Lat>32  42.867 N</Lat>
+	<Long>84  43.083 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>675</Elevation></Waypoint><Waypoint>
+	<ID>267</ID>
+	<Name>Wellborn</Name>
+	<Lat>30  14.733 N</Lat>
+	<Long>82  46.700 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>180</Elevation></Waypoint><Waypoint>
+	<ID>268</ID>
+	<Name>White Field</Name>
+	<Lat>29  58.500 N</Lat>
+	<Long>82  55.500 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>43</Elevation></Waypoint><Waypoint>
+	<ID>269</ID>
+	<Name>Windrift</Name>
+	<Lat>33  02.500 N</Lat>
+	<Long>84  25.933 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>780</Elevation></Waypoint><Waypoint>
+	<ID>270</ID>
+	<Name>Windy Hill</Name>
+	<Lat>33  32.800 N</Lat>
+	<Long>83  48.333 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>740</Elevation></Waypoint><Waypoint>
+	<ID>271</ID>
+	<Name>WingsNSunsts</Name>
+	<Lat>30  15.017 N</Lat>
+	<Long>82  55.433 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>130</Elevation></Waypoint><Waypoint>
+	<ID>272</ID>
+	<Name>WrensMemoril</Name>
+	<Lat>33  13.367 N</Lat>
+	<Long>82  23.067 W</Long>
+	<Attributes> A </Attributes>
+	<Elevation>450</Elevation></Waypoint></Waypoints><Contestants><Contestant>
+	<CID>QT</CID>
+	<FirstName>QT</FirstName>
+	<LastName>Godfrey</LastName>
+	<Glider>JS3-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>438545</SSANumber>
+	<Address1>3705 Windy Hill Road</Address1>
+	<City>Chapel Hill</City>
+	<State>NC</State>
+	<Zip>27514-9608</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>SV</CID>
+	<FirstName>Steve</FirstName>
+	<LastName>Vihlen</LastName>
+	<Glider>ASG-29-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>930831</SSANumber>
+	<Address1>107 Teal Ct.</Address1>
+	<City>Locust Grove</City>
+	<State>GA</State>
+	<Zip>30248</Zip></Contestant><Contestant>
+	<CID>BH</CID>
+	<FirstName>Clyde</FirstName>
+	<LastName>Taylor</LastName>
+	<Glider>ASW-28</Glider>
+	<ClassID>6</ClassID>
+	<Class>FAI Handicapped Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>734098</SSANumber>
+	<Address1>3911 Forest Dawn Ct</Address1>
+	<City>Snellville</City>
+	<State>GA</State>
+	<Zip>30039</Zip>
+	<Handicap>0.915</Handicap><gliderinfo>
+	<Weight>790</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.915</Handicap>
+	<Model>ASW-28</Model>
+	<Notes>SWC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>WB</CID>
+	<FirstName>Wally</FirstName>
+	<LastName>Berry</LastName>
+	<Glider>ASW-20</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>170127</SSANumber>
+	<Address1>2474 County Road 94</Address1>
+	<City>Lafayette</City>
+	<State>AL</State>
+	<Zip>36862</Zip>
+	<Handicap>0.92201204819277</Handicap>
+	<HandicapPercent>1.0</HandicapPercent>
+	<Weight>790</Weight>
+	<WeightDelta>-40</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>830</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.913</Handicap>
+	<Model>ASW-20</Model>
+	<Notes>C</Notes></gliderinfo></Contestant><Contestant>
+	<CID>KA</CID>
+	<FirstName>Tony</FirstName>
+	<LastName>Turiano</LastName>
+	<Glider>H-201 Standard Libelle</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>918058</SSANumber>
+	<Address1>4949 N A1A #222</Address1>
+	<City>n Hutchinson isl</City>
+	<State>FL</State>
+	<Zip>34949</Zip>
+	<Handicap>1.02</Handicap>
+	<Weight>675</Weight>
+	<Span>15</Span><gliderinfo>
+	<Weight>675</Weight>
+	<Span>15</Span>
+	<Manufacturer>Glasflugel</Manufacturer>
+	<Handicap>1.02</Handicap>
+	<Model>H-201 Standard Libelle</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>HK</CID>
+	<FirstName>Gary</FirstName>
+	<LastName>Carter</LastName>
+	<Glider>ASW-27</Glider>
+	<ClassID>6</ClassID>
+	<Class>FAI Handicapped Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>233412</SSANumber>
+	<Address1>6310 Timbercreek Trail</Address1>
+	<City>Dahlonega</City>
+	<State>GA</State>
+	<Zip>30533</Zip>
+	<Handicap>0.878</Handicap><gliderinfo>
+	<Weight>788</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.878</Handicap>
+	<Model>ASW-27</Model>
+	<Notes>W</Notes></gliderinfo></Contestant><Contestant>
+	<CID>KF</CID>
+	<FirstName>Hartley</FirstName>
+	<LastName>Falbaum</LastName>
+	<Glider>DG-808C-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>896289</SSANumber>
+	<Address1>3278 Brooks Dr</Address1>
+	<City>Loganville</City>
+	<State>GA</State>
+	<Zip>30052-2444</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>MS</CID>
+	<FirstName>Michael</FirstName>
+	<LastName>Solley</LastName>
+	<Glider>JS3-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>260093</SSANumber>
+	<Address1>PO Box 6815</Address1>
+	<City>Miramar Beach</City>
+	<State>FL</State>
+	<Zip>32550</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>EL</CID>
+	<FirstName>Eric</FirstName>
+	<LastName>Lambert</LastName>
+	<Glider>Arcus M</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>896976</SSANumber>
+	<Address1>2607 St. Regis Drive</Address1>
+	<City>N Chesterfield</City>
+	<State>VA</State>
+	<Zip>23236</Zip>
+	<Options>2</Options>
+	<Handicap>0.83442864578509</Handicap>
+	<HandicapPercent>0.5</HandicapPercent>
+	<Weight>1590</Weight>
+	<WeightDelta>-43</WeightDelta>
+	<Span>20</Span><gliderinfo>
+	<Weight>1633</Weight>
+	<Span>20</Span>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Handicap>0.83</Handicap>
+	<Model>Arcus M</Model>
+	<Notes>MW</Notes></gliderinfo></Contestant><Contestant>
+	<CID>MD</CID>
+	<FirstName>Mamad</FirstName>
+	<LastName>Takallu</LastName>
+	<Glider>ASW-27</Glider>
+	<ClassID>6</ClassID>
+	<Class>FAI Handicapped Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>221988</SSANumber>
+	<Address1>P O Box 8401</Address1>
+	<City>Norfolk</City>
+	<State>VA</State>
+	<Zip>23503</Zip>
+	<Handicap>0.878</Handicap><gliderinfo>
+	<Weight>788</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.878</Handicap>
+	<Model>ASW-27</Model>
+	<Notes>W</Notes></gliderinfo></Contestant><Contestant>
+	<CID>37</CID>
+	<FirstName>Chip</FirstName>
+	<LastName>Haskell</LastName>
+	<Glider>H-201 Standard Libelle</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>139095</SSANumber>
+	<Address1>1193 Cleburne Avenue</Address1>
+	<City>Atlanta</City>
+	<State>GA</State>
+	<Zip>30307</Zip>
+	<Handicap>1.02926814814815</Handicap>
+	<HandicapPercent>0.9</HandicapPercent>
+	<Weight>645</Weight>
+	<WeightDelta>-30</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>675</Weight>
+	<Span>15</Span>
+	<Manufacturer>Glasflugel</Manufacturer>
+	<Handicap>1.02</Handicap>
+	<Model>H-201 Standard Libelle</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>FZ</CID>
+	<FirstName>Richard</FirstName>
+	<LastName>Kaleta</LastName>
+	<Glider>SZD-55-1</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>911941</SSANumber>
+	<Address1>10 Linderman Ave</Address1>
+	<City>Kingston</City>
+	<State>NY</State>
+	<Zip>12401</Zip>
+	<Handicap>0.97021075138504</Handicap>
+	<HandicapPercent>3.1</HandicapPercent>
+	<Weight>650</Weight>
+	<WeightDelta>-110</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>760</Weight>
+	<Span>15</Span>
+	<Manufacturer>PZL Bielsko</Manufacturer>
+	<Handicap>0.941</Handicap>
+	<Model>SZD-55-1</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>5YA</CID>
+	<FirstName>John</FirstName>
+	<LastName>Sumner</LastName>
+	<Glider>ASW-24</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>690345</SSANumber>
+	<Address1>290 Center Drive</Address1>
+	<City>Savannah</City>
+	<State>GA</State>
+	<Zip>31406</Zip>
+	<Options>32</Options>
+	<Handicap>0.93278244050176</Handicap>
+	<HandicapPercent>-0.8</HandicapPercent>
+	<Weight>763</Weight>
+	<WeightDelta>-9</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>772</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.94</Handicap>
+	<Model>ASW-24</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>R9</CID>
+	<FirstName>Roger</FirstName>
+	<LastName>Buchanan</LastName>
+	<Glider>ASH-31Mi</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>89893</SSANumber>
+	<Address1>1400 N Lake Eloise Drive</Address1>
+	<City>Winter Haven</City>
+	<State>FL</State>
+	<Zip>33884-1998</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>BZ</CID>
+	<FirstName>John</FirstName>
+	<LastName>Mittell</LastName>
+	<Glider>ASW-27</Glider>
+	<ClassID>6</ClassID>
+	<Class>FAI Handicapped Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>931246</SSANumber>
+	<Address1>202 River Walk Trail</Address1>
+	<City>New Market</City>
+	<State>AL</State>
+	<Zip>35761</Zip>
+	<Handicap>0.878</Handicap><gliderinfo>
+	<Weight>788</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.878</Handicap>
+	<Model>ASW-27</Model>
+	<Notes>W</Notes></gliderinfo></Contestant><Contestant>
+	<CID>KW</CID>
+	<FirstName>Pavel</FirstName>
+	<LastName>Skrabal</LastName>
+	<Glider>Standard Cirrus</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>20177</SSANumber>
+	<Address1>172  Raleigh Court</Address1>
+	<City>Wood Dale</City>
+	<State>IL</State>
+	<Zip>60191</Zip>
+	<Options>32</Options>
+	<Handicap>0.98141250975546</Handicap>
+	<HandicapPercent>-1.9</HandicapPercent>
+	<Weight>777</Weight>
+	<WeightDelta>33</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>744</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Handicap>1</Handicap>
+	<Model>Standard Cirrus</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>MP</CID>
+	<FirstName>Michael</FirstName>
+	<LastName>Price</LastName>
+	<Glider>Discus cs</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>171413</SSANumber>
+	<Address1>801 Kellerman Kreek</Address1>
+	<City>Marietta</City>
+	<State>GA</State>
+	<Zip>30068</Zip>
+	<Handicap>0.93842304919083</Handicap>
+	<HandicapPercent>0.9</HandicapPercent>
+	<Weight>755</Weight>
+	<WeightDelta>-35</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>790</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Handicap>0.93</Handicap>
+	<Model>Discus cs</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>1K</CID>
+	<FirstName>Enrique</FirstName>
+	<LastName>Mertins</LastName>
+	<Glider>DG-1000T</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>909005</SSANumber>
+	<Address1>PO BOX 120068</Address1>
+	<City>Clermont</City>
+	<State>FL</State>
+	<Zip>34712</Zip>
+	<Options>2</Options>
+	<Handicap>0.88</Handicap>
+	<Span>20</Span><gliderinfo>
+	<Weight>1460</Weight>
+	<Span>20</Span>
+	<Manufacturer>DG Flugzeugbau</Manufacturer>
+	<Handicap>0.88</Handicap>
+	<Model>DG-1000T</Model>
+	<Notes>MW</Notes></gliderinfo></Contestant><Contestant>
+	<CID>AS</CID>
+	<FirstName>Alan</FirstName>
+	<LastName>Smith</LastName>
+	<Glider>LS-10-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>921378</SSANumber>
+	<Address1>747 Fairway Point Dr.</Address1>
+	<City>Tega Cay</City>
+	<State>SC</State>
+	<Zip>29708</Zip></Contestant><Contestant>
+	<CID>JS1</CID>
+	<FirstName>Chuck</FirstName>
+	<LastName>Patterson</LastName>
+	<Glider>JS1-A</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>908416</SSANumber>
+	<Address1>729 Johnson Road</Address1>
+	<City>Hogansville</City>
+	<State>GA</State>
+	<Zip>30230</Zip></Contestant><Contestant>
+	<CID>XP</CID>
+	<FirstName>Sylvia</FirstName>
+	<LastName>Grandstaff</LastName>
+	<Glider>Discus 2aW</Glider>
+	<ClassID>6</ClassID>
+	<Class>FAI Handicapped Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>928035</SSANumber>
+	<Address1>PO Box 69</Address1>
+	<City>Brownsboro</City>
+	<State>AL</State>
+	<Zip>35741</Zip>
+	<Handicap>0.915</Handicap><gliderinfo>
+	<Weight>790</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Handicap>0.915</Handicap>
+	<Model>Discus 2aW</Model>
+	<Notes>SWC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>2EZ</CID>
+	<FirstName>Tim</FirstName>
+	<LastName>McGowin</LastName>
+	<Glider>304CZ</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>905025</SSANumber>
+	<Address1>2526 Waterford rd</Address1>
+	<City>Auburn</City>
+	<State>AL</State>
+	<Zip>36832</Zip>
+	<Handicap>0.93896225043403</Handicap>
+	<HandicapPercent>0.2</HandicapPercent>
+	<Weight>760</Weight>
+	<WeightDelta>-8</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>768</Weight>
+	<Span>15</Span>
+	<Manufacturer>HPH</Manufacturer>
+	<Handicap>0.937</Handicap>
+	<Model>304CZ</Model>
+	<Notes>WC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>FS</CID>
+	<FirstName>Fernando</FirstName>
+	<LastName>Silva</LastName>
+	<Glider>JS3-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>872034</SSANumber>
+	<Address1>2235 Dellwood Dr NW</Address1>
+	<City>Atlanta</City>
+	<State>GA</State>
+	<Zip>30305</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>KM</CID>
+	<FirstName>Ken</FirstName>
+	<LastName>Sorenson</LastName>
+	<Glider>Ventus 3FES-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>698563</SSANumber>
+	<Address1>30368 Waller Gladish Road</Address1>
+	<City>Waller</City>
+	<State>TX</State>
+	<Zip>77484</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>JA</CID>
+	<FirstName>Jason</FirstName>
+	<LastName>Arnold</LastName>
+	<Glider>Discus cs</Glider>
+	<ClassID>6</ClassID>
+	<Class>FAI Handicapped Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>638500</SSANumber>
+	<Address1>Po Box 53</Address1>
+	<City>Benton</City>
+	<State>TN</State>
+	<Zip>37307</Zip>
+	<Handicap>0.93</Handicap><gliderinfo>
+	<Weight>790</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Handicap>0.93</Handicap>
+	<Model>Discus cs</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>SF</CID>
+	<FirstName>Scott</FirstName>
+	<LastName>Fletcher</LastName>
+	<Glider>ASW-27</Glider>
+	<ClassID>6</ClassID>
+	<Class>FAI Handicapped Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>934840</SSANumber>
+	<Address1>120 Ashmore Road</Address1>
+	<City>Greer</City>
+	<State>SC</State>
+	<Zip>29650</Zip>
+	<Handicap>0.878</Handicap><gliderinfo>
+	<Weight>788</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.878</Handicap>
+	<Model>ASW-27</Model>
+	<Notes>W</Notes></gliderinfo></Contestant><Contestant>
+	<CID>W2</CID>
+	<FirstName>Scott</FirstName>
+	<LastName>Gross</LastName>
+	<Glider>ASG-29-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>251949</SSANumber>
+	<Address1>216 Kingswood Dr</Address1>
+	<City>Williamsburg</City>
+	<State>VA</State>
+	<Zip>23185</Zip></Contestant><Contestant>
+	<CID>XM</CID>
+	<FirstName>Mike</FirstName>
+	<LastName>Smith</LastName>
+	<Glider>ASG-29-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>581763</SSANumber>
+	<Address1>75 Oak Grove Road</Address1>
+	<City>Fairfield</City>
+	<State>PA</State>
+	<Zip>17320-8501</Zip></Contestant><Contestant>
+	<CID>LX</CID>
+	<FirstName>John</FirstName>
+	<LastName>Murray</LastName>
+	<Glider>ASG-29-18E</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>898394</SSANumber>
+	<Address1>398 Miami St</Address1>
+	<City>Waynesville</City>
+	<State>OH</State>
+	<Zip>45068</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>92</CID>
+	<FirstName>Kevin</FirstName>
+	<LastName>Anderson</LastName>
+	<Glider>DG-400-17</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>920571</SSANumber>
+	<Address1>2955 Hodges Landing Dr.</Address1>
+	<City>Knoxville</City>
+	<State>TN</State>
+	<Zip>37920</Zip>
+	<Options>2</Options>
+	<Handicap>0.92650115760908</Handicap>
+	<HandicapPercent>0.7</HandicapPercent>
+	<Weight>945</Weight>
+	<WeightDelta>-34</WeightDelta>
+	<Span>17</Span><gliderinfo>
+	<Weight>979</Weight>
+	<Span>17</Span>
+	<Manufacturer>DG Flugzeugbau</Manufacturer>
+	<Handicap>0.92</Handicap>
+	<Model>DG-400-17</Model>
+	<Notes>M</Notes></gliderinfo></Contestant><Contestant>
+	<CID>W7</CID>
+	<FirstName>Jake</FirstName>
+	<LastName>Alspaugh</LastName>
+	<Glider>Ventus 3M-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>881963</SSANumber>
+	<Address1>105 Bashavia Woods Trail</Address1>
+	<City>Pfafftown</City>
+	<State>NC</State>
+	<Zip>27040</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>TRC</CID>
+	<FirstName>Rus</FirstName>
+	<LastName>Howard</LastName>
+	<Glider>Duo Discus</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>99133</SSANumber>
+	<Address1>431 East Zaragoza St Apt B</Address1>
+	<City>Pensacola</City>
+	<State>FL</State>
+	<Zip>32502</Zip>
+	<Handicap>0.89681751370908</Handicap>
+	<HandicapPercent>0.8</HandicapPercent>
+	<Weight>1280</Weight>
+	<WeightDelta>-50</WeightDelta>
+	<Span>20</Span><gliderinfo>
+	<Weight>1330</Weight>
+	<Span>20</Span>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Handicap>0.89</Handicap>
+	<Model>Duo Discus</Model></gliderinfo></Contestant><Contestant>
+	<CID>FW</CID>
+	<FirstName>Michael</FirstName>
+	<LastName>Abell</LastName>
+	<Glider>Discus cs</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>533977</SSANumber>
+	<Address1>15 Crescent Circle</Address1>
+	<City>Newnan</City>
+	<State>GA</State>
+	<Zip>30265</Zip>
+	<Handicap>0.88541483736581</Handicap>
+	<HandicapPercent>-4.8</HandicapPercent>
+	<Weight>1010</Weight>
+	<WeightDelta>220</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>790</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Handicap>0.93</Handicap>
+	<Model>Discus cs</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>SE</CID>
+	<FirstName>Fabrizio</FirstName>
+	<LastName>Di Stefano</LastName>
+	<Glider>ASW-19</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>450771</SSANumber>
+	<Address1>259 Border Rd</Address1>
+	<City>Goose Creek</City>
+	<State>SC</State>
+	<Zip>29445</Zip>
+	<Handicap>0.9678297765625</Handicap>
+	<HandicapPercent>-0.2</HandicapPercent>
+	<Weight>809</Weight>
+	<WeightDelta>9</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>800</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.97</Handicap>
+	<Model>ASW-19</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>JEN</CID>
+	<FirstName>Werner</FirstName>
+	<LastName>Ruegger</LastName>
+	<Glider>Silent 2 Electro</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>901273</SSANumber>
+	<Address1>3084 Brookview Forest Drive</Address1>
+	<City>Nashville</City>
+	<State>TN</State>
+	<Zip>37211</Zip>
+	<Options>2</Options>
+	<Handicap>1.05518181504888</Handicap>
+	<HandicapPercent>-0.5</HandicapPercent>
+	<Span>13.5</Span><gliderinfo>
+	<Weight>694</Weight>
+	<Span>13.2</Span>
+	<Manufacturer>Alisport</Manufacturer>
+	<Handicap>1.06</Handicap>
+	<Model>Silent 2 Electro</Model>
+	<Notes>MW</Notes></gliderinfo></Contestant><Contestant>
+	<CID>WD</CID>
+	<FirstName>Joe</FirstName>
+	<LastName>Reeves</LastName>
+	<Glider>LS-4B</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>25549</SSANumber>
+	<Address1>28 Little Comfort Rd.</Address1>
+	<City>Savannah</City>
+	<State>GA</State>
+	<Zip>31411</Zip>
+	<Handicap>0.942</Handicap>
+	<Weight>820</Weight>
+	<Span>15</Span><gliderinfo>
+	<Weight>820</Weight>
+	<Span>15</Span>
+	<Manufacturer>Rolladen-Schneider</Manufacturer>
+	<Handicap>0.942</Handicap>
+	<Model>LS-4B</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>OG</CID>
+	<FirstName>Dieter</FirstName>
+	<LastName>Jaeger</LastName>
+	<Glider>Discus 2b</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>924160</SSANumber>
+	<Address1>126 Hickory St</Address1>
+	<City>Decatur</City>
+	<State>GA</State>
+	<Zip>30030</Zip>
+	<Handicap>0.915</Handicap>
+	<Span>15</Span><gliderinfo>
+	<Weight>790</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Handicap>0.915</Handicap>
+	<Model>Discus 2b</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>5</CID>
+	<FirstName>George</FirstName>
+	<LastName>Green</LastName>
+	<Glider>n/a</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>419591</SSANumber>
+	<Address1>26017 Gaspar Ct.</Address1>
+	<City>Howey -in - the- Hills</City>
+	<State>FL</State>
+	<Zip>34737</Zip></Contestant><Contestant>
+	<CID>JT</CID>
+	<FirstName>Janski</FirstName>
+	<LastName>Trojanowski</LastName>
+	<Glider>JS3-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>809932</SSANumber>
+	<Address1>4014 Soaring Ln</Address1>
+	<City>Clermont</City>
+	<State>FL</State>
+	<Zip>34714</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>GS</CID>
+	<FirstName>Greg</FirstName>
+	<LastName>Shugg</LastName>
+	<Glider>LS-4</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>896611</SSANumber>
+	<Address1>1354 Lambert Avenue</Address1>
+	<City>Flagler Beach</City>
+	<State>FL</State>
+	<Zip>32136</Zip>
+	<Handicap>0.96050621301775</Handicap>
+	<HandicapPercent>1.1</HandicapPercent>
+	<Weight>738</Weight>
+	<WeightDelta>-42</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>780</Weight>
+	<Span>15</Span>
+	<Manufacturer>Rolladen-Schneider</Manufacturer>
+	<Handicap>0.95</Handicap>
+	<Model>LS-4</Model>
+	<Notes>SC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>SZ</CID>
+	<FirstName>Sam</FirstName>
+	<LastName>Zimmerman</LastName>
+	<Glider>ASH-31MI-18</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>830496</SSANumber>
+	<Address1>4 Thornbury Ct..</Address1>
+	<City>Greenville</City>
+	<State>SC</State>
+	<Zip>29607</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>KZ</CID>
+	<FirstName>Billy</FirstName>
+	<LastName>Kerns</LastName>
+	<Glider>LS-8-15</Glider>
+	<ClassID>6</ClassID>
+	<Class>FAI Handicapped Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>391476</SSANumber>
+	<Address1>12002 Burton St.</Address1>
+	<City>Clermont</City>
+	<State>FL</State>
+	<Zip>34711-8853</Zip>
+	<Handicap>0.915</Handicap><gliderinfo>
+	<Weight>820</Weight>
+	<Span>15</Span>
+	<Manufacturer>Rolladen-Schneider</Manufacturer>
+	<Handicap>0.915</Handicap>
+	<Model>LS-8-15</Model>
+	<Notes>SWC</Notes></gliderinfo></Contestant><Contestant>
+	<CID>3X</CID>
+	<FirstName>Peter</FirstName>
+	<LastName>Appleby</LastName>
+	<Glider>DG-200-15</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>774288</SSANumber>
+	<Address1>913 Spottswood RD</Address1>
+	<City>Richmond</City>
+	<State>VA</State>
+	<Zip>23220</Zip>
+	<Handicap>0.94755485452207</Handicap>
+	<HandicapPercent>0.8</HandicapPercent>
+	<Weight>780</Weight>
+	<WeightDelta>-32</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>812</Weight>
+	<Span>15</Span>
+	<Manufacturer>DG Flugzeugbau</Manufacturer>
+	<Handicap>0.94</Handicap>
+	<Model>DG-200-15</Model>
+	<Notes>C</Notes></gliderinfo></Contestant><Contestant>
+	<CID>OS</CID>
+	<FirstName>Cliff</FirstName>
+	<LastName>Hindman</LastName>
+	<Glider>ASW-20</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Guest</Status>
+	<SSANumber>19199</SSANumber>
+	<Address1>81 Deerwood Lake Dr</Address1>
+	<City>Harpersville</City>
+	<State>AL</State>
+	<Zip>35078</Zip>
+	<Options>32</Options>
+	<Handicap>0.89640772590361</Handicap>
+	<HandicapPercent>-1.8</HandicapPercent>
+	<Weight>865</Weight>
+	<WeightDelta>35</WeightDelta>
+	<Span>15</Span><gliderinfo>
+	<Weight>830</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.913</Handicap>
+	<Model>ASW-20</Model>
+	<Notes>C</Notes></gliderinfo></Contestant><Contestant>
+	<CID>SK</CID>
+	<FirstName>Sarah</FirstName>
+	<LastName>Arnold</LastName>
+	<Glider>Arcus M</Glider>
+	<ClassID>5</ClassID>
+	<Class>18 Meter Class</Class>
+	<Motorized>yes</Motorized>
+	<Status>Contestant</Status>
+	<SSANumber>20301</SSANumber>
+	<Address1>PO Box 53</Address1>
+	<City>Benton</City>
+	<State>TN</State>
+	<Zip>37307</Zip>
+	<Options>2</Options></Contestant><Contestant>
+	<CID>6I</CID>
+	<FirstName>Mitch</FirstName>
+	<LastName>Deutsch</LastName>
+	<Glider>ASW-27</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>829420</SSANumber>
+	<Address1>120 Raquel Dr</Address1>
+	<City>Marietta</City>
+	<State>GA</State>
+	<Zip>30064</Zip>
+	<Handicap>0.878</Handicap><gliderinfo>
+	<Weight>788</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.878</Handicap>
+	<Model>ASW-27</Model>
+	<Notes>W</Notes></gliderinfo></Contestant><Contestant>
+	<CID>DI</CID>
+	<FirstName>Rob</FirstName>
+	<LastName>Ware</LastName>
+	<Glider>ASW-27</Glider>
+	<ClassID>2</ClassID>
+	<Class>Sports Class</Class>
+	<Status>Contestant</Status>
+	<SSANumber>592226</SSANumber>
+	<Address1>P.O. Box 292</Address1>
+	<City>Cave Spring</City>
+	<State>GA</State>
+	<Zip>30124</Zip>
+	<Handicap>0.878</Handicap><gliderinfo>
+	<Weight>788</Weight>
+	<Span>15</Span>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Handicap>0.878</Handicap>
+	<Model>ASW-27</Model>
+	<Notes>W</Notes></gliderinfo></Contestant></Contestants><Tasks><Task>
+	<Status>1</Status>
+	<Type>3</Type>
+	<Class>Sports Class</Class>
+	<ClassID>2</ClassID><Date>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date><TaskOpenTime>
+	<hr>13</hr></TaskOpenTime>
+	<TaskTime>7200</TaskTime><StartGate><Gate>
+	<PointID>74</PointID>
+	<Type>0</Type>
+	<FirstLegAtExit>1</FirstLegAtExit>
+	<PerpToCourse>0</PerpToCourse>
+	<ScoreOutTheTop>1</ScoreOutTheTop>
+	<Height>4000</Height>
+	<Radius>4.34195345395388</Radius></Gate></StartGate><Turnpoints>
+	<ID>10</ID>
+	<Radius>4.34195327758789</Radius>
+	<ID>56</ID>
+	<Radius>8.68390655517578</Radius>
+	<ID>64</ID>
+	<Radius>4.34195327758789</Radius>
+	<ID>8</ID>
+	<Radius>8.68390655517578</Radius></Turnpoints><FinishGate><Gate>
+	<PointID>2</PointID>
+	<Type>0</Type>
+	<FirstLegAtExit>0</FirstLegAtExit>
+	<PerpToCourse>0</PerpToCourse>
+	<ScoreOutTheTop>1</ScoreOutTheTop>
+	<Base>1300</Base>
+	<Height>5000</Height>
+	<Radius>1.73678138158155</Radius></Gate></FinishGate></Task><Task>
+	<Status>3</Status>
+	<Type>3</Type>
+	<Class>18 Meter Class</Class>
+	<ClassID>5</ClassID><Date>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date><TaskOpenTime>
+	<hr>13</hr></TaskOpenTime>
+	<TaskTime>7200</TaskTime><StartGate><Gate>
+	<PointID>74</PointID>
+	<Type>0</Type>
+	<FirstLegAtExit>1</FirstLegAtExit>
+	<PerpToCourse>0</PerpToCourse>
+	<ScoreOutTheTop>1</ScoreOutTheTop>
+	<Height>4000</Height>
+	<Radius>4.34195345395388</Radius></Gate></StartGate><Turnpoints>
+	<ID>10</ID>
+	<Radius>4.34195327758789</Radius>
+	<ID>56</ID>
+	<Radius>8.68390655517578</Radius>
+	<ID>64</ID>
+	<Radius>4.34195327758789</Radius>
+	<ID>8</ID>
+	<Radius>8.68390655517578</Radius></Turnpoints><FinishGate><Gate>
+	<PointID>2</PointID>
+	<Type>0</Type>
+	<FirstLegAtExit>0</FirstLegAtExit>
+	<PerpToCourse>0</PerpToCourse>
+	<ScoreOutTheTop>1</ScoreOutTheTop>
+	<Base>1300</Base>
+	<Height>5000</Height>
+	<Radius>1.73678138158155</Radius></Gate></FinishGate></Task><Task>
+	<Status>1</Status>
+	<Type>3</Type>
+	<Class>FAI Handicapped Class</Class>
+	<ClassID>6</ClassID><Date>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date><TaskOpenTime>
+	<hr>13</hr></TaskOpenTime>
+	<TaskTime>7200</TaskTime><StartGate><Gate>
+	<PointID>74</PointID>
+	<Type>0</Type>
+	<FirstLegAtExit>1</FirstLegAtExit>
+	<PerpToCourse>0</PerpToCourse>
+	<ScoreOutTheTop>1</ScoreOutTheTop>
+	<Height>4000</Height>
+	<Radius>4.34195345395388</Radius></Gate></StartGate><Turnpoints>
+	<ID>10</ID>
+	<Radius>4.34195327758789</Radius>
+	<ID>56</ID>
+	<Radius>8.68390655517578</Radius>
+	<ID>64</ID>
+	<Radius>4.34195327758789</Radius>
+	<ID>8</ID>
+	<Radius>8.68390655517578</Radius></Turnpoints><FinishGate><Gate>
+	<PointID>2</PointID>
+	<Type>0</Type>
+	<FirstLegAtExit>0</FirstLegAtExit>
+	<PerpToCourse>0</PerpToCourse>
+	<ScoreOutTheTop>1</ScoreOutTheTop>
+	<Base>1300</Base>
+	<Height>5000</Height>
+	<Radius>1.73678138158155</Radius></Gate></FinishGate></Task><Task>
+	<Status>3</Status>
+	<Type>4</Type>
+	<Class>Sports Class</Class>
+	<ClassID>2</ClassID><Date>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>6</day></Date><TaskOpenTime>
+	<hr>13</hr></TaskOpenTime>
+	<TaskTime>7200</TaskTime><StartGate><Gate>
+	<PointID>74</PointID>
+	<Type>0</Type>
+	<FirstLegAtExit>1</FirstLegAtExit>
+	<PerpToCourse>0</PerpToCourse>
+	<ScoreOutTheTop>1</ScoreOutTheTop>
+	<Height>4000</Height>
+	<Radius>4.34195345395388</Radius></Gate></StartGate><Turnpoints>
+	<ID>43</ID>
+	<Radius>0.86839067935944</Radius></Turnpoints><FinishGate><Gate>
+	<PointID>2</PointID>
+	<Type>0</Type>
+	<FirstLegAtExit>0</FirstLegAtExit>
+	<PerpToCourse>0</PerpToCourse>
+	<ScoreOutTheTop>1</ScoreOutTheTop>
+	<Base>1300</Base>
+	<Height>5000</Height>
+	<Radius>1.73678138158155</Radius></Gate></FinishGate></Task></Tasks><ScoreRecords><ScoreRecord>
+	<CID>WB</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>KA</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID></ScoreRecord><ScoreRecord>
+	<CID>EL</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID></ScoreRecord><ScoreRecord>
+	<CID>37</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>FZ</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>5YA</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>KW</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>MP</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>1K</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>2EZ</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>92</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>TRC</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID></ScoreRecord><ScoreRecord>
+	<CID>FW</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID></ScoreRecord><ScoreRecord>
+	<CID>SE</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>JEN</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<Contestant>1</Contestant>
+	<Points>895</Points><StartTime2>
+	<hr>13</hr>
+	<min>38</min>
+	<sec>52</sec></StartTime2>
+	<HSpeed>36.39567881807923</HSpeed>
+	<ScoredHSpeed>36.39567881807923</ScoredHSpeed>
+	<Speed>34.49232947252151</Speed>
+	<ScoredSpeed>34.49232947252151</ScoredSpeed>
+	<TOC>8020</TOC><FinishTime2>
+	<hr>15</hr>
+	<min>52</min>
+	<sec>32</sec></FinishTime2>
+	<Finisher>1</Finisher>
+	<Distance>76.84124510267293</Distance>
+	<HDistance>81.08148447805429</HDistance>
+	<Penalty>105</Penalty></ScoreRecord><ScoreRecord>
+	<CID>WD</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>OG</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>GS</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>3X</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>OS</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<Guest>1</Guest>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>6I</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID></ScoreRecord><ScoreRecord>
+	<CID>DI</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>2</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>QT</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>SV</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>KF</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>MS</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>R9</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<Contestant>1</Contestant>
+	<Points>134</Points><StartTime2>
+	<hr>13</hr>
+	<min>8</min>
+	<sec>33</sec></StartTime2>
+	<Distance>23.2276366289365</Distance>
+	<PenaltyMask>4</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>AS</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID></ScoreRecord><ScoreRecord>
+	<CID>JS1</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>FS</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>KM</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<Contestant>1</Contestant>
+	<Points>850</Points><StartTime2>
+	<hr>13</hr>
+	<min>42</min>
+	<sec>1</sec></StartTime2>
+	<Speed>44.80378729130509</Speed>
+	<ScoredSpeed>44.80378729130509</ScoredSpeed>
+	<TOC>8276</TOC><FinishTime2>
+	<hr>15</hr>
+	<min>59</min>
+	<sec>57</sec></FinishTime2>
+	<Finisher>1</Finisher>
+	<Distance>102.99892878412248</Distance></ScoreRecord><ScoreRecord>
+	<CID>W2</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>XM</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>LX</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<Contestant>1</Contestant>
+	<Points>245</Points><StartTime2>
+	<hr>13</hr>
+	<min>35</min>
+	<sec>27</sec></StartTime2>
+	<Distance>42.49557844885037</Distance>
+	<PenaltyMask>4</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>W7</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>5</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>JT</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>SZ</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<Contestant>1</Contestant>
+	<Points>727</Points><StartTime2>
+	<hr>13</hr>
+	<min>54</min>
+	<sec>46</sec></StartTime2>
+	<Speed>38.32176343149943</Speed>
+	<ScoredSpeed>38.32176343149943</ScoredSpeed>
+	<TOC>7577</TOC><FinishTime2>
+	<hr>16</hr>
+	<min>1</min>
+	<sec>3</sec></FinishTime2>
+	<Finisher>1</Finisher>
+	<Distance>80.65666708901978</Distance></ScoreRecord><ScoreRecord>
+	<CID>SK</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>5</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>BH</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>6</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>HK</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>6</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>MD</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>6</ClassID></ScoreRecord><ScoreRecord>
+	<CID>BZ</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>6</ClassID>
+	<Contestant>1</Contestant>
+	<Points>505</Points><StartTime2>
+	<hr>13</hr>
+	<min>20</min>
+	<sec>31</sec></StartTime2>
+	<Distance>23.3772063213156</Distance>
+	<HDistance>20.5251871501151</HDistance>
+	<PenaltyMask>516</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>XP</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>6</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>JA</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>6</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>SF</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>6</ClassID>
+	<PenaltyMask>4096</PenaltyMask></ScoreRecord><ScoreRecord>
+	<CID>KZ</CID><Date2>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date2>
+	<ClassID>6</ClassID></ScoreRecord></ScoreRecords><Penalties><Penalty>
+	<ContestNo>JEN</ContestNo><Date>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day></Date>
+	<PenaltyType>0</PenaltyType>
+	<ReasonCode>FP</ReasonCode>
+	<Reason>Finish Penalty</Reason>
+	<Points>105</Points></Penalty></Penalties><Flights><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun06\166GB691.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>7</day>
+	<hr>15</hr>
+	<min>42</min>
+	<sec>30</sec></mtime>
+	<FileName>166GB691.IGC</FileName>
+	<GliderType>304 CZ</GliderType>
+	<GliderID>N342EZ</GliderID>
+	<CompetitionID>2EZ</CompetitionID>
+	<Pilot>Tim McGowin</Pilot>
+	<Manufacturer>FLA</Manufacturer>
+	<FDRID>B69</FDRID>
+	<HardwareVersion>1.0</HardwareVersion>
+	<NumPositionPoints>8642</NumPositionPoints>
+	<Day>6</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>2EZ</CID>
+	<ClassID>2</ClassID>
+	<AllTurnpointsAcheived>1</AllTurnpointsAcheived>
+	<ValidFinish>1</ValidFinish>
+	<ValidStart>1</ValidStart>
+	<Options>16</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>8</min>
+	<sec>32</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>43</min>
+	<sec>49</sec></StartTime><FinishTime>
+	<hr>15</hr>
+	<min>28</min>
+	<sec>19</sec></FinishTime><LandingTime>
+	<hr>15</hr>
+	<min>30</min>
+	<sec>49</sec></LandingTime>
+	<Status>4</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumAcheivedTurnpoints>1</NumAcheivedTurnpoints><AcheivedTurnpoints>
+	<ID>43</ID></AcheivedTurnpoints>
+	<NumTaskPoints>1</NumTaskPoints><TaskTurnpoints>
+	<ID>43</ID></TaskTurnpoints><Warnings>
+	<Warning>A SECU PEN=   0 SECURITY FAILURE - Time out occured while attempting security validation.</Warning></Warnings><StartFix>
+	<Lat>32  06.617 N</Lat>
+	<Long>83  47.166 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.167 N</Lat>
+	<Long>83  46.826 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  59.167 N</Lat>
+	<Long>83  46.826 W</Long></ScoredLandingLocation>
+	<Distance>37.35082847474853</Distance><TATaskPoints><TATaskPoint>
+	<FixID>0</FixID>
+	<Lat>32  17.767 N</Lat>
+	<Long>84  00.500 W</Long></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\165V2FP3.igc</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>15</hr>
+	<min>4</min>
+	<sec>31</sec></mtime>
+	<FileName>165V2FP3.igc</FileName>
+	<GliderType>Std. Libelle</GliderType>
+	<GliderID>N826</GliderID>
+	<CompetitionID>KA</CompetitionID>
+	<Pilot>Anthony Turiano</Pilot>
+	<Manufacturer>LXV</Manufacturer>
+	<FDRID>2FPFL</FDRID>
+	<HardwareVersion>1</HardwareVersion>
+	<NumPositionPoints>3224</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>KA</CID>
+	<ClassID>2</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>14</min>
+	<sec>21</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>39</min>
+	<sec>9</sec></StartTime><LandingTime>
+	<hr>13</hr>
+	<min>44</min>
+	<sec>59</sec></LandingTime>
+	<Status>3</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>A INFO PEN=   0 Constructive landout distance  1.44 ( 1.47 Handicapped) is less than SMTD/2. Distance set to 0.0</Warning></Warnings><StartFix>
+	<Lat>32  00.618 N</Lat>
+	<Long>83  45.718 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.162 N</Lat>
+	<Long>83  46.825 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  59.233 N</Lat>
+	<Long>83  45.896 W</Long></ScoredLandingLocation><TATaskPoints><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-LXV-2R4-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>19</hr>
+	<min>2</min>
+	<sec>56</sec></mtime>
+	<FileName>2021-06-05-LXV-2R4-01.IGC</FileName>
+	<GliderType>DiscusCS</GliderType>
+	<GliderID>N57FW</GliderID>
+	<CompetitionID>FW</CompetitionID>
+	<Pilot>MICHAEL ABELL</Pilot>
+	<Manufacturer>LXV</Manufacturer>
+	<FDRID>2R4FL</FDRID>
+	<HardwareVersion>2</HardwareVersion>
+	<NumPositionPoints>7242</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>FW</CID>
+	<ClassID>2</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>6</min>
+	<sec>57</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>55</min>
+	<sec>45</sec></StartTime><LandingTime>
+	<hr>15</hr>
+	<min>2</min>
+	<sec>26</sec></LandingTime>
+	<Status>3</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>A INFO PEN=   0 Constructive landout distance 14.12 (12.50 Handicapped) is less than SMTD/2. Distance set to 0.0</Warning></Warnings><StartFix>
+	<Lat>32  02.249 N</Lat>
+	<Long>83  50.839 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.223 N</Lat>
+	<Long>83  46.725 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  51.573 N</Lat>
+	<Long>83  43.695 W</Long></ScoredLandingLocation><TATaskPoints><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-LXV-ABC-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>19</hr>
+	<min>1</min>
+	<sec>48</sec></mtime>
+	<FileName>2021-06-05-LXV-ABC-01.IGC</FileName>
+	<GliderType>Arcus M</GliderType>
+	<GliderID>N101EL</GliderID>
+	<CompetitionID>EL</CompetitionID>
+	<Pilot>Eric Lambert</Pilot>
+	<Manufacturer>LXV</Manufacturer>
+	<FDRID>ABCFL</FDRID>
+	<HardwareVersion>26</HardwareVersion>
+	<NumPositionPoints>6243</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year>
+	<TimeZone>-4</TimeZone></IGCFile>
+	<CID>EL</CID>
+	<ClassID>2</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>20</min>
+	<sec>33</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>34</min>
+	<sec>19</sec></StartTime><LandingTime>
+	<hr>15</hr>
+	<min>1</min>
+	<sec>17</sec></LandingTime>
+	<Status>3</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>A INFO PEN=   0 Constructive landout distance 10.76 ( 8.98 Handicapped) is less than SMTD/2. Distance set to 0.0</Warning></Warnings><StartFix>
+	<Lat>32  00.711 N</Lat>
+	<Long>83  45.648 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.160 N</Lat>
+	<Long>83  46.822 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  51.330 N</Lat>
+	<Long>83  43.677 W</Long></ScoredLandingLocation><TATaskPoints><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-XCM-5MU-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>16</hr>
+	<min>51</min>
+	<sec>37</sec></mtime>
+	<FileName>2021-06-05-XCM-5MU-01.IGC</FileName>
+	<GliderType>Default</GliderType>
+	<GliderID>TRC</GliderID>
+	<Pilot>Howard,Rus</Pilot>
+	<Manufacturer>XCM</Manufacturer>
+	<FDRID>5MU</FDRID>
+	<NumPositionPoints>2322</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>TRC</CID>
+	<ClassID>2</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>16</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>25</min>
+	<sec>23</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>59</min>
+	<sec>46</sec></StartTime><LandingTime>
+	<hr>14</hr>
+	<sec>45</sec></LandingTime>
+	<Status>3</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>A INFO PEN=   0 Pressure altitude is zero for all fixes in the log, using GPS altitude instead.</Warning>
+	<Warning>A INFO PEN=   0 Constructive landout distance  3.41 ( 3.06 Handicapped) is less than SMTD/2. Distance set to 0.0</Warning>
+	<Warning>A SECU PEN=   0 SECURITY NOT CHECKED - No security dll found for this manufacturer.</Warning></Warnings><StartFix>
+	<Lat>31  59.941 N</Lat>
+	<Long>83  46.366 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.287 N</Lat>
+	<Long>83  46.647 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  57.074 N</Lat>
+	<Long>83  45.425 W</Long></ScoredLandingLocation><TATaskPoints><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-XFL-IBM-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>17</hr>
+	<min>13</min>
+	<sec>42</sec></mtime>
+	<FileName>2021-06-05-XFL-IBM-01.IGC</FileName>
+	<GliderType>ASW27</GliderType>
+	<GliderID>N127KS</GliderID>
+	<CompetitionID>6I</CompetitionID>
+	<Pilot>Mitch Deutsch</Pilot>
+	<Manufacturer>XFL</Manufacturer>
+	<FDRID>IBM</FDRID>
+	<HardwareVersion>1.1</HardwareVersion>
+	<NumPositionPoints>9901</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>6I</CID>
+	<ClassID>2</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>16</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>16</min>
+	<sec>14</sec></RollTime><StartTime>
+	<hr>14</hr>
+	<min>24</min>
+	<sec>45</sec></StartTime><LandingTime>
+	<hr>15</hr>
+	<min>59</min>
+	<sec>51</sec></LandingTime>
+	<Status>3</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>A INFO PEN=   0 Constructive landout distance 22.48 (19.74 Handicapped) is less than SMTD/2. Distance set to 0.0</Warning>
+	<Warning>A SECU PEN=   0 SECURITY NOT CHECKED - No security dll found for this manufacturer.</Warning></Warnings><StartFix>
+	<Lat>32  02.813 N</Lat>
+	<Long>83  52.388 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.162 N</Lat>
+	<Long>83  46.831 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  45.392 N</Lat>
+	<Long>83  41.841 W</Long></ScoredLandingLocation><TATaskPoints><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-XCM-DYG-01.igc</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>19</hr>
+	<min>57</min>
+	<sec>48</sec></mtime>
+	<FileName>2021-06-05-XCM-DYG-01.igc</FileName>
+	<GliderType>Silent2 elec.</GliderType>
+	<GliderID>N268MB</GliderID>
+	<CompetitionID>JEN</CompetitionID>
+	<Pilot>WERNER RUEGGER</Pilot>
+	<Manufacturer>XCM</Manufacturer>
+	<FDRID>DYG</FDRID>
+	<NumPositionPoints>9685</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>JEN</CID>
+	<ClassID>2</ClassID>
+	<AllTurnpointsAcheived>1</AllTurnpointsAcheived>
+	<ValidFinish>1</ValidFinish>
+	<ValidStart>1</ValidStart>
+	<Options>16</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>17</min>
+	<sec>12</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>38</min>
+	<sec>52</sec></StartTime><FinishTime>
+	<hr>15</hr>
+	<min>52</min>
+	<sec>32</sec></FinishTime><LandingTime>
+	<hr>15</hr>
+	<min>55</min>
+	<sec>18</sec></LandingTime>
+	<Status>4</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumAcheivedTurnpoints>4</NumAcheivedTurnpoints><AcheivedTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></AcheivedTurnpoints>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>A INFO PEN=   0 Pressure altitude is zero for all fixes in the log, using GPS altitude instead.</Warning>
+	<Warning>C FNSH PEN= 105 Finish Altitude of 951 ft MSL is less than the Minimum Finish Altitude of 1300 ft MSL.</Warning>
+	<Warning>A INFO PEN=   0 No engine noise signal was detected, check motor run manually.</Warning>
+	<Warning>A STLA PEN=   0 Latest start time at 13:45:43 incured a penalty, An earlier start was selected to avoid a start penalty.</Warning>
+	<Warning>A SECU PEN=   0 SECURITY NOT CHECKED - No security dll found for this manufacturer.</Warning></Warnings><StartFix>
+	<Lat>32  01.376 N</Lat>
+	<Long>83  48.622 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.189 N</Lat>
+	<Long>83  46.813 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  59.189 N</Lat>
+	<Long>83  46.813 W</Long></ScoredLandingLocation>
+	<Distance>76.84124510267293</Distance><TATaskPoints><TATaskPoint>
+	<FixID>3974</FixID>
+	<Lat>31  42.081 N</Lat>
+	<Long>83  37.418 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>5759</FixID>
+	<Lat>31  40.642 N</Lat>
+	<Long>83  49.862 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>6827</FixID>
+	<Lat>31  51.392 N</Lat>
+	<Long>83  50.506 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>8305</FixID>
+	<Lat>32  03.387 N</Lat>
+	<Long>84  06.567 W</Long></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-LXV-80S-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>20</hr>
+	<min>8</min>
+	<sec>40</sec></mtime>
+	<FileName>2021-06-05-LXV-80S-01.IGC</FileName>
+	<GliderType>Ventus2/18m</GliderType>
+	<GliderID>N318KM</GliderID>
+	<CompetitionID>KM</CompetitionID>
+	<Pilot>Ken Sorenson</Pilot>
+	<Manufacturer>LXV</Manufacturer>
+	<FDRID>80SFL</FDRID>
+	<HardwareVersion>37</HardwareVersion>
+	<NumPositionPoints>12091</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year>
+	<TimeZone>-5</TimeZone></IGCFile>
+	<CID>KM</CID>
+	<ClassID>5</ClassID>
+	<AllTurnpointsAcheived>1</AllTurnpointsAcheived>
+	<ValidFinish>1</ValidFinish>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>12</hr>
+	<min>49</min>
+	<sec>53</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>42</min></StartTime><FinishTime>
+	<hr>15</hr>
+	<min>59</min>
+	<sec>57</sec></FinishTime><LandingTime>
+	<hr>16</hr>
+	<min>8</min>
+	<sec>6</sec></LandingTime>
+	<Status>4</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumAcheivedTurnpoints>4</NumAcheivedTurnpoints><AcheivedTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></AcheivedTurnpoints>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>A STLA PEN=   0 Latest start time at 13:49:29 incured a penalty, An earlier start was selected to avoid a start penalty.</Warning></Warnings><StartFix>
+	<Lat>32  05.289 N</Lat>
+	<Long>83  48.114 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.162 N</Lat>
+	<Long>83  46.827 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  59.162 N</Lat>
+	<Long>83  46.827 W</Long></ScoredLandingLocation>
+	<Distance>103.00184076148395</Distance><TATaskPoints><TATaskPoint>
+	<FixID>6026</FixID>
+	<Lat>31  36.670 N</Lat>
+	<Long>83  38.718 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>7500</FixID>
+	<Lat>31  39.706 N</Lat>
+	<Long>83  49.586 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>8593</FixID>
+	<Lat>31  53.522 N</Lat>
+	<Long>83  52.112 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>10298</FixID>
+	<Lat>32  15.058 N</Lat>
+	<Long>84  11.154 W</Long></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-FLA-JUM-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>16</hr>
+	<min>47</min>
+	<sec>20</sec></mtime>
+	<FileName>2021-06-05-FLA-JUM-01.IGC</FileName>
+	<GliderType>Ventus-3FES</GliderType>
+	<GliderID>N318KM</GliderID>
+	<CompetitionID>KM</CompetitionID>
+	<Pilot>Ken Sorenson</Pilot>
+	<Manufacturer>FLA</Manufacturer>
+	<FDRID>JUM</FDRID>
+	<HardwareVersion>1.1</HardwareVersion>
+	<NumPositionPoints>12000</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>KM</CID>
+	<ClassID>5</ClassID>
+	<AllTurnpointsAcheived>1</AllTurnpointsAcheived>
+	<ValidFinish>1</ValidFinish>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>12</hr>
+	<min>49</min>
+	<sec>52</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>42</min>
+	<sec>1</sec></StartTime><FinishTime>
+	<hr>15</hr>
+	<min>59</min>
+	<sec>57</sec></FinishTime><LandingTime>
+	<hr>16</hr>
+	<min>8</min>
+	<sec>7</sec></LandingTime>
+	<Status>4</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumAcheivedTurnpoints>4</NumAcheivedTurnpoints><AcheivedTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></AcheivedTurnpoints>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>A STLA PEN=   0 Latest start time at 13:49:29 incured a penalty, An earlier start was selected to avoid a start penalty.</Warning></Warnings><StartFix>
+	<Lat>32  05.280 N</Lat>
+	<Long>83  48.108 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.162 N</Lat>
+	<Long>83  46.829 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  59.162 N</Lat>
+	<Long>83  46.829 W</Long></ScoredLandingLocation>
+	<Distance>102.99892878412248</Distance><TATaskPoints><TATaskPoint>
+	<FixID>5872</FixID>
+	<Lat>31  36.671 N</Lat>
+	<Long>83  38.717 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>7348</FixID>
+	<Lat>31  39.721 N</Lat>
+	<Long>83  49.599 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>8440</FixID>
+	<Lat>31  53.523 N</Lat>
+	<Long>83  52.110 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>10146</FixID>
+	<Lat>32  15.058 N</Lat>
+	<Long>84  11.152 W</Long></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-CNI-VET-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>20</hr>
+	<min>24</min></mtime>
+	<FileName>2021-06-05-CNI-VET-01.IGC</FileName>
+	<GliderType>Ventus 3F</GliderType>
+	<GliderID>N318KM</GliderID>
+	<CompetitionID>KM</CompetitionID>
+	<Pilot>Ken Sorenson</Pilot>
+	<Manufacturer>CNI</Manufacturer>
+	<FDRID>VETFL</FDRID>
+	<HardwareVersion>CNv-IGC ADC 3</HardwareVersion>
+	<NumPositionPoints>12520</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>KM</CID>
+	<ClassID>5</ClassID>
+	<AllTurnpointsAcheived>1</AllTurnpointsAcheived>
+	<ValidFinish>1</ValidFinish>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>12</hr>
+	<min>49</min>
+	<sec>53</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>42</min></StartTime><FinishTime>
+	<hr>15</hr>
+	<min>59</min>
+	<sec>57</sec></FinishTime><LandingTime>
+	<hr>16</hr>
+	<min>8</min>
+	<sec>6</sec></LandingTime>
+	<Status>4</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumAcheivedTurnpoints>4</NumAcheivedTurnpoints><AcheivedTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></AcheivedTurnpoints>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>A STLA PEN=   0 Latest start time at 13:49:29 incured a penalty, An earlier start was selected to avoid a start penalty.</Warning></Warnings><StartFix>
+	<Lat>32  05.287 N</Lat>
+	<Long>83  48.114 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.162 N</Lat>
+	<Long>83  46.827 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  59.162 N</Lat>
+	<Long>83  46.827 W</Long></ScoredLandingLocation>
+	<Distance>103.00334315088899</Distance><TATaskPoints><TATaskPoint>
+	<FixID>5877</FixID>
+	<Lat>31  36.670 N</Lat>
+	<Long>83  38.717 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>7353</FixID>
+	<Lat>31  39.720 N</Lat>
+	<Long>83  49.600 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>8445</FixID>
+	<Lat>31  53.522 N</Lat>
+	<Long>83  52.111 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>10151</FixID>
+	<Lat>32  15.058 N</Lat>
+	<Long>84  11.154 W</Long></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-CNI-206-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>19</hr>
+	<min>4</min>
+	<sec>14</sec></mtime>
+	<FileName>2021-06-05-CNI-206-01.IGC</FileName>
+	<GliderType>ASW27B</GliderType>
+	<GliderID>MD</GliderID>
+	<CompetitionID>MD</CompetitionID>
+	<Pilot>Default Pilot</Pilot>
+	<Manufacturer>CNI</Manufacturer>
+	<FDRID>206FL</FDRID>
+	<HardwareVersion>1.0</HardwareVersion>
+	<NumPositionPoints>710</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>MD</CID>
+	<ClassID>6</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>10</min>
+	<sec>35</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>21</min>
+	<sec>24</sec></StartTime><LandingTime>
+	<hr>13</hr>
+	<min>39</min>
+	<sec>29</sec></LandingTime>
+	<Status>3</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>C INFO PEN=   0 Constructive landout distance  2.39 ( 2.10 Handicapped) is less than SMTD/2. Distance set to 0.0</Warning></Warnings><StartFix>
+	<Lat>32  00.817 N</Lat>
+	<Long>83  45.572 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.168 N</Lat>
+	<Long>83  46.827 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  58.572 N</Lat>
+	<Long>83  45.707 W</Long></ScoredLandingLocation><TATaskPoints><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-IEC-001-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>16</hr>
+	<min>9</min>
+	<sec>26</sec></mtime>
+	<FileName>2021-06-05-IEC-001-01.IGC</FileName>
+	<GliderType>LS-8</GliderType>
+	<CompetitionID>KZ</CompetitionID>
+	<Pilot>BillyKerns</Pilot>
+	<Manufacturer>IEC</Manufacturer>
+	<FDRID>00139</FDRID>
+	<NumPositionPoints>3487</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>KZ</CID>
+	<ClassID>6</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>14</hr>
+	<min>12</min>
+	<sec>27</sec></RollTime><StartTime>
+	<hr>15</hr>
+	<min>42</min>
+	<sec>52</sec></StartTime><LandingTime>
+	<hr>16</hr>
+	<min>2</min>
+	<sec>57</sec></LandingTime>
+	<Status>3</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>C INFO PEN=   0 Constructive landout distance 17.98 (16.45 Handicapped) is less than SMTD/2. Distance set to 0.0</Warning></Warnings><StartFix>
+	<Lat>31  59.966 N</Lat>
+	<Long>83  53.663 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.182 N</Lat>
+	<Long>83  46.770 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  47.734 N</Lat>
+	<Long>83  42.048 W</Long></ScoredLandingLocation><TATaskPoints><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\165VAGO1.igc</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>16</hr>
+	<min>28</min>
+	<sec>3</sec></mtime>
+	<FileName>165VAGO1.igc</FileName>
+	<GliderType>ASH 31/18m</GliderType>
+	<Pilot>Sam Zimmerman</Pilot>
+	<Manufacturer>LXV</Manufacturer>
+	<FDRID>AGOFL</FDRID>
+	<HardwareVersion>36</HardwareVersion>
+	<NumPositionPoints>10790</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year>
+	<TimeZone>-4</TimeZone></IGCFile>
+	<CID>SZ</CID>
+	<ClassID>5</ClassID>
+	<AllTurnpointsAcheived>1</AllTurnpointsAcheived>
+	<ValidFinish>1</ValidFinish>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>9</min>
+	<sec>39</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>54</min>
+	<sec>46</sec></StartTime><FinishTime>
+	<hr>16</hr>
+	<min>1</min>
+	<sec>3</sec></FinishTime><LandingTime>
+	<hr>16</hr>
+	<min>5</min>
+	<sec>28</sec></LandingTime>
+	<Status>4</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumAcheivedTurnpoints>4</NumAcheivedTurnpoints><AcheivedTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></AcheivedTurnpoints>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>C STLA PEN=   0 Latest start time at 14:00:05 incured a penalty, An earlier start was selected to avoid a start penalty.</Warning></Warnings><StartFix>
+	<Lat>32  02.434 N</Lat>
+	<Long>83  51.000 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.149 N</Lat>
+	<Long>83  46.822 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  59.149 N</Lat>
+	<Long>83  46.822 W</Long></ScoredLandingLocation>
+	<Distance>80.65666708901978</Distance><TATaskPoints><TATaskPoint>
+	<FixID>4855</FixID>
+	<Lat>31  39.753 N</Lat>
+	<Long>83  38.764 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>7675</FixID>
+	<Lat>31  40.582 N</Lat>
+	<Long>83  49.522 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>8305</FixID>
+	<Lat>31  46.597 N</Lat>
+	<Long>83  52.622 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>9760</FixID>
+	<Lat>32  06.991 N</Lat>
+	<Long>84  06.142 W</Long></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\165V80S1.igc</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>16</hr>
+	<min>25</min>
+	<sec>56</sec></mtime>
+	<FileName>165V80S1.igc</FileName>
+	<GliderType>Ventus2/18m</GliderType>
+	<GliderID>N318KM</GliderID>
+	<CompetitionID>KM</CompetitionID>
+	<Pilot>Ken Sorenson</Pilot>
+	<Manufacturer>LXV</Manufacturer>
+	<FDRID>80SFL</FDRID>
+	<HardwareVersion>37</HardwareVersion>
+	<NumPositionPoints>12091</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year>
+	<TimeZone>-5</TimeZone></IGCFile>
+	<CID>KM</CID>
+	<ClassID>5</ClassID>
+	<AllTurnpointsAcheived>1</AllTurnpointsAcheived>
+	<ValidFinish>1</ValidFinish>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>12</hr>
+	<min>49</min>
+	<sec>53</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>42</min></StartTime><FinishTime>
+	<hr>15</hr>
+	<min>59</min>
+	<sec>57</sec></FinishTime><LandingTime>
+	<hr>16</hr>
+	<min>8</min>
+	<sec>6</sec></LandingTime>
+	<Status>4</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumAcheivedTurnpoints>4</NumAcheivedTurnpoints><AcheivedTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></AcheivedTurnpoints>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>C STLA PEN=   0 Latest start time at 13:49:29 incured a penalty, An earlier start was selected to avoid a start penalty.</Warning></Warnings><StartFix>
+	<Lat>32  05.289 N</Lat>
+	<Long>83  48.114 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.162 N</Lat>
+	<Long>83  46.827 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  59.162 N</Lat>
+	<Long>83  46.827 W</Long></ScoredLandingLocation>
+	<Distance>103.00184076148395</Distance><TATaskPoints><TATaskPoint>
+	<FixID>6026</FixID>
+	<Lat>31  36.670 N</Lat>
+	<Long>83  38.718 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>7500</FixID>
+	<Lat>31  39.706 N</Lat>
+	<Long>83  49.586 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>8593</FixID>
+	<Lat>31  53.522 N</Lat>
+	<Long>83  52.112 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>10298</FixID>
+	<Lat>32  15.058 N</Lat>
+	<Long>84  11.154 W</Long></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-CNI-211-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>16</hr>
+	<min>2</min>
+	<sec>49</sec></mtime>
+	<FileName>2021-06-05-CNI-211-01.IGC</FileName>
+	<GliderType>ASW27B</GliderType>
+	<GliderID>BZ</GliderID>
+	<CompetitionID>BZ</CompetitionID>
+	<Pilot>John Mittell</Pilot>
+	<Manufacturer>CNI</Manufacturer>
+	<FDRID>211FL</FDRID>
+	<HardwareVersion>1.0</HardwareVersion>
+	<NumPositionPoints>4706</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>BZ</CID>
+	<ClassID>6</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>10</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>4</min>
+	<sec>13</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>20</min>
+	<sec>31</sec></StartTime><LandingTime>
+	<hr>15</hr>
+	<min>24</min>
+	<sec>43</sec></LandingTime>
+	<Status>3</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumAcheivedTurnpoints>1</NumAcheivedTurnpoints><AcheivedTurnpoints>
+	<ID>10</ID></AcheivedTurnpoints>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><StartFix>
+	<Lat>32  00.834 N</Lat>
+	<Long>83  45.561 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.151 N</Lat>
+	<Long>83  46.820 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  41.319 N</Lat>
+	<Long>83  40.407 W</Long></ScoredLandingLocation>
+	<Distance>23.3772063213156</Distance><TATaskPoints><TATaskPoint>
+	<FixID>2904</FixID>
+	<Lat>31  39.149 N</Lat>
+	<Long>83  37.934 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\165V6PG1.igc</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>15</hr>
+	<min>50</min>
+	<sec>55</sec></mtime>
+	<FileName>165V6PG1.igc</FileName>
+	<GliderType>ASH 31/21m</GliderType>
+	<GliderID>N20SW</GliderID>
+	<CompetitionID>R9</CompetitionID>
+	<Pilot>Roger Buchanan</Pilot>
+	<Manufacturer>LXV</Manufacturer>
+	<FDRID>6PGFL</FDRID>
+	<HardwareVersion>12</HardwareVersion>
+	<NumPositionPoints>3734</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year>
+	<TimeZone>-5</TimeZone></IGCFile>
+	<CID>R9</CID>
+	<ClassID>5</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>1</min>
+	<sec>49</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>8</min>
+	<sec>33</sec></StartTime><LandingTime>
+	<hr>14</hr>
+	<min>30</min>
+	<sec>48</sec></LandingTime>
+	<Status>3</Status>
+	<NumAcheivedTurnpoints>1</NumAcheivedTurnpoints><AcheivedTurnpoints>
+	<ID>10</ID></AcheivedTurnpoints>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>C MRUN PEN=   0 Landout occured at 14:30:48 due to motor run</Warning></Warnings><StartFix>
+	<Lat>32  00.832 N</Lat>
+	<Long>83  45.562 W</Long></StartFix><LandingLocation>
+	<Lat>31  40.257 N</Lat>
+	<Long>83  44.129 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  40.226 N</Lat>
+	<Long>83  44.124 W</Long></ScoredLandingLocation>
+	<Distance>23.2276366289365</Distance><TATaskPoints><TATaskPoint>
+	<FixID>2518</FixID>
+	<Lat>31  44.321 N</Lat>
+	<Long>83  39.196 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-LXV-JBA-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>17</hr>
+	<min>50</min>
+	<sec>12</sec></mtime>
+	<FileName>2021-06-05-LXV-JBA-01.IGC</FileName>
+	<GliderType>LS 10-s-18</GliderType>
+	<GliderID>N210LS</GliderID>
+	<CompetitionID>AS</CompetitionID>
+	<Pilot>Alan Smith</Pilot>
+	<Manufacturer>LXV</Manufacturer>
+	<FDRID>JBAFL</FDRID>
+	<HardwareVersion>4</HardwareVersion>
+	<NumPositionPoints>951</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year>
+	<TimeZone>-4</TimeZone></IGCFile>
+	<CID>AS</CID>
+	<ClassID>5</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>12</hr>
+	<min>58</min>
+	<sec>32</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>25</min>
+	<sec>8</sec></StartTime><LandingTime>
+	<hr>13</hr>
+	<min>49</min>
+	<sec>24</sec></LandingTime>
+	<Status>3</Status>
+	<LandingAirfieldName>Start Cordel</LandingAirfieldName>
+	<LandingAirfieldID>1</LandingAirfieldID>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>C INFO PEN=   0 Constructive landout distance  1.37 is less than SMTD/2. Distance set to 0.0</Warning></Warnings><StartFix>
+	<Lat>32  00.832 N</Lat>
+	<Long>83  45.562 W</Long></StartFix><LandingLocation>
+	<Lat>31  59.169 N</Lat>
+	<Long>83  46.817 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  59.168 N</Lat>
+	<Long>83  46.817 W</Long></ScoredLandingLocation><TATaskPoints><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight><Flight><IGCFile>
+	<FilePath>FlightLogs\Jun05\2021-06-05-CNI-20E-01.IGC</FilePath>
+	<Valid>1</Valid><mtime>
+	<yr>2021</yr>
+	<mon>6</mon>
+	<day>5</day>
+	<hr>19</hr>
+	<min>3</min>
+	<sec>50</sec></mtime>
+	<FileName>2021-06-05-CNI-20E-01.IGC</FileName>
+	<GliderType>ASG 29</GliderType>
+	<GliderID>LX</GliderID>
+	<CompetitionID>LX</CompetitionID>
+	<Pilot>Default Pilot</Pilot>
+	<Manufacturer>CNI</Manufacturer>
+	<FDRID>20EFL</FDRID>
+	<HardwareVersion>1.0</HardwareVersion>
+	<NumPositionPoints>1955</NumPositionPoints>
+	<Day>5</Day>
+	<Month>6</Month>
+	<Year>2021</Year></IGCFile>
+	<CID>LX</CID>
+	<ClassID>5</ClassID>
+	<ValidStart>1</ValidStart>
+	<Options>8</Options>
+	<StartGateID>74</StartGateID><RollTime>
+	<hr>13</hr>
+	<min>9</min>
+	<sec>10</sec></RollTime><StartTime>
+	<hr>13</hr>
+	<min>35</min>
+	<sec>27</sec></StartTime><LandingTime>
+	<hr>14</hr>
+	<min>46</min>
+	<sec>4</sec></LandingTime>
+	<Status>3</Status>
+	<NumAcheivedTurnpoints>3</NumAcheivedTurnpoints><AcheivedTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID></AcheivedTurnpoints>
+	<NumTaskPoints>4</NumTaskPoints><TaskTurnpoints>
+	<ID>10</ID>
+	<ID>56</ID>
+	<ID>64</ID>
+	<ID>8</ID></TaskTurnpoints><Warnings>
+	<Warning>C MRUN PEN=   0 Landout occured at 14:46:04 due to motor run</Warning></Warnings><StartFix>
+	<Lat>31  59.596 N</Lat>
+	<Long>83  46.820 W</Long></StartFix><LandingLocation>
+	<Lat>31  56.545 N</Lat>
+	<Long>83  54.873 W</Long></LandingLocation><ScoredLandingLocation>
+	<Lat>31  56.531 N</Lat>
+	<Long>83  55.031 W</Long></ScoredLandingLocation>
+	<Distance>42.49557844885037</Distance><TATaskPoints><TATaskPoint>
+	<FixID>934</FixID>
+	<Lat>31  45.217 N</Lat>
+	<Long>83  38.407 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>1373</FixID>
+	<Lat>31  40.649 N</Lat>
+	<Long>83  49.546 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>1628</FixID>
+	<Lat>31  54.485 N</Lat>
+	<Long>83  54.857 W</Long></TATaskPoint><TATaskPoint>
+	<FixID>0</FixID></TATaskPoint></TATaskPoints></Flight></Flights><Registry><Strings><String>
+	<Key>EmailMailbox</Key>
+	<Value>Inbox</Value></String><String>
+	<Key>EmailPassword</Key>
+	<Value>515453633072696E39</Value></String><String>
+	<Key>EmailServer</Key>
+	<Value>imap.gmail.com</Value></String><String>
+	<Key>EmailUsername</Key>
+	<Value>ssa.scoring.igc</Value></String><String>
+	<Key>FinishRadius</Key>
+	<Value>2.000000000000000</Value></String><String>
+	<Key>NOLOG_1K_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_2EZ_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_37_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_3X_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_5YA_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_5_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_92_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_BH_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_DI_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_FS_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_FZ_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_GS_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_HK_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_JA_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_JS1_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_JT_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_KF_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_KS_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_KW_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_MP_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_MS_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_OG_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_OS_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_QT_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_SE_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_SF_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_SK_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_SV_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_W2_6_5</Key>
+	<Value>Landout Reported</Value></String><String>
+	<Key>NOLOG_W7_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_WB_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_WD_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_XM_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>NOLOG_XP_6_5</Key>
+	<Value>Did Not Launch</Value></String><String>
+	<Key>SSAUsername</Key>
+	<Value>JohnGodfrey</Value></String><String>
+	<Key>SUADisplayFile</Key>
+	<Value>Turnpoints\cordel21_ssa.sua</Value></String><String>
+	<Key>SUADisplayFile2</Key></String><String>
+	<Key>StartRadius</Key>
+	<Value>5.000000000000000</Value></String><String>
+	<Key>TaskLibraryPath</Key>
+	<Value>C:\Users\Sandra\Google Drive\2021 Cordele\Tasks</Value></String><String>
+	<Key>TurnpointInnerRadius</Key>
+	<Value>0.868390690790776</Value></String><String>
+	<Key>TurnpointOuterRadius</Key>
+	<Value>1.736781381581552</Value></String></Strings><Ints><Int>
+	<Key>AllowTwoStartGates</Key>
+	<Value>0</Value></Int><Int>
+	<Key>AutoScoreAnalysis</Key>
+	<Value>1</Value></Int><Int>
+	<Key>AutoScoreAutoSave</Key>
+	<Value>1</Value></Int><Int>
+	<Key>AutoScoreDuration</Key>
+	<Value>30</Value></Int><Int>
+	<Key>AutoScoreEmail</Key>
+	<Value>1</Value></Int><Int>
+	<Key>AutoScoreMedia</Key>
+	<Value>1</Value></Int><Int>
+	<Key>AutoScoreScores</Key>
+	<Value>1</Value></Int><Int>
+	<Key>EmailPortID</Key>
+	<Value>993</Value></Int><Int>
+	<Key>EmailUseSSL</Key>
+	<Value>1</Value></Int><Int>
+	<Key>FinishBase</Key>
+	<Value>1300</Value></Int><Int>
+	<Key>FinishHeading</Key>
+	<Value>0</Value></Int><Int>
+	<Key>FinishID</Key>
+	<Value>2</Value></Int><Int>
+	<Key>FinishType</Key>
+	<Value>0</Value></Int><Int>
+	<Key>GuestsAtBottom</Key>
+	<Value>0</Value></Int><Int>
+	<Key>LogFolderByDate</Key>
+	<Value>1</Value></Int><Int>
+	<Key>LogTimeOption</Key>
+	<Value>2</Value></Int><Int>
+	<Key>LogTimeUserValue</Key>
+	<Value>-4</Value></Int><Int>
+	<Key>OpenHours</Key>
+	<Value>13</Value></Int><Int>
+	<Key>OpenMinutes</Key>
+	<Value>0</Value></Int><Int>
+	<Key>PostHours</Key>
+	<Value>2</Value></Int><Int>
+	<Key>PostMinutes</Key>
+	<Value>0</Value></Int><Int>
+	<Key>SSARemember</Key>
+	<Value>1</Value></Int><Int>
+	<Key>SUADisplay</Key>
+	<Value>1</Value></Int><Int>
+	<Key>SUAIgnore</Key>
+	<Value>1</Value></Int><Int>
+	<Key>StartCeiling</Key>
+	<Value>4000</Value></Int><Int>
+	<Key>StartHeading</Key>
+	<Value>0</Value></Int><Int>
+	<Key>StartID</Key>
+	<Value>74</Value></Int><Int>
+	<Key>StartType</Key>
+	<Value>0</Value></Int></Ints></Registry><PassedLogs>
+	<PassedLog>165V2FP3.igc</PassedLog>
+	<PassedLog>2021-06-05-LXV-2R4-01.IGC</PassedLog>
+	<PassedLog>2021-06-05-CNI-20E-01.IGC</PassedLog>
+	<PassedLog>2021-06-05-LXV-JBA-01.IGC</PassedLog>
+	<PassedLog>165V6PG1.igc</PassedLog>
+	<PassedLog>2021-06-05-LXV-ABC-01.IGC</PassedLog>
+	<PassedLog>2021-06-05-xcm-5mu-01.failed</PassedLog>
+	<PassedLog>2021-06-05-xcm-5mu-01.failed</PassedLog>
+	<PassedLog>2021-06-05-xcm-dyg-01.failed</PassedLog>
+	<PassedLog>2021-06-05-xcm-dyg-01.failed</PassedLog>
+	<PassedLog>2021-06-05-xcm-dyg-01.failed</PassedLog>
+	<PassedLog>2021-06-05-xcm-dyg-01.failed</PassedLog>
+	<PassedLog>2021-06-05-xcm-dyg-01.failed</PassedLog>
+	<PassedLog>2021-06-05-xcm-dyg-01.failed</PassedLog>
+	<PassedLog>2021-06-05-xfl-ibm-01.failed</PassedLog>
+	<PassedLog>2021-06-05-xcm-5mu-01.failed</PassedLog>
+	<PassedLog>166gb691.failed</PassedLog></PassedLogs></Winscore>

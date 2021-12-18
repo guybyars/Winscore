@@ -1,0 +1,112 @@
+                                                    New Castle, Virginia
+
+                                                    Region 4 South, 2017
+                                             Contributed courtesy of John Godrey
+                                      Last updated Saturday, 22 July 2017 at 23:08 GMT
+
+                                                See also the outlanding sites
+
+                                              UNOFFICIAL, USE AT YOUR OWN RISK
+
+                                  Do not use for navigation, for flight verification only.
+
+                              Always consult the relevant publications for current and correct
+                          information. This service is provided free of charge with no warrantees,
+                                                    expressed or implied.
+                                                User assumes all risk of use.
+
+         Waypoint      Latitude      Longitude                               Abbreviations for GPS                               ICAO
+
+  99 Finish Cylinder  37 28.767 N   80  6.133 W  FNS  FCln   FnCln   FnClnd    FnshClnd   FinishCy    FinishCyl   FinishCylin
+  98 Finish Gate      37 28.750 N   80  6.367 W  FIN  FGat   FinGt   FinGat    FinshGat   FinishGa    FinishGat   Finish Gate
+  97 Start NCI        37 28.767 N   80  6.133 W  STR  StrN   Str N   Strt N    Start NC   Start NCI   Start NCI   Start NCI
+   1 Alt Start A      37 31.833 N   80  2.267 W  ALT  StrA   Str A   Strt A    Start A    Start A     Start A     Alt Start A
+   2 Alt Start B      37 25.683 N   80  9.983 W  ALS  StrB   Str B   Strt B    Start B    Start B     Start B     Alt Start B
+   3 Balcony Downs    37 38.833 N   79 25.483 W  BLC  Blcn   BlcnD   BlcnDw    BlcnDwns   BalcnDwns   BalconDwns  BalconyDowns
+   4 Big Hill         37 43.867 N   79 48.667 W  BGH  BgHl   BgHll   BigHll    Big Hill   Big Hill    Big Hill    Big Hill
+   5 Big Walker       37  2.550 N   81  8.200 W  BGW  BgWl   BgWlk   BgWlkr    BigWalkr   BigWalker   Big Walker  Big Walker
+   6 Blacksburg       37 12.467 N   80 24.500 W  BLA  Blck   Blcks   Blcksb    Blcksbrg   Blacksbrg   Blacksburg  Blacksburg
+   7 Buchanan         37 31.467 N   79 42.417 W  BCH  Bchn   Bchnn   Buchnn    Buchanan   Buchanan    Buchanan    Buchanan
+   8 Catawba Valley   37 17.050 N   80 18.050 W  CTW  Ctwb   CtwbV   CtwbVl    CatwbVll   CatawbVll   CatawbaVll  CatawbaValle
+   9 Covington        37 45.567 N   80  0.067 W  CVN  Cvng   Cvngt   Cvngtn    Covingtn   Covington   Covington   Covington
+  10 Craigsville      38  4.717 N   79 22.983 W  CRG  Crgs   Crgsv   Crgsvl    Cragsvll   Craigsvll   Craigsvill  Craigsville
+  11 Eagle Rock       37 39.867 N   79 48.583 W  EGL  EglR   EglRc   EglRck    EagleRck   EagleRock   Eagle Rock  Eagle Rock
+  12 East River       37 16.867 N   81  7.483 W  ERV  ERvr   ERivr   ERiver    E River    E River     East River  East River
+  13 Gap Mills        37 33.733 N   80 24.483 W  GPM  GpMl   GpMll   GpMlls    GapMills   Gap Mills   Gap Mills   Gap Mills
+  14 Hillsville       36 45.967 N   80 49.417 W  HLL  Hlls   Hllsv   Hllsvl    Hillsvll   Hillsvill   Hillsville  Hillsville
+  15 Hinton           37 40.767 N   80 42.617 W  HNT  Hntn   Hintn   Hinton    Hinton     Hinton      Hinton      Hinton
+  16 Ingalls          37 57.083 N   79 50.033 W  ING  Ingl   Ingll   Inglls    Ingalls    Ingalls     Ingalls     Ingalls
+  17 Lexington        37 47.550 N   79 26.233 W  LXN  Lxng   Lxngt   Lxngtn    Lexingtn   Lexington   Lexington   Lexington
+  18 Maggie           37 25.483 N   80 22.683 W  MGG  Magg   Maggi   Maggie    Maggie     Maggie      Maggie      Maggie
+  19 Marion           36 54.100 N   81 32.533 W  MRN  Marn   Marin   Marion    Marion     Marion      Marion      Marion
+  20 McCoy Falls      37 14.700 N   80 36.400 W  MCC  McCF   McCFl   McCFll    McCoFlls   McCoyFlls   McCoyFalls  McCoy Falls
+  21 Millboro Springs 37 59.750 N   79 37.367 W  MLL  Mllb   Mllbr   MllbrS    MllbrSpr   MllbrSprn   MllbrSprng  MillbrSprngs
+  22 Monterey         38 24.717 N   79 34.783 W  MNT  Mntr   Montr   Monter    Monterey   Monterey    Monterey    Monterey
+  23 Mountain Lake    37 21.317 N   80 32.200 W  Mtn  MtnL   MtnLk   Mtn Lk    Mtn Lk     Mtn Lk      Mtn Lk      Mountain Lk
+  24 Narrows          37 20.317 N   80 48.300 W  NRR  Nrrw   Nrrws   Narrws    Narrows    Narrows     Narrows     Narrows
+  25 New Castle       37 28.767 N   80  6.133 W  NWC  NwCs   NwCst   NwCstl    NewCastl   NewCastle   New Castle  New Castle
+  26 New London       37 16.317 N   79 20.150 W  NWL  NwLn   NwLnd   NwLndn    NewLondn   NewLondon   New London  New London
+  27 New River        37  8.233 N   80 40.717 W  NWR  NwRv   NwRvr   NewRvr    NewRiver   New River   New River   New River
+  28 Oriskany         37 36.983 N   79 59.017 W  ORS  Orsk   Orskn   Oriskn    Oriskany   Oriskany    Oriskany    Oriskany
+  29 Peaks Otter      37 26.800 N   79 36.183 W  PkS  Pkst   Pkstt   Pksttr    PksOtter   Pks Otter   Pks Otter   Peaks Otter
+  30 Radford          37  5.683 N   80 30.533 W  RDF  Rdfr   Rdfrd   Radfrd    Radford    Radford     Radford     Radford
+  31 Riverwood        37 47.783 N   79 46.000 W  RVR  Rvrw   Rvrwd   Rivrwd    Riverwod   Riverwood   Riverwood   Riverwood
+  32 Sweet Springs    37 37.700 N   80 14.483 W  SWT  SwtS   SwtSp   SwtSpr    SwtSprng   SwtSprngs   SwetSprngs  SweetSprings
+  33 Tazewell County  37  9.033 N   81 27.250 W  TZW  Tzwl   Tzwll   TzwllC    TzwllCnt   TazwllCnt   TazewllCnt  TazewellCont
+  34 Union WV         37 35.483 N   80 32.617 W  UNN  UnnW   UnnWV   UninWV    Union WV   Union WV    Union WV    Union WV
+  35 Waynesboro       38  4.617 N   78 56.650 W  WNS  Wnsb   Wnsbr   Wansbr    Waynesbr   Waynesbor   Waynesboro  Waynesboro
+  36 Wits End         37 21.067 N   80 20.883 W  WTS  Wtsn   Wtsnd   Witsnd    Wits End   Wits End    Wits End    Wits End
+     Barrows          37 29.517 N   79 55.717 W  BRR  Brrw   Brrws   Barrws    Barrows    Barrows     Barrows     Barrows
+     Bath Alum        38  3.150 N   79 43.733 W  BTH  Bthl   Bthlm   Bathlm    BathAlum   Bath Alum   Bath Alum   Bath Alum
+     Black Bridge     37 36.933 N   79 30.317 W  BLK  Blac   BlckB   BlckBr    BlackBrg   Black Brg   Black Brg   Black Bridge
+     Bluegrass        37  3.717 N   81 11.500 W  BLG  Blgr   Blgrs   Blgrss    Bluegrss   Bluegrass   Bluegrass   Bluegrass
+     Brook Hill Farm  37 55.683 N   79 10.683 W  BRK  BrkH   BrkHl   BrkHll    BrkHllFr   BrkHllFrm   BrokHllFrm  BrookHillFrm
+     Bundoran         37 58.100 N   78 40.933 W  BND  Bndr   Bndrn   Bundrn    Bundoran   Bundoran    Bundoran    Bundoran
+     Burkes Garden    37  5.733 N   81 22.150 W  BUR  Brks   BrksG   BrksGr    BrksGrdn   BurksGrdn   BurkesGrdn  BurkesGarden
+     Burnt Chimney    37  4.533 N   79 49.633 W  BRN  Brnt   BrntC   BrntCh    BrntChmn   BurntChmn   BurntChimn  BurntChimney
+     Cathro           37 55.683 N   78 33.083 W  CTH  Cthr   Cathr   Cathro    Cathro     Cathro      Cathro      Cathro
+     Charlottesville  38  8.317 N   78 27.167 W  CHR  Chrl   Chrlt   Chrltt    Chrlttsv   Chrlttsvl   Chrlttsvll  Charlottsvll
+     Collins          36 37.500 N   80 10.233 W  CLL  Clln   Cllns   Collns    Collins    Collins     Collins     Collins
+     Cottonwood Farm  38  4.867 N   78 41.733 W  CTT  Cttn   Cttnw   Cttnwd    CttnwdFr   CttnwdFrm   CottnwdFrm  CottonwodFrm
+     Deer Creek Farm  38 28.283 N   79 48.333 W  DRC  DrCr   DrCrk   DrCrkF    DrCrkFrm   DerCrkFrm   DeerCrkFrm  DeerCreekFrm
+     Deer Run         36 59.650 N   80 27.267 W  DRR  DrRn   DerRn   DeerRn    Deer Run   Deer Run    Deer Run    Deer Run
+     Falwell          37 22.683 N   79  7.333 W  FLW  Flwl   Flwll   Falwll    Falwell    Falwell     Falwell     Falwell
+     Ferguson         37  7.083 N   79 47.317 W  FRG  Frgs   Frgsn   Fergsn    Ferguson   Ferguson    Ferguson    Ferguson
+     Fincastle        37 31.333 N   79 51.117 W  FNC  Fncs   Fncst   Fncstl    Fincastl   Fincastle   Fincastle   Fincastle
+     Flatwoods        37 44.300 N   78 57.733 W  FLT  Fltw   Fltwd   Fltwds    Flatwods   Flatwoods   Flatwoods   Flatwoods
+     Fulcher Family F 37 43.450 N   79  5.950 W  FLC  Flch   Flchr   FlchrF    FlchrFml   FlchrFmlF   FlchrFmlFr  FlchrFmlFrms
+     Hannah Field     38 23.900 N   79 36.017 W  HNN  Hnnh   HnnhF   HnnhFl    HannhFld   HannahFld   HannahFild  Hannah Field
+     Hawk Ridge       37 17.333 N   79 26.833 W  HWK  HwkR   HwkRd   HwkRdg    HawkRidg   HawkRidge   Hawk Ridge  Hawk Ridge
+     Hop Along        37 47.383 N   79 46.250 W  HPL  Hpln   Hplng   Hoplng    HopAlong   Hop Along   Hop Along   Hop Along
+     Johnson Fox      37 14.017 N   79 35.117 W  JHN  Jhns   Jhnsn   JhnsnF    JohnsnFx   JohnsonFx   JohnsonFox  Johnson Fox
+     Lakeview         37  7.117 N   79 36.167 W  LKV  Lkvw   Lakvw   Lakevw    Lakeview   Lakeview    Lakeview    Lakeview
+     Lewisburg        37 51.500 N   80 23.967 W  LWS  Lwsb   Lwsbr   Lwsbrg    Lewisbrg   Lewisburg   Lewisburg   Lewisburg
+     Lynchburg        37 19.600 N   79 12.033 W  LNC  Lnch   Lnchb   Lnchbr    Lynchbrg   Lynchburg   Lynchburg   Lynchburg
+     Mercer County    37 17.750 N   81 12.467 W  MRC  Mrcr   MrcrC   MrcrCn    MercrCnt   MercerCnt   MercerCont  MercerCounty
+     Micro            36 44.133 N   80 26.950 W  MCR  Micr   Micro   Micro     Micro      Micro       Micro       Micro
+     Miller           37 19.667 N   79 24.283 W  MIL  Mllr   Millr   Miller    Miller     Miller      Miller      Miller
+     Mountain Empire  36 53.683 N   81 21.000 W  MtE  Mtnm   Mtnmp   Mtnmpr    MtnEmpir   MtnEmpire   Mtn Empire  Mtn Empire
+     Nashs            37 23.383 N   78 48.817 W  NSH  Nshs   Nashs   Nashs     Nashs      Nashs       Nashs       Nashs
+     NRAO Green Bank  38 25.833 N   79 49.533 W  NRG  NRGr   NRGrn   NRGrnB    NRGrnBnk   NRAGrnBnk   NRAOGrnBnk  NRAOGreenBnk
+     Peterstown       37 24.067 N   80 48.433 W  PTR  Ptrs   Ptrst   Ptrstw    Petrstwn   Peterstwn   Peterstown  Peterstown
+     Red Birds Airyar 37  6.767 N   79 36.550 W  RDB  RdBr   RdBrd   RdBrds    RdBrdsrr   RdBrdsrrd   RedBrdsrrd  RedBirdsArrd
+     River Farmer     37 40.700 N   79 48.300 W  RIV  RvrF   RvrFr   RvrFrm    RivrFrmr   RiverFrmr   RiverFarmr  River Farmer
+     Roanoke          37 19.533 N   79 58.533 W  RNK  Ronk   Roank   Roanok    Roanoke    Roanoke     Roanoke     Roanoke
+     Robinson Private 37 20.900 N   79 34.317 W  RBN  Rbns   Rbnsn   RbnsnP    RbnsnPrv   RbnsnPrvt   RobnsnPrvt  RobinsonPrvt
+     Rockfish Airpark 37 52.767 N   78 53.617 W  RCK  Rckf   Rckfs   Rckfsh    Rockfish   Rockfish    Rockfish    Rockfish AP
+     Root             38 10.383 N   78 58.150 W  ROT  Root   Root    Root      Root       Root        Root        Root
+     Shenandoah Valle 38 15.833 N   78 53.783 W  SHN  Shnn   Shnnd   Shnndh    ShnndhVl   ShnndhVll   ShenndhVll  ShenandohVll
+     Singleton        38 12.633 N   79 42.800 W  SNG  Sngl   Snglt   Sngltn    Singletn   Singleton   Singleton   Singleton
+     Smith            38 18.150 N   79 30.483 W  SMT  Smth   Smith   Smith     Smith      Smith       Smith       Smith
+     Smith Mountain L 37  6.467 N   79 35.550 W  SMI  Smit   SmthM   SmthMt    SmthMtnL   SmthMtnLk   SmithMtnLk  Smith Mtn Lk
+     Springwood GP    37 33.233 N   79 44.983 W  SPR  Sprn   Sprng   Sprngw    SprngwdG   SprngwdGP   SpringwdGP  SpringwoodGP
+     Starr            37 39.567 N   78 55.333 W  STA  Strr   Starr   Starr     Starr      Starr       Starr       Starr
+     Tazewell County  37  3.833 N   81 47.900 W  TAZ  Taze   Tazew   Tazewe    Tazewell   TazewellC   TazewellCo  TazewellCoun
+     TBD              37 32.283 N   80  9.550 W  TBD  TBD    TBD     TBD       TBD        TBD         TBD         TBD
+     Timberdoodle     37 32.183 N   79  1.400 W  TMB  Tmbr   Tmbrd   Tmbrdd    Timbrddl   Timberddl   Timberdodl  Timberdoodle
+     Trussmark        37 17.083 N   80  4.183 W  TRS  Trss   Trssm   Trssmr    Trussmrk   Trussmark   Trussmark   Trussmark
+     Twin River       37 40.767 N   79 25.217 W  TWN  TwnR   TwnRv   TwnRvr    TwinRivr   TwinRiver   Twin River  Twin River
+     Tye River        37 39.500 N   78 56.733 W  TRV  TRvr   TyRvr   TyeRvr    TyeRiver   Tye River   Tye River   Tye River
+     White Oak Stand  36 48.467 N   81 42.067 W  WHT  Whtk   WhtkS   WhtkSt    WhtkStnd   WhitkStnd   WhitekStnd  WhiteOakStnd
+     Willow Bend      37 32.733 N   80 32.050 W  WLL  Wllw   WllwB   WllwBn    WillwBnd   WillowBnd   WillowBend  Willow Bend
+     Worley           36 57.000 N   79 52.767 W  WRL  Worl   Worle   Worley    Worley     Worley      Worley      Worley

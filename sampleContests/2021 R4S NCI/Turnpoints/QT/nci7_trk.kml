@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<name>New Castle, Virginia for SPOT Tracking</name>
+<Style id="khStyle565">
+    	<LineStyle id="khLineStyle568">
+    	</LineStyle>
+    	<PolyStyle id="khPolyStyle567">
+    	</PolyStyle>
+    	<IconStyle id="khIconStyle569">
+			<scale>0.7</scale>
+			<Icon>
+			<href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href>
+			</Icon>
+    	</IconStyle>
+    	<LabelStyle id="khLabelStyle571">
+				<scale>0.7</scale>
+				<color>#c88181f7</color>
+    	</LabelStyle>
+  	</Style>
+  	<Folder>
+		<name>
+New Castle, Virginia
+</name>
+    <LookAt>
+      <longitude>-80.1022222222222</longitude>
+      <latitude>37.4794444444444</latitude>
+      <range>800000</range>
+      <tilt>0.0</tilt>
+      <heading>0.0</heading>
+    </LookAt>
+	<open>1</open>
+<Placemark>
+      <description></description>
+      <name>99_Finish_Cylinder</name>
+      <LookAt>
+        <longitude>-80.1022222222222</longitude>
+        <latitude>37.4794444444444</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.1022222222222,37.4794444444444,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>98_Finish_Gate</name>
+      <LookAt>
+        <longitude>-80.1061111111111</longitude>
+        <latitude>37.4791666666667</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.1061111111111,37.4791666666667,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>97_Start_NCI</name>
+      <LookAt>
+        <longitude>-80.1022222222222</longitude>
+        <latitude>37.4794444444444</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.1022222222222,37.4794444444444,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>01_Alt_Start_A</name>
+      <LookAt>
+        <longitude>-80.0377777777778</longitude>
+        <latitude>37.5305555555556</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>64</x>
+			<y>128</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.0377777777778,37.5305555555556,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>02_Alt_Start_B</name>
+      <LookAt>
+        <longitude>-80.1663888888889</longitude>
+        <latitude>37.4280555555556</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>64</x>
+			<y>128</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.1663888888889,37.4280555555556,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>03_Balcony_Downs</name>
+      <LookAt>
+        <longitude>-79.4247222222222</longitude>
+        <latitude>37.6472222222222</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-79.4247222222222,37.6472222222222,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>04_Big_Hill</name>
+      <LookAt>
+        <longitude>-79.8111111111111</longitude>
+        <latitude>37.7311111111111</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-79.8111111111111,37.7311111111111,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>05_Big_Walker</name>
+      <LookAt>
+        <longitude>-81.1366666666667</longitude>
+        <latitude>37.0425</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-81.1366666666667,37.0425,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>06_Blacksburg</name>
+      <LookAt>
+        <longitude>-80.4083333333333</longitude>
+        <latitude>37.2077777777778</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.4083333333333,37.2077777777778,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>07_Buchanan</name>
+      <LookAt>
+        <longitude>-79.7069444444444</longitude>
+        <latitude>37.5244444444444</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-79.7069444444444,37.5244444444444,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>08_Catawba_Valley</name>
+      <LookAt>
+        <longitude>-80.3008333333333</longitude>
+        <latitude>37.2841666666667</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.3008333333333,37.2841666666667,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>09_Covington</name>
+      <LookAt>
+        <longitude>-80.0011111111111</longitude>
+        <latitude>37.7594444444444</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-80.0011111111111,37.7594444444444,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>10_Craigsville</name>
+      <LookAt>
+        <longitude>-79.3830555555555</longitude>
+        <latitude>38.0786111111111</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-79.3830555555555,38.0786111111111,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>11_Eagle_Rock</name>
+      <LookAt>
+        <longitude>-79.8097222222222</longitude>
+        <latitude>37.6644444444444</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-79.8097222222222,37.6644444444444,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>12_East_River</name>
+      <LookAt>
+        <longitude>-81.1247222222222</longitude>
+        <latitude>37.2811111111111</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-81.1247222222222,37.2811111111111,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>13_Gap_Mills</name>
+      <LookAt>
+        <longitude>-80.4080555555556</longitude>
+        <latitude>37.5622222222222</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-80.4080555555556,37.5622222222222,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>14_Hillsville</name>
+      <LookAt>
+        <longitude>-80.8236111111111</longitude>
+        <latitude>36.7661111111111</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.8236111111111,36.7661111111111,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>15_Hinton</name>
+      <LookAt>
+        <longitude>-80.7102777777778</longitude>
+        <latitude>37.6794444444444</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.7102777777778,37.6794444444444,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>16_Ingalls</name>
+      <LookAt>
+        <longitude>-79.8338888888889</longitude>
+        <latitude>37.9513888888889</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-79.8338888888889,37.9513888888889,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>17_Lexington</name>
+      <LookAt>
+        <longitude>-79.4372222222222</longitude>
+        <latitude>37.7925</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-79.4372222222222,37.7925,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>18_Maggie</name>
+      <LookAt>
+        <longitude>-80.3780555555555</longitude>
+        <latitude>37.4247222222222</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-80.3780555555555,37.4247222222222,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>19_Marion</name>
+      <LookAt>
+        <longitude>-81.5422222222222</longitude>
+        <latitude>36.9016666666667</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-81.5422222222222,36.9016666666667,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>20_McCoy_Falls</name>
+      <LookAt>
+        <longitude>-80.6066666666667</longitude>
+        <latitude>37.245</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-80.6066666666667,37.245,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>21_Millboro_Springs</name>
+      <LookAt>
+        <longitude>-79.6227777777778</longitude>
+        <latitude>37.9958333333333</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-79.6227777777778,37.9958333333333,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>22_Monterey</name>
+      <LookAt>
+        <longitude>-79.5797222222222</longitude>
+        <latitude>38.4119444444444</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-79.5797222222222,38.4119444444444,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>23_Mountain_Lake</name>
+      <LookAt>
+        <longitude>-80.5366666666667</longitude>
+        <latitude>37.3552777777778</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-80.5366666666667,37.3552777777778,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>24_Narrows</name>
+      <LookAt>
+        <longitude>-80.805</longitude>
+        <latitude>37.3386111111111</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-80.805,37.3386111111111,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>25_New_Castle</name>
+      <LookAt>
+        <longitude>-80.1022222222222</longitude>
+        <latitude>37.4794444444444</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-3.png</href>
+			<x></x>
+			<y></y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.1022222222222,37.4794444444444,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>26_New_London</name>
+      <LookAt>
+        <longitude>-79.3358333333333</longitude>
+        <latitude>37.2719444444444</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-79.3358333333333,37.2719444444444,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>27_New_River</name>
+      <LookAt>
+        <longitude>-80.6786111111111</longitude>
+        <latitude>37.1372222222222</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-80.6786111111111,37.1372222222222,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>28_Oriskany</name>
+      <LookAt>
+        <longitude>-79.9836111111111</longitude>
+        <latitude>37.6163888888889</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-79.9836111111111,37.6163888888889,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>29_Peaks_Otter</name>
+      <LookAt>
+        <longitude>-79.6030555555556</longitude>
+        <latitude>37.4466666666667</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-79.6030555555556,37.4466666666667,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>30_Radford</name>
+      <LookAt>
+        <longitude>-80.5088888888889</longitude>
+        <latitude>37.0947222222222</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-80.5088888888889,37.0947222222222,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>31_Riverwood</name>
+      <LookAt>
+        <longitude>-79.7666666666667</longitude>
+        <latitude>37.7963888888889</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-79.7666666666667,37.7963888888889,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>32_Sweet_Springs</name>
+      <LookAt>
+        <longitude>-80.2413888888889</longitude>
+        <latitude>37.6283333333333</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-80.2413888888889,37.6283333333333,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>33_Tazewell_County</name>
+      <LookAt>
+        <longitude>-81.4541666666667</longitude>
+        <latitude>37.1505555555556</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-81.4541666666667,37.1505555555556,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>34_Union_WV</name>
+      <LookAt>
+        <longitude>-80.5436111111111</longitude>
+        <latitude>37.5913888888889</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-80.5436111111111,37.5913888888889,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>35_Waynesboro</name>
+      <LookAt>
+        <longitude>-78.9441666666667</longitude>
+        <latitude>38.0769444444445</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			<Style><IconStyle><Icon>
+			<href>root://icons/palette-5.png</href>
+			<x>96</x>
+			<y>64</y>
+			<w>32</w>
+			<h>32</h>
+			</Icon> </IconStyle> </Style>
+
+      <Point>
+        <coordinates>-78.9441666666667,38.0769444444445,0</coordinates>
+      </Point>
+    </Placemark>
+<Placemark>
+      <description></description>
+      <name>36_Wits_End</name>
+      <LookAt>
+        <longitude>-80.3480555555555</longitude>
+        <latitude>37.3511111111111</latitude>
+        <range>7000</range>
+        <tilt>45.0</tilt>
+        <heading>0</heading>
+      </LookAt>
+      <styleUrl>#khStyle565</styleUrl>
+			
+      <Point>
+        <coordinates>-80.3480555555555,37.3511111111111,0</coordinates>
+      </Point>
+    </Placemark>
+</Folder>
+</Document>
+</kml>

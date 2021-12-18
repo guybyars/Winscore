@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?><gpx creator="WSTX"
+version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1
+http://www.topografix.com/GPX/1/1/gpx.xsd
+http://www.garmin.com/xmlschemas/WaypointExtension/v1
+http://www8.garmin.com/xmlschemas/WaypointExtensionv1.xsd
+http://www.garmin.com/xmlschemas/TrackPointExtension/v1
+http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd
+http://www.garmin.com/xmlschemas/GpxExtensions/v3
+http://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd
+http://www.garmin.com/xmlschemas/ActivityExtension/v1
+http://www8.garmin.com/xmlschemas/ActivityExtensionv1.xsd
+http://www.garmin.com/xmlschemas/AdventuresExtensions/v1
+http://www8.garmin.com/xmlschemas/AdventuresExtensionv1.xsd
+http://www.garmin.com/xmlschemas/PressureExtension/v1
+http://www.garmin.com/xmlschemas/PressureExtensionv1.xsd
+http://www.garmin.com/xmlschemas/TripExtensions/v1
+http://www.garmin.com/xmlschemas/TripExtensionsv1.xsd
+http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1
+http://www.garmin.com/xmlschemas/TripMetaDataExtensionsv1.xsd
+http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1
+http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensionsv1.xsd
+http://www.garmin.com/xmlschemas/CreationTimeExtension/v1
+http://www.garmin.com/xmlschemas/CreationTimeExtensionsv1.xsd
+http://www.garmin.com/xmlschemas/AccelerationExtension/v1
+http://www.garmin.com/xmlschemas/AccelerationExtensionv1.xsd
+http://www.garmin.com/xmlschemas/PowerExtension/v1
+http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd
+http://www.garmin.com/xmlschemas/VideoExtension/v1
+http://www.garmin.com/xmlschemas/VideoExtensionv1.xsd"
+xmlns="http://www.topografix.com/GPX/1/1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:wptx1="http://www.garmin.com/xmlschemas/WaypointExtension/v1"
+xmlns:gpxtrx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+xmlns:trp="http://www.garmin.com/xmlschemas/TripExtensions/v1"
+xmlns:adv="http://www.garmin.com/xmlschemas/AdventuresExtensions/v1"
+xmlns:prs="http://www.garmin.com/xmlschemas/PressureExtension/v1"
+xmlns:tmd="http://www.garmin.com/xmlschemas/TripMetaDataExtensions/v1"
+xmlns:vptm="http://www.garmin.com/xmlschemas/ViaPointTransportationModeExtensions/v1"
+xmlns:ctx="http://www.garmin.com/xmlschemas/CreationTimeExtension/v1"
+xmlns:gpxacc="http://www.garmin.com/xmlschemas/AccelerationExtension/v1"
+xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1"
+xmlns:vidx1="http://www.garmin.com/xmlschemas/VideoExtension/v1">
+  <metadata>
+    <link href="http://soaringweb.org/TP/New_castle/">
+      <text>WSTX waypoints for New Castle, Virginia</text>
+    </link>
+    <time>2020-08-10T15:31:59Z</time>
+    <bounds maxlat="38.471388888888889" maxlon="-78.45277777777778" minlat="36.625000000000000" minlon="-81.79833333333333" />
+  </metadata>
+<wpt lat="37.479444444444447" lon="-80.10222222222221">
+<ele>402.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>99 Finish Cylinder</name>
+<cmt>Finish Point, #99, Private, Airport, New Castle, VA, VA85, RW direction: 18/36, RW length: 2400 feet, RW width: 100 feet, RW surface: Grass, Telephone: 703-864-5542</cmt>
+<desc>Finish Point, #99, Private, Airport, New Castle, VA, VA85, RW direction: 18/36, RW length: 2400 feet, RW width: 100 feet, RW surface: Grass, Telephone: 703-864-5542</desc>
+<sym>Circle, Red</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.479166666666671" lon="-80.10611111111110">
+<ele>402.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>98 Finish Gate</name>
+<cmt>Finish Point, #98, Private, Airport, New Castle, VA, 18/36 Finish, VA85, RW direction: 18/36, RW length: 2400 feet, RW width: 100 feet, RW surface: Grass, Telephone: 703-864-5542</cmt>
+<desc>Finish Point, #98, Private, Airport, New Castle, VA, 18/36 Finish, VA85, RW direction: 18/36, RW length: 2400 feet, RW width: 100 feet, RW surface: Grass, Telephone: 703-864-5542</desc>
+<sym>Circle, Red</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.479444444444447" lon="-80.10222222222221">
+<ele>402.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>97 Start NCI</name>
+<cmt>Start Point, #97, Private, Airport, New Castle, VA, Airstrip, VA85, RW direction: 18/36, RW length: 2400 feet, RW width: 100 feet, RW surface: Grass, Telephone: 703-864-5542</cmt>
+<desc>Start Point, #97, Private, Airport, New Castle, VA, Airstrip, VA85, RW direction: 18/36, RW length: 2400 feet, RW width: 100 feet, RW surface: Grass, Telephone: 703-864-5542</desc>
+<sym>Circle, Green</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.530555555555551" lon="-80.03777777777778">
+<ele>402.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>01 Alt Start A</name>
+<cmt>Start Point, #1, 5 NE of NCI</cmt>
+<desc>Start Point, #1, 5 NE of NCI</desc>
+<sym>Circle, Green</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.428055555555552" lon="-80.16638888888889">
+<ele>402.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>02 Alt Start B</name>
+<cmt>Start Point, #2, 5 SW of NCI</cmt>
+<desc>Start Point, #2, 5 SW of NCI</desc>
+<sym>Circle, Green</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.647222222222219" lon="-79.42472222222223">
+<ele>249.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>03 Balcony Downs</name>
+<cmt>Turn Point, #3, Landable, Airstrip</cmt>
+<desc>Turn Point, #3, Landable, Airstrip</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.731111111111112" lon="-79.81111111111110">
+<ele>493.8</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>04 Big Hill</name>
+<cmt>Turn Point, #4, Private, Airport, Eagle Rock, VA, Airstrip, 44VA, RW direction: 03/21, RW length: 2800 feet, RW width: 100 feet, RW surface: Grass</cmt>
+<desc>Turn Point, #4, Private, Airport, Eagle Rock, VA, Airstrip, 44VA, RW direction: 03/21, RW length: 2800 feet, RW width: 100 feet, RW surface: Grass</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.042499999999997" lon="-81.13666666666667">
+<ele>899.2</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>05 Big Walker</name>
+<cmt>Turn Point, #5, I-77 Tunnel</cmt>
+<desc>Turn Point, #5, I-77 Tunnel</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.207777777777778" lon="-80.40833333333335">
+<ele>649.8</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>06 Blacksburg</name>
+<cmt>Turn Point, #6, Airport, Blacksburg, VA, 12/30 123.05, BCB, RW direction: 12/30, RW heading: 117, RW length: 4539 feet, RW width: 100 feet, RW surface: Asphalt, RW gradient: 0.4, AWOS: 133.325, UNICOM: 123.05, Telephone: 540-231-4444, Fuel: 100LL</cmt>
+<desc>Turn Point, #6, Airport, Blacksburg, VA, 12/30 123.05, BCB, RW direction: 12/30, RW heading: 117, RW length: 4539 feet, RW width: 100 feet, RW surface: Asphalt, RW gradient: 0.4, AWOS: 133.325, UNICOM: 123.05, Telephone: 540-231-4444, Fuel: 100LL</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.524444444444441" lon="-79.70694444444445">
+<ele>253.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>07 Buchanan</name>
+<cmt>Turn Point, #7, I-81 Bridge</cmt>
+<desc>Turn Point, #7, I-81 Bridge</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.284166666666664" lon="-80.30083333333333">
+<ele>563.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>08 Catawba Valley</name>
+<cmt>Turn Point, #8, Private, Airport, Blacksburg, VA, Airstrip, VA10, RW direction: 05/23, RW length: 1930 feet, RW width: 100 feet, RW surface: Grass, Telephone: 540-951-2845</cmt>
+<desc>Turn Point, #8, Private, Airport, Blacksburg, VA, Airstrip, VA10, RW direction: 05/23, RW length: 1930 feet, RW width: 100 feet, RW surface: Grass, Telephone: 540-951-2845</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.759444444444448" lon="-80.00111111111111">
+<ele>381.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>09 Covington</name>
+<cmt>Turn Point, #9, Factory</cmt>
+<desc>Turn Point, #9, Factory</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.078611111111115" lon="-79.38305555555554">
+<ele>472.4</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>10 Craigsville</name>
+<cmt>Turn Point, #10, Town Center</cmt>
+<desc>Turn Point, #10, Town Center</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.664444444444442" lon="-79.80972222222222">
+<ele>365.8</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>11 Eagle Rock</name>
+<cmt>Turn Point, #11, Private, Airport, Eagle Rock, VA, 07/25 27A, 79VG, RW direction: 07/25, RW length: 2250 feet, RW width: 32 feet, RW surface: Asphalt, Telephone: 540-354-3332</cmt>
+<desc>Turn Point, #11, Private, Airport, Eagle Rock, VA, 07/25 27A, 79VG, RW direction: 07/25, RW length: 2250 feet, RW width: 32 feet, RW surface: Asphalt, Telephone: 540-354-3332</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.281111111111109" lon="-81.12472222222222">
+<ele>830.6</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>12 East River</name>
+<cmt>Turn Point, #12, I-77 Tunnel</cmt>
+<desc>Turn Point, #12, I-77 Tunnel</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.562222222222218" lon="-80.40805555555556">
+<ele>719.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>13 Gap Mills</name>
+<cmt>Turn Point, #13, Town Center</cmt>
+<desc>Turn Point, #13, Town Center</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="36.766111111111108" lon="-80.82361111111111">
+<ele>820.8</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>14 Hillsville</name>
+<cmt>Turn Point, #14, Airport, Galax Hillsville, VA, 16/34 122.80, HLX, RW direction: 01/19, RW heading: 359, RW length: 4204 feet, RW width: 75 feet, RW surface: Asphalt, RW gradient: PART, AWOS: 118.375, UNICOM: 122.8, Telephone: 276-728-4504, Fuel: 100LL</cmt>
+<desc>Turn Point, #14, Airport, Galax Hillsville, VA, 16/34 122.80, HLX, RW direction: 01/19, RW heading: 359, RW length: 4204 feet, RW width: 75 feet, RW surface: Asphalt, RW gradient: PART, AWOS: 118.375, UNICOM: 122.8, Telephone: 276-728-4504, Fuel: 100LL</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.679444444444442" lon="-80.71027777777778">
+<ele>463.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>15 Hinton</name>
+<cmt>Turn Point, #15, Private, Airport, Pence Springs, WV, 10/28 122.90, WV77, RW direction: 10/28, RW length: 2700 feet, RW width: 25 feet, RW surface: Grass, Telephone: 757-593-3244</cmt>
+<desc>Turn Point, #15, Private, Airport, Pence Springs, WV, 10/28 122.90, WV77, RW direction: 10/28, RW length: 2700 feet, RW width: 25 feet, RW surface: Grass, Telephone: 757-593-3244</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.951388888888893" lon="-79.83388888888888">
+<ele>1156.1</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>16 Ingalls</name>
+<cmt>Turn Point, #16, Airport, Hot Springs, VA, 06/24 122.70, HSP, RW direction: 07/25, RW heading: 59, RW length: 5600 feet, RW width: 100 feet, RW surface: Asphalt, AWOS: 118.8, UNICOM: 123.0, Telephone: 540-839-5326, Fuel: 100LL</cmt>
+<desc>Turn Point, #16, Airport, Hot Springs, VA, 06/24 122.70, HSP, RW direction: 07/25, RW heading: 59, RW length: 5600 feet, RW width: 100 feet, RW surface: Asphalt, AWOS: 118.8, UNICOM: 123.0, Telephone: 540-839-5326, Fuel: 100LL</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.792499999999997" lon="-79.43722222222223">
+<ele>289.6</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>17 Lexington</name>
+<cmt>Turn Point, #17, VMI</cmt>
+<desc>Turn Point, #17, VMI</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.424722222222222" lon="-80.37805555555555">
+<ele>554.7</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>18 Maggie</name>
+<cmt>Turn Point, #18, Silo</cmt>
+<desc>Turn Point, #18, Silo</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="36.901666666666664" lon="-81.54222222222222">
+<ele>1190.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>19 Marion</name>
+<cmt>Turn Point, #19, Towers</cmt>
+<desc>Turn Point, #19, Towers</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.244999999999997" lon="-80.60666666666665">
+<ele>506.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>20 McCoy Falls</name>
+<cmt>Turn Point, #20, New River Gap</cmt>
+<desc>Turn Point, #20, New River Gap</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.995833333333337" lon="-79.62277777777777">
+<ele>399.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>21 Millboro Springs</name>
+<cmt>Turn Point, #21, Town Center</cmt>
+<desc>Turn Point, #21, Town Center</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.411944444444444" lon="-79.57972222222222">
+<ele>929.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>22 Monterey</name>
+<cmt>Turn Point, #22, Crossroads</cmt>
+<desc>Turn Point, #22, Crossroads</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.355277777777779" lon="-80.53666666666666">
+<ele>1196.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>23 Mountain Lake</name>
+<cmt>Turn Point, #23, Hotel</cmt>
+<desc>Turn Point, #23, Hotel</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.338611111111113" lon="-80.80499999999999">
+<ele>474.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>24 Narrows</name>
+<cmt>Turn Point, #24, School Track</cmt>
+<desc>Turn Point, #24, School Track</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.479444444444447" lon="-80.10222222222221">
+<ele>402.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>25 New Castle</name>
+<cmt>Home Field, Turn Point, #25, Private, Airport, New Castle, VA, Airstrip, VA85, RW direction: 18/36, RW length: 2400 feet, RW width: 100 feet, RW surface: Grass, Telephone: 703-864-5542</cmt>
+<desc>Home Field, Turn Point, #25, Private, Airport, New Castle, VA, Airstrip, VA85, RW direction: 18/36, RW length: 2400 feet, RW width: 100 feet, RW surface: Grass, Telephone: 703-864-5542</desc>
+<sym>Residence</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.271944444444443" lon="-79.33583333333333">
+<ele>258.8</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>26 New London</name>
+<cmt>Turn Point, #26, Airport, Forest, VA, Airport, W90, RW direction: 18/36, RW length: 3164 feet, RW width: 40 feet, RW surface: Asphalt, Frequency: 122.8, UNICOM: 122.8, Telephone: 540-586-5155, Fuel: 100LL/MOGAS</cmt>
+<desc>Turn Point, #26, Airport, Forest, VA, Airport, W90, RW direction: 18/36, RW length: 3164 feet, RW width: 40 feet, RW surface: Asphalt, Frequency: 122.8, UNICOM: 122.8, Telephone: 540-586-5155, Fuel: 100LL/MOGAS</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.137222222222221" lon="-80.67861111111111">
+<ele>641.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>27 New River</name>
+<cmt>Turn Point, #27, Airport, Dublin, VA, 06/24 122.70, PSK, RW direction: 06/24, RW heading: 52, RW length: 6201 feet, RW width: 150 feet, RW surface: Asphalt, AWOS: 127.375, UNICOM: 122.7, Telephone: 540-674-4141, Fuel: 100LL</cmt>
+<desc>Turn Point, #27, Airport, Dublin, VA, 06/24 122.70, PSK, RW direction: 06/24, RW heading: 52, RW length: 6201 feet, RW width: 150 feet, RW surface: Asphalt, AWOS: 127.375, UNICOM: 122.7, Telephone: 540-674-4141, Fuel: 100LL</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.616388888888892" lon="-79.98361111111112">
+<ele>356.6</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>28 Oriskany</name>
+<cmt>Turn Point, #28, Church</cmt>
+<desc>Turn Point, #28, Church</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.446666666666665" lon="-79.60305555555556">
+<ele>762.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>29 Peaks Otter</name>
+<cmt>Turn Point, #29, Lodge</cmt>
+<desc>Turn Point, #29, Lodge</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.094722222222224" lon="-80.50888888888889">
+<ele>637.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>30 Radford</name>
+<cmt>Turn Point, #30, Hospital</cmt>
+<desc>Turn Point, #30, Hospital</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.796388888888885" lon="-79.76666666666667">
+<ele>310.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>31 Riverwood</name>
+<cmt>Turn Point, #31, Private, Airport, Iron Gate, VA, Airstrip, 0VA2, RW direction: 14/32, RW length: 2000 feet, RW width: 70 feet, RW surface: Grass</cmt>
+<desc>Turn Point, #31, Private, Airport, Iron Gate, VA, Airstrip, 0VA2, RW direction: 14/32, RW length: 2000 feet, RW width: 70 feet, RW surface: Grass</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.628333333333330" lon="-80.24138888888889">
+<ele>609.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>32 Sweet Springs</name>
+<cmt>Turn Point, #32, Hotel</cmt>
+<desc>Turn Point, #32, Hotel</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.150555555555556" lon="-81.45416666666667">
+<ele>883.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>33 Tazewell County</name>
+<cmt>Turn Point, #33, Cemetary</cmt>
+<desc>Turn Point, #33, Cemetary</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.591388888888893" lon="-80.54361111111110">
+<ele>630.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>34 Union WV</name>
+<cmt>Turn Point, #34, Town Center</cmt>
+<desc>Turn Point, #34, Town Center</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.076944444444450" lon="-78.94416666666667">
+<ele>438.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>35 Waynesboro</name>
+<cmt>Turn Point, #35, Airport, Waynesboro, VA, 123.05, W13, RW direction: 06/24, RW length: 2004 feet, RW width: 50 feet, RW surface: Asphalt, AWOS: 118.625, UNICOM: 123.05, Telephone: 540-943-4447, Fuel: 100LL</cmt>
+<desc>Turn Point, #35, Airport, Waynesboro, VA, 123.05, W13, RW direction: 06/24, RW length: 2004 feet, RW width: 50 feet, RW surface: Asphalt, AWOS: 118.625, UNICOM: 123.05, Telephone: 540-943-4447, Fuel: 100LL</desc>
+<sym>Square, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.351111111111109" lon="-80.34805555555555">
+<time>2020-08-10T15:31:59Z</time>
+<name>36 Wits End</name>
+<cmt>Turn Point, #36</cmt>
+<desc>Turn Point, #36</desc>
+<sym>Circle, Blue</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.491944444444442" lon="-79.92861111111111">
+<ele>335.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Barrows</name>
+<cmt>Private, Airport, Fincastle, VA, 8/26 21T, VA04, RW direction: 08/26, RW length: 2100 feet, RW width: 40 feet, RW surface: Grass, Telephone: 703-473-3661</cmt>
+<desc>Private, Airport, Fincastle, VA, 8/26 21T, VA04, RW direction: 08/26, RW length: 2100 feet, RW width: 40 feet, RW surface: Grass, Telephone: 703-473-3661</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.052499999999995" lon="-79.72888888888889">
+<ele>542.2</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Bath Alum</name>
+<cmt>Private, Airport, Warm Springs, VA, 9VA0, RW direction: E/W, RW heading: 090, RW length: 3700 feet, RW width: 150 feet, RW surface: Grass, Telephone: 703-996-4109</cmt>
+<desc>Private, Airport, Warm Springs, VA, 9VA0, RW direction: E/W, RW heading: 090, RW length: 3700 feet, RW width: 150 feet, RW surface: Grass, Telephone: 703-996-4109</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.615555555555559" lon="-79.50527777777778">
+<ele>246.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Black Bridge</name>
+<cmt>Private, Airport, Natural Bridge Station, VA, 5VG1, RW direction: 07/25, RW length: 1200 feet, RW width: 60 feet, RW surface: Grass, Telephone: 540-291-1237</cmt>
+<desc>Private, Airport, Natural Bridge Station, VA, 5VG1, RW direction: 07/25, RW length: 1200 feet, RW width: 60 feet, RW surface: Grass, Telephone: 540-291-1237</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.061944444444443" lon="-81.19166666666668">
+<ele>810.8</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Bluegrass</name>
+<cmt>Landable</cmt>
+<desc>Landable</desc>
+<sym>Square, Green</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.928055555555552" lon="-79.17805555555556">
+<ele>487.7</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Brook Hill Farm</name>
+<cmt>Private, Airport, Steeles Tavern, VA, 3/21 20T, VA00, RW direction: 03/21, RW length: 2000 feet, RW width: 75 feet, RW surface: Grass, Telephone: 540-377-5572</cmt>
+<desc>Private, Airport, Steeles Tavern, VA, 3/21 20T, VA00, RW direction: 03/21, RW length: 2000 feet, RW width: 75 feet, RW surface: Grass, Telephone: 540-377-5572</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.968333333333334" lon="-78.68222222222222">
+<ele>256.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Bundoran</name>
+<cmt>Private, Airport, Charlottesville, VA, VA18, RW direction: 15/33, RW length: 3000 feet, RW width: 100 feet, RW surface: Grass, Frequency: 122.8, UNICOM: 122.8, Telephone: 434-295-4188</cmt>
+<desc>Private, Airport, Charlottesville, VA, VA18, RW direction: 15/33, RW length: 3000 feet, RW width: 100 feet, RW surface: Grass, Frequency: 122.8, UNICOM: 122.8, Telephone: 434-295-4188</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.095555555555556" lon="-81.36916666666666">
+<ele>932.7</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Burkes Garden</name>
+<cmt>Private, Airport, Tazewell, VA, 6/24 25A, VA07, RW direction: 06/24, RW length: 2500 feet, RW width: 50 feet, RW surface: Asphalt, Telephone: (540) 849-0366</cmt>
+<desc>Private, Airport, Tazewell, VA, 6/24 25A, VA07, RW direction: 06/24, RW length: 2500 feet, RW width: 50 feet, RW surface: Asphalt, Telephone: (540) 849-0366</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.075555555555560" lon="-79.82722222222222">
+<ele>315.2</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Burnt Chimney</name>
+<cmt>Private, Airport, Burnt Chimney, VA, 70VA, RW direction: 06/24, RW length: 1800 feet, RW width: 50 feet, RW surface: Grass, Telephone: 540-263-0083, Fuel: MOGAS</cmt>
+<desc>Private, Airport, Burnt Chimney, VA, 70VA, RW direction: 06/24, RW length: 1800 feet, RW width: 50 feet, RW surface: Grass, Telephone: 540-263-0083, Fuel: MOGAS</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.928055555555552" lon="-78.55138888888888">
+<ele>158.5</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Cathro</name>
+<cmt>Landable</cmt>
+<desc>Landable</desc>
+<sym>Square, Green</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.138611111111111" lon="-78.45277777777778">
+<ele>194.8</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Charlottesville</name>
+<cmt>Airport, Charlottesville, VA, CHO, RW direction: 03/21, RW heading: 22, RW length: 6001 feet, RW width: 150 feet, RW surface: Asphalt, AWOS: 118.425, ATIS: 118.425, Tower: 124.5, UNICOM: 122.95, Telephone: 434-973-8342, Fuel: 100LL</cmt>
+<desc>Airport, Charlottesville, VA, CHO, RW direction: 03/21, RW heading: 22, RW length: 6001 feet, RW width: 150 feet, RW surface: Asphalt, AWOS: 118.425, ATIS: 118.425, Tower: 124.5, UNICOM: 122.95, Telephone: 434-973-8342, Fuel: 100LL</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="36.625000000000000" lon="-80.17055555555557">
+<ele>335.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Collins</name>
+<cmt>Private, Airport, Patrick Springs, VA, VG16, RW direction: 17/35, RW length: 1900 feet, RW width: 75 feet, RW surface: Grass, Telephone: 540-694-2451</cmt>
+<desc>Private, Airport, Patrick Springs, VA, VG16, RW direction: 17/35, RW length: 1900 feet, RW width: 75 feet, RW surface: Grass, Telephone: 540-694-2451</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.081111111111113" lon="-78.69555555555556">
+<ele>210.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Cottonwood Farm</name>
+<cmt>Private, Airport, Crozet, VA, 87VA, RW direction: 15/33, RW length: 1000 feet, RW width: 50 feet, RW surface: Grass, Telephone: 434-823-5055</cmt>
+<desc>Private, Airport, Crozet, VA, 87VA, RW direction: 15/33, RW length: 1000 feet, RW width: 50 feet, RW surface: Grass, Telephone: 434-823-5055</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.471388888888889" lon="-79.80555555555556">
+<ele>807.7</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Deer Creek Farm</name>
+<cmt>Private, Airport, Arbovale, WV, WV00, RW direction: 04/22, RW length: 3300 feet, RW width: 60 feet, RW surface: Grass, Telephone: 304-456-3047</cmt>
+<desc>Private, Airport, Arbovale, WV, WV00, RW direction: 04/22, RW length: 3300 feet, RW width: 60 feet, RW surface: Grass, Telephone: 304-456-3047</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="36.994166666666665" lon="-80.45444444444445">
+<ele>731.5</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Deer Run</name>
+<cmt>Private, Airport, Floyd, VA, 9/27 23T, VA06, RW direction: 09/27, RW length: 2300 feet, RW width: 60 feet, RW surface: Grass, Telephone: 703-763-3636</cmt>
+<desc>Private, Airport, Floyd, VA, 9/27 23T, VA06, RW direction: 09/27, RW length: 2300 feet, RW width: 60 feet, RW surface: Grass, Telephone: 703-763-3636</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.378055555555555" lon="-79.12222222222222">
+<ele>286.2</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Falwell</name>
+<cmt>Airport, Lynchburg, VA, W24, RW direction: 10/28, RW length: 2932 feet, RW width: 50 feet, RW surface: Asphalt, RW gradient: -4.7, Frequency: 123.0, UNICOM: 123.0, Telephone: 434-845-8769, Fuel: 100LL</cmt>
+<desc>Airport, Lynchburg, VA, W24, RW direction: 10/28, RW length: 2932 feet, RW width: 50 feet, RW surface: Asphalt, RW gradient: -4.7, Frequency: 123.0, UNICOM: 123.0, Telephone: 434-845-8769, Fuel: 100LL</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.118055555555557" lon="-79.78861111111111">
+<ele>320.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Ferguson</name>
+<cmt>Private, Airport, Rocky Mount, VA, 81VA, RW direction: 13/31, RW length: 1600 feet, RW width: 30 feet, RW surface: Grass, Telephone: 703-721-2643</cmt>
+<desc>Private, Airport, Rocky Mount, VA, 81VA, RW direction: 13/31, RW length: 1600 feet, RW width: 30 feet, RW surface: Grass, Telephone: 703-721-2643</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.522222222222219" lon="-79.85194444444444">
+<ele>347.5</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Fincastle</name>
+<cmt>Private, Airport, Fincastle, VA, 11/29 30T, VA83, RW direction: 11/29, RW length: 3039 feet, RW width: 150 feet, RW surface: Grass, Telephone: (703) 473-3183</cmt>
+<desc>Private, Airport, Fincastle, VA, 11/29 30T, VA83, RW direction: 11/29, RW length: 3039 feet, RW width: 150 feet, RW surface: Grass, Telephone: (703) 473-3183</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.738333333333337" lon="-78.96222222222222">
+<ele>256.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Flatwoods</name>
+<cmt>Private, Airport, Lovingston, VA, 3/21 14T, 8VA6, RW direction: 03/21, RW length: 1400 feet, RW width: 120 feet, RW surface: Grass</cmt>
+<desc>Private, Airport, Lovingston, VA, 3/21 14T, 8VA6, RW direction: 03/21, RW length: 1400 feet, RW width: 120 feet, RW surface: Grass</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.724166666666669" lon="-79.09916666666666">
+<ele>298.7</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Fulcher Family Farms</name>
+<cmt>Private, Airport, Amherst, VA, VG06, RW direction: 11/29, RW length: 3000 feet, RW width: 100 feet, RW surface: Grass, Telephone: 703-698-3563</cmt>
+<desc>Private, Airport, Amherst, VA, VG06, RW direction: 11/29, RW length: 3000 feet, RW width: 100 feet, RW surface: Grass, Telephone: 703-698-3563</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.398333333333333" lon="-79.60027777777778">
+<ele>929.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Hannah Field</name>
+<cmt>Private, Airport, Monterey, VA, Crossroads, 7VA9, RW direction: 04/22, RW length: 2300 feet, RW width: 75 feet, RW surface: Grass, Telephone: 540-946-4408</cmt>
+<desc>Private, Airport, Monterey, VA, Crossroads, 7VA9, RW direction: 04/22, RW length: 2300 feet, RW width: 75 feet, RW surface: Grass, Telephone: 540-946-4408</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.288888888888884" lon="-79.44722222222222">
+<ele>231.6</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Hawk Ridge</name>
+<cmt>Private, Airport, Bedford, VA, 20VG, RW direction: 05/23, RW length: 2100 feet, RW width: 60 feet, RW surface: Grass, Telephone: 540-586-4330</cmt>
+<desc>Private, Airport, Bedford, VA, 20VG, RW direction: 05/23, RW length: 2100 feet, RW width: 60 feet, RW surface: Grass, Telephone: 540-586-4330</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.789722222222217" lon="-79.77083333333333">
+<ele>317.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Hop Along</name>
+<cmt>Private, Airport, Clifton Forge, VA, 14/32 22T, 12VA, RW direction: 14/32, RW length: 2150 feet, RW width: 50 feet, RW surface: Grass, Telephone: 540-862-0900</cmt>
+<desc>Private, Airport, Clifton Forge, VA, 14/32 22T, 12VA, RW direction: 14/32, RW length: 2150 feet, RW width: 50 feet, RW surface: Grass, Telephone: 540-862-0900</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.233611111111109" lon="-79.58527777777778">
+<ele>274.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Johnson Fox</name>
+<cmt>Private, Airport, Bedford, VA, 14/32 20T, 0VA1, RW direction: 14/32, RW length: 2000 feet, RW width: 50 feet, RW surface: Grass, Telephone: 540-297-2679</cmt>
+<desc>Private, Airport, Bedford, VA, 14/32 20T, 0VA1, RW direction: 14/32, RW length: 2000 feet, RW width: 50 feet, RW surface: Grass, Telephone: 540-297-2679</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.118611111111115" lon="-79.60277777777777">
+<ele>310.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Lakeview</name>
+<cmt>Private, Airport, Moneta, VA, VA68, RW direction: 04/22, RW length: 1600 feet, RW width: 60 feet, RW surface: Grass, Telephone: 540-297-6754, Fuel: MOGAS</cmt>
+<desc>Private, Airport, Moneta, VA, VA68, RW direction: 04/22, RW length: 1600 feet, RW width: 60 feet, RW surface: Grass, Telephone: 540-297-6754, Fuel: MOGAS</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.858333333333334" lon="-80.39944444444446">
+<ele>701.6</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Lewisburg</name>
+<cmt>Airport, Lewisburg, WV, 4/22 18.9, LWB, RW direction: 04/22, RW heading: 35, RW length: 7004 feet, RW width: 150 feet, RW surface: Asphalt, RW gradient: PART, AWOS: 121.4, Tower: 118.9, UNICOM: 122.95, Telephone: 304-645-3961, Fuel: 100LL</cmt>
+<desc>Airport, Lewisburg, WV, 4/22 18.9, LWB, RW direction: 04/22, RW heading: 35, RW length: 7004 feet, RW width: 150 feet, RW surface: Asphalt, RW gradient: PART, AWOS: 121.4, Tower: 118.9, UNICOM: 122.95, Telephone: 304-645-3961, Fuel: 100LL</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.326666666666668" lon="-79.20055555555555">
+<ele>285.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Lynchburg</name>
+<cmt>Airport, Lynchburg, VA, 4/22 27.65, LYH, RW direction: 04/22, RW heading: 28, RW length: 7100 feet, RW width: 150 feet, RW surface: Asphalt, AWOS: 119.8, ATIS: 119.8, Tower: 127.65, UNICOM: 122.95, Telephone: 434-455-6090, Fuel: 100LL</cmt>
+<desc>Airport, Lynchburg, VA, 4/22 27.65, LYH, RW direction: 04/22, RW heading: 28, RW length: 7100 feet, RW width: 150 feet, RW surface: Asphalt, AWOS: 119.8, ATIS: 119.8, Tower: 127.65, UNICOM: 122.95, Telephone: 434-455-6090, Fuel: 100LL</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.295833333333334" lon="-81.20777777777778">
+<ele>870.8</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Mercer County</name>
+<cmt>Airport, Bluefield, WV, 5/23 22.9, BLF, RW direction: 05/23, RW heading: 42, RW length: 4743 feet, RW width: 100 feet, RW surface: Asphalt, AWOS: 132.725, CTAF: 122.9, Telephone: 304-327-5308, Fuel: 100LL</cmt>
+<desc>Airport, Bluefield, WV, 5/23 22.9, BLF, RW direction: 05/23, RW heading: 42, RW length: 4743 feet, RW width: 100 feet, RW surface: Asphalt, AWOS: 132.725, CTAF: 122.9, Telephone: 304-327-5308, Fuel: 100LL</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="36.735555555555557" lon="-80.44916666666667">
+<ele>899.2</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Micro</name>
+<cmt>Private, Airport, Stuart, VA, 8/26 30T, 1VA1, RW direction: 08/26, RW length: 2950 feet, RW width: 70 feet, RW surface: Asphalt, Telephone: 314-616-0616</cmt>
+<desc>Private, Airport, Stuart, VA, 8/26 30T, 1VA1, RW direction: 08/26, RW length: 2950 feet, RW width: 70 feet, RW surface: Asphalt, Telephone: 314-616-0616</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.327777777777783" lon="-79.40472222222223">
+<ele>231.6</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Miller</name>
+<cmt>Private, Airport, Bedford, VA, 5/23 19T, 91VA, RW direction: 05/23, RW length: 1850 feet, RW width: 70 feet, RW surface: Grass, Telephone: 540-586-5155</cmt>
+<desc>Private, Airport, Bedford, VA, 5/23 19T, 91VA, RW direction: 05/23, RW length: 1850 feet, RW width: 70 feet, RW surface: Grass, Telephone: 540-586-5155</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="36.894722222222221" lon="-81.34999999999999">
+<ele>780.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Mountain Empire</name>
+<cmt>Airport, Marion/Wytheville, VA, 8/26 22.7, MKJ, RW direction: 08/26, RW heading: 73, RW length: 5252 feet, RW width: 75 feet, RW surface: Asphalt, AWOS: 123.875, UNICOM: 122.7, Telephone: 276-783-8805, Fuel: 100LL</cmt>
+<desc>Airport, Marion/Wytheville, VA, 8/26 22.7, MKJ, RW direction: 08/26, RW heading: 73, RW length: 5252 feet, RW width: 75 feet, RW surface: Asphalt, AWOS: 123.875, UNICOM: 122.7, Telephone: 276-783-8805, Fuel: 100LL</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.389722222222218" lon="-78.81361111111111">
+<ele>239.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Nashs</name>
+<cmt>Private, Airport, Appomattox, VA, 10VA, RW direction: 05/23, RW length: 1800 feet, RW width: 20 feet, RW surface: Asphalt, Telephone: 434-352-2366</cmt>
+<desc>Private, Airport, Appomattox, VA, 10VA, RW direction: 05/23, RW length: 1800 feet, RW width: 20 feet, RW surface: Asphalt, Telephone: 434-352-2366</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.430555555555550" lon="-79.82555555555555">
+<ele>826.0</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>NRAO Green Bank</name>
+<cmt>Private, Airport, Green Bank, WV, 12/30 22.8, WV52, RW direction: 12/30, RW length: 3500 feet, RW width: 50 feet, RW surface: Asphalt, Frequency: 122.8, UNICOM: 122.8, Telephone: 304-456-2011</cmt>
+<desc>Private, Airport, Green Bank, WV, 12/30 22.8, WV52, RW direction: 12/30, RW length: 3500 feet, RW width: 50 feet, RW surface: Asphalt, Frequency: 122.8, UNICOM: 122.8, Telephone: 304-456-2011</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.401111111111106" lon="-80.80722222222222">
+<ele>484.6</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Peterstown</name>
+<cmt>Landable, 18/36 20T</cmt>
+<desc>Landable, 18/36 20T</desc>
+<sym>Square, Green</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.112777777777779" lon="-79.60916666666667">
+<ele>286.5</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Red Birds Airyard</name>
+<cmt>Private, Airport, Moneta, VA, 2VA0, RW direction: 05/23, RW length: 1800 feet, RW width: 70 feet, RW surface: Grass, Telephone: 540-586-5155</cmt>
+<desc>Private, Airport, Moneta, VA, 2VA0, RW direction: 05/23, RW length: 1800 feet, RW width: 70 feet, RW surface: Grass, Telephone: 540-586-5155</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.678333333333327" lon="-79.80499999999999">
+<ele>304.8</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>River Farmer</name>
+<cmt>Private, Airport, Eagle Rock, VA, Avoid Fields, 79VG, RW direction: 07/25, RW length: 2250 feet, RW width: 32 feet, RW surface: Asphalt, Telephone: 540-354-3332</cmt>
+<desc>Private, Airport, Eagle Rock, VA, Avoid Fields, 79VG, RW direction: 07/25, RW length: 2250 feet, RW width: 32 feet, RW surface: Asphalt, Telephone: 540-354-3332</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.325555555555560" lon="-79.97555555555556">
+<ele>358.4</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Roanoke</name>
+<cmt>Airport, Roanoke, VA, 6/24 22.95, ROA, RW direction: 06/24, RW heading: 49, RW length: 6800 feet, RW width: 150 feet, RW surface: Asphalt, Frequency: 118.15, ATIS: 132.375, Tower: 118.3, UNICOM: 122.95, Telephone: 540-362-1999, Fuel: 100LL</cmt>
+<desc>Airport, Roanoke, VA, 6/24 22.95, ROA, RW direction: 06/24, RW heading: 49, RW length: 6800 feet, RW width: 150 feet, RW surface: Asphalt, Frequency: 118.15, ATIS: 132.375, Tower: 118.3, UNICOM: 122.95, Telephone: 540-362-1999, Fuel: 100LL</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.348333333333336" lon="-79.57194444444444">
+<ele>259.1</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Robinson Private</name>
+<cmt>Private, Airport, Bedford, VA, E/W 28T, VG25, RW direction: 05/23, RW length: 2800 feet, RW width: 100 feet, RW surface: Grass, Telephone: 540-537-2406</cmt>
+<desc>Private, Airport, Bedford, VA, E/W 28T, VG25, RW direction: 05/23, RW length: 2800 feet, RW width: 100 feet, RW surface: Grass, Telephone: 540-537-2406</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.879444444444445" lon="-78.89361111111111">
+<ele>231.6</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Rockfish Airpark</name>
+<cmt>Private, Airport, Wintergreen, VA, 6/24 22.7, VG22, RW direction: 06/24, RW length: 2000 feet, RW width: 40 feet, RW surface: Grass, Frequency: 122.7, UNICOM: 122.7, Telephone: 804-361-2281</cmt>
+<desc>Private, Airport, Wintergreen, VA, 6/24 22.7, VG22, RW direction: 06/24, RW length: 2000 feet, RW width: 40 feet, RW surface: Grass, Frequency: 122.7, UNICOM: 122.7, Telephone: 804-361-2281</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.173055555555550" lon="-78.96916666666667">
+<ele>393.2</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Root</name>
+<cmt>Private, Airport, Verona, VA, 82VA, RW direction: 10/28, RW length: 2200 feet, RW width: 100 feet, RW surface: Grass, Telephone: 540-248-1111</cmt>
+<desc>Private, Airport, Verona, VA, 82VA, RW direction: 10/28, RW length: 2200 feet, RW width: 100 feet, RW surface: Grass, Telephone: 540-248-1111</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.263888888888886" lon="-78.89638888888889">
+<ele>366.1</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Shenandoah Valley</name>
+<cmt>Airport, Staunton/Waynesboro/Harrisonburg, VA, SHD, RW direction: 05/23, RW heading: 38, RW length: 6002 feet, RW width: 150 feet, RW surface: Asphalt, AWOS: 124.925, UNICOM: 123.0, Telephone: 540-234-8304, Fuel: 100LL</cmt>
+<desc>Airport, Staunton/Waynesboro/Harrisonburg, VA, SHD, RW direction: 05/23, RW heading: 38, RW length: 6002 feet, RW width: 150 feet, RW surface: Asphalt, AWOS: 124.925, UNICOM: 123.0, Telephone: 540-234-8304, Fuel: 100LL</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.210555555555558" lon="-79.71333333333334">
+<ele>627.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Singleton</name>
+<cmt>Private, Airport, Warm Springs, VA, 5/23 16T, 97VA, RW direction: 05/23, RW length: 1600 feet, RW width: 50 feet, RW surface: Grass, Telephone: 703-839-5009</cmt>
+<desc>Private, Airport, Warm Springs, VA, 5/23 16T, 97VA, RW direction: 05/23, RW length: 1600 feet, RW width: 50 feet, RW surface: Grass, Telephone: 703-839-5009</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="38.302499999999995" lon="-79.50805555555556">
+<ele>615.7</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Smith</name>
+<cmt>Landable, 3/21 26T</cmt>
+<desc>Landable, 3/21 26T</desc>
+<sym>Square, Green</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.107777777777777" lon="-79.59250000000000">
+<ele>271.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Smith Mountain Lake</name>
+<cmt>Airport, Moneta, VA, W91, RW direction: 05/23, RW heading: 45, RW length: 3058 feet, RW width: 50 feet, RW surface: Asphalt, RW gradient: 1.2, Frequency: 122.8, UNICOM: 122.975, Telephone: 540-297-4500, Fuel: 100LL</cmt>
+<desc>Airport, Moneta, VA, W91, RW direction: 05/23, RW heading: 45, RW length: 3058 feet, RW width: 50 feet, RW surface: Asphalt, RW gradient: 1.2, Frequency: 122.8, UNICOM: 122.975, Telephone: 540-297-4500, Fuel: 100LL</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.553888888888885" lon="-79.74972222222222">
+<ele>304.8</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Springwood GP</name>
+<cmt>Private, Airport, Buchanan, VA, 9/27 15T, 08VA, RW direction: 09/27, RW length: 1800 feet, RW width: 50 feet, RW surface: Grass, Telephone: 540-473-2079</cmt>
+<desc>Private, Airport, Buchanan, VA, 9/27 15T, 08VA, RW direction: 09/27, RW length: 1800 feet, RW width: 50 feet, RW surface: Grass, Telephone: 540-473-2079</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.659444444444446" lon="-78.92222222222223">
+<ele>195.1</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Starr</name>
+<cmt>Private, Airport, Arrington, VA, 4VA5, RW direction: 04/22, RW length: 2000 feet, RW width: 100 feet, RW surface: Grass</cmt>
+<desc>Private, Airport, Arrington, VA, 4VA5, RW direction: 04/22, RW length: 2000 feet, RW width: 100 feet, RW surface: Grass</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.063888888888883" lon="-81.79833333333333">
+<ele>808.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Tazewell County</name>
+<cmt>Airport, Richlands, VA, 7/25 23.05, JFZ, RW direction: 07/25, RW heading: 66, RW length: 4299 feet, RW width: 75 feet, RW surface: Asphalt, RW gradient: PART, AWOS: 118.075, UNICOM: 123.05, Telephone: 276-963-4509, Fuel: 100LL</cmt>
+<desc>Airport, Richlands, VA, 7/25 23.05, JFZ, RW direction: 07/25, RW heading: 66, RW length: 4299 feet, RW width: 75 feet, RW surface: Asphalt, RW gradient: PART, AWOS: 118.075, UNICOM: 123.05, Telephone: 276-963-4509, Fuel: 100LL</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.538055555555552" lon="-80.15916666666668">
+<ele>524.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>TBD</name>
+<cmt>Landable, 01/19 12T</cmt>
+<desc>Landable, 01/19 12T</desc>
+<sym>Square, Green</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.536388888888887" lon="-79.02333333333333">
+<ele>246.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Timberdoodle</name>
+<cmt>Private, Airport, Amherst, VA, 93VA, RW direction: 04/22, RW length: 1400 feet, RW width: 75 feet, RW surface: Grass, Telephone: 804-946-2673</cmt>
+<desc>Private, Airport, Amherst, VA, 93VA, RW direction: 04/22, RW length: 1400 feet, RW width: 75 feet, RW surface: Grass, Telephone: 804-946-2673</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.284722222222221" lon="-80.06972222222223">
+<ele>310.9</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Trussmark</name>
+<cmt>Private, Airport, Salem, VA, 12/30 14T, 6VA4, RW direction: 12/30, RW length: 1400 feet, RW width: 60 feet, RW surface: Grass, Telephone: 703-387-0273</cmt>
+<desc>Private, Airport, Salem, VA, 12/30 14T, 6VA4, RW direction: 12/30, RW length: 1400 feet, RW width: 60 feet, RW surface: Grass, Telephone: 703-387-0273</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.679444444444442" lon="-79.42027777777778">
+<ele>219.5</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Twin River</name>
+<cmt>Private, Landmark, Glasgow, VA, 6/24 30T, VA63, RW direction: 06/24, RW length: 3000 feet, RW width: 40 feet, RW surface: Grass, Telephone: 703-258-2329</cmt>
+<desc>Private, Landmark, Glasgow, VA, 6/24 30T, VA63, RW direction: 06/24, RW length: 3000 feet, RW width: 40 feet, RW surface: Grass, Telephone: 703-258-2329</desc>
+<sym>Triangle, Green</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.658333333333331" lon="-78.94555555555556">
+<ele>198.1</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Tye River</name>
+<cmt>Private, Airport, Lovingston, VA, 1VA3, RW direction: 04/22, RW length: 1750 feet, RW width: 100 feet, RW surface: Grass, Telephone: 804-263-5229</cmt>
+<desc>Private, Airport, Lovingston, VA, 1VA3, RW direction: 04/22, RW length: 1750 feet, RW width: 100 feet, RW surface: Grass, Telephone: 804-263-5229</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="36.807777777777773" lon="-81.70111111111112">
+<ele>640.1</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>White Oak Stand</name>
+<cmt>Private, Airport, Chilhowie, VA, 13/31 17T, VA11, RW direction: 13/31, RW length: 1700 feet, RW width: 80 feet, RW surface: Grass, Telephone: 276-646-2000</cmt>
+<desc>Private, Airport, Chilhowie, VA, 13/31 17T, VA11, RW direction: 13/31, RW length: 1700 feet, RW width: 80 feet, RW surface: Grass, Telephone: 276-646-2000</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="37.545555555555552" lon="-80.53416666666666">
+<ele>655.3</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Willow Bend</name>
+<cmt>Private, Airport, Union, WV, 2WV5, RW direction: 03/21, RW length: 1540 feet, RW width: 40 feet, RW surface: Grass, Telephone: 304-772-3579</cmt>
+<desc>Private, Airport, Union, WV, 2WV5, RW direction: 03/21, RW length: 1540 feet, RW width: 40 feet, RW surface: Grass, Telephone: 304-772-3579</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+<wpt lat="36.950000000000003" lon="-79.87944444444443">
+<ele>371.6</ele>
+<time>2020-08-10T15:31:59Z</time>
+<name>Worley</name>
+<cmt>Private, Airport, Rocky Mount, VA, 0VA4, RW direction: 17/35, RW length: 2100 feet, RW width: 90 feet, RW surface: Grass, Telephone: 540-483-9554</cmt>
+<desc>Private, Airport, Rocky Mount, VA, 0VA4, RW direction: 17/35, RW length: 2100 feet, RW width: 90 feet, RW surface: Grass, Telephone: 540-483-9554</desc>
+<sym>Airport</sym>
+<type>user</type>
+</wpt>
+
+</gpx>

@@ -1,0 +1,93 @@
+Finish Cylinder     ,             ,F,372846,N,0800608,W,1320ft,       ,VA85,180,2400ft,2,99
+Finish Gate         ,18/36 Finish ,F,372845,N,0800622,W,1320ft,       ,VA85,180,2400ft,2,98
+Start NCI           ,Airstrip     ,F,372846,N,0800608,W,1320ft,       ,VA85,180,2400ft,2,97
+Alt Start A         ,5 NE of NCI  , ,373150,N,0800216,W,1320ft,       ,    ,   ,      , , 1
+Alt Start B         ,5 SW of NCI  , ,372541,N,0800959,W,1320ft,       ,    ,   ,      , , 2
+Balcony Downs       ,Airstrip     ,L,373850,N,0792529,W, 820ft,       ,    ,   ,      , , 3
+Big Hill            ,Airstrip     ,F,374352,N,0794840,W,1620ft,       ,44VA,030,2800ft,2, 4
+Big Walker          ,I-77 Tunnel  , ,370233,N,0810812,W,2950ft,       ,    ,   ,      , , 5
+Blacksburg          ,12/30 123.05 ,A,371228,N,0802430,W,2132ft,123.05 ,BCB ,120,4539ft,2, 6
+Buchanan            ,I-81 Bridge  , ,373128,N,0794225,W, 830ft,       ,    ,   ,      , , 7
+Catawba Valley      ,Airstrip     ,F,371703,N,0801803,W,1850ft,       ,VA10,050,1930ft,2, 8
+Covington           ,Factory      , ,374534,N,0800004,W,1250ft,       ,    ,   ,      , , 9
+Craigsville         ,Town Center  , ,380443,N,0792259,W,1550ft,       ,    ,   ,      , ,10
+Eagle Rock          ,07/25 27A    ,A,373952,N,0794835,W,1200ft,       ,79VG,070,2250ft,2,11
+East River          ,I-77 Tunnel  , ,371652,N,0810729,W,2725ft,       ,    ,   ,      , ,12
+Gap Mills           ,Town Center  , ,373344,N,0802429,W,2360ft,       ,    ,   ,      , ,13
+Hillsville          ,16/34 122.80 ,A,364558,N,0804925,W,2693ft,122.8  ,HLX ,010,4204ft,2,14
+Hinton              ,10/28 122.90 ,F,374046,N,0804237,W,1520ft,       ,WV77,100,2700ft,2,15
+Ingalls             ,06/24 122.70 ,A,375705,N,0795002,W,3793ft,123.0  ,HSP ,070,5600ft,2,16
+Lexington           ,VMI          , ,374733,N,0792614,W, 950ft,       ,    ,   ,      , ,17
+Maggie              ,Silo         , ,372529,N,0802241,W,1820ft,       ,    ,   ,      , ,18
+Marion              ,Towers       , ,365406,N,0813232,W,3907ft,       ,    ,   ,      , ,19
+McCoy Falls         ,New River Gap, ,371442,N,0803624,W,1660ft,       ,    ,   ,      , ,20
+Millboro Springs    ,Town Center  , ,375945,N,0793722,W,1310ft,       ,    ,   ,      , ,21
+Monterey            ,Crossroads   , ,382443,N,0793447,W,3048ft,       ,    ,   ,      , ,22
+Mountain Lake       ,Hotel        , ,372119,N,0803212,W,3925ft,       ,    ,   ,      , ,23
+Narrows             ,School Track , ,372019,N,0804818,W,1558ft,       ,    ,   ,      , ,24
+New Castle          ,Airstrip     ,F,372846,N,0800608,W,1320ft,       ,VA85,180,2400ft,2,25
+New London          ,Airport      ,A,371619,N,0792009,W, 849ft,122.8  ,W90 ,180,3164ft,2,26
+New River           ,06/24 122.70 ,A,370814,N,0804043,W,2106ft,122.7  ,PSK ,060,6201ft,2,27
+Oriskany            ,Church       , ,373659,N,0795901,W,1170ft,       ,    ,   ,      , ,28
+Peaks Otter         ,Lodge        , ,372648,N,0793611,W,2500ft,       ,    ,   ,      , ,29
+Radford             ,Hospital     , ,370541,N,0803032,W,2090ft,       ,    ,   ,      , ,30
+Riverwood           ,Airstrip     ,F,374747,N,0794600,W,1020ft,       ,0VA2,140,2000ft,2,31
+Sweet Springs       ,Hotel        , ,373742,N,0801429,W,1998ft,       ,    ,   ,      , ,32
+Tazewell County     ,Cemetary     , ,370902,N,0812715,W,2900ft,       ,    ,   ,      , ,33
+Union WV            ,Town Center  , ,373529,N,0803237,W,2070ft,       ,    ,   ,      , ,34
+Waynesboro          ,123.05       ,A,380437,N,0785639,W,1437ft,123.05 ,W13 ,060,2004ft,2,35
+Wits End            ,             , ,372104,N,0802053,W,      ,       ,    ,   ,      , ,36
+Barrows             ,8/26 21T     ,F,372931,N,0795543,W,1100ft,       ,VA04,080,2100ft,2,  
+Bath Alum           ,             ,F,380309,N,0794344,W,1779ft,       ,9VA0,000,3700ft,2,  
+Black Bridge        ,             ,F,373656,N,0793019,W, 808ft,       ,5VG1,070,1200ft,2,  
+Bluegrass           ,             ,L,370343,N,0811130,W,2660ft,       ,    ,   ,      , ,  
+Brook Hill Farm     ,3/21 20T     ,F,375541,N,0791041,W,1600ft,       ,VA00,030,2000ft,2,  
+Bundoran            ,             ,F,375806,N,0784056,W, 840ft,122.8  ,VA18,150,3000ft,2,  
+Burkes Garden       ,6/24 25A     ,A,370544,N,0812209,W,3060ft,       ,VA07,060,2500ft,2,  
+Burnt Chimney       ,             ,F,370432,N,0794938,W,1034ft,       ,70VA,060,1800ft,2,  
+Cathro              ,             ,L,375541,N,0783305,W, 520ft,       ,    ,   ,      , ,  
+Charlottesville     ,             ,A,380819,N,0782710,W, 639ft,118.425,CHO ,030,6001ft,2,  
+Collins             ,             ,F,363730,N,0801014,W,1100ft,       ,VG16,170,1900ft,2,  
+Cottonwood Farm     ,             ,F,380452,N,0784144,W, 690ft,       ,87VA,150,1000ft,2,  
+Deer Creek Farm     ,             ,F,382817,N,0794820,W,2650ft,       ,WV00,040,3300ft,2,  
+Deer Run            ,9/27 23T     ,F,365939,N,0802716,W,2400ft,       ,VA06,090,2300ft,2,  
+Falwell             ,             ,A,372241,N,0790720,W, 939ft,123.0  ,W24 ,100,2932ft,2,  
+Ferguson            ,             ,F,370705,N,0794719,W,1050ft,       ,81VA,130,1600ft,2,  
+Fincastle           ,11/29 30T    ,F,373120,N,0795107,W,1140ft,       ,VA83,110,3039ft,2,  
+Flatwoods           ,3/21 14T     ,F,374418,N,0785744,W, 840ft,       ,8VA6,030,1400ft,2,  
+Fulcher Family Farms,             ,F,374327,N,0790557,W, 980ft,       ,VG06,110,3000ft,2,  
+Hannah Field        ,Crossroads   ,F,382354,N,0793601,W,3048ft,       ,7VA9,040,2300ft,2,  
+Hawk Ridge          ,             ,F,371720,N,0792650,W, 760ft,       ,20VG,050,2100ft,2,  
+Hop Along           ,14/32 22T    ,F,374723,N,0794615,W,1040ft,       ,12VA,140,2150ft,2,  
+Johnson Fox         ,14/32 20T    ,F,371401,N,0793507,W, 900ft,       ,0VA1,140,2000ft,2,  
+Lakeview            ,             ,F,370707,N,0793610,W,1020ft,       ,VA68,040,1600ft,2,  
+Lewisburg           ,4/22 18.9    ,A,375130,N,0802358,W,2302ft,118.9  ,LWB ,040,7004ft,2,  
+Lynchburg           ,4/22 27.65   ,A,371936,N,0791202,W, 938ft,119.8  ,LYH ,040,7100ft,2,  
+Mercer County       ,5/23 22.9    ,A,371745,N,0811228,W,2857ft,122.9  ,BLF ,050,4743ft,2,  
+Micro               ,8/26 30T     ,A,364408,N,0802657,W,2950ft,       ,1VA1,080,2950ft,2,  
+Miller              ,5/23 19T     ,F,371940,N,0792417,W, 760ft,       ,91VA,050,1850ft,2,  
+Mountain Empire     ,8/26 22.7    ,A,365341,N,0812100,W,2559ft,122.7  ,MKJ ,080,5252ft,2,  
+Nashs               ,             ,A,372323,N,0784849,W, 785ft,       ,10VA,050,1800ft,2,  
+NRAO Green Bank     ,12/30 22.8   ,A,382550,N,0794932,W,2710ft,122.8  ,WV52,120,3500ft,2,  
+Peterstown          ,18/36 20T    ,L,372404,N,0804826,W,1590ft,       ,    ,   ,      , ,  
+Red Birds Airyard   ,             ,F,370646,N,0793633,W, 940ft,       ,2VA0,050,1800ft,2,  
+River Farmer        ,Avoid Fields ,A,374042,N,0794818,W,1000ft,       ,79VG,070,2250ft,2,  
+Roanoke             ,6/24 22.95   ,A,371932,N,0795832,W,1176ft,118.15 ,ROA ,060,6800ft,2,  
+Robinson Private    ,E/W 28T      ,F,372054,N,0793419,W, 850ft,       ,VG25,050,2800ft,2,  
+Rockfish Airpark    ,6/24 22.7    ,F,375246,N,0785337,W, 760ft,122.7  ,VG22,060,2000ft,2,  
+Root                ,             ,F,381023,N,0785809,W,1290ft,       ,82VA,100,2200ft,2,  
+Shenandoah Valley   ,             ,A,381550,N,0785347,W,1201ft,123.0  ,SHD ,050,6002ft,2,  
+Singleton           ,5/23 16T     ,F,381238,N,0794248,W,2060ft,       ,97VA,050,1600ft,2,  
+Smith               ,3/21 26T     ,L,381809,N,0793029,W,2020ft,       ,    ,   ,      , ,  
+Smith Mountain Lake ,             ,A,370628,N,0793533,W, 892ft,122.8  ,W91 ,050,3058ft,2,  
+Springwood GP       ,9/27 15T     ,F,373314,N,0794459,W,1000ft,       ,08VA,090,1800ft,2,  
+Starr               ,             ,F,373934,N,0785520,W, 640ft,       ,4VA5,040,2000ft,2,  
+Tazewell County     ,7/25 23.05   ,A,370350,N,0814754,W,2652ft,123.05 ,JFZ ,070,4299ft,2,  
+TBD                 ,01/19 12T    ,L,373217,N,0800933,W,1720ft,       ,    ,   ,      , ,  
+Timberdoodle        ,             ,F,373211,N,0790124,W, 810ft,       ,93VA,040,1400ft,2,  
+Trussmark           ,12/30 14T    ,F,371705,N,0800411,W,1020ft,       ,6VA4,120,1400ft,2,  
+Twin River          ,6/24 30T     ,F,374046,N,0792513,W, 720ft,       ,VA63,060,3000ft,2,  
+Tye River           ,             ,F,373930,N,0785644,W, 650ft,       ,1VA3,040,1750ft,2,  
+White Oak Stand     ,13/31 17T    ,F,364828,N,0814204,W,2100ft,       ,VA11,130,1700ft,2,  
+Willow Bend         ,             ,F,373244,N,0803203,W,2150ft,       ,2WV5,030,1540ft,2,  
+Worley              ,             ,F,365700,N,0795246,W,1219ft,       ,0VA4,170,2100ft,2,  

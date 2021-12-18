@@ -1,0 +1,90 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++                    Landing sites for New Castle, Virginia                    +
++                                                                              +
++                          Contributed by John Godrey                          +
++                         Contributed on 22 July 2017                          +
++               Last updated Saturday, 22 July 2017 at 23:08 GMT               +
++                                                                              +
++                       UNOFFICIAL, USE AT YOUR OWN RISK                       +
++                                                                              +
++           Do not use for navigation, for flight verification only.           +
++                                                                              +
++       Always consult the relevant publications for current and correct       +
++   information. This service is provided free of charge with no warrantees,   +
++                            expressed or implied.                             +
++                        User assumes all risk of use.                         +
++                                                                              +
++      Rename this file to LNDGSITE.DAT to use with your Glide Navigator.      +
++Delete all of the header lines in this box, down to and including the next one+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+NWC, NewCastle, 37, 28.77, 80, 6.13, 1320
+FNS, FinishCy, 37, 28.77, 80, 6.13, 1320
+FIN, FinishGa, 37, 28.75, 80, 6.37, 1320
+STR, Start NCI, 37, 28.77, 80, 6.13, 1320
+BLC, BalcnDwns, 37, 38.83, 79, 25.48, 820
+BGH, Big Hill, 37, 43.87, 79, 48.67, 1620
+BLA, Blacksbrg, 37, 12.47, 80, 24.5, 2132
+CTW, CatawbVll, 37, 17.05, 80, 18.05, 1850
+EGL, EagleRock, 37, 39.87, 79, 48.58, 1200
+HLL, Hillsvill, 36, 45.97, 80, 49.42, 2693
+HNT, Hinton, 37, 40.77, 80, 42.62, 1520
+ING, Ingalls, 37, 57.08, 79, 50.03, 3793
+NWC, NewCastle, 37, 28.77, 80, 6.13, 1320
+NWL, NewLondon, 37, 16.32, 79, 20.15, 849
+NWR, New River, 37, 8.23, 80, 40.72, 2106
+RVR, Riverwood, 37, 47.78, 79, 46.0, 1020
+WNS, Waynesbor, 38, 4.62, 78, 56.65, 1437
+BRR, Barrows, 37, 29.52, 79, 55.72, 1100
+BTH, Bath Alum, 38, 3.15, 79, 43.73, 1779
+BLK, Black Brg, 37, 36.93, 79, 30.32, 808
+BLG, Bluegrass, 37, 3.72, 81, 11.5, 2660
+BRK, BrkHllFrm, 37, 55.68, 79, 10.68, 1600
+BND, Bundoran, 37, 58.1, 78, 40.93, 840
+BUR, BurksGrdn, 37, 5.73, 81, 22.15, 3060
+BRN, BurntChmn, 37, 4.53, 79, 49.63, 1034
+CTH, Cathro, 37, 55.68, 78, 33.08, 520
+CHR, Chrlttsvl, 38, 8.32, 78, 27.17, 639
+CLL, Collins, 36, 37.5, 80, 10.23, 1100
+CTT, CttnwdFrm, 38, 4.87, 78, 41.73, 690
+DRC, DerCrkFrm, 38, 28.28, 79, 48.33, 2650
+DRR, Deer Run, 36, 59.65, 80, 27.27, 2400
+FLW, Falwell, 37, 22.68, 79, 7.33, 939
+FRG, Ferguson, 37, 7.08, 79, 47.32, 1050
+FNC, Fincastle, 37, 31.33, 79, 51.12, 1140
+FLT, Flatwoods, 37, 44.3, 78, 57.73, 840
+FLC, FlchrFmlF, 37, 43.45, 79, 5.95, 980
+HNN, HannahFld, 38, 23.9, 79, 36.02, 3048
+HWK, HawkRidge, 37, 17.33, 79, 26.83, 760
+HPL, Hop Along, 37, 47.38, 79, 46.25, 1040
+JHN, JohnsonFx, 37, 14.02, 79, 35.12, 900
+LKV, Lakeview, 37, 7.12, 79, 36.17, 1020
+LWS, Lewisburg, 37, 51.5, 80, 23.97, 2302
+LNC, Lynchburg, 37, 19.6, 79, 12.03, 938
+MRC, MercerCnt, 37, 17.75, 81, 12.47, 2857
+MCR, Micro, 36, 44.13, 80, 26.95, 2950
+MIL, Miller, 37, 19.67, 79, 24.28, 760
+MTE, MtnEmpire, 36, 53.68, 81, 21.0, 2559
+NSH, Nashs, 37, 23.38, 78, 48.82, 785
+NRG, NRAGrnBnk, 38, 25.83, 79, 49.53, 2710
+PTR, Peterstwn, 37, 24.07, 80, 48.43, 1590
+RDB, RdBrdsrrd, 37, 6.77, 79, 36.55, 940
+RIV, RiverFrmr, 37, 40.7, 79, 48.3, 1000
+RNK, Roanoke, 37, 19.53, 79, 58.53, 1176
+RBN, RbnsnPrvt, 37, 20.9, 79, 34.32, 850
+RCK, Rockfish, 37, 52.77, 78, 53.62, 760
+ROT, Root, 38, 10.38, 78, 58.15, 1290
+SHN, ShnndhVll, 38, 15.83, 78, 53.78, 1201
+SNG, Singleton, 38, 12.63, 79, 42.8, 2060
+SMT, Smith, 38, 18.15, 79, 30.48, 2020
+SMI, SmthMtnLk, 37, 6.47, 79, 35.55, 892
+SPR, SprngwdGP, 37, 33.23, 79, 44.98, 1000
+STA, Starr, 37, 39.57, 78, 55.33, 640
+TAZ, TazewellC, 37, 3.83, 81, 47.9, 2652
+TBD, TBD, 37, 32.28, 80, 9.55, 1720
+TMB, Timberddl, 37, 32.18, 79, 1.4, 810
+TRS, Trussmark, 37, 17.08, 80, 4.18, 1020
+TWN, TwinRiver, 37, 40.77, 79, 25.22, 720
+TRV, Tye River, 37, 39.5, 78, 56.73, 650
+WHT, WhitkStnd, 36, 48.47, 81, 42.07, 2100
+WLL, WillowBnd, 37, 32.73, 80, 32.05, 2150
+WRL, Worley, 36, 57.0, 79, 52.77, 1219

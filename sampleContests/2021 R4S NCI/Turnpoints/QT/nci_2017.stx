@@ -1,0 +1,221 @@
+* NUM	NAM	COM	LAT_D	LAT_M	LAT_S	LON_D	LON_M	LON_S	COD	ALT	FRE	RW_D	RW_H	RW_L	RW_S	RW_W	RW_G	ICAO
+*
+* ==============================================================================
+*
+* Filename "nci_2017.stx" created Saturday, 22 July 2017 at 23:08 GMT
+* Worldwide Soaring Turnpoint Exchange format version 0.5.2
+*
+* Lines starting with a * are comments and are ignored by programs using this file
+* Lines starting with a $ are definitions of parameters available to programs using this file
+* The first line that is neither a comment nor a definition contains the definitions
+*     of the contents of the columns that follow
+* All other lines are waypoint definitions
+* The line containing the column definitions can be placed anywhere before the first waypoint.
+*   It is placed as a comment at the top of this file for convenience in using this file
+*   with a spreadsheet program, where the first line can be placed in a separate window
+*   to label the columns as you scroll down.
+* The columns are separated by the "tab" character
+*
+* The specification of the .STX file format is available at
+*    http://soaringweb.org/TP/stx_specification.html
+*
+* This is a 'beta' release to support the release of the NK ClearNav and is subject to change.
+*
+* ==============================================================================
+*
+* Starting the definition of various parameters for the file
+*
+$STX_VERSION	0.5.2
+$HOME	New Castle, Virginia
+$SKIP_WAYPOINT_MODE_CHANGES	Y
+$STATE_ABBREV	VA
+$STATE	Virginia
+$NAME_HOME	NCI
+$ILEC_HOME	New Castle, VA
+$CONTEST	Region 4 South, 2017
+$TIMEZONE_NAME	US/Eastern
+$DATUM	100
+$MAGNETIC_VARIATION	06W
+$HEADER	See also the outlanding sites
+* Contributed by: Andrew Kriz
+$CONTRIBUTED_BY	John Godrey (QT)
+$CONTRIBUTOR_E-MAIL	quebec.tango@gmail.com
+* Contributor e-mail: aakriz@gmail.com  
+* Contribution date: 18 September 2016
+$ALTITUDE_UNIT	Feet
+$COUNTRY	US
+$CD	Yes
+$ZANDER_START_FINISH	Orig
+$URL_INFORMATION	brss.net/r4s-contest/ Region 4, South
+$IF_SSA_AIRSPACE	Y
+$LATITUDE	N
+$LONGITUDE	W
+$FILENAME_3	nc7
+$FILENAME_4	nci7
+$FILENAME_5	nci17
+$FILENAME_8	nci_2017
+$WEATHER	Intellicast Radar ImageNOAAKevin Ford's Soaring Forecast
+$MODIFICATIONS	04 Jan 96: Original contribution courtesy of Dirk Elber.
+$MODIFICATIONS	06 Apr 99: Terraserver links added
+$MODIFICATIONS	17 Sep 99: SUA added
+$MODIFICATIONS	01 Jan 00: URL updates
+$MODIFICATIONS	13 Feb 00: SUA modified
+$MODIFICATIONS	08 Dec 00: Contributor e-mail changed
+$MODIFICATIONS	20 Aug 01: All new data.   Alt Start A, Alt Start B, Craigsville, Gap Mills, McCoy Falls, Millboro Springs, Mountain Lake, New London, Radford, Union WV, and Waynesboro added.   Big Hill, Big Walker, Blacksburg, Buchanan, Catawba Valley, Covington, Eagle Rock, East River, Hillsville, Hinton, Ingalls, Lexington, Maggie, Marion, Monterey, Narrows, New River, Oriskany, Peaks Otter, Riverwood, Sweet Springs, and Tazewell moved.   Bedford, Glasgow, Hopeville, Keyser, and Lewisburg removed, courtesy of Dirk Elber.
+$MODIFICATIONS	05 Sep 02: Start NCI, Finish Cylinder, Finish Gate, and Mad Farmer added.
+$MODIFICATIONS	18 Aug 03: Name changes.
+$MODIFICATIONS	03 Sep 04: Eagle Rock moved.
+$MODIFICATIONS	30 Jun 12: Black Bridge, Bluegrass, Charlottesville, Hannah Field, Hawk, TBD, and Willow Bend added.   Deer Creek Farm, and Ivy Hill moved.   Alum Ridge, Bundoran, Burnt Chimney, Bush, Cathro, Collins, Faber, Falwell, Ferguson, Finish Cylinder, Lakeview, Mount Horeb, Nashs, Red Birds Airyard, Root, Shenandoah Valley, Skovhus, Smith Mountain Lake, Starr, Start NCI, Timberdoodle, Trent Farm, Tye River, and Worley removed
+$MODIFICATIONS	02 Sep 12: Finish Gate added.
+$MODIFICATIONS	04 Sep 12: Magnetic Variation added
+$MODIFICATIONS	07 Sep 12: Deer Creek Farm, Flucher Family Farms, and Ivy Hill moved.   Hawk Ridge (formerly known as Windy Ridge) moved.   Nashs moved and comment changed.   Bath Alum comment changed   Burnt Chimney, Bush, Collins, Faber, Falwell, Ferguson, Lakeview, Mount Horeb, Skovhus, Trent Farm removed.   Bundoran, Cathro, Cottonwod Farm, Root, Shenandoah Valley, Red Birds Airyard, Smith Mountain Lake, Starr Tye River, Timberdoodle, and Worley added.
+$MODIFICATIONS	05 Oct 14: Ilec airspace file updated with AirParse Version 2.5
+$MODIFICATIONS	21 May 16: Trent Farm and Ivy Hill non-control-point waypoints removed, per Charlie Cole.
+$MODIFICATIONS	18 Sep 16: Wits End added, per John Godfey.
+$MODIFICATIONS	22 Jul 17: Wits End and Catawba Valley moved.  Airspace updated.
+$MAGNETIC_VARIATION	8.3W
+* ==============================================================================
+*
+* Filename "nci_2017.stx" created Saturday, 22 July 2017 at 23:08 GMT
+* Worldwide Soaring Turnpoint Exchange format version 0.5.2
+*
+* Lines starting with a * are comments and are ignored by programs using this file
+* Lines starting with a $ are definitions of parameters available to programs using this file
+* The first line that is neither a comment nor a definition contains the definitions
+*     of the contents of the columns that follow
+* All other lines are waypoint definitions
+* The line containing the column definitions can be placed anywhere before the first waypoint.
+*   It is placed as a comment at the top of this file for convenience in using this file
+*   with a spreadsheet program, where the first line can be placed in a separate window
+*   to label the columns as you scroll down.
+* The columns are separated by the "tab" character
+*
+* The specification of the .STX file format is available at
+*    http://soaringweb.org/TP/stx_specification.html
+*
+* This is a 'beta' release to support the release of the NK ClearNav and is subject to change.
+*
+* ==============================================================================
+*
+* Starting the definition of various parameters for the file
+*
+$STX_VERSION	0.5.2
+$HOME	New Castle, Virginia
+$STATE_ABBREV	VA
+$NAME_HOME	NCI
+$CONTEST	Region 4 South, 2017
+$TIMEZONE_NAME	US/Eastern
+$DATUM	100
+$MAGNETIC_VARIATION	06W
+$CONTRIBUTED_BY	John Godrey (QT)
+$CONTRIBUTOR_E-MAIL	quebec.tango@gmail.com
+$ALTITUDE_UNIT	Feet
+$COUNTRY	US
+$IF_SSA_AIRSPACE	Y
+$LATITUDE	N
+$LONGITUDE	W
+$MAGNETIC_VARIATION	8.3W
+$RW_L_UNIT	Feet
+$CONTRIBUTION_DATE	22 July 2017
+*
+* ==============================================================================
+*
+* The next line defines the contents of columns.  It MUST appear before the first waypoint line
+NUM	NAM	COM	LAT_D	LAT_M	LAT_S	LON_D	LON_M	LON_S	COD	ALT	FRE	RW_D	RW_H	RW_L	RW_S	RW_W	RW_G	ICAO
+*
+* Starting the waypoints
+*
+99	Finish Cylinder		37	28	46	80	6	8	FAP	1320		 18/36	180	2400	G	100		VA85
+98	Finish Gate	18/36 Finish	37	28	45	80	6	22	FAP	1320		 18/36	180	2400	G	100		VA85
+97	Start NCI	Airstrip	37	28	46	80	6	8	SPA	1320		 18/36	180	2400	G	100		VA85
+1	Alt Start A	5 NE of NCI	37	31	50	80	2	16	S	1320								
+2	Alt Start B	5 SW of NCI	37	25	41	80	9	59	S	1320								
+3	Balcony Downs	Airstrip	37	38	50	79	25	29	LT	820								
+4	Big Hill	Airstrip	37	43	52	79	48	40	TPA	1620		 03/21	30	2800	G	100		44VA
+5	Big Walker	I-77 Tunnel	37	2	33	81	8	12	T	2950								
+6	Blacksburg	12/30 123.05	37	12	28	80	24	30	TA	2132	123.05	 12/30	117	4539	A	100	0.4	BCB
+7	Buchanan	I-81 Bridge	37	31	28	79	42	25	T	830								
+8	Catawba Valley	Airstrip	37	17	3	80	18	3	TPA	1850		 05/23	50	1930	G	100		VA10
+9	Covington	Factory	37	45	34	80	0	4	T	1250								
+10	Craigsville	Town Center	38	4	43	79	22	59	T	1550								
+11	Eagle Rock	07/25 27A	37	39	52	79	48	35	TPA	1200		 07/25	70	2250	A	32		79VG
+12	East River	I-77 Tunnel	37	16	52	81	7	29	T	2725								
+13	Gap Mills	Town Center	37	33	44	80	24	29	T	2360								
+14	Hillsville	16/34 122.80	36	45	58	80	49	25	TA	2693	122.8	 01/19	359	4204	A	75	PART	HLX
+15	Hinton	10/28 122.90	37	40	46	80	42	37	TPA	1520		 10/28	100	2700	G	25		WV77
+16	Ingalls	06/24 122.70	37	57	5	79	50	2	TA	3793	123.0	 07/25	59	5600	A	100		HSP
+17	Lexington	VMI	37	47	33	79	26	14	T	950								
+18	Maggie	Silo	37	25	29	80	22	41	T	1820								
+19	Marion	Towers	36	54	6	81	32	32	T	3907								
+20	McCoy Falls	New River Gap	37	14	42	80	36	24	T	1660								
+21	Millboro Springs	Town Center	37	59	45	79	37	22	T	1310								
+22	Monterey	Crossroads	38	24	43	79	34	47	T	3048								
+23	Mountain Lake	Hotel	37	21	19	80	32	12	T	3925								
+24	Narrows	School Track	37	20	19	80	48	18	T	1558								
+25	New Castle	Airstrip	37	28	46	80	6	8	HTPA	1320		 18/36	180	2400	G	100		VA85
+26	New London	Airport	37	16	19	79	20	9	TA	849	122.8	 18/36	180	3164	A	40		W90
+27	New River	06/24 122.70	37	8	14	80	40	43	TA	2106	122.7	 06/24	52	6201	A	150		PSK
+28	Oriskany	Church	37	36	59	79	59	1	T	1170								
+29	Peaks Otter	Lodge	37	26	48	79	36	11	T	2500								
+30	Radford	Hospital	37	5	41	80	30	32	T	2090								
+31	Riverwood	Airstrip	37	47	47	79	46	0	TPA	1020		 14/32	140	2000	G	70		0VA2
+32	Sweet Springs	Hotel	37	37	42	80	14	29	T	1998								
+33	Tazewell County	Cemetary	37	9	2	81	27	15	T	2900								
+34	Union WV	Town Center	37	35	29	80	32	37	T	2070								
+35	Waynesboro	123.05	38	4	37	78	56	39	TA	1437	123.05	 06/24	60	2004	A	50		W13
+36	Wits End		37	21	4	80	20	53	T									
+	Barrows	8/26 21T	37	29	31	79	55	43	AP	1100		 08/26	80	2100	G	40		VA04
+	Bath Alum		38	3	9	79	43	44	PA	1779		 E/W	090	3700	G	150		9VA0
+* Alum	PRI (9VA0)|RY E/W:3700x150-TURF|RYE/W: LAND RWY W ONLY.|MGR: NELSON CAMBATA|703-996-4109	38	3	9	N	38.052631	79	43	44	W	-79.728928	AP		1779	E/W 37T	Warm Springs	9VA0	Bath Alum				9VA0	07W	E/W		090	3700	G	150	Virginia	VA	703-996-4109	BTH	BTHL	BTHLM	Bathlm	BATHALM	BathAlum	Bath Alum	Bath Alum	Bath Alum	Bath Alum	Bath Alum	Bath Alum	Bath Alum	Bath Alum	Bath Alum	BathAlm
+	Black Bridge		37	36	56	79	30	19	AP	808		 07/25	70	1200	G	60		5VG1
+	Bluegrass		37	3	43	81	11	30	L	2660								
+	Brook Hill Farm	3/21 20T	37	55	41	79	10	41	AP	1600		 03/21	30	2000	G	75		VA00
+	Bundoran		37	58	6	78	40	56	PA	840	122.8	 15/33	150	3000	G	100		VA18
+	Burkes Garden	6/24 25A	37	5	44	81	22	9	AP	3060		 06/24	60	2500	A	50		VA07
+	Burnt Chimney		37	4	32	79	49	38	PA	1034		 06/24	60	1800	G	50		70VA
+	Cathro		37	55	41	78	33	5	L	520								
+	Charlottesville		38	8	19	78	27	10	A	639	118.425	 03/21	22	6001	A	150		CHO
+	Collins		36	37	30	80	10	14	PA	1100		 17/35	170	1900	G	75		VG16
+	Cottonwood Farm		38	4	52	78	41	44	PA	690		 15/33	150	1000	G	50		87VA
+	Deer Creek Farm		38	28	17	79	48	20	PA	2650		 04/22	40	3300	G	60		WV00
+	Deer Run	9/27 23T	36	59	39	80	27	16	AP	2400		 09/27	90	2300	G	60		VA06
+	Falwell		37	22	41	79	7	20	A	939	123.0	 10/28	100	2932	A	50	-4.7	W24
+	Ferguson		37	7	5	79	47	19	PA	1050		 13/31	130	1600	G	30		81VA
+	Fincastle	11/29 30T	37	31	20	79	51	7	AP	1140		 11/29	110	3039	G	150		VA83
+	Flatwoods	3/21 14T	37	44	18	78	57	44	AP	840		 03/21	30	1400	G	120		8VA6
+	Fulcher Family Farms		37	43	27	79	5	57	PA	980		 11/29	110	3000	G	100		VG06
+	Hannah Field	Crossroads	38	23	54	79	36	1	AP	3048		 04/22	40	2300	G	75		7VA9
+	Hawk Ridge		37	17	20	79	26	50	PA	760		 05/23	50	2100	G	60		20VG
+	Hop Along	14/32 22T	37	47	23	79	46	15	AP	1040		 14/32	140	2150	G	50		12VA
+	Johnson Fox	14/32 20T	37	14	1	79	35	7	AP	900		 14/32	140	2000	G	50		0VA1
+	Lakeview		37	7	7	79	36	10	PA	1020		 04/22	40	1600	G	60		VA68
+	Lewisburg	4/22 18.9	37	51	30	80	23	58	A	2302	118.9	 04/22	35	7004	A	150	PART	LWB
+	Lynchburg	4/22 27.65	37	19	36	79	12	2	A	938	119.8	 04/22	28	7100	A	150		LYH
+	Mercer County	5/23 22.9	37	17	45	81	12	28	A	2857	122.9	 05/23	42	4743	A	100		BLF
+	Micro	8/26 30T	36	44	8	80	26	57	AP	2950		 08/26	80	2950	A	70		1VA1
+	Miller	5/23 19T	37	19	40	79	24	17	AP	760		 05/23	50	1850	G	70		91VA
+	Mountain Empire	8/26 22.7	36	53	41	81	21	0	A	2559	122.7	 08/26	73	5252	A	75		MKJ
+	Nashs		37	23	23	78	48	49	PA	785		 05/23	50	1800	A	20		10VA
+	NRAO Green Bank	12/30 22.8	38	25	50	79	49	32	AP	2710	122.8	 12/30	120	3500	A	50		WV52
+	Peterstown	18/36 20T	37	24	4	80	48	26	L	1590								
+	Red Birds Airyard		37	6	46	79	36	33	PA	940		 05/23	50	1800	G	70		2VA0
+	River Farmer	Avoid Fields	37	40	42	79	48	18	PA	1000		 07/25	70	2250	A	32		79VG
+	Roanoke	6/24 22.95	37	19	32	79	58	32	A	1176	118.15	 06/24	49	6800	A	150		ROA
+	Robinson Private	E/W 28T	37	20	54	79	34	19	AP	850		 05/23	50	2800	G	100		VG25
+	Rockfish Airpark	6/24 22.7	37	52	46	78	53	37	AP	760	122.7	 06/24	60	2000	G	40		VG22
+	Root		38	10	23	78	58	9	PA	1290		 10/28	100	2200	G	100		82VA
+	Shenandoah Valley		38	15	50	78	53	47	A	1201	123.0	 05/23	38	6002	A	150		SHD
+	Singleton	5/23 16T	38	12	38	79	42	48	AP	2060		 05/23	50	1600	G	50		97VA
+	Smith	3/21 26T	38	18	9	79	30	29	L	2020								
+	Smith Mountain Lake		37	6	28	79	35	33	A	892	122.8	 05/23	45	3058	A	50	1.2	W91
+	Springwood GP	9/27 15T	37	33	14	79	44	59	AP	1000		 09/27	90	1800	G	50		08VA
+	Starr		37	39	34	78	55	20	PA	640		 04/22	40	2000	G	100		4VA5
+	Tazewell County	7/25 23.05	37	3	50	81	47	54	A	2652	123.05	 07/25	66	4299	A	75	PART	JFZ
+	TBD	01/19 12T	37	32	17	80	9	33	L	1720								
+	Timberdoodle		37	32	11	79	1	24	PA	810		 04/22	40	1400	G	75		93VA
+	Trussmark	12/30 14T	37	17	5	80	4	11	AP	1020		 12/30	120	1400	G	60		6VA4
+	Twin River	6/24 30T	37	40	46	79	25	13	AP	720		 06/24	60	3000	G	40		VA63
+	Tye River		37	39	30	78	56	44	PA	650		 04/22	40	1750	G	100		1VA3
+	White Oak Stand	13/31 17T	36	48	28	81	42	4	AP	2100		 13/31	130	1700	G	80		VA11
+	Willow Bend		37	32	44	80	32	3	AP	2150		 03/21	30	1540	G	40		2WV5
+	Worley		36	57	0	79	52	46	PA	1219		 17/35	170	2100	G	90		0VA4

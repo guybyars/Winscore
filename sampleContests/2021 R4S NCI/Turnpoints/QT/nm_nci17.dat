@@ -1,0 +1,132 @@
+** ------------ # New Castle, VA         22Jul17 ------------
+**++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+**                   Control Points for New Castle, Virginia                   +
+**                                                                             +
+**                            Region 4 South, 2017                             +
+**                                                                             +
+**                        See also the outlanding sites                        +
+**                                                                             +
+**                       Contributed by John Godrey (QT)                       +
+**                                                                             +
+**                     Contribution date was 22 July 2017                      +
+**              File created Saturday, 22 July 2017 at 23:08 GMT               +
+**         Available from the Worldwide Soaring Turnpoint Exchange at          +
+**                            http://soaringweb.org/TP                         +
+**                 or http://soaring.guenther-eichhorn.com/TP                  +
+**                     or http://soaring.geichhorn.com/TP                      +
+**                     or http://serkowski.com/soaring/TP                      +
+**                    or http://soaring.silentflight.ca/TP                     +
+**                       or http://soaring.gahsys.com/TP                       +
+**                                                                             +
+**               Datum: 100 ( WGS84 ), Magnetic variation: 8.3W                +
+**                                                                             +
+**                            Time zone: US/Eastern                            +
+**         Summer offset from GMT is -4:00, and in Winter it is -5:00          +
+**                                                                             +
+**   >>>>> Control point names have the number placed before the name <<<<<    +
+**            Comment is control point description where available             +
+**                                                                             +
+**                      UNOFFICIAL, USE AT YOUR OWN RISK                       +
+**                                                                             +
+**          Do not use for navigation, for flight verification only.           +
+**                                                                             +
+**      Always consult the relevant publications for current and correct       +
+**  information. This service is provided free of charge with no warrantees,   +
+**                            expressed or implied.                            +
+**                        User assumes all risk of use.                        +
+**                                                                             +
+**++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+99,37:28:46N,080:06:08W,1320F,FA,99 FinishCy ,       18/36
+98,37:28:45N,080:06:22W,1320F,FA,98 FinishGa ,18/36 Finish
+97,37:28:46N,080:06:08W,1320F,SA,97 Start NCI,Airstrip    
+1,37:31:50N,080:02:16W,1320F,S,01 Start A  ,5 NE of NCI 
+2,37:25:41N,080:09:59W,1320F,S,02 Start B  ,5 SW of NCI 
+3,37:38:50N,079:25:29W,820F,LT,03 BalcnDwns,Airstrip    
+4,37:43:52N,079:48:40W,1620F,TA,04 Big Hill ,Airstrip    
+5,37:02:33N,081:08:12W,2950F,T,05 BigWalker,I-77 Tunnel 
+6,37:12:28N,080:24:30W,2132F,TA,06 Blacksbrg,12/30 123.05
+7,37:31:28N,079:42:25W,830F,T,07 Buchanan ,I-81 Bridge 
+8,37:17:03N,080:18:03W,1850F,TA,08 CatawbVll,Airstrip    
+9,37:45:34N,080:00:04W,1250F,T,09 Covington,Factory     
+10,38:04:43N,079:22:59W,1550F,T,10 Craigsvll,Town Center 
+11,37:39:52N,079:48:35W,1200F,TA,11 EagleRock,07/25 27A   
+12,37:16:52N,081:07:29W,2725F,T,12 E River  ,I-77 Tunnel 
+13,37:33:44N,080:24:29W,2360F,T,13 Gap Mills,Town Center 
+14,36:45:58N,080:49:25W,2693F,TA,14 Hillsvill,16/34 122.80
+15,37:40:46N,080:42:37W,1520F,TA,15 Hinton   ,10/28 122.90
+16,37:57:05N,079:50:02W,3793F,TA,16 Ingalls  ,06/24 122.70
+17,37:47:33N,079:26:14W,950F,T,17 Lexington,VMI         
+18,37:25:29N,080:22:41W,1820F,T,18 Maggie   ,Silo        
+19,36:54:06N,081:32:32W,3907F,T,19 Marion   ,Towers      
+20,37:14:42N,080:36:24W,1660F,T,20 McCoyFlls,New RiverGap
+21,37:59:45N,079:37:22W,1310F,T,21 MllbrSprn,Town Center 
+22,38:24:43N,079:34:47W,3048F,T,22 Monterey ,Crossroads  
+23,37:21:19N,080:32:12W,3925F,T,23 Mtn Lk   ,Hotel       
+24,37:20:19N,080:48:18W,1558F,T,24 Narrows  ,School Track
+25,37:28:46N,080:06:08W,1320F,HTA,25 NEWCASTLE,Airstrip    
+26,37:16:19N,079:20:09W,849F,TA,26 NewLondon,Airport     
+27,37:08:14N,080:40:43W,2106F,TA,27 New River,06/24 122.70
+28,37:36:59N,079:59:01W,1170F,T,28 Oriskany ,Church      
+29,37:26:48N,079:36:11W,2500F,T,29 Pks Otter,Lodge       
+30,37:05:41N,080:30:32W,2090F,T,30 Radford  ,Hospital    
+31,37:47:47N,079:46:00W,1020F,TA,31 Riverwood,Airstrip    
+32,37:37:42N,080:14:29W,1998F,T,32 SwtSprngs,Hotel       
+33,37:09:02N,081:27:15W,2900F,T,33 TazwllCnt,Cemetary    
+34,37:35:29N,080:32:37W,2070F,T,34 Union WV ,Town Center 
+35,38:04:37N,078:56:39W,1437F,TA,35 Waynesbor,123.05      
+36,37:21:04N,080:20:53W,0F,T,36 Wits End ,            
+100,37:29:31N,079:55:43W,1100F,A,Barrows     ,8/26 21T    
+101,38:03:09N,079:43:44W,1779F,A,Bath Alum   ,         E/W
+102,37:36:56N,079:30:19W,808F,A,Black Bridge,       07/25
+103,37:03:43N,081:11:30W,2660F,L,Bluegrass   ,            
+104,37:55:41N,079:10:41W,1600F,A,BrookHillFrm,3/21 20T    
+105,37:58:06N,078:40:56W,840F,A,Bundoran    ,22.8   15/33
+106,37:05:44N,081:22:09W,3060F,A,BurkesGarden,6/24 25A    
+107,37:04:32N,079:49:38W,1034F,A,BurntChimney,       06/24
+108,37:55:41N,078:33:05W,520F,L,Cathro      ,            
+109,38:08:19N,078:27:10W,639F,A,Charlottsvll,18.425 03/21
+110,36:37:30N,080:10:14W,1100F,A,Collins     ,       17/35
+111,38:04:52N,078:41:44W,690F,A,CottonwodFrm,       15/33
+112,38:28:17N,079:48:20W,2650F,A,DeerCreekFrm,       04/22
+113,36:59:39N,080:27:16W,2400F,A,Deer Run    ,9/27 23T    
+114,37:22:41N,079:07:20W,939F,A,Falwell     ,23.0   10/28
+115,37:07:05N,079:47:19W,1050F,A,Ferguson    ,       13/31
+116,37:31:20N,079:51:07W,1140F,A,Fincastle   ,11/29 30T   
+117,37:44:18N,078:57:44W,840F,A,Flatwoods   ,3/21 14T    
+118,37:43:27N,079:05:57W,980F,A,FlchrFmlFrms,       11/29
+119,38:23:54N,079:36:01W,3048F,A,Hannah Field,Crossroads  
+120,37:17:20N,079:26:50W,760F,A,Hawk Ridge  ,       05/23
+121,37:47:23N,079:46:15W,1040F,A,Hop Along   ,14/32 22T   
+122,37:14:01N,079:35:07W,900F,A,Johnson Fox ,14/32 20T   
+123,37:07:07N,079:36:10W,1020F,A,Lakeview    ,       04/22
+124,37:51:30N,080:23:58W,2302F,A,Lewisburg   ,4/22 18.9   
+125,37:19:36N,079:12:02W,938F,A,Lynchburg   ,4/22 27.65  
+126,37:17:45N,081:12:28W,2857F,A,MercerCounty,5/23 22.9   
+127,36:44:08N,080:26:57W,2950F,A,Micro       ,8/26 30T    
+128,37:19:40N,079:24:17W,760F,A,Miller      ,5/23 19T    
+129,36:53:41N,081:21:00W,2559F,A,Mtn Empire  ,8/26 22.7   
+130,37:23:23N,078:48:49W,785F,A,Nashs       ,       05/23
+131,38:25:50N,079:49:32W,2710F,A,NRAOGreenBnk,12/30 22.8  
+132,37:24:04N,080:48:26W,1590F,L,Peterstown  ,18/36 20T   
+133,37:06:46N,079:36:33W,940F,A,RedBirdsArrd,       05/23
+134,37:40:42N,079:48:18W,1000F,A,River Farmer,Avoid Fields
+135,37:19:32N,079:58:32W,1176F,A,Roanoke     ,6/24 22.95  
+136,37:20:54N,079:34:19W,850F,A,RobinsonPrvt,E/W 28T     
+137,37:52:46N,078:53:37W,760F,A,Rockfish AP ,6/24 22.7   
+138,38:10:23N,078:58:09W,1290F,A,Root        ,       10/28
+139,38:15:50N,078:53:47W,1201F,A,ShenandohVll,23.0   05/23
+140,38:12:38N,079:42:48W,2060F,A,Singleton   ,5/23 16T    
+141,38:18:09N,079:30:29W,2020F,L,Smith       ,3/21 26T    
+142,37:06:28N,079:35:33W,892F,A,Smith Mtn Lk,22.8   05/23
+143,37:33:14N,079:44:59W,1000F,A,SpringwoodGP,9/27 15T    
+144,37:39:34N,078:55:20W,640F,A,Starr       ,       04/22
+145,37:03:50N,081:47:54W,2652F,A,TazewellCoun,7/25 23.05  
+146,37:32:17N,080:09:33W,1720F,L,TBD         ,01/19 12T   
+147,37:32:11N,079:01:24W,810F,A,Timberdoodle,       04/22
+148,37:17:05N,080:04:11W,1020F,A,Trussmark   ,12/30 14T   
+149,37:40:46N,079:25:13W,720F,A,Twin River  ,6/24 30T    
+150,37:39:30N,078:56:44W,650F,A,Tye River   ,       04/22
+151,36:48:28N,081:42:04W,2100F,A,WhiteOakStnd,13/31 17T   
+152,37:32:44N,080:32:03W,2150F,A,Willow Bend ,       03/21
+153,36:57:00N,079:52:46W,1219F,A,Worley      ,       17/35
+

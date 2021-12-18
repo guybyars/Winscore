@@ -1,0 +1,200 @@
+*>                      Airspace for New Castle, Virginia                      <
+*>                                                                             <
+*>                         Data courtesy of Lynn Alley                         <
+*>                                                                             <
+*>             File created on Saturday, 22 July 2017 at 23:08 GMT             <
+*>                                                                             <
+* US AIRSPACE INFORMATION FROM NASR DATA EFFECTIVE 2017-06-22 REVISION 1       <
+* UNOFFICIAL DATA (NOT FOR NAVIGATION)                                         <
+*                                                                              <
+* The Class B, C, and D airspace information in this file is composed of       <
+* computed approximations of the arcs and lines that make up various airspace  <
+* boundaries that have been derived from lists of points along those boundaries.<
+* The point data has been taken from the Federal Aviation Administration       <
+* National Airspace System Resource (NASR) geospatial information files as     <
+* published by the National Flight Data Center.  Errors in the computed        <
+* positions of the boundaries themselves will generally be less than 300 feet  <
+* (although errors in the estimated positions of arc center points and radii   <
+* might be much larger); however, any of the following factors may cause errors<
+* to be greater:                                                               <
+*                                                                              <
+*   1.  Errors in the source geospational data;                                <
+*   2.  Cases involving irregularly shaped boundaries, such as those formed    <
+*       by rivers and roads, etc.;                                             <
+*   3.  Errors in the methods or programs that are used to compute the         <
+*       approximations.                                                        <
+*                                                                              <
+* Airspace information for special use airspace, including Prohibited, Restricted,<
+* Alert, Military Operation, and National Defense areas are taken from AIXM    <
+* files published via the Facility Aeronatical Data Distribition Service of the<
+* National Flight Data Center.                                                 <
+*                                                                              <
+* Note that the software used to produce the approximations contained herein   <
+* has not been certified for navigational use -- CONSEQUENTLY, THIS            <
+* INFORMATION SHOULD NOT BE RELIED UPON FOR NAVIGATION.  Use of this           <
+* information for any other purpose is solely at the user's risk.  This        <
+* information is provided free of charge.  No warranty, expressed or implied,  <
+* as to the accuracy or suitability of this information for any use is         <
+* provided.  Always refer to official sources, such as current sectional       <
+* charts, for authoritative information.                                       <
+*                                                                              <
+*                                                                              <
+*> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ End of the header ^^^^^^^^^^^^^^^^^^^^^^^^^^^^<
+*>                                                                             <
+* >> CHARLESTON YEAGER AIRPORT CLASS C <<
+AC C
+SB 0,150,255
+AN CHARLESTON YEAGER AIRPORT CLASS C
+AL SFC
+AH 5000 MSL
+V X=38:22:23 N 081:35:35 W
+DC 5.00 
+*
+* >> CHARLESTON YEAGER AIRPORT CLASS C <<
+AC C
+SB 0,150,255
+AN CHARLESTON YEAGER AIRPORT CLASS C
+AL 2800 MSL
+AH 5000 MSL
+V X=38:22:23 N 081:35:35 W
+DC 10.00 
+*
+* >> CHARLOTTESVILLE CLASS D <<
+AC D
+SB 0,255,0
+AN CHARLOTTESVILLE CLASS D
+AL SFC
+AH 3100 MSL
+V X=38:08:19 N 078:27:10 W
+DC 4.20 
+*
+* >> DROP ZONE PVA012 (SMITH MOUNTAIN LAKE) <<
+AC Q
+SB 0,0,0
+AN DZ PVA012 SR-SS FRI SAT SUN HD
+AL SFC
+AH 13500MSL
+V X=37:05:56 N 079:35:11 W
+DC 3.00 
+*
+* >> DROP ZONE PWV008 <<
+AC Q
+SB 0,0,0
+AN DZ PWV008 DAILY SR-SS
+AL SFC
+AH 14500MSL
+V X=38:13:12 N 080:52:21 W
+DC 5.00 
+*
+* >> EVERS MOA, WV <<
+AC Q
+SB 0,0,0
+AN EVERS SR-SS DAILY BY NOTAM
+AL 1000 AGL
+AH 17999 MSL
+DP 38:40:01 N 079:57:59 W
+DP 38:40:01 N 079:19:49 W
+DP 38:24:00 N 079:19:49 W
+DP 38:24:00 N 079:57:59 W
+DP 38:40:01 N 079:57:59 W
+*
+* >> *FARMVILLE MOA, VA <<
+AC Q
+SB 0,0,0
+AN FARMVILLE 0800-1700 MON-FRI & BY NOTAM 118.75
+AL 300 AGL
+AH 5000 MSL
+DP 37:35:00 N 078:12:30 W
+DP 37:29:30 N 077:55:00 W
+V D=-
+V X=37:10:52 N 078:05:54 W
+DB 37:13:48 N 078:05:07 W, 37:08:38 N 078:08:25 W
+DP 37:08:38 N 078:08:25 W
+DP 36:50:30 N 078:20:00 W
+V D=-
+V X=36:47:18 N 078:30:06 W
+DB 36:49:26 N 078:27:27 W, 36:48:35 N 078:33:26 W
+DP 36:48:35 N 078:33:26 W
+DP 36:46:30 N 078:48:00 W
+DP 36:52:30 N 079:03:30 W
+DP 37:15:00 N 078:50:00 W
+DP 37:15:00 N 078:20:00 W
+DP 37:35:00 N 078:12:30 W
+*
+* >> *FARMVILLE MOA, VA <<
+AC Q
+SB 0,0,0
+AN FARMVILLE 0800-1700 MON-FRI & BY NOTAM 118.75
+AL 1501 AGL
+AH 5000 MSL
+V D=+
+V X=36:47:18 N 078:30:06 W
+DB 36:48:35 N 078:33:26 W, 36:49:26 N 078:27:27 W
+DP 36:49:26 N 078:27:27 W
+DP 36:48:35 N 078:33:26 W
+*
+* >> LEWISBURG CLASS D <<
+AC D
+SB 0,255,0
+AN LEWISBURG CLASS D
+AL SFC
+AH 4800 MSL
+V X=37:51:30 N 080:23:58 W
+DC 4.00 
+*
+* >> LYNCHBURG CLASS D <<
+AC D
+SB 0,255,0
+AN LYNCHBURG CLASS D
+AL SFC
+AH 3400 MSL
+DP 37:22:44 N 079:07:57 W
+V X=37:22:41 N 079:07:20 W
+V D=-
+DB 37:22:44 N 079:07:57 W, 37:22:11 N 079:07:23 W
+V X=37:19:37 N 079:12:01 W
+V D=+
+DB 37:22:11 N 079:07:23 W, 37:22:44 N 079:07:57 W
+*
+* >> ROANOKE REGIONAL/WOODRUM FLD CLASS C <<
+AC C
+SB 0,150,255
+AN ROANOKE REGIONAL/WOODRUM FLD CLASS C
+AL SFC
+AH 5200 MSL
+V X=37:19:31 N 079:58:31 W
+DC 5.00 
+*
+* >> ROANOKE REGIONAL/WOODRUM FLD CLASS C <<
+AC C
+SB 0,150,255
+AN ROANOKE REGIONAL/WOODRUM FLD CLASS C
+AL 3800 MSL
+AH 5200 MSL
+DP 37:29:31 N 079:57:39 W
+V X=37:19:31 N 079:58:31 W
+V D=+
+DB 37:29:31 N 079:57:39 W, 37:17:05 N 079:46:22 W
+DP 37:18:19 N 079:52:26 W
+V X=37:19:31 N 079:58:31 W
+V D=-
+DB 37:18:19 N 079:52:26 W, 37:24:31 N 079:58:05 W
+DP 37:29:31 N 079:57:39 W
+*
+* >> ROANOKE REGIONAL/WOODRUM FLD CLASS C <<
+AC C
+SB 0,150,255
+AN ROANOKE REGIONAL/WOODRUM FLD CLASS C
+AL 3400 MSL
+AH 5200 MSL
+DP 37:19:52 N 080:04:46 W
+V X=37:19:31 N 079:58:31 W
+V D=-
+DB 37:19:52 N 080:04:46 W, 37:18:19 N 079:52:26 W
+DP 37:17:05 N 079:46:22 W
+V X=37:19:31 N 079:58:31 W
+V D=+
+DB 37:17:05 N 079:46:22 W, 37:17:16 N 080:10:44 W
+DP 37:19:52 N 080:04:46 W
+*
+*                                End of the data                                

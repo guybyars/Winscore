@@ -1,0 +1,58 @@
+;+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;                                                                              +
+;                             New Castle, Virginia                             +
+;                                                                              +
+;                             Region 4 South, 2017                             +
+;                                                                              +
+;       User Specified Waypoints formatted for EWView II and EWView III        +
+;                                                                              +
+;                                  Datum: 100                                  +
+;                          Contributed by John Godrey                          +
+;                                                                              +
+;                Generated Saturday, 22 July 2017 at 23:08 GMT                 +
+;                                                                              +
+;        >>>>>>>>>>>>>>>>>>>> USE AT YOUR OWN RISK <<<<<<<<<<<<<<<<<<<<        +
+; All data and information contained in these data files are provided without  +
+;  guarantee as to their completeness or correctness.  Any conclusions drawn   +
+;   from these data and information are the sole responsibility of the user.   +
+;                                                                              +
+;+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"Finish Cylinder"	"FNCLND"	"_"	"N3728.767"	"W08006.133"
+"Finish Gate"	"FINGAT"	"18/36 Finish"	"N3728.750"	"W08006.367"
+"Start NCI"	"STRT N"	"Airstrip"	"N3728.767"	"W08006.133"
+"Alt Start A"	"STRT A"	"5 NE of NCI"	"N3731.833"	"W08002.267"
+"Alt Start B"	"STRT B"	"5 SW of NCI"	"N3725.683"	"W08009.983"
+"Balcony Downs"	"BLCNDW"	"Airstrip"	"N3738.833"	"W07925.483"
+"Big Hill"	"BIGHLL"	"Airstrip"	"N3743.867"	"W07948.667"
+"Big Walker"	"BGWLKR"	"I-77 Tunnel"	"N3702.550"	"W08108.200"
+"Blacksburg"	"BLCKSB"	"12/30 123.05"	"N3712.467"	"W08024.500"
+"Buchanan"	"BUCHNN"	"I-81 Bridge"	"N3731.467"	"W07942.417"
+"Catawba Valley"	"CTWBVL"	"Airstrip"	"N3717.050"	"W08018.050"
+"Covington"	"CVNGTN"	"Factory"	"N3745.567"	"W08000.067"
+"Craigsville"	"CRGSVL"	"Town Center"	"N3804.717"	"W07922.983"
+"Eagle Rock"	"EGLRCK"	"07/25 27A"	"N3739.867"	"W07948.583"
+"East River"	"ERIVER"	"I-77 Tunnel"	"N3716.867"	"W08107.483"
+"Gap Mills"	"GPMLLS"	"Town Center"	"N3733.733"	"W08024.483"
+"Hillsville"	"HLLSVL"	"16/34 122.80"	"N3645.967"	"W08049.417"
+"Hinton"	"HINTON"	"10/28 122.90"	"N3740.767"	"W08042.617"
+"Ingalls"	"INGLLS"	"06/24 122.70"	"N3757.083"	"W07950.033"
+"Lexington"	"LXNGTN"	"VMI"	"N3747.550"	"W07926.233"
+"Maggie"	"MAGGIE"	"Silo"	"N3725.483"	"W08022.683"
+"Marion"	"MARION"	"Towers"	"N3654.100"	"W08132.533"
+"McCoy Falls"	"MCCFLL"	"New River Gap"	"N3714.700"	"W08036.400"
+"Millboro Springs"	"MLLBRS"	"Town Center"	"N3759.750"	"W07937.367"
+"Monterey"	"MONTER"	"Crossroads"	"N3824.717"	"W07934.783"
+"Mountain Lake"	"MTN LK"	"Hotel"	"N3721.317"	"W08032.200"
+"Narrows"	"NARRWS"	"School Track"	"N3720.317"	"W08048.300"
+"New Castle"	"NWCSTL"	"Airstrip"	"N3728.767"	"W08006.133"
+"New London"	"NWLNDN"	"Airport"	"N3716.317"	"W07920.150"
+"New River"	"NEWRVR"	"06/24 122.70"	"N3708.233"	"W08040.717"
+"Oriskany"	"ORISKN"	"Church"	"N3736.983"	"W07959.017"
+"Peaks Otter"	"PKSTTR"	"Lodge"	"N3726.800"	"W07936.183"
+"Radford"	"RADFRD"	"Hospital"	"N3705.683"	"W08030.533"
+"Riverwood"	"RIVRWD"	"Airstrip"	"N3747.783"	"W07946.000"
+"Sweet Springs"	"SWTSPR"	"Hotel"	"N3737.700"	"W08014.483"
+"Tazewell County"	"TZWLLC"	"Cemetary"	"N3709.033"	"W08127.250"
+"Union WV"	"UNINWV"	"Town Center"	"N3735.483"	"W08032.617"
+"Waynesboro"	"WANSBR"	"123.05"	"N3804.617"	"W07856.650"
+"Wits End"	"WITSND"	"_"	"N3721.067"	"W08020.883"

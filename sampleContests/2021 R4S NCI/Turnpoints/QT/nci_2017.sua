@@ -1,0 +1,179 @@
+#>                      Airspace for New Castle, Virginia                      <
+#>                                                                             <
+#>                         Data courtesy of Lynn Alley                         <
+#>                                                                             <
+#>             File created on Saturday, 22 July 2017 at 23:08 GMT             <
+#>                                                                             <
+# US AIRSPACE INFORMATION FROM NASR DATA EFFECTIVE 2017-06-22 REVISION 1       <
+# UNOFFICIAL DATA (NOT FOR NAVIGATION)                                         <
+#                                                                              <
+# The Class B, C, and D airspace information in this file is composed of       <
+# computed approximations of the arcs and lines that make up various airspace  <
+# boundaries that have been derived from lists of points along those boundaries.<
+# The point data has been taken from the Federal Aviation Administration       <
+# National Airspace System Resource (NASR) geospatial information files as     <
+# published by the National Flight Data Center.  Errors in the computed        <
+# positions of the boundaries themselves will generally be less than 300 feet  <
+# (although errors in the estimated positions of arc center points and radii   <
+# might be much larger); however, any of the following factors may cause errors<
+# to be greater:                                                               <
+#                                                                              <
+#   1.  Errors in the source geospational data;                                <
+#   2.  Cases involving irregularly shaped boundaries, such as those formed    <
+#       by rivers and roads, etc.;                                             <
+#   3.  Errors in the methods or programs that are used to compute the         <
+#       approximations.                                                        <
+#                                                                              <
+# Airspace information for special use airspace, including Prohibited, Restricted,<
+# Alert, Military Operation, and National Defense areas are taken from AIXM    <
+# files published via the Facility Aeronatical Data Distribition Service of the<
+# National Flight Data Center.                                                 <
+#                                                                              <
+# Note that the software used to produce the approximations contained herein   <
+# has not been certified for navigational use -- CONSEQUENTLY, THIS            <
+# INFORMATION SHOULD NOT BE RELIED UPON FOR NAVIGATION.  Use of this           <
+# information for any other purpose is solely at the user's risk.  This        <
+# information is provided free of charge.  No warranty, expressed or implied,  <
+# as to the accuracy or suitability of this information for any use is         <
+# provided.  Always refer to official sources, such as current sectional       <
+# charts, for authoritative information.                                       <
+#                                                                              <
+#                                                                              <
+#> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ End of the header ^^^^^^^^^^^^^^^^^^^^^^^^^^^^<
+#>                                                                             <
+### CHARLESTON YEAGER AIRPORT CLASS C ###
+INCLUDE=YES
+TITLE=CHARLESTON YEAGER AIRPORT CLASS C
+TYPE=CLASS C
+BASE=SFC
+TOPS=5000ALT
+CIRCLE RADIUS=5.00 CENTRE=N382223 W0813535
+#
+### CHARLESTON YEAGER AIRPORT CLASS C ###
+INCLUDE=YES
+TITLE=CHARLESTON YEAGER AIRPORT CLASS C
+TYPE=CLASS C
+BASE=2800ALT
+TOPS=5000ALT
+CIRCLE RADIUS=10.00 CENTRE=N382223 W0813535
+#
+### CHARLOTTESVILLE CLASS D ###
+INCLUDE=YES
+TITLE=CHARLOTTESVILLE CLASS D
+TYPE=CLASS D
+BASE=SFC
+TOPS=3100ALT
+CIRCLE RADIUS=4.20 CENTRE=N380819 W0782710
+#
+### DROP ZONE PVA012 (SMITH MOUNTAIN LAKE) ###
+INCLUDE=YES
+TITLE=DZ PVA012 SR-SS FRI SAT SUN HD
+TYPE=DANGER
+BASE=SFC
+TOPS=13500ALT
+CIRCLE RADIUS=3.00 CENTRE=N370556 W0793511
+#
+### DROP ZONE PWV008 ###
+INCLUDE=YES
+TITLE=DZ PWV008 DAILY SR-SS
+TYPE=DANGER
+BASE=SFC
+TOPS=14500ALT
+CIRCLE RADIUS=5.00 CENTRE=N381312 W0805221
+#
+### EVERS MOA, WV ###
+INCLUDE=YES
+TITLE=EVERS SR-SS DAILY BY NOTAM
+TYPE=MATZ
+BASE=1000 AGL
+TOPS=17999 ALT
+POINT=N384001 W0795759
+POINT=N384001 W0791949
+POINT=N382400 W0791949
+POINT=N382400 W0795759
+POINT=N384001 W0795759
+#
+### *FARMVILLE MOA, VA ###
+INCLUDE=YES
+TITLE=FARMVILLE 0800-1700 MON-FRI & BY NOTAM 118.75
+TYPE=MATZ
+BASE=300 AGL
+TOPS=5000 ALT
+POINT=N373500 W0781230
+POINT=N372930 W0775500
+POINT=N371348 W0780507
+ANTI-CLOCKWISE RADIUS=3 CENTRE=N371052 W0780554 TO=N370838 W0780825
+POINT=N370838 W0780825
+POINT=N365030 W0782000
+POINT=N364926 W0782727
+ANTI-CLOCKWISE RADIUS=3 CENTRE=N364718 W0783006 TO=N364835 W0783326
+POINT=N364835 W0783326
+POINT=N364630 W0784800
+POINT=N365230 W0790330
+POINT=N371500 W0785000
+POINT=N371500 W0782000
+POINT=N373500 W0781230
+#
+### *FARMVILLE MOA, VA ###
+INCLUDE=YES
+TITLE=FARMVILLE 0800-1700 MON-FRI & BY NOTAM 118.75
+TYPE=MATZ
+BASE=1501 AGL
+TOPS=5000 ALT
+POINT=N364835 W0783326
+CLOCKWISE RADIUS=3 CENTRE=N364718 W0783006 TO=N364926 W0782727
+POINT=N364926 W0782727
+POINT=N364835 W0783326
+#
+### LEWISBURG CLASS D ###
+INCLUDE=YES
+TITLE=LEWISBURG CLASS D
+TYPE=CLASS D
+BASE=SFC
+TOPS=4800ALT
+CIRCLE RADIUS=4.00 CENTRE=N375130 W0802358
+#
+### LYNCHBURG CLASS D ###
+INCLUDE=YES
+TITLE=LYNCHBURG CLASS D
+TYPE=CLASS D
+BASE=SFC
+TOPS=3400ALT
+POINT=N372244 W0790757
+ANTI-CLOCKWISE RADIUS=0.50 CENTRE=N372241 W0790720 TO=N372211 W0790723
+CLOCKWISE RADIUS=4.50 CENTRE=N371937 W0791201 TO=N372244 W0790757
+#
+### ROANOKE REGIONAL/WOODRUM FLD CLASS C ###
+INCLUDE=YES
+TITLE=ROANOKE REGIONAL/WOODRUM FLD CLASS C
+TYPE=CLASS C
+BASE=SFC
+TOPS=5200ALT
+CIRCLE RADIUS=5.00 CENTRE=N371931 W0795831
+#
+### ROANOKE REGIONAL/WOODRUM FLD CLASS C ###
+INCLUDE=YES
+TITLE=ROANOKE REGIONAL/WOODRUM FLD CLASS C
+TYPE=CLASS C
+BASE=3800ALT
+TOPS=5200ALT
+POINT=N372931 W0795739
+CLOCKWISE RADIUS=10.00 CENTRE=N371931 W0795831 TO=N371705 W0794622
+POINT=N371819 W0795226
+ANTI-CLOCKWISE RADIUS=5.00 CENTRE=N371931 W0795831 TO=N372431 W0795805
+POINT=N372931 W0795739
+#
+### ROANOKE REGIONAL/WOODRUM FLD CLASS C ###
+INCLUDE=YES
+TITLE=ROANOKE REGIONAL/WOODRUM FLD CLASS C
+TYPE=CLASS C
+BASE=3400ALT
+TOPS=5200ALT
+POINT=N371952 W0800446
+ANTI-CLOCKWISE RADIUS=5.00 CENTRE=N371931 W0795831 TO=N371819 W0795226
+POINT=N371705 W0794622
+CLOCKWISE RADIUS=10.00 CENTRE=N371931 W0795831 TO=N371716 W0801044
+POINT=N371952 W0800446
+#
+#                                End of the data                                
+END

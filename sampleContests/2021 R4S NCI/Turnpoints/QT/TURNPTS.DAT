@@ -1,0 +1,58 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++                   Control points for New Castle, Virginia                    +
++                                                                              +
++                          Contributed by John Godrey                          +
++                         Contributed on 22 July 2017                          +
++               Last updated Saturday, 22 July 2017 at 23:08 GMT               +
++                                                                              +
++                       UNOFFICIAL, USE AT YOUR OWN RISK                       +
++                                                                              +
++           Do not use for navigation, for flight verification only.           +
++                                                                              +
++       Always consult the relevant publications for current and correct       +
++   information. This service is provided free of charge with no warrantees,   +
++                            expressed or implied.                             +
++                        User assumes all risk of use.                         +
++                                                                              +
++      Rename this file to TURNPTS.DAT to use with your Glide Navigator.       +
++Delete all of the header lines in this box, down to and including the next one+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+99, FinishCyl, 37, 28.77, 80, 6.13, 1320
+98, FinishGat, 37, 28.75, 80, 6.37, 1320
+97, Start NCI, 37, 28.77, 80, 6.13, 1320
+1, Alt Start A, 37, 31.83, 80, 2.27, 1320
+2, Alt Start B, 37, 25.68, 80, 9.98, 1320
+3, BalconyDwns, 37, 38.83, 79, 25.48, 820
+4, Big Hill, 37, 43.87, 79, 48.67, 1620
+5, Big Walker, 37, 2.55, 81, 8.2, 2950
+6, Blacksburg, 37, 12.47, 80, 24.5, 2132
+7, Buchanan, 37, 31.47, 79, 42.42, 830
+8, CatawbaVall, 37, 17.05, 80, 18.05, 1850
+9, Covington, 37, 45.57, 80, 0.07, 1250
+10, Craigsvill, 38, 4.72, 79, 22.98, 1550
+11, Eagle Rock, 37, 39.87, 79, 48.58, 1200
+12, East River, 37, 16.87, 81, 7.48, 2725
+13, Gap Mills, 37, 33.73, 80, 24.48, 2360
+14, Hillsville, 36, 45.97, 80, 49.42, 2693
+15, Hinton, 37, 40.77, 80, 42.62, 1520
+16, Ingalls, 37, 57.08, 79, 50.03, 3793
+17, Lexington, 37, 47.55, 79, 26.23, 950
+18, Maggie, 37, 25.48, 80, 22.68, 1820
+19, Marion, 36, 54.1, 81, 32.53, 3907
+20, McCoyFalls, 37, 14.7, 80, 36.4, 1660
+21, MllbrSprng, 37, 59.75, 79, 37.37, 1310
+22, Monterey, 38, 24.72, 79, 34.78, 3048
+23, Mtn Lk, 37, 21.32, 80, 32.2, 3925
+24, Narrows, 37, 20.32, 80, 48.3, 1558
+25, New Castle, 37, 28.77, 80, 6.13, 1320
+26, New London, 37, 16.32, 79, 20.15, 849
+27, New River, 37, 8.23, 80, 40.72, 2106
+28, Oriskany, 37, 36.98, 79, 59.02, 1170
+29, Pks Otter, 37, 26.8, 79, 36.18, 2500
+30, Radford, 37, 5.68, 80, 30.53, 2090
+31, Riverwood, 37, 47.78, 79, 46.0, 1020
+32, SwetSprngs, 37, 37.7, 80, 14.48, 1998
+33, TazewllCnt, 37, 9.03, 81, 27.25, 2900
+34, Union WV, 37, 35.48, 80, 32.62, 2070
+35, Waynesboro, 38, 4.62, 78, 56.65, 1437
+36, Wits End, 37, 21.07, 80, 20.88

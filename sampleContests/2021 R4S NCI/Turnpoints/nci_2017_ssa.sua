@@ -1,0 +1,102 @@
+#>                        Modified for SSA Competition Rules                   <
+#> Contains only the airspace that is closed for the contest:                  <
+#>      Class B                                                                <
+#>      Class C                                                                <
+#>      Prohibited areas                                                       <
+#>      Restricted areas                                                       <
+#> The TOPS of the above areas are modified to be 18000 feet                   <
+#> --------------------------------------------------------------------------- <
+#>                                                                             <
+#>                      Airspace for New Castle, Virginia                      <
+#>                                                                             <
+#>                         Data courtesy of Lynn Alley                         <
+#>                                                                             <
+#>             File created on Saturday, 22 July 2017 at 23:08 GMT             <
+#>                                                                             <
+# US AIRSPACE INFORMATION FROM NASR DATA EFFECTIVE 2017-06-22 REVISION 1       <
+# UNOFFICIAL DATA (NOT FOR NAVIGATION)                                         <
+#                                                                              <
+# The Class B, C, and D airspace information in this file is composed of       <
+# computed approximations of the arcs and lines that make up various airspace  <
+# boundaries that have been derived from lists of points along those boundaries.<
+# The point data has been taken from the Federal Aviation Administration       <
+# National Airspace System Resource (NASR) geospatial information files as     <
+# published by the National Flight Data Center.  Errors in the computed        <
+# positions of the boundaries themselves will generally be less than 300 feet  <
+# (although errors in the estimated positions of arc center points and radii   <
+# might be much larger); however, any of the following factors may cause errors<
+# to be greater:                                                               <
+#                                                                              <
+#   1.  Errors in the source geospational data;                                <
+#   2.  Cases involving irregularly shaped boundaries, such as those formed    <
+#       by rivers and roads, etc.;                                             <
+#   3.  Errors in the methods or programs that are used to compute the         <
+#       approximations.                                                        <
+#                                                                              <
+# Airspace information for special use airspace, including Prohibited, Restricted,<
+# Alert, Military Operation, and National Defense areas are taken from AIXM    <
+# files published via the Facility Aeronatical Data Distribition Service of the<
+# National Flight Data Center.                                                 <
+#                                                                              <
+# Note that the software used to produce the approximations contained herein   <
+# has not been certified for navigational use -- CONSEQUENTLY, THIS            <
+# INFORMATION SHOULD NOT BE RELIED UPON FOR NAVIGATION.  Use of this           <
+# information for any other purpose is solely at the user's risk.  This        <
+# information is provided free of charge.  No warranty, expressed or implied,  <
+# as to the accuracy or suitability of this information for any use is         <
+# provided.  Always refer to official sources, such as current sectional       <
+# charts, for authoritative information.                                       <
+#                                                                              <
+#                                                                              <
+#> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ End of the header ^^^^^^^^^^^^^^^^^^^^^^^^^^^^<
+#>                                                                             <
+### CHARLESTON YEAGER AIRPORT CLASS C ###
+INCLUDE=YES
+TITLE=CHARLESTON YEAGER AIRPORT CLASS C
+TYPE=CLASS C
+BASE=SFC
+TOPS=FL180
+CIRCLE RADIUS=5.00 CENTRE=N382223 W0813535
+#
+### CHARLESTON YEAGER AIRPORT CLASS C ###
+INCLUDE=YES
+TITLE=CHARLESTON YEAGER AIRPORT CLASS C
+TYPE=CLASS C
+BASE=2800ALT
+TOPS=FL180
+CIRCLE RADIUS=10.00 CENTRE=N382223 W0813535
+#
+### ROANOKE REGIONAL/WOODRUM FLD CLASS C ###
+INCLUDE=YES
+TITLE=ROANOKE REGIONAL/WOODRUM FLD CLASS C
+TYPE=CLASS C
+BASE=SFC
+TOPS=FL180
+CIRCLE RADIUS=5.00 CENTRE=N371931 W0795831
+#
+### ROANOKE REGIONAL/WOODRUM FLD CLASS C ###
+INCLUDE=YES
+TITLE=ROANOKE REGIONAL/WOODRUM FLD CLASS C
+TYPE=CLASS C
+BASE=3800ALT
+TOPS=FL180
+POINT=N372931 W0795739
+CLOCKWISE RADIUS=10.00 CENTRE=N371931 W0795831 TO=N371705 W0794622
+POINT=N371819 W0795226
+ANTI-CLOCKWISE RADIUS=5.00 CENTRE=N371931 W0795831 TO=N372431 W0795805
+POINT=N372931 W0795739
+#
+### ROANOKE REGIONAL/WOODRUM FLD CLASS C ###
+INCLUDE=YES
+TITLE=ROANOKE REGIONAL/WOODRUM FLD CLASS C
+TYPE=CLASS C
+BASE=3400ALT
+TOPS=FL180
+POINT=N371952 W0800446
+ANTI-CLOCKWISE RADIUS=5.00 CENTRE=N371931 W0795831 TO=N371819 W0795226
+POINT=N371705 W0794622
+CLOCKWISE RADIUS=10.00 CENTRE=N371931 W0795831 TO=N371716 W0801044
+POINT=N371952 W0800446
+#
+#                                End of the data                                
+END

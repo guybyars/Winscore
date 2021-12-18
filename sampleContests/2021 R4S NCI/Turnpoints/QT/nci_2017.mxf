@@ -1,0 +1,93 @@
+37.4794444, -80.1022222, "Finish Cylinder", "FnClnd", "", ff0000, 130
+37.4791667, -80.1061111, "Finish Gate", "FinGat", "Turnpoint: 18/36 Finish", ff0000, 130
+37.4794444, -80.1022222, "Start NCI", "Strt N", "Turnpoint: Airstrip", ff0000, 129
+37.5305556, -80.0377778, "Alt Start A", "Strt A", "Turnpoint: 5 NE of NCI", ff0000, 129
+37.4280556, -80.1663889, "Alt Start B", "Strt B", "Turnpoint: 5 SW of NCI", ff0000, 129
+37.6472222, -79.4247222, "Balcony Downs", "BlcnDw", "Turnpoint: Airstrip", ff0000, 138
+37.7311111, -79.8111111, "Big Hill", "BigHll", "Turnpoint: Airstrip", ff0000, 145
+37.0425000, -81.1366667, "Big Walker", "BgWlkr", "Turnpoint: I-77 Tunnel", ff0000, 138
+37.2077778, -80.4083333, "Blacksburg", "Blcksb", "Turnpoint: 12/30 123.05", ff0000, 145
+37.5244444, -79.7069444, "Buchanan", "Buchnn", "Turnpoint: I-81 Bridge", ff0000, 138
+37.2841667, -80.3008333, "Catawba Valley", "CtwbVl", "Turnpoint: Airstrip", ff0000, 145
+37.7594444, -80.0011111, "Covington", "Cvngtn", "Turnpoint: Factory", ff0000, 138
+38.0786111, -79.3830556, "Craigsville", "Crgsvl", "Turnpoint: Town Center", ff0000, 138
+37.6644444, -79.8097222, "Eagle Rock", "EglRck", "Turnpoint: 07/25 27A", ff0000, 145
+37.2811111, -81.1247222, "East River", "ERiver", "Turnpoint: I-77 Tunnel", ff0000, 138
+37.5622222, -80.4080556, "Gap Mills", "GpMlls", "Turnpoint: Town Center", ff0000, 138
+36.7661111, -80.8236111, "Hillsville", "Hllsvl", "Turnpoint: 16/34 122.80", ff0000, 145
+37.6794444, -80.7102778, "Hinton", "Hinton", "Turnpoint: 10/28 122.90", ff0000, 145
+37.9513889, -79.8338889, "Ingalls", "Inglls", "Turnpoint: 06/24 122.70", ff0000, 145
+37.7925000, -79.4372222, "Lexington", "Lxngtn", "Turnpoint: VMI", ff0000, 138
+37.4247222, -80.3780556, "Maggie", "Maggie", "Turnpoint: Silo", ff0000, 138
+36.9016667, -81.5422222, "Marion", "Marion", "Turnpoint: Towers", ff0000, 138
+37.2450000, -80.6066667, "McCoy Falls", "McCFll", "Turnpoint: New River Gap", ff0000, 138
+37.9958333, -79.6227778, "Millboro Springs", "MllbrS", "Turnpoint: Town Center", ff0000, 138
+38.4119444, -79.5797222, "Monterey", "Monter", "Turnpoint: Crossroads", ff0000, 138
+37.3552778, -80.5366667, "Mountain Lake", "Mtn Lk", "Turnpoint: Hotel", ff0000, 138
+37.3386111, -80.8050000, "Narrows", "Narrws", "Turnpoint: School Track", ff0000, 138
+37.4794444, -80.1022222, "New Castle", "NwCstl", "Turnpoint: Airstrip", ff0000, 118
+37.2719444, -79.3358333, "New London", "NwLndn", "Turnpoint: Airport", ff0000, 145
+37.1372222, -80.6786111, "New River", "NewRvr", "Turnpoint: 06/24 122.70", ff0000, 145
+37.6163889, -79.9836111, "Oriskany", "Oriskn", "Turnpoint: Church", ff0000, 138
+37.4466667, -79.6030556, "Peaks Otter", "Pksttr", "Turnpoint: Lodge", ff0000, 138
+37.0947222, -80.5088889, "Radford", "Radfrd", "Turnpoint: Hospital", ff0000, 138
+37.7963889, -79.7666667, "Riverwood", "Rivrwd", "Turnpoint: Airstrip", ff0000, 145
+37.6283333, -80.2413889, "Sweet Springs", "SwtSpr", "Turnpoint: Hotel", ff0000, 138
+37.1505556, -81.4541667, "Tazewell County", "TzwllC", "Turnpoint: Cemetary", ff0000, 138
+37.5913889, -80.5436111, "Union WV", "UninWV", "Turnpoint: Town Center", ff0000, 138
+38.0769444, -78.9441667, "Waynesboro", "Wansbr", "Turnpoint: 123.05", ff0000, 145
+37.3511111, -80.3480556, "Wits End", "Witsnd", "", ff0000, 138
+37.4919444, -79.9286111, "Barrows", "Barrws", "Turnpoint: 8/26 21T", ff0000, 130
+38.0525000, -79.7288889, "Bath Alum", "Bathlm", "", ff0000, 130
+37.6155556, -79.5052778, "Black Bridge", "BlckBr", "", ff0000, 130
+37.0619444, -81.1916667, "Bluegrass", "Blgrss", "", ff0000, 112
+37.9280556, -79.1780556, "Brook Hill Farm", "BrkHll", "Turnpoint: 3/21 20T", ff0000, 130
+37.9683333, -78.6822222, "Bundoran", "Bundrn", "", ff0000, 130
+37.0955556, -81.3691667, "Burkes Garden", "BrksGr", "Turnpoint: 6/24 25A", ff0000, 130
+37.0755556, -79.8272222, "Burnt Chimney", "BrntCh", "", ff0000, 130
+37.9280556, -78.5513889, "Cathro", "Cathro", "", ff0000, 112
+38.1386111, -78.4527778, "Charlottesville", "Chrltt", "", ff0000, 130
+36.6250000, -80.1705556, "Collins", "Collns", "", ff0000, 130
+38.0811111, -78.6955556, "Cottonwood Farm", "Cttnwd", "", ff0000, 130
+38.4713889, -79.8055556, "Deer Creek Farm", "DrCrkF", "", ff0000, 130
+36.9941667, -80.4544444, "Deer Run", "DeerRn", "Turnpoint: 9/27 23T", ff0000, 130
+37.3780556, -79.1222222, "Falwell", "Falwll", "", ff0000, 130
+37.1180556, -79.7886111, "Ferguson", "Fergsn", "", ff0000, 130
+37.5222222, -79.8519444, "Fincastle", "Fncstl", "Turnpoint: 11/29 30T", ff0000, 130
+37.7383333, -78.9622222, "Flatwoods", "Fltwds", "Turnpoint: 3/21 14T", ff0000, 130
+37.7241667, -79.0991667, "Fulcher Family Farms", "FlchrF", "", ff0000, 130
+38.3983333, -79.6002778, "Hannah Field", "HnnhFl", "Turnpoint: Crossroads", ff0000, 130
+37.2888889, -79.4472222, "Hawk Ridge", "HwkRdg", "", ff0000, 130
+37.7897222, -79.7708333, "Hop Along", "Hoplng", "Turnpoint: 14/32 22T", ff0000, 130
+37.2336111, -79.5852778, "Johnson Fox", "JhnsnF", "Turnpoint: 14/32 20T", ff0000, 130
+37.1186111, -79.6027778, "Lakeview", "Lakevw", "", ff0000, 130
+37.8583333, -80.3994444, "Lewisburg", "Lwsbrg", "Turnpoint: 4/22 18.9", ff0000, 130
+37.3266667, -79.2005556, "Lynchburg", "Lnchbr", "Turnpoint: 4/22 27.65", ff0000, 130
+37.2958333, -81.2077778, "Mercer County", "MrcrCn", "Turnpoint: 5/23 22.9", ff0000, 130
+36.7355556, -80.4491667, "Micro", "Micro ", "Turnpoint: 8/26 30T", ff0000, 130
+37.3277778, -79.4047222, "Miller", "Miller", "Turnpoint: 5/23 19T", ff0000, 130
+36.8947222, -81.3500000, "Mountain Empire", "Mtnmpr", "Turnpoint: 8/26 22.7", ff0000, 130
+37.3897222, -78.8136111, "Nashs", "Nashs ", "", ff0000, 130
+38.4305556, -79.8255556, "NRAO Green Bank", "NRGrnB", "Turnpoint: 12/30 22.8", ff0000, 130
+37.4011111, -80.8072222, "Peterstown", "Ptrstw", "Turnpoint: 18/36 20T", ff0000, 112
+37.1127778, -79.6091667, "Red Birds Airyard", "RdBrds", "", ff0000, 130
+37.6783333, -79.8050000, "River Farmer", "RvrFrm", "Turnpoint: Avoid Fields", ff0000, 130
+37.3255556, -79.9755556, "Roanoke", "Roanok", "Turnpoint: 6/24 22.95", ff0000, 130
+37.3483333, -79.5719444, "Robinson Private", "RbnsnP", "Turnpoint: E/W 28T", ff0000, 130
+37.8794444, -78.8936111, "Rockfish Airpark", "Rckfsh", "Turnpoint: 6/24 22.7", ff0000, 130
+38.1730556, -78.9691667, "Root", "Root  ", "", ff0000, 130
+38.2638889, -78.8963889, "Shenandoah Valley", "Shnndh", "", ff0000, 130
+38.2105556, -79.7133333, "Singleton", "Sngltn", "Turnpoint: 5/23 16T", ff0000, 130
+38.3025000, -79.5080556, "Smith", "Smith ", "Turnpoint: 3/21 26T", ff0000, 112
+37.1077778, -79.5925000, "Smith Mountain Lake", "SmthMt", "", ff0000, 130
+37.5538889, -79.7497222, "Springwood GP", "Sprngw", "Turnpoint: 9/27 15T", ff0000, 130
+37.6594444, -78.9222222, "Starr", "Starr ", "", ff0000, 130
+37.0638889, -81.7983333, "Tazewell County", "Tazewe", "Turnpoint: 7/25 23.05", ff0000, 130
+37.5380556, -80.1591667, "TBD", "TBD   ", "Turnpoint: 01/19 12T", ff0000, 112
+37.5363889, -79.0233333, "Timberdoodle", "Tmbrdd", "", ff0000, 130
+37.2847222, -80.0697222, "Trussmark", "Trssmr", "Turnpoint: 12/30 14T", ff0000, 130
+37.6794444, -79.4202778, "Twin River", "TwnRvr", "Turnpoint: 6/24 30T", ff0000, 130
+37.6583333, -78.9455556, "Tye River", "TyeRvr", "", ff0000, 130
+36.8077778, -81.7011111, "White Oak Stand", "WhtkSt", "Turnpoint: 13/31 17T", ff0000, 130
+37.5455556, -80.5341667, "Willow Bend", "WllwBn", "", ff0000, 130
+36.9500000, -79.8794444, "Worley", "Worley", "", ff0000, 130

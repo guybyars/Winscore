@@ -1,0 +1,24 @@
+;+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;                                                                              +
+;                             New Castle, Virginia                             +
+;                                                                              +
+;                             Region 4 South, 2017                             +
+;                                                                              +
+;       User Specified Waypoints formatted for EWView II and EWView III        +
+;                                                                              +
+;                                  Datum: 100                                  +
+;                          Contributed by John Godrey                          +
+;                                                                              +
+;                Generated Saturday, 22 July 2017 at 23:08 GMT                 +
+;                                                                              +
+;        >>>>>>>>>>>>>>>>>>>> USE AT YOUR OWN RISK <<<<<<<<<<<<<<<<<<<<        +
+; All data and information contained in these data files are provided without  +
+;  guarantee as to their completeness or correctness.  Any conclusions drawn   +
+;   from these data and information are the sole responsibility of the user.   +
+;                                                                              +
+;+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"Bluegrass"	"01"	"N3703.717"	"W08111.500"
+"Cathro"	"01"	"N3755.683"	"W07833.083"
+"Peterstown"	"01"	"N3724.067"	"W08048.433"
+"Smith"	"01"	"N3818.150"	"W07930.483"
+"TBD"	"01"	"N3732.283"	"W08009.550"
