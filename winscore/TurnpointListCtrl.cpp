@@ -225,7 +225,7 @@ int CTurnpointListCtrl::GetTurnpointID(int i)
 float CTurnpointListCtrl::GetTurnpointRadius(int i)
 {
 	CString strRad=GetItemText(i+1, 2);
-	return atof(strRad);	
+	return (float)atof(strRad);	
 }
 
 void CTurnpointListCtrl::GetTurnpointRadii(int aiTurnpointRadii[ ])
@@ -233,7 +233,7 @@ void CTurnpointListCtrl::GetTurnpointRadii(int aiTurnpointRadii[ ])
 	int nItems=GetItemCount();
 	for( int i=1; i<nItems-1; i++ )
 		{
-		aiTurnpointRadii[i]=GetTurnpointRadius(i);
+		aiTurnpointRadii[i]=(int)GetTurnpointRadius(i);
 		}
 }
 

@@ -9,7 +9,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#import "msxml6.dll" //raw_interfaces_only
+#import "msxml6.dll" no_auto_exclude //raw_interfaces_only
 
 using namespace MSXML2;
 

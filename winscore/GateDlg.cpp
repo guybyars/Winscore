@@ -141,10 +141,10 @@ void CGateDlg::OnOK()
 	m_cGate.SetHeight(m_iHeight);
     if( m_eGateDlgType==CGateDlg::eStart )
 	  {
-	  bool b=(bool)m_cPerpCheck.GetCheck();
+	  bool b=m_cPerpCheck.GetCheck()==BST_CHECKED;
       m_cGate.SetPerpToCourse(b);
 
-	  b=(bool)m_cOutTheTopCheck.GetCheck();
+	  b=m_cOutTheTopCheck.GetCheck()==BST_CHECKED;
 	  m_cGate.SetScoreOutTheTop(b);
 	  }
 	if( m_cGate.GetGateType()==eLine ) m_dRadius/=2.;
@@ -166,7 +166,7 @@ void CGateDlg::MaskForm()
 	EGateType eGateType=(EGateType)m_cTypeCombo.GetCurSel();
 	if( m_eGateDlgType==eStart )
 		{
-		bPerpCheck=(bool)m_cPerpCheck.GetCheck();
+		bPerpCheck=m_cPerpCheck.GetCheck()==BST_CHECKED;
 		}
 
 	m_cHeadingText.EnableWindow(!bPerpCheck && eGateType==eLine);

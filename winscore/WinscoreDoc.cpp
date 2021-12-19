@@ -95,28 +95,6 @@
 				}\
 
 
-#define OUTPUT_TPT_TEXT( pcTurnpoint, dDist, dRadius, cLine, bTabs, cNewLineChar, strOut  ) {\
-				\
-				if( dRadius>0 )\
-				{\
-  				cLine.Format(bTabs?(_T("%6d\t%-20s\t%6.2lf\t%6.1lf\t%s")):(_T("%6d   %-20s %6.2lf           %6.1lf %s")),\
-    								pcTurnpoint->m_iID,\
-    								pcTurnpoint->m_strName,\
-    								dDist,\
-									dRadius,\
-									cNewLineChar);\
-				}\
-				else\
-				{\
-  				cLine.Format(bTabs?(_T("%6d\t%-20s\t%6.2lf\t%s")):(_T("%6d   %-20s %6.2lf%s")),\
-    								pcTurnpoint->m_iID,\
-    								pcTurnpoint->m_strName,\
-    								dDist,\
-									cNewLineChar);\
-				}\
-	  			strOut+=cLine; }\
-
-
     /////////////////////////////////////////////////////////////////////////////
     // CWinscoreDoc
     IMPLEMENT_DYNCREATE(CWinscoreDoc, CDocument)
