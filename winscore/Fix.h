@@ -43,8 +43,6 @@ public:
 			int		iAltitude,
 			short	sMotor );
 
-	virtual void Serialize(CArchive & ar);
-
 	virtual ~CFix();
 
 };

@@ -47,7 +47,6 @@ public:
 	int m_iAttribute;
 	int m_iElevation;
 
-	virtual void Serialize(CArchive& ar);
 	CTurnpoint(int iID, CString str, CLocation* pcLocation, int iAttribute=0, int iElevation=0);
     CTurnpoint(CString strLCAMField);
 	bool GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pParentNode  );

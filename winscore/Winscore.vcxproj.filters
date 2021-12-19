@@ -153,9 +153,6 @@
     <ClCompile Include="FlightSearchFoldersDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlightStream.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Gate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -187,21 +184,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ImportFlightSettings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InvalidLeg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InvalidLegDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InvalidLegList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LandingCard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LandingCardList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LandingLocationDlg.cpp">

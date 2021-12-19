@@ -96,33 +96,6 @@ CFix::CFix(CFix &cFix)
 	m_sMotor	=cFix.m_sMotor;
 	}
 
-void CFix::Serialize(CArchive & ar)
-{
-	short s;
-	if (ar.IsStoring())
-	{
-		ar << m_strContestNo;
-//		ar << m_cTime;
-		ar << m_fLatitude;
-		ar << m_fLongitude;
-		s=(short)m_iAltitude;
-		ar << s;
-//		ar << m_sMotor;
-	}
-	else
-	{
-		ar >> m_strContestNo;
-//		ar >> m_cTime;
-		ar >> m_fLatitude;
-		ar >> m_fLongitude;
-		ar >> s;
-		m_iAltitude=s;
-//		ar >> m_sMotor;
-	}
-
-}
-
-
 
 CFix::CFix( int iYear, int iMonth, int iDay, CString strRecord )
 	{

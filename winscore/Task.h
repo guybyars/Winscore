@@ -90,8 +90,6 @@ public:
 	CString     m_strFileName;
 	double		m_dColumnSortDistance[3];
 	
-	virtual void Serialize(CArchive& ar);
-
     CString DateText();
     CString TypeText();
     CString MinTimeText();

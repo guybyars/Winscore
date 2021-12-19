@@ -82,37 +82,6 @@ CGliderInfo& CGliderInfo::operator =(CGliderInfo &cInfo)
 	return cInfo;
 	}
 
-void CGliderInfo::Serialize(CArchive & ar)
-{
-	WORD w;
-	if (ar.IsStoring())
-		{
-		ar << (WORD)m_bNull;
-		if( !m_bNull )
-			{
-			ar << m_strManufacturer;
-			ar << m_strModel;
-			ar << m_strNotes;
-			ar << m_fSpan;
-			ar << m_dHandicap;
-			ar << m_fWeight;
-			}
-		}
-	else
-		{
-		ar >> w; m_bNull=w==0?(false):(true);
-		if( !m_bNull )
-			{
-			ar >> m_strManufacturer;
-			ar >> m_strModel;
-			ar >> m_strNotes;
-			ar >> m_fSpan;
-			ar >> m_dHandicap;
-			ar >> m_fWeight;
-			}
-		}
-	}
-
 bool CGliderInfo::IsNull()
 {
 return m_bNull;

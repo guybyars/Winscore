@@ -30,7 +30,6 @@ public:
 					double	dHandicap,
 					float	fWeight	);
 	virtual ~CGliderInfo();
-	virtual void Serialize(CArchive & ar);
 
 	CGliderInfo& operator =(CGliderInfo &cInfo);
 	bool operator ==(CGliderInfo &cInfo);

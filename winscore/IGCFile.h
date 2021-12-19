@@ -53,7 +53,6 @@ public:
 
 #ifndef _CAIEXPLR
 	CTurnpointArray	m_cTurnpointArray;
-	virtual void Serialize(CArchive& ar);
 #else
 	CIGCTask* GetIGCTask(int iTask);
 	CWaypointArray	m_cWaypointArray;

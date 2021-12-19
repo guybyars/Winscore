@@ -186,31 +186,6 @@ CString CTurnpoint::HHHMMMLongText()
 	}
 
 
-void CTurnpoint::Serialize(CArchive & ar)
-{
-	if (ar.IsStoring())
-	{
-		ar << m_iID;
-		ar << m_strName;
-		ar << m_iAttribute;
-		ar << m_iElevation;
-	}
-	else
-	{
-		UINT iSchema=ar.GetObjectSchema( );
-		ar >> m_iID;
-		ar >> m_strName;
-		ar >> m_iAttribute;
-		if( iSchema==1 )
-			m_iElevation=0;
-		else
-			ar >> m_iElevation;
-
-	}
-	CLocation::Serialize(ar);
-}
-
-
 int CALLBACK CompareTurnpoint(LPARAM lParam1, LPARAM lParam2, 
     LPARAM iColumn)
 {

@@ -16,11 +16,9 @@
     #include "ContestantList.h"
     #include "EventList.h"
     #include "TaskList.h"
-    #include "LandingCardList.h"
     #include "ScoreRecordList.h"
     #include "ClassTabCtrl.h"
     #include "PenalityList.h"
-    #include "InvalidLegList.h"
     #include "FlightList.h"
 	#include "wsclass.h"
 	#include "GliderInfoList.h"
@@ -41,7 +39,6 @@
     	// ClassWizard generated virtual function overrides
     	//{{AFX_VIRTUAL(CWinscoreDoc)
     	public:
-    	virtual void Serialize(CArchive& ar);
     	virtual void DeleteContents();
     	virtual BOOL OnNewDocument();
     	virtual void OnCloseDocument();
@@ -182,10 +179,10 @@
         CEventList       m_eventList;
     	CTaskList		 m_taskList;
     	CScoreRecordList m_ScoreRecordList;
-    	CLandingCardList m_LandingCardList;
+
     	CPenalityList	 m_PenalityList;
     	CStringArray	 m_caGridPositions[NUMCLASSES];
-    	CInvalidLegList  m_InvalidLegList;
+
 	  	CFlightList		 m_FlightList;
     	CStringArray	 m_straPassedLogs;
   

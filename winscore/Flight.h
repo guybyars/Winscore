@@ -227,10 +227,6 @@ public:
 
 	int AddToList(CListCtrl & ListCtrl, BOOL fVisible=FALSE, int iItem= -1 );
 
-#ifndef _CAIEXPLR
-	virtual void Serialize(CArchive& ar);
-#endif
-
 
 /////////////////////  Input Data    ///////////////////
 public:

@@ -72,8 +72,6 @@ public:
 	BOOL CrossingTime(CPosition &cP1, CPosition &cP2, CTime &cTime);
     int  CrossingAltitude(CPosition &cP1, CPosition &cP2 );
 	void Initialize( CLocation &cCenterLoc );
-	virtual void Serialize(CArchive & ar);
-
 
 private:
 

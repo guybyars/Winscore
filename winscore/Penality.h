@@ -66,7 +66,6 @@ public:
 	CPenality();
 	CPenality(CPenality* pcPenality);
 	virtual ~CPenality();
-	virtual void Serialize(CArchive & ar);
 
 	CString		m_cContestNo;
 	CTime		m_cDate;

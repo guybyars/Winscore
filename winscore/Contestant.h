@@ -129,7 +129,6 @@ public:
 					BOOL    bForeign);
 
 	CContestant(CContestant*);
-	virtual void Serialize(CArchive& ar);
 	virtual ~CContestant();
 
 	BOOL CContestant::CheckOption(int iOption) { return m_iOptions & iOption; }

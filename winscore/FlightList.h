@@ -10,7 +10,6 @@
 
 #include <afx.h>
 #include "Flight.h"
-#include "flightstream.h"
 
 
 #if _MSC_VER >= 1000
@@ -27,7 +26,6 @@ public:
 	void GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode);
 
 	int GetNumberFlights( CTime &cDate, int nClasses, EClass aeClasses[] );
-	//CFlightStream* CreateFlightStream(CTurnpointArray &turnpointArray, CContestantList &contestantList, CTime &cDate, int iInterval, int nClasses, EClass aeClasses[], int &nFlights, CProgressCtrl &m_cProgress);
 	CFlight* Get(CTime &cDate, CString &strContestNo);
 	bool LoadListFromIGC(CString strPath, CTime cDate, CContestantList &contestantList, bool bSilent=false, CListCtrl *pList=NULL );
 	void RemoveByPointer(CFlight*);

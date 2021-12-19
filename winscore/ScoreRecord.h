@@ -53,7 +53,7 @@ public:
 	CString HdcapSpeedText(EUnits eUnits);
 	CString PenalityText();
 	CString m_cCumRankText;
-	virtual void Serialize(CArchive& ar);
+
 	int     m_iDayRank;
 	int	    m_iCumRank;
 

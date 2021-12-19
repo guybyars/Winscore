@@ -315,36 +315,6 @@ double ConvertDistance(double dDist, EUnits eUnitsFrom, EUnits eUnitsTo )
 }
 
 
-#ifndef _CAIEXPLR
-
-void CLocation::Serialize(CArchive& ar)
-{
-	if (ar.IsStoring())
-	{
-		ar << m_dLatMinutes;
-		ar << m_dLongMinutes;
-		ar << m_iLatDegrees;
-		ar << m_iLongDegrees;
-		ar << (WORD)m_eLatDirection;
-		ar << (WORD)m_eLongDirection;
-	}
-	else
-	{
-		WORD w;
-		ar >> m_dLatMinutes;
-		ar >> m_dLongMinutes;
-		ar >> m_iLatDegrees;
-		ar >> m_iLongDegrees;
-		ar >> w;
-		m_eLatDirection=(ELatDirection)w;
-		ar >> w;
-		m_eLongDirection=(ELongDirection)w;
-	}
-
-}
-
-#endif
-
 CString CLocation::GetFormattedInfo()
 	{
 	CString cTemp1, strLat, strLon;

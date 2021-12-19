@@ -206,7 +206,6 @@
     <ClCompile Include="FlightList.cpp" />
     <ClCompile Include="FlightLogTransferSettings.cpp" />
     <ClCompile Include="FlightSearchFoldersDlg.cpp" />
-    <ClCompile Include="FlightStream.cpp" />
     <ClCompile Include="Gate.cpp" />
     <ClCompile Include="GateDlg.cpp" />
     <ClCompile Include="GliderInfo.cpp" />
@@ -219,11 +218,6 @@
     <ClCompile Include="IGCFile.cpp" />
     <ClCompile Include="ImportFlightsDlg.cpp" />
     <ClCompile Include="ImportFlightSettings.cpp" />
-    <ClCompile Include="InvalidLeg.cpp" />
-    <ClCompile Include="InvalidLegDlg.cpp" />
-    <ClCompile Include="InvalidLegList.cpp" />
-    <ClCompile Include="LandingCard.cpp" />
-    <ClCompile Include="LandingCardList.cpp" />
     <ClCompile Include="LandingLocationDlg.cpp" />
     <ClCompile Include="LandoutDlg.cpp" />
     <ClCompile Include="ListVwEx.cpp" />

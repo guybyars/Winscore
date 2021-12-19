@@ -52,47 +52,6 @@ CPenality::~CPenality()
 {
 }
 
-void CPenality::Serialize(CArchive & ar)
-{
-
-	WORD w;
-	if (ar.IsStoring())
-		{
-		ar << m_cContestNo;
-		SerializeTime( ar, m_cDate );
-		ar << (WORD)m_ePenality;
-		ar << m_cPenalityCode;
-		ar << m_cPenalityReason;
-		ar << m_dPenality;
-		ar << (WORD)0;
-		}
-	else
-		{
-		UINT iSchema=ar.GetObjectSchema( );
-		ar >> m_cContestNo;
-
-		if( iSchema<=2 )
-			ar >> m_cDate;
-		else
-			SerializeTime( ar, m_cDate );
-
-		ar >> w;
-		m_ePenality=(EPenality)w;
-		ar >> m_cPenalityCode;
-		ar >> m_cPenalityReason;
-		if( iSchema==1 )
-			{
-			int i;
-			ar >> i;
-			m_dPenality=i;
-			}
-		else if( iSchema>=2 )
-			ar >> m_dPenality;
-
-		ar >> w;
-		}
-
-}
 CString CPenality::GetDateText()
 {
 CString cTemp = m_cDate.Format(_T("%b %d, %y") );

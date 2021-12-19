@@ -58,10 +58,6 @@ public:
 	CString GetFormattedInfo();
 	bool CLocation::operator ==(CLocation&);
 
-#ifndef _CAIEXPLR
-	virtual void Serialize(CArchive& ar);
-#endif
-
 	double m_dLatMinutes, m_dLongMinutes;
 	int m_iLatDegrees, m_iLongDegrees;
 	ELatDirection m_eLatDirection;

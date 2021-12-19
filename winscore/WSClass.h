@@ -44,7 +44,6 @@ public:
 
 	double	GetMinTaskDistance(EUnits eUnits);
 	void	SetMinTaskDistance(double dDistance)  { m_dSMTD=dDistance; }
-	virtual void Serialize(CArchive& ar);
 
 	CTimeSpan	GetMinTaskTime();
 
