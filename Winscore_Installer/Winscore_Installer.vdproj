@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1B31D2B0C7944551A27D9CF82662F49B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_21FE895ED5DB40018C720030547E3613"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -354,6 +360,26 @@
             {
             "SourcePath" = "8:..\\winscore\\bin\\igc-nav.dll"
             "TargetName" = "8:igc-nav.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CA60643468E74A959437FD48B10A112E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1B31D2B0C7944551A27D9CF82662F49B"
+            {
+            "SourcePath" = "8:..\\winscore\\bin\\CAITrans.dll"
+            "TargetName" = "8:CAITrans.dll"
             "Tag" = "8:"
             "Folder" = "8:_CA60643468E74A959437FD48B10A112E"
             "Condition" = "8:"
@@ -1018,7 +1044,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Winscore"
         "ProductCode" = "8:{17F7E1EA-D40A-4C6B-8872-6F09B8EFB9ED}"
-        "PackageCode" = "8:{8F249C0F-0D26-48C2-8BD6-5BF8D74CFB78}"
+        "PackageCode" = "8:{F4B48272-2668-4319-ABF7-5A8758F2AEB1}"
         "UpgradeCode" = "8:{78DE0A0C-0F84-4834-BB73-0C14D813A698}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
