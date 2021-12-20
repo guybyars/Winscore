@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WSView", "..\wsview\WSView.vcxproj", "{3774B99F-9B73-1BC6-A2CC-F3EC9FB70E61}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Winscore", "Winscore.vcxproj", "{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3892BDFA-CE9C-ECC4-59BB-2CB04BD53648} = {3892BDFA-CE9C-ECC4-59BB-2CB04BD53648}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Zip", "..\zip\Zip.vcxproj", "{3892BDFA-CE9C-ECC4-59BB-2CB04BD53648}"
 EndProject
