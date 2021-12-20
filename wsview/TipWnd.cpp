@@ -141,7 +141,7 @@ void CTipWnd::ShowTips(CPoint pt,const CString& str)
 		ZeroMemory(&lf,sizeof(lf));
 
 		lf.lfHeight = FONT_HEIGHT;
-		strcpy(lf.lfFaceName,m_strFont);
+		strcpy_s(lf.lfFaceName,sizeof(lf.lfFaceName) ,m_strFont);
 		
 		// Delete old font
 		m_font.DeleteObject();

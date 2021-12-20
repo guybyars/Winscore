@@ -88,11 +88,13 @@
     <OutDir>..\..\build\wsview\Debug\</OutDir>
     <IntDir>..\..\build\wsview\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.ocx</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>..\..\build\wsview\Release\</OutDir>
     <IntDir>..\..\build\wsview\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.ocx</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
     <OutDir>.\DebugU\</OutDir>
