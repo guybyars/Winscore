@@ -1,7 +1,7 @@
 #if !defined(WSVERSION_H_INCLUDED_)
 #define WSVERSION_H_INCLUDED_
 
-//#define	WINSCOREBETA         1
+#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2022
 #define WINSCOREVERSION		_T("2022 Beta 0")
 #define SHORTVERSION			 _T("Beta 0")
