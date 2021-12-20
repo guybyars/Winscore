@@ -1,14 +1,18 @@
 #if !defined(WSVERSION_H_INCLUDED_)
 #define WSVERSION_H_INCLUDED_
 
-#define	WINSCOREBETA         1
+//#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2022
-#define WINSCOREVERSION		_T("2022 Beta 0")
-#define SHORTVERSION			 _T("Beta 0")
+#define WINSCOREVERSION		_T("2022 Rev 1")
+#define SHORTVERSION			 _T("Rev 1")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
+2022
+
+Beta
+   * No change from 2021 Rev 15
 
 2021
 Rev 15
