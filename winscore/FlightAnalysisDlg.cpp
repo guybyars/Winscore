@@ -5,12 +5,10 @@
 //
 
 #include "stdafx.h"
-#ifndef _CAIEXPLR
+
 #include "winscore.h"
 #include "global_prototypes.h"
-#else
-#include "caiexplr.h"
-#endif
+
 #include "flight.h"
 #include "progressbar.h"
 
@@ -189,12 +187,9 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 			m_cListCtrl.SetItemText(iItem,i++,_T("***"));
 			m_cListCtrl.SetItemText(iItem,i++,_T(""));
 			m_cListCtrl.SetItemText(iItem,i++,_T(" *** Arrived at Turnpoint ***"));
-#ifndef _CAIEXPLR
 			if(m_pcTask && !m_pcTask->IsAreaTask() )
 				m_aiTurnpointItems[m_nTPItems++]=lvi.iItem;
-#else
-				m_aiTurnpointItems[m_nTPItems++]=lvi.iItem;
-#endif
+
 			m_cNextButton.EnableWindow();
 			}
 

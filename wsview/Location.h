@@ -36,10 +36,6 @@ class CLocation : public CObject
 
 protected:
 
-#ifndef _CAIEXPLR
-	DECLARE_SERIAL(CLocation)
-#endif
-
 public:
 #ifndef _WINDLL
 	void ImportXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pFlightNode, CString strChild);

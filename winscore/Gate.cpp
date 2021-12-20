@@ -6,13 +6,9 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#ifndef _CAIEXPLR
 #include "winscore.h"
 #include "Global_Prototypes.h"
-#else
-#include "caiexplr.h"
-#include "utility.h"
-#endif
+
 #include "position.h"
 #include "TurnpointArray.h"
 #include "Gate.h"
@@ -30,9 +26,6 @@ static char THIS_FILE[]=__FILE__;
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-#ifndef _CAIEXPLR
-IMPLEMENT_SERIAL( CGate, CGate, 1)
-#endif
 
 CGate::CGate( ) : 
 	m_iGatePointID(0),

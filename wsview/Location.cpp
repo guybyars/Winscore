@@ -10,9 +10,8 @@
 
 #include "stdafx.h"
 
-#ifndef _CAIEXPLR
+
 #include "Winscore.h"
-#endif
 #include "Winscoredefs.h"
 
 #ifndef _WINDLL
@@ -35,9 +34,6 @@ static   double mod(double y,double x);
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-#ifndef _CAIEXPLR
-IMPLEMENT_SERIAL(CLocation, CObject, DB_SCHEMA_ID)
-#endif
 
 CLocation::CLocation()
 {

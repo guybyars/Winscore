@@ -9,11 +9,9 @@
 #include "turnpointarray.h"
 #include <atlbase.h>
 
-#ifndef WSVIEWER
 #include "winscoredoc.h"
 #include "suautil.h"
 #include "sua.h"
-#endif
 
 #include "flight.h"
 #include "wsbaro.h"
@@ -172,11 +170,7 @@ CString getNoLogKey(CString cCID, CTime cDate);
 inline void TESTHR( HRESULT _hr ) 
    { if FAILED(_hr) throw(_hr); }
 
-
-#ifndef WSVIEWER
 void	LoadViewControl( CWSView &cWSView, CWSBaro *pWSBaro, CWinscoreDoc *pDoc, CFlight *pcFlight, CTask *pcTask );
-
-#endif
 
 
 #endif

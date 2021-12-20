@@ -14,13 +14,7 @@
 
 #include "Position.h"
 
-
-#ifndef _CAIEXPLR
 #include "turnpointarray.h"
-#else
-#include "igctask.h"
-#include "waypointarray.h"
-#endif
 
 #include <fstream>
 #include <afxtempl.h>
@@ -51,13 +45,8 @@ public:
 
 	CPtrArray	m_caTasks;
 
-#ifndef _CAIEXPLR
 	CTurnpointArray	m_cTurnpointArray;
-#else
-	CIGCTask* GetIGCTask(int iTask);
-	CWaypointArray	m_cWaypointArray;
-#endif
-
+	
 	bool		ContainsFixAccuracy();
 	CString		GetIGCFileNameText();
 	void		SetIGCFileMissing(bool bMissing=true);
@@ -113,9 +102,7 @@ public:
 	bool		m_bCONVCAM;
 
 private:
-#ifndef _CAIEXPLR
-	DECLARE_SERIAL(CIGCFile)
-#endif
+
 	bool ProcessARecord(CString strRecord);
 	bool ProcessHRecord(CString strRecord);
 	bool ProcessIRecord(CString strRecord);

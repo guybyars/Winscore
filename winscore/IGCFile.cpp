@@ -8,12 +8,7 @@
 
 
 #include "stdafx.h"
-
-#ifdef _CAIEXPLR
-#include "caiexplr.h"
-#else
 #include "winscore.h"
-#endif
 
 #include "position.h"
 #include "Averager.h"
@@ -23,13 +18,8 @@
 #include <math.h>
 #include <atlbase.h>
 
-#ifdef _CAIEXPLR
-#include "IGCTask.h"
-#endif
-
-#ifndef _CAIEXPLR
 #include "global_prototypes.h"
-#endif
+
 
 #ifdef _DEBUG
 #undef THIS_FILE
@@ -48,9 +38,6 @@ static char THIS_FILE[]=__FILE__;
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-#ifndef _CAIEXPLR
-IMPLEMENT_SERIAL( CIGCFile, CObject,  VERSIONABLE_SCHEMA|4)
-#endif
 
 CIGCFile::CIGCFile()
 	{
@@ -67,15 +54,6 @@ CIGCFile::CIGCFile()
 CIGCFile::~CIGCFile()
 	{
 	FreePositionData();
-
-#ifdef _CAIEXPLR
-	for( int i=0; i<m_caTasks.GetSize(); i++ )
-		{
-		CIGCTask* pTask=(CIGCTask*)m_caTasks[i];
-		if( pTask ) delete pTask;
-		}
-#endif
-
 	}
 
 
@@ -158,19 +136,6 @@ CIGCFile::CIGCFile(CString strIGCFileName)
 				return;
 				}
 			}
-#ifdef _CAIEXPLR
-		else if( strRecord[0]=='C' )
-			{
-			try
-				{
-				ProcessCRecords(strRecord,cIfstream);
-				}
-			catch(...)
-				{
-				break;
-				}
-			}
-#endif
 		else if( strRecord[0]=='B' )
 			{
 			//m_nPositionPoints++;
@@ -502,7 +467,7 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
     time( &long_time );               
     localtime_s(&newtime, &long_time);
 
-//#ifndef _CAIEXPLR
+
 	ELogTime	eTimeOption;
 	eTimeOption = (ELogTime)GetWinscoreInt( LOGTIMEOPTION, eSystemTime ); 
 
@@ -519,7 +484,7 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 		iTimeZone = -1 * (GetWinscoreInt( LOGTIMEUSERVALUE, 0 )); 
 		}
 	else if( eTimeOption==eLogTime )
-//#endif
+
 		{
 		iTimeZone=-m_iTimeZone;
 		}
@@ -535,15 +500,13 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 	int iYear	=m_iYear;
 	int nBadFixes=0;
 
-#ifndef _CAIEXPLR
+
 	// Correct the full file name if the flight logs were moved.
 	if( !CFile::GetStatus(GetNonRelativePath(m_strFilePath),  rStatus) )
 		{
 		CIGCDirectories cIGCDIR;
 		if( !cIGCDIR.FindIGCFileName( m_strFileName, m_strFilePath ) ) return false;
 		}
-#endif
-
 
 	//  Use the ifstream class to do I/O on the ascii files.
 	cIfstream.open(GetNonRelativePath(m_strFilePath), ios::binary    );
@@ -562,7 +525,7 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 		int iLen=strRecord.GetLength();
 		if( iLen<=0 ) continue;
 
-#ifndef _CAIEXPLR
+
 		if(		 strRecord[0]=='L' && bReadWaypoints )
 			{
 			if( strRecord.Find(_T("LCAMN00"),0)==0 )
@@ -574,18 +537,6 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 
 		 if( strRecord[0]=='I' ) ProcessIRecord(strRecord);
 
-#else
-		if(		 strRecord[0]=='L' && bReadWaypoints )
-			{
-			if( strRecord.Find("LCAMN00",0)==0 )
-				{
-				CCAIWaypoint* pWaypoint=new CCAIWaypoint(strRecord,m_bCONVCAM);
-				m_cWaypointArray.SetAtGrow(iNWaypoints++, pWaypoint);
-				}
-			else if( strRecord.Find("CONV-CAM")>0 )
-				m_bCONVCAM=true;
-			}
-#endif
 
 		if(		 strRecord[0]=='B' && (iLen<25 || strRecord[24]!='A') )
 			m_nInvalidFixes++;
@@ -717,14 +668,6 @@ bool CIGCFile::GetTimeRange(CTime &cTimeBegin, CTime &cTimeEnd)
 	return true;
 
 	}
-
-#ifdef _CAIEXPLR
-bool CIGCFile::ProcessCRecords(CString &strRecord, ifstream &cIfstream)
-	{
-	return m_caTasks.Add( new CIGCTask(strRecord, cIfstream) );
-	}
-#endif
-
 
 void	CIGCFile::AssignSpeedROC()
 	{
@@ -885,14 +828,6 @@ bool CIGCFile::IsCAI302File()
 	return ( m_strHardwareVersion.Find(_T("300"))>=0 && m_strManufacturer==_T("CAM") );
 }
 
-#ifdef _CAIEXPLR
-CIGCTask* CIGCFile::GetIGCTask(int iTask)
-	{
-	if( m_caTasks.GetSize()<=0 ) return NULL;
-
-	return (CIGCTask*)m_caTasks[iTask];
-	}
-#endif
 
 
 CIGCFile::CIGCFile(CIGCFile *pcIGCFile)

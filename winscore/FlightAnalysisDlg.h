@@ -10,12 +10,8 @@
 // FlightAnalysisDlg.h : header file
 //
 
-#ifndef _CAIEXPLR
-#include "winscoredoc.h"
-#else
-#include "caiexplr.h"
-#endif
 
+#include "winscoredoc.h"
 #include "resizingdialog.h"
 
 /////////////////////////////////////////////////////////////////////////////
@@ -41,11 +37,7 @@ public:
 	EUnits m_eUnits;
 	EAltUnits m_eAltUnits;
 
-#ifndef _CAIEXPLR
 	CTask *m_pcTask;
-#else
-	void *m_pcTask;
-#endif
 
 // Dialog Data
 	//{{AFX_DATA(CFlightAnalysisDlg)

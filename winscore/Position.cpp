@@ -7,10 +7,7 @@
 
 #include "stdafx.h"
 
-#ifndef _CAIEXPLR
 #include "Winscore.h"
-#endif
-
 #include "location.h"
 #include "Position.h"
 

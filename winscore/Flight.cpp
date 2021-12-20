@@ -8,23 +8,14 @@
 #include "stdafx.h"
 #include <atlbase.h>
 
-#ifdef _CAIEXPLR
-
-#include "caiexplr.h"
-
-#else
-
 #include "Global_Prototypes.h"
 
-#ifndef WSVIEWER
 #include "winscoredoc.h"
 #include "sua.h"
 #include "suautil.h"
 #include "DontShowDlg.h"
 #include "CAIAPI.h"
-#endif
 
-#endif
 #include "position.h"
 #include "IGCFile.h"
 #include "Flight.h"
@@ -47,9 +38,6 @@ static int	iMSLFinishCorrection=0;
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-#ifndef _CAIEXPLR
-IMPLEMENT_SERIAL( CFlight, CIGCFile, VERSIONABLE_SCHEMA|9)
-#endif
 
 CFlight::CFlight()
 	{
@@ -113,161 +101,7 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 
 
 /////////////////////  Analysis functions ///////////////////////// 
-#ifdef _CAIEXPLR
 
-bool CFlight::AnalyzeCAI(	ETaskType	eTaskType,	
-							int			nTaskPoints,
-							int			iTaskPoints[],
-							int			iTaskRadii[],
-							CGate		&cStartGate,
-							CGate		&cFinishGate,
-							double		dTurnpointRadius,
-							double		dTurnpointOuterRadius,
-							TURNPOINTCLASSARRAY &turnpointArray )
-	{
-	InitializeAnalysisParams();
-	m_eUnits=GetActiveUnits();
-
-	bool bAutoTask=false;
-	m_eTaskType=eTaskType;
-
-	m_dTurnpointRadius		=dTurnpointRadius;
-	m_dTurnpointOuterRadius	=dTurnpointOuterRadius;
-	for( int i=0; i<ALLOCTASKTPS; i++) 
-		{
-		if( m_eTaskType==eAssigned || m_eTaskType==eFAIRacing )
-			SetTurnpointRadius(i, m_dTurnpointRadius);
-		else
-			SetTurnpointRadius(i, ConvertDistance(iTaskRadii[i], m_eUnits, SYSTEMUNITS) );
-		}
-
-	if( GetNumPoints()==0 )
-		{
-		m_eStatus=eNoData;
-		m_strWarnings.Add("There were no data points in the flight log, or the program encountered an error reading the IGC file.");
-		return false;
-		}
-
-	if( nTaskPoints==0  )
-		{
-		m_eStatus=eNoTaskSpecified;
-		m_strWarnings.Add("No Task has been specified.");
-		return false;
-		}
-
-
-	TURNPOINTCLASS *pTurnpoint=(TURNPOINTCLASS*)turnpointArray.GetByID(iStartPt);
-	if( pTurnpoint )
-		SetStartPoint(  (TURNPOINTCLASS*)turnpointArray.GetByID(iStartPt) );
-
-	TURNPOINTCLASS *pcHome=(TURNPOINTCLASS*)turnpointArray.GetHomePoint(pTurnpoint);  
-	if( pcHome==NULL )
-		{
-		m_strWarnings.Add( "No control point has the \"H\" (home) attribute set.\n Cannot perform an analysis without the home control point defned." );
-		return false;
-		}
-	SetHomePoint( pcHome );
-
-	int iStartPt=cStartGate.GetPointID();
-	int iFinishPt=cFinishGate.GetPointID();
-
-	TURNPOINTCLASS *pTurnpoint=(TURNPOINTCLASS*)turnpointArray.GetByID(iStartPt);
-	if( pTurnpoint )
-		SetStartPoint(  (TURNPOINTCLASS*)turnpointArray.GetByID(iStartPt) );
-
-	pTurnpoint=(TURNPOINTCLASS*)turnpointArray.GetByID(iFinishPt);
-	if( pTurnpoint )
-		SetFinishPoint(	(TURNPOINTCLASS*)turnpointArray.GetByID(iFinishPt), 
-						cFinishGate.GetBase(), 
-						cFinishGate.GetRadius() ); 
-
-	for( int iTpt=0; iTpt<nTaskPoints; iTpt++ )
-		{
-		pTurnpoint=(TURNPOINTCLASS*)turnpointArray.GetByID(iTaskPoints[iTpt]);
-		if( pTurnpoint ) SetTaskPoint( pTurnpoint );
-		}
-
-
-
-	//  Initialize Gates
-	m_cFinishGate=cFinishGate;
-	m_cStartGate=cStartGate;
-
-	if( m_cStartGate.IsPerpToCourse() )
-			{
-			// Make start gate perp. to first course line.
-			int iStart=m_cStartGate.GetPointID();
-			TURNPOINTCLASS* pStart=(TURNPOINTCLASS*)turnpointArray.GetByID(iStart);
-			TURNPOINTCLASS* p1st  =(TURNPOINTCLASS*)turnpointArray.GetByID(iTaskPoints[0]);
-			if( pStart && p1st )
-				{
-				CLocation cLoc1(pStart->GetLat(), pStart->GetLong());
-				CLocation cLoc2(p1st->GetLat(), p1st->GetLong());
-				m_cStartGate.SetHeading(cLoc1.CourseTo(cLoc2));
-				}
-			}
-
-	if( m_cFinishGate.IsPerpToCourse() )
-			{
-			// Make finish gate perp. to last course line.
-			int iFin=m_cFinishGate.GetPointID();
-			TURNPOINTCLASS* pFinish	=(TURNPOINTCLASS*)turnpointArray.GetByID(iFin);
-			TURNPOINTCLASS* pLast	=(TURNPOINTCLASS*)turnpointArray.GetByID(iTaskPoints[nTaskPoints-1]);
-			if( pFinish && pLast )
-				{
-				CLocation cLoc1(pFinish->GetLat(), pFinish->GetLong());
-				CLocation cLoc2(pLast->GetLat(), pLast->GetLong());
-				m_cFinishGate.SetHeading(cLoc1.CourseTo(cLoc2));
-				}
-			}
-
-	m_cStartGate.Initialize( CLocation(((TURNPOINTCLASS*)turnpointArray.GetByID(m_cStartGate.GetPointID()))->GetLat(),((TURNPOINTCLASS*)turnpointArray.GetByID(m_cStartGate.GetPointID()))->GetLong() ) );
-	m_cFinishGate.Initialize( CLocation(((TURNPOINTCLASS*)turnpointArray.GetByID(m_cFinishGate.GetPointID()))->GetLat(),((TURNPOINTCLASS*)turnpointArray.GetByID(m_cFinishGate.GetPointID()))->GetLong())  );
-		
-	AssignPositionStatus(NULL, bAutoTask, turnpointArray);
-
-	// task open time is not used in CAI, just null it out.
-	m_cTaskOpenTime=m_cRollTime;
-
-	FindStartsAndFinish();
-
-	FindAcheivedTurnpoints(NULL);
-
-	FindLandingLocation();
-
-	if( m_eTaskType==IsAreaTask() ) 
-		{
-		FindOptimumTurnpoints(NULL, turnpointArray);
-		}
-
-	CheckGaps();
-
-	CheckAllTimes();
-
-	LocateFurthestProgess();
-
-	if( IsTaskComplete() )
-		{
-		m_eStatus=eCompletedTask;
-		}
-	else
-		{
-		if( IsStartTimeValid() )
-			{
-			m_eStatus=eIncompleteTask;
-			}
-		else
-			{
-			m_eStatus=eDidNotStart;
-			}
-		}
-
-	return true;
-	}
-
-#else
-#ifndef WSVIEWER
-#ifndef CAIEXPLR
 	bool CFlight::Analyze(	TASKCLASS			*pcTask, 
 							TURNPOINTCLASSARRAY &turnpointArray,
 							CONTESTANTLISTCLASS *pContestantList,
@@ -723,10 +557,6 @@ bool CFlight::AnalyzeCAI(	ETaskType	eTaskType,
 
 	return true;
 	}
-
-#endif
-#endif
-#endif
 
 void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTCLASSARRAY &turnpointArray)
 	{
@@ -1253,7 +1083,6 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 // For MAT, try and automatically figure out if any extra turnpoints were acheived.
 //
 //
-#ifndef _CAIEXPLR
 
 		if( !bShort && m_eTaskType==eModifiedAssigned && iLastTaskPoint>=0 && !CheckOption(FLT_TURNPOINTSLOCKED))
 			{
@@ -1423,8 +1252,6 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 
 			}// endif
 
-
-#endif
 // For safety, make sure the last point is marked as landed
 	pcPos=GetPosition(GetNumPoints()-1);
 	if( pcPos!=NULL ) pcPos->AddStatus( FAN_LANDED );
@@ -3124,13 +2951,8 @@ void CFlight::InitializeAnalysisParams(EUnits	eUnits)
 
 	m_eTaskType=eAssigned;
 
-#ifdef _CAIEXPLR
-	m_dTurnpointRadius		=  ConvertDistance(.25, eStatute, SYSTEMUNITS );
-	m_dTurnpointOuterRadius	=  ConvertDistance(1.0, eStatute, SYSTEMUNITS );
-#else
 	m_dTurnpointRadius		= GetWinscoreDouble(INNERRADIUS, ConvertDistance(DEFAULTINNERRADIUS, eStatute, SYSTEMUNITS) );
 	m_dTurnpointOuterRadius	= GetWinscoreDouble(OUTERRADIUS, ConvertDistance(DEFAULTOUTERRADIUS, eStatute, SYSTEMUNITS) );
-#endif
 
 	m_nTaskPoints=0;
 	m_nMATTaskPoints=0;
@@ -3156,53 +2978,6 @@ void CFlight::InitializeAnalysisParams(EUnits	eUnits)
 
 
 }
-/*
-#ifndef _CAIEXPLR
-#ifndef WSVIEWER
-
-BOOL CFlight::GetEvent(EEventType eEventType, CEvent &cEvent)
-	{
-	cEvent.m_cContestNo=m_strCID;
-	cEvent.m_eEventType=eEventType;
-	if( m_eStatus==eNotAnalyzed ) return FALSE;
-
-	switch (eEventType)
-		{
-		case eRoll:
-			{
-			if( m_cRollTime.GetYear()<1990 ) return FALSE;
-			cEvent.m_cTime=GetRollTime();
-			break;
-			}
-		case eStart:
-			{
-			if( !IsStartTimeValid() ) return FALSE;
-			if( m_cStartTime.GetYear()<1990 ) return FALSE;
-			cEvent.m_cTime=GetStartTime();
-			break;
-			}
-		case eFinish:
-			{
-			if( !IsFinishTimeValid() ) return FALSE;
-			if( GetFinishTime().GetYear()<1990 ) return FALSE;
-			cEvent.m_cTime=GetFinishTime();
-			break;
-			}
-		case eLanding:
-			{
-			if( m_cLandingTime.GetYear()<1990 ) return FALSE;
-			cEvent.m_cTime=GetLandingTime();
-			break;
-			}
-		default:
-			return FALSE;
-		}
-	return TRUE;
-	}
-
-#endif
-#endif
-*/
 
 CString CFlight::GetNumWarningsText()
 {
@@ -3343,7 +3118,6 @@ void CFlight::CheckAllTimes()
 
 }
 
-#ifndef _CAIEXPLR
 bool CFlight::UpdateCID(CONTESTANTLISTCLASS *pcontestantList)
 {
 	BOOL bFound=true;
@@ -3375,7 +3149,7 @@ bool CFlight::UpdateCID(CONTESTANTLISTCLASS *pcontestantList)
 	m_strCID.MakeUpper();
 	return (bFound)?(true):(false);
 	}
-#endif
+
 
 void CFlight::CheckMotorRun()
 {
@@ -4106,7 +3880,7 @@ void CFlight::FindOptimumTurnpoints(TASKCLASS *pcTask, TURNPOINTCLASSARRAY &TURN
 	double CFlight::GetDistance() 
 		{return m_dDistance;}
 
-#ifndef _CAIEXPLR
+
 double CFlight::ComputeDistance(TASKCLASS *pcTask, TURNPOINTCLASSARRAY &turnpointarray )
 	{
 
@@ -4181,7 +3955,6 @@ double CFlight::ComputeDistance(TASKCLASS *pcTask, TURNPOINTCLASSARRAY &turnpoin
 
 	return max(dDist,0.0);
 	}
-#endif
 
 int CFlight::GetSoughtTurnpoint()
 {
@@ -4404,8 +4177,6 @@ CLocation& CFlight::GetTurnAreaLocation(int iTP)
 	return m_acTurnAreaTurnpointLocations[iTP];
 	}
 
-#ifndef WSVIEWER
-#ifndef _CAIEXPLR
 
 bool CFlight::CheckAirspaceIncursions(TURNPOINTCLASSARRAY &TURNPOINTCLASSArray)
 {
@@ -4509,8 +4280,6 @@ bool CFlight::CheckAirspaceIncursions(TURNPOINTCLASSARRAY &TURNPOINTCLASSArray)
 		}
 	return nTotalIncursions>0;
 	}
-#endif
-#endif
 
 CFlight::CFlight(CFlight *pcFlight):
 	CIGCFile(pcFlight)
@@ -4621,8 +4390,6 @@ CString CFlight::GetAirfieldBonusText(bool bAddDot)
 		return _T("");
 
 }
-#ifndef WSVIEWER
-#ifndef _CAIEXPLR
 
 void CFlight::CheckSecurity()
 	{
@@ -4806,8 +4573,6 @@ bool CFlight::CheckSecurity2(CString &cResult)
 	return false;
 	}
 
-#endif
-#endif
 
 BOOL CFlight::CheckOption(int iOption)
 	{

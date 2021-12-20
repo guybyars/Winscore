@@ -9,9 +9,8 @@
 #define AFX_GATE_H__A8001D04_50BB_11D3_8941_00C04F79ECB9__INCLUDED_
 
 #include "Location.h"	// Added by ClassView
-#ifndef _CAIEXPLR
 #include "winscore.h"
-#endif
+
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
@@ -20,10 +19,6 @@
 
 class CGate  : public CObject
 {
-
-#ifndef _CAIEXPLR
-	DECLARE_SERIAL(CGate)
-#endif
 
 public:
 	bool FromXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pGate);

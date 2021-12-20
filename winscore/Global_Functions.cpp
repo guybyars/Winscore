@@ -1355,8 +1355,6 @@ void FindIGCFilesInDirectory( CTime cDate,  CStringArray &strArray )
 	return;
 	}
 
-#ifndef WSVIEWER
-
 bool CheckIGCSecurity( CString strIGCFile,  CString &strStatus )
 	{
 	bool bSecure=false;
@@ -1545,8 +1543,6 @@ bool ImportCAI( CString strInputFilePath, CString strInputFileName, CString strL
 	
 	return true;
 	}
-
-#endif
 
 CString PilotNameFromCAI(CString strCAIFile)
 	{
@@ -1801,8 +1797,6 @@ bool ValidateIGC( const TCHAR* strDLLName, const TCHAR* strIGCFile, CString &str
 
 	return bReturnVal;
 	}
-
-#ifndef WSVIEWER
 
 bool WriteColumns(CString strName, CListCtrl &cList )
 	{
@@ -2084,8 +2078,6 @@ void	LoadViewControl( CWSView &cWSView, CWSBaro* pWSBaro, CWinscoreDoc *pDoc, CF
 		}
 
 	}
-#endif
-
 
 int LoadContestsFromSSA( CComboBox	*pCombo, CListCtrl *pList ) 
 {

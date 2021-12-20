@@ -15,11 +15,9 @@
 #include "ScoreRecord.h"
 #include "ContestantList.h"
 #include "TaskList.h"
-
-#ifndef WSVIEWER
 #include "PenalityList.h"
 #include "summary.h"
-#endif
+
 
 #include "wsclass.h"
 
@@ -36,7 +34,6 @@ public:
 	void GetXML(CXMLMgr &cMgr, EClass eClass, CTime cDate, MSXML2::IXMLDOMNodePtr &pParentNode);
 	void GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode);
 
-#ifndef WSVIEWER
 
 	int CalculateNumAssignedTurnpointsAcheived( CTask*	 pcTask,
    	  											CTime		 &cDate, 
@@ -85,8 +82,6 @@ public:
 						CTask		*pcTask,
 						double		dMinDistance,
 						CSummary	&cSummary	);
-
-#endif
 
 	int GetCount(EClass eClass, CTime cDate );
 	CScoreRecord* Get( CString& cContestNo, CTime& cDate);

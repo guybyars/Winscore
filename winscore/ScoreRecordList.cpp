@@ -557,9 +557,6 @@ int CScoreRecordList::GetCount(EClass eClass, CTime cDate)
 
 
 
-#ifndef WSVIEWER
-
-
 void CScoreRecordList::CheckMinimumTaskDistance(CWSClass &cClass, CTime &cDate)
 {
 ///////////  Check for min task distance
@@ -1401,8 +1398,6 @@ int CScoreRecordList::CalculateNumAssignedTurnpointsAcheived( CTask*	 pcTask,
 		}
 	return nMaxNumAssignedTurnpointsByFinishers;
 	}
-
-#endif
 
 void CScoreRecordList::GetXML(CXMLMgr &cMgr, EClass eClass, CTime cDate, MSXML2::IXMLDOMNodePtr &pParentNode)
 	{
