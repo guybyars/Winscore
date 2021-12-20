@@ -2,3 +2,5 @@
 *.sdf
 *.suo
 *.ipch
+wsview/WSView_h.h
+wsview/WSView_i.c
