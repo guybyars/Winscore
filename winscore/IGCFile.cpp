@@ -818,17 +818,6 @@ CString	CIGCFile::GetLongDatePrefix(int iYear, int iMonth, int iDay)
 	return str;
 	}
 
-bool CIGCFile::IsCAIGPSNAVFile()
-	{	
-	return ( m_strHardwareVersion.Find(_T("2."))>=0  && m_strManufacturer==_T("CAM") );
-	}
-bool CIGCFile::IsCAI302File()
-{
-	//HFRHWHARDWAREVERSION:300 Series Version 2
-	return ( m_strHardwareVersion.Find(_T("300"))>=0 && m_strManufacturer==_T("CAM") );
-}
-
-
 
 CIGCFile::CIGCFile(CIGCFile *pcIGCFile)
 	{

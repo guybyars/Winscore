@@ -100,7 +100,7 @@
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
       <OutputFile>..\..\build\winscore\Release\Winscore.exe</OutputFile>
-      <AdditionalDependencies>bin\CAItrans.lib;..\..\build\zip\Release\zip.lib;Chilkat/lib/ChilkatRelDll.lib;crypt32.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\build\zip\Release\zip.lib;Chilkat/lib/ChilkatRelDll.lib;crypt32.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
@@ -149,7 +149,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OutputFile>..\..\build\winscore\Debug\Winscore.exe</OutputFile>
-      <AdditionalDependencies>bin\caitrans.lib;../../build/zip/debug/zip.lib;crypt32.lib;Chilkat/lib/ChilkatDbgDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../../build/zip/debug/zip.lib;crypt32.lib;Chilkat/lib/ChilkatDbgDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>

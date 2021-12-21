@@ -130,8 +130,6 @@ protected:
 	afx_msg void OnUpdateFileExportWinscoreflightfile(CCmdUI* pCmdUI);
 	afx_msg void OnHelpRegister();
 	afx_msg void OnUpdateHelpRegister(CCmdUI* pCmdUI);
-	afx_msg void OnFlightlogsImportAutomaticcambridgeupload();
-	afx_msg void OnUpdateFlightlogsImportAutomaticcambridgeupload(CCmdUI* pCmdUI);
 	afx_msg void OnTimer(UINT nIDEvent);
 	afx_msg void OnFlightlogsView();
 	afx_msg void OnUpdateFlightlogsView(CCmdUI* pCmdUI);

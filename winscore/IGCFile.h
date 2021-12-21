@@ -28,8 +28,6 @@ public:
 	void ImportXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pFlightNode);
 	void GetXML(CXMLMgr &cMg, MSXML2::IXMLDOMNodePtr &pParentNode);
 	static bool Smash(CString strInput, CString strOutput, int nSec=10);
-	bool IsCAI302File();
-	bool IsCAIGPSNAVFile();
 	int m_iMaxPresAltitude;
 	int m_iMaxGPSAltitude;
 	CString GetValidFileName();

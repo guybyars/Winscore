@@ -4,7 +4,6 @@
 #include "Winscore.h"
 #include "WinscoreDoc.h"
 #include "IGCDirectories.h"
-#include "caiapi.h"
 
 static CString strBasePath="FlightLogs";
 
@@ -412,65 +411,6 @@ void CIGCDirectories::SetAutoDate(bool bDate)
 		WriteWinscoreInt( DATEDLOGPATHS, 1);
 	else
 		WriteWinscoreInt( DATEDLOGPATHS, 0);
-	}
-
-
-
-bool CIGCDirectories::ImportCAI( CString strInputFilePath, CString strInputFileName, CString strLogPath, CString &strOutputFilePath, CString &strOutputFileName, CString &strStatus, bool &bSecure )
-	{
-	bSecure=false;
-	CFileStatus rSourceStatus, rDestStatus;
-
-	strOutputFileName=strInputFileName;
-	strOutputFileName.Replace(_T(".cai"),_T(".igc"));
-	strOutputFileName.Replace(_T(".CAI"),_T(".igc"));
-	CString strUploadFileName=strLogPath+_T("\\")+strOutputFileName;
-
-	if( CFile::GetStatus( strInputFilePath, rSourceStatus )		&& 
-		CFile::GetStatus( strUploadFileName, rDestStatus )		)
-		{						
-		strStatus+=strInputFilePath+_T(" has already been imported\r\n");
-		return false;
-		}
-
-	BOOL bSecure1=FALSE;
-	char	strCreatedFileName[1024];
-
-	int iRet= CAIConvertFile(  strInputFilePath,
-								strLogPath,
-								strCreatedFileName,
-								&bSecure1
-								);
-	if( iRet==CER_OK )
-		{
-		strOutputFilePath=strLogPath+_T("\\")+strCreatedFileName;
-		// Copy the .cai file over too.
-
-		 CString strCopyTo=strLogPath+_T("\\")+strInputFileName;
-		 CopyFile(strInputFilePath, strCopyTo, FALSE );
-
-		}
-	else
-		{
-		strStatus+=_T("ERROR - Could not convert ")+strInputFilePath+_T(" to IGC format\r\n");
-		return false;
-		}
-
-	if( !bSecure1 )
-		{
-		strStatus+=_T("SECURITY WARNING - Security check failed for ")+strInputFilePath+_T("\r\n");
-		}
-	else
-		bSecure=true;
-
-
-	CIGCFile igcFile(strOutputFilePath);
-	if( igcFile.m_bValid )
-		strStatus+=_T("CAI file ")+CString(strCreatedFileName)+_T(" for ")+igcFile.m_strGliderID+_T(", ")+igcFile.m_strCompetitionID+" - "+igcFile.m_strPilot+_T(" sucessfully imported.\r\n");
-	else
-		strStatus+=_T("ERROR Reading - ")+strOutputFileName+_T("\r\n");
-	
-	return true;
 	}
 
 

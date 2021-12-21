@@ -33,12 +33,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1B31D2B0C7944551A27D9CF82662F49B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_21FE895ED5DB40018C720030547E3613"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -123,6 +117,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_76A2FB25C3164C11B209C5176195DEB8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_78A2FC319E5547329244245E4B8B7972"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -136,12 +136,6 @@
         "Entry"
         {
         "MsmKey" = "8:_84B3B2EBABC1463EAB9FDFCB803AE018"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_84EF98933C5449F482993D8838CD2C6F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -360,26 +354,6 @@
             {
             "SourcePath" = "8:..\\winscore\\bin\\igc-nav.dll"
             "TargetName" = "8:igc-nav.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_CA60643468E74A959437FD48B10A112E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1B31D2B0C7944551A27D9CF82662F49B"
-            {
-            "SourcePath" = "8:..\\winscore\\bin\\CAITrans.dll"
-            "TargetName" = "8:CAITrans.dll"
             "Tag" = "8:"
             "Folder" = "8:_CA60643468E74A959437FD48B10A112E"
             "Condition" = "8:"
@@ -676,6 +650,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_76A2FB25C3164C11B209C5176195DEB8"
+            {
+            "SourcePath" = "8:..\\winscore\\bin\\igc-cam.dll"
+            "TargetName" = "8:igc-cam.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_CA60643468E74A959437FD48B10A112E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_78A2FC319E5547329244245E4B8B7972"
             {
             "SourcePath" = "8:..\\Winscore\\Manual\\Winscore User's Guide.pdf"
@@ -722,26 +716,6 @@
             "TargetName" = "8:igc-nte.dll"
             "Tag" = "8:"
             "Folder" = "8:_CA60643468E74A959437FD48B10A112E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_84EF98933C5449F482993D8838CD2C6F"
-            {
-            "SourcePath" = "8:..\\Winscore\\bin\\CAITransfer.exe"
-            "TargetName" = "8:CAITransfer.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_F83E88FD506A4999A676C7E71BB25993"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"

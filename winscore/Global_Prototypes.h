@@ -31,8 +31,6 @@ double GetLatCorrection(double dLatitude);
 void FindIGCFilesInDirectory( CTime cDate, CStringArray &strArray );
 bool FindIGCFilesInDirectory2( CString strPath, CString strType, CTime cDate,  CStringArray &strFilePath, CStringArray &strFileName, int nLevels );
 
-CString PilotNameFromCAI(CString strCAIFile);
-bool ImportCAI( CString strInputFilePath, CString strInputFileName, CString strLogPath, CString &strOutputFilePath,  CString &strOutputFileName, CString &strStatus, bool &bSecure );
 bool ImportIGC( CString strInputFilePath, CString strInputFileName, CString strLogPath, CString &strOutputFileName, CString &strStatus );
 bool ValidateIGC		( const TCHAR* strDLLName, const TCHAR* strIGCFile, CString &strReason );
 bool ValidateIGCThread	( const TCHAR* strDLLName, const TCHAR* strIGCFile, CString &strReason );
