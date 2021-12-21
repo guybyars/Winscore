@@ -304,7 +304,10 @@ void ImportRegistryXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pIDOMNode )
 						GET_XML_STR( cMgr, pString, "Value",strValue);
 						if( strKey.GetLength()>0 )
 							{
-							mapWinscoreProfileString.insert(std::make_pair(strKey, strValue));
+							string strKeys = strKey.GetBuffer();
+							string strValues = strValue.GetBuffer();
+							std::pair<string, string> lpair = std::make_pair(strKeys, strValues);
+							mapWinscoreProfileString.insert(lpair);
 							}
 						}
 					}
@@ -329,7 +332,9 @@ void ImportRegistryXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pIDOMNode )
 						GET_XML_INT( cMgr, pInt, "Value", int, iValue, 0);
 						if( strKey.GetLength()>0 )
 							{
-							mapWinscoreProfileInt.insert(std::make_pair(strKey, iValue));
+							string strKeys = strKey.GetBuffer();
+							std::pair<string, int> lpair = std::make_pair(strKeys, iValue);
+							mapWinscoreProfileInt.insert(lpair);
 							}
 						}
 					}

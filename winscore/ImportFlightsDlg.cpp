@@ -133,7 +133,7 @@ void CImportFlightsDlg::ImportIGCFile()
 			m_cProgress.SetPos(iCount++);
 			strInputFile=cFileDlg.GetNextPathName( pos );
 
-			CFile cFile=CFile();
+			CFile cFile;
 			cFile.Open(strInputFile, CFile::modeRead);
 			CString strFileName=cFile.GetFileName();
 
