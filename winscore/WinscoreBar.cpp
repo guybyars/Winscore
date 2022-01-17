@@ -248,7 +248,7 @@ int CWinscoreBar::LoadTreeCtrl(CDocument *pD)
 
 	HTREEITEM m_hSetup= m_wndTree.InsertItem (_T("Contest Setup"),m_hRoot);;
 	GetTreeCtrl().SetItemData(m_hSetup,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eSetup));
-	GetTreeCtrl().SetItemImage(m_hSetup, 11, 11 );
+	GetTreeCtrl().SetItemImage(m_hSetup, 13, 13 );
 	iExpandMe=m_hSetup;
 
 	m_hContestantItem= m_wndTree.InsertItem (_T("Contestants"),m_hSetup);;
@@ -259,10 +259,6 @@ int CWinscoreBar::LoadTreeCtrl(CDocument *pD)
 	GetTreeCtrl().SetItemData(m_hTurnpointItem,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eControlPoints));
 	GetTreeCtrl().SetItemImage(m_hTurnpointItem, 2, 2 );
 
-//	m_hTaskItem = m_wndTree.InsertItem (_T("Tasks"),m_hSetup);
-//	GetTreeCtrl().SetItemData(m_hTaskItem,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eTasks));
-//	GetTreeCtrl().SetItemImage(m_hTaskItem, 3, 3 );
-
 	iTtem = m_wndTree.InsertItem (_T("Distance Grid"),m_hSetup);
 	GetTreeCtrl().SetItemData(iTtem,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eDistanceGrid));
 	GetTreeCtrl().SetItemImage(iTtem, 1, 1 );
@@ -272,11 +268,15 @@ int CWinscoreBar::LoadTreeCtrl(CDocument *pD)
 	LoadClassesInTree(iTtem,false,CWSTreeItem::eGridPositions, 0);
 	GetTreeCtrl().SetItemImage(iTtem, 5, 5 );
 
+	HTREEITEM hPracticeDays = m_wndTree.InsertItem (_T("Practice Days"),m_hRoot);
+	GetTreeCtrl().SetItemData(hPracticeDays,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eNone));
+	GetTreeCtrl().SetItemImage(hPracticeDays, 12, 12 );
+
 
 	for( int i=pDoc->m_iNumPracticeDays-1; i>=0; i-- )
     	{
     	CString s = pDoc->m_caPracticeDays[i].Format( _T("Practice Day %A, %B %d, %Y") );
-		iTtem = m_wndTree.InsertItem (s,m_hRoot);
+		iTtem = m_wndTree.InsertItem (s,hPracticeDays);
 	    GetTreeCtrl().SetItemData(iTtem,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eNone, pDoc->m_caPracticeDays[i]));
 		LoadClassesInTree(iTtem, true,CWSTreeItem::eNone, pDoc->m_caPracticeDays[i]);
 		GetTreeCtrl().SetItemImage(iTtem, 10, 10 );
