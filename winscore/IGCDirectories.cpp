@@ -395,8 +395,10 @@ bool CIGCDirectories::GetAutoDateFolders(CWinscoreDoc *pDoc, CStringArray &straD
 	straDateFolders.Add(strBasePath);
 
 	strFolderBase=strBasePath+"\\";
-	straDateFolders.Add(strFolderBase+GetFolderDate(pDoc->m_cPracticeDay1));
-	straDateFolders.Add(strFolderBase+GetFolderDate(pDoc->m_cPracticeDay2));
+	for( int i=0; i<pDoc->m_iNumPracticeDays; i++ )
+		{
+		straDateFolders.Add(strFolderBase+GetFolderDate(pDoc->m_caPracticeDays[i]));
+		}
 	for( int i=0; i<pDoc->m_iNumContestDays; i++ )
 		{
 		straDateFolders.Add(strFolderBase+GetFolderDate(pDoc->m_caContestDays[i]));

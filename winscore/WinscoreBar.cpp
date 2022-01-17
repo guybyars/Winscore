@@ -273,17 +273,15 @@ int CWinscoreBar::LoadTreeCtrl(CDocument *pD)
 	GetTreeCtrl().SetItemImage(iTtem, 5, 5 );
 
 
-	iTtem = m_wndTree.InsertItem (pDoc->m_cPracticeDay1.Format(_T("Practice Day 1 - %a %m/%d/%y")),m_hRoot);
-	GetTreeCtrl().SetItemData(iTtem,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eNone, pDoc->m_cPracticeDay1));
-	LoadClassesInTree(iTtem, true,CWSTreeItem::eNone, pDoc->m_cPracticeDay1);
-	GetTreeCtrl().SetItemImage(iTtem, 10, 10 );
-	if( DatesEqual(cToday, pDoc->m_cPracticeDay1) ) iExpandMe=iTtem;
-
-	iTtem = m_wndTree.InsertItem (pDoc->m_cPracticeDay2.Format(_T("Practice Day 2 - %a %m/%d/%y")),m_hRoot);
-	GetTreeCtrl().SetItemData(iTtem,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eNone, pDoc->m_cPracticeDay2));
-	LoadClassesInTree(iTtem, true, CWSTreeItem::eNone,pDoc->m_cPracticeDay2);
-	GetTreeCtrl().SetItemImage(iTtem, 10, 10 );
-	if( DatesEqual(cToday, pDoc->m_cPracticeDay2) ) iExpandMe=iTtem;
+	for( int i=pDoc->m_iNumPracticeDays-1; i>=0; i-- )
+    	{
+    	CString s = pDoc->m_caPracticeDays[i].Format( _T("Practice Day %A, %B %d, %Y") );
+		iTtem = m_wndTree.InsertItem (s,m_hRoot);
+	    GetTreeCtrl().SetItemData(iTtem,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eNone, pDoc->m_caPracticeDays[i]));
+		LoadClassesInTree(iTtem, true,CWSTreeItem::eNone, pDoc->m_caPracticeDays[i]);
+		GetTreeCtrl().SetItemImage(iTtem, 10, 10 );
+		if( DatesEqual(cToday, pDoc->m_caPracticeDays[i]) ) iExpandMe=iTtem;
+    	}
 
     for( int i=0;i<pDoc->m_iNumContestDays;i++ )
     	{

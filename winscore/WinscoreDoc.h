@@ -164,12 +164,12 @@
     	CString			m_strLocation;
     	EContest		m_eContest;
     	EUnits			m_eUnits;
-    	int				m_iNumContestDays;
     	CTime			m_CContestStartDate;
         ECoordFormat    m_eCoordinateFormat;
-    
-    	CTime			m_cPracticeDay1;
-    	CTime			m_cPracticeDay2;
+
+		int				m_iNumContestDays;
+		int				m_iNumPracticeDays;
+    	CTime			m_caPracticeDays[30];
     	CTime			m_caContestDays[301];
     	BOOL			m_bGridPositionCalculated[NUMCLASSES];
     

@@ -37,7 +37,7 @@ public:
 	virtual ~CTaskList();
 
 	void CreateControlColumns( CListCtrl& );
-	void LoadTaskList(CListCtrl&, EUnits eUnits, CTurnpointArray& cTurnpointArray);
+	void LoadTaskList(CListCtrl&, EUnits eUnits, CTurnpointArray& cTurnpointArray, EClass eClass, CTime cDate);
 	void Purge(EClass eClass, CTime cDate);
 
 

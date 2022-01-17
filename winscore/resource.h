@@ -178,6 +178,8 @@
 #define IDC_COMBO1                      1014
 #define IDC_CONTROL_BAR_VIEW            1014
 #define IDC_DATE_COMBO                  1014
+#define IDC_NUMBER_DAYS2                1014
+#define IDC_NUMBER_PRACTICE_DAYS        1014
 #define IDC_STARTCOMBO                  1015
 #define IDC_REALTIMEPATH                1015
 #define IDC_SUAFILENAME                 1015
