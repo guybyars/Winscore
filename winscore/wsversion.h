@@ -11,6 +11,13 @@
 /*	Version Notes:
 2022
 
+Rev 1 
+   * Code cleanup, move to GitHub
+   * Rmoved Cambridge Logger code
+   * Added user defined number of practice days
+   * put practice days under separate tree item "P"
+   * Removed obsolete control bar code.
+
 Beta
    * No change from 2021 Rev 15
 

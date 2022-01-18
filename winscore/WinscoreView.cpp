@@ -418,7 +418,12 @@ void CWinscoreView::ViewTurnpointList()
 void CWinscoreView::OnContestInfoSetup() 
 {	
 	CWinscoreDoc* pDocument=GetDocument();
-	if( pDocument->PutUpContestInfoDlg(TRUE) ) pDocument->SetModifiedFlag();
+	if( pDocument->PutUpContestInfoDlg(TRUE) ) 
+		{
+		pDocument->SetModifiedFlag();
+		CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
+		pFrame->LoadTreeCtrl(pDocument);
+		}
 }
 
 
@@ -471,12 +476,14 @@ void CWinscoreView::ViewTasks()
 
   	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
 	pFrame->SetViewCombo(eTaskView);
+	EClass eClass = pFrame->GetClassCombo();
+	CTime  cDate = pFrame->GetDateCombo();
 
 	m_eViewType=eTaskView;
 
 	DeleteColumnsItems();
 	pDocument->m_taskList.CreateControlColumns( ListCtrl );
-	pDocument->m_taskList.LoadTaskList( ListCtrl, pDocument->m_eUnits, pDocument->m_turnpointArray);
+	pDocument->m_taskList.LoadTaskList( ListCtrl, pDocument->m_eUnits, pDocument->m_turnpointArray, eClass, cDate);
 	ListCtrl.SortItems( CompareTasks, m_iSortedColumn[m_eViewType] );
 	RestoreColumnWidths();
 
@@ -585,20 +592,18 @@ void CWinscoreView::ManageTasks()
 	// Check for save
 	if( pDocument->SaveReminder() ) return;
 
-//	CTaskList cTempTaskList;
-//	cTempTaskList=pDocument->m_taskList;
 	dlg.m_pcTaskList=&(pDocument->m_taskList);
 
 	dlg.m_pDoc=pDocument;
 	pItemPreselect=GetSelectedPtr();
-	dlg.m_pPreselect=(CTask*)pItemPreselect;
+	if( !pItemPreselect ) 
+		dlg.m_pPreselect=pDocument->m_taskList.GetByDateClass( pFrame->GetDateCombo(),   pFrame->GetClassCombo() );
+	else
+		dlg.m_pPreselect=(CTask*)pItemPreselect;
 
-//	dlg.SetTaskList(&cTempTaskList);
 
-//	if (dlg.DoModal() == IDOK)
 	dlg.DoModal();
 		{
-//		pDocument->m_taskList=cTempTaskList;
 		pDocument->SetModifiedFlag();
 		RefreshScoreDisplay();	
 		pFrame->SetDateCombo(dlg.m_cSelectedDate);
@@ -1186,8 +1191,6 @@ void CWinscoreView::OnEndPrinting(CDC* pDC, CPrintInfo* pInfo)
 	DeleteFonts();
 	
 	CListViewEx::OnEndPrinting(pDC, pInfo);
-	//CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
-	//pFrame->ShowDialogBar(SW_SHOW);
 }
 
 
@@ -1209,10 +1212,6 @@ void CWinscoreView::OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo)
 		posScoreLine[0]=pcScoreRecordList->GetHeadPosition();
 		posScoreLine[1]=pcScoreRecordList->FindIndex(NUM_SCORES_PER_PAGE);
 		}
-
-	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
-	pFrame->ShowDialogBar(SW_HIDE   );
-
 
 	CListViewEx::OnBeginPrinting(pDC, pInfo);
 }

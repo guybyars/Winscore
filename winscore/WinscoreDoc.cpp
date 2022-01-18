@@ -197,6 +197,7 @@
 		GET_XML_INT( cMgr, pIDOMWinscoreNode, _T("Contesttype"),	EContest,	m_eContest, eRegional );
 		GET_XML_INT( cMgr, pIDOMWinscoreNode, _T("Units"),		EUnits,		m_eUnits,	eStatute );
 		GET_XML_INT( cMgr, pIDOMWinscoreNode, _T("NumberOfDays"),	int,		m_iNumContestDays, 6 );
+		GET_XML_INT( cMgr, pIDOMWinscoreNode, _T("NumberOfPracticeDays"),	int,		m_iNumPracticeDays, 2 );
 		GET_XML_INT( cMgr, pIDOMWinscoreNode, _T("SSAID"),	int,	m_iSSA_ID, 0 );
 
 		GET_XML_INT( cMgr, pIDOMWinscoreNode, _T("CoordinateFormat"),	ECoordFormat, m_eCoordinateFormat, eHHMMMM );
@@ -208,10 +209,12 @@
 //		GET_XML_STR( cMgr, pIDOMWinscoreNode, _T("Taskinfostring"),	(m_cTaskInfoString) );
 
 		ImportXMLDate(cMgr, pIDOMWinscoreNode, _T("startdate"), m_CContestStartDate);
-   		ImportXMLDate(cMgr, pIDOMWinscoreNode, _T("practicedate1"), m_cPracticeDay1);
-   		ImportXMLDate(cMgr, pIDOMWinscoreNode, _T("practicedate2"), m_cPracticeDay2);
+
     	for( int i=0; i<m_iNumContestDays; i++) 
 				m_caContestDays[i]=m_CContestStartDate+CTimeSpan(i,0,0,0);
+
+    	for( int i=0; i<m_iNumPracticeDays; i++) 
+				m_caPracticeDays[i]=m_CContestStartDate-CTimeSpan(i+1,0,0,0);
 
    		m_turnpointArray.ImportXML	(cMgr, pIDOMWinscoreNode);
 	  	m_contestantList.ImportXML	(cMgr, pIDOMWinscoreNode,nSkipped);
@@ -256,17 +259,13 @@
 		cMgr.CreateElementInt( pIDOMWinscoreNode, _T("Contesttype"),	(WORD)m_eContest );
 		cMgr.CreateElementInt( pIDOMWinscoreNode, _T("Units"),	(WORD)m_eUnits );
 		cMgr.CreateElementInt( pIDOMWinscoreNode, _T("NumberOfDays"),	m_iNumContestDays );
+		cMgr.CreateElementInt( pIDOMWinscoreNode, _T("NumberOfPracticeDays"),	m_iNumPracticeDays );
 		cMgr.CreateElementInt( pIDOMWinscoreNode, _T("SSAID"),	m_iSSA_ID );
 		cMgr.CreateElementInt( pIDOMWinscoreNode, _T("CoordinateFormat"),	(WORD)m_eCoordinateFormat );
 		cMgr.CreateElementInt( pIDOMWinscoreNode, _T("Datum"),	(WORD)m_eDatum );
 		cMgr.CreateElement( pIDOMWinscoreNode, _T("Importflightpath"),	LPCSTR(m_strImportFilePath) );
 
-//The cr/lf's in the task info string cause sever problems
-//		cMgr.CreateElement( pIDOMWinscoreNode, _T("Taskinfostring"),	LPCSTR(m_cTaskInfoString) );
-
    		GetXMLDate(cMgr, pIDOMWinscoreNode, _T("startdate"), m_CContestStartDate);
-   		GetXMLDate(cMgr, pIDOMWinscoreNode, _T("practicedate1"), m_cPracticeDay1);
-   		GetXMLDate(cMgr, pIDOMWinscoreNode, _T("practicedate2"), m_cPracticeDay2);
 		
 		MSXML2::IXMLDOMNodePtr pClasses=NULL;
 		cMgr.CreateChild( pIDOMWinscoreNode, pClasses, _T("Classes"));
@@ -451,6 +450,7 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     		dlg.m_eUnits			= m_eUnits;
 			dlg.m_eDatum			= m_eDatum;
     		dlg.m_iNumDays			= m_iNumContestDays;
+    		dlg.m_iNumPracticeDays	= m_iNumPracticeDays;
     		dlg.m_cContestStartDate	= m_CContestStartDate;
     		dlg.m_eCoordinateFormat = m_eCoordinateFormat;
 			dlg.m_iSSA				= m_iSSA_ID;
@@ -493,6 +493,7 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     		m_eContest			= dlg.m_eContest;
     		m_eUnits			= dlg.m_eUnits;
     		m_iNumContestDays	= dlg.m_iNumDays;
+    		m_iNumPracticeDays	= dlg.m_iNumPracticeDays;
 			m_iSSA_ID			= dlg.m_iSSA;
             m_eDatum            = dlg.m_eDatum;
             CLocation::SetDatum(m_eDatum);
@@ -509,20 +510,23 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     
     		CTimeSpan cOneDay(1, 0, 0, 0 );
     
-    		m_caContestDays[0]=m_CContestStartDate;
-    		CTime cTemp=m_CContestStartDate;
-    		for( int i=1; i<dlg.m_iNumDays; i++)
+    		m_caPracticeDays[0]=m_CContestStartDate-cOneDay;
+    		for( int i=1; i<m_iNumPracticeDays; i++)
     			{
-    			cTemp+=cOneDay;
-    			m_caContestDays[i]=cTemp; 
+    			m_caPracticeDays[i]=m_caPracticeDays[i-1]-cOneDay; 
     			}
+
+    		m_caContestDays[0]=m_CContestStartDate;
+    		for( int i=1; i<m_iNumContestDays; i++)
+    			{
+    			m_caContestDays[i]=m_caContestDays[i-1]+cOneDay ; 
+    			}
+
 
 			for( int iClass=0; iClass<NUMCLASSES; iClass++ )
 				{
 				GetClass(iClass)=dlg.m_acClass[iClass];
 				}
-    		m_cPracticeDay2=m_CContestStartDate-cOneDay;
-    		m_cPracticeDay1=m_cPracticeDay2-cOneDay;
     
     		SetTitle(m_strContestName);
     		SetModifiedFlag(TRUE);
@@ -540,14 +544,16 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
 		m_eDatum            =DEFAULTDATUM;
         CLocation::SetDatum(m_eDatum);
     	m_iNumContestDays	=6;
+    	m_iNumPracticeDays	=2;
     	CTime tnow = CTime::GetCurrentTime();
     	m_CContestStartDate	=tnow;
-    	m_cPracticeDay1		=tnow;
-     	m_cPracticeDay2		=tnow;
 		m_iSSA_ID			=0;
 
 		for(int i=0; i<m_iNumContestDays; i++)
 			m_caContestDays[i]=tnow+CTimeSpan(1+i,0,0,0);
+
+		for(int i=0; i<m_iNumPracticeDays; i++)
+			m_caPracticeDays[i]=tnow-CTimeSpan(1+i,0,0,0);
 
         m_eCoordinateFormat	=eHHMMMM;
     	for( int i=0; i<NUMCLASSES; i++ )
@@ -598,20 +604,18 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     
     	int iSel= -1;
     	int iPos=0;
-    	iPos=cComboBox.AddString(m_cPracticeDay1.Format(_T("Practice Day 1 - %a %m/%d/%y")));
-    	ASSERT(iPos>=0);
-    	cComboBox.SetItemDataPtr( iPos, &m_cPracticeDay1 );
-		if( m_cPracticeDay1.GetDay()   ==cDefaultDay.GetDay()	&&
-			m_cPracticeDay1.GetMonth() ==cDefaultDay.GetMonth() &&
-			m_cPracticeDay1.GetYear()  ==cDefaultDay.GetYear()		) iSel=iPos;
     
-    	iPos=cComboBox.AddString(m_cPracticeDay2.Format(_T("Practice Day 2 - %a %m/%d/%y")));
-    	ASSERT(iPos>=0);
-    	cComboBox.SetItemDataPtr( iPos, &m_cPracticeDay2 );
-		if( m_cPracticeDay2.GetDay()   ==cDefaultDay.GetDay()	&&
-			m_cPracticeDay2.GetMonth() ==cDefaultDay.GetMonth() &&
-			m_cPracticeDay2.GetYear()  ==cDefaultDay.GetYear()		) iSel=iPos;
-    
+    	for( int i=m_iNumPracticeDays-1; i>=0; i-- )
+    		{
+    		CString s = m_caPracticeDays[i].Format( _T("Practice Day %A, %B %d, %Y") );
+    		iPos=cComboBox.AddString(s);
+    		ASSERT(iPos>=0);
+    		if( m_caPracticeDays[i].GetDay()  ==cDefaultDay.GetDay()	&&
+    			m_caPracticeDays[i].GetMonth()==cDefaultDay.GetMonth() &&
+    			m_caPracticeDays[i].GetYear() ==cDefaultDay.GetYear()		) iSel=iPos;
+    		cComboBox.SetItemDataPtr( iPos, &m_caPracticeDays[i] );
+    		}
+
     	for( int i=0;i<m_iNumContestDays;i++ )
     		{
     		CString s = m_caContestDays[i].Format( _T("%A, %B %d, %Y") );
@@ -705,11 +709,14 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     	
     	BOOL fReport=cStatus.m_fReport;
     
-    	if( DatesEqual(cDate,m_cPracticeDay1) || DatesEqual(cDate,m_cPracticeDay2) )
+		for( int iDay=0; iDay<m_iNumPracticeDays; iDay++ )
     		{
-    		CalculateDayScores(cDate, eClass, cStatus, pMgr, pClassNode);
-    		return;
-    		}
+    		if( DatesEqual(cDate,m_caPracticeDays[iDay])  )
+    			{
+    			CalculateDayScores(cDate, eClass, cStatus, pMgr, pClassNode);
+    			return;
+    			}
+			}
     
     	cStatus.m_fReport=FALSE;
     	for( int iDay=0; iDay<m_iNumContestDays; iDay++ )
@@ -752,12 +759,11 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
 
     	//  List Contest day
     	CString		cTemp;
-    	if( DatesEqual(cDate,m_cPracticeDay1) )
-    		cTemp=_T("Practice Day 1");
-    	else if( DatesEqual(cDate,m_cPracticeDay2 ) )
-    		cTemp=_T("Practice Day 2");
+    	if( IsPracticeDay(cDate) >0 )
+    		cTemp=_T("Practice Day");
     	else
     		cTemp.Format(_T("%d"), GetContestDay(cDate, eClass) );
+
     	cStatus.AddTwoStringItem(_T("Contest Day"),cTemp);
     
     	cStatus.AddTwoStringItem(_T("Status"),pcTask->GetStatusText());
@@ -910,7 +916,7 @@ BOOL CWinscoreDoc::NoContestDay(CTime cDate, EClass eClass)
     int CWinscoreDoc::GetContestDay(CTime cDate, EClass eClass)
     {
     	int nDays=0;
-    	if( DatesEqual(cDate,m_cPracticeDay1) || DatesEqual(cDate,m_cPracticeDay2) ) return 0;
+    	if( IsPracticeDay(cDate)>0 ) return 0;
     	for( int i=0; i<m_iNumContestDays; i++ )
     		{
     		if( NoContestDay( m_caContestDays[i], eClass )==FALSE ) nDays++;
@@ -959,17 +965,16 @@ BOOL CWinscoreDoc::NoContestDay(CTime cDate, EClass eClass)
 			int numOfficialDays=0;
 
 //			Process contest penalties assigned on practice days
-   			pcPenalty=m_PenalityList.Get( pcContestant->m_strContestNo, m_cPracticeDay1,  eContestPenalty);
-			if( pcPenalty )
+			for( int i=0; i< m_iNumPracticeDays; i++)
 				{
-				dCumPts-=pcPenalty->m_dPenality;
+				pcPenalty=m_PenalityList.Get( pcContestant->m_strContestNo, m_caPracticeDays[i],  eContestPenalty);
+				if( pcPenalty )
+						{
+						dCumPts-=pcPenalty->m_dPenality;
+						}
 				}
 
-   			pcPenalty=m_PenalityList.Get( pcContestant->m_strContestNo, m_cPracticeDay2,  eContestPenalty);
-			if( pcPenalty )
-				{
-				dCumPts-=pcPenalty->m_dPenality;
-				}
+
 
     		for( int iDay=0; iDay<m_iNumContestDays; iDay++ )
     			{
@@ -3017,7 +3022,7 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
     
     bool CWinscoreDoc::IsDateValid(CTime cDate)
     	{
-    		if( DatesEqual(cDate,m_cPracticeDay1) || DatesEqual(cDate,m_cPracticeDay2) ) return true;
+    		if( IsPracticeDay(cDate)>0 ) return true;
     
     		for( int i=0; i<m_iNumContestDays; i++) 
     			{
@@ -3384,8 +3389,8 @@ bool CWinscoreDoc::FailedSecurity(CString strIGCFileName)
 
 int CWinscoreDoc::IsPracticeDay(CTime cDate)
 {
-	if( DatesEqual(cDate,m_cPracticeDay1) ) return	1;
-	if( DatesEqual(cDate,m_cPracticeDay2) ) return  2;
+	for( int i=0; i< m_iNumPracticeDays; i++)
+		if( DatesEqual(cDate,m_caPracticeDays[i]) ) return	i+1;
    
 	return 0;
 }
@@ -3454,8 +3459,11 @@ BOOL CWinscoreDoc::OnOpenDocument(LPCTSTR lpszPathName)
 	//View the contestants. 
     POSITION pos=GetFirstViewPosition();
     CWinscoreView* pView = (CWinscoreView*)GetNextView(pos);
-	pView->InitialUpdate();
-    pView->ViewContestantList(); 
+	if( pView )
+		{
+		pView->InitialUpdate();
+		pView->ViewContestantList(); 
+		}
 
 	CString strPathName(lpszPathName);
 	int iPos=strPathName.ReverseFind('\\');
@@ -3748,10 +3756,8 @@ bool CWinscoreDoc::ExportDayXML( CString &strFile, int nClasses, EClass aeClasse
 				continue;
     			}
     		CString		cStatus;
-    		if( DatesEqual(cDate,m_cPracticeDay1) )
-    			cStatus=_T("Practice Day 1");
-    		else if( DatesEqual(cDate,m_cPracticeDay2 ) )
-    			cStatus=_T("Practice Day 2");
+    		if( IsPracticeDay(cDate)>0  )
+    			cStatus=_T("Practice Day");
     		else
     			cStatus.Format(_T("Contest Day %d"), GetContestDay(cDate, aeClasses[iClass]) );
 			cMgr.CreateElement( pClassNode, _T("Status"), cStatus);

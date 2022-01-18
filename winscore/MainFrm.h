@@ -38,7 +38,6 @@ public:
 
 // Implementation
 public:
-	void ShowDialogBar(int iShowCmd);
 	EViews GetViewCombo();
 	void GreyAll();
 	int m_nDatePaneNo;
@@ -67,7 +66,7 @@ protected:  // control bar embedded members
 	CMFCStatusBar	m_wndStatusBar;
 	CMFCToolBar		m_wndToolBar;
 	CMFCMenuBar		m_wndMenuBar;
-	CWinscoreDlgBar	m_wndDialogBar;
+	//CWinscoreDlgBar	m_wndDialogBar;
 	CWinscoreBar	m_wndWinscoreBar;
 
 // Generated message map functions

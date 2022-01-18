@@ -146,7 +146,7 @@ CTask* CTaskList::GetNext(POSITION& pos)
 }
 
 
-void CTaskList::LoadTaskList(CListCtrl& ListCtrl, EUnits eUnits, CTurnpointArray& cTurnpointArray)
+void CTaskList::LoadTaskList(CListCtrl& ListCtrl, EUnits eUnits, CTurnpointArray& cTurnpointArray, EClass eClass, CTime cDate)
 {
 //	char buff[50];
 
@@ -189,9 +189,13 @@ void CTaskList::LoadTaskList(CListCtrl& ListCtrl, EUnits eUnits, CTurnpointArray
 			ListCtrl.SetItemText(iItem,i++,pcTask->GetStartCeilingText());
 			ListCtrl.SetItemText(iItem,i++,pcTask->GetFinishBaseText());
 			ListCtrl.SetItemData(iItem, (LPARAM)pcTask);
+	
+			if( pcTask->m_eClass==eClass && pcTask->m_cDate == cDate )
+				ListCtrl.SetItemState(iItem, LVIS_SELECTED, LVIS_SELECTED);
 			iItem++;
 			}
 		}
+
 	}
 
 
