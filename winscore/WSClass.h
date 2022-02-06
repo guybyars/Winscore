@@ -14,9 +14,8 @@
 
 
 #include "winscoredefs.h"
-#ifndef WSVIEWER
 #include "summary.h"
-#endif
+
 
 #define WSC_HANDICAPPED		0x00001
 #define WSC_SHORTTASKFACTOR	0x00002
@@ -67,8 +66,6 @@ public:
 	
 // Score Calculation methods
 
-#ifndef WSVIEWER
-
 	double	GetMaximumSpeedPoints(ETaskType eTaskType, CSummary &cSummary);
 	double	GetMaximumDistancePoints(ETaskType eTaskType, CSummary &cSummary);
 	//double	GetNoFinisherPoints(ETaskType eTaskType);
@@ -77,8 +74,7 @@ public:
 	double GetCompletionRatio(ETaskType eTaskType, CSummary &cSummary);
 	double GetShortTaskFactor(CSummary &cSummary);
 
-#endif
-	
+
 	CString m_strName;
 
 	EContest	m_eContest;

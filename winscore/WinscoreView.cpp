@@ -38,10 +38,7 @@
 #include "WinscoreFonts.h"
 #include "ScoreRecordList.h"
 #include "ImportDataDlg.h"
-//#include "registrationdlg.h"
 #include <fstream>
-//#include <afxinet.h>
-#include "caiapi.h"
 #include "DontShowDlg.h"
 #include "AutoExport.h"
 #include "ContestantsFromSSA.h"
@@ -181,8 +178,6 @@ BEGIN_MESSAGE_MAP(CWinscoreView, CListViewEx)
 	ON_UPDATE_COMMAND_UI(ID_FILE_EXPORT_WINSCOREFLIGHTFILE, OnUpdateFileExportWinscoreflightfile)
 	ON_COMMAND(ID_HELP_REGISTER, OnHelpRegister)
 	ON_UPDATE_COMMAND_UI(ID_HELP_REGISTER, OnUpdateHelpRegister)
-	ON_COMMAND(ID_FLIGHTLOGS_IMPORT_AUTOMATICCAMBRIDGEUPLOAD, OnFlightlogsImportAutomaticcambridgeupload)
-	ON_UPDATE_COMMAND_UI(ID_FLIGHTLOGS_IMPORT_AUTOMATICCAMBRIDGEUPLOAD, OnUpdateFlightlogsImportAutomaticcambridgeupload)
 	ON_WM_TIMER()
 	ON_COMMAND(ID_FLIGHTLOGS_VIEW, OnFlightlogsView)
 	ON_UPDATE_COMMAND_UI(ID_FLIGHTLOGS_VIEW, OnUpdateFlightlogsView)
@@ -423,7 +418,12 @@ void CWinscoreView::ViewTurnpointList()
 void CWinscoreView::OnContestInfoSetup() 
 {	
 	CWinscoreDoc* pDocument=GetDocument();
-	if( pDocument->PutUpContestInfoDlg(TRUE) ) pDocument->SetModifiedFlag();
+	if( pDocument->PutUpContestInfoDlg(TRUE) ) 
+		{
+		pDocument->SetModifiedFlag();
+		CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
+		pFrame->LoadTreeCtrl(pDocument);
+		}
 }
 
 
@@ -476,12 +476,14 @@ void CWinscoreView::ViewTasks()
 
   	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
 	pFrame->SetViewCombo(eTaskView);
+	EClass eClass = pFrame->GetClassCombo();
+	CTime  cDate = pFrame->GetDateCombo();
 
 	m_eViewType=eTaskView;
 
 	DeleteColumnsItems();
 	pDocument->m_taskList.CreateControlColumns( ListCtrl );
-	pDocument->m_taskList.LoadTaskList( ListCtrl, pDocument->m_eUnits, pDocument->m_turnpointArray);
+	pDocument->m_taskList.LoadTaskList( ListCtrl, pDocument->m_eUnits, pDocument->m_turnpointArray, eClass, cDate);
 	ListCtrl.SortItems( CompareTasks, m_iSortedColumn[m_eViewType] );
 	RestoreColumnWidths();
 
@@ -590,20 +592,18 @@ void CWinscoreView::ManageTasks()
 	// Check for save
 	if( pDocument->SaveReminder() ) return;
 
-//	CTaskList cTempTaskList;
-//	cTempTaskList=pDocument->m_taskList;
 	dlg.m_pcTaskList=&(pDocument->m_taskList);
 
 	dlg.m_pDoc=pDocument;
 	pItemPreselect=GetSelectedPtr();
-	dlg.m_pPreselect=(CTask*)pItemPreselect;
+	if( !pItemPreselect ) 
+		dlg.m_pPreselect=pDocument->m_taskList.GetByDateClass( pFrame->GetDateCombo(),   pFrame->GetClassCombo() );
+	else
+		dlg.m_pPreselect=(CTask*)pItemPreselect;
 
-//	dlg.SetTaskList(&cTempTaskList);
 
-//	if (dlg.DoModal() == IDOK)
 	dlg.DoModal();
 		{
-//		pDocument->m_taskList=cTempTaskList;
 		pDocument->SetModifiedFlag();
 		RefreshScoreDisplay();	
 		pFrame->SetDateCombo(dlg.m_cSelectedDate);
@@ -1191,8 +1191,6 @@ void CWinscoreView::OnEndPrinting(CDC* pDC, CPrintInfo* pInfo)
 	DeleteFonts();
 	
 	CListViewEx::OnEndPrinting(pDC, pInfo);
-	//CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
-	//pFrame->ShowDialogBar(SW_SHOW);
 }
 
 
@@ -1214,10 +1212,6 @@ void CWinscoreView::OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo)
 		posScoreLine[0]=pcScoreRecordList->GetHeadPosition();
 		posScoreLine[1]=pcScoreRecordList->FindIndex(NUM_SCORES_PER_PAGE);
 		}
-
-	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
-	pFrame->ShowDialogBar(SW_HIDE   );
-
 
 	CListViewEx::OnBeginPrinting(pDC, pInfo);
 }
@@ -2622,116 +2616,9 @@ void CWinscoreView::OnUpdateHelpRegister(CCmdUI* pCmdUI)
 }
 
 
-void CWinscoreView::OnFlightlogsImportAutomaticcambridgeupload() 
-{   
-	CWinscoreDoc* pDocument=GetDocument();
-	CIGCDirectories cIGCDirs;
-
-	CWaitCursor cWait;
-	TCAITransferedLogs  cLogs;
-	char strCreatedFileName[512];
-	int bSecure=0;
-
-	TCAIInput sCaiInput;
-
-	INITIALIZE_CAI_STRUCT( sCaiInput );
-
-	sCaiInput.sComPort=AfxGetApp()->GetProfileInt(	REGSECTION, COMPORT,  1 );
-	sCaiInput.bSilent=false;
-	sCaiInput.sTimeout=1;
-
-	CString strLogPath	=cIGCDirs.GetFlightLogPath();
-
-	int iConnect=CAIGetLogs( &sCaiInput,
-							 strLogPath,
-							 &cLogs    );
-	if( iConnect==CER_OK )
-		{
-		CWinscoreDoc* pDocument=GetDocument();
-
-		for ( int i=0; i<cLogs.nLogs; i++ )
-			{
-			ZeroMemory(strCreatedFileName,512);
-			int iRet=CAIConvertFile( cLogs.cLogNames[i],// Input
-									 strLogPath,			// Input
-									 strCreatedFileName,// Output
-									&bSecure);			// Output
-			if( bSecure )
-				pDocument->LogPassed(strCreatedFileName);
-			else
-				pDocument->LogFailed(strCreatedFileName);
-											
-			CString strFileName=strLogPath;
-			strFileName+=_T("\\")+CString(strCreatedFileName);
-			pDocument->m_FlightList.LoadIGC( strFileName, pDocument->m_contestantList );
-			pDocument->SetModifiedFlag();
-			}
-
-		if( cLogs.nLogs>0 )
-			{
-			CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
-			CTime cDate=pFrame->GetDateCombo();
-			EClass eClass=pFrame->GetClassCombo();
-
-			OnFlightlogsAnalyzenew();
-			ViewFlightLogs(cDate, eClass );
-			}
-
-		}
-	else
-		{
-		CString strError;
-		CAI_ERROR_TEXT( iConnect, strError );
-		AfxMessageBox(strError);
-		}
-}
-
-void CWinscoreView::OnUpdateFlightlogsImportAutomaticcambridgeupload(CCmdUI* pCmdUI) 
-{
-	pCmdUI->Enable( true );
-}
-
-
 void CWinscoreView::OnTimer(UINT nIDEvent) 
 {
-	if( nIDEvent==1 )
-		{
-		/*
-		if( m_eViewType!=eFlightLogView ) return;
 
-		HANDLE hCambridge=((CWinscoreApp*)AfxGetApp())->GetCambridgeHandle();
-
-		if( !hCambridge ) return;
-
-
-		DWORD ExitCode;
-		BOOL bStat=GetExitCodeProcess(  hCambridge,  &ExitCode );
-		if( bStat==0 || ExitCode!=STILL_ACTIVE ) 
-			{
-			KillTimer(1);
-			return;
-			}
-		
-		// If we got this far, we need to update the flight log list.
-
-
-		CWinscoreDoc* pDocument=GetDocument();
-
-		CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
-		CTime cDate=pFrame->GetDateCombo();
-		EClass eClass=pFrame->GetClassCombo();
-
-//		CListCtrl &cList=GetListCtrl();
-
-		bool bNew=pDocument->m_FlightList.LoadListFromIGC( GetFlightLogPath(), cDate, pDocument->m_contestantList, TRUE  );
-
-		if( bNew )
-			{
-			OnFlightlogsAnalyzenew();
-			}
-		*/
-		}
-	
 //	CListViewEx::OnTimer(nIDEvent);
 }
 
@@ -2978,7 +2865,6 @@ void CWinscoreView::OnFileImportControlpointsinxmlformat()
 	CWinscoreDoc* pDocument=GetDocument();
 
 	CString  cFileName=_T("");
-	int iCAI=TRUE;
 
 	if( pDocument->m_turnpointArray.GetValidTpts()>0 )
 		if( AfxMessageBox( _T("Imported points may replace turnpoints already entered."), MB_OKCANCEL )!=IDOK ) return;
@@ -3149,7 +3035,6 @@ void CWinscoreView::OnFileImportXmlEntirecontest()
 	CWinscoreDoc* pDocument=GetDocument();
 
 	CString  cFileName=_T("winscore.xml");
-	int iCAI=TRUE;
 
 	if( AfxMessageBox( _T("WARNING - Current contest will be purged."), MB_OKCANCEL )!=IDOK ) return;
 
@@ -3238,28 +3123,20 @@ void CWinscoreView::OnImportFlashcard()
 			CString strInputFilePath=strFilePaths[0];
 			CString strInputFileName=strFiles[0];
 			CFileStatus rSourceStatus, rDestStatus;
-			bool bCAI=strInputFilePath.Find(_T(".cai"))>0;
 			CTime cDate=0;
-			if( bCAI )
-				{
-				CString str;
-				str.Format(_T("Ok to import %s for %s?"),strInputFilePath, PilotNameFromCAI( strInputFilePath) );
-				if( AfxMessageBox(str, MB_YESNO|MB_ICONQUESTION)==IDNO ) return;  
-				}
-			else
-				{
-				CIGCFile igcFile(strInputFilePath);
-				cDate=CTime( igcFile.m_iYear, igcFile.m_iMonth, igcFile.m_iDay, 0, 0, 0 );
-				CString str;
-				str.Format(_T("Ok to import %s for %s - %s?"),strInputFilePath, igcFile.m_strCompetitionID, igcFile.m_strPilot );
-				if( AfxMessageBox(str, MB_YESNO|MB_ICONQUESTION)==IDNO ) return;  
 
-				if( !igcFile.m_bValid )
-					{
-					AfxMessageBox(_T("Invalid IGC file, could not import."));
-					return;
-					}
+			CIGCFile igcFile(strInputFilePath);
+			cDate=CTime( igcFile.m_iYear, igcFile.m_iMonth, igcFile.m_iDay, 0, 0, 0 );
+			CString str;
+			str.Format(_T("Ok to import %s for %s - %s?"),strInputFilePath, igcFile.m_strCompetitionID, igcFile.m_strPilot );
+			if( AfxMessageBox(str, MB_YESNO|MB_ICONQUESTION)==IDNO ) return;  
+
+			if( !igcFile.m_bValid )
+				{
+				AfxMessageBox(_T("Invalid IGC file, could not import."));
+				return;
 				}
+
 
 			CWaitCursor cWait;
 			CString	strLogPath	=cIGCDirs.GetFlightLogPath(cDate);
@@ -3269,50 +3146,22 @@ void CWinscoreView::OnImportFlashcard()
 			bool bSuccess=false;
 			bool bIGCSecure=false;
 
-			if( bCAI )
+			if( CIGCDirectories::ImportIGC( strInputFilePath, strInputFileName, strLogPath, strOutputFileName, strStatus ) )
 				{
-				bool bSecure;
-				CString strIGCFile;
-				if( CIGCDirectories::ImportCAI( strInputFilePath, strInputFileName, strLogPath, strOutputFileName, strIGCFile, strStatus, bSecure ) )
+				bSuccess=true;
+				CString strSecureStatus;
+				if( CheckIGCSecurity( strInputFilePath,  strSecureStatus ) )
 					{
-					bSuccess=true;
-					if( bSecure ) 
-						{
-						strInputFileName.Replace(_T(".cai"), _T(".igc"));
-						pDocument->LogPassed(strIGCFile);
-						bIGCSecure=true;
-						}
-					else
-						{
-						CString strSecureStatus;
-						strSecureStatus+=_T("SECURITY WARNING -  security failure for: ");
-						strSecureStatus+=strInputFilePath;
-						strSecureStatus+=_T("\r\n");
-						strSecureStatus+=_T("Flight log failed manufacturer's security check.");
-						AfxMessageBox(strSecureStatus);
-						strInputFileName.Replace(_T(".cai"), _T(".igc"));
-						pDocument->LogFailed(strIGCFile);
-						}
+					pDocument->LogPassed(strInputFileName);
+					bIGCSecure=true;
+					}
+				else
+					{
+					AfxMessageBox(strSecureStatus);
+					pDocument->LogFailed(strInputFileName);
 					}
 				}
-			else
-				{
-				if( CIGCDirectories::ImportIGC( strInputFilePath, strInputFileName, strLogPath, strOutputFileName, strStatus ) )
-					{
-					bSuccess=true;
-					CString strSecureStatus;
-					if( CheckIGCSecurity( strInputFilePath,  strSecureStatus ) )
-						{
-						pDocument->LogPassed(strInputFileName);
-						bIGCSecure=true;
-						}
-					else
-						{
-						AfxMessageBox(strSecureStatus);
-						pDocument->LogFailed(strInputFileName);
-						}
-					}
-				}
+
 
 			if( bSuccess )
 				{
@@ -3437,7 +3286,6 @@ void CWinscoreView::OnFileImportControlpointsincaidatformat()
 	CWinscoreDoc* pDocument=GetDocument();
 
 	CString  cFileName=_T("");
-	int iCAI=TRUE;
 
 	if( pDocument->m_turnpointArray.GetValidTpts()>0 )
 		if( AfxMessageBox( _T("Imported points may replace turnpoints already entered."), MB_OKCANCEL )!=IDOK ) return;

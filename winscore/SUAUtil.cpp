@@ -2,9 +2,7 @@
 #include "global_prototypes.h"
 #include "sua.h"
 #include "suautil.h"
-#ifndef _CAIEXPLR
 #include "dontshowdlg.h"
-#endif
 #include <fstream>
 
 
@@ -14,7 +12,7 @@ CSUASectionArray* GetSUAArray( )
 	{
 	return &cSectionArray;
 	}
-#ifndef _CAIEXPLR
+
 int LoadSUA( CTurnpointArray &turnpointArray)
 	{
 	int nSections=0;
@@ -110,7 +108,6 @@ int LoadSUA( CTurnpointArray &turnpointArray)
 	return cSectionArray.GetSize();
 	}
 
-#endif
 
 int ReadSUAFile(CString &cFileIn, CStringArray &strArray )
 	{

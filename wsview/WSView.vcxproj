@@ -80,19 +80,22 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Min Dep|Win32'">
-    <OutDir>.\WSView___Win32_Release_Min_Dep\</OutDir>
-    <IntDir>.\WSView___Win32_Release_Min_Dep\</IntDir>
+    <OutDir>..\..\build\wsview\WSView___Win32_Release_Min_Dep\</OutDir>
+    <IntDir>..\..\build\wsview\WSView___Win32_Release_Min_Dep\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.ocx</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\..\build\wsview\Debug\</OutDir>
     <IntDir>..\..\build\wsview\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.ocx</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>..\..\build\wsview\Release\</OutDir>
     <IntDir>..\..\build\wsview\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.ocx</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
     <OutDir>.\DebugU\</OutDir>
@@ -114,17 +117,17 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\WSView___Win32_Release_Min_Dep\</AssemblerListingLocation>
-      <PrecompiledHeaderOutputFile>.\WSView___Win32_Release_Min_Dep\WSView.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>..\..\build\wsview\WSView___Win32_Release_Min_Dep\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>..\..\build\wsview\WSView___Win32_Release_Min_Dep\WSView.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <ObjectFileName>.\WSView___Win32_Release_Min_Dep\</ObjectFileName>
-      <ProgramDataBaseFileName>.\WSView___Win32_Release_Min_Dep\</ProgramDataBaseFileName>
+      <ObjectFileName>..\..\build\wsview\WSView___Win32_Release_Min_Dep\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\build\wsview\WSView___Win32_Release_Min_Dep\</ProgramDataBaseFileName>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>.\WSView___Win32_Release_Min_Dep\WSView.tlb</TypeLibraryName>
+      <TypeLibraryName>..\..\build\wsview\WSView___Win32_Release_Min_Dep\WSView.tlb</TypeLibraryName>
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
     </Midl>
@@ -140,8 +143,8 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <LinkDLL>true</LinkDLL>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>.\WSView___Win32_Release_Min_Dep\WSView.ocx</OutputFile>
-      <ImportLibrary>.\WSView___Win32_Release_Min_Dep\WSView.lib</ImportLibrary>
+      <OutputFile>..\..\build\wsview\WSView___Win32_Release_Min_Dep\WSView.ocx</OutputFile>
+      <ImportLibrary>..\..\build\wsview\WSView___Win32_Release_Min_Dep\WSView.lib</ImportLibrary>
       <AdditionalDependencies>glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>.\WSView.def</ModuleDefinitionFile>
     </Link>

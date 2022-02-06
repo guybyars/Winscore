@@ -76,6 +76,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedSsaButton();
+	int m_iNumPracticeDays;
 };
 
 //{{AFX_INSERT_LOCATION}}

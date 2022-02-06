@@ -28,6 +28,7 @@ static char THIS_FILE[] = __FILE__;
 CContestInfoDlg::CContestInfoDlg(CWinscoreDoc *pDoc, CWnd* pParent /*=NULL*/)
 	: CDialog(CContestInfoDlg::IDD, pParent),
 	m_pDoc(pDoc)
+	, m_iNumPracticeDays(2)
 {
 	//{{AFX_DATA_INIT(CContestInfoDlg)
 	m_strLocation = _T("");
@@ -54,6 +55,8 @@ void CContestInfoDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_CONTEST_NAME, m_strContestName);
 	DDX_Text(pDX, IDC_NUMBER_DAYS, m_iNumDays);
 	DDV_MinMaxInt(pDX, m_iNumDays, 1, 300);
+	DDX_Text(pDX, IDC_NUMBER_PRACTICE_DAYS, m_iNumPracticeDays);
+	DDV_MinMaxInt(pDX, m_iNumPracticeDays, 1, 14);
 	DDX_DateTimeCtrl(pDX, IDC_STARTDATEPICKER, m_cContestStartDate);
 	//}}AFX_DATA_MAP
 }

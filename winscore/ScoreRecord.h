@@ -10,9 +10,7 @@
 
 #define MAXCOLUMNS   21
 
-#ifndef WSVIEWER
 #include "PenalityList.h"
-#endif
 
 #if _MSC_VER >= 1000
 #pragma once
@@ -32,9 +30,8 @@ public:
 
 	bool GetXML(CXMLMgr &cMgr,MSXML2::IXMLDOMNodePtr &pParentNode);
 	CString DNCText(EStatus eStatus);
-#ifndef WSVIEWER
 	CString AppliedPenalityText(CPenalityList& cPenalityList);
-#endif
+
 	CString CumPointsText();
 
 	int m_uPenalityMask;

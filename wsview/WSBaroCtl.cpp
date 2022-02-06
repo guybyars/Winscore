@@ -700,9 +700,9 @@ void CWSBaroCtrl::AddPoints(const VARIANT FAR& vlTime,
 	for( int i=0, ic=0; i<nFixes; i++, ic+=3 )
 		{
 		char cCID[4];
-		strncpy( cCID, "   ", 3);
+		strncpy_s( cCID, 4, "   ", 3);
 		cCID[3]='\0';
-		strncpy( cCID, &(const char)paCID[ic], 3);
+		strncpy_s( cCID, 4, &(const char)paCID[ic], 3);
 		CString strCID=cCID;
 		strCID.TrimRight();
 		AddPointByName( strCID, paTime[i], paPAltitude[i], paGAltitude[i]);

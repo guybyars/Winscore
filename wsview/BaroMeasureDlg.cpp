@@ -230,7 +230,7 @@ void CBaroMeasureDlg::OnCopy()
 {
 
     HGLOBAL hglobalText = GlobalAlloc(GMEM_MOVEABLE | GMEM_DDESHARE, m_strClip.GetLength() + 1);
-    strcpy((char *)GlobalLock(hglobalText), m_strClip);
+    strcpy_s((char *)GlobalLock(hglobalText), sizeof(hglobalText), m_strClip);
     GlobalUnlock(hglobalText);
     
     OpenClipboard();

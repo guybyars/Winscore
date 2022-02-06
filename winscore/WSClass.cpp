@@ -8,9 +8,7 @@
 #include "stdafx.h"
 #include "winscore.h"
 #include "global_prototypes.h"
-#ifndef WSVIEWER
 #include "scorerecord.h"
-#endif
 #include "WSClass.h"
 #include <atlbase.h>
 

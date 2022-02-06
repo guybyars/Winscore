@@ -13,23 +13,8 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#ifdef _CAIEXPLR
 
-#include "caiexplr.h"
-
-#include "CAIwaypoint.h"
-#include "xmlmgr.h"
-
-#define   CONTESTANTLISTCLASS	void
-#define   LANDINGCARDCLASS		void
-#define   TASKCLASS				void
-#define   TURNPOINTCLASS		CCAIWaypoint
-#define   TURNPOINTCLASSARRAY   CWaypointArray
-
-#else
-
-#include "Winscore.h"	// Added by ClassView
-
+#include "Winscore.h"	
 #include "Turnpoint.h"
 #include "task.h"	
 #include "tasklist.h"	
@@ -41,7 +26,6 @@
 
 #include "contestantlist.h"	
 
-#endif
 
 #include "IGCFile.h"
 #include "Location.h"
@@ -102,27 +86,13 @@ public:
 /////////////////////  Analysis Functions //////////////////////////
 public:
 
-#ifdef _CAIEXPLR
 
-bool AnalyzeCAI(	ETaskType	eTaskType,	
-					int		nTaskPoints,
-					int		iTaskPoints[],
-					int		iTaskRadii[],
-					CGate	&cStartGate,
-					CGate	&cFinishGate,
-					double	dTurnpointRadius,
-					double	_dTurnpointOuterRadius,
-					TURNPOINTCLASSARRAY &turnpointArray	);
-
-#else
-
-bool Analyze(	TASKCLASS			*pcTask, 
+	bool Analyze(	TASKCLASS			*pcTask, 
 				TURNPOINTCLASSARRAY &turnpointArray,
 				CONTESTANTLISTCLASS	*contestantList,
 				EUnits				eUnits,
 				bool				bSilent=false);
 
-#endif
 
 	void	AssignPositionStatus(	TASKCLASS* pcTask, 
 									bool bAutoTask, 
@@ -134,9 +104,6 @@ bool Analyze(	TASKCLASS			*pcTask,
 									CArray<double,double> &dSpeedArray);
 
 private:
-#ifndef _CAIEXPLR
-	DECLARE_SERIAL(CFlight)
-#endif
 
 	void	FindStartsAndFinish(CTask *pcTask);
 	int		FindAcheivedTurnpoint(int iEvent, int iTpt, int iStartPos, int iDirection=FORWARD, int iTPPos=-1);

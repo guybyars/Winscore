@@ -1,15 +1,22 @@
 #if !defined(WSVERSION_H_INCLUDED_)
 #define WSVERSION_H_INCLUDED_
 
-//#define	WINSCOREBETA         1
+#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2022
-#define WINSCOREVERSION		_T("2022 Rev 1")
+#define WINSCOREVERSION		_T("2022 Rev 1 Beta")
 #define SHORTVERSION			 _T("Rev 1")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2022
+
+Rev 1 
+   * Code cleanup, move to GitHub
+   * Rmoved Cambridge Logger code
+   * Added user defined number of practice days
+   * put practice days under separate tree item "P"
+   * Removed obsolete control bar code.
 
 Beta
    * No change from 2021 Rev 15

@@ -623,7 +623,6 @@ void CAddTurnpointDlg::OnItemclickListControl(NMHDR* pNMHDR, LRESULT* pResult)
 void CAddTurnpointDlg::OnImport() 
 	{
 	CString  cFileName="";
-	int iCAI=TRUE;
 
 	if( m_pturnpointArray->GetValidTpts()>0 )
 		if( AfxMessageBox( _T("Imported points may replace turnpoints already entered."), MB_OKCANCEL )!=IDOK ) return;
@@ -638,12 +637,6 @@ void CAddTurnpointDlg::OnImport()
 	CFileDialog  cFileDlg(TRUE, _T("dat"), cFileName, OFN_HIDEREADONLY, szFilter);
 
 	cFileDlg.m_ofn.lpstrTitle=_T("Import Turnpoints From File");
-
-	//CFileDialog( BOOL bOpenFileDialog, 
-	//LPCTSTR lpszDefExt = NULL, 
-	//LPCTSTR lpszFileName = NULL, 
-	//DWORD dwFlags = OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, 
-	//LPCTSTR lpszFilter = NULL, CWnd* pParentWnd = NULL );
 
 	if( cFileDlg.DoModal()==IDOK )
 		{

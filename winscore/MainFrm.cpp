@@ -23,6 +23,10 @@ static char THIS_FILE[] = __FILE__;
 
 static CArray<int,int>  saBackFwdArray;
 static int				isaBackFwd=0;
+static EViews			eCurrentView=eContestantView;
+static EClass			eCurrentClass=eStandard;
+static CTime			cCurrentDate;
+
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainFrame
@@ -74,12 +78,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-	if (!m_wndDialogBar.Create( this ) )
-	{
-		TRACE0("Failed to create dialog bar\n");
-		return -1;      // fail to create
-	}
-	
+
    if (!m_wndMenuBar.Create (this))
 	{
 		TRACE0("Failed to create menubar\n");
@@ -121,26 +120,17 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	//  be dockable
 //	m_wndMenuBar.EnableDocking(CBRS_ALIGN_ANY);
 //	m_wndToolBar.EnableDocking(CBRS_ALIGN_ANY);
-//	m_wndDialogBar.EnableDocking(CBRS_ALIGN_ANY);
 	EnableDocking(CBRS_ALIGN_ANY);
 	DockPane(&m_wndMenuBar);
 	DockPane(&m_wndToolBar);
-	DockPane(&m_wndDialogBar);
 	DockPane(&m_wndWinscoreBar);
 
 	bool bVis=false;
 	AfxGetApp()->GetProfileInt(REGSECTION, CONTROLBARVISIBLE, 0 )==1?bVis=true:bVis=false;
 	
-	ShowPane (&m_wndDialogBar,
-					bVis,
-					FALSE, TRUE);
 	ShowPane (&m_wndWinscoreBar,
 					!bVis,
 					FALSE, TRUE);
-
-	
-
-	//m_wndDialogBar.ShowPane(TRUE,TRUE,TRUE);
 
 	// CG: The following line was added by the Splash Screen component.
 	CSplashWnd::ShowSplashScreen(this);
@@ -206,94 +196,42 @@ void CMainFrame::Dump(CDumpContext& dc) const
 //}
 
 void CMainFrame::OnControlBarViewChange()
-{
-	EViews			eNewView = m_wndDialogBar.GetView();
-
-	ProcessViewChange(eNewView);
-
-	PushView(eNewView);
-
+	{
+	ProcessViewChange(eCurrentView);
 	}
 
 void CMainFrame::SetViewCombo(EViews eView)
 {
-	CWinscoreView*	pcView=(CWinscoreView*)GetActiveView( );
-	if( !pcView ) return;
-	m_wndDialogBar.SetView(eView);
-	PushView(eView);
-	m_wndDialogBar.LoadDayCombo(pcView->GetDocument());
-	m_wndDialogBar.LoadClassCombo(pcView->GetDocument());
+	eCurrentView=eView;
 }
 
 void CMainFrame::SetClassCombo(EClass eClass)
 {
-	m_wndDialogBar.SetClass(eClass);
-	SetDefaultClass(eClass);
+	eCurrentClass=eClass;
 }
 
 void CMainFrame::SetDateCombo(CTime cDate)
 {
-	m_wndDialogBar.SetDate(cDate);
+	cCurrentDate=cDate;
 }
 
 
 void CMainFrame::OnControlBarDayChange()
 {
-	CWinscoreView*	pcView=(CWinscoreView*)GetActiveView( );
-
-	EViews eView = m_wndDialogBar.GetView();
-	CTime cTime=m_wndDialogBar.GetDayCombo();
-
-	if(	eView==eTaskView )
-		{
-		pcView->ViewTasks();
-		}
-	else if(	eView==eFlightLogView )
-		{
-		EClass eClass=m_wndDialogBar.GetClassCombo();
-		pcView->ViewFlightLogs(cTime, eClass);
-		}
-	else if(	eView==eScoreView )
-		{
-		EClass eClass=m_wndDialogBar.GetClassCombo();
-		pcView->ViewScores(cTime, eClass);
-		}
-	SetDefaultDay(cTime);
 }
 
 void CMainFrame::OnControlBarClassChange()
 {
-	CWinscoreView*	pcView=(CWinscoreView*)GetActiveView( );
-
-	EViews eView = m_wndDialogBar.GetView();
-
-	EClass eClass=m_wndDialogBar.GetClassCombo();
-	SetDefaultClass(eClass);
-
-	if(	eView==eFlightLogView )
-		{
-		CTime cTime=m_wndDialogBar.GetDayCombo();
-		pcView->ViewFlightLogs(cTime, eClass);
-		}
-	else if(	eView==eScoreView )
-		{
-		CTime cTime=m_wndDialogBar.GetDayCombo();
-		pcView->ViewScores(cTime, eClass);
-		}
-	else if(	eView==eTakeoffGridView )
-		{
-		pcView->ViewTakeoffGrid(eClass);
-		}
 }
 
 CTime CMainFrame::GetDateCombo()
 {
-return m_wndDialogBar.GetDayCombo();
+	return cCurrentDate;
 }
 
 EClass CMainFrame::GetClassCombo()
 {
-return m_wndDialogBar.GetClassCombo();
+	return eCurrentClass;
 }
 
 void CMainFrame::OnUpdateDate(CCmdUI* pCmdUI)
@@ -380,18 +318,12 @@ BOOL CMainFrame::InitStatusBar(UINT *pIndicators, int nSize, int nSeconds)
 
 void CMainFrame::GreyAll()
 {
- m_wndDialogBar.GreyAll();
 }
 
 
 EViews CMainFrame::GetViewCombo()
 {
-	return m_wndDialogBar.GetView();
-}
-
-void CMainFrame::ShowDialogBar(int iShowCmd)
-{
-	m_wndDialogBar.ShowWindow(iShowCmd);
+	return 	eCurrentView;
 }
 
 void CMainFrame::SetStatusText(CString cText)
@@ -429,6 +361,8 @@ void CMainFrame::ProcessViewChange(EViews eNewView)
 	pcView->SaveColumnWidths();
 
 	SetViewCombo(eNewView);
+	SetDateCombo(cCurrentDate);
+	SetClassCombo(eCurrentClass);
 	if( eNewView==eContestantView )
 		pcView->ViewContestantList();
 
@@ -444,20 +378,15 @@ void CMainFrame::ProcessViewChange(EViews eNewView)
 		}
 	else if( eNewView==eScoreView  )
 		{
-		CTime cTime=m_wndDialogBar.GetDayCombo();
-		EClass eClass=m_wndDialogBar.GetClassCombo();
-		pcView->ViewScores(cTime, eClass);
+		pcView->ViewScores(cCurrentDate, eCurrentClass);
 		}
 	else if( eNewView==eTakeoffGridView  )
 		{
-		EClass eClass=m_wndDialogBar.GetClassCombo();
-		pcView->ViewTakeoffGrid(eClass);
+		pcView->ViewTakeoffGrid(eCurrentClass);
 		}
 	else if( eNewView==eFlightLogView  )
 		{
-		CTime cTime=m_wndDialogBar.GetDayCombo();
-		EClass eClass=m_wndDialogBar.GetClassCombo();
-		pcView->ViewFlightLogs(cTime, eClass);
+		pcView->ViewFlightLogs(cCurrentDate, eCurrentClass);
 		}
 }
 void CMainFrame::OnUpdateViewGotoForward(CCmdUI* pCmdUI) 
@@ -511,17 +440,6 @@ EViews CMainFrame::PopView()
 
 void CMainFrame::OnViewDlgbar()
 {
-	BOOL bIsVis=m_wndDialogBar.IsVisible ();
-	ShowPane (&m_wndDialogBar,
-					!bIsVis,
-					FALSE, TRUE);
-	ShowPane (&m_wndWinscoreBar,
-			  bIsVis,
-			  FALSE, TRUE);
-	RecalcLayout ();
-
-	int iVis=(int)!m_wndWinscoreBar.IsVisible();
-	AfxGetApp()->WriteProfileInt(REGSECTION, CONTROLBARVISIBLE,	iVis );
 }
 
 
@@ -612,11 +530,13 @@ BOOL CMainFrame::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult)
 
 				else if( pItem->m_eTreeType==CWSTreeItem::eTasks )
 					{
-					//ProcessViewChange(eTaskView);
+					SetClassCombo(pItem->m_eClass);
+					SetDateCombo(pItem->m_cTime);
+					ProcessViewChange(eTaskView);
 					}
 				else if( pItem->m_eTreeType==CWSTreeItem::eDistanceGrid )
 					{
-					//ProcessViewChange(eTurnpointGridView);
+					ProcessViewChange(eTurnpointGridView);
 					}
 
 				else if( pItem->m_eTreeType==CWSTreeItem::eGridPositions )
@@ -626,15 +546,15 @@ BOOL CMainFrame::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult)
 					}
 				else if( pItem->m_eTreeType==CWSTreeItem::eScores )
 					{
-					//SetClassCombo(pItem->m_eClass);
-					//SetDateCombo(pItem->m_cTime);
-					//ProcessViewChange(eScoreView);
+					SetClassCombo(pItem->m_eClass);
+					SetDateCombo(pItem->m_cTime);
+					ProcessViewChange(eScoreView);
 					}
 				else if( pItem->m_eTreeType==CWSTreeItem::eLogs )
 					{
-					//SetClassCombo(pItem->m_eClass);
-					//SetDateCombo(pItem->m_cTime);
-					//ProcessViewChange(eFlightLogView);
+					SetClassCombo(pItem->m_eClass);
+					SetDateCombo(pItem->m_cTime);
+					ProcessViewChange(eFlightLogView);
 					}
 				else if( pItem->m_eTreeType==CWSTreeItem::eTask )
 					{

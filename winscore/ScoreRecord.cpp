@@ -8,11 +8,8 @@
 #include "stdafx.h"
 #include "Winscore.h"
 
-#ifndef   WSVIEWER
 #include "Penality.h"
 #include "PenalityList.h"
-#endif
-
 #include "Location.h"
 #include "ScoreRecord.h"
 #include <math.h>
@@ -400,7 +397,6 @@ CString CScoreRecord::DNCText(EStatus eStatus)
 
 
 
-#ifndef WSVIEWER
 CString CScoreRecord::AppliedPenalityText(CPenalityList& cPenalityList)
 
 	{
@@ -420,8 +416,6 @@ CString CScoreRecord::AppliedPenalityText(CPenalityList& cPenalityList)
 	cTemp.Format(_T("%4.0lf"), max( dPenality, 0) );
 	return cTemp;
 	}
-#endif
-
 
 bool CScoreRecord::GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode)
 	{

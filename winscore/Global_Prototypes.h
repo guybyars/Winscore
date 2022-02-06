@@ -9,11 +9,9 @@
 #include "turnpointarray.h"
 #include <atlbase.h>
 
-#ifndef WSVIEWER
 #include "winscoredoc.h"
 #include "suautil.h"
 #include "sua.h"
-#endif
 
 #include "flight.h"
 #include "wsbaro.h"
@@ -33,8 +31,6 @@ double GetLatCorrection(double dLatitude);
 void FindIGCFilesInDirectory( CTime cDate, CStringArray &strArray );
 bool FindIGCFilesInDirectory2( CString strPath, CString strType, CTime cDate,  CStringArray &strFilePath, CStringArray &strFileName, int nLevels );
 
-CString PilotNameFromCAI(CString strCAIFile);
-bool ImportCAI( CString strInputFilePath, CString strInputFileName, CString strLogPath, CString &strOutputFilePath,  CString &strOutputFileName, CString &strStatus, bool &bSecure );
 bool ImportIGC( CString strInputFilePath, CString strInputFileName, CString strLogPath, CString &strOutputFileName, CString &strStatus );
 bool ValidateIGC		( const TCHAR* strDLLName, const TCHAR* strIGCFile, CString &strReason );
 bool ValidateIGCThread	( const TCHAR* strDLLName, const TCHAR* strIGCFile, CString &strReason );
@@ -172,11 +168,7 @@ CString getNoLogKey(CString cCID, CTime cDate);
 inline void TESTHR( HRESULT _hr ) 
    { if FAILED(_hr) throw(_hr); }
 
-
-#ifndef WSVIEWER
 void	LoadViewControl( CWSView &cWSView, CWSBaro *pWSBaro, CWinscoreDoc *pDoc, CFlight *pcFlight, CTask *pcTask );
-
-#endif
 
 
 #endif

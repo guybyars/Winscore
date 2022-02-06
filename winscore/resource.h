@@ -178,6 +178,8 @@
 #define IDC_COMBO1                      1014
 #define IDC_CONTROL_BAR_VIEW            1014
 #define IDC_DATE_COMBO                  1014
+#define IDC_NUMBER_DAYS2                1014
+#define IDC_NUMBER_PRACTICE_DAYS        1014
 #define IDC_STARTCOMBO                  1015
 #define IDC_REALTIMEPATH                1015
 #define IDC_SUAFILENAME                 1015
@@ -714,7 +716,6 @@
 #define ID_FILE_EXPORT_WINSCOREFLIGHTFILE 32843
 #define ID_HELP_REGISTER                32844
 #define ID_VIEW_REALTIMEFLIGHTDISPLAY   32845
-#define ID_FLIGHTLOGS_IMPORT_AUTOMATICCAMBRIDGEUPLOAD 32847
 #define ID_FLIGHTLOGS_VIEW              32848
 #define ID_ANALYZE_INFO                 32849
 #define ID_VIEW_GOTO_BACK               32850

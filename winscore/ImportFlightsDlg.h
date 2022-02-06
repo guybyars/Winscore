@@ -13,41 +13,7 @@
 #endif // _MSC_VER > 1000
 // ImportFlightsDlg.h : header file
 //
-/*
-#define	NUM_FDRS	3
 
-
-enum EUploadStatus {	eIdle, 
-						eUploading, 
-						eVerifying, 
-						eConverting,
-						eBatchConversion } ;
-
-enum ESource {	eCambridge	=0, 
-				eFilser		=1,	
-				eVolkslogger=2	
-			};
-
-static _TCHAR *_gszName[NUM_FDRS] =
-{
-	_T("Cambridge FDR"), 
-	_T("Filser FDR"), 
-	_T("Volkslogger FDR") 
-};
-static _TCHAR *_gszFileType[NUM_FDRS] =
-{
-	_T("CAI"), 
-	_T("FIL"), 
-	_T("IGC") 
-};
-static _TCHAR *_gszEXEName[NUM_FDRS] =
-{
-	_T("CAM"), 
-	_T("FIL"),
-	_T("GCS")
-	
-};
-*/
 /////////////////////////////////////////////////////////////////////////////
 // CImportFlightsDlg dialog
 
@@ -61,42 +27,11 @@ public:
 	CStringArray m_cImportArray, m_cOutputArray;
 
 	CString m_strIGCFileName;
-//	bool ValidateIGCFile();
-//	void PurgeUploadDir();
-//	int m_iComPort;
-
-//	CString m_strBinPath;
-//	CString m_strUploadPath;
 	CString m_strLogPath;
 
-//	void ConvertUploadedFile();
-//	void ValidateUploadedFile();
-//	void UploadFlight();
 	void ImportIGCFile();
 	void ConvertImportedFiles(CStringArray &cBatchArray);
-
-//	CString VerificationLogFileName();
-//	CString ConversionLogFileName();
-//	CString UploadLogFileName();
-
-//	void ReportValidationStatus(int ExitCode);
-//	void ReportUploadStatus(int IResult);
-//	void ReportConversionStatus(int ExitCode);
-
-
-//	CString UploadedFileName();
-//	CString GetUploadCommand();
-//	CString GetUploadProgram();
-
-//	CString GetVerifyCommand();
-//	CString GetVerifyProgram();
-
-//	CString GetConversionCommand();
-//	CString GetConversionProgram();
-
-//	EUploadStatus m_eStatus;
-//	HANDLE m_hProcess;
-
+	
 	CImportFlightsDlg(CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data

@@ -41,15 +41,12 @@ BOOL CWinscoreDlgBar::Create(CWnd* pParentWnd)
 		TRACE0("Failed to create Dialog Bar\n");
 		return FALSE;      // fail to create
 	}
-//	if( !CDialogBar::Create(pParentWnd, IDD_CONTROL_BAR, CBRS_TOP, 
-//								ID_DIALOG_BAR ) ) return FALSE;
 
 	CComboBox* pcClassComboBox=(CComboBox*)GetDlgItem(IDC_CONTROL_BAR_CLASS);
 	CComboBox* pcDayComboBox=  (CComboBox*)GetDlgItem(IDC_CONTROL_BAR_DAY);
 	CComboBox* pcViewComboBox= (CComboBox*)GetDlgItem(IDC_CONTROL_BAR_VIEW);
 
-	
-	//  Setup the view menu picks
+		//  Setup the view menu picks
 	for( int i=0; i<NVIEWS; i++ ) 
 		pcViewComboBox->AddString(_gszViewNames[i]);
 	SetView(eContestantView);
