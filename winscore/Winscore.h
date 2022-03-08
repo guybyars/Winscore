@@ -97,8 +97,6 @@ pDC->LineTo(GetPageWidth(pDC),Y);\
 #define AUTOEXPORTENABLEDFLAG	_T("AutoExportEnabledFlag")
 #define AUTOEXPORTPATH			_T("AutoExportPath")
 
-#define CONTROLBARVISIBLE       _T("ControlBarVisible")
-
 #define AUTOSCORE_DURATION		_T("AutoScoreDuration")
 #define AUTOSCORE_EMAIL			_T("AutoScoreEmail")
 #define AUTOSCORE_MEDIA			_T("AutoScoreMedia")
