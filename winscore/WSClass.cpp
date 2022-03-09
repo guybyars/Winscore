@@ -398,6 +398,14 @@ double CWSClass::GetMinTaskDistance(EUnits eUnits)
 	}
 
 
+double CWSClass::GetContestantFactor(CSummary &cSummary)
+{
+	if( !IsUseShortTaskFactor() ) return 1.0; 
+
+	double dCF = ((double)cSummary.m_nContestants)/3.0;
+
+	return min(dCF, 1.0);
+}
 
 double CWSClass::GetShortTaskFactor(CSummary &cSummary)
 {
@@ -415,8 +423,9 @@ void CWSClass::GetPoints( CTask *pcTask, CObject *pObject,  CSummary &cSummary)
 {
 	CScoreRecord *pcScoreRecord=(CScoreRecord*)pObject;
 	double	dShortTaskFactor=GetShortTaskFactor( cSummary);
-	double	dMaxSpeedPoints	=dShortTaskFactor*GetMaximumSpeedPoints(	 pcTask->m_eType, cSummary);
-	double	dMaxDistPoints	=dShortTaskFactor*GetMaximumDistancePoints(	 pcTask->m_eType, cSummary);
+	double	dContestantFactor=GetContestantFactor( cSummary);
+	double	dMaxSpeedPoints	=dShortTaskFactor*dContestantFactor*GetMaximumSpeedPoints(	 pcTask->m_eType, cSummary);
+	double	dMaxDistPoints	=dShortTaskFactor*dContestantFactor*GetMaximumDistancePoints(	 pcTask->m_eType, cSummary);
 	double BESTDIST=0.0;
 	double dPv, dPd;
 
@@ -772,3 +781,4 @@ void CWSClass::ImportXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pIDOMChildNode)
 	GET_XML_DBL ( cMgr, pIDOMChildNode, _T("D1"),  double, m_dD1, m_dD1);
 	GET_XML_DBL ( cMgr, pIDOMChildNode, _T("Dm"),  double, m_dDm, m_dDm);
 	}
+

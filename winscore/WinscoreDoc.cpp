@@ -851,19 +851,20 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
 			if( pMgr && pClassNode )
 				pMgr->CreateElement( pClassNode, _T("SCR"),	strSummary);
 
-			double dSTF=cClass.GetShortTaskFactor( cSummary) ;
+			double dSTF=cClass.GetShortTaskFactor( cSummary);
+			double dCF =cClass.GetContestantFactor(cSummary);
 
 
     		if( cSummary.m_nFinishers>0 )
     			{
-    			strSummary.Format(_T("%4.0lf"), dSTF*cClass.GetMaximumSpeedPoints(pcTask->m_eType, cSummary) );
+    			strSummary.Format(_T("%4.0lf"), dSTF*dCF*cClass.GetMaximumSpeedPoints(pcTask->m_eType, cSummary) );
     			cStatus.AddTwoStringItem(_T("Max. Speed Points"),strSummary);
 
 				if( pMgr && pClassNode )
 					pMgr->CreateElement( pClassNode, _T("MSP"),	strSummary);
     			}
 
-    		strSummary.Format(_T("%4.0lf"), dSTF*cClass.GetMaximumDistancePoints(pcTask->m_eType, cSummary) );
+    		strSummary.Format(_T("%4.0lf"), dSTF*dCF*cClass.GetMaximumDistancePoints(pcTask->m_eType, cSummary) );
     		cStatus.AddTwoStringItem(_T("Max. Dist. Points"),strSummary);
     
 			if( pMgr && pClassNode )
@@ -871,6 +872,9 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
 
     		strSummary.Format(_T("%lf"), dSTF );
     		cStatus.AddTwoStringItem(_T("Short Task Factor"),strSummary);
+
+    		strSummary.Format(_T("%lf"), dCF );
+    		cStatus.AddTwoStringItem(_T("Contestant Factor"),strSummary);
 
 			if( pMgr && pClassNode )
 				pMgr->CreateElement( pClassNode, _T("STF"),	strSummary);		

@@ -111,25 +111,12 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	}
 	CProgressBar::SetStaticStatusBar(&m_wndStatusBar);
 
-
-	// TODO: Remove this if you don't want tool tips or a resizeable toolbar
-//	m_wndToolBar.SetBarStyle(m_wndToolBar.GetBarStyle() |
-//		CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC);
-
-	// TODO: Delete these three lines if you don't want the toolbar to
-	//  be dockable
-//	m_wndMenuBar.EnableDocking(CBRS_ALIGN_ANY);
-//	m_wndToolBar.EnableDocking(CBRS_ALIGN_ANY);
 	EnableDocking(CBRS_ALIGN_ANY);
 	DockPane(&m_wndMenuBar);
 	DockPane(&m_wndToolBar);
 	DockPane(&m_wndWinscoreBar);
-
-	bool bVis=false;
-	AfxGetApp()->GetProfileInt(REGSECTION, CONTROLBARVISIBLE, 0 )==1?bVis=true:bVis=false;
-	
 	ShowPane (&m_wndWinscoreBar,
-					!bVis,
+					TRUE,
 					FALSE, TRUE);
 
 	// CG: The following line was added by the Splash Screen component.

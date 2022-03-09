@@ -449,9 +449,16 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 		{
 		dCheckDistance=dCheckDistance*pcContestant->m_fHandicap;
 		}
+
+//--Pre 2022 check
+//	if( !pcTask->IsFAITask() &&
+//		m_nAcheivedTurnpoints<=1 && 
+//		dCheckDistance>.001 &&
+//		dCheckDistance<dSMTD/2 )
+//--
+
 	if( !pcTask->IsFAITask() &&
-		m_nAcheivedTurnpoints<=1 && 
-		dCheckDistance>.001 &&
+		m_nAcheivedTurnpoints==0 && 
 		dCheckDistance<dSMTD/2 )
 		{
 

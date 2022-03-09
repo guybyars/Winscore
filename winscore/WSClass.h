@@ -73,7 +73,7 @@ public:
 
 	double GetCompletionRatio(ETaskType eTaskType, CSummary &cSummary);
 	double GetShortTaskFactor(CSummary &cSummary);
-
+	double GetContestantFactor(CSummary &cSummary);
 
 	CString m_strName;
 
