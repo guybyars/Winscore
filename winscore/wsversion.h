@@ -3,13 +3,16 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2022
-#define WINSCOREVERSION		_T("2022 Rev 2")
-#define SHORTVERSION			 _T("Rev 2")
+#define WINSCOREVERSION		_T("2022 Rev 3")
+#define SHORTVERSION			 _T("Rev 3")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2022
+
+Rev 3 
+   * Corrected ENL display when no task was defined.
 
 Rev 2 
    * Updated tree window visibility

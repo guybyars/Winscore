@@ -1868,7 +1868,7 @@ void	LoadViewControl( CWSView &cWSView, CWSBaro* pWSBaro, CWinscoreDoc *pDoc, CF
 		pWSBaro->AddFullPoint(	iPilotID,  
 								(long)pcPos->m_cTime.GetTime(),
 								0, 
-								pcPos->m_iCorrectedAltitude, 
+								(pcTask==NULL)?pcPos->m_iPressureAltitude:pcPos->m_iCorrectedAltitude, 
 								(float)pcPos->GetLat(), 
 								(float)pcPos->GetLong(), 
 								0, 
