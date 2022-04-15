@@ -1865,6 +1865,12 @@ void	LoadViewControl( CWSView &cWSView, CWSBaro* pWSBaro, CWinscoreDoc *pDoc, CF
 								pcPos->m_iCorrectedAltitude, 
 								pcPos->m_iEngineNoiseLevel );
 	if( pWSBaro )
+		{
+		int iNoise=pcPos->m_iEngineNoiseLevel;
+		if( pcTask==NULL )
+		  {
+		  iNoise = max(pcPos->m_iEngineNoiseLevel,pcPos->m_iMOPLevel);
+		  }
 		pWSBaro->AddFullPoint(	iPilotID,  
 								(long)pcPos->m_cTime.GetTime(),
 								0, 
@@ -1873,8 +1879,9 @@ void	LoadViewControl( CWSView &cWSView, CWSBaro* pWSBaro, CWinscoreDoc *pDoc, CF
 								(float)pcPos->GetLong(), 
 								0, 
 								0, 
-								pcPos->m_iEngineNoiseLevel);
+								iNoise);
 		}
+	}
 
 
 	cWSView.SetCurrentTimeIndex(  pcFlight->GetNumPoints()-1 );

@@ -499,6 +499,7 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 	int iMonth	=m_iMonth;
 	int iYear	=m_iYear;
 	int nBadFixes=0;
+	bool bBFI=false;
 
 
 	// Correct the full file name if the flight logs were moved.
@@ -547,7 +548,7 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 			CPosition *pPos=NULL;
 			try
 				{
-				pPos=new CPosition( iYear, iMonth, iDay, 0,  strRecord, m_iAccuracyStartPos, m_iAccuracyEndPos, m_iENLStartPos, m_iENLEndPos, m_iMOPStartPos, m_iMOPEndPos);
+				pPos=new CPosition( iYear, iMonth, iDay, 0,  strRecord, m_iAccuracyStartPos, m_iAccuracyEndPos, m_iENLStartPos, m_iENLEndPos, m_iMOPStartPos, m_iMOPEndPos, bBFI);
 				}
 			catch(...)
 				{
@@ -581,6 +582,17 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 			m_iMaxGPSAltitude=max(m_iMaxGPSAltitude, pPos->m_iGPSAltitude);
 
 			pcPrevPos=pPos;
+			}
+
+		if(		 strRecord[0]=='E' )
+			{
+			// Check for Artificial horizon on/off
+			//E195039BFION AH
+			//E195052BFIOFF AH
+			if( strRecord.Find("BFION AH")>0 )	
+				bBFI = true;
+			else if( strRecord.Find("BFIOFF AH")>0 )	
+				bBFI = false;
 			}
 
 		}// end loop on records

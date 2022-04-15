@@ -58,7 +58,7 @@ public:
 	void	SetTurnpoint(int iID, int iPos);
 	void	AddStatus(int iStatus);
 	void	RemoveStatus(int iStatus);
-	CPosition(int iYear, int iMonth, int iDay, int iDST, CString strBRecord, int iAccuracyStartPos, int iAccuracyEndPos, int iENLStartPos, int iENLEndPos, int iMOPStartPos, int iMOPEndPos);
+	CPosition(int iYear, int iMonth, int iDay, int iDST, CString strBRecord, int iAccuracyStartPos, int iAccuracyEndPos, int iENLStartPos, int iENLEndPos, int iMOPStartPos, int iMOPEndPos, bool bBFI);
 	CPosition();
 	virtual ~CPosition();
 
@@ -75,6 +75,7 @@ public:
 	int     m_iMOPLevel;
 	double  m_dSpeed;
 	float	m_fVSpeed;
+	bool	m_bBFI;
 
 private:
 	double	m_adDistanceFromControlPoint[ALLOCTASKTPS];

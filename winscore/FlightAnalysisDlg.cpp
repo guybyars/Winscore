@@ -245,6 +245,8 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 	_T("Speed"),
 	_T("Altitude"),
 	_T("Accuracy"),
+	_T("ENL"),
+	_T("MOP"),
 	_T("ID Turnpoint"),
 	_T("Turnpoint Dist"),
 	_T("Start Dist."),
@@ -327,6 +329,10 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 		cInt.Format(_T("%6.2lf"), ConvertDistance(pcPos->m_dAccuracy, SYSTEMUNITS, m_eUnits) );
 		m_cListCtrl.SetItemText(iItem,i++,cInt );
 
+		cInt.Format(_T("%5d"), pcPos->m_iEngineNoiseLevel );
+		m_cListCtrl.SetItemText(iItem,i++,cInt );
+		cInt.Format(_T("%5d"), pcPos->m_iMOPLevel );
+		m_cListCtrl.SetItemText(iItem,i++,cInt );
 
 		m_cListCtrl.SetItemText(iItem,i++,pcPos->GetTurnpointText() );
 		m_cListCtrl.SetItemText(iItem,i++, pcPos-> GetTurnpointDistText( m_eUnits ) );
@@ -345,7 +351,7 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }
 
-#define NUM_COLUMNS 14
+#define NUM_COLUMNS 16
 
 static _TCHAR *_gszColumnLabel[NUM_COLUMNS] =
 	{
@@ -358,6 +364,8 @@ static _TCHAR *_gszColumnLabel[NUM_COLUMNS] =
 	_T("Corrected Alt"),
 	_T("Alt Above Home Field"),
 	_T("Accuracy"),
+	_T("ENL"),
+	_T("MOP"),
 	_T("ID Turnpoint"),
 	_T("Turnpoint Dist"),
 	_T("Start Dist."),
@@ -377,6 +385,8 @@ static int _gnColumnWidth[NUM_COLUMNS] =
 	75, //altitude
 	95, //altitude
 	75, //accuracy
+	75, //ENL
+	75, //MOP
 	75, //ID tp
 	75, //tp dist
 	65, //start dist

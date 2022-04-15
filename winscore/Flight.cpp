@@ -252,6 +252,15 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 		}
 
 	try {
+		if( pcContestant ) CheckBFI();
+		}
+	catch(...)
+		{
+		AfxMessageBox(_T("Unhandled exception in CFlight::CheckBFI"));
+		throw;
+		}
+
+	try {
 		FindAcheivedTurnpoints(pcTask);
 		}
 	catch(...)
@@ -941,6 +950,7 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 
 	pcPos		=GetPosition(0);
 	int			iLastTaskPoint= FindTime( pcTask->m_cGateOpenTime, 0, FORWARD );;
+	if( iLastTaskPoint<0 ) iLastTaskPoint=0;
 	
 	// IN the weird corner case when he is already at the 1st turn when the gate opens, advance the 
 	// Check time to when he is in the cylinder
@@ -3155,6 +3165,24 @@ bool CFlight::UpdateCID(CONTESTANTLISTCLASS *pcontestantList)
 	m_strCID.MakeUpper();
 	return (bFound)?(true):(false);
 	}
+
+
+
+void CFlight::CheckBFI()
+{
+	int nBFIFixes=0;
+	for( int iPos=0; iPos<GetNumPoints(); iPos++ )
+		{
+		CPosition* pcPos=GetPosition(iPos);
+		if( pcPos->m_bBFI ) nBFIFixes++;
+		}
+
+	if (nBFIFixes==0) return;
+
+	CString strErr;
+	strErr.Format("BFI Artificial Horizon was ON for %i fixes.", nBFIFixes);
+	AddWarning(eInformation,0,strErr);
+}
 
 
 void CFlight::CheckMotorRun()

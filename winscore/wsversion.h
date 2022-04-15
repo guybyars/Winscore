@@ -3,13 +3,18 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2022
-#define WINSCOREVERSION		_T("2022 Rev 3")
-#define SHORTVERSION			 _T("Rev 3")
+#define WINSCOREVERSION		_T("2022 Rev 4")
+#define SHORTVERSION			 _T("Rev 4")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2022
+
+Rev 4
+   * Corrected ENL & MOP display when no task was defined.
+   * Fixed crash when no valid start occured.
+   * Added warning ifArtificial horizon on/off (BFION/BFIOFF)
 
 Rev 3 
    * Corrected ENL display when no task was defined.

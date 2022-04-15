@@ -36,8 +36,7 @@ CPosition::CPosition()
 	m_dDistanceFromFinish=0.0;
 	m_dDistanceFromStart=0.0;
 	m_fVSpeed=0.;
-
-
+	m_bBFI=false;
 }
 
 CPosition::~CPosition()
@@ -45,7 +44,7 @@ CPosition::~CPosition()
 
 }
 
-CPosition::CPosition(int iYear, int iMonth, int iDay, int iTimeZone, CString strRecord, int iAccuracyStartPos, int iAccuracyEndPos, int iENLStartPos, int iENLEndPos, int iMOPStartPos, int iMOPEndPos) : CLocation()
+CPosition::CPosition(int iYear, int iMonth, int iDay, int iTimeZone, CString strRecord, int iAccuracyStartPos, int iAccuracyEndPos, int iENLStartPos, int iENLEndPos, int iMOPStartPos, int iMOPEndPos, bool bBFI) : CLocation()
 {
 		int iAccuracy=30; // Default accuracy of 30m for those without accuracy in trace
 
@@ -57,9 +56,6 @@ CPosition::CPosition(int iYear, int iMonth, int iDay, int iTimeZone, CString str
 		m_iCorrectedAltitude=0;
 		m_iGPSAltitude		=0;
 		m_fVSpeed			=0.;
-
-		int		iMOPEngineNoiseLevel=0;
-		int		iENLEngineNoiseLevel=0;
 
 		for( int i=0; i<ALLOCTASKTPS; i++) 
 			{
@@ -138,6 +134,7 @@ CPosition::CPosition(int iYear, int iMonth, int iDay, int iTimeZone, CString str
 		m_dAccuracy=(double)iAccuracy;
 		m_dAccuracy/=1000; // Convert m to km.
 		m_dAccuracy*=NMPERDEGREE/KMPERDEGREE; // convert km to nm
+		m_bBFI=bBFI;
 
 
 	/*

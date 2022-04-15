@@ -293,6 +293,7 @@ public:
 	int GetTaskPointID(int iTskPt);
 	void SetAcheviedTurnpoint(int i, int IID);
 	void CheckMotorRun();
+	void CheckBFI();
 	bool UpdateCID(CONTESTANTLISTCLASS *contestantList);
 	void CheckAllTimes();
 	CString GetFlightText(TASKCLASS *pcTask=NULL, TURNPOINTCLASSARRAY *pcTurnpointArray=NULL, CString strSeparator="\t");
