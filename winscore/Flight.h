@@ -54,6 +54,7 @@
 #define FLT_SAFETYFINISH		0x01000
 #define FLT_OPTTURNPOINTSLOCKED	0x02000
 #define FLT_CHECKED				0x04000
+#define FLT_MISSING_ENL			0x08000
 
 enum EFlightStatus {	eNotAnalyzed,
 						eNoTaskSpecified,

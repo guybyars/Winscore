@@ -3,13 +3,17 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2022
-#define WINSCOREVERSION		_T("2022 Rev 4")
-#define SHORTVERSION			 _T("Rev 4")
+#define WINSCOREVERSION		_T("2022 Rev 5")
+#define SHORTVERSION			 _T("Rev 5")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2022
+
+Rev 5
+   * Corrected missing Airfield Bonus for motorglider engine run
+   * When duplicate logs encountered, give preference to log with good ENL trace.
 
 Rev 4
    * Corrected ENL & MOP display when no task was defined.

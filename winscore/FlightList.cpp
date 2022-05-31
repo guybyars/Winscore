@@ -522,21 +522,25 @@ CFlight* CFlightList::LoadIGC(CString &strIGCFileName, CContestantList &contesta
 
 CFlight* CFlightList::Get(CTime &cDate, CString &strContestNo)
 {
+	int nMissingENL=0;
 	CPtrArray cPtFlights;
 	if( IsEmpty() !=0  )  return NULL;
 	POSITION pos = GetHeadPosition();
 	while(pos)
 		{
 		CFlight* pcFlight=GetNext(pos);
-		if( pcFlight && 
-			pcFlight->m_strCID==strContestNo    &&
+		if( !pcFlight ) continue;
+		if( pcFlight->m_strCID==strContestNo    &&
 			pcFlight->m_iDay==cDate.GetDay()	&&
 			pcFlight->m_iMonth==cDate.GetMonth()&&
 			pcFlight->m_iYear==cDate.GetYear()			) 
 			{
 			cPtFlights.Add(pcFlight); 
 			}
+		if( pcFlight->CheckOption(FLT_MISSING_ENL) ) nMissingENL++;
 		}
+	bool bBadENLLog=nMissingENL<cPtFlights.GetCount();
+
 	if( cPtFlights.GetCount()==1 ) 
 		return (CFlight*)cPtFlights.GetAt(0);
 	else if( cPtFlights.GetCount()>1 )
@@ -550,6 +554,7 @@ CFlight* CFlightList::Get(CTime &cDate, CString &strContestNo)
 		for( int iLog=0; iLog<cPtFlights.GetCount(); iLog++)
 			{
 			pcFlight=(CFlight*)cPtFlights.GetAt(iLog);
+			if( bBadENLLog && pcFlight->CheckOption(FLT_MISSING_ENL) ) continue;
 			if( pcFlight->IsTaskComplete() )
 				{
 				CTimeSpan cSpan=pcFlight->GetFinishTime()-pcFlight->GetStartTime();

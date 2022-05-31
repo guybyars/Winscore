@@ -372,7 +372,6 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 
 	if( !CheckOption(FLT_AIRFIELDBONUSLOCKED) && cClass.IsAirfieldBonusActive() )
 		{
-		AirfieldBonus(false);
 		if( MotorRunLandoutWarning() )
 			{
 			// Landout due to motor run, check 1mi and 800ft
@@ -491,7 +490,6 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 
 	if( !CheckOption(FLT_AIRFIELDBONUSLOCKED) && cClass.IsAirfieldBonusActive() )
 		{
-		AirfieldBonus(false);
 		if( MotorRunLandoutWarning() )
 			{
 			// Landout due to motor run, check 2mi and 1000ft
@@ -2695,6 +2693,8 @@ CString CFlight::GetStatusText()
 		if( CheckOption(FLT_CHECKED ) ) strOut=_T(" <ok>");
 		}
 
+	if( CheckOption(FLT_MISSING_ENL) )strOut=_T(" NO ENL");
+
 	if( m_eStatus==eNotAnalyzed )
 		return _T("Not Analyzed")+strOut;
 	else if( m_eStatus==eNoTaskSpecified )
@@ -2711,6 +2711,7 @@ CString CFlight::GetStatusText()
 		return _T("No Data in Flight Log, ")+strOut;
 	else if( m_eStatus==eBelowFinishCylinder )
 		return _T("Incomplete - Below Finish Height")+strOut;
+
 	return _T("Not Analyzed");
 
 }
@@ -3211,6 +3212,7 @@ void CFlight::CheckMotorRun()
 	if( !bSignal ) 
 		{
 		AddWarning(eInformation,0,"No engine noise signal was detected, check motor run manually." );
+		SetOption(FLT_MISSING_ENL);
 		return;
 		}
 	
