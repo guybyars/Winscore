@@ -400,13 +400,20 @@ bool CIGCFile::GetARecord(CString strIGCFile,  CString &strLongName )
 			{
 			strARecord=strRecord;
 			strManufacturer=strRecord.Mid(1,3);
-			strSN=strRecord.Mid(4,3);
 			int iFlight=strRecord.Find("FLIGHT:");
 			if( iFlight>6 ) 
 				{
 				iVer=atoi(strRecord.Mid(iFlight+7,(iLen-iFlight+7)) );
 				iVer=min(iVer,9);
 				iVer=max(iVer,1);
+				strSN=strRecord.Mid(4,3);
+				}
+			else
+				{
+				if(iLen==11)
+				  strSN=strRecord.Mid(4,6);
+				else
+				  strSN=strRecord.Mid(4,3);
 				}
 
 			bFoundA=true;

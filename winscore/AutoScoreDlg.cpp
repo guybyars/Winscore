@@ -654,7 +654,7 @@ int CAutoScoreDlg::ScanEmailForLogs( CTime cDate, CString strIMAPServer, CString
 					// Short IGC name, check if its valid
 					if( strAttach.Find(strShortPrefix)<0 ) continue;
 					}
-				else if( strAttach.GetLength()==25 )
+				else if( strAttach.GetLength()==25 || strAttach.GetLength()==28 )
 					{// Long IGC name
 					if( strAttach.Find(strLongPrefix)<0 ) continue;
 					}
@@ -703,7 +703,7 @@ int CAutoScoreDlg::ScanEmailForLogs( CTime cDate, CString strIMAPServer, CString
 						// Short IGC name
 						if( strAttach.Find(strShortPrefix)<0 ) continue;
 						}
-					else if( strAttach.GetLength()==25 )
+					else if( strAttach.GetLength()==25 || strAttach.GetLength()==28)
 						{// Long IGC name
 						if( strAttach.Find(strLongPrefix)<0 ) continue;
 						}

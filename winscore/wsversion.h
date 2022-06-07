@@ -3,13 +3,17 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2022
-#define WINSCOREVERSION		_T("2022 Rev 5")
-#define SHORTVERSION			 _T("Rev 5")
+#define WINSCOREVERSION		_T("2022 Rev 6")
+#define SHORTVERSION			 _T("Rev 6")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2022
+
+
+Rev 6
+   * Corrected processing of long files with 6 character SN field
 
 Rev 5
    * Corrected missing Airfield Bonus for motorglider engine run
