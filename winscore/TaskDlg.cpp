@@ -472,9 +472,11 @@ void CTaskDlg::OnStatusRadio()
 CTask* CTaskDlg::GetTask()
 	{
 	int iSel=m_cDateCombo.GetCurSel();
+	if( iSel<0 ) return NULL;
 	CTime *pcTime=(CTime*)m_cDateCombo.GetItemDataPtr(iSel);
     
 	iSel=m_cClassCombo.GetCurSel();
+	if( iSel<0 ) return NULL;
 	EClass eClass = (EClass)m_cClassCombo.GetItemData(iSel);
 
 	return m_pcTaskList->GetByDateClass( *pcTime, eClass );

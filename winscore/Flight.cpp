@@ -951,9 +951,9 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 	if( iLastTaskPoint<0 ) iLastTaskPoint=0;
 	
 	// IN the weird corner case when he is already at the 1st turn when the gate opens, advance the 
-	// Check time to when he is in the cylinder
+	// Check time to when he is in the cylinder  Unless the start time is locked, then assume the scorer knows what he is doing.
 
-	if( m_cStartGate.GetGateType()==eCylinder )
+	if( m_cStartGate.GetGateType()==eCylinder && !CheckOption(FLT_STARTTIMELOCKED) )
 		{
 		for(int iPoint=iLastTaskPoint; iPoint<nPoints; iPoint++ )
 				{

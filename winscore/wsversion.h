@@ -3,14 +3,17 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2022
-#define WINSCOREVERSION		_T("2022 Rev 6")
-#define SHORTVERSION			 _T("Rev 6")
+#define WINSCOREVERSION		_T("2022 Rev 7")
+#define SHORTVERSION			 _T("Rev 7")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2022
 
+Rev 7
+   * Corrected issue with only 1 practice day
+   * Corrected processing of start time edit when the pilot never entered the start cylinder.
 
 Rev 6
    * Corrected processing of long files with 6 character SN field
