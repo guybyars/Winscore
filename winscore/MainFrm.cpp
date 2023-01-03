@@ -89,6 +89,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (!m_wndWinscoreBar.Create (_T("Winscore Control"), this, CRect (0, 0, 200, 200),
 		FALSE, IDS_CONTROL_BAR,
 		WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | CBRS_LEFT ))
+
 	{
 		TRACE0("Failed to create Winscore bar\n");
 		return FALSE;      // fail to create

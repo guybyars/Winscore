@@ -26,7 +26,7 @@ const int nBorderSize = 1;
 /////////////////////////////////////////////////////////////////////////////
 // CWinscoreBar
 
-BEGIN_MESSAGE_MAP(CWinscoreBar, CDockablePane)
+BEGIN_MESSAGE_MAP(CWinscoreBar, CPANETYPE)
 	ON_WM_CREATE()
 	ON_WM_SIZE()
 	ON_WM_PAINT()
@@ -58,7 +58,7 @@ if( m_hRoot ) DeleteTreeChildren(m_hRoot,true);
 
 int CWinscoreBar::OnCreate(LPCREATESTRUCT lpCreateStruct) 
 {
-	if (CDockablePane::OnCreate(lpCreateStruct) == -1)
+	if (CPANETYPE::OnCreate(lpCreateStruct) == -1)
 		return -1;
 	
 	CRect rectDummy;
@@ -85,7 +85,7 @@ int CWinscoreBar::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 void CWinscoreBar::OnSize(UINT nType, int cx, int cy) 
 {
-	CDockablePane::OnSize(nType, cx, cy);
+	CPANETYPE::OnSize(nType, cx, cy);
 
 	// Tab control should cover a whole client area:
 	m_wndTree.SetWindowPos (NULL, nBorderSize, nBorderSize, 
@@ -106,30 +106,6 @@ void CWinscoreBar::OnPaint()
 								::GetSysColor (COLOR_3DSHADOW));
 }
 
-
-void CWinscoreBar::OnParentNotify(UINT message, LPARAM lParam)
-{
-	CDockablePane::OnParentNotify(message, lParam);
-
-}
-
-
-
-
-UINT CWinscoreBar::OnNotifyFormat(CWnd *pWnd, UINT nCommand)
-{
-	// TODO: Add your message handler code here and/or call default
-
-	return CDockablePane::OnNotifyFormat(pWnd, nCommand);
-}
-
-
-BOOL CWinscoreBar::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult)
-{
-	//NMHDR *pHeader=(NMHDR*)lParam;
-
-	return CDockablePane::OnNotify(wParam, lParam, pResult);
-}
 
 
 BOOL CWinscoreBar::OnShowControlBarMenu(CPoint )
@@ -214,15 +190,7 @@ void CWinscoreBar::OnContextMenu(CWnd* /*pWnd*/, CPoint ptMousePos )
 }
 
 
-void CWinscoreBar::OnNcRButtonDown(UINT nHitTest, CPoint point)
-{
-	// TODO: Add your message handler code here and/or call default
 
-
-
-
-	CDockablePane::OnNcRButtonDown(nHitTest, point);
-}
 
 
 CTreeCtrl& CWinscoreBar::GetTreeCtrl(void)
@@ -339,7 +307,7 @@ void CWinscoreBar::DeleteWSTreeItem( HTREEITEM hItem)
 
 void CWinscoreBar::OnDestroy()
 {
-	CDockablePane::OnDestroy();
+	CPANETYPE::OnDestroy();
 
 	if( m_hRoot ) DeleteTreeChildren(m_hRoot,true);
 }

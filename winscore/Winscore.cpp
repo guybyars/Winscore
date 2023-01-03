@@ -89,6 +89,8 @@ BOOL CWinscoreApp::InitInstance()
 		return FALSE;
 	}
 
+	m_bSaveState = FALSE;
+
 	AfxEnableControlContainer();
 
 	EnableTaskbarInteraction(FALSE);
