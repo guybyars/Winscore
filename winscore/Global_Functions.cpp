@@ -583,12 +583,12 @@ void    SetDefaultDayToday()
 	int iMonth=cToday.GetMonth();
 	int iDay=cToday.GetDay();
 
-	int iRegDay		=AfxGetApp()->GetProfileInt(REGSECTION, _T("DefaultDay"), iDay);
-	int iRegMonth	=AfxGetApp()->GetProfileInt(REGSECTION, _T("DefaultMonth"), iMonth);
+	AfxGetApp()->WriteProfileInt(REGSECTION, _T("DefaultDay"), iDay );
+	AfxGetApp()->WriteProfileInt(REGSECTION, _T("DefaultMonth"), iMonth );
 
 	cDefaultDay=CTime(	CURRENTYEAR,
-						iRegMonth,
-						iRegDay,	
+						iMonth,
+						iDay,	
 						0,0,0,0);
 	};
 

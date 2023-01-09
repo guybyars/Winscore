@@ -98,11 +98,12 @@ BOOL CWinscoreApp::InitInstance()
 AfxMessageBox(_T("Winscore Beta version.  Evaluation only, not to be used for actual contest scoring."));
 #endif
 
-	CreateMutex(NULL,FALSE,_T("Winscore"));
+	HANDLE hMutex = CreateMutex(NULL,FALSE,_T("Winscore"));
 	if (GetLastError() == ERROR_ALREADY_EXISTS) 
 		{
 		if( AfxMessageBox( _T("Winscore is already running, create another instance?"), MB_YESNOCANCEL  )==IDNO ) return FALSE;
 		}
+	if( hMutex!= NULL ) ReleaseMutex(hMutex);
 
 
 	// CG: The following block was inserted by 'Status Bar' component.
