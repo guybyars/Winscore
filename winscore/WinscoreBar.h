@@ -12,7 +12,9 @@
 
 #include "WSTreeItem.h"
 
-class CWinscoreBar : public CDockablePane
+#define CPANETYPE   CDockablePane
+
+class CWinscoreBar : public CPANETYPE
 {
 public:
 	CWinscoreBar();
@@ -41,15 +43,10 @@ protected:
 	afx_msg void OnPaint();
 
 	DECLARE_MESSAGE_MAP()
-public:
-	afx_msg void OnParentNotify(UINT message, LPARAM lParam);
 protected:
 public:
-	afx_msg UINT OnNotifyFormat(CWnd *pWnd, UINT nCommand);
-	virtual BOOL OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult);
 	BOOL OnShowControlBarMenu(CPoint point);
 	afx_msg void OnContextMenu(CWnd* /*pWnd*/, CPoint /*point*/);
-	afx_msg void OnNcRButtonDown(UINT nHitTest, CPoint point);
 	CTreeCtrl& GetTreeCtrl(void);
 	int LoadTreeCtrl(CDocument* pDoc);
 

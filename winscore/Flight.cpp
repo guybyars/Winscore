@@ -358,7 +358,11 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 
 
 	if( IsTaskComplete() )
+		{
 		m_eStatus=eCompletedTask;
+		ClearOption(FLT_AIRFIELDBONUSLOCKED); // If for some reason this was set on during an Edit.. turn it off.
+		AirfieldBonus(false);
+		}
 	else
 		{
 		if( IsStartTimeValid() )
