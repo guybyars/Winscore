@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<HandicapList Title="SSA HC List Modified 12/14/2019 3:39:00 PM"><Codes><Code>
+<HandicapList Title="SSA HC List Modified 2/13/2023 4:09:00 PM"><Codes><Code>
 	<ID>F</ID>
 	<Description>F = Fixed gear (when both fixed and retractable variants exist)</Description></Code><Code>
 	<ID>R</ID>
@@ -88,7 +88,7 @@
 	<Weight>725</Weight>
 	<Notes>MW</Notes>
 	<Handicap>0.94</Handicap>
-	<Modified>2/27/2019 3:53:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>7/12/2020 12:31:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Aer Pegaso</Manufacturer>
 	<Model>M-100S</Model>
 	<Span>15</Span>
@@ -110,13 +110,13 @@
 	<Notes>M</Notes>
 	<Handicap>1.43</Handicap>
 	<Modified>2/19/2014 1:55:00 PM</Modified></Aircraft><Aircraft>
-	<Manufacturer>Alabastar</Manufacturer>
+	<Manufacturer>Albastar</Manufacturer>
 	<Model>Apis 13</Model>
 	<Span>13</Span>
 	<Weight>500</Weight>
 	<Notes>W</Notes>
 	<Handicap>1.16</Handicap>
-	<Modified>1/17/2010 12:40:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>7/13/2022 1:26:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Alisport</Manufacturer>
 	<Model>Silent</Model>
 	<Span>12</Span>
@@ -1063,13 +1063,6 @@
 	<Handicap>1.39</Handicap>
 	<Modified>2/20/2014 1:48:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Group Genesis</Manufacturer>
-	<Model>Genesis</Model>
-	<Span>15</Span>
-	<Weight>905</Weight>
-	<Notes>S</Notes>
-	<Handicap>0.97</Handicap>
-	<Modified>2/20/2014 5:54:00 PM</Modified></Aircraft><Aircraft>
-	<Manufacturer>Group Genesis</Manufacturer>
 	<Model>Genesis II</Model>
 	<Span>15</Span>
 	<Weight>825</Weight>
@@ -1119,6 +1112,13 @@
 	<Handicap>0.91</Handicap>
 	<Modified>7/11/2017 11:17:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>HPH</Manufacturer>
+	<Model>304 MS Twin Shark</Model>
+	<Span>20</Span>
+	<Weight>1630</Weight>
+	<Notes>M</Notes>
+	<Handicap>0.85</Handicap>
+	<Modified>6/10/2021 7:32:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>HPH</Manufacturer>
 	<Model>304C</Model>
 	<Span>15</Span>
 	<Weight>758</Weight>
@@ -1167,6 +1167,13 @@
 	<Notes>MW</Notes>
 	<Handicap>0.86</Handicap>
 	<Modified>2/28/2018 9:21:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>HPH</Manufacturer>
+	<Model>Twin Shark</Model>
+	<Span>20</Span>
+	<Weight>1630</Weight>
+	<Notes>M</Notes>
+	<Handicap>0.85</Handicap>
+	<Modified>6/10/2021 7:31:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>IAR Brasov</Manufacturer>
 	<Model>IS-28B2</Model>
 	<Span>17</Span>
@@ -1237,6 +1244,13 @@
 	<Notes/>
 	<Handicap>0.918</Handicap>
 	<Modified>1/28/2019 4:44:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Iscold</Manufacturer>
+	<Model>Nixus</Model>
+	<Span>28</Span>
+	<Weight>1870</Weight>
+	<Notes>M</Notes>
+	<Handicap>0.737</Handicap>
+	<Modified>6/23/2020 7:37:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Issoire</Manufacturer>
 	<Model>Edelweiss C-30S</Model>
 	<Span>15</Span>
@@ -1266,12 +1280,54 @@
 	<Handicap>0.845</Handicap>
 	<Modified>1/20/2012 9:41:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Jonker Sailplanes</Manufacturer>
+	<Model>JS1-C-18</Model>
+	<Span>18</Span>
+	<Weight>890</Weight>
+	<Notes>W</Notes>
+	<Handicap>0.84</Handicap>
+	<Modified>7/28/2021 6:20:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Jonker Sailplanes</Manufacturer>
+	<Model>JS1-C-18jet</Model>
+	<Span>18</Span>
+	<Weight>890</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.84</Handicap>
+	<Modified>7/28/2021 6:21:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Jonker Sailplanes</Manufacturer>
+	<Model>JS1-C-21</Model>
+	<Span>21</Span>
+	<Weight>950</Weight>
+	<Notes>W</Notes>
+	<Handicap>0.8</Handicap>
+	<Modified>7/28/2021 6:21:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Jonker Sailplanes</Manufacturer>
+	<Model>JS1-C-21jet</Model>
+	<Span>21</Span>
+	<Weight>950</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.8</Handicap>
+	<Modified>3/25/2021 10:22:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Jonker Sailplanes</Manufacturer>
 	<Model>JS3-15</Model>
 	<Span>15</Span>
 	<Weight>820</Weight>
-	<Notes/>
+	<Notes>W</Notes>
 	<Handicap>0.865</Handicap>
-	<Modified>1/28/2019 4:45:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>7/29/2021 12:21:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Jonker Sailplanes</Manufacturer>
+	<Model>JS3-15Jet</Model>
+	<Span>15</Span>
+	<Weight>820</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.865</Handicap>
+	<Modified>3/23/2021 2:56:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Jonker Sailplanes</Manufacturer>
+	<Model>JS3-15RES</Model>
+	<Span>15</Span>
+	<Weight>910</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.847</Handicap>
+	<Modified>2/13/2023 4:09:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Jonker Sailplanes</Manufacturer>
 	<Model>JS3-18</Model>
 	<Span>18</Span>
@@ -1280,19 +1336,19 @@
 	<Handicap>0.83</Handicap>
 	<Modified>2/12/2019 6:30:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Jonker Sailplanes</Manufacturer>
-	<Model>JSI-C-18</Model>
+	<Model>JS3-18Jet</Model>
 	<Span>18</Span>
-	<Weight>890</Weight>
-	<Notes>W</Notes>
-	<Handicap>0.84</Handicap>
-	<Modified>2/24/2017 8:44:00 AM</Modified></Aircraft><Aircraft>
+	<Weight>860</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.83</Handicap>
+	<Modified>3/23/2021 2:57:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Jonker Sailplanes</Manufacturer>
-	<Model>JSI-C-21</Model>
-	<Span>21</Span>
+	<Model>JS3-18RES</Model>
+	<Span>18</Span>
 	<Weight>950</Weight>
-	<Notes>W</Notes>
-	<Handicap>0.8</Handicap>
-	<Modified>2/24/2017 8:45:00 AM</Modified></Aircraft><Aircraft>
+	<Notes>MW</Notes>
+	<Handicap>0.814</Handicap>
+	<Modified>2/13/2023 4:09:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Laister</Manufacturer>
 	<Model>LP-15 Nugget</Model>
 	<Span>15</Span>
@@ -1406,6 +1462,13 @@
 	<Handicap>1.18</Handicap>
 	<Modified>2/20/2014 6:34:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Marske</Manufacturer>
+	<Model>Pioneer 3</Model>
+	<Span>15</Span>
+	<Weight>580</Weight>
+	<Notes>SC</Notes>
+	<Handicap>0.96</Handicap>
+	<Modified>6/24/2021 6:58:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Marske</Manufacturer>
 	<Model>Pioneer IID</Model>
 	<Span>13</Span>
 	<Weight>630</Weight>
@@ -1454,6 +1517,13 @@
 	<Notes/>
 	<Handicap>1.48</Handicap>
 	<Modified>10/20/2010 10:45:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>McHolland</Manufacturer>
+	<Model>Solitaire</Model>
+	<Span>15.5</Span>
+	<Weight>1080</Weight>
+	<Notes>F</Notes>
+	<Handicap>1.84</Handicap>
+	<Modified>6/28/2022 5:23:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>MDM</Manufacturer>
 	<Model>MDM-1 Fox</Model>
 	<Span>14</Span>
@@ -1763,6 +1833,13 @@
 	<Handicap>0.881</Handicap>
 	<Modified>2/21/2014 11:59:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>PZL Bielsko</Manufacturer>
+	<Model>SZD-56-2 Diana 2FES</Model>
+	<Span>15</Span>
+	<Weight>770</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.854</Handicap>
+	<Modified>3/12/2021 7:46:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>PZL Bielsko</Manufacturer>
 	<Model>SZD-59 Acro</Model>
 	<Span>13.2</Span>
 	<Weight>835</Weight>
@@ -1930,20 +2007,6 @@
 	<Notes/>
 	<Handicap>1.6</Handicap>
 	<Modified/></Aircraft><Aircraft>
-	<Manufacturer>SB Sportine Aviacija</Manufacturer>
-	<Model>LAK17B FES15</Model>
-	<Span>15</Span>
-	<Weight>780</Weight>
-	<Notes>MS</Notes>
-	<Handicap>0.88</Handicap>
-	<Modified>2/24/2017 8:03:00 AM</Modified></Aircraft><Aircraft>
-	<Manufacturer>SB Sportine Aviacija</Manufacturer>
-	<Model>LAK17B FES15</Model>
-	<Span>15</Span>
-	<Weight>780</Weight>
-	<Notes>MS</Notes>
-	<Handicap>0.88</Handicap>
-	<Modified>2/24/2017 8:06:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Scheibe</Manufacturer>
 	<Model>Bergfalke III</Model>
 	<Span>16.6</Span>
@@ -2040,22 +2103,22 @@
 	<Span>20</Span>
 	<Weight>1365</Weight>
 	<Notes>W</Notes>
-	<Handicap>0.845</Handicap>
-	<Modified>4/12/2017 4:20:00 PM</Modified></Aircraft><Aircraft>
+	<Handicap>0.86</Handicap>
+	<Modified>3/22/2021 9:14:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Arcus M</Model>
 	<Span>20</Span>
 	<Weight>1633</Weight>
 	<Notes>MW</Notes>
-	<Handicap>0.85</Handicap>
-	<Modified>4/12/2017 4:20:00 PM</Modified></Aircraft><Aircraft>
+	<Handicap>0.83</Handicap>
+	<Modified>3/22/2021 9:15:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Arcus T</Model>
 	<Span>20</Span>
 	<Weight>1475</Weight>
 	<Notes>MW</Notes>
-	<Handicap>0.867</Handicap>
-	<Modified>2/27/2019 3:57:00 PM</Modified></Aircraft><Aircraft>
+	<Handicap>0.847</Handicap>
+	<Modified>3/22/2021 9:15:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Austria SH-1</Model>
 	<Span>15</Span>
@@ -2147,6 +2210,13 @@
 	<Notes>SC</Notes>
 	<Handicap>0.935</Handicap>
 	<Modified>1/18/2012 10:08:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Model>Discus aW</Model>
+	<Span>15</Span>
+	<Weight>770</Weight>
+	<Notes>SW</Notes>
+	<Handicap>0.935</Handicap>
+	<Modified>7/29/2021 12:43:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Discus b</Model>
 	<Span>15</Span>
@@ -2477,6 +2547,13 @@
 	<Handicap>0.84</Handicap>
 	<Modified>3/3/2013 6:11:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Model>Ventus 2cxFES-18</Model>
+	<Span>18</Span>
+	<Weight>1017</Weight>
+	<Notes>M</Notes>
+	<Handicap>0.833</Handicap>
+	<Modified>3/12/2021 3:15:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Ventus 2cxm-15</Model>
 	<Span>15</Span>
 	<Weight>1103</Weight>
@@ -2508,30 +2585,51 @@
 	<Model>Ventus 3-15</Model>
 	<Span>15</Span>
 	<Weight>832</Weight>
-	<Notes/>
+	<Notes>W</Notes>
 	<Handicap>0.868</Handicap>
-	<Modified>3/14/2019 7:55:00 AM</Modified></Aircraft><Aircraft>
+	<Modified>10/7/2022 11:13:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Ventus 3-18</Model>
 	<Span>18</Span>
 	<Weight>853</Weight>
-	<Notes/>
+	<Notes>W</Notes>
 	<Handicap>0.84</Handicap>
-	<Modified>2/12/2019 6:23:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>10/7/2022 11:14:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Ventus 3FES-15</Model>
 	<Span>15</Span>
 	<Weight>996</Weight>
-	<Notes>M</Notes>
+	<Notes>MW</Notes>
 	<Handicap>0.849</Handicap>
-	<Modified>3/14/2019 7:54:00 AM</Modified></Aircraft><Aircraft>
+	<Modified>10/7/2022 11:15:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Ventus 3FES-18</Model>
 	<Span>18</Span>
 	<Weight>1017</Weight>
-	<Notes>M</Notes>
+	<Notes>MW</Notes>
 	<Handicap>0.828</Handicap>
-	<Modified>2/27/2019 4:06:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>10/7/2022 11:15:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Model>Ventus 3M-18</Model>
+	<Span>18</Span>
+	<Weight>1150</Weight>
+	<Notes>M</Notes>
+	<Handicap>0.792</Handicap>
+	<Modified>10/7/2022 11:16:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Model>Ventus 3T-15</Model>
+	<Span>15</Span>
+	<Weight>1006</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.835</Handicap>
+	<Modified>10/7/2022 11:17:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Model>Ventus 3T-18</Model>
+	<Span>18</Span>
+	<Weight>1050</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.806</Handicap>
+	<Modified>10/7/2022 11:17:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Ventus a-15</Model>
 	<Span>15</Span>
@@ -2631,6 +2729,41 @@
 	<Handicap>0.864</Handicap>
 	<Modified>4/12/2017 4:59:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
+	<Model>AS-33-15</Model>
+	<Span>15</Span>
+	<Weight>893</Weight>
+	<Notes>W</Notes>
+	<Handicap>0.839</Handicap>
+	<Modified>10/20/2021 6:50:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Model>AS33-18</Model>
+	<Span>18</Span>
+	<Weight>926</Weight>
+	<Notes>W</Notes>
+	<Handicap>0.82</Handicap>
+	<Modified>10/20/2021 6:47:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Model>AS-33ES-15</Model>
+	<Span>15</Span>
+	<Weight>993</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.821</Handicap>
+	<Modified>10/21/2021 6:37:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Model>AS33ES-18</Model>
+	<Span>18</Span>
+	<Weight>1026</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.803</Handicap>
+	<Modified>10/20/2021 6:54:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Model>AS33ME-18</Model>
+	<Span>18</Span>
+	<Weight>1180</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.781</Handicap>
+	<Modified>10/20/2021 6:55:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASG-29-15</Model>
 	<Span>15</Span>
 	<Weight>848</Weight>
@@ -2659,19 +2792,19 @@
 	<Handicap>0.827</Handicap>
 	<Modified>2/27/2019 4:18:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
-	<Model>ASG-29ES</Model>
+	<Model>ASG-29ES-15</Model>
+	<Span>15</Span>
+	<Weight>947</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.846</Handicap>
+	<Modified>3/9/2021 7:23:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Model>ASG-29ES-18</Model>
 	<Span>18</Span>
 	<Weight>980</Weight>
 	<Notes>MW</Notes>
 	<Handicap>0.827</Handicap>
-	<Modified>2/27/2019 4:18:00 PM</Modified></Aircraft><Aircraft>
-	<Manufacturer>Schleicher</Manufacturer>
-	<Model>ASG-29ES-15</Model>
-	<Span>15</Span>
-	<Weight>947</Weight>
-	<Notes/>
-	<Handicap>0.846</Handicap>
-	<Modified>2/27/2019 4:17:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>3/9/2021 7:24:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASG-32 MI</Model>
 	<Span>20</Span>
@@ -2687,6 +2820,13 @@
 	<Handicap>0.778</Handicap>
 	<Modified>2/3/2012 1:53:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
+	<Model>ASH-25-25.6</Model>
+	<Span>25.6</Span>
+	<Weight>1503</Weight>
+	<Notes>W</Notes>
+	<Handicap>0.776</Handicap>
+	<Modified>3/10/2021 8:04:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASH-25EW</Model>
 	<Span>25.6</Span>
 	<Weight>1741</Weight>
@@ -2695,32 +2835,25 @@
 	<Modified>2/27/2019 4:20:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASH-25M</Model>
-	<Span>25</Span>
-	<Weight>1741</Weight>
-	<Notes>M</Notes>
-	<Handicap>0.754</Handicap>
-	<Modified>2/27/2019 4:21:00 PM</Modified></Aircraft><Aircraft>
-	<Manufacturer>Schleicher</Manufacturer>
-	<Model>ASH-25M</Model>
 	<Span>26</Span>
 	<Weight>1741</Weight>
 	<Notes>MW</Notes>
 	<Handicap>0.743</Handicap>
 	<Modified>2/3/2012 1:57:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
-	<Model>ASH-25MW26</Model>
+	<Model>ASH-25M-25</Model>
+	<Span>25</Span>
+	<Weight>1741</Weight>
+	<Notes>M</Notes>
+	<Handicap>0.754</Handicap>
+	<Modified>3/10/2021 8:03:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Model>ASH-25M-26</Model>
 	<Span>26</Span>
 	<Weight>1741</Weight>
 	<Notes>MW</Notes>
 	<Handicap>0.743</Handicap>
-	<Modified>4/12/2017 5:11:00 PM</Modified></Aircraft><Aircraft>
-	<Manufacturer>Schleicher</Manufacturer>
-	<Model>ASH-25W</Model>
-	<Span>25.6</Span>
-	<Weight>1503</Weight>
-	<Notes>W</Notes>
-	<Handicap>0.776</Handicap>
-	<Modified>2/27/2019 4:23:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>3/9/2021 7:41:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASH-26E</Model>
 	<Span>18</Span>
@@ -2743,19 +2876,19 @@
 	<Handicap>0.739</Handicap>
 	<Modified>2/24/2017 9:34:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
-	<Model>ASH-31Mi</Model>
+	<Model>ASH-31MI-18</Model>
 	<Span>18</Span>
 	<Weight>1189</Weight>
 	<Notes>MW</Notes>
 	<Handicap>0.835</Handicap>
-	<Modified>4/5/2016 10:32:00 AM</Modified></Aircraft><Aircraft>
+	<Modified>3/9/2021 7:38:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
-	<Model>ASH-31Mi</Model>
+	<Model>ASH-31MI-21</Model>
 	<Span>21</Span>
 	<Weight>1224</Weight>
 	<Notes>MW</Notes>
 	<Handicap>0.805</Handicap>
-	<Modified>4/5/2016 10:28:00 AM</Modified></Aircraft><Aircraft>
+	<Modified>3/9/2021 7:39:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASK-13</Model>
 	<Span>16</Span>
@@ -2778,12 +2911,26 @@
 	<Handicap>1.12</Handicap>
 	<Modified>12/30/2009 4:15:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
+	<Model>ASK-21B</Model>
+	<Span>17</Span>
+	<Weight>1273</Weight>
+	<Notes>F</Notes>
+	<Handicap>1.12</Handicap>
+	<Modified>1/28/2021 6:02:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASK-23</Model>
 	<Span>15</Span>
 	<Weight>795</Weight>
 	<Notes>S</Notes>
 	<Handicap>1.11</Handicap>
 	<Modified>1/28/2019 5:54:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Model>ASK-23B</Model>
+	<Span>15</Span>
+	<Weight>795</Weight>
+	<Notes>F</Notes>
+	<Handicap>1.11</Handicap>
+	<Modified>1/28/2021 6:00:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASW-12</Model>
 	<Span>18.299999</Span>
@@ -2914,9 +3061,9 @@
 	<Model>ASW-24B</Model>
 	<Span>15</Span>
 	<Weight>788</Weight>
-	<Notes>SC</Notes>
+	<Notes>SWC</Notes>
 	<Handicap>0.935</Handicap>
-	<Modified>10/20/2010 11:44:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>7/29/2021 12:44:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASW-24E</Model>
 	<Span>15</Span>
@@ -3407,13 +3554,6 @@
 	<Notes>M</Notes>
 	<Handicap>1.43</Handicap>
 	<Modified/></Aircraft><Aircraft>
-	<Manufacturer>Sportina Aviacija</Manufacturer>
-	<Model>LAK-12</Model>
-	<Span>20.4</Span>
-	<Weight>1059</Weight>
-	<Notes/>
-	<Handicap>0.865</Handicap>
-	<Modified/></Aircraft><Aircraft>
 	<Manufacturer>Start+Flug</Manufacturer>
 	<Model>H101 Salto-13.6</Model>
 	<Span>13.6</Span>
@@ -3504,4 +3644,11 @@
 	<Weight>415</Weight>
 	<Notes/>
 	<Handicap>1.08</Handicap>
-	<Modified>6/28/2019 2:22:00 PM</Modified></Aircraft></AircraftList></HandicapList>
+	<Modified>6/28/2019 2:22:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>ZS Jezow</Manufacturer>
+	<Model>PW-6U</Model>
+	<Span>16</Span>
+	<Weight>1212</Weight>
+	<Notes>SF</Notes>
+	<Handicap>1.14</Handicap>
+	<Modified>5/30/2022 6:10:00 PM</Modified></Aircraft></AircraftList></HandicapList>
