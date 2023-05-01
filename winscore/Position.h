@@ -35,7 +35,7 @@
 #define FAN_AT_TASKPOINT	  0x04000
 #define FAN_FURTHEST_PROGRESS 0x08000
 #define FAN_OUT_TOP_START	  0x10000
-
+#define FAN_PEV				  0x20000
 
 
 class CPosition : public CLocation  
@@ -58,7 +58,7 @@ public:
 	void	SetTurnpoint(int iID, int iPos);
 	void	AddStatus(int iStatus);
 	void	RemoveStatus(int iStatus);
-	CPosition(int iYear, int iMonth, int iDay, int iDST, CString strBRecord, int iAccuracyStartPos, int iAccuracyEndPos, int iENLStartPos, int iENLEndPos, int iMOPStartPos, int iMOPEndPos, bool bBFI);
+	CPosition(int iYear, int iMonth, int iDay, int iDST, CString strBRecord, int iAccuracyStartPos, int iAccuracyEndPos, int iENLStartPos, int iENLEndPos, int iMOPStartPos, int iMOPEndPos, bool bBFI, bool m_bPEV);
 	CPosition();
 	virtual ~CPosition();
 
@@ -76,6 +76,7 @@ public:
 	double  m_dSpeed;
 	float	m_fVSpeed;
 	bool	m_bBFI;
+	bool	m_bPEV;
 
 private:
 	double	m_adDistanceFromControlPoint[ALLOCTASKTPS];

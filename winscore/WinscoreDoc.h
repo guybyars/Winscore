@@ -132,6 +132,7 @@
     
     	void LoadContestantComboBox(CComboBox& cCombo, BOOL bBlankContestant=FALSE);
     	CString GetUnitsText();
+		CString GetUnitsSpeedText();
     	void FreeDateComboBox(CComboBox&);
     	void LoadDateComboBox(CComboBox&);
     	void InitializeDefaultContest();

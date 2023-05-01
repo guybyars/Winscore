@@ -133,7 +133,6 @@ private:
 public:
 
 	void CheckStartPenalty(TASKCLASS* pcTask);
-	void CheckFAIStartAltitudes(TASKCLASS* pcTask);
 
 	void	InitializeAnalysisParams(EUnits	eUnits=eStatute);
 	bool	IsContestant();
@@ -289,6 +288,10 @@ public:
 	void SetScoredLandingPointLocation(CLocation& cLoc) {m_cScoredLandingPointLocation=cLoc;};
 	int  GetStartHeightPenalty( int iStartPoint, int &iControlHeight, int &MSH );
 	int GetCandidateStarts( int iMaxReturn, CTime caStartTimes[], CTimeSpan caTOCs[], int iaPenalties[], CTask *pcTask=NULL );
+	int CheckFAIMaximumStartGroundSpeed(CTask *pcTask, int iStartFix);;
+	int CheckFAIMaximumStartAltitude(CTask *pcTask, int iStartFix);
+	int CheckFAIStartAltitudes(TASKCLASS* pcTask, int iStartFix);
+	int CheckFAIStarts(CTask *pcTask, int StartFix );
 
 	void LocateFurthestProgess(TASKCLASS *pcTask, CGate &cFinish, TURNPOINTCLASSARRAY &cTurnpointArray);
 	int GetTaskPointID(int iTskPt);

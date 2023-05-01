@@ -1004,13 +1004,13 @@ BEGIN
     CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,7,7,260,143
 END
 
-IDD_GATE DIALOGEX 0, 0, 220, 205
+IDD_GATE DIALOGEX 0, 0, 255, 286
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Gate"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,38,184,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,142,184,50,14
+    DEFPUSHBUTTON   "OK",IDOK,38,265,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,142,265,50,14
     EDITTEXT        IDC_RADIUS_EDIT,89,49,35,14,ES_AUTOHSCROLL
     LTEXT           "Radius:",IDC_RADIUS_TEXT,8,55,81,8
     EDITTEXT        IDC_HEIGHT_EDIT,89,68,35,14,ES_AUTOHSCROLL
@@ -1030,6 +1030,16 @@ BEGIN
     CONTROL         "Gate perpendicular to 1st course line.",IDC_PERP_CHECK,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,108,144,10
     CONTROL         "Allow out the top starts.",IDC_OUT_THE_TOP_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,143,168,10
+    CONTROL         "Pre-Start Altitude",IDC_MAX_GROUND_SPEED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,195,92,10
+    EDITTEXT        IDC_MAX_SPEED,123,241,40,14,ES_AUTOHSCROLL
+    LTEXT           "Maximum Start Groundspeed",IDC_MAX_GROUND_SPEED_TEXT,20,244,92,8
+    LTEXT           "mph",IDC_GROUND_SPEED_UNITS,171,245,48,8
+    GROUPBOX        "FAI Starts",IDC_STATIC,8,179,224,82
+    LTEXT           "Maximum Start Altitude",IDC_MAX_START_ALTITUDE_TEXT,20,217,92,8
+    EDITTEXT        IDC_MAX_ALTITUDE,123,215,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PRESTART_ALTITUDE,123,190,40,14,ES_AUTOHSCROLL
+    LTEXT           "ft  (MSL)",IDC_MSA_UNITS,171,218,57,8
+    LTEXT           "ft  (MSL)",IDC_PRESTART_ALTITUDE_UNITS,171,194,57,8
 END
 
 IDD_TURNPOINT_PICKER DIALOG 0, 0, 206, 243
@@ -1731,7 +1741,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2023,0,0,1
+ FILEVERSION 2023,0,0,2
  PRODUCTVERSION 2,0,2,3
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -1748,12 +1758,12 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "FileDescription", "Winscore MFC Application"
-            VALUE "FileVersion", "2023.0.0.1"
+            VALUE "FileVersion", "2023.0.0.2"
             VALUE "InternalName", "Winscore"
             VALUE "LegalCopyright", "Copyright (C) 2023"
             VALUE "OriginalFilename", "Winscore.EXE"
             VALUE "ProductName", "Winscore Application"
-            VALUE "ProductVersion", "2023-00.01"
+            VALUE "ProductVersion", "2023-00.02"
         END
     END
     BLOCK "VarFileInfo"
@@ -2027,9 +2037,9 @@ BEGIN
     IDD_GATE, DIALOG
     BEGIN
         LEFTMARGIN, 8
-        RIGHTMARGIN, 213
+        RIGHTMARGIN, 248
         TOPMARGIN, 7
-        BOTTOMMARGIN, 198
+        BOTTOMMARGIN, 279
     END
 
     IDD_TURNPOINT_PICKER, DIALOG

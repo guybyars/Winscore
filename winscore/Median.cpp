@@ -104,6 +104,22 @@ double CMedian::dAverage()
 	return dAlt;
 }
 
+int CMedian::CountValue( int iVal)
+	{	
+	int iCount=0;
+	for( std::list<int>::iterator iter=m_AltList.begin();
+		 iter != m_AltList.end();
+		 iter++)
+		 {
+		if( *iter==iVal ) iCount++;
+		}
+	return iCount;
+	}
+
+	int CMedian::NumSamples()
+		{
+		return m_AltList.size();
+		}
 
 int CMedian::Mode()
 {

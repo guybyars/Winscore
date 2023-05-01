@@ -641,7 +641,13 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     {
     	return UnitsText(m_eUnits);
     }
-    
+
+    CString CWinscoreDoc::GetUnitsSpeedText()
+    {
+    	return UnitsSpeedText(m_eUnits);
+    }
+
+
     void CWinscoreDoc::LoadContestantComboBox(CComboBox & cComboBox, BOOL bBlankContestant )
     {
     	int iPos;

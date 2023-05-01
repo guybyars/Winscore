@@ -37,6 +37,7 @@ CPosition::CPosition()
 	m_dDistanceFromStart=0.0;
 	m_fVSpeed=0.;
 	m_bBFI=false;
+	m_bPEV=false;
 }
 
 CPosition::~CPosition()
@@ -44,7 +45,7 @@ CPosition::~CPosition()
 
 }
 
-CPosition::CPosition(int iYear, int iMonth, int iDay, int iTimeZone, CString strRecord, int iAccuracyStartPos, int iAccuracyEndPos, int iENLStartPos, int iENLEndPos, int iMOPStartPos, int iMOPEndPos, bool bBFI) : CLocation()
+CPosition::CPosition(int iYear, int iMonth, int iDay, int iTimeZone, CString strRecord, int iAccuracyStartPos, int iAccuracyEndPos, int iENLStartPos, int iENLEndPos, int iMOPStartPos, int iMOPEndPos, bool bBFI,  bool bPEV) : CLocation()
 {
 		int iAccuracy=30; // Default accuracy of 30m for those without accuracy in trace
 
@@ -135,6 +136,7 @@ CPosition::CPosition(int iYear, int iMonth, int iDay, int iTimeZone, CString str
 		m_dAccuracy/=1000; // Convert m to km.
 		m_dAccuracy*=NMPERDEGREE/KMPERDEGREE; // convert km to nm
 		m_bBFI=bBFI;
+		m_bPEV=bPEV;
 
 
 	/*
@@ -250,6 +252,7 @@ CString CPosition::GetStatusText(bool bStartGateCyl, bool bFinishGateCyl)
 	if( CheckStatus( FAN_LATEST_START	 ) 	) strOut+="LatestStart, ";
 	if( CheckStatus( FAN_GAP			 ) 	) strOut+="GapInTrace, ";
 	if( CheckStatus( FAN_FURTHEST_PROGRESS)	) strOut+="FurthestProgress, ";
+
 
 	int iComma= strOut.ReverseFind( ',' );
 	if( iComma>0 ) strOut.SetAt(iComma, ' ');

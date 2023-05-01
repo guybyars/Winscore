@@ -44,6 +44,7 @@ public:
 	int GetBase()			{return m_iBase;}
 	double GetHeading()		{return m_dHeading;}
 	double GetRadius()		{return m_dRadius;}
+	double GetMaxSpeed()	{return m_dMaxGroundSpeed;}
 	int GetPointID()		{return m_iGatePointID;}
 	EGateType GetGateType()	{return m_eGateType;}
 
@@ -51,13 +52,21 @@ public:
 	void SetHeight(int i)		 {m_iHeight=i;}
 	void SetHeading(double d);
 	void SetRadius(double d)	 {m_dRadius=d;}
+	void SetMaxSpeed(double d)	{m_dMaxGroundSpeed=d;}
 	void SetPointID(int i)		 {m_iGatePointID=i;}
 	void SetGateType(EGateType e){m_eGateType=e;}
 	void SetFirstLegAtExit(bool b) {m_bFirstLegAtExit=b;}
 	void SetPerpToCourse(bool b) {m_bPerpToCourse=b;}
 	void SetScoreOutTheTop(bool b) {m_bScoreOutTheTop=b;}
+	void SetIsPreStartAltitude(bool b) {m_bPreStartAltitude=b;}
+	void SetMaxAltitude(int i)		{m_iMaxStartAltitude=i;}
+	void SetPreStartAltitude(int i) {m_iPreStartAltitude=i;}
+
+	int GetMaxAltitude()		{return m_iMaxStartAltitude;}
+	int GetPreStartAltitude() {return m_iPreStartAltitude;}
 
 	bool ScoreOutTheTop();
+	bool IsPreStartAltitude();
 
 	void GetEnds( float &fLat1, float &fLong1, float &fLat2, float &fLong2, double dCorr=1.0);
 
@@ -78,6 +87,7 @@ private:
 	bool		m_bFirstLegAtExit;
 	bool		m_bPerpToCourse;
 	bool		m_bScoreOutTheTop;
+	bool		m_bPreStartAltitude;
 	int			m_iGatePointID;
 	double		m_dOrientation;
 	double		m_dRadius;
@@ -85,8 +95,9 @@ private:
 	int			m_iBase;
 	int			m_iHeight;
 	double		m_dHeading;
-	
-
+	double		m_dMaxGroundSpeed;
+	int			m_iPreStartAltitude;
+	int			m_iMaxStartAltitude;
 };
 
 #endif // !defined(AFX_GATE_H__A8001D04_50BB_11D3_8941_00C04F79ECB9__INCLUDED_)

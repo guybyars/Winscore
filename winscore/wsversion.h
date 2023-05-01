@@ -3,14 +3,19 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2023
-#define WINSCOREVERSION		_T("2023 Rev 1")
-#define SHORTVERSION			 _T("Rev 1 ")
+#define WINSCOREVERSION		_T("2023 Rev 2")
+#define SHORTVERSION			 _T("Rev 2 ")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 
 2023
+
+Rev 2
+   * Changed motor detection tolerance to reduce false alarms
+   * Added 1s fix interval check for FAI tasks.
+   * Added altitude and speed start checks for FAI tasks.
 
 Rev 1
    * No change from 2022 version

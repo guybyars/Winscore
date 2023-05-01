@@ -507,6 +507,7 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 	int iYear	=m_iYear;
 	int nBadFixes=0;
 	bool bBFI=false;
+	bool bPEV=false;
 
 
 	// Correct the full file name if the flight logs were moved.
@@ -555,16 +556,14 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 			CPosition *pPos=NULL;
 			try
 				{
-				pPos=new CPosition( iYear, iMonth, iDay, 0,  strRecord, m_iAccuracyStartPos, m_iAccuracyEndPos, m_iENLStartPos, m_iENLEndPos, m_iMOPStartPos, m_iMOPEndPos, bBFI);
+				pPos=new CPosition( iYear, iMonth, iDay, 0,  strRecord, m_iAccuracyStartPos, m_iAccuracyEndPos, m_iENLStartPos, m_iENLEndPos, m_iMOPStartPos, m_iMOPEndPos, bBFI, bPEV);
+				bPEV=false;
 				}
 			catch(...)
 				{
 				nBadFixes++;
 				continue;
 				}
-
-			m_PositionArray.Add(pPos);
-			m_nPositionPoints++;
 
 			// Kludge the date.  If we see that the hours of a fix is =0, but 
 			// the previous fix is =23, that means that it has just passed
@@ -585,10 +584,22 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 					}
 				}
 
-			m_iMaxPresAltitude=max(m_iMaxPresAltitude,pPos->m_iPressureAltitude);
-			m_iMaxGPSAltitude=max(m_iMaxGPSAltitude, pPos->m_iGPSAltitude);
 
-			pcPrevPos=pPos;
+
+			if( pcPrevPos!=NULL && pcPrevPos->m_cTime==pPos->m_cTime ) // Filter out duplicate times
+				{
+				delete pPos;
+				}
+			else
+				{
+				m_PositionArray.Add(pPos);
+				m_nPositionPoints++;
+				pcPrevPos=pPos;
+
+				m_iMaxPresAltitude=max(m_iMaxPresAltitude,pPos->m_iPressureAltitude);
+				m_iMaxGPSAltitude=max(m_iMaxGPSAltitude, pPos->m_iGPSAltitude);
+
+				}
 			}
 
 		if(		 strRecord[0]=='E' )
@@ -600,6 +611,8 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 				bBFI = true;
 			else if( strRecord.Find("BFIOFF AH")>0 )	
 				bBFI = false;
+			else if( strRecord.Find("PEV")>0 )	
+				bPEV = true;
 			}
 
 		}// end loop on records

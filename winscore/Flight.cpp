@@ -596,6 +596,7 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 	CArray<double,double>	dSpeedArray;
 	CAverager cAveAltDiff(5);
 	CMedian	  cMedian;
+	CMedian	  cIntervals;
 
 	iMSLCorrection	=0;
 	iMSLFinishCorrection=0;
@@ -629,12 +630,15 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 //  1st Pass, Find and flag the rolling/flying and the landed status 
 //
 //
-
+	pcPos=NULL;
+	pcPrevPos=NULL;
 	for( int iPoint=0; iPoint<nPoints; iPoint++ )
 		{
 		pcPrevPos=pcPos;
 		pcPos=GetPosition(iPoint);
 		if( pcPos==NULL) break;
+
+		if( pcPos->m_bPEV ) pcPos->AddStatus( FAN_PEV );
 
 		// Check change in altitude and speed over the last few points
 		// to see if landing occured
@@ -744,7 +748,30 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 				}
 			}
 
+		if( pcPos != NULL && pcPrevPos!=NULL &&  pcPos->CheckStatus(FAN_ROLLING) )
+			{
+			int iInterval=(int)pcPos->m_cTime.GetTime()-(int)pcPrevPos->m_cTime.GetTime();
+			cIntervals.AddSample(iInterval);
+			}
+
 		}// end for each position
+
+		if( pcTask->IsFAITask() )
+			{
+			int iNonUnityIntervals=cIntervals.NumSamples()-cIntervals.CountValue(1);
+			if (iNonUnityIntervals>0 )
+				{
+				CString cWarn;
+				double dPercent=((double)iNonUnityIntervals/(double)cIntervals.NumSamples())*100.;
+				if( dPercent>.05)
+					{
+					cWarn.Format(_T("%d fixes (%6.2lf%%) had a time interval greater than 1 second."), iNonUnityIntervals, dPercent );
+					AddWarning(eInformation,0,cWarn);
+					}
+				}
+			}
+
+
 //
 //
 //  Now find the takeoff point, back up 2 minutes samples and use those points 
@@ -2289,16 +2316,24 @@ int CFlight::FindClosestPointToStart(int iStart  )
 	return iClosest;
 	}
 
-void CFlight::CheckFAIStartAltitudes(TASKCLASS* pcTask)
+int  CFlight::CheckFAIStartAltitudes(TASKCLASS* pcTask, int iStartFix)
 	{
 /*
 A pre-start altitude (MSL) limit may be imposed and shall be specified at the
 briefing. After the start gate is opened and before making a valid start, the
 pilot must ensure at least one fix below the specified pre-start altitude limit.
 Failure to do so will be penalized.*/
+	int iAltitudePenalty=0;
 
-	int iLatestStart=FindEvent(FAN_LATEST_START, 0, FORWARD );
-	if( iLatestStart<=0 ) return;
+	if( !m_cStartGate.IsPreStartAltitude() ) return iAltitudePenalty;
+
+	int iLatestStart;
+	if( iStartFix==0)
+		iLatestStart=FindEvent(FAN_LATEST_START, 0, FORWARD );
+	else
+		iLatestStart=FindEvent(FAN_START, iStartFix, FORWARD );
+
+	if( iLatestStart<=0 ) return 0;
 
 	int iMin=INT_MAX;
 	for( int iPoint=0; iPoint<iLatestStart; iPoint++ )
@@ -2310,16 +2345,16 @@ Failure to do so will be penalized.*/
 		// If one, count em, one point is below the start altitude, then no penalty
 		if( pcPos->m_iCorrectedAltitude < m_cStartGate.GetHeight() ) 
 			{
-			return;
+			return 0;
 			}
 		}
 	// If we got this far and there are no points below the start height, add a warning.
-	int iRecommendedPenalty = (iMin-m_cStartGate.GetHeight())/4;
+	iAltitudePenalty = (iMin-m_cStartGate.GetHeight())/4;
 	CString strWarn;
 	strWarn.Format(_T("FAI 7.4.5b requires at least one fix be below start height of %d after task open and before start.  Pilots min altitude was: %d"), m_cStartGate.GetHeight(),iMin);
-	AddWarning(eStart,iRecommendedPenalty,strWarn);
+	if( iStartFix==0) AddWarning(eStart,iAltitudePenalty,strWarn);
 
-	return;
+	return iAltitudePenalty;
 	}
 
 void CFlight::CheckStartPenalty(TASKCLASS* pcTask)
@@ -2328,12 +2363,10 @@ void CFlight::CheckStartPenalty(TASKCLASS* pcTask)
 
 	if( IsFAITask() ) 
 		{
-		// Check the moronic FAI 7.4.5 b rule
-		CheckFAIStartAltitudes(pcTask);
+		CheckFAIStarts(pcTask,0);
+
 		return;
 		}
-
-
 
 	if( m_cStartGate.GetGateType()==eLine ) return;
 	int iPositionControlFix= -1;
@@ -2532,6 +2565,8 @@ int CFlight::GetCandidateStarts( int iMaxReturn, CTime caStartTimes[], CTimeSpan
 	{
 	int iControlHeight=0;
 	int MSH=0;
+	
+	bool bFAITask=pcTask->IsFAITask();
 
 	if( iMaxReturn<1 ) return 0;
 	if( !IsStartTimeValid() ) return 0;
@@ -2562,7 +2597,11 @@ int CFlight::GetCandidateStarts( int iMaxReturn, CTime caStartTimes[], CTimeSpan
 		caTOCs[0]=GetFinishTime()-caStartTimes[0];
 	else
 		caTOCs[0]=0;
-	iaPenalties[0]=GetStartHeightPenalty( iStartPos, iControlHeight,MSH );
+	if( bFAITask )
+		iaPenalties[0]=CheckFAIStarts( pcTask, iStartPos);
+	else
+		iaPenalties[0]=GetStartHeightPenalty( iStartPos, iControlHeight,MSH );
+
 	int nRet=1;
 	int iPrevious=iStartPos;
 	while( nRet<iMaxReturn )
@@ -2602,8 +2641,10 @@ int CFlight::GetCandidateStarts( int iMaxReturn, CTime caStartTimes[], CTimeSpan
 			caTOCs[nRet]=GetFinishTime()-pcStartPos->m_cTime;
 		else
 			caTOCs[nRet]=0;
-
-		iaPenalties[nRet]=GetStartHeightPenalty( iPrevious, iControlHeight,MSH );
+		if( bFAITask )
+			iaPenalties[nRet]=CheckFAIStarts( pcTask, iPrevious );
+		else
+			iaPenalties[nRet]=GetStartHeightPenalty( iPrevious, iControlHeight,MSH );
 
 		nRet++;
 		}
@@ -3365,7 +3406,7 @@ void CFlight::CheckMotorRun()
 		{
 		CPosition* pcPos=GetPosition(iPos);
 		int iVal=pcPos->m_iEngineNoiseLevel;
-		if( iVal<20 ) continue;  //Since we normalized to 150, make sure we have sufficent signal.
+		if( iVal<37 ) continue;  //Since we normalized to 150, make sure we have sufficent signal.
 		if( double(iVal)>((1.0*dStdDev)+dAve) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>25. )
 			{
 			pcPos->AddStatus( FAN_MOTOR_ON);
@@ -4225,6 +4266,7 @@ bool CFlight::CheckAirspaceIncursions(TURNPOINTCLASSARRAY &TURNPOINTCLASSArray)
 
 	CPosition	*pcPos		=NULL;
 	CPosition	*pcPrevPos	=NULL;
+	CPosition	*pcIncursionPos	=NULL;
 	int			nPoints		=GetNumPoints();
 	CSUASubSection *pSub	=NULL;
 	CSUASubSection *pPrevSub=NULL;
@@ -4245,6 +4287,7 @@ bool CFlight::CheckAirspaceIncursions(TURNPOINTCLASSARRAY &TURNPOINTCLASSArray)
 		CSUASection* pSUASection=GetSUAArray()->GetAt(iSection);
 
 		int nIncursions=0;
+		pcIncursionPos=NULL;
 		CLocation cPrevLocation;
 		for( int iPoint=0; iPoint<nPoints; iPoint++ )
 			{
@@ -4262,18 +4305,24 @@ bool CFlight::CheckAirspaceIncursions(TURNPOINTCLASSARRAY &TURNPOINTCLASSArray)
 				 if( !pSub ) continue;
 
 
-				if( /* pSub->m_iTop <pcPos->m_iCorrectedAltitude || */ //Allow violation even if above
+				if( pSub->m_iTop <pcPos->m_iCorrectedAltitude || 
 					pSub->m_iBase>pcPos->m_iCorrectedAltitude	) continue; 
 
 				if( pSub->m_eType==CSUASubSection::eCIRCLE )
 					{
 					if( pSub->m_cCenter.DistanceTo(pcPos, SYSTEMUNITS )<pSub->m_dRadius )
+						{
+						if(pcIncursionPos==NULL ) pcIncursionPos=pcPos;
 						nIncursions++;
+						}
 					}
 				else if( pSub->m_eType==CSUASubSection::ePOINT && iSub>0 )
 					{
 					if( CLocation::GetCrossingLocation( pSub->m_cLocation, cPrevLocation, *pcPos, *pcPrevPos, cLocJunk) )
+						{
+						if(pcIncursionPos==NULL ) pcIncursionPos=pcPos;
 						nIncursions++;
+						}
 					}
 				else if( (pSub->m_eType==CSUASubSection::eCLOCKWISE		||
 						  pSub->m_eType==CSUASubSection::eANTICLOCKWISE) &&
@@ -4299,14 +4348,20 @@ bool CFlight::CheckAirspaceIncursions(TURNPOINTCLASSARRAY &TURNPOINTCLASSArray)
 
 						
 						if( CLocation::GetCrossingLocation(cPrevLocation, cLoc, *pcPos, *pcPrevPos, cLocJunk) )
+							{
+							if(pcIncursionPos==NULL ) pcIncursionPos=pcPos;
 							nIncursions++;
+							}
 
 						cPrevLocation=cLoc;
 						(pSub->m_eType==CSUASubSection::eCLOCKWISE)?(dBearing+=5):(dBearing-=5);
 						}
 
 					if( CLocation::GetCrossingLocation(cPrevLocation, cLoc, *pcPos, *pcPrevPos, cLocJunk) )
-							nIncursions++;
+						{
+						if(pcIncursionPos==NULL ) pcIncursionPos=pcPos;
+						nIncursions++;
+						}
 
 					}
 				cPrevLocation=pSub->m_cLocation;
@@ -4314,7 +4369,9 @@ bool CFlight::CheckAirspaceIncursions(TURNPOINTCLASSARRAY &TURNPOINTCLASSArray)
 			}
 		if( nIncursions>0 )
 			{
-			AddWarning(eAirspaceMajor,1000,_T("Airspace incursion at : ")+pSUASection->m_strTitle );
+			CString strWarn= pcIncursionPos->m_cTime.Format(_T("Airspace incursion at %H:%M:%S in "));
+			strWarn+=pSUASection->m_strTitle;
+			AddWarning(eAirspaceMajor,1000,strWarn);
 			}
 		nTotalIncursions+=nIncursions;
 		}
@@ -4973,8 +5030,8 @@ void CFlight::FindBetterStart(TASKCLASS *pcTask, TURNPOINTCLASSARRAY &turnpointa
 	{
 	if( CheckOption(FLT_STARTTIMELOCKED) ) return;
 
-	// If this is a FAI task and a start line, just take the latest start always.
-	if( pcTask->IsFAITask() && !pcTask->m_cStartGate.IsGPSCylinder() ) return;
+	// If this is a FAI task just take the latest start always.
+	if( pcTask->IsFAITask() ) return;
 
 	int iControlHeight=0;
 	int MSH=0;
@@ -5071,4 +5128,113 @@ void CFlight::FindBetterStart(TASKCLASS *pcTask, TURNPOINTCLASSARRAY &turnpointa
 			m_cStartFix=cStartFixOriginal;
 			}
 		}
+	}
+
+int CFlight::CheckFAIMaximumStartGroundSpeed(CTask *pcTask, int iStartFix)
+	{
+	int iSpeedPenalty=0;
+
+	int iLatestStart=0;
+	
+	if( iStartFix==0 )
+		iLatestStart=FindEvent(FAN_LATEST_START, 0, FORWARD );
+	else
+		iLatestStart=FindEvent(FAN_START, iStartFix, FORWARD );
+
+	if( iLatestStart<=0 ) return iSpeedPenalty;
+
+	CPosition *pcPosStart=GetPosition(iLatestStart);
+
+	int iFixStart=FindTime(pcPosStart->m_cTime-CTimeSpan(0,0,0,3), iLatestStart, BACKWARD);
+	int iFixEnd=FindTime(pcPosStart->m_cTime+CTimeSpan(0,0,0,3), iLatestStart, FORWARD);
+
+	CPosition *pcStart=GetPosition(iFixStart);
+	CPosition *pcEnd=GetPosition(iFixEnd);
+
+	double dDist = pcStart->DistanceTo(pcEnd, SYSTEMUNITS);
+
+	int iDeltaTime=(int)pcEnd->m_cTime.GetTime()-(int)pcStart->m_cTime.GetTime();
+
+	double dSpeed=dDist/((double)iDeltaTime)*60.*60.;
+	double dMaxSpeed = m_cStartGate.GetMaxSpeed();
+
+	dSpeed = ConvertDistance(dSpeed, SYSTEMUNITS, eStatute);
+	dMaxSpeed = ConvertDistance(dMaxSpeed, SYSTEMUNITS, eStatute);
+
+	double dExcessSpeed = dSpeed-dMaxSpeed;
+
+	//Speed penalty = (Excess speed) * 3
+	CString strSpeedExceeded;
+
+	if( dExcessSpeed>0.0 ) iSpeedPenalty=(int)dExcessSpeed*3;
+
+	if( dExcessSpeed > 35. )
+		{
+		iSpeedPenalty=1000;
+		strSpeedExceeded.Format("Max Speed Exceeded by %5.2lf mph which exceeds 35 mph.  Invalid Start. ",dExcessSpeed);
+		if( iStartFix==0 ) AddWarning(eStart, 1000,strSpeedExceeded );
+		}
+	else if( dExcessSpeed>0. )
+		{
+		iSpeedPenalty=(int)dExcessSpeed*3;
+		strSpeedExceeded.Format("Max Speed Exceeded by %5.2lf mph",dExcessSpeed);
+		if( iStartFix==0 ) AddWarning(eStart,iSpeedPenalty,strSpeedExceeded );
+		}
+
+	return iSpeedPenalty;
+	}
+
+int CFlight::CheckFAIMaximumStartAltitude(CTask *pcTask, int iStartFix)
+	{
+	int iAltitudePenalty=0;
+	int iLatestStart;
+	if( iStartFix==0)
+		iLatestStart=FindEvent(FAN_LATEST_START, 0, FORWARD );
+	else
+		iLatestStart=FindEvent(FAN_START, iStartFix, FORWARD );
+
+	if( iLatestStart<=0 ) return 0;
+
+	CPosition *pcPosStart=GetPosition(iLatestStart);
+
+	int dMaxAltitude = m_cStartGate.GetMaxAltitude();
+
+	int iExcessAltitude = pcPosStart->m_iCorrectedAltitude-dMaxAltitude;
+
+	//Altitude penalty = (Excess altitude)/4
+	CString strAltitudeExceeded;
+
+	if( iExcessAltitude>0 ) iAltitudePenalty=iExcessAltitude/4;
+
+	if( iExcessAltitude > 300 )
+		{
+		iAltitudePenalty=1000;
+		strAltitudeExceeded.Format("Max Altitude Exceeded by %d which exceeds 300 ft.  Invalid Start. ",iExcessAltitude);
+		if( iStartFix==0 ) AddWarning(eStart, iAltitudePenalty,strAltitudeExceeded );
+		}
+	else if( iExcessAltitude>0 )
+		{
+		iAltitudePenalty=iExcessAltitude/4;
+		strAltitudeExceeded.Format("Max Altitude Exceeded by %d ft",iExcessAltitude);
+		if( iStartFix==0 ) AddWarning(eStart,iAltitudePenalty,strAltitudeExceeded );
+		}
+
+	return iAltitudePenalty;
+
+	}
+
+int CFlight::CheckFAIStarts(CTask *pcTask, int StartFix )
+	{
+	int iPenalty=0;
+
+	// Check the PreStartAltitude
+	iPenalty+=CheckFAIStartAltitudes(pcTask, StartFix);
+	
+	// Check Max Altitude
+	iPenalty+=CheckFAIMaximumStartAltitude(pcTask, StartFix);
+
+	// Check Max Ground Speed
+	iPenalty+=CheckFAIMaximumStartGroundSpeed(pcTask, StartFix);
+
+	return min(1000,iPenalty);
 	}

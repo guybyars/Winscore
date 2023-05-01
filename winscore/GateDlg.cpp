@@ -18,21 +18,30 @@ static char THIS_FILE[] = __FILE__;
 // CGateDlg dialog
 
 
-CGateDlg::CGateDlg(CWinscoreDoc *pDoc, EGateDlgType  eGateDlgType, CGate &cGate, CWnd* pParent /*=NULL*/)
+CGateDlg::CGateDlg(CWinscoreDoc *pDoc, EGateDlgType  eGateDlgType, CGate &cGate, CTask*	pTask, CWnd* pParent /*=NULL*/)
 	: CDialog(CGateDlg::IDD, pParent),
 	m_cGate(cGate),
 	m_eGateDlgType(eGateDlgType),
-	m_pDoc(pDoc)
+	m_pDoc(pDoc),
+	m_pTask(pTask)
+	, m_dMaxSpeed(86.839069079077575) //100mph
+	, m_dMaxGroundSpeed(5000)
+	, m_iPreStartAltitude(5000)
+	, m_iMaxAltitude(5000)
 {
 	//{{AFX_DATA_INIT(CGateDlg)
 	m_iBase = 0;
 	m_iHeading = 0;
 	m_iHeight = 0;
 	m_dRadius = 0.0;
+	m_dMaxSpeed = 0.0;
 	m_strUnitsText = _T("");
 	//}}AFX_DATA_INIT
 
+
 	m_eUnits=pDoc->m_eUnits;
+
+
 
 }
 
@@ -65,6 +74,18 @@ void CGateDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_UNITSTEXT, m_strUnitsText);
 	//}}AFX_DATA_MAP
 	DDX_Control(pDX, IDC_OUT_THE_TOP_CHECK, m_cOutTheTopCheck);
+	DDX_Control(pDX, IDC_MAX_GROUND_SPEED, m_cPreStartAltitudeCheckBox);
+	DDX_Control(pDX, IDC_MAX_GROUND_SPEED_TEXT, m_cMaxGroundSpeedText);
+	DDX_Control(pDX, IDC_GROUND_SPEED_UNITS, m_cMaxGroundSpeedTextUnits);
+	DDX_Control(pDX, IDC_MAX_SPEED, m_cSpeedEdit);
+	DDX_Text(pDX, IDC_MAX_SPEED, m_dMaxGroundSpeed);
+	DDX_Control(pDX, IDC_PRESTART_ALTITUDE, m_cPreStartAltitude);
+	DDX_Text(pDX, IDC_PRESTART_ALTITUDE, m_iPreStartAltitude);
+	DDX_Text(pDX, IDC_MAX_ALTITUDE, m_iMaxAltitude);
+	DDX_Control(pDX, IDC_MAX_START_ALTITUDE_TEXT, m_cMaxStartAltitudeText);
+	DDX_Control(pDX, IDC_MSA_UNITS, m_cMSAUnits);
+	DDX_Control(pDX, IDC_PRESTART_ALTITUDE_UNITS, m_cPreStartAltitudeUnits);
+	DDX_Control(pDX, IDC_MAX_ALTITUDE, m_cMaxAltitude);
 }
 
 
@@ -73,6 +94,7 @@ BEGIN_MESSAGE_MAP(CGateDlg, CDialog)
 	ON_BN_CLICKED(IDC_PERP_CHECK, OnBnClickedPerpCheck)
 	ON_CBN_SELCHANGE(IDC_TYPECOMBO, OnSelchangeTypecombo)
 	//}}AFX_MSG_MAP
+	ON_BN_CLICKED(IDC_MAX_GROUND_SPEED, &CGateDlg::OnBnClickedMaxGroundSpeed)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -97,6 +119,7 @@ BOOL CGateDlg::OnInitDialog()
 		}
 
 	m_strUnitsText=m_pDoc->GetUnitsText();
+	m_strUnitsSpeedText=m_pDoc->GetUnitsSpeedText();
 
 	if( m_eGateDlgType==CGateDlg::eFinish ) 
 			SetWindowText(_T("Finish Gate Settings"));
@@ -114,6 +137,21 @@ BOOL CGateDlg::OnInitDialog()
 	if( m_cGate.GetGateType()==eLine ) m_dRadius*=2.;
 	m_cTypeCombo.SetCurSel((int)m_cGate.GetGateType() );
 
+	if( m_eGateDlgType==eStart && m_pTask->IsFAITask() )
+		{
+		m_cPreStartAltitudeCheckBox.SetCheck(m_cGate.IsPreStartAltitude());
+		m_dMaxGroundSpeed= ConvertDistance(m_cGate.GetMaxSpeed() ,SYSTEMUNITS, m_eUnits);
+		m_iPreStartAltitude=m_cGate.GetPreStartAltitude();
+		m_iMaxAltitude=m_cGate.GetMaxAltitude();
+		}
+	else
+		{
+		m_cPreStartAltitudeCheckBox.SetCheck(false);
+		m_dMaxGroundSpeed= 0.0;
+		m_iPreStartAltitude=0;
+		m_iMaxAltitude=0;
+		}
+
 	MaskForm();
 
 	if( m_eGateDlgType==CGateDlg::eFinish )
@@ -122,7 +160,6 @@ BOOL CGateDlg::OnInitDialog()
 		m_cPerpCheck.EnableWindow(false);
         m_cOutTheTopCheck.EnableWindow(false);
 		}
-
 
 	UpdateData(false);
 
@@ -153,6 +190,14 @@ void CGateDlg::OnOK()
 	if( pcTurnpoint ) 
 		m_cGate.SetPointID( pcTurnpoint->m_iID );
 	
+	if( m_eGateDlgType==eStart && m_pTask->IsFAITask() )
+		{
+		m_cGate.SetMaxSpeed( ConvertDistance(m_dMaxGroundSpeed, m_eUnits, SYSTEMUNITS) );
+		m_cGate.SetIsPreStartAltitude(m_cPreStartAltitudeCheckBox.GetCheck()==BST_CHECKED);
+		m_cGate.SetPreStartAltitude(m_iPreStartAltitude);
+		m_cGate.SetMaxAltitude(m_iMaxAltitude);
+		}
+
 
 	CDialog::OnOK();
 }
@@ -194,6 +239,26 @@ void CGateDlg::MaskForm()
 		m_cRadiusText.SetWindowText(_T("Radius"));
 		}
 
+	bool bFAI = m_eGateDlgType==eStart && m_pTask->IsFAITask();
+
+	m_cPreStartAltitudeCheckBox.EnableWindow(bFAI);
+	m_cMaxGroundSpeedText.EnableWindow(bFAI);
+	m_cMaxGroundSpeedTextUnits.EnableWindow(bFAI);
+	m_cSpeedEdit.EnableWindow(bFAI);
+	m_cMaxGroundSpeedText.EnableWindow(bFAI);
+	m_cMaxGroundSpeedTextUnits.EnableWindow(bFAI);
+	m_cMaxStartAltitudeText.EnableWindow(bFAI);
+	m_cMaxAltitude.EnableWindow(bFAI);
+	m_cMSAUnits.EnableWindow(bFAI);
+	m_cPreStartAltitudeUnits.EnableWindow(bFAI);
+	m_cPreStartAltitude.EnableWindow(bFAI);
+	if( bFAI )
+		{
+		bool b=m_cPreStartAltitudeCheckBox.GetCheck()==BST_CHECKED;
+		m_cPreStartAltitudeUnits.EnableWindow(b);
+		m_cPreStartAltitude.EnableWindow(b);
+		}
+	m_cMaxGroundSpeedTextUnits.SetWindowTextA(m_strUnitsSpeedText);
 }
 
 void CGateDlg::OnSelchangeTypecombo() 
@@ -207,3 +272,11 @@ void CGateDlg::OnBnClickedPerpCheck()
 {
 	MaskForm();
 }
+
+
+
+void CGateDlg::OnBnClickedMaxGroundSpeed()
+{
+	MaskForm();
+}
+

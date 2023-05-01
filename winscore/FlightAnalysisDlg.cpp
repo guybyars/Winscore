@@ -237,6 +237,17 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 			m_cListCtrl.SetItemText(iItem,i++,m_pcFlight->GetRollTimeText() );
 			m_cListCtrl.SetItemText(iItem,i++,_T(" *** ROLLED ***"));
 			}
+		if( pcPos && pcPos->m_bPEV )
+			{
+			i=0;
+			lvi.iItem=itm++; 
+			int iItem=m_cListCtrl.InsertItem(&lvi);
+			CString cInt;
+			cInt.Format(_T("%d"), iPoint+1 );
+			m_cListCtrl.SetItemText(iItem,i++,_T("***"));
+			m_cListCtrl.SetItemText(iItem,i++,pcPos->GetTimeString() );
+			m_cListCtrl.SetItemText(iItem,i++,_T(" *** PILOT EVENT ***"));
+			}
 
 		/*
 	_T("Point"), 

@@ -32,7 +32,7 @@ enum EGateDlgType {	eStart=0,
 
 	CWinscoreDoc* m_pDoc;
 	void MaskForm();
-	CGateDlg( CWinscoreDoc *pDoc, EGateDlgType eGateDlgType , CGate &cGate, CWnd* pParent = NULL);   // standard constructor
+	CGateDlg( CWinscoreDoc *pDoc, EGateDlgType eGateDlgType , CGate &cGate, CTask*	pTask,  CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
 	//{{AFX_DATA(CGateDlg)
@@ -57,11 +57,14 @@ enum EGateDlgType {	eStart=0,
 	bool    m_bPerpToCourse;
 	bool    m_bScoreOutTheTop;
 	CString	m_strUnitsText;
+	CString	m_strUnitsSpeedText;
 	//}}AFX_DATA
 
 	CGate		 &m_cGate;
 	EGateDlgType  m_eGateDlgType;
 	EUnits		  m_eUnits;
+
+	CTask*	m_pTask;
 
 // Overrides
 	// ClassWizard generated virtual function overrides
@@ -85,6 +88,21 @@ public:
 	afx_msg void OnEnChangeRadiusEdit();
 	afx_msg void OnBnClickedPerpCheck();
 	CButton m_cOutTheTopCheck;
+	afx_msg void OnBnClickedMaxGroundSpeed();
+	CButton m_cPreStartAltitudeCheckBox;
+	CStatic m_cMaxGroundSpeedText;
+	CStatic m_cMaxGroundSpeedTextUnits;
+	CStatic m_cMaxStartAltitudeText;
+	CStatic m_cMSAUnits;
+	CStatic m_cPreStartAltitudeUnits;
+	CEdit m_cSpeedEdit;
+	double m_dMaxSpeed;
+	double m_dMaxGroundSpeed;
+	CEdit m_cPreStartAltitude;
+	int m_iPreStartAltitude;
+	int m_iMaxAltitude;
+
+	CEdit m_cMaxAltitude;
 };
 
 //{{AFX_INSERT_LOCATION}}

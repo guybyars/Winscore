@@ -16,6 +16,8 @@ class CMedian
 public:
 	int Mode();
 	int Average();
+	int CountValue( int iVal);
+	int NumSamples();
 	double dAverage();
 	double StdDeviation();
 	int GetMedian();

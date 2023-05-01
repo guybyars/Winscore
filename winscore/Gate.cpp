@@ -37,7 +37,11 @@ CGate::CGate( ) :
 	m_dHeading(0),
 	m_bFirstLegAtExit(false),
 	m_bPerpToCourse(false),
-	m_bScoreOutTheTop(true)
+	m_bScoreOutTheTop(true),
+	m_bPreStartAltitude(false),
+	m_dMaxGroundSpeed(86.839069079077575), //100 mph
+	m_iPreStartAltitude(5000),
+	m_iMaxStartAltitude(5000)
 	{
 	}
 
@@ -186,6 +190,13 @@ CGate& CGate::operator =(CGate &cGate)
 	m_bFirstLegAtExit=cGate.m_bFirstLegAtExit;
 	m_bPerpToCourse	 =cGate.m_bPerpToCourse;
 	m_bScoreOutTheTop=cGate.m_bScoreOutTheTop;
+	m_bPreStartAltitude=cGate.m_bPreStartAltitude;
+	m_dMaxGroundSpeed=cGate.m_dMaxGroundSpeed;
+	m_bPreStartAltitude=cGate.m_bPreStartAltitude;
+	m_dMaxGroundSpeed=cGate.m_dMaxGroundSpeed;
+	m_iPreStartAltitude=cGate.m_iPreStartAltitude;
+	m_iMaxStartAltitude=cGate.m_iMaxStartAltitude;
+
 	return *this;
 	}
 
@@ -225,12 +236,15 @@ bool CGate::ScoreOutTheTop()
 	return m_bScoreOutTheTop;
 	}
 
+bool CGate::IsPreStartAltitude()
+	{
+	return m_bPreStartAltitude;
+	}
+
 bool CGate::IsPerpToCourse()
 	{
 	return m_bPerpToCourse && m_eGateType==eLine;
 	}
-
-
 bool CGate::GetCrossingLocation(CLocation &cP1, CLocation &cP2, CLocation &cLoc)
 	{
 	return CLocation::GetCrossingLocation(m_cEnd1, m_cEnd2, cP1, cP2, cLoc);
@@ -292,6 +306,11 @@ bool CGate::GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode)
 	cMgr.CreateElementDbl ( pIDOMChildNode, _T("Radius"), m_dRadius);
 	cMgr.CreateElementDblC( pIDOMChildNode, _T("Heading"), m_dHeading);
 
+	cMgr.CreateElementInt ( pIDOMChildNode, _T("IsPreStartAltitude"), m_bPreStartAltitude);
+	cMgr.CreateElementDbl ( pIDOMChildNode, _T("MaxGroundSpeed"), m_dMaxGroundSpeed);
+	cMgr.CreateElementIntC( pIDOMChildNode, _T("PreStartAltitude"), m_iPreStartAltitude);
+	cMgr.CreateElementIntC( pIDOMChildNode, _T("MaxStartAltitude"), m_iMaxStartAltitude);
+ 
 	return true;
 	}
 
@@ -315,5 +334,12 @@ bool CGate::FromXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParent)
 	GET_XML_DBL ( cMgr, pGate, _T("Radius"), double, m_dRadius, ConvertDistance(5,eStatute,SYSTEMUNITS));
 	GET_XML_DBL ( cMgr, pGate, _T("Heading"), double, m_dHeading, 0);
 
+	GET_XML_BOOL( cMgr, pGate, _T("IsPreStartAltitude"), m_bPreStartAltitude, false);
+	GET_XML_DBL ( cMgr, pGate, _T("MaxGroundSpeed"), double, m_dMaxGroundSpeed, 86.839069079077575);  //100mph default
+
+	GET_XML_INT( cMgr, pGate, _T("PreStartAltitude"), int, m_iPreStartAltitude, 5000);
+	GET_XML_INT( cMgr, pGate, _T("MaxStartAltitude"), int, m_iMaxStartAltitude, 5000);
+
 	return true;
 	}
+

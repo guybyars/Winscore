@@ -316,7 +316,7 @@ bool CTaskDlg::ApplyDlg()
 
 void CTaskDlg::OnStartGateButton() 
 {
-	CGateDlg dlg( m_pDoc, CGateDlg::eStart, m_cTask.m_cStartGate);
+	CGateDlg dlg( m_pDoc, CGateDlg::eStart, m_cTask.m_cStartGate, &m_cTask);
 	if( dlg.DoModal()==IDOK )
 		{
 		m_cTask.m_cStartGate=dlg.m_cGate;
@@ -332,7 +332,7 @@ void CTaskDlg::OnStartGateButton()
 
 void CTaskDlg::OnFinishGateButton() 
 {
-	CGateDlg dlg( m_pDoc, CGateDlg::eFinish, m_cTask.m_cFinishGate);
+	CGateDlg dlg( m_pDoc, CGateDlg::eFinish, m_cTask.m_cFinishGate, &m_cTask);
 	if( dlg.DoModal()==IDOK )
 		{
 		m_cTask.m_cFinishGate=dlg.m_cGate;
@@ -677,7 +677,7 @@ void CTaskDlg::On2ndGateCheck()
 
 void CTaskDlg::OnStartGateButtonB() 
 {
-	CGateDlg dlg( m_pDoc, CGateDlg::eStart, m_cTask.m_cStartGate2);
+	CGateDlg dlg( m_pDoc, CGateDlg::eStart, m_cTask.m_cStartGate2, &m_cTask);
 	if( dlg.DoModal()==IDOK )
 		{
 		m_cTask.m_cStartGate2=dlg.m_cGate;

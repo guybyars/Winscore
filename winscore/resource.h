@@ -188,6 +188,7 @@
 #define IDC_MANUFACTURER_COMBO          1016
 #define IDC_SUAFILENAME2                1016
 #define IDC_EDIT7                       1017
+#define IDC_MAX_SPEED                   1017
 #define IDAPPLY                         1018
 #define IDC_CONTROL_BAR_DAY             1018
 #define IDC_ATTEMPTING_COMBO            1018
@@ -674,6 +675,14 @@
 #define IDC_EDIT_D1                     1514
 #define IDC_UNITS_DM                    1515
 #define IDC_UNITS_D1                    1516
+#define IDC_MAX_GROUND_SPEED            1517
+#define IDC_GROUND_SPEED_UNITS          1518
+#define IDC_MAX_GROUND_SPEED_TEXT       1519
+#define IDC_MAX_START_ALTITUDE_TEXT     1520
+#define IDC_MAX_ALTITUDE                1521
+#define IDC_PRESTART_ALTITUDE           1522
+#define IDC_PRESTART_ALTITUDE_UNITS     1523
+#define IDC_MSA_UNITS                   1524
 #define IDB_SMALLICONS                  26018
 #define IDB_LARGEICONS                  26019
 #define ID_CONTEST_INFO_TURNPOINT       32771
@@ -808,7 +817,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        272
 #define _APS_NEXT_COMMAND_VALUE         32912
-#define _APS_NEXT_CONTROL_VALUE         1517
+#define _APS_NEXT_CONTROL_VALUE         1525
 #define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif
