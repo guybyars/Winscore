@@ -3,14 +3,17 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2023
-#define WINSCOREVERSION		_T("2023 Rev 2")
-#define SHORTVERSION			 _T("Rev 2 ")
+#define WINSCOREVERSION		_T("2023 Rev 3")
+#define SHORTVERSION			 _T("Rev 3 ")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 
 2023
+
+Rev 3 
+	* Fixed handicapping distance computation for FAI tasks.
 
 Rev 2
    * Changed motor detection tolerance to reduce false alarms

@@ -45,7 +45,7 @@ CContestantList::~CContestantList()
 }
 
 
-double  CContestantList::GetLowestPerformanceHandicap()
+double  CContestantList::GetLowestPerformanceHandicap(EClass eClass)
 	{
 		double dLowHandicap=0.0;
 		POSITION thispos, pos = GetHeadPosition();
@@ -53,7 +53,7 @@ double  CContestantList::GetLowestPerformanceHandicap()
 			{
 			thispos=pos;
 			CContestant* pcContestant=(CContestant*)GetNext(pos);
-			if(pcContestant->IsGuest()) continue;
+			if(pcContestant->IsGuest() || pcContestant->m_eClass!=eClass ) continue;
 			dLowHandicap=max( pcContestant->m_fHandicap, dLowHandicap);
 			}
 		return dLowHandicap;

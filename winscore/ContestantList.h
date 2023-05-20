@@ -46,7 +46,7 @@ public:
 	bool AddToList(CContestant* pcContestant);
 	CContestant* GetByContestNo(CString strContestNo);
 	CContestantList();
-	double GetLowestPerformanceHandicap();
+	double GetLowestPerformanceHandicap(EClass eClass);
 	virtual ~CContestantList();
 
 	int NumberSummaryPages();

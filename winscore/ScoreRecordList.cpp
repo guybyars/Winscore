@@ -690,7 +690,7 @@ void CScoreRecordList::GetFAISummary(	CTime		cDate,
 
 
 		// Ho - Lowest Handicap (H) of all competitors
-		if( pcScoreRecord->m_dHandicap>cSummary.m_dHo )
+		if( pcScoreRecord->m_dHandicap<cSummary.m_dHo )
 			{
 			cSummary.m_dHo=pcScoreRecord->m_dHandicap;
 			cSummary.m_strCIDHo=pcScoreRecord->m_cContestNo;

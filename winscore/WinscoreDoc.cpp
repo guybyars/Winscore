@@ -1631,7 +1631,7 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
 		double dLowestHandicap=1.0;
 
 		if( pcTask->IsFAITask() )
-			dLowestHandicap=m_contestantList.GetLowestPerformanceHandicap();
+			dLowestHandicap=m_contestantList.GetLowestPerformanceHandicap(eClass);
 
     	POSITION pos = cScoreRecordList.GetHeadPosition();
     	while(pos!=NULL)
