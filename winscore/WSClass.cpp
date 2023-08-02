@@ -1,5 +1,5 @@
-//
-// Copyright� Guy Ford Byars. 1997 - 2001. All rights reserved.
+﻿//
+// Copyright© Guy Ford Byars. 1997 - 2001. All rights reserved.
  //
 // WSClass.cpp: implementation of the CWSClass class.
 //
@@ -225,6 +225,15 @@ void CWSClass::Initialize(EContest eContest, EClass eClass)
 						13.5 Metre, Club						100 km
 						Standard, 15 Metre, 20 Metre Multi-seat 120 km
 						18 Metre, Open							140 km
+
+11.4.1.1 ‡ Minimum distance for a Championship Day with a maximum score of 1000 points (D1):
+● For Club class: 155 mi
+● For Standard, 15-Meter, and 20-Meter classes: 186 mi
+● For 18-Meter and Open classes: 217 mi
+11.4.1.2 ‡ Minimum distance to validate a Championship Day (Dm):
+● For Club class: 62 mi
+● For Standard, 15-Meter, and 20-Meter classes: 75 mi
+● For 18-Meter and Open classes: 87 mi
 						*/
 
 	if( eClass==eStandard || eClass== e15Meter)

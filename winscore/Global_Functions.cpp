@@ -1895,8 +1895,13 @@ void	LoadViewControl( CWSView &cWSView, CWSBaro* pWSBaro, CWinscoreDoc *pDoc, CF
 								(long)cProgressTime.GetTime());
 		if( pWSBaro )
 			{
-			pWSBaro->SetTaskOpenTime((long)pcFlight->GetStartTime().GetTime());
-			pWSBaro->SetTaskCloseTime((long)cProgressTime.GetTime());
+			long lStartTime=(long)pcFlight->GetStartTime().GetTime();
+			long lProgressTime=(long)cProgressTime.GetTime();
+			if( lStartTime<lProgressTime )
+				{
+				pWSBaro->SetTaskOpenTime(lStartTime);
+				pWSBaro->SetTaskCloseTime(lProgressTime);
+				}
 			}
 		}
 

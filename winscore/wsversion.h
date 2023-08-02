@@ -3,14 +3,21 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2023
-#define WINSCOREVERSION		_T("2023 Rev 3")
-#define SHORTVERSION			 _T("Rev 3 ")
+#define WINSCOREVERSION		_T("2023 Rev 5")
+#define SHORTVERSION			 _T("Rev 5 ")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 
 2023
+
+Rev 5
+	* Added PEV Starts
+	* Enabled finish line base altitude specification
+
+Rev 4
+	* Added informational message for motor runs before starts
 
 Rev 3 
 	* Fixed handicapping distance computation for FAI tasks.

@@ -8,6 +8,8 @@
 #define IDRESET                         3
 #define IDC_COPY                        3
 #define IDSTOP                          3
+#define IDC_LANDING2                    3
+#define IDC_PEV                         3
 #define ID_PLAN_TASKS                   4
 #define IDCLEAR                         6
 #define IDD_ABOUTBOX                    100
@@ -683,6 +685,12 @@
 #define IDC_PRESTART_ALTITUDE           1522
 #define IDC_PRESTART_ALTITUDE_UNITS     1523
 #define IDC_MSA_UNITS                   1524
+#define IDC_PEV_STATIC                  1525
+#define IDC_ENABLE_PEV                  1526
+#define IDC_STATIC_WAIT_TIME            1527
+#define IDC_STATIC_PEV_START            1528
+#define IDC_WAIT_TIME_EDIT              1529
+#define IDC_PEV_START_WINDOW_EDIT       1530
 #define IDB_SMALLICONS                  26018
 #define IDB_LARGEICONS                  26019
 #define ID_CONTEST_INFO_TURNPOINT       32771
@@ -817,7 +825,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        272
 #define _APS_NEXT_COMMAND_VALUE         32912
-#define _APS_NEXT_CONTROL_VALUE         1525
+#define _APS_NEXT_CONTROL_VALUE         1531
 #define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif

@@ -183,6 +183,8 @@ public:
 	void		SetFinishValidity(bool b)   { m_bValidFinish=b; };
 	void		SetTurnpointsAchevied(bool b)   { m_bAllTurnpointsAcheived=b; };
 	void		SetLock(bool b)   { m_bLocked=b; };
+	
+	void		FindPEVWindows();
 
 	CTime		LastValidStartTime( );
 	int			NumberOfWarnings( );
@@ -223,6 +225,8 @@ private:
 	double		 m_dTurnpointRadius;
 	double		 m_dTurnpointOuterRadius;
 
+	CPosition*		m_pPEVStart;
+
 /////////////////////  Results of Analysis ///////////////////
 public:
 	CTurnpoint* GetHomePoint();
@@ -236,6 +240,7 @@ public:
 	void SetOption(int iOption);
 	void CheckSecurity();
 	bool CheckSecurity2(CString &cResult);
+	void CheckPEVStarts();
 
 	bool IsAreaTask()		{ return m_eTaskType==eTurnArea			|| m_eTaskType==eFAIAssignedArea; }
 	bool IsTimedTask()		{ return m_eTaskType==eTurnArea			|| m_eTaskType==eFAIAssignedArea || m_eTaskType==eModifiedAssigned; }
@@ -256,6 +261,7 @@ public:
 	int GetFinishGateID();
 	int GetStartGateID();
 	void SetStartGateID(int  iGate);
+	CTime GetPEVStartTime();
 
 	bool CheckAirspaceIncursions(TURNPOINTCLASSARRAY &TURNPOINTCLASSArray);
 	int GetTurnAreaFixID( int iTP );
@@ -296,7 +302,7 @@ public:
 	void LocateFurthestProgess(TASKCLASS *pcTask, CGate &cFinish, TURNPOINTCLASSARRAY &cTurnpointArray);
 	int GetTaskPointID(int iTskPt);
 	void SetAcheviedTurnpoint(int i, int IID);
-	void CheckMotorRun();
+	void CheckMotorRun(bool bBeforeStart=false);
 	void CheckBFI();
 	bool UpdateCID(CONTESTANTLISTCLASS *contestantList);
 	void CheckAllTimes();

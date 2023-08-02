@@ -103,6 +103,14 @@ public:
 	int m_iMaxAltitude;
 
 	CEdit m_cMaxAltitude;
+	CStatic m_cPEVStartWindowStatic;
+	int m_iPEVWaitTime;
+	int m_iPEVStartWindow;
+	CEdit m_cPEVWaitTime;
+	CEdit m_cPEVStartWindow;
+	CButton m_cPEVEnable;
+	CStatic m_cPEVWaitTimeStatic;
+	afx_msg void OnBnClickedEnablePev();
 };
 
 //{{AFX_INSERT_LOCATION}}

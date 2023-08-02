@@ -41,7 +41,10 @@ CGate::CGate( ) :
 	m_bPreStartAltitude(false),
 	m_dMaxGroundSpeed(86.839069079077575), //100 mph
 	m_iPreStartAltitude(5000),
-	m_iMaxStartAltitude(5000)
+	m_iMaxStartAltitude(5000),
+	m_iPEVStartWindow(0),
+	m_iPEVWaitTime(0),
+	m_bPEVStart(false)
 	{
 	}
 
@@ -196,6 +199,9 @@ CGate& CGate::operator =(CGate &cGate)
 	m_dMaxGroundSpeed=cGate.m_dMaxGroundSpeed;
 	m_iPreStartAltitude=cGate.m_iPreStartAltitude;
 	m_iMaxStartAltitude=cGate.m_iMaxStartAltitude;
+	m_iPEVStartWindow=cGate.m_iPEVStartWindow;
+	m_iPEVWaitTime=cGate.m_iPEVWaitTime;
+	m_bPEVStart=cGate.m_bPEVStart;
 
 	return *this;
 	}
@@ -311,6 +317,10 @@ bool CGate::GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode)
 	cMgr.CreateElementIntC( pIDOMChildNode, _T("PreStartAltitude"), m_iPreStartAltitude);
 	cMgr.CreateElementIntC( pIDOMChildNode, _T("MaxStartAltitude"), m_iMaxStartAltitude);
  
+	cMgr.CreateElementInt ( pIDOMChildNode, _T("PEVStartWindow"), m_iPEVStartWindow);
+	cMgr.CreateElementInt ( pIDOMChildNode, _T("PEVWaitTime"), m_iPEVWaitTime);
+	cMgr.CreateElementInt ( pIDOMChildNode, _T("PEVStart"), m_bPEVStart);
+
 	return true;
 	}
 
@@ -339,6 +349,13 @@ bool CGate::FromXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParent)
 
 	GET_XML_INT( cMgr, pGate, _T("PreStartAltitude"), int, m_iPreStartAltitude, 5000);
 	GET_XML_INT( cMgr, pGate, _T("MaxStartAltitude"), int, m_iMaxStartAltitude, 5000);
+
+	GET_XML_INT( cMgr, pGate,_T("PEVStartWindow"), int,  m_iPEVStartWindow, 0);
+	GET_XML_INT( cMgr, pGate, _T("PEVWaitTime"), int, m_iPEVWaitTime, 0);
+	GET_XML_BOOL( cMgr, pGate,_T("PEVStart"), m_bPEVStart, false);
+
+
+
 
 	return true;
 	}

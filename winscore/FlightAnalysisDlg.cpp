@@ -37,12 +37,14 @@ CFlightAnalysisDlg::CFlightAnalysisDlg(EUnits eUnits, EAltUnits eAltUnits, CWnd*
     SetControlInfo(IDC_FIND_START,  ANCHORE_BOTTOM );
     SetControlInfo(IDC_FIND_FINISH,  ANCHORE_BOTTOM );
     SetControlInfo(IDC_LANDING,  ANCHORE_BOTTOM );
+    SetControlInfo(IDC_PEV,  ANCHORE_BOTTOM );
 	SetControlInfo(IDOK,  ANCHORE_BOTTOM );
 
 	m_pcTask=NULL;
 
 	m_iStartItem = -1;
 	m_iFinishItem = -1;
+	m_iPEVPtr=0;
 
 	//{{AFX_DATA_INIT(CFlightAnalysisDlg)
 	//}}AFX_DATA_INIT
@@ -59,6 +61,7 @@ void CFlightAnalysisDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_FIND_FINISH, m_cFinishButton);
 	DDX_Control(pDX, IDC_LIST2, m_cListCtrl);
 	//}}AFX_DATA_MAP
+	DDX_Control(pDX, IDC_PEV, m_cPEVButton);
 }
 
 
@@ -76,6 +79,7 @@ BEGIN_MESSAGE_MAP(CFlightAnalysisDlg, CDialog)
 	ON_WM_CLOSE()
 	ON_WM_CONTEXTMENU() 
 	//}}AFX_MSG_MAP
+	ON_BN_CLICKED(IDC_PEV, &CFlightAnalysisDlg::OnBnClickedPEV)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -89,7 +93,8 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 	m_cNextButton.EnableWindow(FALSE); 
 	m_cStartButton.EnableWindow(FALSE);
 	m_cFinishButton.EnableWindow(FALSE);
-	
+	m_cPEVButton.EnableWindow(FALSE);
+
 	m_cListCtrl.SetExtendedStyle( LVS_EX_FULLROWSELECT  );
 
 	bool bStarted=false;
@@ -246,7 +251,12 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 			cInt.Format(_T("%d"), iPoint+1 );
 			m_cListCtrl.SetItemText(iItem,i++,_T("***"));
 			m_cListCtrl.SetItemText(iItem,i++,pcPos->GetTimeString() );
-			m_cListCtrl.SetItemText(iItem,i++,_T(" *** PILOT EVENT ***"));
+			if( m_pcFlight->GetPEVStartTime() == pcPos->m_cTime ) 
+				m_cListCtrl.SetItemText(iItem,i++,_T(" *** PILOT EVENT START ***"));
+			else
+				m_cListCtrl.SetItemText(iItem,i++,_T(" *** PILOT EVENT ***"));
+			m_vPEVPos.push_back(lvi.iItem);
+			m_cPEVButton.EnableWindow();
 			}
 
 		/*
@@ -681,4 +691,13 @@ BOOL CFlightAnalysisDlg::PreTranslateMessage(MSG* pMsg)
 
 
 	return CDialog::PreTranslateMessage(pMsg);
+}
+
+void CFlightAnalysisDlg::OnBnClickedPEV()
+{
+	int iPtr = m_vPEVPos[m_iPEVPtr++];
+	if( m_iPEVPtr > (int)m_vPEVPos.size()-1 ) m_iPEVPtr=0;
+
+	EnsureVisibleTop(  iPtr );
+	m_cListCtrl.SetItemState(  iPtr, LVIS_SELECTED, LVIS_SELECTED);
 }

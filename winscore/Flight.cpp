@@ -233,6 +233,16 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 		throw;
 		}
 
+	try { 
+		FindPEVWindows();
+		}
+	catch(...)
+		{
+		AfxMessageBox(_T("Unhandled exception in CFlight::FindPEVWindows"));
+		throw;
+		}
+
+
 	try {
 		FindStartsAndFinish(pcTask);
 		}
@@ -243,7 +253,11 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 		}
 
 	try {
-		if( pcContestant && pcContestant->IsMotorized() ) CheckMotorRun();
+		if( pcContestant && pcContestant->IsMotorized() ) 
+			{
+			CheckMotorRun();   // regular check
+			CheckMotorRun(true); // before start check
+			}
 		}
 	catch(...)
 		{
@@ -1544,15 +1558,15 @@ void	CFlight::FindStartsAndFinish(CTask *pcTask)
 
 							int iPressureAlt=m_cFinishGate.CrossingAltitude( *pcPrevPos, *pcPos  );
 							int iFinishGroundElevation=GetHomePoint()->GetElevation();
-							double dAltitudeS=(iPressureAlt+iMSLCorrection)-iFinishGroundElevation;
-							double dAltitudeF=(iPressureAlt+iMSLFinishCorrection)-iFinishGroundElevation;
-							double dHeightAboveGround=max(dAltitudeF,dAltitudeS);
-							if(dHeightAboveGround<50 && pcPos->m_dSpeed >20. && !IsFAITask()  ) // If < 20 knots he is landing/rolling, don't warn.
+							double dAltitudeS=(iPressureAlt+iMSLCorrection);
+							double dAltitudeF=(iPressureAlt+iMSLFinishCorrection);
+							double dBestHeight=max(dAltitudeF,dAltitudeS);
+							if(dBestHeight<m_cFinishGate.GetBase() && pcPos->m_dSpeed >20.  ) // If < 20 knots he is landing/rolling, don't warn.
 								{
 								CString strPenalty;
-								int iGateBase=iFinishGroundElevation+50;
-								int iHeight=int(dHeightAboveGround);
-								strPenalty.Format(_T("Finish Altitude %i AGL is less than the Finish Gate Base at 50ft AGL (%i MSL)."), iHeight, iGateBase );
+								int iGateBase=m_cFinishGate.GetBase();
+								int iBest=int(dBestHeight);
+								strPenalty.Format(_T("Finish Altitude %i MSL is less than the Finish Gate Base at %i ft MSL."), iBest, iGateBase );
 								AddWarning(eFinish,0,strPenalty);
 								}
 							break;
@@ -2365,6 +2379,8 @@ void CFlight::CheckStartPenalty(TASKCLASS* pcTask)
 		{
 		CheckFAIStarts(pcTask,0);
 
+		CheckPEVStarts();
+
 		return;
 		}
 
@@ -2519,7 +2535,30 @@ CString strTest;
 			AddWarning(eStart,m_iStartPenalty,strPenalty);
 			}
 		}
+
+	    CheckPEVStarts();
 	}
+
+void CFlight::CheckPEVStarts(  )
+	{
+		if(m_cStartGate.IsPEVStart() && m_pPEVStart )
+			{
+			//  Check if Latest start is in the PEV window:
+
+			int iWaitTime = m_cStartGate.GetPEVWaitTime()*60;
+			int iWindow = m_cStartGate.GetPEVStartWindow()*60;
+			CTime cBegin = m_pPEVStart->m_cTime.GetTime()+iWaitTime;
+			CTime cEnd   = cBegin+iWindow;
+
+			if( m_cStartTime<cBegin || m_cStartTime>cEnd )
+				{
+				CString strPenalty;
+				strPenalty.Format(_T("Latest start time at %s is not in PEV start window: %s to %s "),m_cStartTime.Format(_T("%H:%M:%S")),cBegin.Format(_T("%H:%M:%S")),cEnd.Format(_T("%H:%M:%S")));
+				AddWarning(eStart,50,strPenalty);
+				}
+			}
+	}
+
 
 int CFlight::GetStartHeightPenalty( int iStartPos, int &iControlHeight, int &MSH )
 	{
@@ -3038,6 +3077,7 @@ void CFlight::InitializeAnalysisParams(EUnits	eUnits)
 	ResetAllWarnings();
 	m_dDistance=0.0;
 
+	m_pPEVStart=NULL;
 
 }
 
@@ -3231,7 +3271,7 @@ void CFlight::CheckBFI()
 }
 
 
-void CFlight::CheckMotorRun()
+void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 {
 	CPosition* pcPrevPos=NULL;
 	CTimeSpan cTotalMotorONTime(0);
@@ -3262,10 +3302,10 @@ void CFlight::CheckMotorRun()
 		}
 	
 // Find the start and end points of interest
-	int iStartPos=FindEvent(FAN_LATEST_START, 0, FORWARD );
+	int iStartPos=FindEvent(bCheckBeforeStart?FAN_ROLLING:FAN_LATEST_START, 0, FORWARD );
 	if( iStartPos<0 ) iStartPos=0;
 
-	int iFinishPos=FindEvent(FAN_FINISH, GetNumPoints()-1, BACKWARD );
+	int iFinishPos=FindEvent(bCheckBeforeStart?FAN_LATEST_START:FAN_FINISH, GetNumPoints()-1, BACKWARD );
 	if( iFinishPos<0 ) 
 			{
 			iFinishPos=FindEvent(FAN_LANDED, GetNumPoints()-1, BACKWARD );
@@ -3520,7 +3560,7 @@ void CFlight::CheckMotorRun()
 	// Now find the 1st run, not necessciarily the longest
 
 	pcPrevPos=NULL;
-	for( int iPos=iStartPos; iPos<GetNumPoints(); iPos++ )
+	for( int iPos=iStartPos; iPos<(bCheckBeforeStart?iFinishPos:(int)GetNumPoints()); iPos++ )
 		{
 		CPosition* pcPos=GetPosition(iPos);
 		if( pcPrevPos && pcPos )
@@ -3593,16 +3633,23 @@ void CFlight::CheckMotorRun()
 		pcLongestMotorOn!=NULL                   &&
 		iDiff>-20 )
 		{
-		pcLongestMotorOn->AddStatus(FAN_LANDED);
-		m_cLandingLocation=*pcLongestMotorOn;
-		m_cLandingTime=pcLongestMotorOn->m_cTime;
-        m_bValidFinish=false;
-		AddWarning(eMotorRunLandout,0,m_cLandingTime.Format(_T("Landout occured at %H:%M:%S due to motor run")) );
-		// Remove any finish penalty warnings.
-		int iWarn=GetWarning(eFinish);
-		if( iWarn>=0 )
+		if( bCheckBeforeStart )
 			{
-			RemoveWarning(iWarn);	
+			AddWarning(eMotorRunStart,0,pcLongestMotorOn->m_cTime.Format(_T("Motor Run Before Start %H:%M:%S")) );
+			}
+		else
+			{
+			pcLongestMotorOn->AddStatus(FAN_LANDED);
+			m_cLandingLocation=*pcLongestMotorOn;
+			m_cLandingTime=pcLongestMotorOn->m_cTime;
+			m_bValidFinish=false;
+			AddWarning(eMotorRunLandout,0,m_cLandingTime.Format(_T("Landout occured at %H:%M:%S due to motor run")) );
+			// Remove any finish penalty warnings.
+			int iWarn=GetWarning(eFinish);
+			if( iWarn>=0 )
+				{
+				RemoveWarning(iWarn);	
+				}
 			}
 		}
 
@@ -3635,7 +3682,17 @@ void CFlight::LocateFurthestProgess(TASKCLASS			*pcTask, CGate &cFinishGate,TURN
 	if( m_nAcheivedTurnpoints==0 )
 		{
 		int iClose=FindClosestPointToTurnpoint(0);
-		iStartPos=FindEvent(FAN_START, iClose, BACKWARD );
+		if( iClose<0 )
+			{
+			// Pathalogical case, never even got near the 1st turn
+		    iStartPos=FindEvent(FAN_LATEST_START, GetNumPoints()-1, BACKWARD );
+			//pcFurthest=GetPosition(iStartPos);
+			//if( pcFurthest ) pcFurthest->AddStatus(FAN_FURTHEST_PROGRESS);
+			//return;
+			}
+		else 
+		   iStartPos=FindEvent(FAN_START, iClose, BACKWARD );
+
 		}
 	else
 		iStartPos=FindEvent(FAN_LATEST_START, 0, FORWARD );
@@ -5237,4 +5294,51 @@ int CFlight::CheckFAIStarts(CTask *pcTask, int StartFix )
 	iPenalty+=CheckFAIMaximumStartGroundSpeed(pcTask, StartFix);
 
 	return min(1000,iPenalty);
+	}
+
+CTime  CFlight::GetPEVStartTime()
+	{
+	if( !m_cStartGate.IsPEVStart() || !m_pPEVStart ) return CTime(0);
+
+	return m_pPEVStart->m_cTime;
+	}
+
+void  CFlight::FindPEVWindows()
+	{
+	if( !m_cStartGate.IsPEVStart() ) return;
+
+	int nPEV=0;
+	// Check for PEVs
+	int iRollPos=FindEvent( FAN_ROLLING, 0, FORWARD );
+	int iPEVPos=iRollPos;
+
+	while(true)
+		{
+		iPEVPos=FindEvent( FAN_PEV, iPEVPos, FORWARD );
+		if( iPEVPos<0 ) break;
+
+		CPosition *pcPosPEV=GetPosition(iPEVPos);
+		if( !pcPosPEV ) break;
+
+		if( m_pPEVStart )
+			{
+			// We already recorded a PEV start, see if this is < than 30 Sec
+
+			if( pcPosPEV->m_cTime.GetTime() - m_pPEVStart->m_cTime.GetTime() < 30 ) continue;
+			}
+
+		if( nPEV++ >3 ) break;
+		
+		m_pPEVStart=pcPosPEV;
+		iPEVPos++;
+		}
+
+	if( nPEV==0 ) 
+		{
+		// Error, no PEV events in Log.
+		CString strPEV;
+		strPEV.Format("No PEV events found in log. ");
+		AddWarning(eStart, 50, strPEV );
+		}
+
 	}

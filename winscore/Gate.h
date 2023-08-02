@@ -39,6 +39,7 @@ public:
 //	bool IsGPS()			{return true;}
 	bool IsGPSCylinder()	{return m_eGateType==eCylinder;}
 	bool IsFirstLegAtExit() {return m_bFirstLegAtExit;}
+	bool IsPEVStart()		{return m_bPEVStart;}
 
 	int GetHeight()			{return m_iHeight;}
 	int GetBase()			{return m_iBase;}
@@ -61,9 +62,15 @@ public:
 	void SetIsPreStartAltitude(bool b) {m_bPreStartAltitude=b;}
 	void SetMaxAltitude(int i)		{m_iMaxStartAltitude=i;}
 	void SetPreStartAltitude(int i) {m_iPreStartAltitude=i;}
+	void SetPEVStart( bool b) {m_bPEVStart=b;}
+	void SetPEVStartWindow(int i) {m_iPEVStartWindow=i;}
+	void SetPEVWaitTime(int i) {m_iPEVWaitTime=i;}
 
 	int GetMaxAltitude()		{return m_iMaxStartAltitude;}
 	int GetPreStartAltitude() {return m_iPreStartAltitude;}
+	int GetPEVStartWindow() {return m_iPEVStartWindow;}
+	int GetPEVWaitTime() {return	m_iPEVWaitTime;}
+
 
 	bool ScoreOutTheTop();
 	bool IsPreStartAltitude();
@@ -98,6 +105,9 @@ private:
 	double		m_dMaxGroundSpeed;
 	int			m_iPreStartAltitude;
 	int			m_iMaxStartAltitude;
+	int			m_iPEVStartWindow;
+	int			m_iPEVWaitTime;
+	bool		m_bPEVStart;
 };
 
 #endif // !defined(AFX_GATE_H__A8001D04_50BB_11D3_8941_00C04F79ECB9__INCLUDED_)

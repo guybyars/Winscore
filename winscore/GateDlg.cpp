@@ -28,6 +28,8 @@ CGateDlg::CGateDlg(CWinscoreDoc *pDoc, EGateDlgType  eGateDlgType, CGate &cGate,
 	, m_dMaxGroundSpeed(5000)
 	, m_iPreStartAltitude(5000)
 	, m_iMaxAltitude(5000)
+	, m_iPEVWaitTime(0)
+	, m_iPEVStartWindow(0)
 {
 	//{{AFX_DATA_INIT(CGateDlg)
 	m_iBase = 0;
@@ -86,6 +88,13 @@ void CGateDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_MSA_UNITS, m_cMSAUnits);
 	DDX_Control(pDX, IDC_PRESTART_ALTITUDE_UNITS, m_cPreStartAltitudeUnits);
 	DDX_Control(pDX, IDC_MAX_ALTITUDE, m_cMaxAltitude);
+	DDX_Control(pDX, IDC_STATIC_PEV_START, m_cPEVStartWindowStatic);
+	DDX_Text(pDX, IDC_PEV_START_WINDOW_EDIT, m_iPEVStartWindow);
+	DDX_Text(pDX, IDC_WAIT_TIME_EDIT, m_iPEVWaitTime);
+	DDX_Control(pDX, IDC_WAIT_TIME_EDIT, m_cPEVWaitTime);
+	DDX_Control(pDX, IDC_PEV_START_WINDOW_EDIT, m_cPEVStartWindow);
+	DDX_Control(pDX, IDC_ENABLE_PEV, m_cPEVEnable);
+	DDX_Control(pDX, IDC_STATIC_WAIT_TIME, m_cPEVWaitTimeStatic);
 }
 
 
@@ -95,6 +104,7 @@ BEGIN_MESSAGE_MAP(CGateDlg, CDialog)
 	ON_CBN_SELCHANGE(IDC_TYPECOMBO, OnSelchangeTypecombo)
 	//}}AFX_MSG_MAP
 	ON_BN_CLICKED(IDC_MAX_GROUND_SPEED, &CGateDlg::OnBnClickedMaxGroundSpeed)
+	ON_BN_CLICKED(IDC_ENABLE_PEV, &CGateDlg::OnBnClickedEnablePev)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -152,6 +162,13 @@ BOOL CGateDlg::OnInitDialog()
 		m_iMaxAltitude=0;
 		}
 
+	m_iPEVStartWindow=m_cGate.GetPEVStartWindow();
+	m_iPEVWaitTime=m_cGate.GetPEVWaitTime();
+
+	bool bPEV=m_cGate.IsPEVStart();;
+	m_cPEVEnable.SetCheck(bPEV);
+
+
 	MaskForm();
 
 	if( m_eGateDlgType==CGateDlg::eFinish )
@@ -198,6 +215,22 @@ void CGateDlg::OnOK()
 		m_cGate.SetMaxAltitude(m_iMaxAltitude);
 		}
 
+	if( m_cPEVEnable.GetCheck()==BST_CHECKED) 
+		{
+		m_cGate.SetPEVStart(true);
+		if( m_iPEVWaitTime<5 || m_iPEVWaitTime>10 )
+			{
+			AfxMessageBox(_T("Warning, invalid PEV wait time entered."));
+			}
+		if( m_iPEVStartWindow<5 || m_iPEVStartWindow>10 )
+			{
+			AfxMessageBox(_T("Warning, invalid PEV start window entered."));
+			}
+		m_cGate.SetPEVStartWindow(m_iPEVStartWindow);
+		m_cGate.SetPEVWaitTime(m_iPEVWaitTime);
+		}
+	else
+		m_cGate.SetPEVStart(false);
 
 	CDialog::OnOK();
 }
@@ -221,8 +254,8 @@ void CGateDlg::MaskForm()
 
 	m_cHeightEdit.EnableWindow(bGPS );
 	m_cHeightText.EnableWindow(bGPS );
-	m_cBaseEdit.EnableWindow(bGPS && eGateType==eCylinder );
-	m_cBaseText.EnableWindow(bGPS && eGateType==eCylinder);
+	m_cBaseEdit.EnableWindow(bGPS );
+	m_cBaseText.EnableWindow(bGPS );
 
 	m_cTypeCombo.EnableWindow(bGPS);
 	m_cTypeText.EnableWindow(bGPS);
@@ -259,6 +292,14 @@ void CGateDlg::MaskForm()
 		m_cPreStartAltitude.EnableWindow(b);
 		}
 	m_cMaxGroundSpeedTextUnits.SetWindowTextA(m_strUnitsSpeedText);
+
+	BOOL bPEV=m_cPEVEnable.GetCheck()==BST_CHECKED;
+	m_cPEVWaitTime.EnableWindow(bPEV);
+	m_cPEVStartWindow.EnableWindow(bPEV);
+	m_cPEVStartWindowStatic.EnableWindow(bPEV);
+	m_cPEVWaitTimeStatic.EnableWindow(bPEV);
+
+
 }
 
 void CGateDlg::OnSelchangeTypecombo() 
@@ -280,3 +321,9 @@ void CGateDlg::OnBnClickedMaxGroundSpeed()
 	MaskForm();
 }
 
+
+
+void CGateDlg::OnBnClickedEnablePev()
+{
+	MaskForm();
+}

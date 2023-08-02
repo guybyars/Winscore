@@ -13,6 +13,8 @@
 
 #include "winscoredoc.h"
 #include "resizingdialog.h"
+#include "afxwin.h"
+#include <vector>
 
 /////////////////////////////////////////////////////////////////////////////
 // CFlightAnalysisDlg dialog
@@ -34,10 +36,13 @@ public:
 	int m_nTPItems;
 	int m_iTPItemPtr;
 	int m_iLandingItem;
+	int m_iPEVPtr;
 	EUnits m_eUnits;
 	EAltUnits m_eAltUnits;
 
 	CTask *m_pcTask;
+
+	std::vector<int>   m_vPEVPos;
 
 // Dialog Data
 	//{{AFX_DATA(CFlightAnalysisDlg)
@@ -46,6 +51,7 @@ public:
 	CButton	m_cNextButton;
 	CButton	m_cStartButton;
 	CButton	m_cFinishButton;
+	CButton m_cPEVButton;
 	CListCtrl	m_cListCtrl;
 	//}}AFX_DATA
 
@@ -72,12 +78,16 @@ protected:
 	afx_msg void OnNextTurnpoint();
 	afx_msg void OnPrevTurnpoint();
 	afx_msg void OnLanding();
+	afx_msg void OnBnClickedPEV();
 	afx_msg void OnClose();
 	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
 	virtual void OnOK();
 	afx_msg void OnEditCopy();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+public:
+
+
 };
 
 //{{AFX_INSERT_LOCATION}}
