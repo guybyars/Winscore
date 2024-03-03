@@ -2,13 +2,20 @@
 #define WSVERSION_H_INCLUDED_
 
 //#define	WINSCOREBETA         1
-#define CURRENTYEAR			 2023
-#define WINSCOREVERSION		_T("2023 Rev 5")
-#define SHORTVERSION			 _T("Rev 5 ")
+#define CURRENTYEAR			 2024
+#define WINSCOREVERSION		_T("2024 Rev 1")
+#define SHORTVERSION			 _T("Rev 1 ")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
+2024
+
+Beta 0
+	* No changes from 2023 Rev 5.
+Rev 1
+   * Removed handicap normalization for FAI tasks.
+
 
 2023
 

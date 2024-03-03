@@ -1628,10 +1628,11 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
 
     	if( !cClass.IsHandicapped() ) return;
 
-		double dLowestHandicap=1.0;
+		//double dLowestHandicap=1.0;
 
-		if( pcTask->IsFAITask() )
-			dLowestHandicap=m_contestantList.GetLowestPerformanceHandicap(eClass);
+		// Adjustment for lowest handicap removed for 2024
+		//if( pcTask->IsFAITask() )
+		//	dLowestHandicap=m_contestantList.GetLowestPerformanceHandicap(eClass);
 
     	POSITION pos = cScoreRecordList.GetHeadPosition();
     	while(pos!=NULL)
@@ -1641,13 +1642,13 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
 			pcScoreRecord->m_dHandicappedDistance=0.0;
 			if( pcScoreRecord->m_dDistance==0.0 ) continue;
 
-			if( pcTask->IsFAITask() )
-				{
-				double dFactor=pcScoreRecord->m_dHandicap/dLowestHandicap;
-				pcScoreRecord->m_dHandicappedDistance=dFactor*pcScoreRecord->m_dDistance;
-
-				}
-			else
+			// FAI Adjustment removed for 2024
+			//if( pcTask->IsFAITask() )
+				//{
+				//double dFactor=pcScoreRecord->m_dHandicap/dLowestHandicap;
+				//pcScoreRecord->m_dHandicappedDistance=dFactor*pcScoreRecord->m_dDistance;
+				//}
+			//else
 				pcScoreRecord->m_dHandicappedDistance=pcScoreRecord->m_dHandicap*pcScoreRecord->m_dDistance;
  
 

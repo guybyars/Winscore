@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<HandicapList Title="SSA HC List Modified 2/13/2023 4:09:00 PM"><Codes><Code>
+<HandicapList Title="SSA HC List Modified 2/7/2024 9:32:00 PM"><Codes><Code>
 	<ID>F</ID>
 	<Description>F = Fixed gear (when both fixed and retractable variants exist)</Description></Code><Code>
 	<ID>R</ID>
@@ -1171,9 +1171,9 @@
 	<Model>Twin Shark</Model>
 	<Span>20</Span>
 	<Weight>1630</Weight>
-	<Notes>M</Notes>
+	<Notes>MW</Notes>
 	<Handicap>0.85</Handicap>
-	<Modified>6/10/2021 7:31:00 AM</Modified></Aircraft><Aircraft>
+	<Modified>8/30/2023 3:38:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>IAR Brasov</Manufacturer>
 	<Model>IS-28B2</Model>
 	<Span>17</Span>
@@ -2008,6 +2008,13 @@
 	<Handicap>1.6</Handicap>
 	<Modified/></Aircraft><Aircraft>
 	<Manufacturer>Scheibe</Manufacturer>
+	<Model>Bergfalke II/55</Model>
+	<Span>16.6</Span>
+	<Weight>970</Weight>
+	<Notes>F</Notes>
+	<Handicap>1.5</Handicap>
+	<Modified>5/8/2023 9:57:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Scheibe</Manufacturer>
 	<Model>Bergfalke III</Model>
 	<Span>16.6</Span>
 	<Weight>1025</Weight>
@@ -2105,13 +2112,20 @@
 	<Notes>W</Notes>
 	<Handicap>0.86</Handicap>
 	<Modified>3/22/2021 9:14:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schempp-hirth</Manufacturer>
+	<Model>Arcus Jet</Model>
+	<Span>20</Span>
+	<Weight>1633</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.83</Handicap>
+	<Modified>11/8/2023 8:10:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Arcus M</Model>
 	<Span>20</Span>
 	<Weight>1633</Weight>
 	<Notes>MW</Notes>
 	<Handicap>0.83</Handicap>
-	<Modified>3/22/2021 9:15:00 AM</Modified></Aircraft><Aircraft>
+	<Modified>11/8/2023 8:08:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Arcus T</Model>
 	<Span>20</Span>
@@ -2194,15 +2208,15 @@
 	<Span>15</Span>
 	<Weight>946</Weight>
 	<Notes>MWC</Notes>
-	<Handicap>0.9</Handicap>
-	<Modified>2/17/2019 7:59:00 AM</Modified></Aircraft><Aircraft>
+	<Handicap>0.884</Handicap>
+	<Modified>2/7/2024 1:26:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Discus 2cT-18</Model>
 	<Span>18</Span>
 	<Weight>968</Weight>
 	<Notes>MW</Notes>
-	<Handicap>0.87</Handicap>
-	<Modified>4/12/2017 4:27:00 PM</Modified></Aircraft><Aircraft>
+	<Handicap>0.859</Handicap>
+	<Modified>2/7/2024 1:30:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Discus a</Model>
 	<Span>15</Span>
@@ -2810,8 +2824,8 @@
 	<Span>20</Span>
 	<Weight>1630</Weight>
 	<Notes>MWR</Notes>
-	<Handicap>0.85</Handicap>
-	<Modified>4/12/2017 5:09:00 PM</Modified></Aircraft><Aircraft>
+	<Handicap>0.83</Handicap>
+	<Modified>2/7/2024 1:32:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASH-25</Model>
 	<Span>25</Span>
@@ -2896,6 +2910,13 @@
 	<Notes/>
 	<Handicap>1.38</Handicap>
 	<Modified/></Aircraft><Aircraft>
+	<Manufacturer>Schleicher</Manufacturer>
+	<Model>ASK-13 Cabriolet</Model>
+	<Span>16</Span>
+	<Weight>1060</Weight>
+	<Notes>F</Notes>
+	<Handicap>1.38</Handicap>
+	<Modified>5/8/2023 10:03:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASK-14</Model>
 	<Span>15</Span>
@@ -3596,6 +3617,13 @@
 	<Notes>M</Notes>
 	<Handicap>0.866</Handicap>
 	<Modified>2/27/2019 4:29:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Streifeneder</Manufacturer>
+	<Model>Nimeta X</Model>
+	<Span>31</Span>
+	<Weight>1870</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.78</Handicap>
+	<Modified>2/7/2024 9:32:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>TeST</Manufacturer>
 	<Model>TST-10M</Model>
 	<Span>15</Span>
@@ -3645,6 +3673,20 @@
 	<Notes/>
 	<Handicap>1.08</Handicap>
 	<Modified>6/28/2019 2:22:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Windward Performance</Manufacturer>
+	<Model>SparrowHawk R</Model>
+	<Span>15</Span>
+	<Weight>535</Weight>
+	<Notes>FC</Notes>
+	<Handicap>0.944</Handicap>
+	<Modified>11/15/2023 8:30:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Windward Performance</Manufacturer>
+	<Model>Sparrowhawk RW-13.5</Model>
+	<Span>13.5</Span>
+	<Weight>535</Weight>
+	<Notes>WRC</Notes>
+	<Handicap>0.953</Handicap>
+	<Modified>11/15/2023 1:10:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>ZS Jezow</Manufacturer>
 	<Model>PW-6U</Model>
 	<Span>16</Span>
