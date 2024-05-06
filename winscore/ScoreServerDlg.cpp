@@ -10,6 +10,7 @@
 #include <Atlbase.h>
 #include "Global_Prototypes.h"
 
+
 #include "CkHttp.h"
 #include "CkHttpRequest.h"
 #include "CkHttpResponse.h"
@@ -522,6 +523,21 @@ int CScoreServerDlg::SendFlightLogs(CString &strFileName, CString &strUsername, 
 		DeleteFile(strWSCX);
 
 		cZip.Close();
+
+		CFileStatus filestatus;
+        CFile::GetStatus( strZipFileName, filestatus );
+		int iSize=filestatus.m_size/1024;
+		iSize=iSize/1000;
+
+		if( iSize==0 )
+		  SetStatusText(_T("Sending Flight Logs."));
+		else
+		  {
+		  CString strStatus;
+		  strStatus.Format("Sending Flight Logs (%d MB).",iSize);
+		  SetStatusText(strStatus);
+		  }
+
 		}
 	catch (...)
 		{
@@ -530,8 +546,6 @@ int CScoreServerDlg::SendFlightLogs(CString &strFileName, CString &strUsername, 
 		}
 
 //    Now send the.zip to the web site
-
-	SetStatusText(_T("Sending Flight Logs."));
 
 
 	if( !uploadfile(strZipFileName,strUsername,strPassword,false,strError) )

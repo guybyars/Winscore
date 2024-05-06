@@ -2423,7 +2423,7 @@ void CWinscoreView::OnDblClickFlightView()
 	CFlight* pcFlight=(CFlight*)GetSelectedPtr();
 	if( pcFlight==NULL ) return;
 
-	if( pcFlight->NumberOfWarnings() >0 )
+	if( pcFlight->NumberOfActiveWarnings() >0 )
 		OnFlightlogsViewwarnings();
 	else
 		OnFlightlogsDisplay();

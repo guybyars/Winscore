@@ -454,10 +454,11 @@ CTask& CTask::operator =(CTask &cTask)
 	return *this;
 	}
 
-bool CTask::CheckTurnAreaDistances(	CTurnpointArray &cTurnpointArray)
+bool CTask::CheckTurnAreaDistances(	CTurnpointArray &cTurnpointArray, CString &strError,EUnits eUnits)
 	{
 	CLocation cPoints[MAXTASKTPS+2];
 	double dRadii[MAXTASKTPS+2] = {0.0};
+	CString strNames[MAXTASKTPS+2];
 
 	if( m_nTurnpoints==0 ) return false;
 
@@ -468,6 +469,10 @@ bool CTask::CheckTurnAreaDistances(	CTurnpointArray &cTurnpointArray)
 
 	cPoints[0]				=*pcStart;
 	cPoints[m_nTurnpoints+1]=*pcFinish;
+
+	strNames[0]=pcStart->m_strName;
+	strNames[m_nTurnpoints+1]=pcFinish->m_strName;
+
 	if( m_cStartGate.IsGPSCylinder() )
 		{
 		dRadii[0]=m_cStartGate.GetRadius();
@@ -484,6 +489,7 @@ bool CTask::CheckTurnAreaDistances(	CTurnpointArray &cTurnpointArray)
 		{
 		cPoints[i+1]=*cTurnpointArray.GetAt(m_aiTurnpointIDs[i]-1);
 		dRadii[i+1]=m_afTurnpointRadius[i];
+		strNames[i+1]=cTurnpointArray.GetAt(m_aiTurnpointIDs[i]-1)->m_strName;
 		}
 
 
@@ -493,13 +499,24 @@ bool CTask::CheckTurnAreaDistances(	CTurnpointArray &cTurnpointArray)
 		double dGap=cPoints[i].DistanceTo(cPoints[i+1],SYSTEMUNITS);
 		dGap-=dRadii[i+1];
 		dGap-=dRadii[i];
+		double dMiDist=ConvertDistance(fabs(dGap),  SYSTEMUNITS, eUnits);
+		if(dGap<0.0)
+			strError.Format(" %f %s overlap between ",dMiDist,UnitsText(eUnits));
+		else
+		    strError.Format(" %f %s gap between ",dMiDist,UnitsText(eUnits));
+		strError+=strNames[i];
+	    strError+=" and ";
+		strError+=strNames[i+1];
 		if( IsFAITask() )
 			{
 			if( dGap<ConvertDistance(1, eKilometers, SYSTEMUNITS) ) return false;
 			}
 		else
 			{
-			if( dGap<ConvertDistance(2, eStatute, SYSTEMUNITS) ) return false;
+			if( dGap<ConvertDistance(2, eStatute, SYSTEMUNITS) ) 
+			  {
+			  return false;
+			  }
 			}
 		}
 

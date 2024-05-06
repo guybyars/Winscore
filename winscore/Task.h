@@ -32,7 +32,7 @@ public:
 	CGate&		GetFinishGate() {return m_cFinishGate;}
 	CGate&		GetActiveStartGate(CContestant *pcContestant);
 	void		GetTurnAreaDistances( CTurnpointArray &turnpointArray, double &dMin, double &dNominal, double &dMax );
-	bool CheckTurnAreaDistances(	CTurnpointArray &cTurnpointArray);
+	bool CheckTurnAreaDistances(	CTurnpointArray &cTurnpointArray, CString &strError,EUnits eUnits);
 	bool		LoadXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pTask, bool bFromLibrary);
 
 	CTask & operator=(CTask&);

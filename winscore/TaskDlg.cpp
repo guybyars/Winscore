@@ -773,13 +773,13 @@ bool CTaskDlg::ValidateTask()
     if( m_cTask.IsAreaTask() )
 		{
 		// Check Turn Area Separation
-
-		if (!m_cTask.CheckTurnAreaDistances(m_pDoc->m_turnpointArray) )
+		CString strError;
+		if (!m_cTask.CheckTurnAreaDistances(m_pDoc->m_turnpointArray,strError,m_pDoc->m_eUnits) )
 			{
 			if( m_cTask.IsFAITask() )
-				AfxMessageBox(_T("Invalid  Area Task, check for 1 Km separation between specified areas."));
+				AfxMessageBox(strError+_T(", invalid  Area Task, check for 1 Km separation between specified areas."));
 			else
-				AfxMessageBox(_T("Invalid  Area Task, check for 2 mile separation between specified areas."));
+				AfxMessageBox(strError+_T(", invalid  Area Task, check for 2 mile separation between specified areas."));
 			}
 		}
 	return true;

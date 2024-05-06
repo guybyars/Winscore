@@ -524,11 +524,14 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 		return false;
 		}
 
-	while( !cIfstream.eof() )
+	while( !cIfstream.eof() &&  !cIfstream.fail() )
 		{
 		cIfstream.getline( cRecord, MAXLINELEN );
 		nLinesRead++;
-//		if( cIfstream.fail() ) break;
+
+		// paranoia check to prevent infinite loop.  A million lines should be enough.
+		if( nLinesRead>1000000) break;
+
 		CString strRecord(cRecord);
 		strRecord.TrimLeft();
 		int iLen=strRecord.GetLength();

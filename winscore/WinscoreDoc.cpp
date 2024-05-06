@@ -3436,7 +3436,7 @@ BOOL CWinscoreDoc::OnOpenDocument(LPCTSTR lpszPathName)
 			CXMLMgr cMgr;
 			cMgr.Initlize();
 
-			TESTHR(cMgr.Load(strTest));
+			TESTHR(cMgr.Load(lpszPathName));
 
 			CString strRoot=cMgr.GetNodeName(cMgr.GetRoot());
 			if(strRoot!=_T("Winscore") )

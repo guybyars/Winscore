@@ -2523,7 +2523,7 @@ CString strTest;
 		if( bNewStart && iaPenalties[iBest]==0)
 			{
 			strPenalty.Format(_T("Latest start time at %s incured a penalty, An earlier start was selected to avoid a start penalty."),cPrevStartTime.Format(_T("%H:%M:%S")));
-			AddWarning(eStartLatest,0,strPenalty);
+			//AddWarning(eStartLatest,0,strPenalty);
 			}
 		else
 			{
@@ -3339,8 +3339,10 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 		cENLNoise.AddSample(pcPos->m_iEngineNoiseLevel);
 		cMOPNoise.AddSample(pcPos->m_iMOPLevel);
 		}
-	int iENLRange=cENLNoise.GetMax()-cENLNoise.GetMin();
-	int iMOPRange=cMOPNoise.GetMax()-cMOPNoise.GetMin();
+	int iENLRange=cENLNoise.GetMax();
+	iENLRange-=cENLNoise.GetMin();
+	int iMOPRange=cMOPNoise.GetMax();
+	iMOPRange-=cMOPNoise.GetMin();
 	
 	if( iENLRange<5 && iMOPRange<5 ) return;  // Not enough amplitude, no run.
 

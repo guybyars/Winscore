@@ -3,8 +3,8 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2024
-#define WINSCOREVERSION		_T("2024 Rev 1")
-#define SHORTVERSION			 _T("Rev 1 ")
+#define WINSCOREVERSION		_T("2024 Rev 2")
+#define SHORTVERSION			 _T("Rev 2 ")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
@@ -15,6 +15,12 @@ Beta 0
 	* No changes from 2023 Rev 5.
 Rev 1
    * Removed handicap normalization for FAI tasks.
+
+Rev 2
+   * Disabled better start warning
+   * Check ACTIVE warnings when double-clicking a flight
+   * Added more info in invalid turn area turnpoint specification
+   * Fixed file open failure when .wscx file is on google drive folder
 
 
 2023
