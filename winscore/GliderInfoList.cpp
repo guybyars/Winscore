@@ -302,7 +302,7 @@ bool CGliderInfoList::IsManInList(CStringArray &strArray, CString strManu)
 	if( strArray.GetSize() ==0  )  return false;
 	for( int i=0; i<strArray.GetSize(); i++ )
 		{
-		if( strManu== strArray[i] ) return true;
+		if( strManu.CompareNoCase(strArray[i])==0 ) return true;
 		}
 	return false;
 	}

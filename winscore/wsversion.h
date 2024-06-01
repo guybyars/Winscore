@@ -3,8 +3,8 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2024
-#define WINSCOREVERSION		_T("2024 Rev 2")
-#define SHORTVERSION			 _T("Rev 2 ")
+#define WINSCOREVERSION		_T("2024 Rev 3")
+#define SHORTVERSION			 _T("Rev 3 ")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
@@ -22,8 +22,14 @@ Rev 2
    * Added more info in invalid turn area turnpoint specification
    * Fixed file open failure when .wscx file is on google drive folder
 
+Rev 3
+   * Copied IGC file to local temp directory for validateion.  Solves problem with virtural/Google drives that some manufactures dll don't handle.
+   * Fixed task open time being used from imported tasks
+   * ignored character upper/lower case differences in Manufacturers in Handicap list.
+   * Fixed program error when no crossing of start line for FAI task.
 
 2023
+  * Corrected issue where incorrect case in handicap list was causing Discus 2b to be selected.
 
 Rev 5
 	* Added PEV Starts

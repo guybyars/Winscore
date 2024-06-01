@@ -1604,6 +1604,27 @@ bool ValidateIGC( const TCHAR* strDLLName, const TCHAR* strIGCFile, CString &str
 	HMODULE mod = LoadLibrary(strDLLName);
 	ProcValidateLog lpfnDllFunc1=NULL;
 
+	size_t bSize=256;
+	TCHAR *pTemp=new TCHAR[bSize];
+	_dupenv_s(&pTemp, &bSize, _T("TEMP") );
+	if( pTemp==NULL ) 
+		_dupenv_s(&pTemp, &bSize, _T("TMP") );
+	CString strWorkDIR=pTemp;
+	delete pTemp;
+
+	CString strValidateIGCFileName=strIGCFile;
+	CString strTemp=strIGCFile;
+	int pos = strTemp.ReverseFind('\\');
+	bool bCopy=false;
+	if (pos != -1)
+		{
+		strValidateIGCFileName=strWorkDIR;
+		int iRight=strTemp.GetLength()-pos;
+		strValidateIGCFileName+=strTemp.Right(iRight);
+		CopyFile(strIGCFile,strValidateIGCFileName,FALSE);
+		bCopy=true;
+		}
+
 	if( mod!= NULL )
 		{
 	   lpfnDllFunc1 = (ProcValidateLog)GetProcAddress(mod, "ValidateLog" );
@@ -1616,7 +1637,8 @@ bool ValidateIGC( const TCHAR* strDLLName, const TCHAR* strIGCFile, CString &str
 			{
 			try
 				{
-				int iReturnVal = lpfnDllFunc1(strIGCFile);
+				int iReturnVal = lpfnDllFunc1(strValidateIGCFileName);
+				if( bCopy ) DeleteFile(strValidateIGCFileName);
 				if( iReturnVal==1 ) 
 					bReturnVal=true;
 				else

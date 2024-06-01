@@ -810,14 +810,16 @@ void CTaskDlg::OnBnClickedImport()
 			}
 		else
 			{
-			//Don't use the class and date from the imported task, save and reset.
-			EClass eClass=m_cTask.m_eClass;
-			CTime  cDate =m_cTask.m_cDate;
+			//Don't use the class and date and task open time from the imported task, save and reset.
+			EClass     eClass=m_cTask.m_eClass;
+			CTime      cDate =m_cTask.m_cDate;
+			CTime      cTime =m_cTask.m_cGateOpenTime;
 
 			m_cTask= *(dlg.m_pTask);
 
 			m_cTask.m_eClass=eClass;
 			m_cTask.m_cDate=cDate;
+	        m_cTask.m_cGateOpenTime=cTime;
 			m_cTask.m_eStatus=ePreliminary;  // Imported tasks are always prelm.
 
 			MaskForm();

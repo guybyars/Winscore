@@ -5210,6 +5210,8 @@ int CFlight::CheckFAIMaximumStartGroundSpeed(CTask *pcTask, int iStartFix)
 	CPosition *pcStart=GetPosition(iFixStart);
 	CPosition *pcEnd=GetPosition(iFixEnd);
 
+	if( pcStart==NULL || pcEnd==NULL ) return 0;
+
 	double dDist = pcStart->DistanceTo(pcEnd, SYSTEMUNITS);
 
 	int iDeltaTime=(int)pcEnd->m_cTime.GetTime()-(int)pcStart->m_cTime.GetTime();
