@@ -24,16 +24,18 @@
  <table border="1" cellspacing="0" cellpadding="5">
 
    <tr bgcolor="#94ABF6">
-     <th colspan="3" ><font face="Tahoma" size="2"></font></th>
+     <th colspan="4" ><font face="Tahoma" size="2"></font></th>
      <th colspan="5" ><font face="Tahoma" size="2">SSA Reference Configuration Data</font></th>
      <th colspan="3" ><font face="Tahoma" size="2">Non Factory</font></th>
      <th colspan="3" ><font face="Tahoma" size="2">Contest</font></th>
-     <th colspan="1" ><font face="Tahoma" size="2"></font></th>
+     <th colspan="2" ><font face="Tahoma" size="2"></font></th>
    </tr> 
    
    <tr bgcolor="#94ABF6">
       <th colspan="1" ><font face="Tahoma" size="2">CID</font></th>
+      <th colspan="1" ><font face="Tahoma" size="2">First Name</font></th>
       <th colspan="1" ><font face="Tahoma" size="2">Last Name</font></th>
+      <th colspan="1" ><font face="Tahoma" size="2">Class</font></th>
       <th colspan="1" ><font face="Tahoma" size="2">Glider</font></th>
       <th colspan="1" ><font face="Tahoma" size="2">Motor</font></th>
       <th colspan="1" ><font face="Tahoma" size="2">Weight</font></th>
@@ -60,8 +62,18 @@
         </xsl:otherwise>
         </xsl:choose>
         <td align="center"><font face="Tahoma" size="2"><xsl:value-of select="CID"/></font></td>
-	      <td><font face="Tahoma" size="2"><xsl:value-of select="LastName"/></font></td>
-	      <td><font face="Tahoma" size="2"><xsl:value-of select="Glider"/></font></td>
+	      <td><font face="Tahoma" size="2"><xsl:value-of select="FirstName"/></font></td>
+        <td>
+          <font face="Tahoma" size="2">
+            <xsl:value-of select="LastName"/>
+          </font>
+        </td>
+        <td>
+          <font face="Tahoma" size="2">
+            <xsl:value-of select="Class"/>
+          </font>
+        </td>
+        <td><font face="Tahoma" size="2"><xsl:value-of select="Glider"/></font></td>
         <td align="center">
           <xsl:if test="contains(gliderinfo/Notes,'M')">Yes</xsl:if>
           <xsl:if test="not(contains(gliderinfo/Notes,'M'))"></xsl:if>
@@ -93,20 +105,17 @@
           </xsl:choose>
         </td>        
         <td>
-          <xsl:choose>
+
             <!--Weight if different-->
-            <xsl:when test="not(Weight=gliderinfo/Weight)">
               <font face="Tahoma" size="2">
                 <xsl:value-of select="Weight"/>
               </font>
               <font face="Tahoma" size="1">			  
-				<xsl:if test="WeightDelta!=0.0">
-					(<xsl:value-of select="WeightDelta"/>)
-				</xsl:if>
+      				  <xsl:if test="WeightDelta!=0.0">
+			      		  (<xsl:value-of select="WeightDelta"/>)
+				        </xsl:if>
               </font>
-            </xsl:when>
-            <xsl:otherwise></xsl:otherwise>
-          </xsl:choose>
+
         </td>
         
         <td>
@@ -124,7 +133,7 @@
       </tr>
     </xsl:for-each>
    
-   <tr><td colspan="15">* Contest Span and Weight only shown if different from Reference</td></tr>
+   <tr><td colspan="17">* Contest Span and Weight only shown if different from Reference</td></tr>
    
   </table>
   </td></tr>

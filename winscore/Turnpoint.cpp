@@ -160,6 +160,7 @@ CString CTurnpoint::HHMMSSLongText()
 	return cTemp1;
 	}
 
+//, 39  07.000 N,119  30.417 W,
 CString CTurnpoint::HHHMMMLatText()
 	{
 	CString cTemp1, strLat;
@@ -184,6 +185,35 @@ CString CTurnpoint::HHHMMMLongText()
 
 	return cTemp1;
 	}
+
+CString CTurnpoint::CUPLongText()
+	{
+	CString cTemp1, strLon;
+	(m_eLongDirection==eWEST ) ? (strLon=_T("W")) : (strLon=_T("E"));
+	cTemp1.Format(_T("%2d%06.3lf%s"), 
+		m_iLongDegrees,
+		m_dLongMinutes, 
+		strLon);
+
+	return cTemp1;
+	}
+
+CString CTurnpoint::CUPLatText()
+	{
+	CString cTemp1, strLat;
+	(m_eLatDirection==eNORTH ) ? (strLat=_T("N")) : (strLat=_T("S"));
+	cTemp1.Format(_T("%2d%06.3lf%s"), 
+		m_iLatDegrees,
+		m_dLatMinutes, 
+		strLat);
+
+	return cTemp1;
+	}
+
+
+
+
+
 
 
 int CALLBACK CompareTurnpoint(LPARAM lParam1, LPARAM lParam2, 
@@ -264,6 +294,11 @@ CString CTurnpoint::AttributeText()
 	if( m_iAttribute & TPT_FINISH ) cTemp+=_T("F ");
 	if( m_iAttribute & TPT_AIRFIELD ) cTemp+=_T("A ");
 	if( m_iAttribute & TPT_CONTROL ) cTemp+=_T("T ");
+	return cTemp;
+}
+CString CTurnpoint::CUPAttributeText()
+{
+	CString cTemp=_T("1");
 	return cTemp;
 }
 
@@ -383,3 +418,23 @@ CTurnpoint::CTurnpoint(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pWaypoint)
 
 	CLocation::FromXML(cMgr, pWaypoint);
 	}
+
+
+CString CTurnpoint::GetCUP(void)
+{
+	//"name,code,country,lat,lon,elev,style"
+
+	CString strCUP='"'+m_strName+'"';
+	strCUP+=",";
+	strCUP+='"'+IdText()+'"';
+	strCUP+=",USA,";
+	strCUP+=CUPLatText();
+	strCUP+=",";
+	strCUP+=CUPLongText();
+	strCUP+=",";
+	strCUP+=ElevationText();
+	strCUP+="ft,";
+	strCUP+=CUPAttributeText();
+	strCUP+="\n";
+	return strCUP;
+}

@@ -60,8 +60,9 @@ void CGate::Initialize( CLocation &cCenterLoc )
 	m_cEnd2=m_cCenter;
 	m_cEnd2.Move( m_dRadius, ((double)(m_dHeading+90))*TORAD, dCorr);
 
+	//IP is only used to determine direction through gate via the dot product operator.
 	m_cIP=m_cCenter;
-	m_cIP.Move( m_dRadius, ((double)(m_dHeading+180))*TORAD, dCorr );
+	m_cIP.Move( m_dRadius, ((double)(m_dHeading+180))*TORAD );
 
 	}
 
@@ -263,7 +264,7 @@ CString CGate::GetIDString()
 	return cStr;
 }
 
-bool CGate::GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode, EUnits eUnits, void* pTPArray)
+bool CGate::GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode, EUnits eUnits, void* pTPArray, bool bisFAI)
 {
     MSXML2::IXMLDOMNodePtr DOMContestantPtr;
     VARIANT vtTemp;
@@ -278,18 +279,17 @@ bool CGate::GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode, EUnits
 	cMgr.CreateElement( pParentNode, _T("Type"), GetGateType()==eLine?_T("Line"):_T("Cylinder"));
 
 	cMgr.CreateElementIntC( pParentNode, _T("Base"),	m_iBase);
-	cMgr.CreateElementIntC( pParentNode, _T("Height"), m_iHeight);
+	cMgr.CreateElementIntC( pParentNode, _T("Height"), bisFAI?m_iMaxStartAltitude:m_iHeight);
 
 	if( GetGateType()==eLine )
 		{
 		cMgr.CreateElementInt( pParentNode, _T("Heading"), (int)m_dHeading);
 		}
-	else
-		{
-		CString strRadius;
-   		strRadius.Format(_T("%4.1lf"), ConvertDistance(GetRadius(),SYSTEMUNITS, eUnits));
-		cMgr.CreateElement( pParentNode,  _T("Radius"), strRadius);
-		}
+
+	CString strRadius;
+   	strRadius.Format(_T("%4.1lf"), ConvertDistance(GetRadius(),SYSTEMUNITS, eUnits));
+	cMgr.CreateElement( pParentNode,  _T("Radius"), strRadius);
+	
 
 	return true;
 	}

@@ -39,6 +39,7 @@ public:
 	bool IsTurnPoint();
 	bool IsAirfield();
 	CString AttributeText();
+	CString CUPAttributeText();
 	CString ElevationText();
 	CString GetNoNameText();
 
@@ -59,7 +60,10 @@ public:
 	CString CTurnpoint::HHMMSSLongText();
 	CString CTurnpoint::HHHMMMLatText();
 	CString CTurnpoint::HHHMMMLongText();
+	CString CTurnpoint::CUPLatText();
+	CString CTurnpoint::CUPLongText();	
 
+	CString GetCUP(void);
 };
 
 int CALLBACK CompareTurnpoint(LPARAM lParam1, LPARAM lParam2, 

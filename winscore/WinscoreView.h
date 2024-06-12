@@ -150,6 +150,7 @@ protected:
 	afx_msg void OnFileExportXmlEntirecontestfile();
 	afx_msg void OnFileExportAutoexportscoresheettoxml();
 	afx_msg void OnExportTaskToLibrary();
+	afx_msg void OnExportTaskToCUP();
 	afx_msg void OnFileImportXmlEntirecontest();
 	afx_msg void OnImportFlashcard();
 	afx_msg void OnUpdateImportFlashcard(CCmdUI* pCmdUI);

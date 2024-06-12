@@ -3,8 +3,8 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2024
-#define WINSCOREVERSION		_T("2024 Rev 3")
-#define SHORTVERSION			 _T("Rev 3 ")
+#define WINSCOREVERSION		_T("2024 Rev 6")
+#define SHORTVERSION			 _T("Rev 6 ")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
@@ -27,6 +27,20 @@ Rev 3
    * Fixed task open time being used from imported tasks
    * ignored character upper/lower case differences in Manufacturers in Handicap list.
    * Fixed program error when no crossing of start line for FAI task.
+
+Rev 4
+   * Added Scoring Parameters for FAI tasks in XML scoresheet file.
+
+Rev 5
+   * Corrected SMTD/2 distance check to 5.0 miles "Rule 11.2.3.5 Scored Distance"
+
+Rev 6
+   * Corrected "Humorous" FAI 7.4.5b altitude penalty when no start was acheived
+   * Corrected start line detection when course line is nearly parallel to start line.
+   * Output start radius to scoresheets when line time is specified.
+   * Updated Handicap Summary Report Formatting
+   * Added exporting of tasks in CUP format
+
 
 2023
   * Corrected issue where incorrect case in handicap list was causing Discus 2b to be selected.

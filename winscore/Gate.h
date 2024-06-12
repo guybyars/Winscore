@@ -24,7 +24,7 @@ public:
 	bool FromXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pGate);
 
 	bool GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode);
-	bool GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode, EUnits eUnits, void* pTPArray);
+	bool GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode, EUnits eUnits, void* pTPArray, bool bisFAI);
 
 	CString GetIDString();
 	bool GetCrossingLocation( CLocation &cP1, CLocation &cP2, CLocation &cLoc);

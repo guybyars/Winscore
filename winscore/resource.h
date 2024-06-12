@@ -785,6 +785,7 @@
 #define ID_Menu                         32909
 #define ID_NOLOGSTATUS_CHECKEDANDOK     32910
 #define ID_LOGSTATUS_CHECKEDANDOK       32911
+#define ID_EXPORT_TASK_TO_CUP           32912
 #define NO_ROLL_TIME_DNC                61250
 #define NO_FINISH_TIME                  61251
 #define FINISHED_BUT_LANDOUT            61252

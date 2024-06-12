@@ -111,6 +111,7 @@ public:
 	bool IsTimedTask()		{ return m_eType==eTurnArea			|| m_eType==eFAIAssignedArea || m_eType==eModifiedAssigned; }
 	bool IsAssignedTask()	{ return m_eType==eAssigned			|| m_eType==eFAIRacing ; }
 	bool IsFAITask()		{ return m_eType==eFAIAssignedArea	|| m_eType==eFAIRacing ; }
+	int ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUnits eUnit);
 };
 
 int CALLBACK CompareTasks(LPARAM lParam1, LPARAM lParam2, 

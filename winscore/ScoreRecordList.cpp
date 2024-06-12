@@ -776,6 +776,9 @@ a. Day Parameters:
 
 	cSummary.m_dPm=max(0.0,cSummary.m_dPm);
 
+	cSummary.m_dSpo =GetMaxDayPoints(cDate,  GetClass(eClass).GetType());
+	cSummary.m_dSpm =GetMedianDayPoints(cDate,  GetClass(eClass).GetType());
+
 	// Day Factor
 	// 	F	= the lesser of 1 and (1.25 x n1 / N)
 	cSummary.m_dF	=cSummary.m_dPm/1000.;

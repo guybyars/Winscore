@@ -154,6 +154,7 @@ BEGIN_MESSAGE_MAP(CWinscoreView, CListViewEx)
 	ON_UPDATE_COMMAND_UI(ID_FLIGHTLOGS_ANALYZEALL, OnUpdateFlightlogsAnalyzeall)
 	ON_COMMAND(ID_EDIT_COPY, OnEditCopy)
 	ON_COMMAND(ID_EXPORT_TO_TASK_LIBRARY, OnExportTaskToLibrary)
+	ON_COMMAND(ID_EXPORT_TASK_TO_CUP, OnExportTaskToCUP)
 	ON_UPDATE_COMMAND_UI(ID_EDIT_COPY, OnUpdateEditCopy)
 	ON_WM_RBUTTONDOWN()
 	ON_WM_CONTEXTMENU()
@@ -3800,7 +3801,32 @@ bool Rechecklateststart(CFlight* pcFlight,CWinscoreDoc *pDocument, bool bBatch, 
 	return true;
 }
 
+void  CWinscoreView::OnExportTaskToCUP()
+	{
+	if( m_eViewType!=eTaskView ) return;
 
+	CTask *pTask = (CTask*)GetSelectedPtr();
+	if(pTask==NULL) return;
+
+	CWinscoreDoc *pDocument=GetDocument();
+
+    static TCHAR BASED_CODE szFilter[] = _T("SeeYou CUP File (*.cup)|*.cup|All Files (*.*)|*.*||");
+
+	CFileDialog  cFileDlg(FALSE, _T("cup"), _T("task.cup"), OFN_OVERWRITEPROMPT, szFilter);
+
+	if( cFileDlg.DoModal()==IDOK )
+		{
+		if( pTask->ExportCUP(cFileDlg.GetPathName(),pDocument->m_turnpointArray,pDocument->m_eUnits )==0 )
+			{
+			CString cStatus;
+		    cStatus.Format( _T("%s CUP file successfully written."), cFileDlg.GetPathName()  );
+		    AfxMessageBox( cStatus,  MB_ICONINFORMATION   );
+			}
+
+		}
+	
+
+	}
 void  CWinscoreView::OnExportTaskToLibrary()
 	{
 	if( m_eViewType!=eTaskView ) return;

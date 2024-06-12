@@ -485,7 +485,7 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 
 	if( !pcTask->IsFAITask() &&
 		m_nAcheivedTurnpoints==0 && 
-		dCheckDistance<dSMTD/2 )
+		dCheckDistance< ConvertDistance(5.0, eStatute, SYSTEMUNITS ) )
 		{
 
 		double dDist=m_pcHomePoint->DistanceTo(m_cLandingLocation,eStatute);
@@ -493,15 +493,15 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 			{
 			CString strWarn;
 			if( cClass.IsHandicapped() ) 
-				strWarn.Format(_T("Constructive landout distance %5.2lf (%5.2lf Handicapped) is less than SMTD/2. Distance set to 0.0"),ConvertDistance(m_dDistance,SYSTEMUNITS,eStatute),ConvertDistance(m_dDistance,SYSTEMUNITS,eStatute)*pcContestant->m_fHandicap);
+				strWarn.Format(_T("Constructive landout distance %5.2lf (%5.2lf Handicapped) is less than 5.0 mi. Distance set to 0.0"),ConvertDistance(m_dDistance,SYSTEMUNITS,eStatute),ConvertDistance(m_dDistance,SYSTEMUNITS,eStatute)*pcContestant->m_fHandicap);
 			else
-				strWarn.Format(_T("Constructive landout distance %5.2lf is less than SMTD/2. Distance set to 0.0"),ConvertDistance(m_dDistance,SYSTEMUNITS,eStatute));
+				strWarn.Format(_T("Constructive landout distance %5.2lf is less than 5.0 mi. Distance set to 0.0"),ConvertDistance(m_dDistance,SYSTEMUNITS,eStatute));
 			AddWarning(eInformation,0,strWarn);
 			m_dDistance=0.0;
 			}
 		else if( MotorRunLandoutWarning() )
 			{
-			AddWarning(eInformation,0,_T("Constructive (motorized) landout distance is less than SMTD/2 . Distance set to 0.0"));
+			AddWarning(eInformation,0,_T("Constructive (motorized) landout distance is less than 5.0 mi. Distance set to 0.0"));
 			m_dDistance=0.0;
 			}
 		}
@@ -2350,18 +2350,22 @@ Failure to do so will be penalized.*/
 	if( iLatestStart<=0 ) return 0;
 
 	int iMin=INT_MAX;
+	bool bMinFound=false;
 	for( int iPoint=0; iPoint<iLatestStart; iPoint++ )
 		{
 		CPosition* pcPos=GetPosition(iPoint);
 		if(pcPos->m_cTime<m_cTaskOpenTime) continue;
 
 		iMin=min(iMin,pcPos->m_iCorrectedAltitude);
+		bMinFound=true;
 		// If one, count em, one point is below the start altitude, then no penalty
 		if( pcPos->m_iCorrectedAltitude < m_cStartGate.GetHeight() ) 
 			{
 			return 0;
 			}
 		}
+	if(!bMinFound ) return 0;
+
 	// If we got this far and there are no points below the start height, add a warning.
 	iAltitudePenalty = (iMin-m_cStartGate.GetHeight())/4;
 	CString strWarn;

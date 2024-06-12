@@ -677,13 +677,22 @@ bool CTask::GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode, EUnits
 
 	MSXML2::IXMLDOMNodePtr pStartGateNode;
 	cMgr.CreateChild(pIDOMChildNode, pStartGateNode, _T("StartGate"));
-	m_cStartGate.GetSSAXML(cMgr,pStartGateNode, eUnits, &cTurnpointArray);
+	m_cStartGate.GetSSAXML(cMgr,pStartGateNode, eUnits, &cTurnpointArray,IsFAITask());
+
+	if( IsFAITask() )
+		{
+		if( m_cStartGate.IsPreStartAltitude() )
+			cMgr.CreateElementIntC( pIDOMChildNode, _T("PreStartAltitude"), m_cStartGate.GetPreStartAltitude());
+		CString strSpeed;
+		strSpeed.Format(_T("%4.1lf"), ConvertDistance(m_cStartGate.GetMaxSpeed(),SYSTEMUNITS, eUnits));
+		cMgr.CreateElement ( pIDOMChildNode, _T("MaxGroundSpeed"), strSpeed);
+		}
 
 	if( m_b2ndGateActive )
 		{
 		MSXML2::IXMLDOMNodePtr pStartGateNode;
 		cMgr.CreateChild(pIDOMChildNode, pStartGateNode, _T("StartGate2"));
-		m_cStartGate.GetSSAXML(cMgr,pStartGateNode, eUnits, &cTurnpointArray);
+		m_cStartGate.GetSSAXML(cMgr,pStartGateNode, eUnits, &cTurnpointArray,IsFAITask());
 		}
 
 	MSXML2::IXMLDOMNodePtr pTurnpoints;
@@ -701,7 +710,10 @@ bool CTask::GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode, EUnits
 		if( IsAreaTask()  )
    			strRadius.Format(_T("%4.1lf"), ConvertDistance(m_afTurnpointRadius[i],SYSTEMUNITS, eUnits));
 		else
-   			strRadius.Format(_T("%4.1lf"), 1.0);
+			{
+			float fTurnpointRadius		= (float)GetWinscoreDouble(INNERRADIUS, ConvertDistance(DEFAULTINNERRADIUS, eStatute, SYSTEMUNITS) );
+   			strRadius.Format(_T("%4.1lf"), fTurnpointRadius);
+			}
 
 		cMgr.CreateElement( pTurnpoint, _T("Radius"), strRadius );
 		}
@@ -709,7 +721,7 @@ bool CTask::GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode, EUnits
 	MSXML2::IXMLDOMNodePtr pFinishGateNode;
 	cMgr.CreateChild( pIDOMChildNode, pFinishGateNode, _T("FinishGate") );
 
-	m_cFinishGate.GetSSAXML(cMgr, pFinishGateNode, eUnits, &cTurnpointArray );
+	m_cFinishGate.GetSSAXML(cMgr, pFinishGateNode, eUnits, &cTurnpointArray,IsFAITask() );
 
 	if( m_eType==eAssigned || m_eType==eModifiedAssigned || m_eType==eFAIRacing)
 			{
@@ -881,7 +893,9 @@ void CTask::Initialize()
 	m_eType=eAssigned;
 	m_nTurnpoints=0;
 	for( int i=0; i<MAXTASKTPS; i++) m_aiTurnpointIDs[i]=0;
-	for( int i=0; i<MAXTASKTPS; i++) m_afTurnpointRadius[i]=(float)ConvertDistance(1, eStatute, SYSTEMUNITS );
+
+	float fTurnpointRadius		= (float)GetWinscoreDouble(INNERRADIUS, ConvertDistance(DEFAULTINNERRADIUS, eStatute, SYSTEMUNITS) );
+	for( int i=0; i<MAXTASKTPS; i++) m_afTurnpointRadius[i]=fTurnpointRadius;
 
 	m_b2ndGateActive=FALSE;
 	m_cPostTime		=CTimeSpan(0,0,0,0);
@@ -1143,4 +1157,118 @@ bool CTask::LoadXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pTask, bool bFromLibr
 bool CTask::IsOfficial(void)
 {
 	return m_eStatus==eOfficial;
+}
+
+
+int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUnits eUnit)
+{
+	CTurnpoint *pcTurnpoint;
+
+	if(m_eStatus==eNoContest || m_nTurnpoints==0 ) 
+		{
+		AfxMessageBox(_T("No task defined for this day."));
+		return -1;
+		}
+	
+	CStdioFile  cFile;
+	CFileException e;
+	if( !cFile.Open( strFileName, CFile::modeCreate | CFile::modeWrite, &e ) )
+		{
+		AfxMessageBox(_T("Could not open file: ") + strFileName);
+		return -1;
+		}
+
+	cFile.WriteString( "name,code,country,lat,lon,elev,style\n" );
+
+	//Write Start
+	pcTurnpoint =(CTurnpoint*)cTurnpointArray.GetAt(m_cStartGate.GetPointID()-1);
+	cFile.WriteString( pcTurnpoint->GetCUP() );
+
+	for( int i=0; i<m_nTurnpoints; i++ )
+		{
+		CTurnpoint* pcTurnpoint=cTurnpointArray.GetAt(m_aiTurnpointIDs[i]-1);
+		ASSERT( pcTurnpoint );
+		if( !pcTurnpoint ) continue;
+		cFile.WriteString( pcTurnpoint->GetCUP() );
+		}
+
+	//Write Finish
+	pcTurnpoint =(CTurnpoint*)cTurnpointArray.GetAt(m_cFinishGate.GetPointID()-1);
+	cFile.WriteString( pcTurnpoint->GetCUP() );
+
+
+	//  Now output the task
+	cFile.WriteString("----Related Tasks----\n");
+
+
+	cFile.WriteString("\"");
+	cFile.WriteString( TypeText() );
+	cFile.WriteString("\",");
+
+	pcTurnpoint =(CTurnpoint*)cTurnpointArray.GetAt(m_cStartGate.GetPointID()-1);
+	cFile.WriteString( pcTurnpoint->m_strName );
+	cFile.WriteString(",\",");
+
+	for( int i=0; i<m_nTurnpoints; i++ )
+		{
+		CTurnpoint* pcTurnpoint=cTurnpointArray.GetAt(m_aiTurnpointIDs[i]-1);
+		ASSERT( pcTurnpoint );
+		if( !pcTurnpoint ) continue;
+		cFile.WriteString( pcTurnpoint->m_strName );
+		cFile.WriteString(",\",");
+		}
+
+	pcTurnpoint =(CTurnpoint*)cTurnpointArray.GetAt(m_cFinishGate.GetPointID()-1);
+	cFile.WriteString( pcTurnpoint->m_strName );
+	cFile.WriteString("\"\n");
+
+
+	// Now do the options:
+
+	CString strOptions="Options,";
+
+	strOptions+="NoStart="+TaskOpenText();
+
+	if( m_eType!=eFAIRacing &&  m_eType!=eAssigned )
+		{
+	    strOptions+=",TaskTime="+MinTimeText();
+		}
+	cFile.WriteString( strOptions);
+	cFile.WriteString("\n");
+
+
+	// Do the observation zones:
+	CString strCUPUnits;
+	if( eUnit==eStatute )
+		strCUPUnits="ml";
+	else if( eUnit==eNautical )
+		strCUPUnits="nm";
+	else if( eUnit==eKilometers)
+		strCUPUnits="km";
+
+	CString strOBZone;
+	strOBZone.Format("ObsZone=0,R1=%2.3lf%s", ConvertDistance( m_cStartGate.GetRadius(), SYSTEMUNITS, eUnit ),strCUPUnits);
+	cFile.WriteString( strOBZone);
+	cFile.WriteString("\n");
+	
+	float fTurnpointRadius		= (float)GetWinscoreDouble(INNERRADIUS, ConvertDistance(DEFAULTINNERRADIUS, eStatute, SYSTEMUNITS) );
+
+	for( int i=0; i<m_nTurnpoints; i++ )
+		{
+		CString strOBZone;
+		strOBZone.Format("ObsZone=%i,R1=%5.3lf%s",i+1,ConvertDistance( m_eType==eFAIRacing||m_eType==eAssigned?fTurnpointRadius:m_afTurnpointRadius[i], SYSTEMUNITS, eUnit ),strCUPUnits);
+
+
+		cFile.WriteString( strOBZone);
+		cFile.WriteString("\n");
+		}
+
+	//Finish
+	strOBZone.Format("ObsZone=%i,R1=%2.3lf%s", m_nTurnpoints+1, ConvertDistance( m_cFinishGate.GetRadius(), SYSTEMUNITS, eUnit ),strCUPUnits);
+	cFile.WriteString( strOBZone);
+	cFile.WriteString("\n");
+
+	cFile.Close();
+
+	return 0;
 }

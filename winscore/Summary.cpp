@@ -100,17 +100,11 @@ void CSummary::Output(CTask *pcTask, EUnits eUnits, bool bIsHandicapped, CWinsco
     			cStatus.AddTwoStringItem(_T("Dt - Task Distance"),strSummary);
 				}
 
-			if( eUnits==eKilometers )
-    			strSummary.Format(_T("%6.3lf %s"), ConvertDistance(m_dD1, SYSTEMUNITS, eUnits ), cUnitsStr );
-			else
-    			strSummary.Format(_T("%6.3lf %s  (%6.2lf %s)"), ConvertDistance(m_dD1, SYSTEMUNITS, eUnits ), cUnitsStr,  ConvertDistance(m_dD1, SYSTEMUNITS, eKilometers ), UnitsText(eKilometers) );
+
+    		strSummary.Format(_T("%6.3lf %s"), ConvertDistance(m_dD1, SYSTEMUNITS, eUnits ), cUnitsStr );
     		cStatus.AddTwoStringItem(_T("D1 -  Minimum Distance for 1000 points"),strSummary);
 
-			if( eUnits==eKilometers )
-    			  strSummary.Format(_T("%6.3lf %s"), ConvertDistance(m_dDm, SYSTEMUNITS, eUnits ), cUnitsStr );
-			else
-		   		  strSummary.Format(_T("%6.3lf %s  (%6.2lf %s)"), ConvertDistance(m_dDm, SYSTEMUNITS, eUnits ), cUnitsStr,  ConvertDistance(m_dDm, SYSTEMUNITS, eKilometers ), UnitsText(eKilometers) );
-
+    		strSummary.Format(_T("%6.3lf %s"), ConvertDistance(m_dDm, SYSTEMUNITS, eUnits ), cUnitsStr );
     		cStatus.AddTwoStringItem(_T("Dm -  Minimum Distance to validate the Day"),strSummary);
 
     		strSummary.Format(_T("%d"),	m_in1 );
@@ -127,9 +121,6 @@ void CSummary::Output(CTask *pcTask, EUnits eUnits, bool bIsHandicapped, CWinsco
 
     		strSummary.Format(_T("%d"),	m_iN );
     		cStatus.AddTwoStringItem(_T("N - Number of competitors having had a competition launch that Day"),strSummary);
-
-//    		strSummary.Format(_T("%6.3lf (%s) "), m_dHo, m_strCIDHo );
-//    		cStatus.AddTwoStringItem(_T("Ho - Highest (least performing) Handicap (H) of all competitors"),strSummary);
 
     		strSummary.Format(_T("%6.3lf %s  (%s) "), ConvertDistance(m_dDo, SYSTEMUNITS, eUnits ),cUnitsStr,m_strCIDDo );
     		cStatus.AddTwoStringItem(_T("Do -  Highest Handicapped Distance (Dh) of the Day"),strSummary);
@@ -275,94 +266,182 @@ bool CSummary::GetXML(CXMLMgr &cMgr,MSXML2::IXMLDOMNodePtr pIDOMNode, CTask *pcT
 		CString strSummary;
 		CString cUnitsStr=UnitsText(eUnits);
 
-    	double dPercent=0.0;
-    	if( m_nContestants>0 )
-    		dPercent= ((double)m_nGTMinDistance/(double)m_nContestants)*100.;
-    
-    	CString cPercent;
-    	if( dPercent<25. )
-    		cPercent.Format(_T("%5.1lf%% - INSUFFICIENT FOR OFFICIAL DAY"), dPercent);
-    	else
-    		cPercent.Format(_T("%5.1lf%%"), dPercent);
-    
-		cMgr.CreateElement(	pIDOMNode, _T("ContestantsGTMinDist"),	cPercent );
-   
-   
-    	// List Best Speed
-    	if( m_dBestSpeed>0.0) 
-    		{
-    		strSummary.Format(_T("%s with %6.3lf "), m_strCIDBestSpeed, ConvertDistance(m_dBestSpeed, SYSTEMUNITS, eUnits ) );
-    		strSummary+=cUnitsStr+_T("/Hr");
-			cMgr.CreateElement(	pIDOMNode, _T("BestSpeed"),	strSummary );
-    		}
-    
-    	// List Best Speed
-    	strSummary.Format(_T("%s with %6.3lf "), m_strCIDBestDistance, ConvertDistance(m_dBestDistance, SYSTEMUNITS, eUnits ) );
-    	strSummary+=cUnitsStr;
- 		cMgr.CreateElement(	pIDOMNode, _T("BestDist"),	strSummary );
 
-    	if( bIsHandicapped )
-    		{
-    		// List Best HC Speed
-    		if( m_dBestHdcapSpeed>0.0) 
+		if( pcTask->IsFAITask() ) 
+			{
+			cMgr.CreateElement(	pIDOMNode, _T("TaskRules"),	"FAI" );
+			if( pcTask->m_eType==eFAIRacing )
+				{
+    			strSummary.Format(_T("%6.3lf "), ConvertDistance(m_dDt, SYSTEMUNITS, eUnits ) );
+    			strSummary+=cUnitsStr;
+				cMgr.CreateElement(	pIDOMNode, _T("Dt"),	strSummary );
+				}
+
+			//if( eUnits==eKilometers )
+    			strSummary.Format(_T("%6.3lf %s"), ConvertDistance(m_dD1, SYSTEMUNITS, eUnits ), cUnitsStr );
+			//else
+//    			strSummary.Format(_T("%6.3lf %s  (%6.2lf %s)"), ConvertDistance(m_dD1, SYSTEMUNITS, eUnits ), cUnitsStr,  ConvertDistance(m_dD1, SYSTEMUNITS, eKilometers ), UnitsText(eKilometers) );
+			cMgr.CreateElement(	pIDOMNode, _T("D1"),	strSummary );
+
+
+//			if( eUnits==eKilometers )
+    			  strSummary.Format(_T("%6.3lf %s"), ConvertDistance(m_dDm, SYSTEMUNITS, eUnits ), cUnitsStr );
+//			else
+//		   		  strSummary.Format(_T("%6.3lf %s  (%6.2lf %s)"), ConvertDistance(m_dDm, SYSTEMUNITS, eUnits ), cUnitsStr,  ConvertDistance(m_dDm, SYSTEMUNITS, eKilometers ), UnitsText(eKilometers) );
+			cMgr.CreateElement(	pIDOMNode, _T("Dm"),	strSummary );
+
+    		strSummary.Format(_T("%d"),	m_in1 );
+ 			cMgr.CreateElement(	pIDOMNode, _T("n1"),	strSummary );
+
+    		strSummary.Format(_T("%d"),	m_in2 );
+			cMgr.CreateElement(	pIDOMNode, _T("n2"),	strSummary );
+
+    		strSummary.Format(_T("%d"),	m_in3 );
+			cMgr.CreateElement(	pIDOMNode, _T("n3"),	strSummary );
+
+    		strSummary.Format(_T("%d"),	m_in4 );
+			cMgr.CreateElement(	pIDOMNode, _T("n4"),	strSummary );
+
+    		strSummary.Format(_T("%d"),	m_iN );
+			cMgr.CreateElement(	pIDOMNode, _T("N"),	strSummary );
+
+    		strSummary.Format(_T("%6.3lf %s  (%s) "), ConvertDistance(m_dDo, SYSTEMUNITS, eUnits ),cUnitsStr,m_strCIDDo );
+ 			cMgr.CreateElement(	pIDOMNode, _T("Do"),	strSummary );
+
+    		strSummary.Format(_T("%6.3lf %s/Hr (%s)"), ConvertDistance(m_dVo, SYSTEMUNITS, eUnits ), cUnitsStr, m_strCIDVo );
+			cMgr.CreateElement(	pIDOMNode, _T("Vo"),	strSummary );
+
+    		strSummary.Format(_T("%6.2lf"),	m_dPm );
+			cMgr.CreateElement(	pIDOMNode, _T("Pm"),	strSummary );
+
+    		strSummary.Format(_T("%6.2lf"),	m_dPdm);
+			cMgr.CreateElement(	pIDOMNode, _T("Pdm"),	strSummary );
+
+    		strSummary.Format(_T("%6.2lf"),	m_dPvm);
+			cMgr.CreateElement(	pIDOMNode, _T("Pvm"),	strSummary );
+
+    		strSummary.Format(_T("%6.3lf "), m_dF );
+			cMgr.CreateElement(	pIDOMNode, _T("F"),	strSummary );
+
+    		strSummary.Format(_T("%6.3lf "), m_dFCR );
+			cMgr.CreateElement(	pIDOMNode, _T("FCR"),	strSummary );
+
+    		strSummary.Format(_T("%6.3lf "), m_dSpo );
+			cMgr.CreateElement(	pIDOMNode, _T("Spo"),	strSummary );
+
+    		strSummary.Format(_T("%6.3lf "), m_dSpm );
+			cMgr.CreateElement(	pIDOMNode, _T("Spm"),	strSummary );
+
+			if( pcTask->IsTimedTask() )
+				{
+    			strSummary=m_cTd.Format(_T(" %H:%M:%S ") );
+			    cMgr.CreateElement(	pIDOMNode, _T("Td"),	strSummary );
+				}
+
+    		strSummary=m_cTo.Format(_T(" %H:%M:%S ") );
+			cMgr.CreateElement(	pIDOMNode, _T("To"),	strSummary );
+
+    		double dPercent=0.0;
+
+    		if( m_iN>0 )
+    			dPercent= ((double)m_nGTMinDistance/(double)m_iN)*100.;
+    
+    		CString cPercent;
+    		if( dPercent<25. )
+    			cPercent.Format(_T("%5.1lf%% - INSUFFICIENT FOR OFFICIAL DAY"), dPercent);
+    		else
+    			cPercent.Format(_T("%5.1lf%%"), dPercent);
+    
+   			cMgr.CreateElement(	pIDOMNode, _T("NumContestantsGTMinDist"),	cPercent );
+			}
+		else //SSA Task
+			{
+			cMgr.CreateElement(	pIDOMNode, _T("TaskRules"),	"SSA" );
+    		double dPercent=0.0;
+    		if( m_nContestants>0 )
+    			dPercent= ((double)m_nGTMinDistance/(double)m_nContestants)*100.;
+    
+    		CString cPercent;
+    		if( dPercent<25. )
+    			cPercent.Format(_T("%5.1lf%% - INSUFFICIENT FOR OFFICIAL DAY"), dPercent);
+    		else
+    			cPercent.Format(_T("%5.1lf%%"), dPercent);
+    
+			cMgr.CreateElement(	pIDOMNode, _T("ContestantsGTMinDist"),	cPercent );
+   
+   
+    		// List Best Speed
+    		if( m_dBestSpeed>0.0) 
     			{
-    			strSummary.Format(_T("%s with %6.3lf "), m_strCIDBestHCSpeed, ConvertDistance(m_dBestHdcapSpeed, SYSTEMUNITS, eUnits ) );
+    			strSummary.Format(_T("%s with %6.3lf "), m_strCIDBestSpeed, ConvertDistance(m_dBestSpeed, SYSTEMUNITS, eUnits ) );
     			strSummary+=cUnitsStr+_T("/Hr");
-				cMgr.CreateElement(	pIDOMNode, _T("BestHdcapSpeed"),	strSummary );
+				cMgr.CreateElement(	pIDOMNode, _T("BestSpeed"),	strSummary );
     			}
     
-    		// List Best HC Dist
-    		strSummary.Format(_T("%s with %6.3lf "), m_strCIDBestHCDistance, ConvertDistance(m_dBestHdcapDist, SYSTEMUNITS, eUnits ) );
+    		// List Best Speed
+    		strSummary.Format(_T("%s with %6.3lf "), m_strCIDBestDistance, ConvertDistance(m_dBestDistance, SYSTEMUNITS, eUnits ) );
     		strSummary+=cUnitsStr;
-			cMgr.CreateElement(	pIDOMNode, _T("BestHdcapDist"),	strSummary );
-    		}
+ 			cMgr.CreateElement(	pIDOMNode, _T("BestDist"),	strSummary );
+
+    		if( bIsHandicapped )
+    			{
+    			// List Best HC Speed
+    			if( m_dBestHdcapSpeed>0.0) 
+    				{
+    				strSummary.Format(_T("%s with %6.3lf "), m_strCIDBestHCSpeed, ConvertDistance(m_dBestHdcapSpeed, SYSTEMUNITS, eUnits ) );
+    				strSummary+=cUnitsStr+_T("/Hr");
+					cMgr.CreateElement(	pIDOMNode, _T("BestHdcapSpeed"),	strSummary );
+    				}
+    
+    			// List Best HC Dist
+    			strSummary.Format(_T("%s with %6.3lf "), m_strCIDBestHCDistance, ConvertDistance(m_dBestHdcapDist, SYSTEMUNITS, eUnits ) );
+    			strSummary+=cUnitsStr;
+				cMgr.CreateElement(	pIDOMNode, _T("BestHdcapDist"),	strSummary );
+    			}
     
     
-    	strSummary=m_cTOCBestSpeed.Format(_T(" %H:%M:%S ") );
-		cMgr.CreateElement(	pIDOMNode, _T("TOCBestSpeed"),	strSummary );
+    		strSummary=m_cTOCBestSpeed.Format(_T(" %H:%M:%S ") );
+			cMgr.CreateElement(	pIDOMNode, _T("TOCBestSpeed"),	strSummary );
 
     
-    	strSummary.Format(_T("%d"),	m_nContestants );
-		cMgr.CreateElement(	pIDOMNode, _T("NumberOfContestants"),	strSummary );
+    		strSummary.Format(_T("%d"),	m_nContestants );
+			cMgr.CreateElement(	pIDOMNode, _T("NumberOfContestants"),	strSummary );
     
-    	strSummary.Format(_T("%d"),	m_nFinishers );
-		cMgr.CreateElement(	pIDOMNode, _T("NumberOfFinishers"),	strSummary );
+    		strSummary.Format(_T("%d"),	m_nFinishers );
+			cMgr.CreateElement(	pIDOMNode, _T("NumberOfFinishers"),	strSummary );
      
-    	strSummary.Format(_T("%d"),	m_nFinTocGT15underMinTime );
-		cMgr.CreateElement(	pIDOMNode, _T("NumberOfFinishers15"),	strSummary );
+    		strSummary.Format(_T("%d"),	m_nFinTocGT15underMinTime );
+			cMgr.CreateElement(	pIDOMNode, _T("NumberOfFinishers15"),	strSummary );
 
-    	strSummary.Format(_T("%d"),	m_nGTMinDistance );
-		cMgr.CreateElement(	pIDOMNode, _T("NumberGTMinDist"),	strSummary );
+    		strSummary.Format(_T("%d"),	m_nGTMinDistance );
+			cMgr.CreateElement(	pIDOMNode, _T("NumberGTMinDist"),	strSummary );
 
-		if( bIsHandicapped )
-			{
-    		strSummary=m_cTOCBestHdcapSpeed.Format(_T(" %H:%M:%S ") );
-			cMgr.CreateElement(	pIDOMNode, _T("TOCBestHdCapSpeed"),	strSummary );
-			}
-		double BESTDIST=0.0;
-		double dMinTimeHours=(double)pcTask->m_cPostTime.GetTotalSeconds()/(60.*60.);
+			if( bIsHandicapped )
+				{
+    			strSummary=m_cTOCBestHdcapSpeed.Format(_T(" %H:%M:%S ") );
+				cMgr.CreateElement(	pIDOMNode, _T("TOCBestHdCapSpeed"),	strSummary );
+				}
+			double BESTDIST=0.0;
+			double dMinTimeHours=(double)pcTask->m_cPostTime.GetTotalSeconds()/(60.*60.);
 
-		if( bIsHandicapped )
-			{
-			if(m_nFinishers==0 ) 
-				//BESTDIST=max(m_dBestHdcapDist,m_dBestHdcapSpeed*dMinTimeHours);
-				BESTDIST=m_dBestHdcapDist;
+			if( bIsHandicapped )
+				{
+				if(m_nFinishers==0 ) 
+					BESTDIST=m_dBestHdcapDist;
+				else
+					BESTDIST=m_dBestHdcapDistFinisher;
+				}
 			else
-				//BESTDIST=max(m_dBestHdcapDistFinisher,m_dBestHdcapSpeed*dMinTimeHours);
-				BESTDIST=m_dBestHdcapDistFinisher;
+				{
+				if( m_nFinishers==0 )
+					BESTDIST=m_dBestDistance;
+				else
+					BESTDIST=m_dBestDistanceFinisher;
+				}
+    		strSummary.Format(_T("%6.3lf "), ConvertDistance(BESTDIST, SYSTEMUNITS, eUnits ) );
+    		strSummary+=cUnitsStr;
+			cMgr.CreateElement(	pIDOMNode, _T("BESTDIST"),	strSummary );
 			}
-		else
-			{
-			if( m_nFinishers==0 )
-				//BESTDIST=max(m_dBestDistance,m_dBestSpeed*dMinTimeHours);
-				BESTDIST=m_dBestDistance;
-			else
-				//BESTDIST=max(m_dBestDistanceFinisher,m_dBestSpeed*dMinTimeHours);
-				BESTDIST=m_dBestDistanceFinisher;
-			}
-    	strSummary.Format(_T("%6.3lf "), ConvertDistance(BESTDIST, SYSTEMUNITS, eUnits ) );
-    	strSummary+=cUnitsStr;
-		cMgr.CreateElement(	pIDOMNode, _T("BESTDIST"),	strSummary );
 
 	return true;
 	}

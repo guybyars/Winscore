@@ -534,7 +534,9 @@ bool CContestant::GetXML(CXMLMgr &cMgr, IDispatch *pIdsp )
 		{
 		if( m_fHandicap>0.0 )
 			{
-			TESTHR(cMgr.CreateElementDbl( pIDOMChildNode, _T("Handicap"),	m_fHandicap));
+			CString strHndcap;
+			strHndcap.Format("%6.4f",m_fHandicap);
+			TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("Handicap"),		LPCSTR(strHndcap)));
 			}
 
 		if( !m_cGliderInfo.IsNull() )
@@ -550,18 +552,18 @@ bool CContestant::GetXML(CXMLMgr &cMgr, IDispatch *pIdsp )
 					}
 				}
 
-			if( m_fWeight>0.0 ) 
-				{
+		//	if( m_fWeight>0.0 ) 
+			//	{
 				TESTHR(cMgr.CreateElementDbl	( pIDOMChildNode, _T("Weight"),	m_fWeight));
 				float fDeltaWeight=m_fWeight-m_cGliderInfo.m_fWeight;
-				if( fDeltaWeight!=0.0 )
-					{
+		//		if( fDeltaWeight!=0.0 )
+			//		{
 					CString strDeltaWeight;
 					strDeltaWeight.Format("%3.0f",fDeltaWeight);
 					strDeltaWeight.TrimLeft();
 					TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("WeightDelta"),		LPCSTR(strDeltaWeight)));
-					}
-				}
+				//	}
+				//}
 			if( m_fWinglet>0.0 ) 
 				TESTHR(cMgr.CreateElementFlt	( pIDOMChildNode, _T("Winglet"),(float)m_fWinglet));
 			if( m_fSpan>0.0 ) 
