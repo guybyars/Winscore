@@ -1162,6 +1162,14 @@ bool CTask::IsOfficial(void)
 
 int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUnits eUnit)
 {
+	CString strCUPUnits="m";
+	//if( eUnit==eStatute )
+	//	strCUPUnits="ml";
+	//else if( eUnit==eNautical )
+	//	strCUPUnits="nm";
+	//else if( eUnit==eKilometers)
+	//	strCUPUnits="km";
+
 	CTurnpoint *pcTurnpoint;
 
 	if(m_eStatus==eNoContest || m_nTurnpoints==0 ) 
@@ -1203,70 +1211,104 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 
 	cFile.WriteString("\"");
 	cFile.WriteString( TypeText() );
-	cFile.WriteString("\",");
+	cFile.WriteString("\",\"???\",\"");
 
 	pcTurnpoint =(CTurnpoint*)cTurnpointArray.GetAt(m_cStartGate.GetPointID()-1);
 	cFile.WriteString( pcTurnpoint->m_strName );
-	cFile.WriteString(",\",");
+	cFile.WriteString("\",");
 
 	for( int i=0; i<m_nTurnpoints; i++ )
 		{
 		CTurnpoint* pcTurnpoint=cTurnpointArray.GetAt(m_aiTurnpointIDs[i]-1);
 		ASSERT( pcTurnpoint );
 		if( !pcTurnpoint ) continue;
+		cFile.WriteString("\"");
 		cFile.WriteString( pcTurnpoint->m_strName );
-		cFile.WriteString(",\",");
+		cFile.WriteString("\",");
 		}
 
 	pcTurnpoint =(CTurnpoint*)cTurnpointArray.GetAt(m_cFinishGate.GetPointID()-1);
+	cFile.WriteString("\"");
 	cFile.WriteString( pcTurnpoint->m_strName );
-	cFile.WriteString("\"\n");
+	cFile.WriteString("\",\"???\",\n");
 
 
 	// Now do the options:
+//enum	ETaskType {eAssigned=0, eModifiedAssigned=2, eTurnArea=3, eFAIRacing=4, eFAIAssignedArea=5};
 
 	CString strOptions="Options,";
 
 	strOptions+="NoStart="+TaskOpenText();
+    strOptions+=":00";
 
 	if( m_eType!=eFAIRacing &&  m_eType!=eAssigned )
 		{
 	    strOptions+=",TaskTime="+MinTimeText();
+	    strOptions+=":00";
 		}
-	cFile.WriteString( strOptions);
-	cFile.WriteString("\n");
+
 
 
 	// Do the observation zones:
-	CString strCUPUnits;
-	if( eUnit==eStatute )
-		strCUPUnits="ml";
-	else if( eUnit==eNautical )
-		strCUPUnits="nm";
-	else if( eUnit==eKilometers)
-		strCUPUnits="km";
 
-	CString strOBZone;
-	strOBZone.Format("ObsZone=0,R1=%2.3lf%s", ConvertDistance( m_cStartGate.GetRadius(), SYSTEMUNITS, eUnit ),strCUPUnits);
-	cFile.WriteString( strOBZone);
-	cFile.WriteString("\n");
-	
 	float fTurnpointRadius		= (float)GetWinscoreDouble(INNERRADIUS, ConvertDistance(DEFAULTINNERRADIUS, eStatute, SYSTEMUNITS) );
 
-	for( int i=0; i<m_nTurnpoints; i++ )
+	if( m_eType==eFAIAssignedArea || m_eType==eTurnArea )
 		{
+
+		cFile.WriteString( strOptions);
+		cFile.WriteString(",WpDis=False,NearDis=0.3mi,NearAlt=656.0ft\n");
+
+
 		CString strOBZone;
-		strOBZone.Format("ObsZone=%i,R1=%5.3lf%s",i+1,ConvertDistance( m_eType==eFAIRacing||m_eType==eAssigned?fTurnpointRadius:m_afTurnpointRadius[i], SYSTEMUNITS, eUnit ),strCUPUnits);
+		strOBZone.Format("ObsZone=0,Style=2,SpeedStyle=0,R1=%2.3lf%s,A1=180,R2=0m,A2=0,MaxAlt=%i.0ft", ConvertDistance( m_cStartGate.GetRadius(), SYSTEMUNITS, eKilometers )*1000.,strCUPUnits,m_cStartGate.GetMaxAltitude());
+		cFile.WriteString( strOBZone);
+		if( !m_cStartGate.IsGPSCylinder() )
+			cFile.WriteString(",Line=1");
+		cFile.WriteString("\n");
+	
+		for( int i=0; i<m_nTurnpoints; i++ )
+			{
+			CString strOBZone;
+			strOBZone.Format("ObsZone=%i,Style=1,SpeedStyle=1,R1=%5.3lf%s,A1=180,R2=0m,A2=0,MaxAlt=0.0ft,AAT=1",i+1,ConvertDistance( m_eType==eFAIRacing||m_eType==eAssigned?fTurnpointRadius:m_afTurnpointRadius[i], SYSTEMUNITS,eKilometers )*1000.,strCUPUnits);
 
 
+			cFile.WriteString( strOBZone);
+			cFile.WriteString("\n");
+			}
+
+		//Finish
+		strOBZone.Format("ObsZone=%i,Style=3,SpeedStyle=2,R1=%2.3lf%s,A1=180,R2=0m,A2=0,MaxAlt=0.0ft", m_nTurnpoints+1, ConvertDistance( m_cFinishGate.GetRadius(), SYSTEMUNITS, eKilometers )*1000.,strCUPUnits);
 		cFile.WriteString( strOBZone);
 		cFile.WriteString("\n");
 		}
+	else //Racing Tasks
+		{
+		cFile.WriteString( strOptions);
+		cFile.WriteString(",NearDis=0.3mi,NearAlt=656.0ft\n");
 
-	//Finish
-	strOBZone.Format("ObsZone=%i,R1=%2.3lf%s", m_nTurnpoints+1, ConvertDistance( m_cFinishGate.GetRadius(), SYSTEMUNITS, eUnit ),strCUPUnits);
-	cFile.WriteString( strOBZone);
-	cFile.WriteString("\n");
+
+		//ObsZone=0,Style=2,SpeedStyle=0,R1=4828m,A1=180,R2=0m,A2=0,MaxAlt=5000.0ft,Line=1
+
+		CString strOBZone;
+		strOBZone.Format("ObsZone=0,Style=2,SpeedStyle=0,R1=%2.3lf%s,A1=180,R2=0m,A2=0,MaxAlt=%i.0ft", ConvertDistance( m_cStartGate.GetRadius(), SYSTEMUNITS, eKilometers )*1000.,strCUPUnits,m_cStartGate.GetMaxAltitude());
+		cFile.WriteString( strOBZone);
+		if( !m_cStartGate.IsGPSCylinder() )
+			cFile.WriteString(",Line=1");
+		cFile.WriteString("\n");
+
+		for( int i=0; i<m_nTurnpoints; i++ )
+			{
+			CString strOBZone;
+			strOBZone.Format("ObsZone=%i,R1=%5.3lf%s\n",i+1,ConvertDistance( fTurnpointRadius, SYSTEMUNITS,eKilometers )*1000.,strCUPUnits);
+			cFile.WriteString( strOBZone);
+			}
+		//Finish
+		strOBZone.Format("ObsZone=%i,Style=3,SpeedStyle=2,R1=%2.3lf%s,A1=180,R2=0m,A2=0,MaxAlt=0.0ft", m_nTurnpoints+1, ConvertDistance( m_cFinishGate.GetRadius(), SYSTEMUNITS, eKilometers )*1000.,strCUPUnits);
+		cFile.WriteString( strOBZone);
+		cFile.WriteString("\n");
+
+		}
 
 	cFile.Close();
 

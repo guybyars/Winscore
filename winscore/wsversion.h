@@ -3,8 +3,8 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2024
-#define WINSCOREVERSION		_T("2024 Rev 6")
-#define SHORTVERSION			 _T("Rev 6 ")
+#define WINSCOREVERSION		_T("2024 Rev 7")
+#define SHORTVERSION			 _T("Rev 7")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
@@ -40,6 +40,10 @@ Rev 6
    * Output start radius to scoresheets when line time is specified.
    * Updated Handicap Summary Report Formatting
    * Added exporting of tasks in CUP format
+
+Rev 7
+   * Increased tolerance for fix interval >1 second warning
+   * Corrected bugs in CUP task export
 
 
 2023

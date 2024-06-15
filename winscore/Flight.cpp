@@ -777,7 +777,7 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 				{
 				CString cWarn;
 				double dPercent=((double)iNonUnityIntervals/(double)cIntervals.NumSamples())*100.;
-				if( dPercent>.05)
+				if( dPercent>50.)
 					{
 					cWarn.Format(_T("%d fixes (%6.2lf%%) had a time interval greater than 1 second."), iNonUnityIntervals, dPercent );
 					AddWarning(eInformation,0,cWarn);
