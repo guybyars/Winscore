@@ -1241,23 +1241,26 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 	strOptions+="NoStart="+TaskOpenText();
     strOptions+=":00";
 
+	float fTurnpointRadius		= (float)GetWinscoreDouble(INNERRADIUS, ConvertDistance(DEFAULTINNERRADIUS, eStatute, SYSTEMUNITS) );
+
 	if( m_eType!=eFAIRacing &&  m_eType!=eAssigned )
 		{
 	    strOptions+=",TaskTime="+MinTimeText();
 	    strOptions+=":00";
 		}
 
+	CString strOptions2;
+	strOptions2.Format(",NearDis=%2.3lf%s,NearAlt=656.0ft",ConvertDistance( fTurnpointRadius, SYSTEMUNITS,eKilometers )*1000.,strCUPUnits);
+	strOptions+=strOptions2;
 
 
 	// Do the observation zones:
 
-	float fTurnpointRadius		= (float)GetWinscoreDouble(INNERRADIUS, ConvertDistance(DEFAULTINNERRADIUS, eStatute, SYSTEMUNITS) );
 
 	if( m_eType==eFAIAssignedArea || m_eType==eTurnArea )
 		{
-
+		strOptions+=",WpDis=False\n";
 		cFile.WriteString( strOptions);
-		cFile.WriteString(",WpDis=False,NearDis=0.3mi,NearAlt=656.0ft\n");
 
 
 		CString strOBZone;
@@ -1284,9 +1287,8 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 		}
 	else //Racing Tasks
 		{
+		strOptions+="\n";
 		cFile.WriteString( strOptions);
-		cFile.WriteString(",NearDis=0.3mi,NearAlt=656.0ft\n");
-
 
 		//ObsZone=0,Style=2,SpeedStyle=0,R1=4828m,A1=180,R2=0m,A2=0,MaxAlt=5000.0ft,Line=1
 
