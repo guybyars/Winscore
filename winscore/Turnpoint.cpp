@@ -435,6 +435,6 @@ CString CTurnpoint::GetCUP(void)
 	strCUP+=ElevationText();
 	strCUP+="ft,";
 	strCUP+=CUPAttributeText();
-	strCUP+="\n";
+	strCUP+=",,,,,,,\n";
 	return strCUP;
 }

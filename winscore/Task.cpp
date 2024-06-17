@@ -1186,7 +1186,7 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 		return -1;
 		}
 
-	cFile.WriteString( "name,code,country,lat,lon,elev,style\n" );
+	cFile.WriteString( "name,code,country,lat,lon,elev,style,rwdir,rwlen,rwwidth,freq,desc,userdata,pics\n" );
 
 	//Write Start
 	pcTurnpoint =(CTurnpoint*)cTurnpointArray.GetAt(m_cStartGate.GetPointID()-1);
@@ -1230,7 +1230,7 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 	pcTurnpoint =(CTurnpoint*)cTurnpointArray.GetAt(m_cFinishGate.GetPointID()-1);
 	cFile.WriteString("\"");
 	cFile.WriteString( pcTurnpoint->m_strName );
-	cFile.WriteString("\",\"???\",\n");
+	cFile.WriteString("\",\"???\"\n");
 
 
 	// Now do the options:
@@ -1300,8 +1300,10 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 		for( int i=0; i<m_nTurnpoints; i++ )
 			{
 			CString strOBZone;
-			strOBZone.Format("ObsZone=%i,R1=%5.3lf%s\n",i+1,ConvertDistance( fTurnpointRadius, SYSTEMUNITS,eKilometers )*1000.,strCUPUnits);
+			strOBZone.Format("ObsZone=%i,Style=5,SpeedStyle=1,R1=%5.3lf%s,A1=180,R2=0m,A2=0,MaxAlt=0.0ft\n",i+1,ConvertDistance( fTurnpointRadius, SYSTEMUNITS,eKilometers )*1000.,strCUPUnits);
 			cFile.WriteString( strOBZone);
+
+			//ObsZone=1,Style=5,SpeedStyle=1,R1=483m,A1=180,R2=0m,A2=0,MaxAlt=0.0ft
 			}
 		//Finish
 		strOBZone.Format("ObsZone=%i,Style=3,SpeedStyle=2,R1=%2.3lf%s,A1=180,R2=0m,A2=0,MaxAlt=0.0ft", m_nTurnpoints+1, ConvertDistance( m_cFinishGate.GetRadius(), SYSTEMUNITS, eKilometers )*1000.,strCUPUnits);

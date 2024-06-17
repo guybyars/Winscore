@@ -3,8 +3,8 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2024
-#define WINSCOREVERSION		_T("2024 Rev 7")
-#define SHORTVERSION			 _T("Rev 7")
+#define WINSCOREVERSION		_T("2024 Rev 8")
+#define SHORTVERSION			 _T("Rev 8")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
@@ -45,6 +45,8 @@ Rev 7
    * Increased tolerance for fix interval >1 second warning
    * Corrected bugs in CUP task export
 
+Rev 8
+   * Updated CUP task export to support WeGlide
 
 2023
   * Corrected issue where incorrect case in handicap list was causing Discus 2b to be selected.
