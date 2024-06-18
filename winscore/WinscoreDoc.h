@@ -115,8 +115,8 @@
 //    	double GetMinTaskDistance(EUnits eUnits, EClass eClass);
 //    	CTimeSpan GetMinTaskTime(EClass eClass);
     	void LoadDateTabs(CTabCtrl& cTabCtrl);
-    	void CalculateScores( CTime cDate, EClass eClass,  CWinscoreListCtrl& cStatus, CXMLMgr *pMgr=NULL, MSXML2::IXMLDOMNodePtr pClassNode=NULL );
-    	void CalculateDayScores(CTime cDate, EClass eClass, CWinscoreListCtrl& cStatus,  CXMLMgr *pMgr=NULL, MSXML2::IXMLDOMNodePtr pClassNode=NULL );
+    	void CalculateScores( CTime cDate, EClass eClass,  CWinscoreListCtrl& cStatus, CSummary& cSummary, CXMLMgr *pMgr=NULL, MSXML2::IXMLDOMNodePtr pClassNode=NULL );
+    	void CalculateDayScores(CTime cDate, EClass eClass, CWinscoreListCtrl& cStatus, CSummary& cSummary, CXMLMgr *pMgr=NULL, MSXML2::IXMLDOMNodePtr pClassNode=NULL );
     	BOOL ExportDay(	CStdioFile& cFile,
     					EClass			eClass, 
     					CTime&			cDate, 

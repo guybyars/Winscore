@@ -416,6 +416,7 @@ int CScoreServerDlg::SendFlightLogs(CString &strFileName, CString &strUsername, 
 	CScoreRecordList cScoreRecordList;
 	EClass		aeClasses[NUMCLASSES];
 	CString     strError;
+	CSummary	cSummary;
 
 	int iSel=m_cDateCombo.GetCurSel();
 	CTime *pcTime=(CTime*)m_cDateCombo.GetItemDataPtr(iSel);
@@ -462,7 +463,7 @@ int CScoreServerDlg::SendFlightLogs(CString &strFileName, CString &strUsername, 
 		for( int iClass=0; iClass<nClasses; iClass++ )
 			{
 
-			m_pDoc->CalculateScores( *pcTime, aeClasses[iClass],  cStatus);
+			m_pDoc->CalculateScores( *pcTime, aeClasses[iClass],  cStatus, cSummary);
 			m_pDoc->m_ScoreRecordList.CopySort(	*pcTime, 
 												aeClasses[iClass],
 												cScoreRecordList, 

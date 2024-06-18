@@ -776,8 +776,9 @@ a. Day Parameters:
 
 	cSummary.m_dPm=max(0.0,cSummary.m_dPm);
 
-	cSummary.m_dSpo =GetMaxDayPoints(cDate,  GetClass(eClass).GetType());
-	cSummary.m_dSpm =GetMedianDayPoints(cDate,  GetClass(eClass).GetType());
+	// Don't do this here, not provisional anymore at this point.
+	//cSummary.m_dSpo =GetMaxDayPoints(cDate,  GetClass(eClass).GetType());
+	//cSummary.m_dSpm =GetMedianDayPoints(cDate,  GetClass(eClass).GetType());
 
 	// Day Factor
 	// 	F	= the lesser of 1 and (1.25 x n1 / N)
@@ -1311,6 +1312,9 @@ void CScoreRecordList::CalculatePoints(	CTime		cDate,
     
 	    		double dS = pcScoreRecord->m_dPoints * min(1.0, 200./dDenom);
 				pcScoreRecord->m_dPoints=dS;
+
+				//	Now as a "final calculation step" roundoff the FAI points
+				pcScoreRecord->m_dPoints=Roundoff(pcScoreRecord->m_dPoints);
 
 				// Now add the Bonus
 				if( pcScoreRecord->m_uPenalityMask & WSP_AIRFIELDBONUS )

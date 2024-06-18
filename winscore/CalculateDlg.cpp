@@ -61,7 +61,7 @@ END_MESSAGE_MAP()
 
 void CCalculateDlg::Calculate() 
 {
-
+	CSummary cSummary;
 	int iSel=m_cDateCombo.GetCurSel();
 	ASSERT(iSel>=0);
 	CTime *pcTime=(CTime*)m_cDateCombo.GetItemDataPtr(iSel);
@@ -69,7 +69,7 @@ void CCalculateDlg::Calculate()
 	EClass eClass=m_cClassTab.GetCurClass();
 
 	m_cStatusListCtrl.DeleteAllItems();
-	m_pDoc->CalculateScores( *pcTime, eClass, m_cStatusListCtrl );
+	m_pDoc->CalculateScores( *pcTime, eClass, m_cStatusListCtrl, cSummary );
 
 }
 

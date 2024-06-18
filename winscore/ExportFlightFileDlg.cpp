@@ -104,6 +104,7 @@ void CExportFlightFileDlg::OnOK()
 	CScoreRecordList cScoreRecordList;
 	EClass		aeClasses[NUMCLASSES];
 	int nRecords=0;
+	CSummary cSummary;
 
 	size_t bSize=256;
 	TCHAR *pTemp=new TCHAR[bSize];
@@ -186,7 +187,7 @@ void CExportFlightFileDlg::OnOK()
 		for( int i=0; i<nClasses; i++ )
 			{
 
-			m_pDoc->CalculateScores( *pcTime, aeClasses[i],  cStatus);
+			m_pDoc->CalculateScores( *pcTime, aeClasses[i],  cStatus, cSummary);
 			m_pDoc->m_ScoreRecordList.CopySort(	*pcTime, 
 												aeClasses[i],
 												cScoreRecordList, 

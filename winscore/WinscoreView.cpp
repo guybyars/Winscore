@@ -681,9 +681,10 @@ void CWinscoreView::ViewScores(CTime cDate, EClass eClass)
 	CListCtrl& ListCtrl = GetListCtrl();
 	CWinscoreDoc* pDocument=GetDocument();
 	CWinscoreListCtrl  cDum;
+	CSummary cSummary;
 
 	cDum.m_fReport=FALSE;
-	pDocument->CalculateScores( cDate, eClass, cDum );
+	pDocument->CalculateScores( cDate, eClass, cDum, cSummary );
 
 	m_eViewType=eScoreView;
 

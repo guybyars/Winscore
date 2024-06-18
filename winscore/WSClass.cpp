@@ -613,11 +613,11 @@ void CWSClass::GetPoints( CTask *pcTask, CObject *pObject,  CSummary &cSummary)
 				{
    				pcScoreRecord->m_dPoints+=m_iAirfieldBonusPoints;    
 				}
-			}
 
-//	Now as a "final calculation step" roundoff the points
-    pcScoreRecord->m_dPoints=Roundoff(pcScoreRecord->m_dPoints);
-    		
+			//	Now as a "final calculation step" roundoff the points
+			// But not now for FAI, because this is the provisional point score.  Do this later.
+			pcScoreRecord->m_dPoints=Roundoff(pcScoreRecord->m_dPoints);
+			}	
   
 	return;
 	}

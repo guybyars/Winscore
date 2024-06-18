@@ -710,16 +710,15 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     }
     
     
-    void CWinscoreDoc::CalculateScores(CTime cDate, EClass eClass, CWinscoreListCtrl& cStatus,  CXMLMgr *pMgr, MSXML2::IXMLDOMNodePtr pClassNode)
+    void CWinscoreDoc::CalculateScores(CTime cDate, EClass eClass, CWinscoreListCtrl& cStatus,  CSummary& cSummary, CXMLMgr *pMgr, MSXML2::IXMLDOMNodePtr pClassNode)
     	{
     	
     	BOOL fReport=cStatus.m_fReport;
-    
 		for( int iDay=0; iDay<m_iNumPracticeDays; iDay++ )
     		{
     		if( DatesEqual(cDate,m_caPracticeDays[iDay])  )
     			{
-    			CalculateDayScores(cDate, eClass, cStatus, pMgr, pClassNode);
+    			CalculateDayScores(cDate, eClass, cStatus, cSummary, pMgr, pClassNode);
     			return;
     			}
 			}
@@ -728,12 +727,12 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     	for( int iDay=0; iDay<m_iNumContestDays; iDay++ )
     		{
     		if( m_caContestDays[iDay]<cDate )
-    			CalculateDayScores(m_caContestDays[iDay], eClass, cStatus);
+    			CalculateDayScores(m_caContestDays[iDay], eClass, cStatus, cSummary);
     
     		if( DatesEqual(m_caContestDays[iDay], cDate) )
     			{
     			cStatus.m_fReport=fReport;
-    			CalculateDayScores(cDate, eClass, cStatus, pMgr, pClassNode);
+    			CalculateDayScores(cDate, eClass, cStatus, cSummary, pMgr, pClassNode);
     			break;
     			}
     		}
@@ -743,10 +742,9 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     	}
     
     
-    void CWinscoreDoc::CalculateDayScores(CTime cDate, EClass eClass, CWinscoreListCtrl& cStatus, CXMLMgr *pMgr, MSXML2::IXMLDOMNodePtr pClassNode)
+    void CWinscoreDoc::CalculateDayScores(CTime cDate, EClass eClass, CWinscoreListCtrl& cStatus, CSummary& cSummary, CXMLMgr *pMgr, MSXML2::IXMLDOMNodePtr pClassNode)
     	{
     
- 		CSummary cSummary;
     	CScoreRecordList  cScoreRecordList;
 		CWSClass &cClass=GetClass(eClass);
 
@@ -3784,8 +3782,9 @@ bool CWinscoreDoc::ExportDayXML( CString &strFile, int nClasses, EClass aeClasse
 			strFail="Exception while processing ScoreRecords.";
 			CScoreRecordList  cDayRecordList;
 			CWinscoreListCtrl  cDum;
+			CSummary cSummary;
 			cDum.m_fReport=TRUE;
-			if( bCompute ) CalculateScores( cDate, aeClasses[iClass],  cDum, &cMgr, pClassNode );
+			if( bCompute ) CalculateScores( cDate, aeClasses[iClass],  cDum, cSummary, &cMgr, pClassNode );
     		m_ScoreRecordList.CopySort( cDate, 
     									aeClasses[iClass], 
     									cDayRecordList,
@@ -3794,9 +3793,7 @@ bool CWinscoreDoc::ExportDayXML( CString &strFile, int nClasses, EClass aeClasse
    			if( cDayRecordList.IsEmpty() ) continue ;
 
 			strFail="Exception while getting day summary";
-			CSummary cSummary;
-			double dSMTD=GetClass(aeClasses[iClass]).m_dSMTD;
-			cDayRecordList.GetSummary(cDate, aeClasses[iClass],pcTask,dSMTD,cSummary);
+
 	        cSummary.SetTaskDistance(pcTask->GetDistance(m_turnpointArray, SYSTEMUNITS));
 			cSummary.GetXML(cMgr, pClassNode, pcTask, m_eUnits,  GetClass(aeClasses[iClass]).IsHandicapped() );
 
@@ -4122,7 +4119,7 @@ int CWinscoreDoc::GetMultipleStartPoints(	CFlight *pcFlight,
 
 	CWSClass &cClass	=GetClass(pcTask->m_eClass);
 	cDum.m_fReport=FALSE;
-	CalculateScores( caStartTimes[0], pcTask->m_eClass, cDum );
+	CalculateScores( caStartTimes[0], pcTask->m_eClass, cDum, cSummary );
 
 	m_ScoreRecordList.GetSummary(	caStartTimes[0],  
 									pcTask->m_eClass,

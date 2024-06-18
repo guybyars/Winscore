@@ -3,8 +3,8 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2024
-#define WINSCOREVERSION		_T("2024 Rev 8")
-#define SHORTVERSION			 _T("Rev 8")
+#define WINSCOREVERSION		_T("2024 Rev 9")
+#define SHORTVERSION			 _T("Rev 9")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
@@ -47,6 +47,10 @@ Rev 7
 
 Rev 8
    * Updated CUP task export to support WeGlide
+
+Rev 9
+   * Corrected score roundoff issue with FAI tasks
+   * Corrected SP0 in parameter output to SSA
 
 2023
   * Corrected issue where incorrect case in handicap list was causing Discus 2b to be selected.
