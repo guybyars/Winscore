@@ -263,7 +263,8 @@ void CTaskDlg::MaskForm()
 	GetDlgItem( IDC_MOD_RADIO )->EnableWindow( m_cTask.m_eStatus!=eNoContest );
 	GetDlgItem( IDC_AREA_RADIO )->EnableWindow( m_cTask.m_eStatus!=eNoContest );
 	GetDlgItem( IDC_FAI_RACE_RADIO )->EnableWindow( m_cTask.m_eStatus!=eNoContest );
-
+	GetDlgItem( IDC_FAI_ASSIGNED_AREA )->EnableWindow( m_cTask.m_eStatus!=eNoContest );
+	
 	if( m_cTask.m_b2ndGateActive )
 		{
 		m_cStartGateButton.SetWindowText(_T("Start Gate (A)..."));
