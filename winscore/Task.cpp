@@ -1210,6 +1210,10 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 
 
 	cFile.WriteString("\"");
+	cFile.WriteString( DateText() );
+	cFile.WriteString(" - ");
+	cFile.WriteString(GetClass(m_eClass).GetName());
+	cFile.WriteString(" - ");
 	cFile.WriteString( TypeText() );
 	cFile.WriteString("\",\"???\",\"");
 
@@ -1283,6 +1287,9 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 		//Finish
 		strOBZone.Format("ObsZone=%i,Style=3,SpeedStyle=2,R1=%2.3lf%s,A1=180,R2=0m,A2=0,MaxAlt=0.0ft", m_nTurnpoints+1, ConvertDistance( m_cFinishGate.GetRadius(), SYSTEMUNITS, eKilometers )*1000.,strCUPUnits);
 		cFile.WriteString( strOBZone);
+		if( m_cFinishGate.IsGPSCylinder() )
+			cFile.WriteString( ",Reduce=1");
+
 		cFile.WriteString("\n");
 		}
 	else //Racing Tasks
@@ -1310,6 +1317,9 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 		//Finish
 		strOBZone.Format("ObsZone=%i,Style=3,SpeedStyle=2,R1=%2.3lf%s,A1=180,R2=0m,A2=0,MaxAlt=0.0ft", m_nTurnpoints+1, ConvertDistance( m_cFinishGate.GetRadius(), SYSTEMUNITS, eKilometers )*1000.,strCUPUnits);
 		cFile.WriteString( strOBZone);
+
+		if( m_cFinishGate.IsGPSCylinder() )
+			cFile.WriteString( ",Reduce=1");
 		cFile.WriteString("\n");
 
 		}

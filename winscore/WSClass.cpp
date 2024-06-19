@@ -461,7 +461,10 @@ void CWSClass::GetPoints( CTask *pcTask, CObject *pObject,  CSummary &cSummary)
 			{
 			// Non-Finisher
 			dPv = 0.;
-			dPd = 750. * (dDistance / cSummary.m_dDo);
+			if( cSummary.m_dDo==0.0 )
+				dPd=0.0;
+			else
+				dPd = 750. * (dDistance / cSummary.m_dDo);
 			}
 
 		// SP0  - Highest Provisional Score (SP) of the Day
