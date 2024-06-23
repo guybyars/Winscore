@@ -3,8 +3,8 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2024
-#define WINSCOREVERSION		_T("2024 Rev 10")
-#define SHORTVERSION			 _T("Rev 10")
+#define WINSCOREVERSION		_T("2024 Rev 11")
+#define SHORTVERSION			 _T("Rev 11")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 

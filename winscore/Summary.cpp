@@ -75,6 +75,62 @@ CSummary::CSummary() :
 
 }
 
+void CSummary::Initialize() 
+	{
+	m_dTaskDistance=0;
+	m_dBestSpeed=0;
+	m_dBestScoredSpeed=0;
+	m_dSlowestSpeed=10000;
+	m_dSlowestScoredSpeed=10000;
+	m_dBestDistance=0;
+	m_dBestHdcapSpeed=0;
+	m_dBestScoredHdcapSpeed=0;
+	m_dSlowestHdcapSpeed=0;
+	m_dSlowestScoredHdcapSpeed=0;
+	m_dBestHdcapDist=0;
+	m_dDistaceOfFinisherWithBestSpeed=0;
+	m_cTOCBest=0;
+	m_cTOCBestSpeed=0;
+	m_cTOCBestHdcapSpeed=0;
+	m_nContestants=0;
+	m_nFinishers=0;
+	m_nGuestFinishers=0;
+	m_nFinTocGT15underMinTime=0;
+	m_nGTMinDistance=0;
+	m_dBestHdcapDistFinisher=0;
+	m_dBestDistanceFinisher=0;
+	m_strCIDBestSpeed=_T(""); 
+	m_strCIDSlowestSpeed=_T(""); 
+	m_strCIDBestDistance=_T("");
+	m_strCIDBestHCSpeed=_T(""); 
+	m_strCIDSlowestHCSpeed=_T(""); 
+	m_strCIDBestHCDistance=_T("");
+	m_dDt=0.;
+	m_cTd=0;
+	m_dD1=0.;
+	m_dDm=0.;
+	m_in1=0;
+	m_in2=0;
+	m_in3=0;
+	m_in4=0;
+	m_iN=0;
+	m_dHo=0.0;
+	m_dDo=0.;
+	m_dVo=0.;
+	m_cTo=0;
+	m_dPm=0.;
+	m_dPdm=0.;
+	m_dPvm=0.;
+	m_dF=1.0;
+	m_dFCR=1.0;
+	m_dSpo=0.0;
+	m_dSpm=0.0;
+	m_strCIDHo=_T("");
+	m_strCIDDo=_T("");
+	m_strCIDVo=_T("");
+}
+
+
 CSummary::~CSummary()
 {
 

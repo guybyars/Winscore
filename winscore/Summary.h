@@ -20,6 +20,7 @@ class CSummary
 public:
 	void Output(CTask *pcTask, EUnits eUnits, bool IsHandicapped, CWinscoreListCtrl& cStatus);
 	CSummary();
+	void Initialize();
 	virtual ~CSummary();
 	bool GetXML( CXMLMgr &cMgr,MSXML2::IXMLDOMNodePtr pIDOMNode, CTask *pcTask, EUnits eUnits, bool bIsHandicapped );
 	void SetTaskDistance(double dDist);

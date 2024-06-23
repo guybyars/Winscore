@@ -731,6 +731,7 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     
     		if( DatesEqual(m_caContestDays[iDay], cDate) )
     			{
+				cSummary.Initialize();
     			cStatus.m_fReport=fReport;
     			CalculateDayScores(cDate, eClass, cStatus, cSummary, pMgr, pClassNode);
     			break;

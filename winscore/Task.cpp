@@ -1213,8 +1213,6 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 	cFile.WriteString( DateText() );
 	cFile.WriteString(" - ");
 	cFile.WriteString(GetClass(m_eClass).GetName());
-	cFile.WriteString(" - ");
-	cFile.WriteString( TypeText() );
 	cFile.WriteString("\",\"???\",\"");
 
 	pcTurnpoint =(CTurnpoint*)cTurnpointArray.GetAt(m_cStartGate.GetPointID()-1);

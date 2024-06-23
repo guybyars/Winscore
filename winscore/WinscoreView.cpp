@@ -3809,11 +3809,15 @@ void  CWinscoreView::OnExportTaskToCUP()
 	CTask *pTask = (CTask*)GetSelectedPtr();
 	if(pTask==NULL) return;
 
+	CString strDefaultFileName=pTask->TypeText();
+	strDefaultFileName+=".cup";
+
+
 	CWinscoreDoc *pDocument=GetDocument();
 
     static TCHAR BASED_CODE szFilter[] = _T("SeeYou CUP File (*.cup)|*.cup|All Files (*.*)|*.*||");
 
-	CFileDialog  cFileDlg(FALSE, _T("cup"), _T("task.cup"), OFN_OVERWRITEPROMPT, szFilter);
+	CFileDialog  cFileDlg(FALSE, _T("cup"), strDefaultFileName, OFN_OVERWRITEPROMPT, szFilter);
 
 	if( cFileDlg.DoModal()==IDOK )
 		{
