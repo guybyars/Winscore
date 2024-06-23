@@ -3,8 +3,8 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2024
-#define WINSCOREVERSION		_T("2024 Rev 11")
-#define SHORTVERSION			 _T("Rev 11")
+#define WINSCOREVERSION		_T("2024 Rev 12")
+#define SHORTVERSION			 _T("Rev 12")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
@@ -55,6 +55,9 @@ Rev 9
 Rev 10
    * Enhancements to CUP file export
    * Corrected Spm in parameter output to SSA when no flights are present for the day.
+
+Rev 11 & 12
+   * Corrected scoring errors in FAI tasks.
 
 2023
   * Corrected issue where incorrect case in handicap list was causing Discus 2b to be selected.

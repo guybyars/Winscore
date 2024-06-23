@@ -727,7 +727,10 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     	for( int iDay=0; iDay<m_iNumContestDays; iDay++ )
     		{
     		if( m_caContestDays[iDay]<cDate )
+				{
+				cSummary.Initialize();
     			CalculateDayScores(m_caContestDays[iDay], eClass, cStatus, cSummary);
+				}
     
     		if( DatesEqual(m_caContestDays[iDay], cDate) )
     			{
