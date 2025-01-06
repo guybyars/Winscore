@@ -25,9 +25,9 @@
 
    <tr bgcolor="#94ABF6">
      <th colspan="4" ><font face="Tahoma" size="2"></font></th>
-     <th colspan="5" ><font face="Tahoma" size="2">SSA Reference Configuration Data</font></th>
+     <th colspan="6" ><font face="Tahoma" size="2">SSA Reference Configuration Data</font></th>
      <th colspan="3" ><font face="Tahoma" size="2">Non Factory</font></th>
-     <th colspan="3" ><font face="Tahoma" size="2">Contest</font></th>
+     <th colspan="2" ><font face="Tahoma" size="2">Contest</font></th>
      <th colspan="2" ><font face="Tahoma" size="2"></font></th>
    </tr> 
    
