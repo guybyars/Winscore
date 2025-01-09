@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<HandicapList Title="SSA HC List Modified 2/7/2024 9:32:00 PM"><Codes><Code>
+<HandicapList Title="SSA HC List Modified 12/2/2024 8:21:00 PM"><Codes><Code>
 	<ID>F</ID>
 	<Description>F = Fixed gear (when both fixed and retractable variants exist)</Description></Code><Code>
 	<ID>R</ID>
@@ -278,6 +278,20 @@
 	<Notes>SC</Notes>
 	<Handicap>1.015</Handicap>
 	<Modified>2/19/2014 2:27:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Binder</Manufacturer>
+	<Model>EB29</Model>
+	<Span>29</Span>
+	<Weight>1257</Weight>
+	<Notes>MR</Notes>
+	<Handicap>781</Handicap>
+	<Modified>6/4/2024 11:44:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Binder</Manufacturer>
+	<Model>EB29R</Model>
+	<Span>29</Span>
+	<Weight>1257</Weight>
+	<Notes>MR</Notes>
+	<Handicap>0.775</Handicap>
+	<Modified>6/4/2024 11:46:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Bolkow</Manufacturer>
 	<Model>Phoebus A</Model>
 	<Span>15</Span>
@@ -1469,6 +1483,13 @@
 	<Handicap>0.96</Handicap>
 	<Modified>6/24/2021 6:58:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Marske</Manufacturer>
+	<Model>Pioneer 4 Prototype</Model>
+	<Span>15</Span>
+	<Weight>650</Weight>
+	<Notes>SFC</Notes>
+	<Handicap>0.94</Handicap>
+	<Modified>11/2/2024 9:57:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Marske</Manufacturer>
 	<Model>Pioneer IID</Model>
 	<Span>13</Span>
 	<Weight>630</Weight>
@@ -2112,13 +2133,13 @@
 	<Notes>W</Notes>
 	<Handicap>0.86</Handicap>
 	<Modified>3/22/2021 9:14:00 AM</Modified></Aircraft><Aircraft>
-	<Manufacturer>Schempp-hirth</Manufacturer>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Arcus Jet</Model>
 	<Span>20</Span>
 	<Weight>1633</Weight>
 	<Notes>MW</Notes>
 	<Handicap>0.83</Handicap>
-	<Modified>11/8/2023 8:10:00 AM</Modified></Aircraft><Aircraft>
+	<Modified>3/13/2024 7:45:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Arcus M</Model>
 	<Span>20</Span>
@@ -2181,7 +2202,14 @@
 	<Weight>790</Weight>
 	<Notes>SC</Notes>
 	<Handicap>0.915</Handicap>
-	<Modified>6/11/2017 6:18:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>5/15/2024 5:55:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Schempp-Hirth</Manufacturer>
+	<Model>Discus 2bt</Model>
+	<Span>15</Span>
+	<Weight>940</Weight>
+	<Notes>MSC</Notes>
+	<Handicap>0.884</Handicap>
+	<Modified>5/16/2024 6:57:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Discus 2bW</Model>
 	<Span>15</Span>
@@ -2208,8 +2236,8 @@
 	<Span>15</Span>
 	<Weight>946</Weight>
 	<Notes>MWC</Notes>
-	<Handicap>0.884</Handicap>
-	<Modified>2/7/2024 1:26:00 PM</Modified></Aircraft><Aircraft>
+	<Handicap>0.888</Handicap>
+	<Modified>5/10/2024 8:03:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Discus 2cT-18</Model>
 	<Span>18</Span>
@@ -2228,9 +2256,9 @@
 	<Model>Discus aW</Model>
 	<Span>15</Span>
 	<Weight>770</Weight>
-	<Notes>SW</Notes>
+	<Notes>SWC</Notes>
 	<Handicap>0.935</Handicap>
-	<Modified>7/29/2021 12:43:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>6/23/2024 3:18:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Discus b</Model>
 	<Span>15</Span>
@@ -2523,22 +2551,22 @@
 	<Span>15</Span>
 	<Weight>1007</Weight>
 	<Notes>MW</Notes>
-	<Handicap>0.868</Handicap>
-	<Modified>4/12/2017 4:48:00 PM</Modified></Aircraft><Aircraft>
+	<Handicap>0.845</Handicap>
+	<Modified>5/11/2024 7:21:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Ventus 2cT-18</Model>
 	<Span>18</Span>
 	<Weight>1047</Weight>
 	<Notes>MW</Notes>
-	<Handicap>0.84</Handicap>
-	<Modified>4/12/2017 4:49:00 PM</Modified></Aircraft><Aircraft>
+	<Handicap>0.816</Handicap>
+	<Modified>5/11/2024 7:21:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Ventus 2cx-15</Model>
 	<Span>15</Span>
 	<Weight>832</Weight>
 	<Notes>W</Notes>
-	<Handicap>0.873</Handicap>
-	<Modified>2/5/2012 8:41:00 AM</Modified></Aircraft><Aircraft>
+	<Handicap>0.84</Handicap>
+	<Modified>5/11/2024 7:22:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Ventus 2cx-18</Model>
 	<Span>18</Span>
@@ -2726,8 +2754,8 @@
 	<Span>15</Span>
 	<Weight>948</Weight>
 	<Notes>M</Notes>
-	<Handicap>0.88</Handicap>
-	<Modified>4/12/2017 4:54:00 PM</Modified></Aircraft><Aircraft>
+	<Handicap>0.871</Handicap>
+	<Modified>5/11/2024 7:22:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schempp-Hirth</Manufacturer>
 	<Model>Ventus cm-17.6</Model>
 	<Span>17.6</Span>
@@ -2823,9 +2851,9 @@
 	<Model>ASG-32 MI</Model>
 	<Span>20</Span>
 	<Weight>1630</Weight>
-	<Notes>MWR</Notes>
+	<Notes>MR</Notes>
 	<Handicap>0.83</Handicap>
-	<Modified>2/7/2024 1:32:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>5/16/2024 6:58:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Schleicher</Manufacturer>
 	<Model>ASH-25</Model>
 	<Span>25</Span>
