@@ -5230,20 +5230,20 @@ int CFlight::CheckFAIMaximumStartGroundSpeed(CTask *pcTask, int iStartFix)
 
 	double dExcessSpeed = dSpeed-dMaxSpeed;
 
-	//Speed penalty = (Excess speed) * 3
+   //2025  Speed penalty:
+   //        if excess speed exceeds 20mph, penalty = ((Excess speed) / 2) - 6
+   //      else 
+   //        penalty = (Excess speed) / 5 
+
 	CString strSpeedExceeded;
 
-	if( dExcessSpeed>0.0 ) iSpeedPenalty=(int)dExcessSpeed*3;
+	if( dExcessSpeed>0.0 ) 
+		{
+        if(  dExcessSpeed > 20. )
+		   iSpeedPenalty=(int)(((dExcessSpeed)/2.)-6.);
+        else 
+           iSpeedPenalty=(int)(dExcessSpeed/5);
 
-	if( dExcessSpeed > 35. )
-		{
-		iSpeedPenalty=1000;
-		strSpeedExceeded.Format("Max Speed Exceeded by %5.2lf mph which exceeds 35 mph.  Invalid Start. ",dExcessSpeed);
-		if( iStartFix==0 ) AddWarning(eStart, 1000,strSpeedExceeded );
-		}
-	else if( dExcessSpeed>0. )
-		{
-		iSpeedPenalty=(int)dExcessSpeed*3;
 		strSpeedExceeded.Format("Max Speed Exceeded by %5.2lf mph",dExcessSpeed);
 		if( iStartFix==0 ) AddWarning(eStart,iSpeedPenalty,strSpeedExceeded );
 		}
@@ -5267,22 +5267,33 @@ int CFlight::CheckFAIMaximumStartAltitude(CTask *pcTask, int iStartFix)
 	int dMaxAltitude = m_cStartGate.GetMaxAltitude();
 
 	int iExcessAltitude = pcPosStart->m_iCorrectedAltitude-dMaxAltitude;
-
-	//Altitude penalty = (Excess altitude)/4
 	CString strAltitudeExceeded;
 
-	if( iExcessAltitude>0 ) iAltitudePenalty=iExcessAltitude/4;
+   //2025 Height penalty:
+   //      if (excess height exceeds 300  )
+   //         penalty = ((Excess height) / 10) - 18
+   //      else if excess height exceeds 150) 
+   //         penalty = ((3 * Excess height) / 50) - 6
+   //      else 
+   //         penalty = (Excess height) / 50
 
-	if( iExcessAltitude > 300 )
+	if( iExcessAltitude>0 )
 		{
-		iAltitudePenalty=1000;
-		strAltitudeExceeded.Format("Max Altitude Exceeded by %d which exceeds 300 ft.  Invalid Start. ",iExcessAltitude);
-		if( iStartFix==0 ) AddWarning(eStart, iAltitudePenalty,strAltitudeExceeded );
-		}
-	else if( iExcessAltitude>0 )
-		{
-		iAltitudePenalty=iExcessAltitude/4;
-		strAltitudeExceeded.Format("Max Altitude Exceeded by %d ft",iExcessAltitude);
+		if( iExcessAltitude > 300 )
+			{
+			iAltitudePenalty=((iExcessAltitude) / 10) - 18;
+			strAltitudeExceeded.Format("Max Altitude Exceeded by %d which exceeds 300 ft.  Invalid Start. ",iExcessAltitude);
+			}
+		else if( iExcessAltitude > 150 )
+			{
+			iAltitudePenalty=((iExcessAltitude) / 50) - 6;
+			strAltitudeExceeded.Format("Max Altitude Exceeded by %d which exceeds 150 ft.  Invalid Start. ",iExcessAltitude);
+			}
+		else 
+			{
+			iAltitudePenalty=iExcessAltitude/50;
+			strAltitudeExceeded.Format("Max Altitude Exceeded by %d ft",iExcessAltitude);
+			}
 		if( iStartFix==0 ) AddWarning(eStart,iAltitudePenalty,strAltitudeExceeded );
 		}
 
