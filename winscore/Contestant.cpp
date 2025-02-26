@@ -858,7 +858,8 @@ void CContestant::UpdateHandicap(CGliderInfoList &cGIList)
 			m_cGliderInfo=*pGliderInfo;
 
 			// Now tweak the handicap based on the weight and span (ignore winglets, turbulators... etc for now.)
-			if( m_eClass==eSports || m_eClass==eClub )
+//			if( m_eClass==eSports || m_eClass==eClub )
+			if( m_eClass!=eStandard  )
 				{
 				m_fHandicap=GetAdjustedHandicap(	pGliderInfo, 
 													m_fWeight, 
