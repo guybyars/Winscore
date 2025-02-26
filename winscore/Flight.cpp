@@ -3409,15 +3409,17 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 	double dAve2=cAveragerMOP.dAverage();
 
 
-	if( dAve2<140. && iMOPRange>0 ) // Check valid MOP, if OK, use max MOP ENL
-		{
-		// test by using max eln and mop
-		for( int iPos=0; iPos<GetNumPoints(); iPos++ )
-			{
-			CPosition* pcPos=GetPosition(iPos);
-			pcPos->m_iEngineNoiseLevel=max(pcPos->m_iEngineNoiseLevel,pcPos->m_iMOPLevel);
-			}
-		}
+//	if( dAve2<140. && iMOPRange>0 ) // Check valid MOP, if OK, use max MOP ENL
+//		{
+//		// test by using max eln and mop
+//		for( int iPos=0; iPos<GetNumPoints(); iPos++ )
+//			{
+//			CPosition* pcPos=GetPosition(iPos);
+//			pcPos->m_iEngineNoiseLevel=max(pcPos->m_iEngineNoiseLevel,pcPos->m_iMOPLevel);
+//			}
+//		}
+
+
 
 #endif
 
