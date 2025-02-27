@@ -5239,13 +5239,14 @@ int CFlight::CheckFAIMaximumStartGroundSpeed(CTask *pcTask, int iStartFix)
 
 	if( dExcessSpeed>0.0 ) 
 		{
+		double dPen=0.0;
         if(  dExcessSpeed > 20. )
-		   iSpeedPenalty=(int)(((dExcessSpeed)/2.)-6.);
+		   dPen=((dExcessSpeed)/2.)-6.;
         else 
-           iSpeedPenalty=(int)(dExcessSpeed/5);
+           dPen=dExcessSpeed/5;
 
 		strSpeedExceeded.Format("Max Speed Exceeded by %5.2lf mph",dExcessSpeed);
-		if( iStartFix==0 ) AddWarning(eStart,iSpeedPenalty,strSpeedExceeded );
+		if( iStartFix==0 ) AddWarning(eStart,(int)Roundoff(dPen),strSpeedExceeded );
 		}
 
 	return iSpeedPenalty;
@@ -5277,27 +5278,29 @@ int CFlight::CheckFAIMaximumStartAltitude(CTask *pcTask, int iStartFix)
    //      else 
    //         penalty = (Excess height) / 50
 
+	double dAltPen=0.0;
 	if( iExcessAltitude>0 )
 		{
 		if( iExcessAltitude > 300 )
 			{
-			iAltitudePenalty=((iExcessAltitude) / 10) - 18;
-			strAltitudeExceeded.Format("Max Altitude Exceeded by %d which exceeds 300 ft.  Invalid Start. ",iExcessAltitude);
+			dAltPen=(((double)iExcessAltitude) / 10.) - 18.;
 			}
 		else if( iExcessAltitude > 150 )
 			{
-			iAltitudePenalty=((iExcessAltitude) / 50) - 6;
-			strAltitudeExceeded.Format("Max Altitude Exceeded by %d which exceeds 150 ft.  Invalid Start. ",iExcessAltitude);
+			dAltPen=((3.*(double)iExcessAltitude) / 50.) - 6.;
 			}
 		else 
 			{
-			iAltitudePenalty=iExcessAltitude/50;
-			strAltitudeExceeded.Format("Max Altitude Exceeded by %d ft",iExcessAltitude);
+			dAltPen=(double)iExcessAltitude/50.;
 			}
-		if( iStartFix==0 ) AddWarning(eStart,iAltitudePenalty,strAltitudeExceeded );
+		if( iStartFix==0 ) 
+			{
+			strAltitudeExceeded.Format("Max Altitude Exceeded by %d ft",iExcessAltitude);
+			AddWarning(eStart,(int)Roundoff(dAltPen),strAltitudeExceeded );
+			}
 		}
 
-	return iAltitudePenalty;
+	return (int)Roundoff(dAltPen);
 
 	}
 

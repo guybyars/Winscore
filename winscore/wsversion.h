@@ -1,10 +1,10 @@
 #if !defined(WSVERSION_H_INCLUDED_)
 #define WSVERSION_H_INCLUDED_
 
-#define	WINSCOREBETA         1
+//#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2025
-#define WINSCOREVERSION		_T("2025 Beta")
-#define SHORTVERSION			 _T("Beta ")
+#define WINSCOREVERSION		_T("2025 Rev 1")
+#define SHORTVERSION			 _T("Rev 1")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 

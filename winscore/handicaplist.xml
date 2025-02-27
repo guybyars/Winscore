@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<HandicapList Title="SSA HC List Modified 12/2/2024 8:21:00 PM"><Codes><Code>
+<HandicapList Title="SSA HC List Modified 2/8/2025 8:41:00 PM"><Codes><Code>
 	<ID>F</ID>
 	<Description>F = Fixed gear (when both fixed and retractable variants exist)</Description></Code><Code>
 	<ID>R</ID>
@@ -75,6 +75,27 @@
 	<Notes>W</Notes>
 	<Handicap>0.865</Handicap>
 	<Modified>2/27/2019 3:52:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>AB Sportine Aviacija</Manufacturer>
+	<Model>LAK-17C FES</Model>
+	<Span>15</Span>
+	<Weight>1210</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.91</Handicap>
+	<Modified>2/8/2025 8:38:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>AB Sportine Aviacija</Manufacturer>
+	<Model>LAK-17C FES</Model>
+	<Span>18</Span>
+	<Weight>1320</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.869</Handicap>
+	<Modified>2/8/2025 8:34:00 PM</Modified></Aircraft><Aircraft>
+	<Manufacturer>AB Sportine Aviacija</Manufacturer>
+	<Model>LAK-17C FES</Model>
+	<Span>21</Span>
+	<Weight>1320</Weight>
+	<Notes>MW</Notes>
+	<Handicap>0.855</Handicap>
+	<Modified>2/8/2025 8:41:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>AB Sportine Aviacija</Manufacturer>
 	<Model>MiniLAK</Model>
 	<Span>13.5</Span>
