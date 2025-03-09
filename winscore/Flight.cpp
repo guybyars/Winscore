@@ -3447,19 +3447,35 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 	double dStdDev=cAverager.StdDeviation();
 	double dAve=cAverager.dAverage();
 
-	if( dStdDev<1.0 ) return;
+	if( dStdDev>.001 ) 
+		{
+		// Look at ENL and set the Engine ON status based on average + 2*std deviation and flying <100kts
+		for( int iPos=iStartPos; iPos<iFinishPos; iPos++ )
+			{
+			CPosition* pcPos=GetPosition(iPos);
+			int iVal=pcPos->m_iEngineNoiseLevel;
+			if( iVal<37 ) continue;  //Since we normalized to 150, make sure we have sufficent signal.
+			if( double(iVal)>((1.0*dStdDev)+dAve) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>25. )
+				{
+				pcPos->AddStatus( FAN_MOTOR_ON);
+				}
+			}
+		}
 
-	// Now set the Engine ON status based on average + 2*std deviation and flying <100kts
+	// Look at MOP and set the Engine ON status based on average + 2*std deviation and flying <100kts
+	double dStdDevMOP=cAveragerMOP.StdDeviation();
+	double dAveMOP=cAveragerMOP.dAverage();
 	for( int iPos=iStartPos; iPos<iFinishPos; iPos++ )
 		{
 		CPosition* pcPos=GetPosition(iPos);
-		int iVal=pcPos->m_iEngineNoiseLevel;
+		int iVal=pcPos->m_iMOPLevel;
 		if( iVal<37 ) continue;  //Since we normalized to 150, make sure we have sufficent signal.
-		if( double(iVal)>((1.0*dStdDev)+dAve) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>25. )
+		if( double(iVal)>((1.0*dStdDevMOP)+dAveMOP) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>25. )
 			{
 			pcPos->AddStatus( FAN_MOTOR_ON);
 			}
 		}
+
 
 	// Search and smooth out spikes.
 	pcPrevPos=NULL;
@@ -3497,16 +3513,16 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 			else if ( pcPrevPos->CheckStatus(FAN_MOTOR_ON) &&
 			          !pcPos->CheckStatus(FAN_MOTOR_ON) 	)
 				{
-				//Motor turned off, check for spike
+				//Motor turned off, check for spike of 10 fixes or less
 				if( bSearching )
 					{
-					if( nON>0 )
+					bSearching=false;
+					if( nON>0 && nON<10 )
 						{
-						bSearching=false;
 						for( int iON=0; iON<nON; iON++)
 							pcMotorON[iON]->RemoveStatus(FAN_MOTOR_ON);
-						nON=0;
 						}
+					nON=0;
 					}
 				}
 
@@ -3571,6 +3587,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 	for( int iPos=iStartPos; iPos<(bCheckBeforeStart?iFinishPos:(int)GetNumPoints()); iPos++ )
 		{
 		CPosition* pcPos=GetPosition(iPos);
+		if( pcMotorOn==NULL ) pcMotorOn=pcPos;
 		if( pcPrevPos && pcPos )
 			{
 			// Sum the total
@@ -3605,7 +3622,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 					pcLongestMotorOn=pcMotorOn;
 					break;
 					}
-				if( cMotorONTime>cLongestMotorONTime )
+				if( cMotorONTime>=cLongestMotorONTime )
 					{
 					cLongestMotorONTime=cMotorONTime;
 					pcLongestMotorOn=pcMotorOn;

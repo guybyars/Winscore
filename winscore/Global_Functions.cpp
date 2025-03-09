@@ -1889,7 +1889,7 @@ void	LoadViewControl( CWSView &cWSView, CWSBaro* pWSBaro, CWinscoreDoc *pDoc, CF
 	if( pWSBaro )
 		{
 		int iNoise=pcPos->m_iEngineNoiseLevel;
-		if( pcTask==NULL )
+		//if( pcTask==NULL )
 		  {
 		  iNoise = max(pcPos->m_iEngineNoiseLevel,pcPos->m_iMOPLevel);
 		  }
