@@ -73,6 +73,7 @@ int CMedian::GetMedian()
 
 int CMedian::Average()
 {
+	if( m_AltList.size()==0 ) return 0;
 	int iAlt=0;
 	int iVal=0;
 	for( std::list<int>::iterator iter=m_AltList.begin();
@@ -90,6 +91,7 @@ int CMedian::Average()
 
 double CMedian::dAverage()
 {
+	if( m_AltList.size()==0 ) return 0.0;
 	double dAlt=0.0;
 	int iVal=0;
 	for( std::list<int>::iterator iter=m_AltList.begin();
@@ -215,6 +217,7 @@ int CMedian::GetMin(void)
 
 double CMedian::StdDeviation()
 	{
+	if( m_AltList.size()==0 ) return 0.0;
     double sum = 0.0, mean, standardDeviation = 0.0;
 
 	for( std::list<int>::iterator iter=m_AltList.begin();

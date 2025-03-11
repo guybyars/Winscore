@@ -3391,6 +3391,10 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 		}
 
 	iMax	=cMOPNoise.GetMax();
+	double dAve2=0.0;
+	CMedian cAveragerMOP;
+	if( iMax > 10 )
+	{
 	// Normalize to 150 for baro display.
 	for( int iPos=0; iPos<GetNumPoints(); iPos++ )
 		{
@@ -3399,25 +3403,14 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 		pcPos->m_iMOPLevel=int(dPercent*150.);
 		}
 		
-	CMedian cAveragerMOP;
-	//Find Average
-	for( int iPos=iStartPos; iPos<iFinishPos; iPos++  )
-		{
-		CPosition* pcPos=GetPosition(iPos);
-		cAveragerMOP.AddSample(pcPos->m_iMOPLevel);
+		//Find Average
+		for( int iPos=iStartPos; iPos<iFinishPos; iPos++  )
+			{
+			CPosition* pcPos=GetPosition(iPos);
+			cAveragerMOP.AddSample(pcPos->m_iMOPLevel);
+			}
+		dAve2=cAveragerMOP.dAverage();
 		}
-	double dAve2=cAveragerMOP.dAverage();
-
-
-//	if( dAve2<140. && iMOPRange>0 ) // Check valid MOP, if OK, use max MOP ENL
-//		{
-//		// test by using max eln and mop
-//		for( int iPos=0; iPos<GetNumPoints(); iPos++ )
-//			{
-//			CPosition* pcPos=GetPosition(iPos);
-//			pcPos->m_iEngineNoiseLevel=max(pcPos->m_iEngineNoiseLevel,pcPos->m_iMOPLevel);
-//			}
-//		}
 
 
 
@@ -3465,17 +3458,19 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 	// Look at MOP and set the Engine ON status based on average + 2*std deviation and flying <100kts
 	double dStdDevMOP=cAveragerMOP.StdDeviation();
 	double dAveMOP=cAveragerMOP.dAverage();
-	for( int iPos=iStartPos; iPos<iFinishPos; iPos++ )
+	if( dAveMOP > 1.0 ) 
 		{
-		CPosition* pcPos=GetPosition(iPos);
-		int iVal=pcPos->m_iMOPLevel;
-		if( iVal<37 ) continue;  //Since we normalized to 150, make sure we have sufficent signal.
-		if( double(iVal)>((1.0*dStdDevMOP)+dAveMOP) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>25. )
+		for( int iPos=iStartPos; iPos<iFinishPos; iPos++ )
 			{
-			pcPos->AddStatus( FAN_MOTOR_ON);
+			CPosition* pcPos=GetPosition(iPos);
+			int iVal=pcPos->m_iMOPLevel;
+			if( iVal<37 ) continue;  //Since we normalized to 150, make sure we have sufficent signal.
+			if( double(iVal)>((1.0*dStdDevMOP)+dAveMOP) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>25. )
+				{
+				pcPos->AddStatus( FAN_MOTOR_ON);
+				}
 			}
 		}
-
 
 	// Search and smooth out spikes.
 	pcPrevPos=NULL;
