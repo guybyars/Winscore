@@ -185,7 +185,7 @@ void CPosition::RemoveStatus(int iStatus)
 
 void CPosition::SetTurnpoint(int iID, int iPos)
 	{
-	if( iPos>=ALLOCTASKTPS ) return;
+	if( iPos>=ALLOCTASKTPS || iPos<0 ) return;
 	m_asTurnpoint[iPos]=iID;
 	}
 
@@ -208,13 +208,13 @@ void CPosition::SetDistanceFromFinish(double dDist)
 
 void CPosition::SetDistanceFromControlPoint(int iPnt, double dDist)
 {
-	if( iPnt<ALLOCTASKTPS ) m_adDistanceFromControlPoint[iPnt]=dDist;
+	if( iPnt<ALLOCTASKTPS && iPnt>=0 ) m_adDistanceFromControlPoint[iPnt]=dDist;
 }
 
 
 double CPosition::GetDistanceFromControlPoint(int iPnt)
 	{
-	if( iPnt>ALLOCTASKTPS ) 
+	if( iPnt>ALLOCTASKTPS || iPnt<0 ) 
 		return 0.0;
 	else
 		return m_adDistanceFromControlPoint[iPnt];
@@ -262,7 +262,7 @@ CString CPosition::GetStatusText(bool bStartGateCyl, bool bFinishGateCyl)
 
 bool CPosition::CheckTurnpoint(int iPos, int iTPID)
 {
-	if( iPos>=ALLOCTASKTPS ) return false;
+	if( iPos<0 || iPos>=ALLOCTASKTPS ) return false;
 
 	return m_asTurnpoint[iPos]==iTPID;;
 }
@@ -342,7 +342,10 @@ int CPosition::GetNumTurnpoints()
 
 int CPosition::GetTurnpoint(int iPos)
 	{
-	return m_asTurnpoint[iPos];
+	if( iPos<0 ) 
+		return 0;
+	else
+		return m_asTurnpoint[iPos];
 	}
 
 
