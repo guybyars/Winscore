@@ -3,14 +3,16 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2025
-#define WINSCOREVERSION		_T("2025 Rev 2")
-#define SHORTVERSION			 _T("Rev 2")
+#define WINSCOREVERSION		_T("2025 Rev 3")
+#define SHORTVERSION			 _T("Rev 3")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2025
 
+Rev 3
+	* More ENL/MOP refinement.
 
 Rev 2
 	* Fixed memory overwrite when no MAT turnpoins are specified.
