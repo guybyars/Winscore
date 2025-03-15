@@ -53,6 +53,8 @@ CPosition::CPosition(int iYear, int iMonth, int iDay, int iTimeZone, CString str
 		m_dAccuracy=0.;
 		m_iEngineNoiseLevel	=0;
 		m_iMOPLevel			=0;
+		m_iEngineNoiseLevelRAW=0;
+		m_iMOPLevelRAW		=0;
 		m_iPressureAltitude	=0;
 		m_iCorrectedAltitude=0;
 		m_iGPSAltitude		=0;
@@ -123,6 +125,7 @@ CPosition::CPosition(int iYear, int iMonth, int iDay, int iTimeZone, CString str
 			int iSpan=iMOPEndPos-iMOPStartPos+1;
 			CString strMOP	=strRecord.Mid(iMOPStartPos-1,iSpan);
 			m_iMOPLevel		=atoi( strMOP );
+			m_iMOPLevelRAW=m_iMOPLevel;
 			}
 
 		if( iENLStartPos>0 && iENLEndPos>0 && iENLStartPos<iENLEndPos )
@@ -130,6 +133,7 @@ CPosition::CPosition(int iYear, int iMonth, int iDay, int iTimeZone, CString str
 			int iSpan=iENLEndPos-iENLStartPos+1;
 			CString strENL=strRecord.Mid(iENLStartPos-1,iSpan);
 			m_iEngineNoiseLevel	=atoi( strENL );
+			m_iEngineNoiseLevelRAW=m_iEngineNoiseLevel;
 			}
 
 		m_dAccuracy=(double)iAccuracy;

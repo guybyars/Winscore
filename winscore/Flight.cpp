@@ -3285,6 +3285,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 	CPosition* pcMotorOn=NULL;
 	CMedian    cENLNoise, cMOPNoise, cAverager;
 	int		   iMax=0;
+	int		   iMin=10000;
 	int		   iDiff=0;
 
 // First, check for any signal at all
@@ -3292,19 +3293,32 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 	for( int iPos=0; iPos<GetNumPoints(); iPos++ )
 		{
 		CPosition* pcPos=GetPosition(iPos);
-		if( pcPos->m_iEngineNoiseLevel>0 || pcPos->m_iMOPLevel>0 )
+		if( pcPos->m_iEngineNoiseLevelRAW>0 || pcPos->m_iMOPLevelRAW>0 )
 			{
 			bSignal=true;
-			break;
+			cENLNoise.AddSample(pcPos->m_iEngineNoiseLevelRAW);
+			cMOPNoise.AddSample(pcPos->m_iMOPLevelRAW);
 			}
 		}
 	if( !bSignal ) 
 		{
-		AddWarning(eInformation,0,"No engine noise signal was detected, check motor run manually." );
-		SetOption(FLT_MISSING_ENL);
+		if ( !bCheckBeforeStart )
+			{
+			AddWarning(eInformation,0,"No engine noise signal was detected, check motor run manually." );
+			SetOption(FLT_MISSING_ENL);
+			}
 		return;
 		}
-	
+
+//Check for adequate signal in entire trace
+	int iEMax=cENLNoise.GetMax();
+	int iMMax=cMOPNoise.GetMax();
+
+	if( iEMax<25 && iMMax<50 ) return;
+	cENLNoise.clear();
+	cMOPNoise.clear();
+
+
 // Find the start and end points of interest
 	int iStartPos=FindEvent(bCheckBeforeStart?FAN_ROLLING:FAN_LATEST_START, 0, FORWARD );
 	if( iStartPos<0 ) iStartPos=0;
@@ -3325,8 +3339,8 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 		for( int iAve=-nAve/2; iAve<=nAve/2; iAve++ )
 			{
 			CPosition* pcPos=GetPosition(iPos+iAve);
-			iSumENL+=pcPos->m_iEngineNoiseLevel;
-			iSumMOP+=pcPos->m_iMOPLevel;
+			iSumENL+=pcPos->m_iEngineNoiseLevelRAW;
+			iSumMOP+=pcPos->m_iMOPLevelRAW;
 			}
 		iSumENL/=nAve;
 		iSumMOP/=nAve;
@@ -3340,44 +3354,16 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 	for( int iPos=0; iPos<GetNumPoints(); iPos++ )
 		{
 		CPosition* pcPos=GetPosition(iPos);
-		cENLNoise.AddSample(pcPos->m_iEngineNoiseLevel);
-		cMOPNoise.AddSample(pcPos->m_iMOPLevel);
+		cENLNoise.AddSample(pcPos->m_iEngineNoiseLevelRAW);
+		cMOPNoise.AddSample(pcPos->m_iMOPLevelRAW);
 		}
 	int iENLRange=cENLNoise.GetMax();
 	iENLRange-=cENLNoise.GetMin();
 	int iMOPRange=cMOPNoise.GetMax();
 	iMOPRange-=cMOPNoise.GetMin();
 	
-	if( iENLRange<5 && iMOPRange<5 ) return;  // Not enough amplitude, no run.
+	if( iENLRange<25 && iMOPRange<25 ) return;  // Not enough amplitude, no run.
 
-
-#if 0
-	bool bUseENL=(iENLRange>0);
-	if( bUseENL )
-		{
-		iMax	=cENLNoise.GetMax();
-		// Normalize to 150 for baro display.
-		for( int iPos=0; iPos<GetNumPoints(); iPos++ )
-			{
-			CPosition* pcPos=GetPosition(iPos);
-			double dPercent=double(pcPos->m_iEngineNoiseLevel)/double(iMax);
-				pcPos->m_iEngineNoiseLevel=int(dPercent*150.);
-			}
-		}
-	else
-		{
-		iMax	=cMOPNoise.GetMax();
-		// Normalize to 150 for baro display.
-		for( int iPos=0; iPos<GetNumPoints(); iPos++ )
-			{
-			CPosition* pcPos=GetPosition(iPos);
-			double dPercent=double(pcPos->m_iMOPLevel)/double(iMax);
-				pcPos->m_iMOPLevel=int(dPercent*150.);
-				pcPos->m_iEngineNoiseLevel=int(dPercent*150.);  //Baro display only works off enl.
-				}
-		}
-
-#else
 
 	//Experimental code to consider both MOP and ENL.
 
@@ -3386,20 +3372,20 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 	for( int iPos=0; iPos<GetNumPoints(); iPos++ )
 		{
 		CPosition* pcPos=GetPosition(iPos);
-		double dPercent=double(pcPos->m_iEngineNoiseLevel)/double(iMax);
+		double dPercent=double(pcPos->m_iEngineNoiseLevelRAW)/double(iMax);
 		pcPos->m_iEngineNoiseLevel=int(dPercent*150.);
 		}
 
 	iMax	=cMOPNoise.GetMax();
 	double dAve2=0.0;
 	CMedian cAveragerMOP;
-	if( iMax > 10 )
+	if( iMax > 100 )
 	{
 	// Normalize to 150 for baro display.
 	for( int iPos=0; iPos<GetNumPoints(); iPos++ )
 		{
 		CPosition* pcPos=GetPosition(iPos);
-		double dPercent=iMax>0?double(pcPos->m_iMOPLevel)/double(iMax):0.0;
+		double dPercent=iMax>0?double(pcPos->m_iMOPLevelRAW)/double(iMax):0.0;
 		pcPos->m_iMOPLevel=int(dPercent*150.);
 		}
 		
@@ -3412,9 +3398,6 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 		dAve2=cAveragerMOP.dAverage();
 		}
 
-
-
-#endif
 
 	// Check if most of the points are off scale, this indicates a sensor failure.
 	int nMax=0;
@@ -3655,7 +3638,20 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 		{
 		if( bCheckBeforeStart )
 			{
-			AddWarning(eMotorRunStart,0,pcLongestMotorOn->m_cTime.Format(_T("Motor Run Before Start %H:%M:%S")) );
+			//  Check distance
+			double dDist=m_pcHomePoint->DistanceTo(pcLongestMotorOn,eStatute);
+			if( dDist>3.0 )
+				{
+				if( pcLongestMotorOn->m_iCorrectedAltitude-m_pcHomePoint->GetElevation() <1000 )
+					{
+					AddWarning(eMotorRunStart,0,pcLongestMotorOn->m_cTime.Format(_T("Possible LANDOUT - Motor Run Before Start %H:%M:%S and > 3 miles from home airfield and < 1000 feet AGL.")) );
+					}
+				else
+					AddWarning(eMotorRunStart,0,pcLongestMotorOn->m_cTime.Format(_T("Possible LANDOUT - Motor Run Before Start %H:%M:%S and > 3 miles from home airfield.")) );
+
+				}
+			else
+				AddWarning(eMotorRunStart,0,pcLongestMotorOn->m_cTime.Format(_T("Motor Run Before Start %H:%M:%S")) );
 			}
 		else
 			{

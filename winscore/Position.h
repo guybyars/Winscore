@@ -73,6 +73,8 @@ public:
 	double	m_dAccuracy;
 	int		m_iEngineNoiseLevel;
 	int     m_iMOPLevel;
+	int		m_iEngineNoiseLevelRAW;
+	int     m_iMOPLevelRAW;
 	double  m_dSpeed;
 	float	m_fVSpeed;
 	bool	m_bBFI;

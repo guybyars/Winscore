@@ -350,9 +350,9 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 		cInt.Format(_T("%6.2lf"), ConvertDistance(pcPos->m_dAccuracy, SYSTEMUNITS, m_eUnits) );
 		m_cListCtrl.SetItemText(iItem,i++,cInt );
 
-		cInt.Format(_T("%5d"), pcPos->m_iEngineNoiseLevel );
+		cInt.Format(_T("%5d"), pcPos->m_iEngineNoiseLevelRAW );
 		m_cListCtrl.SetItemText(iItem,i++,cInt );
-		cInt.Format(_T("%5d"), pcPos->m_iMOPLevel );
+		cInt.Format(_T("%5d"), pcPos->m_iMOPLevelRAW );
 		m_cListCtrl.SetItemText(iItem,i++,cInt );
 
 		m_cListCtrl.SetItemText(iItem,i++,pcPos->GetTurnpointText() );

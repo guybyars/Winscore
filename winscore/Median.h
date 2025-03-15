@@ -33,6 +33,7 @@ public:
 	int Median2(void);
 	int GetMax(void);
 	int GetMin(void);
+	void clear() {m_AltList.clear();}
 };
 
 #endif // !defined(AFX_MEDIAN_H__171B06AB_4714_47E7_8709_F89EB5A5C463__INCLUDED_)
