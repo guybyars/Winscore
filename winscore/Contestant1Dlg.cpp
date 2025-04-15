@@ -217,6 +217,7 @@ BOOL CContestant1Dlg::OnInitDialog()
 		{
 		SetWindowText("Add New Contestant");
 		m_dHandicap=0.0;
+		m_iSSANumber=0;
 		UpdateData(FALSE);
 		}
 
@@ -407,6 +408,7 @@ void CContestant1Dlg::OnCbnSelchangeGliderMake()
 {
 	int iSel= -1;
 	CGliderInfo *pDefault=NULL;
+	UpdateData();
 
 	iSel=m_cGliderMakeCombo.GetCurSel();
 	CString strMake;

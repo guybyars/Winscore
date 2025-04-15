@@ -2549,6 +2549,7 @@ void CFlight::CheckPEVStarts(  )
 			{
 			//  Check if Latest start is in the PEV window:
 
+			int  iPenalty=0;
 			int iWaitTime = m_cStartGate.GetPEVWaitTime()*60;
 			int iWindow = m_cStartGate.GetPEVStartWindow()*60;
 			CTime cBegin = m_pPEVStart->m_cTime.GetTime()+iWaitTime;
@@ -2556,9 +2557,22 @@ void CFlight::CheckPEVStarts(  )
 
 			if( m_cStartTime<cBegin || m_cStartTime>cEnd )
 				{
+//12.1.3.2.4 ‡ For pilot event starts:
+//   penalty = 0.5 points per second outside penalty-free start period; maximum 30 points
+
+				if( m_cStartTime<cBegin )
+					{
+					auto iOutside = cBegin.GetTime()-m_cStartTime.GetTime();
+					iPenalty=min(30,(int)iOutside/2);
+					}
+				else if( m_cStartTime>cEnd )
+					{
+					auto iOutside = cEnd.GetTime()-m_cStartTime.GetTime();
+					iPenalty=min(30,(int)iOutside/2);
+					}
 				CString strPenalty;
 				strPenalty.Format(_T("Latest start time at %s is not in PEV start window: %s to %s "),m_cStartTime.Format(_T("%H:%M:%S")),cBegin.Format(_T("%H:%M:%S")),cEnd.Format(_T("%H:%M:%S")));
-				AddWarning(eStart,50,strPenalty);
+				AddWarning(eStart,(int)iPenalty,strPenalty);
 				}
 			}
 	}
@@ -5370,7 +5384,7 @@ void  CFlight::FindPEVWindows()
 		// Error, no PEV events in Log.
 		CString strPEV;
 		strPEV.Format("No PEV events found in log. ");
-		AddWarning(eStart, 50, strPEV );
+		AddWarning(eStart, 30, strPEV );
 		}
 
 	}
