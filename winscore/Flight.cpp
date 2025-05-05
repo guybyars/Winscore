@@ -233,22 +233,21 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 		throw;
 		}
 
-	try { 
-		FindPEVWindows();
-		}
-	catch(...)
-		{
-		AfxMessageBox(_T("Unhandled exception in CFlight::FindPEVWindows"));
-		throw;
-		}
-
-
 	try {
 		FindStartsAndFinish(pcTask);
 		}
 	catch(...)
 		{
 		AfxMessageBox(_T("Unhandled exception in CFlight::FindStartsAndFinish"));
+		throw;
+		}
+
+	try { 
+		FindPEVWindows();
+		}
+	catch(...)
+		{
+		AfxMessageBox(_T("Unhandled exception in CFlight::FindPEVWindows"));
 		throw;
 		}
 
@@ -5344,51 +5343,64 @@ int CFlight::CheckFAIStarts(CTask *pcTask, int StartFix )
 
 CTime  CFlight::GetPEVStartTime()
 	{
-	if( !m_cStartGate.IsPEVStart() || !m_pPEVStart ) return CTime(0);
+	if( !m_cStartGate.IsPEVStart() || !m_pPEVStart  ) return CTime(0);
 
 	return m_pPEVStart->m_cTime;
 	}
 
 void  CFlight::FindPEVWindows()
 	{
-	if( !m_cStartGate.IsPEVStart() ) return;
+	if( !m_cStartGate.IsPEVStart() || !IsStartTimeValid() ) return;
 
 	int nPEV=0;
 	// Check for PEVs
-	int iRollPos=FindEvent( FAN_ROLLING, 0, FORWARD );
-	int iPEVPos=iRollPos;
+	//int iRollPos=FindEvent( FAN_ROLLING, 0, FORWARD );
 
-	while(true)
-		{
-		iPEVPos=FindEvent( FAN_PEV, iPEVPos, FORWARD );
-		if( iPEVPos<0 ) break;
-
-		CPosition *pcPosPEV=GetPosition(iPEVPos);
-		if( !pcPosPEV ) break;
-
-		if( m_pPEVStart )
-			{
-			// We already recorded a PEV start, see if this is < than 30 Sec
-			int iTime=pcPosPEV->m_cTime.GetTime() - m_pPEVStart->m_cTime.GetTime();
-			if( iTime < 30 ) 
-				{
-				iPEVPos++;
-				continue;
-				}
-			}
-
-		if( nPEV++ >3 ) break;
-		
-		m_pPEVStart=pcPosPEV;
-		iPEVPos++;
-		}
-
-	if( nPEV==0 ) 
+	if( FindEvent( FAN_PEV, 0, FORWARD )<0 ) 
 		{
 		// Error, no PEV events in Log.
 		CString strPEV;
 		strPEV.Format("No PEV events found in log. ");
 		AddWarning(eStart, 30, strPEV );
+		return;
 		}
+
+	int iPEVPos = FindTime(GetStartTime(),0,FORWARD);
+	int iStartPos=iPEVPos;	
+
+	iPEVPos=FindEvent( FAN_PEV, iPEVPos, BACKWARD );
+	if( iPEVPos<0 )
+		{
+		//Nothig before the start, try Forward, if not found, bail.
+		iPEVPos=FindEvent( FAN_PEV, iStartPos, FORWARD );
+		if( iPEVPos<0 ) return;
+		}
+	CPosition *pcPosPEV=GetPosition(iPEVPos);
+	if( !pcPosPEV ) return;
+
+	int nTries=0;
+	while( nTries++<3 )
+		{
+		// Check for other PEV within 30 sec.
+		int iTempPEV=FindEvent( FAN_PEV, iPEVPos-1, BACKWARD );
+		if( iTempPEV>0 )
+			{
+			//Check if within 30 sec.
+			CPosition *pcPosTempPEV=GetPosition(iTempPEV);
+			if( !pcPosTempPEV ) break;
+
+			int iTime=pcPosPEV->m_cTime.GetTime() - pcPosTempPEV->m_cTime.GetTime();
+			if( iTime < 30 ) 
+				{
+				iPEVPos=iTempPEV;
+				pcPosPEV=pcPosTempPEV;
+				}
+			else
+				break;
+			}
+		else
+			break;
+		}
+	m_pPEVStart=pcPosPEV;
 
 	}
