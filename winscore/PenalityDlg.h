@@ -87,6 +87,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	CString m_strPreselectCID;
+	CTime   m_cPreselectDate;
 };
 
 //{{AFX_INSERT_LOCATION}}

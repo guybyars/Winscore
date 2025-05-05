@@ -3,13 +3,15 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2025
-#define WINSCOREVERSION		_T("2025 Rev 3")
-#define SHORTVERSION			 _T("Rev 3")
+#define WINSCOREVERSION		_T("2025 Rev 4")
+#define SHORTVERSION			 _T("Rev 4")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2025
+Rev 3
+	* Corrected PEV start issues and Airspace penalty recommendations.
 
 Rev 3
 	* More ENL/MOP refinement.

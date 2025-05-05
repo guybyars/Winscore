@@ -220,12 +220,12 @@ static _TCHAR *_gszPredefinedDescriptions[NUMCODES] =
 				}
 			else
 				{
-				strMess.Format("Ok to apply a %d point  Contest Penalty to %s for this day?", pcWarning->m_iPenalty, m_pcFlight->m_strCID);
+				strMess.Format("Ok to apply a %d point  Airspace/Contest Penalty to %s for this day?  This will also result in zero distance for the day.", pcWarning->m_iPenalty, m_pcFlight->m_strCID);
 				int iAnswer=AfxMessageBox( strMess, MB_YESNOCANCEL | MB_ICONQUESTION   );
 				if( iAnswer!=IDYES ) return;
 				}	
-			cCode=CString("CP");
-			cReason=CString("Contest Penalty");
+			cCode=CString("AS");
+			cReason=CString("Airspace Penalty");
 			pcPenalty=new CPenality( m_pcFlight->m_strCID,  m_pcFlight->GetRollTime(), eContestPenalty, cCode, cReason, (double)(pcWarning->m_iPenalty)  );
 			}
 		else

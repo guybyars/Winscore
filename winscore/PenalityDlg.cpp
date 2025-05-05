@@ -6,6 +6,7 @@
 
 #include "stdafx.h"
 #include "Winscore.h"
+#include "Global_Prototypes.h"
 #include "PenalityDlg.h"
 
 #ifdef _DEBUG
@@ -196,6 +197,19 @@ BOOL CPenalityDlg::OnInitDialog()
 	CDialog::OnInitDialog();
 	
 	m_pDoc->LoadDateComboBox(m_cDateCombo);
+	if( m_cPreselectDate.GetTime()>0 )
+		{
+		for( int i=0; i<m_cDateCombo.GetCount(); i++)
+			{
+			CTime *pTime=((CTime*)m_cDateCombo.GetItemData(i));
+			if( DatesEqual ( m_cPreselectDate, *pTime)  )
+				{
+				m_cDateCombo.SetCurSel(i);
+				break;
+				}
+			}
+		}
+
 	m_cDelete.EnableWindow(FALSE);
 	m_cApply.EnableWindow(FALSE);
 	m_pDoc->LoadContestantComboBox(m_cContestNoCombo);

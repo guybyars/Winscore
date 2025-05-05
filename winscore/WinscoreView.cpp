@@ -733,6 +733,7 @@ void CWinscoreView::OnDailyPenalties()
 	CPenalityList   cTempPenalityList;
 	CWinscoreDoc* pDocument=GetDocument();
 	cTempPenalityList=pDocument->m_PenalityList;
+	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
 
 	dlg.m_pDoc=pDocument;
 	dlg.m_pcPenalityList=&cTempPenalityList;
@@ -750,11 +751,13 @@ void CWinscoreView::OnDailyPenalties()
 			{
 			CFlight *pFlight=(CFlight*)pItemPreselect;
 			dlg.m_strPreselectCID=pFlight->m_strCID;
+			dlg.m_cPreselectDate= pFrame->GetDateCombo();
 			}
 		else if( m_eViewType==eScoreView )
 			{
 			CScoreRecord *pRecord=(CScoreRecord*)pItemPreselect;
 			dlg.m_strPreselectCID=pRecord->m_cContestNo;
+			dlg.m_cPreselectDate= pFrame->GetDateCombo();
 			}
 		}
 

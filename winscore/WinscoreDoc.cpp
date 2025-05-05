@@ -1759,11 +1759,22 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
 
 /////////////////////////////  DISTANCE CALCULATIONS  //////////////////////////
 		
+    		CPenality *pcContestPenality=m_PenalityList.Get( pcContestant->m_strContestNo, 
+    														cDate,
+    														eContestPenalty);
+    		if( pcContestPenality && 
+				pcContestPenality->m_cPenalityCode=="AS" &&
+				pcContestPenality->m_dPenality==100.  )
+    			{
+				dDistance=0.0;
+				fContestant=true;
+				}
+			else
+				{
+				dDistance=pcFlight->GetDistance();
+    			fContestant=dDistance>0.0001;
+				}
 
-	 
-			dDistance=pcFlight->GetDistance();
-
-    		fContestant=dDistance>0.0001;
     
             if( eClass==eSports )
 				fFinisher=( pcFlight->IsFinishTimeValid()  && dDistance>(cClass.GetMinTaskDistance(SYSTEMUNITS)/((cClass.IsHandicapped())?(pcContestant->m_fHandicap):(1.0))) );

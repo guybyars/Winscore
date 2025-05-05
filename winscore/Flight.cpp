@@ -2567,7 +2567,7 @@ void CFlight::CheckPEVStarts(  )
 					}
 				else if( m_cStartTime>cEnd )
 					{
-					auto iOutside = cEnd.GetTime()-m_cStartTime.GetTime();
+					auto iOutside = m_cStartTime.GetTime()-cEnd.GetTime();
 					iPenalty=min(30,(int)iOutside/2);
 					}
 				CString strPenalty;
@@ -4458,7 +4458,7 @@ bool CFlight::CheckAirspaceIncursions(TURNPOINTCLASSARRAY &TURNPOINTCLASSArray)
 			{
 			CString strWarn= pcIncursionPos->m_cTime.Format(_T("Airspace incursion at %H:%M:%S in "));
 			strWarn+=pSUASection->m_strTitle;
-			AddWarning(eAirspaceMajor,1000,strWarn);
+			AddWarning(eAirspaceMajor,100,strWarn);
 			}
 		nTotalIncursions+=nIncursions;
 		}
@@ -5369,8 +5369,12 @@ void  CFlight::FindPEVWindows()
 		if( m_pPEVStart )
 			{
 			// We already recorded a PEV start, see if this is < than 30 Sec
-
-			if( pcPosPEV->m_cTime.GetTime() - m_pPEVStart->m_cTime.GetTime() < 30 ) continue;
+			int iTime=pcPosPEV->m_cTime.GetTime() - m_pPEVStart->m_cTime.GetTime();
+			if( iTime < 30 ) 
+				{
+				iPEVPos++;
+				continue;
+				}
 			}
 
 		if( nPEV++ >3 ) break;
