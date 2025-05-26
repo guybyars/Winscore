@@ -158,9 +158,18 @@ bool CIGCFile::ProcessARecord(CString strRecord)
 		return false;
 		}
 	m_strManufacturer=strRecord.Mid(1,3);
-	m_strFDRID=strRecord.Mid(4,5);
+	m_strFDRID=strRecord.Mid(4,6);
 	m_strFDRID.TrimLeft();
 	m_strFDRID.TrimRight();
+
+	if( m_strFDRID[3]=='_' )
+		{
+		m_strFDRID=m_strFDRID.Left(3);
+		}
+	else if( strRecord.Mid(7,6)=="FLIGHT" )
+		{
+		m_strFDRID=m_strFDRID.Left(3);
+		}
 
 	return true;
 	}

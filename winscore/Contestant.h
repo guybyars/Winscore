@@ -90,6 +90,7 @@ public:
 	CString m_strState;
 	CString m_strZipcode1;
 	CString m_strZipcode2;
+	CString m_strFDR_ID;
 
 	int		m_iSSANumber;
 	double	m_fHandicap;
@@ -119,6 +120,7 @@ public:
 					CString &strState,
 					CString &strZipcode1,
 					CString &strZipcode2,
+					CString &strFDR_ID,
 					int iSSANumber,
 					double fHandicap,
 					EClass eClass,

@@ -10,6 +10,7 @@
 #include "ResizingDialog.h"
 #include "ShowWarningsDlg.h"
 #include "global_prototypes.h"
+#include "Contestant.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -32,6 +33,7 @@ CShowWarningsDlg::CShowWarningsDlg(CWnd* pParent /*=NULL*/)
 	SetControlInfo(IDC_RECHECK_LATEST,  ANCHORE_BOTTOM);
 	SetControlInfo(IDC_APPLY_PENALTY,   ANCHORE_BOTTOM);
 	SetControlInfo(IDC_SECURITY_PASSED, ANCHORE_BOTTOM);
+	SetControlInfo(IDC_UPDATE_FDR_ID, ANCHORE_BOTTOM);
 	SetControlInfo(IDC_CLEAR,			ANCHORE_BOTTOM);
 	SetControlInfo(IDC_CLOSE,			ANCHORE_BOTTOM);
 }
@@ -47,6 +49,7 @@ void CShowWarningsDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_APPLY_PENALTY, m_cPenaltyButton);
 	DDX_Control(pDX, IDC_SECURITY_PASSED, m_cSecurityButton);
 	DDX_Control(pDX, IDC_CLEAR, m_cClearButton);
+	DDX_Control(pDX, IDC_UPDATE_FDR_ID, m_cFDRButton);
 	DDX_Control(pDX, IDC_LISTCTRL, m_cListCtrl);
 }
 
@@ -62,6 +65,7 @@ BEGIN_MESSAGE_MAP(CShowWarningsDlg, CDialog)
 	ON_BN_CLICKED(IDC_CLEAR, &CShowWarningsDlg::OnBnClickedClear)
 	ON_BN_CLICKED(IDC_CLOSE, &CShowWarningsDlg::OnBnClickedClose)
 	ON_NOTIFY(LVN_ITEMCHANGING, IDC_LISTCTRL, &CShowWarningsDlg::OnLvnItemchangingListctrl)
+	ON_BN_CLICKED(IDC_UPDATE_FDR_ID, &CShowWarningsDlg::OnBnClickedUpdateFdrId)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -321,6 +325,7 @@ void CShowWarningsDlg::OnLvnItemchangingListctrl(NMHDR *pNMHDR, LRESULT *pResult
 		m_cPenaltyButton.EnableWindow(		pcWarning->IsActive() && pcWarning->m_iPenalty>0);
 		m_cSecurityButton.EnableWindow(		pcWarning->IsActive() && pcWarning->GetType()==eSecurity);
 		m_cClearButton.EnableWindow(		pcWarning->IsActive());
+		m_cFDRButton.EnableWindow(			pcWarning->IsActive()&& pcWarning->GetType()==eNoFDR );
 		}
 }
 
@@ -361,4 +366,18 @@ void  CShowWarningsDlg::LoadWarningsFromFlight(int iSel)
 			m_cListCtrl.SetColumnWidth(i,LVSCW_AUTOSIZE_USEHEADER);		}
 
 	m_cListCtrl.SetItemState(iSel, LVIS_SELECTED, LVIS_SELECTED);
-	}
+}
+
+void CShowWarningsDlg::OnBnClickedUpdateFdrId()
+{
+	CContestant* pcContestant = m_pDoc->m_contestantList.GetByContestNo(m_pcFlight->m_strCID);
+	pcContestant->m_strFDR_ID = m_pcFlight->m_strFDRID;
+
+	int iItem=m_cListCtrl.GetNextItem(-1, LVNI_SELECTED);
+	if(iItem<0 ) return;
+	CWarning *pcWarning=(CWarning*)m_cListCtrl.GetItemData( iItem );
+	pcWarning->Clear();
+	m_cListCtrl.SetItemText(iItem,0,"Cleared, ID Updated" );  
+
+
+}

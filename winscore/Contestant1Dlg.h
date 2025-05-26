@@ -23,6 +23,7 @@ public:
 	CString m_strCity;
 	CString	m_strState;
 	CString	m_strZipcode1, m_strZipcode2;
+	CString m_strFDR_ID;
 	EClass	m_eClass;
 
 	float	m_fSpan;

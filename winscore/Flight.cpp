@@ -254,6 +254,16 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 	try {
 		if( pcContestant && pcContestant->IsMotorized() ) 
 			{
+			if( pcContestant->m_strFDR_ID.GetLength()==0 )
+				{
+				AddWarning(eNoFDR,0,"No flight recorder ID has been set for this contestant");
+				}
+			else if( pcContestant->m_strFDR_ID!=m_strFDRID )
+				{
+				CString strWarn;
+				strWarn.Format("FDR ID \"%s\" in this log does not match FDR ID \"%s\" set for this contestant",m_strFDRID, pcContestant->m_strFDR_ID);
+				AddWarning(eWrongFDR,0,strWarn);
+				}
 			CheckMotorRun();   // regular check
 			CheckMotorRun(true); // before start check
 			}

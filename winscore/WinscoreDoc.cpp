@@ -597,13 +597,20 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     	CDocument::DeleteContents();
     }
     
-    void CWinscoreDoc::LoadDateComboBox(CComboBox &cComboBox)
+    void CWinscoreDoc::LoadDateComboBox(CComboBox &cComboBox, bool bIncludePreContest)
     {
     
     	CTime cDefaultDay = GetDefaultDay();
-    
     	int iSel= -1;
     	int iPos=0;
+
+		if(bIncludePreContest)
+			{
+			m_cPreContestDate=GetPreContestDate();
+    		CString s = m_cPreContestDate.Format( _T("PreContest Days From %A, %B %d, %Y") );
+    		iPos=cComboBox.AddString(s);
+    		cComboBox.SetItemDataPtr( iPos, &m_cPreContestDate );
+			}
     
     	for( int i=m_iNumPracticeDays-1; i>=0; i-- )
     		{
@@ -3843,7 +3850,8 @@ bool CWinscoreDoc::ExportDayXML( CString &strFile, int nClasses, EClass aeClasse
 
 
 				cMgr.CreateElementInt(	pScoreRecord, _T("Points"),			(int)pcScoreRecord->m_dPoints);
-				cMgr.CreateElementInt(	pScoreRecord, _T("CPoints"),		(int)pcScoreRecord->m_dCumPoints);
+				int iCPoints = max(0,(int)pcScoreRecord->m_dCumPoints);
+				cMgr.CreateElementInt(	pScoreRecord, _T("CPoints"), iCPoints);
 
 				cMgr.CreateElement(	pScoreRecord, _T("TOC"),			pcScoreRecord->TOCText() );
 
@@ -4239,4 +4247,15 @@ CString CWinscoreDoc::GetWSCPath(void)
 	int iPos=m_strPathName.ReverseFind('\\');
 	if( iPos<0 ) return "";
 	return m_strPathName.Left(iPos);
+	}
+
+CTime	CWinscoreDoc::GetPreContestDate()
+	{
+	CTime cPreContestDate=m_CContestStartDate-CTimeSpan(14,0,0,0);
+	return cPreContestDate;
+	}
+
+int	CWinscoreDoc::GetNumPreContestDays()
+	{
+	return max(1,14-m_iNumPracticeDays);
 	}

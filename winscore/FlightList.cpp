@@ -99,11 +99,8 @@ CFlight* CFlightList::GetNext(POSITION& pos)
 }
 
 
-CFlight* CFlightList::GetNext(POSITION& pos, CTime cDate )
+CFlight* CFlightList::GetNext(POSITION& pos, CTime cDate, int nDays )
 {
-	int iDay	=cDate.GetDay();
-	int iMonth	=cDate.GetMonth();
-	int iYear	=cDate.GetYear();
 
 	while(pos!=NULL)
 		{
@@ -113,12 +110,18 @@ CFlight* CFlightList::GetNext(POSITION& pos, CTime cDate )
 		int iInputDay	=pcFlight->m_iDay;
 		int iInputMonth	=pcFlight->m_iMonth;
 		int iInputYear	=pcFlight->m_iYear;
-
-		if( iDay	==iInputDay		&&
-			iMonth	==iInputMonth	&&
-			iYear	==iInputYear		)
+		for( int i=0; i<nDays; i++)
 			{
-			return pcFlight;
+			CTime cCheckDate=cDate+CTimeSpan(i,0,0,0);
+			int iDay	=cCheckDate.GetDay();
+			int iMonth	=cCheckDate.GetMonth();
+			int iYear	=cCheckDate.GetYear();
+			if( iDay	==iInputDay		&&
+				iMonth	==iInputMonth	&&
+				iYear	==iInputYear		)
+				{
+				return pcFlight;
+				}
 			}
 		}
 	return NULL;
@@ -205,7 +208,7 @@ void CFlightList::CreateControlColumns(CListCtrl& ListCtrl)
 
 }
 
-void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, EClass eClass, CContestantList &contestantList, EUnits eUnits, int iSortColumn )
+void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, int nDays, EClass eClass, CContestantList &contestantList, EUnits eUnits, int iSortColumn,  bool bPreContest )
 {
 	CStringArray cStrArray;
 
@@ -215,10 +218,11 @@ void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, EClass eClass
 	POSITION pos = GetHeadPosition();
 	while( pos!=NULL)
 		{
-		pcFlight=GetNext(pos,cDate);
+		pcFlight=GetNext(pos,cDate,nDays);
 		if( pcFlight )
 			{
-			if( pcFlight->m_eClass==eClass || !pcFlight->IsContestant() )
+			if( (bPreContest && pcFlight->IsContestant()) ||
+				(pcFlight->m_eClass==eClass || !pcFlight->IsContestant()) )
 				{
 				pcFlight->m_eUnits=eUnits;
 				pcFlight->AddToList( ListCtrl, FALSE );
@@ -227,7 +231,7 @@ void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, EClass eClass
 				}
 			}
 		}
-//  Ok, now add the contestants who don't have a flight log and give them the "none" status
+//  Ok, now add the contestants who don't have a flight log and give them the "No Log Found" status
 	CStringArray strArContestNo, strArName, strArStatus;
 	pos = contestantList.GetHeadPosition();
 	while( pos!=NULL)
@@ -244,7 +248,7 @@ void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, EClass eClass
 					break;
 					}
 				}
-			if( !bFound )
+			if( !bFound && !bPreContest)
 				{
 				strArContestNo.Add(pContestant->m_strContestNo);
 				strArName.Add(pContestant->m_strLastName+", "+pContestant->m_strFirstName);
@@ -259,13 +263,13 @@ void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, EClass eClass
 
 	for( int i=0; i<strArContestNo.GetCount(); i++ )
 		{
-				LV_ITEM lvi;
-				lvi.iSubItem = 0;
-				lvi.iItem = 0;
-				lvi.mask = LVIF_PARAM;
-				lvi.lParam = (LPARAM)NULL;
-				int iItem=ListCtrl.InsertItem(&lvi);
-				ASSERT(iItem>=0);
+		LV_ITEM lvi;
+		lvi.iSubItem = 0;
+		lvi.iItem = 0;
+		lvi.mask = LVIF_PARAM;
+		lvi.lParam = (LPARAM)NULL;
+		int iItem=ListCtrl.InsertItem(&lvi);
+		ASSERT(iItem>=0);
 		ListCtrl.SetItemText(iItem,0, strArContestNo.GetAt(i) );
 		ListCtrl.SetItemText(iItem,1, strArName.GetAt(i) );
 		ListCtrl.SetItemText(iItem,2, strArStatus.GetAt(i) );
@@ -291,7 +295,7 @@ void CFlightList::AnalyzeAll(	void* pFrame,
 	CStringArray strArray;
 	CIGCDirectories cIGCDir;
 
-	cIGCDir.FindIGCFiles( cDate,  strArray );
+	cIGCDir.FindIGCFiles( cDate,  1, strArray );
 
 	int nAnalysis=0;
 	POSITION pos = GetHeadPosition();
@@ -427,14 +431,14 @@ CFlight* CFlightList::FindByIGCFileName(CString cIGCFileName )
 	return NULL;
 }
 
-bool CFlightList::LoadListFromIGC(CString strPath, CTime cDate, CContestantList &contestantList, bool bSilent, CListCtrl *pListCtrl )
+bool CFlightList::LoadListFromIGC(CString strPath, CTime cDate, int nDays, CContestantList &contestantList, bool bSilent, CListCtrl *pListCtrl )
 	{
 	CStringArray strArray;
 	bool bAnyAdded=false;
 	CWaitCursor cWait;
 	CIGCDirectories cIGCDir;
 
-	cIGCDir.FindIGCFiles( cDate, strArray );
+	cIGCDir.FindIGCFiles( cDate, nDays, strArray );
 
 	CTime cmTime;
 	CFileFind finder;

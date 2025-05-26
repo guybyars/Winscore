@@ -42,6 +42,7 @@ void CContestant1Dlg::DoDataExchange(CDataExchange* pDX)
 	DDV_MaxChars(pDX, m_strContestNo, 3);
 	DDX_Text(pDX, IDC_FIRST_NAME, m_strFirstName);
 	DDV_MaxChars(pDX, m_strFirstName, 20);
+	DDX_Text(pDX, IDC_FDR_ID, m_strFDR_ID);
 	DDX_Text(pDX, IDC_GLIDER_HANDICAP, m_dHandicap);
 	DDX_Text(pDX, IDC_GLIDER_MAKE, m_strGlider);
 	DDX_Text(pDX, IDC_LAST_NAME, m_strLastName);
@@ -129,6 +130,7 @@ void CContestant1Dlg::OnOK()
 					 m_strState,
 					 m_strZipcode1,
 					 m_strZipcode2,
+					 m_strFDR_ID,
 					 m_iSSANumber,
 					 m_dHandicap,
 					 m_eClass,
@@ -242,7 +244,7 @@ void CContestant1Dlg::UpdateFromContestant( CContestant* pcContestant )
 	m_strCity=pcContestant->m_strCity;
 	m_strState=pcContestant->m_strState;
 	m_strZipcode1=pcContestant->m_strZipcode1;
-	m_strZipcode2=pcContestant->m_strZipcode2;
+	m_strFDR_ID=pcContestant->m_strFDR_ID;
 	m_bGuest=pcContestant->IsGuest();
 	m_bForeign=pcContestant->IsForeign();
 	m_eClass=pcContestant->m_eClass;

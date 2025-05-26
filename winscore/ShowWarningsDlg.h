@@ -61,11 +61,13 @@ public:
 	CButton m_cPenaltyButton;
 	CButton m_cSecurityButton;
 	CButton m_cClearButton;
+	CButton m_cFDRButton;
 
 	void LoadWarningsFromFlight(int iSel);
 
 	afx_msg void OnBnClickedClose();
 	afx_msg void OnLvnItemchangingListctrl(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnBnClickedUpdateFdrId();
 };
 
 //{{AFX_INSERT_LOCATION}}

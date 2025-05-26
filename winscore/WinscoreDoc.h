@@ -134,11 +134,13 @@
     	CString GetUnitsText();
 		CString GetUnitsSpeedText();
     	void FreeDateComboBox(CComboBox&);
-    	void LoadDateComboBox(CComboBox&);
+    	void LoadDateComboBox(CComboBox&,bool bIncludePreContest=false);
     	void InitializeDefaultContest();
     	BOOL PutUpContestInfoDlg(BOOL bInitialize);
     	void SetAvailableClasses(CComboBox*);
     	void SetAvailableClasses(CClassTabCtrl&);
+		CTime	GetPreContestDate();
+		int		GetNumPreContestDays();
 
   
     	void CalculateTimeDistance(	CScoreRecordList& cScoreRecordList, 
@@ -166,6 +168,7 @@
     	EContest		m_eContest;
     	EUnits			m_eUnits;
     	CTime			m_CContestStartDate;
+		CTime			m_cPreContestDate;
         ECoordFormat    m_eCoordinateFormat;
 
 		int				m_iNumContestDays;

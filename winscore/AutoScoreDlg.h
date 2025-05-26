@@ -68,6 +68,8 @@ public:
 	CButton m_cMediaCheck;
 	CButton m_cAutoSaveCheck;
 	bool	m_bRunning;
+	bool    m_bPreContest;
+	int		m_nDays;
 	CMainFrame* m_pFrame;
 	CIGCDirectories m_cIGCDirs;
 
@@ -83,7 +85,7 @@ public:
 	afx_msg void OnCbnSelchangeDateCombo();
 	afx_msg void OnCbnSelchangeSsa();
 
-	int ScanEmailForLogs( CTime cDate, CString strIMAPServer, CString strUsername, CString strPassword, CString strMailbox, int iPortID, BOOL bUseSSL,CString strLogDir, CString &strError, bool bTestOnly=false );
+	int ScanEmailForLogs( CTime cDate, int nDates, CString strIMAPServer, CString strUsername, CString strPassword, CString strMailbox, int iPortID, BOOL bUseSSL,CString strLogDir, CString &strError, bool bTestOnly=false );
 
 
 	afx_msg void OnCancel();

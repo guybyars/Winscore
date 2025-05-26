@@ -1,6 +1,6 @@
 #pragma once
 
-#define NWARNINGTYPES		11
+#define NWARNINGTYPES		13
 enum EWarningType {	eUnknownWarning	=0,
 					eInformation	=1,
 					eStartLatest	=2,
@@ -11,7 +11,9 @@ enum EWarningType {	eUnknownWarning	=0,
 					eAirspaceMajor	=7,
 					eSecurity		=8,
 					eMotorRunLandout=9,
-					eMotorRunStart=10
+					eMotorRunStart=10,
+					eNoFDR=11,
+					eWrongFDR=12
 
 					};
 static CString strWarningTypes[NWARNINGTYPES][2] =
@@ -26,7 +28,9 @@ static CString strWarningTypes[NWARNINGTYPES][2] =
 					"ARMA","Airspace (Major)",
 					"SECU","Log Security",
 					"MRUN","Motor Run Landout",
-					"MRST","Motor Run Before Start"
+					"MRST","Motor Run Before Start",
+					"NFDR","No FDR ID",
+					"XFDR","FDR ID Mismatch"
 					};
 
 class CWarning

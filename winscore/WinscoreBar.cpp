@@ -236,6 +236,10 @@ int CWinscoreBar::LoadTreeCtrl(CDocument *pD)
 	LoadClassesInTree(iTtem,false,CWSTreeItem::eGridPositions, 0);
 	GetTreeCtrl().SetItemImage(iTtem, 5, 5 );
 
+	HTREEITEM hPrecontestDays = m_wndTree.InsertItem (_T("PreContest Motor Check"),m_hRoot);
+	GetTreeCtrl().SetItemData(hPrecontestDays,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::ePreContest));
+	GetTreeCtrl().SetItemImage(hPrecontestDays, 14, 14 );
+
 	HTREEITEM hPracticeDays = m_wndTree.InsertItem (_T("Practice Days"),m_hRoot);
 	GetTreeCtrl().SetItemData(hPracticeDays,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eNone));
 	GetTreeCtrl().SetItemImage(hPracticeDays, 12, 12 );

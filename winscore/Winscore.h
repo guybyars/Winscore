@@ -141,7 +141,7 @@ enum EPrintSelection {	eDailyScoresheet=0,
 
 enum EExportType {eText=2, eXML=3};
 
-#define  NVIEWS		7
+#define  NVIEWS		8
 
 enum EViews {	eContestantView			=0,
 				eTurnpointView			=1,
@@ -149,7 +149,8 @@ enum EViews {	eContestantView			=0,
 				eTakeoffGridView		=3,
 				eTaskView				=4,
 				eFlightLogView			=5,
-				eScoreView				=6 };
+				eScoreView				=6,
+				ePreContestView			=7};
 
 static _TCHAR *_gszViewNames[NVIEWS] =
 {
@@ -159,7 +160,8 @@ static _TCHAR *_gszViewNames[NVIEWS] =
 	_T("Takeoff Grid"),
 	_T("Tasks"),
 	_T("Flight Logs"),
-	_T("Scores")
+	_T("Scores"),
+	_T("PreContest Logs")
  };
 
 #define m_to_ft  3.281

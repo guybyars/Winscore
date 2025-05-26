@@ -27,14 +27,14 @@ public:
 
 	int GetNumberFlights( CTime &cDate, int nClasses, EClass aeClasses[] );
 	CFlight* Get(CTime &cDate, CString &strContestNo);
-	bool LoadListFromIGC(CString strPath, CTime cDate, CContestantList &contestantList, bool bSilent=false, CListCtrl *pList=NULL );
+	bool LoadListFromIGC(CString strPath, CTime cDate, int nDays, CContestantList &contestantList, bool bSilent=false, CListCtrl *pList=NULL );
 	void RemoveByPointer(CFlight*);
 
 	CFlightList();
 	virtual ~CFlightList();
 
 	void CFlightList::CreateControlColumns(CListCtrl& ListCtrl);
-	void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, EClass eClass, CContestantList &contestantList, EUnits, int iSortColumn);
+	void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, int nDays, EClass eClass, CContestantList &contestantList, EUnits, int iSortColumn, bool bPreContest=false);
 	void CFlightList::AddToList(CFlight * pcAddFlight);
 	void CFlightList::Purge();
 	void CFlightList::Purge(CTime cDate);
@@ -43,7 +43,7 @@ public:
 
 	CFlight* CFlightList::FindByIGCFileName(CString cIGCFileName);
 	CFlight* CFlightList::GetNext(POSITION& pos);
-	CFlight* CFlightList::GetNext(POSITION& pos, CTime cDate);
+	CFlight* CFlightList::GetNext(POSITION& pos, CTime cDate, int nDays=1);
 	BOOL CFlightList::Remove(CFlight &cFlight);
 	CString CFlightList::GetText(CTime &cDate );
 

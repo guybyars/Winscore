@@ -59,8 +59,6 @@ public:
 	enum { IDD = IDD_CONTESTANT };
 	CButton	m_cHandicapLookupButton;
 	CACComboBox	m_cGliderMakeCombo;
-	CStatic	m_cGateGroupText;
-	CComboBox	m_cGateGroupCombo;
 	CButton	m_cImportButton;
 	CListCtrl	m_cCListCtrlBox;
 	CButton	m_CDelete;
@@ -81,6 +79,7 @@ public:
 	BOOL	m_bWithdrew;
 	BOOL	m_bGuest;
 	BOOL	m_bForeign;
+	CString m_strFDR_ID;
 	//}}AFX_DATA
 
 

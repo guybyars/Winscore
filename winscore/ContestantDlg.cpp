@@ -81,8 +81,6 @@ void CContestantDlg::DoDataExchange(CDataExchange* pDX)
 	//{{AFX_DATA_MAP(CContestantDlg)
 	DDX_Control(pDX, IDC_HCLOOKUPBUTTON, m_cHandicapLookupButton);
 	DDX_Control(pDX, IDC_GLIDER_MAKE, m_cGliderMakeCombo);
-	DDX_Control(pDX, IDC_GATE_GROUP_TEXT, m_cGateGroupText);
-	DDX_Control(pDX, IDC_GATE_GROUP_COMBO, m_cGateGroupCombo);
 	DDX_Control(pDX, IDC_CONTROL_BOX, m_cCListCtrlBox);
 	DDX_Control(pDX, IDC_DELETE, m_CDelete);
 	DDX_Control(pDX, IDC_LAST_NAME, m_CLastName);
@@ -96,7 +94,7 @@ void CContestantDlg::DoDataExchange(CDataExchange* pDX)
 	DDV_MaxChars(pDX, m_strFirstName, 20);
 	DDX_Text(pDX, IDC_GLIDER_HANDICAP, m_dHandicap);
 	DDX_Text(pDX, IDC_GLIDER_MAKE, m_strGlider);
-//	DDV_MaxChars(pDX, m_strGlider, 20);
+	DDX_Text(pDX, IDC_FDR_ID, m_strFDR_ID);
 	DDX_Text(pDX, IDC_LAST_NAME, m_strLastName);
 	DDV_MaxChars(pDX, m_strLastName, 20);
 	DDX_Text(pDX, IDC_MIDDLE_NAME, m_strMiddleName);
@@ -163,8 +161,6 @@ BOOL CContestantDlg::OnInitDialog()
 		m_cGliderMakeCombo.AddString(strModelArray[iModel]);
 		}
 
-	m_cGateGroupCombo.SetCurSel(0);
-
 	if( m_pcWinscoreDoc->GetNumClasses()==1 ) 
 		m_cClassCombo.EnableWindow(false);
 
@@ -185,11 +181,6 @@ BOOL CContestantDlg::OnInitDialog()
 		UpdateFromContestant(m_pPreselect);
 		}
 
-	if( GetWinscoreInt( ALLOWTWOGATES, 0 )==0 )
-		{
-		m_cGateGroupCombo.EnableWindow(FALSE);
-		m_cGateGroupText.EnableWindow(FALSE);
-		}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE
@@ -246,13 +237,14 @@ void CContestantDlg::OnApply()
 					 m_strState,
 					 m_strZipcode1,
 					 m_strZipcode2,
+					 m_strFDR_ID,
 					 m_iSSANumber,
 					 m_dHandicap,
 					 m_eClass,
 					 (m_bGuest || m_bForeign),
 					 m_bMotorized,
 					 m_bWithdrew,
-					 m_cGateGroupCombo.GetCurSel()==1?(true):(false),
+					 false,
 					 m_bForeign);
 
 	if( !m_cGliderInfo.IsNull() )
@@ -525,6 +517,7 @@ void CContestantDlg::UpdateFromContestant( CContestant* pcContestant )
 	m_strState=pcContestant->m_strState;
 	m_strZipcode1=pcContestant->m_strZipcode1;
 	m_strZipcode2=pcContestant->m_strZipcode2;
+	m_strFDR_ID=pcContestant->m_strFDR_ID;
 	m_bGuest=pcContestant->IsGuest();
 	m_bForeign=pcContestant->IsForeign();
 	m_eClass=pcContestant->m_eClass;
@@ -536,8 +529,6 @@ void CContestantDlg::UpdateFromContestant( CContestant* pcContestant )
 	m_fSpan		 =pcContestant->m_fSpan;
 	m_fWeight	 =pcContestant->m_fWeight;
 	m_cGliderInfo=pcContestant->m_cGliderInfo;
-
-	m_cGateGroupCombo.SetCurSel(pcContestant->IsInBGroup()?(1):(0));
 
 	m_bMotorized=pcContestant->IsMotorized();
 	m_bWithdrew =pcContestant->HasWithdrawn();

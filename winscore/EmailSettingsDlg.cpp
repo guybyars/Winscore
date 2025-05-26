@@ -55,7 +55,7 @@ void CEmailSettingsDlg::OnTest()
 	UpdateData();
 	CTime cTime;
 	CString strError;
-	int iStatus= ((CAutoScoreDlg*)m_pParentDlg)->ScanEmailForLogs( cTime, m_strServer, m_strUsername, m_strPassword, m_strMailbox, m_iPortID, m_bUseSSL, "", strError, true );
+	int iStatus= ((CAutoScoreDlg*)m_pParentDlg)->ScanEmailForLogs( cTime, 1, m_strServer, m_strUsername, m_strPassword, m_strMailbox, m_iPortID, m_bUseSSL, "", strError, true );
 	if( iStatus<0 ) 
 		{
 		AfxMessageBox("The email server returned the following error:\n\n"+strError);

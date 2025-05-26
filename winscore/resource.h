@@ -661,7 +661,9 @@
 #define IDC_CLEAR                       1494
 #define IDC_MEDIA_CHECK                 1495
 #define IDC_EXPORT                      1496
+#define IDC_CLEAR2                      1496
 #define IDC_EXPORT2                     1497
+#define IDC_UPDATE_FDR_ID               1497
 #define IDC_SELECT                      1498
 #define IDC_CANCEL                      1499
 #define IDC_CHANGE_FOLDER               1500
@@ -691,6 +693,7 @@
 #define IDC_STATIC_PEV_START            1528
 #define IDC_WAIT_TIME_EDIT              1529
 #define IDC_PEV_START_WINDOW_EDIT       1530
+#define IDC_FDR_ID                      1531
 #define IDB_SMALLICONS                  26018
 #define IDB_LARGEICONS                  26019
 #define ID_CONTEST_INFO_TURNPOINT       32771
@@ -786,6 +789,9 @@
 #define ID_NOLOGSTATUS_CHECKEDANDOK     32910
 #define ID_LOGSTATUS_CHECKEDANDOK       32911
 #define ID_EXPORT_TASK_TO_CUP           32912
+#define ID_ANALYZE_SETCONTESTANTFDRID   32912
+#define ID_SETCONTESTANTFDRID           32913
+#define ID_SET_FDR_ID                   32914
 #define NO_ROLL_TIME_DNC                61250
 #define NO_FINISH_TIME                  61251
 #define FINISHED_BUT_LANDOUT            61252
@@ -825,8 +831,8 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        272
-#define _APS_NEXT_COMMAND_VALUE         32912
-#define _APS_NEXT_CONTROL_VALUE         1531
+#define _APS_NEXT_COMMAND_VALUE         32915
+#define _APS_NEXT_CONTROL_VALUE         1532
 #define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif

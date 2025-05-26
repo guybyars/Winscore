@@ -20,7 +20,8 @@ public:
 	eGridPositions	,
 	eScores			,
 	eLogs			,
-	eSetup
+	eSetup          ,
+	ePreContest
 	}	ETreeType;	
 
 	CWSTreeItem(ETreeType eTreeType, CTime cTime=CTime(0), EClass eClass=eStandard);

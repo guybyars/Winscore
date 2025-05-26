@@ -12,10 +12,10 @@ public:
 	bool				 FindIGCFileName( CString strIGCFileName, CString& strFoundIGCFileName );
 	static	bool		 ImportCAI( CString strInputFilePath, CString strInputFileName, CString strLogPath, CString &strOutputFilePath,  CString &strOutputFileName, CString &strStatus, bool &bSecure );
 	static	bool		 ImportIGC( CString strInputFilePath, CString strInputFileName, CString strLogPath, CString &strOutputFileName, CString &strStatus );
-	static	int			 FindIGCFilesInDirectory( CString strPath, CString strType, CTime cDate,  CStringArray &strArrayPath, CStringArray &strArray, int nLevels );
+	static	int			 FindIGCFilesInDirectory( CString strPath, CString strType, CTime cDate, int nDays, CStringArray &strArrayPath, CStringArray &strArray, int nLevels );
 	static  CString      GetFolderDate(CTime cDate);
-			CString		 GetFlightLogPath(CTime cDate=0);
-			int			 FindIGCFiles( CTime cDate,  CStringArray &strArray );
+			CString		 GetFlightLogPath(CTime cDate=0, bool bPreContest=false);
+			int			 FindIGCFiles( CTime cDate,  int nDays, CStringArray &strArray );
 			void		 GetFlightLogFolders(CStringArray &strArray);
 			void		 SetFlightLogFolders(CStringArray &strArray);
 			void		 SaveFlightLogFolders();

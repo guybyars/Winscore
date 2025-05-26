@@ -61,17 +61,13 @@ CString CIGCDirectories::GetNonRelativePath(CString &strFileIn)
 		return GetWSCPath()+"\\"+strFileIn;
 	}
 
-int CIGCDirectories::FindIGCFilesInDirectory( CString strPath, CString strType, CTime cDate,  CStringArray &strArrayPath, CStringArray &strArray, int nLevels )
+int CIGCDirectories::FindIGCFilesInDirectory( CString strPath, CString strType, CTime cDate, int nDays, CStringArray &strArrayPath, CStringArray &strArray, int nLevels )
 	{
 	CFileFind cFindFile;
 	CString strSearchName, strLongSearchName;
 	int nFound=0;
 
 	strSearchName.Format(_T("*.%s"),  strType  );  //Find all .log files 
-
-
-	CString strShortPrefix=CIGCFile::GetDatePrefix( cDate.GetYear(), cDate.GetMonth(), cDate.GetDay() );
-	CString strLongPrefix=CIGCFile::GetLongDatePrefix( cDate.GetYear(), cDate.GetMonth(), cDate.GetDay()) ;
 
 	CString strTemp=strPath+_T("\\");
 	strTemp+=strSearchName;
@@ -92,32 +88,40 @@ int CIGCDirectories::FindIGCFilesInDirectory( CString strPath, CString strType, 
 				{
 				CString strLowerFileName=cFindFile.GetFileName();
 				strLowerFileName.MakeLower();
-				if(  strLowerFileName.Find(strShortPrefix)==0 || strLowerFileName.Find(strLongPrefix)==0			)
+				CTime cCheckDate=cDate;
+				for( int i=0; i<nDays; i++)
 					{
-					// Dates match
-					strArrayPath.Add(cFindFile.GetFilePath());
-					strArray.Add(cFindFile.GetFileName());
-					}
-				else if( strLowerFileName.GetLength()!=12 && strLowerFileName.GetLength()!=25 )
-					{
-					// Non compliant IGC file name, crack the file and check the date
-					try
+					CString strShortPrefix=CIGCFile::GetDatePrefix( cCheckDate.GetYear(), cCheckDate.GetMonth(), cCheckDate.GetDay() );
+					CString strLongPrefix=CIGCFile::GetLongDatePrefix( cCheckDate.GetYear(), cCheckDate.GetMonth(), cCheckDate.GetDay());
+					if(  strLowerFileName.Find(strShortPrefix)==0 || strLowerFileName.Find(strLongPrefix)==0 )
 						{
-						CIGCFile cIGCFile(cFindFile.GetFilePath());
-						if( cIGCFile.m_iYear	==cDate.GetYear() &&
-							cIGCFile.m_iMonth	==cDate.GetMonth() &&
-							cIGCFile.m_iDay		==cDate.GetDay()	)
+						// Dates match
+						strArrayPath.Add(cFindFile.GetFilePath());
+						strArray.Add(cFindFile.GetFileName());
+						break;
+						}
+					else if( strLowerFileName.GetLength()!=12 && strLowerFileName.GetLength()!=25 )
+						{
+						// Non compliant IGC file name, crack the file and check the date
+						try
 							{
-							strArrayPath.Add(cFindFile.GetFilePath());
-							strArray.Add(cFindFile.GetFileName());
+							CIGCFile cIGCFile(cFindFile.GetFilePath());
+							if( cIGCFile.m_iYear	==cCheckDate.GetYear() &&
+								cIGCFile.m_iMonth	==cCheckDate.GetMonth() &&
+								cIGCFile.m_iDay		==cCheckDate.GetDay()	)
+								{
+								strArrayPath.Add(cFindFile.GetFilePath());
+								strArray.Add(cFindFile.GetFileName());
+								break;
+								}
+							}
+						catch(...)
+							{
+							continue;
 							}
 						}
-					catch(...)
-						{
-						continue;
-						}
+					cCheckDate+=CTimeSpan(1,0,0,0);
 					}
-
 				}
 			nFound++;
 			}
@@ -140,7 +144,7 @@ int CIGCDirectories::FindIGCFilesInDirectory( CString strPath, CString strType, 
 
 			if(cFindFile.IsDirectory() )
 				{
-				nFound+=CIGCDirectories::FindIGCFilesInDirectory( cFindFile.GetFilePath(), strType, cDate, strArrayPath, strArray, nLevels-1 );
+				nFound+=CIGCDirectories::FindIGCFilesInDirectory( cFindFile.GetFilePath(), strType, cDate, nDays,  strArrayPath, strArray, nLevels-1 );
 				}
 			}
 		}
@@ -152,7 +156,7 @@ int CIGCDirectories::FindIGCFilesInDirectory( CString strPath, CString strType, 
 
 /*
 
-int CIGCDirectories::FindIGCFilesInDirectory( CString strPath, CString strType, CTime cDate,  CStringArray &strArrayPath, CStringArray &strArray, int nLevels )
+int CIGCDirectories::FindIGCFilesInDirectory( CString strPath, CString strType, CTime cDate,  1, CStringArray &strArrayPath, CStringArray &strArray, int nLevels )
 	{
 	CFileFind cFindFile;
 	CString strSearchName, strLongSearchName;
@@ -218,7 +222,7 @@ int CIGCDirectories::FindIGCFilesInDirectory( CString strPath, CString strType, 
 
 			if(cFindFile.IsDirectory() )
 				{
-				nFound+=CIGCDirectories::FindIGCFilesInDirectory( cFindFile.GetFilePath(), strType, cDate, strArrayPath, strArray, nLevels-1 );
+				nFound+=CIGCDirectories::FindIGCFilesInDirectory( cFindFile.GetFilePath(), strType, cDate,1,  strArrayPath, strArray, nLevels-1 );
 				}
 			}
 		}
@@ -229,7 +233,7 @@ int CIGCDirectories::FindIGCFilesInDirectory( CString strPath, CString strType, 
 */
 
 
-int CIGCDirectories::FindIGCFiles( CTime cDate,  CStringArray &strArray )
+int CIGCDirectories::FindIGCFiles( CTime cDate, int nDays,  CStringArray &strArray )
 	{
 	CFileStatus rStatus;
 	CFileFind cFindFile;
@@ -237,13 +241,13 @@ int CIGCDirectories::FindIGCFiles( CTime cDate,  CStringArray &strArray )
 
 	if( m_bLogPathsByDate )
 		{
-		CIGCDirectories::FindIGCFilesInDirectory( GetNonRelativePath(strBasePath), "igc", cDate,  strArray, strDum, 1 );
+		CIGCDirectories::FindIGCFilesInDirectory( GetNonRelativePath(strBasePath), "igc", cDate,  nDays, strArray, strDum, 1 );
 		}
 	else
 		{
 	for( int iPath=0; iPath<m_straSearchFolders.GetSize(); iPath++)
 		{
-		CIGCDirectories::FindIGCFilesInDirectory( m_straSearchFolders[iPath], "igc", cDate,  strArray, strDum, m_nLevels );
+		CIGCDirectories::FindIGCFilesInDirectory( m_straSearchFolders[iPath], "igc", cDate,  nDays, strArray, strDum, m_nLevels );
 		}
 		}
 
@@ -275,7 +279,7 @@ bool CIGCDirectories::FindIGCFileName( CString strIGCFileName, CString& strFound
 	{
 	CStringArray strArray, strArrayPath;
 
-	int nFound=FindIGCFiles( 0,  strArrayPath );
+	int nFound=FindIGCFiles( 0,  1, strArrayPath );
 	if( nFound==0 ) return false;
 
 	char szFileName1[80], szFileName2[80];
@@ -348,16 +352,19 @@ void	CIGCDirectories::SaveFlightLogFolders()
 			}
 		}
 
-CString CIGCDirectories::GetFlightLogPath(CTime cDate)
+CString CIGCDirectories::GetFlightLogPath(CTime cDate, bool bPreContest)
 	{
 	CString strLogPath;
 	if( m_bLogPathsByDate ) 
 		{
 		strLogPath=strBasePath;
-		if( cDate>0 )
+		if( cDate>0 || bPreContest )
 			{
 			strLogPath+="\\";
-			strLogPath+=GetFolderDate(cDate);
+			if( bPreContest )
+				strLogPath+="PreContest";
+			else
+				strLogPath+=GetFolderDate(cDate);
 			}
 		strLogPath=GetNonRelativePath(strLogPath);
 		CreateDirectory(GetNonRelativePath(strBasePath), NULL);

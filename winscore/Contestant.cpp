@@ -97,6 +97,7 @@ CContestant::CContestant(CContestant *pcContestant)
 	 m_strState		= pcContestant->m_strState;
 	 m_strZipcode1	= pcContestant->m_strZipcode1;
 	 m_strZipcode2	= pcContestant->m_strZipcode2;
+	 m_strFDR_ID	= pcContestant->m_strFDR_ID;
 	 m_iSSANumber	= pcContestant->m_iSSANumber;
 	 m_fHandicap	= pcContestant->m_fHandicap;
 	 m_eClass		= pcContestant->m_eClass;
@@ -122,6 +123,7 @@ CContestant::CContestant(
 					CString &strState,
 					CString &strZipcode1,
 					CString &strZipcode2,
+					CString &strFDR_ID,
 					int iSSANumber,
 					double fHandicap,
 					EClass eClass,
@@ -143,6 +145,7 @@ CContestant::CContestant(
 	 m_strGlider = strGlider;
 	 m_strAddress1 = strAddress1;
 	 m_strAddress2 = strAddress2;
+	 m_strFDR_ID = strFDR_ID;
 	 m_strCity = strCity;
 	 m_strState = strState;
 	 m_strZipcode1 = strZipcode1;
@@ -268,12 +271,8 @@ int CALLBACK CompareContestantName(LPARAM lParam1, LPARAM lParam2,
 						((CContestant*)lParam2)->CitizenText() );
 		break;
 	case 7:
-		if( ((CContestant*)lParam1)->IsInBGroup() && ((CContestant*)lParam2)->IsInBGroup() )
-			iR=0;
-		else if( ((CContestant*)lParam1)->IsInBGroup() && !((CContestant*)lParam2)->IsInBGroup() )
-			iR=1;
-		else 
-			iR= -1;
+		iR=strcmp(  ((CContestant*)lParam1)->m_strFDR_ID,
+						((CContestant*)lParam2)->m_strFDR_ID );
 		break;
 	case 8:
 		iR=	strcmp(  ((CContestant*)lParam1)->AddressText(),
@@ -304,7 +303,8 @@ ostream& operator <<(ostream &os,  CContestant& cCont )
 	PutString( os, cCont.m_strState );
 	PutString( os, cCont.m_strZipcode1 );
 	PutString( os, cCont.m_strZipcode2 );
-		 os<< cCont.m_iSSANumber << TAB
+	PutString( os, cCont.m_strFDR_ID );
+	os<< cCont.m_iSSANumber << TAB
 		   << cCont.m_fHandicap << TAB
 		   << (WORD)cCont.m_eClass << TAB
 		   << (WORD)cCont.m_bGuest << endl;
@@ -358,6 +358,7 @@ istream& operator >>(istream &is,  CContestant& cCont )
 		cCont.m_strState =ExtractString(is);
 		cCont.m_strZipcode1=ExtractString(is);
 		cCont.m_strZipcode2=ExtractString(is);
+		cCont.m_strFDR_ID=ExtractString(is);
 		is  >> cCont.m_iSSANumber; 
 		is  >> cCont.m_fHandicap; 
 		is  >> w;
@@ -383,8 +384,8 @@ CString	CContestant::GetText()
 	num.Format(_T("%lf"),m_fHandicap);
 	str+=num+TAB;
 	str+=CitizenText()+TAB;
-	str+=_T("Gate ");
-	str+=GetGateText()+TAB;
+	str+=_T("FDR ID ");
+	str+=m_strFDR_ID+TAB;
 	num.Format(_T("%d"),m_iSSANumber);
 	str+=num+TAB;
 	if(m_strAddress1!=_T("")	||
@@ -529,6 +530,7 @@ bool CContestant::GetXML(CXMLMgr &cMgr, IDispatch *pIdsp )
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("Zip"),		LPCSTR(m_strZipcode1)));
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("Zip2"),		LPCSTR(m_strZipcode2)));
 	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("Options"),	m_iOptions));
+	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("FDR_ID"),	LPCSTR(m_strFDR_ID)));
 
 	if( GetClass(m_eClass).IsHandicapped() )
 		{
@@ -611,6 +613,8 @@ bool CContestant::GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pIDOMNode )
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("State"),		LPCSTR(m_strState)));
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("Zip"),		LPCSTR(m_strZipcode2)));
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("Zip2"),		LPCSTR(m_strZipcode2)));
+
+	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("FDR_ID"),	LPCSTR(m_strFDR_ID)));
 
 	return true;
 }
@@ -802,6 +806,7 @@ CContestant::CContestant(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pContestant, boo
 	cMgr.SelectChildSTR( pContestant, _T("State"),		m_strState);
 	cMgr.SelectChildSTR( pContestant, _T("Zip"),		m_strZipcode1);
 	cMgr.SelectChildSTR( pContestant, _T("Zip2"),		m_strZipcode2);
+	cMgr.SelectChildSTR( pContestant, _T("FDR_ID"),		m_strFDR_ID);
 
 	GET_XML_DBL	( cMgr, pContestant, _T("Weight"), float, m_fWeight,		0.0);
 	GET_XML_DBL	( cMgr, pContestant, _T("Winglet"),double, m_fWinglet,	    0.0);

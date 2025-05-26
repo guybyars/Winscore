@@ -42,7 +42,9 @@ CAutoScoreDlg::CAutoScoreDlg(CWnd* pParent /*=NULL*/)
 	m_pView=NULL;
 	m_pAutoScoreThread=NULL;
 	m_bRunning=false;
+	m_bPreContest=false;
 	nErrors=0;
+	m_nDays=1;
 
     SetControlInfo(IDSTART,			ANCHORE_BOTTOM);
     SetControlInfo(IDSTOP,			ANCHORE_BOTTOM);
@@ -92,7 +94,7 @@ BOOL CAutoScoreDlg::OnInitDialog()
 	strText+=cIGCDirs.GetFlightLogPath(m_cDate);
 	m_cAnalyzeCheck.SetWindowText(strText);
 
-	m_pDocument->LoadDateComboBox(m_cDateCombo);
+	m_pDocument->LoadDateComboBox(m_cDateCombo,true);
 
 	int nLoaded=LoadContestsFromSSA( &m_cSSACombo, NULL ); 
 	if( nLoaded>0 )
@@ -188,22 +190,25 @@ void CAutoScoreDlg::OnBnClickedStart()
 
 	iDrives=GetLogicalDrives();
 
-  	for( int iClass=0; iClass<NUMCLASSES; iClass++)
+	if( m_cAnalyzeCheck.GetCheck() )
 		{
-		if( GetClass(iClass).IsActive() )
+  		for( int iClass=0; iClass<NUMCLASSES; iClass++)
 			{
-			CTask *pcTask=m_pDocument->m_taskList.GetByDateClass(m_cDate, GetClass(iClass).GetType());
-			if( pcTask ) 
+			if( GetClass(iClass).IsActive() )
 				{
-				bTask=true;
-				break;
+				CTask *pcTask=m_pDocument->m_taskList.GetByDateClass(m_cDate, GetClass(iClass).GetType());
+				if( pcTask ) 
+					{
+					bTask=true;
+					break;
+					}
 				}
 			}
-		}
-	if( !bTask ) 
-		{
-		AfxMessageBox("No tasks have been defined for this day.", MB_ICONSTOP);
-		return;
+		if( !bTask ) 
+			{
+			AfxMessageBox("No tasks have been defined for this day.", MB_ICONSTOP);
+			return;
+			}
 		}
 
   if( m_cSendScoreslCheck.GetCheck() &&
@@ -280,7 +285,7 @@ void CAutoScoreDlg::OnTimer(UINT TimerVal)
 		// New flash drive inserted, check for files
 
 		//Search for igc files regardless of date.
-		bFound = CIGCDirectories::FindIGCFilesInDirectory( strDrive, _T("igc"),  0, strFilePaths, strFiles, 1 )>0;
+		bFound = CIGCDirectories::FindIGCFilesInDirectory( strDrive, _T("igc"),  0, 1, strFilePaths, strFiles, 1 )>0;
 		if( !bFound )
 			{
 			CString strMedia;
@@ -476,9 +481,22 @@ void CAutoScoreDlg::UpdateDate(void)
 
 	CString strText;
 	strText+="Analyze and score new logs found in:  ";
-	strText+=m_cIGCDirs.GetFlightLogPath(m_cDate);
+	strText+=m_cIGCDirs.GetFlightLogPath(m_cDate, iSel==0);
 	m_cAnalyzeCheck.SetWindowText(strText);
 
+	m_cSendScoreslCheck.EnableWindow(iSel>0);
+	m_cSendScoreslCheck.SetCheck(iSel);
+
+	m_bPreContest=iSel==0;
+
+	if( iSel==0 ) 
+		{
+		m_nDays=m_pDocument->GetNumPreContestDays();
+		}
+	else
+		{
+		m_nDays=1;
+		}
 	}
 
 
@@ -528,7 +546,7 @@ void CAutoScoreDlg::OnBnClickedEmailSettingsButton()
 
 
 
-int CAutoScoreDlg::ScanEmailForLogs( CTime cDate, CString strIMAPServer, CString strUsername, CString strPassword, CString strMailbox,  int iPortID, BOOL bUseSSL, CString strLogDir, CString &strError, bool bTestOnly )
+int CAutoScoreDlg::ScanEmailForLogs( CTime cDate, int nDates, CString strIMAPServer, CString strUsername, CString strPassword, CString strMailbox,  int iPortID, BOOL bUseSSL, CString strLogDir, CString &strError, bool bTestOnly )
 	{
     CkImap imap;
 
@@ -536,6 +554,8 @@ int CAutoScoreDlg::ScanEmailForLogs( CTime cDate, CString strIMAPServer, CString
 	int nLogs=0;
 	CFileStatus rStatus;
 	CWaitCursor cWait;
+	CString POORFILEDIR("\\RenamedFiles");
+	CString strStatus;
 
     //  unlock the component 
     success = imap.UnlockComponent("GBYARS.IM11117_hzSh89cg06pM");
@@ -628,10 +648,8 @@ int CAutoScoreDlg::ScanEmailForLogs( CTime cDate, CString strIMAPServer, CString
             //  If the entire emails were downloaded by
             //  calling FetchBundle instead of FetchHeaders,
             //  this would not be necessary.
-			CString strLongPrefix=CIGCFile::GetLongDatePrefix(cDate.GetYear(), cDate.GetMonth(), cDate.GetDay());
-			CString strShortPrefix=CIGCFile::GetDatePrefix(cDate.GetYear(), cDate.GetMonth(), cDate.GetDay());
-			CString POORFILEDIR("\\RenamedFiles");
-			CString strStatus;
+
+
 
 			//Check to see if this is a valid igc file
 			bool bLogs=false;
@@ -649,25 +667,34 @@ int CAutoScoreDlg::ScanEmailForLogs( CTime cDate, CString strIMAPServer, CString
 				if( CFile::GetStatus( strFileName, rStatus ) ) continue;
 
 				//Check to make sure this log is the date of interest
-				if( strAttach.GetLength()==12 )
+				for( int iCheckDate=0; iCheckDate<nDates; iCheckDate++ )
 					{
-					// Short IGC name, check if its valid
-					if( strAttach.Find(strShortPrefix)<0 ) continue;
+					CTime cCheckDate=cDate+CTimeSpan(iCheckDate,0,0,0);
+
+					CString strLongPrefix=CIGCFile::GetLongDatePrefix(cCheckDate.GetYear(), cCheckDate.GetMonth(), cCheckDate.GetDay());
+					CString strShortPrefix=CIGCFile::GetDatePrefix(cCheckDate.GetYear(), cCheckDate.GetMonth(), cCheckDate.GetDay());
+
+					if( strAttach.GetLength()==12 )
+						{
+						// Short IGC name, check if its valid
+						if( strAttach.Find(strShortPrefix)<0 ) continue;
+						}
+					else if( strAttach.GetLength()==25 || strAttach.GetLength()==28 )
+						{// Long IGC name
+						if( strAttach.Find(strLongPrefix)<0 ) continue;
+						}
+					else
+						{
+						//invalid file name, see if we got it already
+						strFileName=strLogDir+POORFILEDIR+"\\"+filename.c_str();
+						if( CFile::GetStatus( strFileName, rStatus ) ) continue;	
+						}
+					// Found at least one new valid log, set flag
+					bLogs=true;
+					break;
 					}
-				else if( strAttach.GetLength()==25 || strAttach.GetLength()==28 )
-					{// Long IGC name
-					if( strAttach.Find(strLongPrefix)<0 ) continue;
-					}
-				else
-					{
-					//invalid file name, see if we got it already
-					strFileName=strLogDir+POORFILEDIR+"\\"+filename.c_str();
-					if( CFile::GetStatus( strFileName, rStatus ) ) continue;	
-					}
-				
 				// Found at least one new valid log, set flag
-				bLogs=true;
-				break;				
+				if (bLogs) break;			
 				}
 
 			// If there are no new logs in this email, skip, don't download the full email
@@ -698,60 +725,68 @@ int CAutoScoreDlg::ScanEmailForLogs( CTime cDate, CString strIMAPServer, CString
 					if( strAttach.Find(".igc")<=0 ) continue;
 
 					//Check to make sure this log is the date of interest
-					if( strAttach.GetLength()==12 )
+					for( int iCheckDate=0; iCheckDate<nDates; iCheckDate++ )
 						{
-						// Short IGC name
-						if( strAttach.Find(strShortPrefix)<0 ) continue;
-						}
-					else if( strAttach.GetLength()==25 || strAttach.GetLength()==28)
-						{// Long IGC name
-						if( strAttach.Find(strLongPrefix)<0 ) continue;
-						}
-					else
-						{
-						//Some idiot renamed his log to something stupid,
-						bOddball=true;
-						}
+						CTime cCheckDate=cDate+CTimeSpan(iCheckDate,0,0,0);
 
-					if( bOddball )
-						{
-						//Some idiot renamed his log to something stupid, lets download it to a temp directory and rename it.
-						CString strLostPath=strLogDir+POORFILEDIR;
-						CreateDirectory(strLostPath,NULL);
-						if( fullEmail->SaveAttachedFile(j, strLostPath) ) 
+						CString strLongPrefix=CIGCFile::GetLongDatePrefix(cCheckDate.GetYear(), cCheckDate.GetMonth(), cCheckDate.GetDay());
+						CString strShortPrefix=CIGCFile::GetDatePrefix(cCheckDate.GetYear(), cCheckDate.GetMonth(), cCheckDate.GetDay());
+
+						if( strAttach.GetLength()==12 )
 							{
-							// We downloaded this poorly named file, lets read the A and HDTE records to synthize a proper name.
-						    strFileName=strLostPath+"\\"+filename;
-							CString strLongName;
-							if( CIGCFile::GetARecord(strFileName, strLongName) )
+							// Short IGC name
+							if( strAttach.Find(strShortPrefix)<0 ) continue;
+							}
+						else if( strAttach.GetLength()==25 || strAttach.GetLength()==28)
+							{// Long IGC name
+							if( strAttach.Find(strLongPrefix)<0 ) continue;
+							}
+						else
+							{
+							//Some idiot renamed his log to something stupid,
+							bOddball=true;
+							}
+
+						if( bOddball )
+							{
+							//Some idiot renamed his log to something stupid, lets download it to a temp directory and rename it.
+							CString strLostPath=strLogDir+POORFILEDIR;
+							CreateDirectory(strLostPath,NULL);
+							if( fullEmail->SaveAttachedFile(j, strLostPath) ) 
 								{
-								// File was opened and we created a valid file name, check the date
-								if( strLongName.Find(strLongPrefix)>=0 ) 
+								// We downloaded this poorly named file, lets read the A and HDTE records to synthize a proper name.
+								strFileName=strLostPath+"\\"+filename;
+								CString strLongName;
+								if( CIGCFile::GetARecord(strFileName, strLongName) )
 									{
-									//This is a good file on todays date.  Some dufus renamed it to something stupid, 
-									//copy over to the good directory, but leave a copy in the temp directory so we won't try and download it again
-									CString strNewName=strLogDir+"\\"+strLongName;
-									if( CopyFile(strFileName, strNewName,TRUE) ) 
+									// File was opened and we created a valid file name, check the date
+									if( strLongName.Find(strLongPrefix)>=0 ) 
 										{
-										nLogs++;
-										strStatus.Format("%s - received from %s (Renamed to %s)",filename,strFrom,strLongName);
-										AddStatusRecord(strStatus);
+										//This is a good file on todays date.  Some dufus renamed it to something stupid, 
+										//copy over to the good directory, but leave a copy in the temp directory so we won't try and download it again
+										CString strNewName=strLogDir+"\\"+strLongName;
+										if( CopyFile(strFileName, strNewName,TRUE) ) 
+											{
+											nLogs++;
+											strStatus.Format("%s - received from %s (Renamed to %s)",filename,strFrom,strLongName);
+											AddStatusRecord(strStatus);
+											}
 										}
 									}
 								}
 							}
-						}
-					else
-						{
-						//Check if we already have this log.
-						strFileName=strLogDir+"\\"+filename;
-						if( CFile::GetStatus( strFileName, rStatus ) ) continue;
-
-						if( fullEmail->SaveAttachedFile(j, strLogDir) ) 
+						else
 							{
-							nLogs++;
-							strStatus.Format("%s - received from %s",filename,strFrom);
-							AddStatusRecord(strStatus);
+							//Check if we already have this log.
+							strFileName=strLogDir+"\\"+filename;
+							if( CFile::GetStatus( strFileName, rStatus ) ) continue;
+
+							if( fullEmail->SaveAttachedFile(j, strLogDir) ) 
+								{
+								nLogs++;
+								strStatus.Format("%s - received from %s",filename,strFrom);
+								AddStatusRecord(strStatus);
+								}
 							}
 						}
 					}
@@ -890,10 +925,12 @@ UINT __cdecl AutoScoreProc( LPVOID lpParameter)
 		//AddStatusRecord("Checking Email "+strIMAPServer);
 
 		CString strError;
-		CString strLogPath	=pView->m_pModlessAutoScoreDlg->m_cIGCDirs.GetFlightLogPath(pView->m_pModlessAutoScoreDlg->m_cDate);
+		CString strLogPath	=pView->m_pModlessAutoScoreDlg->m_cIGCDirs.GetFlightLogPath(pView->m_pModlessAutoScoreDlg->m_cDate,
+																						pView->m_pModlessAutoScoreDlg->m_bPreContest);
+		pView->m_pModlessAutoScoreDlg->AddStatusRecord(strLogPath);
 
 		if( CheckAutoScoreStop(pView) ) return 0;
-		int nLogs=pView->m_pModlessAutoScoreDlg->ScanEmailForLogs( pView->m_pModlessAutoScoreDlg->m_cDate, strIMAPServer, strUsername, strPassword, strMailbox, iPortID, bUseSSL, strLogPath, strError );
+		int nLogs=pView->m_pModlessAutoScoreDlg->ScanEmailForLogs( pView->m_pModlessAutoScoreDlg->m_cDate,  pView->m_pModlessAutoScoreDlg->m_nDays, strIMAPServer, strUsername, strPassword, strMailbox, iPortID, bUseSSL, strLogPath, strError );
 		if( nLogs<0 ) 
 			{
 			strError="ERROR - Checking email at "+strIMAPServer;
@@ -915,7 +952,7 @@ UINT __cdecl AutoScoreProc( LPVOID lpParameter)
 //			AddStatusRecord("Checking Analysis");
 
 		//Get all the IGC files for this date, and remove any that are already associated with a flight
-		pView->m_pModlessAutoScoreDlg->m_cIGCDirs.FindIGCFiles( pView->m_pModlessAutoScoreDlg->m_cDate,  strArray ); 
+		pView->m_pModlessAutoScoreDlg->m_cIGCDirs.FindIGCFiles( pView->m_pModlessAutoScoreDlg->m_cDate, 1,  strArray ); 
 
 		for( int iIGC=0; iIGC<strArray.GetCount(); iIGC++ )
 			{

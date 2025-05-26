@@ -376,6 +376,10 @@ void CMainFrame::ProcessViewChange(EViews eNewView)
 		{
 		pcView->ViewFlightLogs(cCurrentDate, eCurrentClass);
 		}
+	else if( eNewView==ePreContestView  )
+		{
+		pcView->ViewFlightLogs(cCurrentDate, eCurrentClass, true);
+		}
 }
 void CMainFrame::OnUpdateViewGotoForward(CCmdUI* pCmdUI) 
 {
@@ -491,6 +495,11 @@ BOOL CMainFrame::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult)
 				SetClassCombo(pItem->m_eClass);
 				SetDateCombo(pItem->m_cTime);
 				ProcessViewChange(eTaskView);
+				}
+			else if( pItem->m_eTreeType==CWSTreeItem::ePreContest )
+				{
+                SetViewCombo(ePreContestView);
+				ProcessViewChange(ePreContestView);
 				}
 			}
 		}

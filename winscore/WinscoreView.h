@@ -155,6 +155,8 @@ protected:
 	afx_msg void OnImportFlashcard();
 	afx_msg void OnUpdateImportFlashcard(CCmdUI* pCmdUI);
 	afx_msg void OnSsaServer();
+	afx_msg void OnSetFDRID();
+	afx_msg void OnUpdateSetFDRID(CCmdUI* pCmdUI);
 	afx_msg void OnUpdateSsaServer(CCmdUI* pCmdUI);
 	afx_msg void OnUpdateFileImportControlpointsinxmlformat(CCmdUI* pCmdUI);
 	afx_msg void OnUpdateFileExportCpXml(CCmdUI* pCmdUI);
@@ -187,7 +189,7 @@ public:
 	void ViewContestantList();
 	void ViewTurnpointList();
 //	void ViewInvalidLegList();
-	void ViewFlightLogs(CTime cDate, EClass eClass);
+	void ViewFlightLogs(CTime cDate, EClass eClass, bool bPreContest=false);
 	void UpdateFlightLogs(CMainFrame* pFrame, CTime cDate, EClass eClass, CFlight *pcFlight);
 
     void InitialUpdate();

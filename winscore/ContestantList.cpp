@@ -174,7 +174,7 @@ void CContestantList::RemoveByPointer(CContestant* pcRemContestant)
 static _TCHAR *_gszColumnLabel[NUM_COLUMNS] =
 {
 	_T("Name"), _T("ID"), _T("Glider"), _T("Class"), _T("Handicap"),
-	 _T("SSA Number"), _T("Status"),  _T("Gate"), _T("Address"), 
+	 _T("SSA Number"), _T("Status"),  _T("FDR ID"), _T("Address"), 
 };
 
 static int _gnColumnFmt[NUM_COLUMNS] = 
@@ -248,12 +248,7 @@ void CContestantList::SetContestantItem(CListCtrl& ListCtrl, int iItem, CContest
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->HandicapText());
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->SSANumberText());
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->CitizenText());
-
-	if( GetWinscoreInt( ALLOWTWOGATES, 0 )==0 )
-		ListCtrl.SetItemText(iItem,iCol++,_T(""));
-	else
-		ListCtrl.SetItemText(iItem,iCol++,pcContestant->GetGateText());
-
+	ListCtrl.SetItemText(iItem,iCol++,pcContestant->m_strFDR_ID);
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->AddressText());
 	ListCtrl.SetItemData(iItem, (LPARAM)pcContestant);
 	}
@@ -384,9 +379,8 @@ void CContestantList::DrawContestantList(	CDC		*pDC,
 			CString cGlider=pcContestant->m_strGlider;
 			if( pcContestant->IsMotorized() ) cGlider+=_T(" (Motorized)");
 
-			CString strGate;
-			if( m_bTwoGates )
-				strGate=_T(", Gate ")+pcContestant->GetGateText();
+			CString strFDR;
+			strFDR=_T(", FDR ID ")+pcContestant->m_strFDR_ID;
 
 			cText=	pcContestant->m_strLastName+_T(", ")+
 					pcContestant->m_strFirstName+_T(" ")+
@@ -395,7 +389,7 @@ void CContestantList::DrawContestantList(	CDC		*pDC,
 					_T("Glider: ")+cGlider+_T(",  ")+
 					_T("Class: ")+GetClass(pcContestant->m_eClass).GetName(false)+
 					cHandicapText+_T(",  ")+
-					_T("Status: ")+pcContestant->CitizenText()+strGate;
+					_T("Status: ")+pcContestant->CitizenText()+strFDR;
 
 			pDC->TextOut(iTabPos , iYpos, cText, cText.GetLength() );			
 			cTextSize=pDC->GetTextExtent(cText);

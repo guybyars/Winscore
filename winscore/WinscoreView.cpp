@@ -153,6 +153,8 @@ BEGIN_MESSAGE_MAP(CWinscoreView, CListViewEx)
 	ON_UPDATE_COMMAND_UI(ID_FLIGHTLOGS_DELETE, OnUpdateFlightlogsDelete)
 	ON_UPDATE_COMMAND_UI(ID_FLIGHTLOGS_ANALYZEALL, OnUpdateFlightlogsAnalyzeall)
 	ON_COMMAND(ID_EDIT_COPY, OnEditCopy)
+	ON_COMMAND(ID_SET_FDR_ID, OnSetFDRID)
+	ON_UPDATE_COMMAND_UI(ID_SET_FDR_ID, OnUpdateSetFDRID)
 	ON_COMMAND(ID_EXPORT_TO_TASK_LIBRARY, OnExportTaskToLibrary)
 	ON_COMMAND(ID_EXPORT_TASK_TO_CUP, OnExportTaskToCUP)
 	ON_UPDATE_COMMAND_UI(ID_EDIT_COPY, OnUpdateEditCopy)
@@ -493,13 +495,22 @@ void CWinscoreView::ViewTasks()
 	return;
 }
 
-void CWinscoreView::ViewFlightLogs(CTime cDate, EClass eClass)
+void CWinscoreView::ViewFlightLogs(CTime cDate, EClass eClass, bool bPreContest)
 {
 	CSingleLock cLock(&m_cSem_UpdateFlightLogs);
 	CIGCDirectories cIGCDirs;
 
+	CTime cViewDate=cDate;
+	int		nDays=1;
+
 	SaveColumnWidths();
 	CWinscoreDoc* pDocument=GetDocument();
+
+	if( bPreContest )
+		{
+		cViewDate=pDocument->GetPreContestDate();
+		nDays=pDocument->GetNumPreContestDays();
+		}
 
 	CListCtrl& ListCtrl = GetListCtrl();
 	m_eViewType=eFlightLogView;
@@ -508,14 +519,15 @@ void CWinscoreView::ViewFlightLogs(CTime cDate, EClass eClass)
 	pFrame->SetViewCombo(eFlightLogView);
 
 	// Freshen up the list from the flights
-	pDocument->m_FlightList.LoadListFromIGC( cIGCDirs.GetFlightLogPath(), 
-											 cDate, 
+	pDocument->m_FlightList.LoadListFromIGC( cIGCDirs.GetFlightLogPath(0,bPreContest), 
+											 cViewDate,
+											 nDays,
 											 pDocument->m_contestantList );
 
 	DeleteColumnsItems();
 	pDocument->m_FlightList.CreateControlColumns( ListCtrl );
 	RestoreColumnWidths();
-	pDocument->m_FlightList.LoadFlightList(	ListCtrl, cDate, eClass, pDocument->m_contestantList, pDocument->m_eUnits, abs(m_iSortedColumn[eFlightLogView]) );
+	pDocument->m_FlightList.LoadFlightList(	ListCtrl, cViewDate,  nDays, eClass, pDocument->m_contestantList, pDocument->m_eUnits, abs(m_iSortedColumn[eFlightLogView]), bPreContest );
 	ListCtrl.SortItems( CompareFlight, 	m_iSortedColumn[eFlightLogView] );
 
 	UpdateStatusLine();
@@ -2451,11 +2463,11 @@ void CWinscoreView::OnFlightlogsRefresh()
 
 	CIGCDirectories cIGCDir;
 	CStringArray strArray;
-	cIGCDir.FindIGCFiles( cDate,  strArray );
+	cIGCDir.FindIGCFiles( cDate, 1,  strArray );
 
 	if( pFrame->GetViewCombo()==eFlightLogView )
 		{
-	pDocument->m_FlightList.LoadListFromIGC( cIGCDirs.GetFlightLogPath(), cDate, pDocument->m_contestantList );
+	pDocument->m_FlightList.LoadListFromIGC( cIGCDirs.GetFlightLogPath(), cDate, 1, pDocument->m_contestantList );
 	ViewFlightLogs(cDate, eClass );
 }
 	else if( pFrame->GetViewCombo()==eScoreView )
@@ -3113,10 +3125,10 @@ void CWinscoreView::OnImportFlashcard()
 				{
 				CString strDrive=&buff[iPtr];
 
-				bFound=CIGCDirectories::FindIGCFilesInDirectory( strDrive, _T("cai"),  cDate, strFilePaths, strFiles, 4 )>0;
+				bFound=CIGCDirectories::FindIGCFilesInDirectory( strDrive, _T("cai"),  cDate, 1, strFilePaths, strFiles, 4 )>0;
 				if( bFound ) break;
 
-				bFound=CIGCDirectories::FindIGCFilesInDirectory( strDrive, _T("igc"),  cDate, strFilePaths, strFiles, 4 )>0;
+				bFound=CIGCDirectories::FindIGCFilesInDirectory( strDrive, _T("igc"),  cDate, 1, strFilePaths, strFiles, 4 )>0;
 				if( bFound ) break;
 
 				}
@@ -4080,3 +4092,49 @@ void CWinscoreView::OnLogstatusCheckedandok()
 			}
 		}
 }
+
+void CWinscoreView::OnSetFDRID()
+	{
+	if( m_eViewType!=eFlightLogView ) return;
+
+	CWinscoreDoc *pDocument=GetDocument();
+	CArray<int,int> cIntArray;
+	CListCtrl& ListCtrl = GetListCtrl();
+
+	int nSelected=GetSelectedItems(cIntArray);
+	if( nSelected==0 ) 
+		{
+		AfxMessageBox( "No Log Found.",  MB_ICONINFORMATION   );
+		}
+
+	int nChanged=0;
+	for( int i=nSelected-1; i>=0; i-- )
+		{
+		CFlight* pFlight=(CFlight*)ListCtrl.GetItemData(cIntArray[i]);
+		if( pFlight )
+			{
+			CString strCID = pFlight->m_strCID;
+			CContestant *pContestant = pDocument->m_contestantList.GetByContestNo(strCID);
+			if( !pContestant ) continue;
+			pContestant->m_strFDR_ID=pFlight->m_strFDRID;
+			pDocument->SetModifiedFlag();
+			nChanged++;
+			}
+		}
+	if( nChanged>0 )
+		{
+		CString cStatus;
+		cStatus.Format( _T("%d Contestant(s) FDR IDs successfully updated."), nChanged );
+		AfxMessageBox( cStatus,  MB_ICONINFORMATION   );
+		return;
+		}
+	if( nSelected==1 ) 
+		{
+		AfxMessageBox( "No Log Found or Not a Contestant.",  MB_ICONINFORMATION   );
+		}
+	}
+
+void CWinscoreView::OnUpdateSetFDRID(CCmdUI* pCmdUI)
+	{
+	pCmdUI->Enable(  IsFlightSelected()	);
+	}
