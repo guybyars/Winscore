@@ -2914,7 +2914,10 @@ CString CFlight::GetStatusText()
 	else if( m_eStatus==eBelowFinishCylinder )
 		return _T("Incomplete - Below Finish Height")+strOut;
 	else if( m_eStatus==ePreContestMotorRun )
-		return _T("OK Motor Run Detected")+strOut;
+		{
+		strOut=m_cLandingTime.Format(_T(" at %H:%M:%S") );
+		return _T("Motor Run")+strOut;
+		}
 	else if( m_eStatus==eNOPreContestMotorRun )
 		return _T("No Motor Run Detected")+strOut;
 
@@ -3109,6 +3112,78 @@ int CALLBACK CompareFlight(LPARAM lParam1, LPARAM lParam2, LPARAM iColumn)
 		return iFact*((CFlight*)lParam1)->GetIGCFileNameText().CompareNoCase(((CFlight*)lParam2)->GetIGCFileNameText());
 
 	case 15: // Flight Log Security
+		if( ((CFlight*)lParam1)->SecurityPassed() == ((CFlight*)lParam2)->SecurityPassed() )
+		   return 0;
+		else if( ((CFlight*)lParam1)->SecurityPassed() && !((CFlight*)lParam2)->SecurityPassed() )
+		   return 1;
+		else if( !((CFlight*)lParam1)->SecurityPassed() && ((CFlight*)lParam2)->SecurityPassed() )
+		   return -1;
+	}
+	return 0;
+}
+
+int CALLBACK ComparePreContestFlight(LPARAM lParam1, LPARAM lParam2, LPARAM iColumn)
+{
+	if( lParam1==NULL && lParam2!=NULL ) 
+		return 1;
+
+	if( lParam1!=NULL && lParam2==NULL ) 
+		return -1;
+
+	if( lParam1==NULL && lParam2==NULL ) 
+		return 0;
+
+	int iFact=1;
+	if( iColumn<0 ) 
+		{
+		iFact=-1;
+		}
+	switch( abs(iColumn)-1 )
+		{
+/*
+	_T("Date"), 
+	_T("ID"), 
+	_T("Name"), 
+	_T("Status"),
+	_T("ENL (min/max)"),
+	_T("MOP (min/max)"),
+	_T("Logger FDR ID"),
+	_T("Contestant FDR ID"),
+	_T("IGC File Name"), 
+	_T("Security")
+	*/
+	case 0: // Date
+		{
+		CTime cTime1(((CFlight*)lParam1)->m_iYear,((CFlight*)lParam1)->m_iMonth,((CFlight*)lParam1)->m_iDay,0,0,0);
+		CTime cTime2(((CFlight*)lParam2)->m_iYear,((CFlight*)lParam2)->m_iMonth,((CFlight*)lParam2)->m_iDay,0,0,0);
+		return iFact*strcmp( cTime1.Format( _T("%B %d, %Y")),
+			  				 cTime2.Format( _T("%B %d, %Y"))  );
+		}
+	case 1: // Contest NO
+		return iFact*strcmp( ((CFlight*)lParam1)->m_strCID,
+			  				 ((CFlight*)lParam2)->m_strCID  );
+	case 2: // Pilot Name
+		return iFact*((CFlight*)lParam1)->m_strPilot.CompareNoCase(((CFlight*)lParam2)->m_strPilot);
+	
+	case 3:  // Status
+		return iFact*strcmp(  ((CFlight*)lParam1)->GetStatusText(),
+							  ((CFlight*)lParam2)->GetStatusText() );
+	case 4:  // ENL
+		return 0;
+
+	case 5:  // MOP
+		return 0;
+
+	case 6: // Logger FDR
+		return iFact*strcmp(  ((CFlight*)lParam1)->m_strFDRID,
+							  ((CFlight*)lParam2)->m_strFDRID);
+	case 7: // Contestant FDR
+		return iFact*strcmp(  ((CFlight*)lParam1)->m_strFDRID,
+							  ((CFlight*)lParam2)->m_strFDRID);
+	case 8: // igc filename
+		return iFact*((CFlight*)lParam1)->GetIGCFileNameText().CompareNoCase(((CFlight*)lParam2)->GetIGCFileNameText());
+
+	case 9: // Flight Log Security
 		if( ((CFlight*)lParam1)->SecurityPassed() == ((CFlight*)lParam2)->SecurityPassed() )
 		   return 0;
 		else if( ((CFlight*)lParam1)->SecurityPassed() && !((CFlight*)lParam2)->SecurityPassed() )
@@ -3762,6 +3837,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 		if( bPreContest ) 
 			{
 			m_eStatus = ePreContestMotorRun;
+			m_cLandingTime=pcLongestMotorOn->m_cTime;
 			return;
 			}
 

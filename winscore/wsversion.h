@@ -3,13 +3,17 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2025
-#define WINSCOREVERSION		_T("2025 Rev 5")
-#define SHORTVERSION			 _T("Rev 5")
+#define WINSCOREVERSION		_T("2025 Rev 6")
+#define SHORTVERSION			 _T("Rev 6")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2025
+
+Rev 6
+	* Added precontest motor run detections
+
 Rev 5
 	* Corrected additional PEV start issues.
 

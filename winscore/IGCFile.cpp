@@ -170,7 +170,7 @@ bool CIGCFile::ProcessARecord(CString strRecord)
 	m_strFDRID.TrimLeft();
 	m_strFDRID.TrimRight();
 
-	if( m_strFDRID[3]=='_' )
+	if( m_strFDRID[3]=='_' || m_strFDRID[3]==',' )
 		{
 		m_strFDRID=m_strFDRID.Left(3);
 		}

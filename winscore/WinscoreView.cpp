@@ -667,19 +667,15 @@ void CWinscoreView::OnColumnclick(NMHDR* pNMHDR, LRESULT* pResult)
 	case eTaskView:
 		ListCtrl.SortItems( CompareTasks, m_iSortedColumn[m_eViewType] );
 		return;
-//	case eLandingCardView:
-//		ListCtrl.SortItems( CompareLandingCards, m_iSortedColumn[m_eViewType] );
-//		return;		
 	case eScoreView:
 		ListCtrl.SortItems( CompareScores, m_iSortedColumn[m_eViewType] );
 		return;		
-//	case eInvalidLegView:
-//		ListCtrl.SortItems( CompareInvalidLegs, m_iSortedColumn[m_eViewType] );
-//		return;		
 	case eFlightLogView:
 		ListCtrl.SortItems( CompareFlight, m_iSortedColumn[m_eViewType] );
 		return;		
-
+	case ePreContestView:
+		ListCtrl.SortItems( ComparePreContestFlight, m_iSortedColumn[m_eViewType] );
+		return;	
 	}
 
 	*pResult = 0;
@@ -1966,11 +1962,11 @@ void CWinscoreView::OnUpdateFlightlogsDelete(CCmdUI* pCmdUI)
 
 void CWinscoreView::OnUpdateFlightlogsAnalyzeall(CCmdUI* pCmdUI) 
 {
-//	CWinscoreDoc* pDocument=GetDocument();
-//	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
+	CWinscoreDoc* pDocument=GetDocument();
+	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
 
-//	pCmdUI->Enable(  pDocument->Valid() &&
-//					 pFrame->GetViewCombo()==eFlightLogView );
+	pCmdUI->Enable(  pDocument->Valid() &&
+					 pFrame->GetViewCombo()==eFlightLogView );
 }
 
 void CWinscoreView::OnEditCopy() 
@@ -2448,13 +2444,20 @@ void CWinscoreView::OnFlightlogsViewanalysis()
 	bool bSuccess=cFlight.Analyze(	pDocument->m_taskList.GetByDateClass(cDate, pcFlight->m_eClass), 
 										pDocument->m_turnpointArray,
 										&pDocument->m_contestantList,
-										pDocument->m_eUnits);
+										pDocument->m_eUnits,
+										false,
+										m_eViewType==ePreContestView);
 	if( !bSuccess ) return;
 
 	dlg.DoModal();
 	cFlight.FreePositionData();
 
 	pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+	if( m_eViewType==eFlightLogView )
+		pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+	else
+		pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, GetSelectedItem() );
+
 	pDocument->SetModifiedFlag();
 
 
@@ -2472,7 +2475,7 @@ void CWinscoreView::OnDblClickFlightView()
 	CFlight* pcFlight=(CFlight*)GetSelectedPtr();
 	if( pcFlight==NULL ) return;
 
-	if( pcFlight->NumberOfActiveWarnings() >0 )
+	if( pcFlight->NumberOfActiveWarnings() >0 && m_eViewType==eFlightLogView)
 		OnFlightlogsViewwarnings();
 	else
 		OnFlightlogsDisplay();

@@ -360,6 +360,7 @@ private:
 };
 
 int CALLBACK CompareFlight(LPARAM lParam1, LPARAM lParam2, LPARAM iColumn);
+int CALLBACK ComparePreContestFlight(LPARAM lParam1, LPARAM lParam2, LPARAM iColumn);
 
 #endif // !defined(AFX_FLIGHT_H__6F701641_D984_11D2_B0BD_0080C84B0161__INCLUDED_)
 
