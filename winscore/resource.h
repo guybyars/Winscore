@@ -116,6 +116,7 @@
 #define IDD_SELECT_CLASS_DIALOG         266
 #define IDD_NOLOGFOUNDSTATUS            268
 #define IDR_COPY_ANALYSIS               269
+#define IDR_PRECONTESTFLIGHTMENU        270
 #define IDD_AUTOSAVE_OPTIONS            271
 #define IDR_AVI1                        402
 #define IDC_TURNPOINT_ID                1000
@@ -661,7 +662,6 @@
 #define IDC_CLEAR                       1494
 #define IDC_MEDIA_CHECK                 1495
 #define IDC_EXPORT                      1496
-#define IDC_CLEAR2                      1496
 #define IDC_EXPORT2                     1497
 #define IDC_UPDATE_FDR_ID               1497
 #define IDC_SELECT                      1498

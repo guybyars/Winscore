@@ -345,6 +345,21 @@ BEGIN
     END
 END
 
+IDR_PRECONTESTFLIGHTMENU MENU
+BEGIN
+    POPUP "Analyze"
+    BEGIN
+        MENUITEM "View IGC...",                 ID_FLIGHTLOGS_VIEWIGCFILE
+        MENUITEM "Analyze...",                  ID_FLIGHTLOGS_ANALYZEFLIGHT
+        MENUITEM "View Warnings...",            ID_FLIGHTLOGS_VIEWWARNINGS
+        MENUITEM "View Analysis...",            ID_FLIGHTLOGS_VIEWANALYSIS
+        MENUITEM "Display...",                  ID_FLIGHTLOGS_DISPLAY
+        MENUITEM "Set Contestant FDR ID",       ID_SET_FDR_ID
+        MENUITEM "Check Security",              32875
+        MENUITEM "Delete",                      32833
+    END
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1666,10 +1681,10 @@ BEGIN
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,118,117,10
     PUSHBUTTON      "Scoresheet transfer settings...",IDC_TRANSFER_SETTINGS_BUTTON,154,114,123,14
     LTEXT           "Next event in : 5 seconds",IDC_NEXT_EVENT_STATIC,21,157,161,8
-    COMBOBOX        IDC_DATE_COMBO,39,8,150,67,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DATE_COMBO,39,8,177,67,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     LTEXT           "Date:  ",IDC_STATIC,7,12,23,8
     COMBOBOX        IDC_SSA,268,8,150,139,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Contest:",IDC_STATIC,207,12,29,8
+    LTEXT           "Contest:",IDC_STATIC,226,12,29,8
     CONTROL         "Continuously check for removable media (flash drives, thumb drives... etc)",IDC_MEDIA_CHECK,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,30,371,10
     CONTROL         "Automaticaly save Winscore data file",IDC_AUTOSAVE_CHECK,

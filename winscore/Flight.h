@@ -64,7 +64,9 @@ enum EFlightStatus {	eNotAnalyzed,
 						eNotEnteredInContest,
 						eNoLandingCardSpecified,
 						eNoData,
-						eBelowFinishCylinder};
+						eBelowFinishCylinder,
+						ePreContestMotorRun,
+						eNOPreContestMotorRun};
 
 
 class CFlight : public CIGCFile  
@@ -92,7 +94,8 @@ public:
 				TURNPOINTCLASSARRAY &turnpointArray,
 				CONTESTANTLISTCLASS	*contestantList,
 				EUnits				eUnits,
-				bool				bSilent=false);
+				bool				bSilent=false,
+				bool				bPreContest=false);
 
 
 	void	AssignPositionStatus(	TASKCLASS* pcTask, 
@@ -195,7 +198,7 @@ public:
 	CLocation&	GetLandingLocation();
 
 	int AddToList(CListCtrl & ListCtrl, BOOL fVisible=FALSE, int iItem= -1 );
-
+	int AddToPreContestList(CListCtrl & ListCtrl, CContestant *pcContestant, BOOL fVisible=FALSE, int iItem= -1 );
 
 /////////////////////  Input Data    ///////////////////
 public:
@@ -302,7 +305,7 @@ public:
 	void LocateFurthestProgess(TASKCLASS *pcTask, CGate &cFinish, TURNPOINTCLASSARRAY &cTurnpointArray);
 	int GetTaskPointID(int iTskPt);
 	void SetAcheviedTurnpoint(int i, int IID);
-	void CheckMotorRun(bool bBeforeStart=false);
+	void CheckMotorRun(bool bBeforeStart=false, bool bPreContest=false);
 	void CheckBFI();
 	bool UpdateCID(CONTESTANTLISTCLASS *contestantList);
 	void CheckAllTimes();

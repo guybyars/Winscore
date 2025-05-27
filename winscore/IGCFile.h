@@ -97,6 +97,11 @@ public:
 	int			m_iMOPStartPos;
 	int			m_iMOPEndPos;
 
+	int			m_iENLMin;
+	int			m_iENLMax;
+	int			m_iMOPMin;
+	int			m_iMOPMax;
+
 	bool		m_bCONVCAM;
 
 private:

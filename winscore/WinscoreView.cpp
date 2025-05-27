@@ -505,18 +505,24 @@ void CWinscoreView::ViewFlightLogs(CTime cDate, EClass eClass, bool bPreContest)
 
 	SaveColumnWidths();
 	CWinscoreDoc* pDocument=GetDocument();
+	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
+	CListCtrl& ListCtrl = GetListCtrl();
 
 	if( bPreContest )
 		{
 		cViewDate=pDocument->GetPreContestDate();
 		nDays=pDocument->GetNumPreContestDays();
+		pFrame->SetViewCombo(ePreContestView);
+		m_eViewType=ePreContestView;
+		}
+	else
+		{
+		cViewDate=cDate;
+		nDays=1;
+		pFrame->SetViewCombo(eFlightLogView);
+		m_eViewType=eFlightLogView;
 		}
 
-	CListCtrl& ListCtrl = GetListCtrl();
-	m_eViewType=eFlightLogView;
-
-  	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
-	pFrame->SetViewCombo(eFlightLogView);
 
 	// Freshen up the list from the flights
 	pDocument->m_FlightList.LoadListFromIGC( cIGCDirs.GetFlightLogPath(0,bPreContest), 
@@ -525,7 +531,7 @@ void CWinscoreView::ViewFlightLogs(CTime cDate, EClass eClass, bool bPreContest)
 											 pDocument->m_contestantList );
 
 	DeleteColumnsItems();
-	pDocument->m_FlightList.CreateControlColumns( ListCtrl );
+	pDocument->m_FlightList.CreateControlColumns( ListCtrl, bPreContest );
 	RestoreColumnWidths();
 	pDocument->m_FlightList.LoadFlightList(	ListCtrl, cViewDate,  nDays, eClass, pDocument->m_contestantList, pDocument->m_eUnits, abs(m_iSortedColumn[eFlightLogView]), bPreContest );
 	ListCtrl.SortItems( CompareFlight, 	m_iSortedColumn[eFlightLogView] );
@@ -567,7 +573,12 @@ void CWinscoreView::UpdateFlightLogs(CMainFrame* pFrame, CTime cDate, EClass eCl
 			if( nInList==1 ) 
 				{
 			pcFlight->m_eUnits=pDocument->m_eUnits;
-			pcFlight->AddToList( ListCtrl, TRUE, iItem );
+
+			if( m_eViewType==eFlightLogView )
+				pcFlight->AddToList( ListCtrl, TRUE, iItem );
+			else
+				pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, iItem );
+
 			RemoveWinscoreEntry(getNoLogKey(pcFlight->m_strCID, cDate));
 			ListCtrl.UpdateWindow();
 			break;
@@ -578,7 +589,10 @@ void CWinscoreView::UpdateFlightLogs(CMainFrame* pFrame, CTime cDate, EClass eCl
 				 if(strIGC== pcFlight->m_strFileName ) 
 					{
 					pcFlight->m_eUnits=pDocument->m_eUnits;
-					pcFlight->AddToList( ListCtrl, TRUE, iItem );
+					if( m_eViewType==eFlightLogView )
+						pcFlight->AddToList( ListCtrl, TRUE, iItem );
+					else
+						pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, iItem );
 					RemoveWinscoreEntry(getNoLogKey(pcFlight->m_strCID, cDate));
 					ListCtrl.UpdateWindow();
 					break;
@@ -1460,7 +1474,7 @@ void CWinscoreView::OnLButtonDblClk(UINT nFlags, CPoint point)
 		OnContestInfoTurnpoint();
 	else if( m_eViewType==eTaskView)
 		OnDailyinfoTask();
-	else if( m_eViewType==eFlightLogView)
+	else if( m_eViewType==eFlightLogView ||m_eViewType==ePreContestView)
 		OnDblClickFlightView();
 	pItemPreselect= NULL;
 
@@ -1851,8 +1865,7 @@ BOOL CWinscoreView::IsFlightSelected()
 	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
 
 	return ( pDocument->Valid() &&
-					 pFrame->GetViewCombo()==eFlightLogView &&
-					 GetSelectedPtr()!=NULL						);
+			 (pFrame->GetViewCombo()==eFlightLogView || pFrame->GetViewCombo()==ePreContestView) && GetSelectedPtr()!=NULL );
 }
 
 void CWinscoreView::OnFlightlogsDelete() 
@@ -2122,6 +2135,8 @@ void CWinscoreView::OnContextMenu(CWnd* pWnd, CPoint point)
 	// Make sure we are in the flight veiw 
 	if( eView==eFlightLogView )
 		iMenu=IDR_FLIGHTMENU;
+	else if( eView==ePreContestView )
+		iMenu=IDR_PRECONTESTFLIGHTMENU;
 	else if( eView==eScoreView )
 		iMenu=IDR_SCORELIST;
 	else if( eView==eTaskView )
@@ -2167,7 +2182,10 @@ void CWinscoreView::OnFlightlogsViewwarnings()
 		dlg.m_pDoc=GetDocument();
 		dlg.m_pView=this;
 		dlg.DoModal();
-		pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+		if( m_eViewType==eFlightLogView )
+			pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+		else
+			pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, GetSelectedItem() );
 		pDocument->SetModifiedFlag();
 		}
 }
@@ -2219,7 +2237,10 @@ void CWinscoreView::OnFlightlogsAnalyzeflight()
 				{
 				AfxMessageBox(_T("IGC file for this pilot could not be found.\n Cannot analyze flight without it."));
 				pcFlight->SetIGCFileMissing();
-				pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+				if( m_eViewType==eFlightLogView )
+					pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+				else
+					pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, GetSelectedItem() );
 				return;
 				}
 			else
@@ -2236,7 +2257,10 @@ void CWinscoreView::OnFlightlogsAnalyzeflight()
 				{
 				AfxMessageBox(_T("IGC file for this pilot could not be found.\n Cannot analyze flight without it."));
 				pcFlight->SetIGCFileMissing();
-				pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+				if( m_eViewType==eFlightLogView )
+					pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+				else
+					pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, GetSelectedItem() );
 				return;
 				}
 			else
@@ -2247,7 +2271,9 @@ void CWinscoreView::OnFlightlogsAnalyzeflight()
 		pcFlight->Analyze(	pDocument->m_taskList.GetByDateClass(cDate, eClass), 
 							pDocument->m_turnpointArray,
 							&pDocument->m_contestantList,
-							pDocument->m_eUnits);
+							pDocument->m_eUnits,
+							false,
+							m_eViewType==ePreContestView );
 		pcFlight->m_eUnits=pDocument->m_eUnits;
 
 		int iWarn=pcFlight->GetWarning(eStartLatest);
@@ -2264,7 +2290,10 @@ void CWinscoreView::OnFlightlogsAnalyzeflight()
 			}
 		pcFlight->FreePositionData();
 
-		pcFlight->AddToList( GetListCtrl(), TRUE, cIntArray[iSel] );
+		if( m_eViewType==eFlightLogView )
+			pcFlight->AddToList( GetListCtrl(), TRUE, cIntArray[iSel] );
+		else
+			pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, cIntArray[iSel] );
 		}
 	pDocument->SetModifiedFlag();
 }
@@ -2409,7 +2438,10 @@ void CWinscoreView::OnFlightlogsViewanalysis()
 		{
 		AfxMessageBox(_T("IGC file for this pilot could not be found.\n Cannot view analysis without it."));
 		pcFlight->SetIGCFileMissing();
-		pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+		if( m_eViewType==eFlightLogView )
+			pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+		else
+			pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, GetSelectedItem() );
 		return;
 		}
 	cFlight.m_pDoc=pDocument;
@@ -2467,9 +2499,9 @@ void CWinscoreView::OnFlightlogsRefresh()
 
 	if( pFrame->GetViewCombo()==eFlightLogView )
 		{
-	pDocument->m_FlightList.LoadListFromIGC( cIGCDirs.GetFlightLogPath(), cDate, 1, pDocument->m_contestantList );
-	ViewFlightLogs(cDate, eClass );
-}
+		pDocument->m_FlightList.LoadListFromIGC( cIGCDirs.GetFlightLogPath(), cDate, 1, pDocument->m_contestantList );
+		ViewFlightLogs(cDate, eClass );
+		}
 	else if( pFrame->GetViewCombo()==eScoreView )
 		{
 		RefreshScoreDisplay();
@@ -2487,11 +2519,9 @@ void CWinscoreView::OnUpdateFlightlogsRefresh(CCmdUI* pCmdUI)
 
 CString CWinscoreView::GetStatusLine()
 	{
-
 	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
 	EViews eView=pFrame->GetViewCombo();
 	CString cStatus=_T("Ready");
-
 
 //  Set the default print selection
 	if( eView== eContestantView	 )
@@ -2506,7 +2536,7 @@ CString CWinscoreView::GetStatusLine()
 		{
 		cStatus.Format(_T("%d Tasks"), GetListCtrl().GetItemCount() );
 		}	
-	else if( eView==eFlightLogView )
+	else if( eView==eFlightLogView || eView==ePreContestView )
 		{
 		cStatus.Format(_T("%d Flights"), GetListCtrl().GetItemCount() );
 		}	
@@ -2537,7 +2567,7 @@ void CWinscoreView::OnFlightlogsDisplay()
 	CFlight* pcFlight=NULL;
 	CFlightDisplayDlg dlg;
 
-	if( m_eViewType==eFlightLogView )
+	if( m_eViewType==eFlightLogView || m_eViewType==ePreContestView )
 		{
 		if( !IsFlightSelected() ) return;
 		pcFlight=(CFlight*)GetSelectedPtr();
@@ -2588,7 +2618,7 @@ void CWinscoreView::OnFlightlogsDisplay()
 void CWinscoreView::OnUpdateFlightlogsDisplay(CCmdUI* pCmdUI) 
 {
 	pCmdUI->Enable( false	);			
-	if( m_eViewType==eFlightLogView )
+	if( m_eViewType==eFlightLogView ||  m_eViewType==ePreContestView )
 		{
 		pCmdUI->Enable(  IsFlightSelected()	);			
 		}
@@ -3347,6 +3377,7 @@ void CWinscoreView::OnFileImportControlpointsincaidatformat()
 void CWinscoreView::OnFlightlogsCheckSecurity()
 	{
 	if( !IsFlightSelected() ) return;
+	CWinscoreDoc* pDocument=GetDocument();
 	CFlight* pcFlight=(CFlight*)GetSelectedPtr();
 	if( pcFlight==NULL ) return;
 	pcFlight->m_strFilePath;
@@ -3373,15 +3404,21 @@ void CWinscoreView::OnFlightlogsCheckSecurity()
 		AfxMessageBox(cMess,MB_ICONSTOP );
 		pcFlight->SetSecurityFailed(); 
 		}		
-	pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
-	CWinscoreDoc* pDocument=GetDocument();
+
+	if( m_eViewType==eFlightLogView )
+		pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+	else
+		{
+		pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, GetSelectedItem() );
+		}
+
 	pDocument->SetModifiedFlag();
 	}
 	
 void CWinscoreView::OnUpdateFlightlogsCheckSecurity(CCmdUI* pCmdUI)
 	{
 	pCmdUI->Enable( false	);			
-	if( m_eViewType==eFlightLogView )
+	if( m_eViewType==eFlightLogView ||  m_eViewType==ePreContestView )
 		{
 		pCmdUI->Enable(  IsFlightSelected()	);			
 		}
@@ -4095,7 +4132,7 @@ void CWinscoreView::OnLogstatusCheckedandok()
 
 void CWinscoreView::OnSetFDRID()
 	{
-	if( m_eViewType!=eFlightLogView ) return;
+	if( m_eViewType!=eFlightLogView && m_eViewType!=ePreContestView ) return;
 
 	CWinscoreDoc *pDocument=GetDocument();
 	CArray<int,int> cIntArray;
@@ -4117,6 +4154,14 @@ void CWinscoreView::OnSetFDRID()
 			CContestant *pContestant = pDocument->m_contestantList.GetByContestNo(strCID);
 			if( !pContestant ) continue;
 			pContestant->m_strFDR_ID=pFlight->m_strFDRID;
+
+			if( m_eViewType==eFlightLogView )
+				pFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+			else
+				{
+				pFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pFlight->m_strCID), TRUE, GetSelectedItem() );
+				}
+
 			pDocument->SetModifiedFlag();
 			nChanged++;
 			}

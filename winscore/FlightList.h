@@ -33,7 +33,7 @@ public:
 	CFlightList();
 	virtual ~CFlightList();
 
-	void CFlightList::CreateControlColumns(CListCtrl& ListCtrl);
+	void CFlightList::CreateControlColumns(CListCtrl& ListCtrl,bool bPreContest=false);
 	void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, int nDays, EClass eClass, CContestantList &contestantList, EUnits, int iSortColumn, bool bPreContest=false);
 	void CFlightList::AddToList(CFlight * pcAddFlight);
 	void CFlightList::Purge();

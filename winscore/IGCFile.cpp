@@ -49,6 +49,10 @@ CIGCFile::CIGCFile()
 	m_nInvalidFixes=0;
 	m_iMaxPresAltitude=0;
 	m_iMaxGPSAltitude=0;
+	m_iENLMin=0;
+	m_iENLMax=0;
+	m_iMOPMin=0;
+	m_iMOPMax=0;
 	}
 
 CIGCFile::~CIGCFile()
@@ -78,6 +82,10 @@ CIGCFile::CIGCFile(CString strIGCFileName)
 	m_iMaxPresAltitude=0;
 	m_iMaxGPSAltitude=0;
 	m_bCONVCAM=false;
+	m_iENLMin=0;
+	m_iENLMax=0;
+	m_iMOPMin=0;
+	m_iMOPMax=0;
 
 	char  cRecord[MAXLINELEN] ;
 	CTime	cCurrentDate;	
@@ -639,12 +647,25 @@ bool CIGCFile::ReadFlight(bool bReadWaypoints)
 		}
 
 
-	// Now adjust all the times for itime offset
+	// Now adjust all the times for itime offset, and update the ENL/MOP min/maxes
 	for( int iPos=0; iPos<m_PositionArray.GetSize(); iPos++)
 		{
 		((CPosition*)m_PositionArray[iPos])->m_cTime-=CTimeSpan(iTimeZone*60*60);
-		}
 
+		m_iENLMax=max(m_iENLMax,((CPosition*)m_PositionArray[iPos])->m_iEngineNoiseLevel);
+		m_iMOPMax=max(m_iMOPMax,((CPosition*)m_PositionArray[iPos])->m_iMOPLevel);
+		if( iPos==0 )
+			{
+			m_iENLMin=1000;
+			m_iMOPMin=1000;
+			}
+		else
+			{
+			m_iENLMin=min(m_iENLMin,((CPosition*)m_PositionArray[iPos])->m_iEngineNoiseLevel);
+			m_iMOPMin=min(m_iMOPMin,((CPosition*)m_PositionArray[iPos])->m_iMOPLevel);
+			}
+		}
+	
 	// If we just read it, it can't be missing.
 	SetIGCFileMissing(false);
 
@@ -891,6 +912,10 @@ CIGCFile::CIGCFile(CIGCFile *pcIGCFile)
 	m_iMOPStartPos		=pcIGCFile->m_iMOPStartPos;
 	m_iMOPEndPos		=pcIGCFile->m_iMOPEndPos;
 	m_iTimeZone			=pcIGCFile->m_iTimeZone;
+	m_iENLMin			=pcIGCFile->m_iENLMin;
+	m_iENLMax			=pcIGCFile->m_iENLMax;
+	m_iMOPMin			=pcIGCFile->m_iMOPMin;
+	m_iMOPMax			=pcIGCFile->m_iMOPMax;
 	}
 
 
@@ -989,9 +1014,14 @@ void CIGCFile::GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode)
 
 	cMgr.CreateElementIntC( pChildNode, _T("NumPositionPoints"), m_nPositionPoints);
 	cMgr.CreateElementIntC( pChildNode, _T("Day"),				m_iDay);
-	cMgr.CreateElementIntC( pChildNode, _T("Month"),				m_iMonth);
+	cMgr.CreateElementIntC( pChildNode, _T("Month"),			m_iMonth);
 	cMgr.CreateElementIntC( pChildNode, _T("Year"),				m_iYear);
 	cMgr.CreateElementIntC( pChildNode, _T("TimeZone"),			m_iTimeZone);
+
+	cMgr.CreateElementIntC( pChildNode, _T("MinENL"),			m_iENLMin);
+	cMgr.CreateElementIntC( pChildNode, _T("MaxENL"),			m_iENLMax);
+	cMgr.CreateElementIntC( pChildNode, _T("MinMOP"),			m_iMOPMin);
+	cMgr.CreateElementIntC( pChildNode, _T("MaxMOP"),			m_iMOPMax);
 	}
 
 void CIGCFile::ImportXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pIGCNode)
@@ -1020,10 +1050,16 @@ void CIGCFile::ImportXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pIGCNode)
 
 
 	GET_XML_INT( cMgr, pChildNode, _T("NumPositionPoints"),	int, m_nPositionPoints, 0);
-	GET_XML_INT( cMgr, pChildNode, _T("Day"),					int, m_iDay, 0);
+	GET_XML_INT( cMgr, pChildNode, _T("Day"),				int, m_iDay, 0);
 	GET_XML_INT( cMgr, pChildNode, _T("Month"),				int, m_iMonth, 0);
 	GET_XML_INT( cMgr, pChildNode, _T("Year"),				int, m_iYear, 0);
 	GET_XML_INT( cMgr, pChildNode, _T("TimeZone"),			int, m_iTimeZone, 0);
+
+	GET_XML_INT( cMgr, pChildNode, _T("MinENL"),			int, m_iENLMin,0);
+	GET_XML_INT( cMgr, pChildNode, _T("MaxENL"),			int, m_iENLMax,0);
+	GET_XML_INT( cMgr, pChildNode, _T("MinMOP"),			int, m_iMOPMin,0);
+	GET_XML_INT( cMgr,pChildNode,  _T("MaxMOP"),			int, m_iMOPMax,0);
+
 	}
 
 bool CIGCFile::IsVolkslogger()

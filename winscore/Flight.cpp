@@ -105,7 +105,8 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 							TURNPOINTCLASSARRAY &turnpointArray,
 							CONTESTANTLISTCLASS *pContestantList,
 							EUnits				eUnits,
-							bool				bSilent	)
+							bool				bSilent,
+							bool				bPreContest)
 	{
 	CSingleLock cLock(&m_cSem_Analyze);
 
@@ -131,12 +132,6 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 		return false;
 		}
 
-	if( pcTask==NULL )
-		{
-		m_eStatus=eNoTaskSpecified;
-		return false;
-		}
-
 	if( pContestantList )
 		{
 		pcContestant=pContestantList->GetByContestNo(m_strCID);
@@ -146,83 +141,94 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 			return false;
 			}
 		m_eClass=pcContestant->m_eClass;
+		}
+
+
+	if( pcTask )
+		{
+		//  Initialize Gates
 		if( !IsLocked() )
 			m_cStartGate=pcTask->GetActiveStartGate(pcContestant);
-		}
 
-	//  Initialize Gates
-
-	if( m_cStartGate.IsPerpToCourse() )
-			{
-			// Make start gate perp. to first course line.
-			m_pcStartControlPoint	=turnpointArray[m_cStartGate.GetPointID()-1];
-			TURNPOINTCLASS* p1st    =(TURNPOINTCLASS*)turnpointArray[pcTask->GetTurnpointID(0)-1];
-			if( m_pcStartControlPoint && p1st )
+		if( m_cStartGate.IsPerpToCourse() )
 				{
-				CLocation cLoc1(m_pcStartControlPoint->GetLat(), m_pcStartControlPoint->GetLong());
-				CLocation cLoc2(p1st->GetLat(), p1st->GetLong());
-				m_cStartGate.SetHeading(cLoc1.CourseTo(cLoc2));
+				// Make start gate perp. to first course line.
+				m_pcStartControlPoint	=turnpointArray[m_cStartGate.GetPointID()-1];
+				TURNPOINTCLASS* p1st    =(TURNPOINTCLASS*)turnpointArray[pcTask->GetTurnpointID(0)-1];
+				if( m_pcStartControlPoint && p1st )
+					{
+					CLocation cLoc1(m_pcStartControlPoint->GetLat(), m_pcStartControlPoint->GetLong());
+					CLocation cLoc2(p1st->GetLat(), p1st->GetLong());
+					m_cStartGate.SetHeading(cLoc1.CourseTo(cLoc2));
+					}
+				}
+		m_cStartGate.Initialize( *(turnpointArray[m_cStartGate.GetPointID()-1]) );
+		m_pcStartControlPoint	=turnpointArray[m_cStartGate.GetPointID()-1];
+
+		m_cFinishGate=pcTask->m_cFinishGate;
+		m_cFinishGate.Initialize( *(turnpointArray[m_cFinishGate.GetPointID()-1]) );
+		m_pcFinishControlPoint	=turnpointArray[m_cFinishGate.GetPointID()-1]; 
+
+
+		SetTaskOpenTime(pcTask->m_cGateOpenTime);
+		m_cStartFix=CLocation(m_pcStartControlPoint->GetLat(),m_pcStartControlPoint->GetLong()) ;
+
+		TURNPOINTCLASS *pcHome=turnpointArray.GetHomePoint(m_pcStartControlPoint);
+		if( pcHome==NULL )
+			{
+			AfxMessageBox(_T("No control point has the \"H\" (home) attribute set.\n Cannot perform an analysis without the home control point defned.") );
+			return false;
+			}
+		SetHomePoint( pcHome );
+
+		if( !CheckOption(FLT_TURNPOINTSLOCKED) )
+			{
+
+			if( m_eTaskType==eModifiedAssigned ) 
+				m_nMATTaskPoints=pcTask->GetNumTurnpoints();
+
+			m_nTaskPoints=0;
+			for( int iTpt=0; iTpt<pcTask->GetNumTurnpoints(); iTpt++ )
+				{
+				SetTaskPoint( turnpointArray[pcTask->GetTurnpointID(iTpt)-1] );
+				if( IsAreaTask() )
+					SetTurnpointRadius( iTpt, pcTask->GetTurnpointRadius(iTpt) );
+				else
+					SetTurnpointRadius( iTpt, m_dTurnpointRadius );
 				}
 			}
-	m_cStartGate.Initialize( *(turnpointArray[m_cStartGate.GetPointID()-1]) );
-	m_pcStartControlPoint	=turnpointArray[m_cStartGate.GetPointID()-1];
-
-	m_cFinishGate=pcTask->m_cFinishGate;
-	m_cFinishGate.Initialize( *(turnpointArray[m_cFinishGate.GetPointID()-1]) );
-	m_pcFinishControlPoint	=turnpointArray[m_cFinishGate.GetPointID()-1]; 
-
-
-	SetTaskOpenTime(pcTask->m_cGateOpenTime);
-	m_cStartFix=CLocation(m_pcStartControlPoint->GetLat(),m_pcStartControlPoint->GetLong()) ;
-
-	TURNPOINTCLASS *pcHome=turnpointArray.GetHomePoint(m_pcStartControlPoint);
-	if( pcHome==NULL )
-		{
-		AfxMessageBox(_T("No control point has the \"H\" (home) attribute set.\n Cannot perform an analysis without the home control point defned.") );
-		return false;
-		}
-	SetHomePoint( pcHome );
-
-	if( !CheckOption(FLT_TURNPOINTSLOCKED) )
-		{
-
-		if( m_eTaskType==eModifiedAssigned ) 
-			m_nMATTaskPoints=pcTask->GetNumTurnpoints();
-
-		m_nTaskPoints=0;
-		for( int iTpt=0; iTpt<pcTask->GetNumTurnpoints(); iTpt++ )
+		else
 			{
-			SetTaskPoint( turnpointArray[pcTask->GetTurnpointID(iTpt)-1] );
-			if( IsAreaTask() )
-				SetTurnpointRadius( iTpt, pcTask->GetTurnpointRadius(iTpt) );
-			else
-				SetTurnpointRadius( iTpt, m_dTurnpointRadius );
+			//  Turnpoints are locked   
+		
+			m_nMATTaskPoints=m_nTaskPoints;
+
+
+			// Refresh Pointers for the task list.
+			for( int i=0; i<ALLOCTASKTPS; i++ )
+				{
+				TURNPOINTCLASS* pcTaskPoint = (TURNPOINTCLASS*)turnpointArray[m_aiTaskTurnpointIDs[i]-1];
+				m_pcTaskTurnpoints[i]=pcTaskPoint;
+				}
+	
+			}
+
+		// Safety Finish, set finish to be a 5 sm cylinder
+		if( CheckOption(FLT_SAFETYFINISH) ) 
+			{
+			m_cFinishGate.SetGateType(eCylinder);
+			m_cFinishGate.SetRadius( 0. );
 			}
 		}
 	else
 		{
-		//  Turnpoints are locked   
-		
-		m_nMATTaskPoints=m_nTaskPoints;
-
-
-		// Refresh Pointers for the task list.
-		for( int i=0; i<ALLOCTASKTPS; i++ )
+		if( !bPreContest ) 
 			{
-			TURNPOINTCLASS* pcTaskPoint = (TURNPOINTCLASS*)turnpointArray[m_aiTaskTurnpointIDs[i]-1];
-			m_pcTaskTurnpoints[i]=pcTaskPoint;
+			m_eStatus=eNoTaskSpecified;
+			return false;
 			}
-	
 		}
 
-
-
-	// Safety Finish, set finish to be a 5 sm cylinder
-	if( CheckOption(FLT_SAFETYFINISH) ) 
-		{
-		m_cFinishGate.SetGateType(eCylinder);
-		m_cFinishGate.SetRadius( 0. );
-		}
 
 	try { 
 		AssignPositionStatus(pcTask, false, turnpointArray);
@@ -252,21 +258,37 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 		}
 
 	try {
+		CheckSecurity();
+		} 
+	catch(...)
+		{
+		AfxMessageBox(_T("Unhandled exception in CFlight::CheckSecurity"));
+		throw;
+		}
+
+	try {
 		if( pcContestant && pcContestant->IsMotorized() ) 
 			{
-			if( pcContestant->m_strFDR_ID.GetLength()==0 )
+			if( !bPreContest )
 				{
-				AddWarning(eNoFDR,0,"No flight recorder ID has been set for this contestant");
+				if( pcContestant->m_strFDR_ID.GetLength()==0 )
+					{
+					AddWarning(eNoFDR,0,"No flight recorder ID has been set for this contestant");
+					}
+				else if( pcContestant->m_strFDR_ID!=m_strFDRID )
+					{
+					CString strWarn;
+					strWarn.Format("FDR ID \"%s\" in this log does not match FDR ID \"%s\" set for this contestant",m_strFDRID, pcContestant->m_strFDR_ID);
+					AddWarning(eWrongFDR,0,strWarn);
+					}
+				CheckMotorRun();   // regular check
 				}
-			else if( pcContestant->m_strFDR_ID!=m_strFDRID )
-				{
-				CString strWarn;
-				strWarn.Format("FDR ID \"%s\" in this log does not match FDR ID \"%s\" set for this contestant",m_strFDRID, pcContestant->m_strFDR_ID);
-				AddWarning(eWrongFDR,0,strWarn);
-				}
-			CheckMotorRun();   // regular check
-			CheckMotorRun(true); // before start check
+			CheckMotorRun(true,bPreContest); // before start check
 			}
+
+		//PreContest, all we care about is the motor run
+		if( bPreContest ) return true;
+
 		}
 	catch(...)
 		{
@@ -492,7 +514,8 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 //		dCheckDistance<dSMTD/2 )
 //--
 
-	if( !pcTask->IsFAITask() &&
+	if( pcTask &&
+		!pcTask->IsFAITask() &&
 		m_nAcheivedTurnpoints==0 && 
 		dCheckDistance< ConvertDistance(5.0, eStatute, SYSTEMUNITS ) )
 		{
@@ -583,15 +606,6 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 	catch(...)
 		{
 		AfxMessageBox(_T("Unhandled exception in CFlight::CheckSafetyFinish"));
-		throw;
-		}
-
-	try {
-		CheckSecurity();
-		} 
-	catch(...)
-		{
-		AfxMessageBox(_T("Unhandled exception in CFlight::CheckSecurity"));
 		throw;
 		}
 
@@ -779,7 +793,7 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 
 		}// end for each position
 
-		if( pcTask->IsFAITask() )
+		if( pcTask && pcTask->IsFAITask() )
 			{
 			int iNonUnityIntervals=cIntervals.NumSamples()-cIntervals.CountValue(1);
 			if (iNonUnityIntervals>0 )
@@ -988,6 +1002,8 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 		
 		}// end for each position
 
+
+	if( !pcTask ) return;
 //
 //
 //
@@ -1379,6 +1395,8 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 
 void	CFlight::FindStartsAndFinish(CTask *pcTask)
 	{
+	if( !pcTask ) return;
+
 	int iNeedTurnpoint=0;
 
 	bool	bMadeLastTurnpoint	=false;
@@ -2139,6 +2157,8 @@ CPosition* CFlight::FindFurthestProgress(int iStart, CLocation &cLoc  )
 
 bool CFlight::FindAcheivedTurnpoints(TASKCLASS *pcTask)
 	{
+	if( !pcTask ) return false;
+
 	m_bAllTurnpointsAcheived=true;
 
 	int iAcheivedPoints[ALLOCTASKTPS+1];
@@ -2387,6 +2407,7 @@ Failure to do so will be penalized.*/
 void CFlight::CheckStartPenalty(TASKCLASS* pcTask)
 	{
 	if( !m_bValidStart ) return;
+	if( !pcTask ) return;
 
 	if( IsFAITask() ) 
 		{
@@ -2792,6 +2813,76 @@ int  CFlight::AddToList(CListCtrl & ListCtrl, BOOL fVisible, int iItem )
 	return iItem;
 	}
 
+int  CFlight::AddToPreContestList(CListCtrl & ListCtrl, CContestant *pcContestant, BOOL fVisible, int iItem)
+	{
+	int i=0;
+	LV_ITEM lvi;
+	memset(&lvi,0,sizeof(LV_ITEM));
+
+	lvi.iSubItem = 0;
+	lvi.mask = LVIF_PARAM;
+
+	lvi.lParam = (LPARAM)this;
+	if( iItem<0 ) 
+		iItem=ListCtrl.InsertItem(&lvi);
+	else
+		ListCtrl.SetItemData( iItem, (LPARAM)this );
+	ASSERT(iItem>=0);
+
+	CString strDate=CTime( m_iYear, m_iMonth, m_iDay, 0,0,0).Format( _T("%B %d, %Y") );
+	ListCtrl.SetItemText(iItem,i++,strDate );
+
+	ListCtrl.SetItemText(iItem,i++,m_strCID );
+	ListCtrl.SetItemText(iItem,i++,m_strPilot );
+
+	CString strStatus;
+	CString strFDRContestant;
+	if( !pcContestant )
+		{
+		strStatus="Not a Contestant";
+		}
+	else
+		{
+		if(!pcContestant->IsMotorized() )
+			strStatus="Not a Motorized Glider";
+		else
+			strStatus= GetStatusText();
+		strFDRContestant=pcContestant->m_strFDR_ID;
+		}
+	ListCtrl.SetItemText(iItem,i++, strStatus );
+
+	if( m_eStatus==eNotAnalyzed )
+		{
+		ListCtrl.SetItemText(iItem,i++, "" );
+		ListCtrl.SetItemText(iItem,i++, "" );
+		}
+	else
+		{
+		CString strENL;
+		strENL.Format("%i/%i",m_iENLMin, m_iENLMax);
+		ListCtrl.SetItemText(iItem,i++, strENL );
+		CString strMOP;
+		strMOP.Format("%i/%i",m_iMOPMin, m_iMOPMax);
+		ListCtrl.SetItemText(iItem,i++, strMOP );
+		}
+
+	ListCtrl.SetItemText(iItem,i++, m_strFDRID );
+	ListCtrl.SetItemText(iItem,i++, strFDRContestant );
+
+	ListCtrl.SetItemText(iItem,i++,GetIGCFileNameText() );
+
+	if( SecurityPassed() ) 
+		ListCtrl.SetItemText(iItem,i++,_T("Passed") );
+	else if( SecurityFailed() ) 
+		ListCtrl.SetItemText(iItem,i++,_T("FAILED") );
+	else
+		ListCtrl.SetItemText(iItem,i++,_T("") );
+
+	if( fVisible) ListCtrl.EnsureVisible( iItem, FALSE);
+
+	return iItem;
+	}
+
 CString CFlight::GetStatusText()
 {
 	CString strOut;
@@ -2822,7 +2913,12 @@ CString CFlight::GetStatusText()
 		return _T("No Data in Flight Log, ")+strOut;
 	else if( m_eStatus==eBelowFinishCylinder )
 		return _T("Incomplete - Below Finish Height")+strOut;
+	else if( m_eStatus==ePreContestMotorRun )
+		return _T("OK Motor Run Detected")+strOut;
+	else if( m_eStatus==eNOPreContestMotorRun )
+		return _T("No Motor Run Detected")+strOut;
 
+			
 	return _T("Not Analyzed");
 
 }
@@ -3298,7 +3394,7 @@ void CFlight::CheckBFI()
 }
 
 
-void CFlight::CheckMotorRun(bool bCheckBeforeStart)
+void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 {
 	CPosition* pcPrevPos=NULL;
 	CTimeSpan cTotalMotorONTime(0);
@@ -3310,6 +3406,9 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 	int		   iMax=0;
 	int		   iMin=10000;
 	int		   iDiff=0;
+
+	if( bPreContest ) m_eStatus = eNOPreContestMotorRun;
+
 
 // First, check for any signal at all
 	bool bSignal=false;
@@ -3659,6 +3758,13 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart)
 		pcLongestMotorOn!=NULL                   &&
 		iDiff>-20 )
 		{
+		// Run Detected
+		if( bPreContest ) 
+			{
+			m_eStatus = ePreContestMotorRun;
+			return;
+			}
+
 		if( bCheckBeforeStart )
 			{
 			//  Check distance
@@ -3709,6 +3815,7 @@ int CFlight::GetTaskPointID(int iTskPt)
 
 void CFlight::LocateFurthestProgess(TASKCLASS			*pcTask, CGate &cFinishGate,TURNPOINTCLASSARRAY &cTurnpointArray)
 	{
+	if( !pcTask ) return;
 	CPosition* pcFurthest=NULL;
 	int iStartPos=0;
 	m_cScoredLandingPointLocation=m_cLandingLocation;
@@ -3936,7 +4043,7 @@ bool CFlight::GetFlightTimeRemaining(int iPos, CTimeSpan &cTimeSpan)
 void CFlight::FindOptimumTurnpoints(TASKCLASS *pcTask, TURNPOINTCLASSARRAY &TURNPOINTCLASSARRAY )
 	{
     if( CheckOption(FLT_OPTTURNPOINTSLOCKED) ) return;
-
+	if( !pcTask ) return;
 	if( m_nAcheivedTurnpoints==0 ) return;
 	int iLastCheckedPoint=0;
 
@@ -5125,6 +5232,7 @@ void CFlight::SetWarningsArray(CStringArray &strArray)
 void CFlight::FindBetterStart(TASKCLASS *pcTask, TURNPOINTCLASSARRAY &turnpointarray )
 	{
 	if( CheckOption(FLT_STARTTIMELOCKED) ) return;
+	if( !pcTask ) return;
 
 	// If this is a FAI task just take the latest start always.
 	if( pcTask->IsFAITask() ) return;

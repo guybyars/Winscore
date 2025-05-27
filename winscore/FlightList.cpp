@@ -191,20 +191,81 @@ static int _gnColumnFormat[NUM_COLUMNS] =
 	LVCFMT_LEFT //security
 };
 
-void CFlightList::CreateControlColumns(CListCtrl& ListCtrl)
+
+#define NUM_PRECONTEST_COLUMNS 10
+
+static _TCHAR *_gszPreContestColumnLabel[NUM_PRECONTEST_COLUMNS] =
+	{
+	_T("Date"), 
+	_T("ID"), 
+	_T("Name"), 
+	_T("Status"),
+	_T("ENL (min/max)"),
+	_T("MOP (min/max)"),
+	_T("Logger FDR ID"),
+	_T("Contestant FDR ID"),
+	_T("IGC File Name"), 
+	_T("Security")
+	};
+
+
+static int _gnPreContestColumnWidth[NUM_PRECONTEST_COLUMNS] = 
+{
+	100, //Date
+	50, //id
+	150, //name
+	140, //status
+	110, //enl
+	110, //mop
+	120, //fdr id
+	120, //cont fdr id
+	430, //igc
+	130 //security
+};
+
+static int _gnPreContestColumnFormat[NUM_PRECONTEST_COLUMNS] = 
+{
+	LVCFMT_LEFT, //id
+	LVCFMT_LEFT, //name
+	LVCFMT_LEFT, //status
+	LVCFMT_LEFT, //
+	LVCFMT_LEFT, //
+	LVCFMT_LEFT, //
+	LVCFMT_LEFT, //
+	LVCFMT_LEFT, //
+	LVCFMT_LEFT, //
+	LVCFMT_LEFT, //
+};
+
+
+void CFlightList::CreateControlColumns(CListCtrl& ListCtrl, bool bPreContest)
 {
 	LV_COLUMN lvc;
 
 	lvc.mask = LVCF_FMT | LVCF_WIDTH | LVCF_TEXT | LVCF_SUBITEM;
 
-	for(  int i = 0; i<NUM_COLUMNS; i++)
-	{
-		lvc.fmt =_gnColumnFormat[i];
-		lvc.iSubItem = i;
-		lvc.pszText = _gszColumnLabel[i];
-		lvc.cx =  _gnColumnWidth[i];
-		ListCtrl.InsertColumn(i,&lvc);
-	}
+	if( bPreContest )
+		{
+		for(  int i = 0; i<NUM_PRECONTEST_COLUMNS; i++)
+			{
+				lvc.fmt =_gnPreContestColumnFormat[i];
+				lvc.iSubItem = i;
+				lvc.pszText = _gszPreContestColumnLabel[i];
+				lvc.cx =  _gnPreContestColumnWidth[i];
+				ListCtrl.InsertColumn(i,&lvc);
+			}
+		}
+	else
+		{
+		for(  int i = 0; i<NUM_COLUMNS; i++)
+			{
+				lvc.fmt =_gnColumnFormat[i];
+				lvc.iSubItem = i;
+				lvc.pszText = _gszColumnLabel[i];
+				lvc.cx =  _gnColumnWidth[i];
+				ListCtrl.InsertColumn(i,&lvc);
+			}
+		}
 
 }
 
@@ -219,18 +280,23 @@ void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, int nDays, EC
 	while( pos!=NULL)
 		{
 		pcFlight=GetNext(pos,cDate,nDays);
-		if( pcFlight )
+		if( !pcFlight ) continue;
+		if( bPreContest  && !pcFlight->IsContestant()) continue;
+		if( !bPreContest && !pcFlight->m_eClass==eClass ) continue;
+
+		pcFlight->m_eUnits=eUnits;
+		if( bPreContest )
 			{
-			if( (bPreContest && pcFlight->IsContestant()) ||
-				(pcFlight->m_eClass==eClass || !pcFlight->IsContestant()) )
-				{
-				pcFlight->m_eUnits=eUnits;
-				pcFlight->AddToList( ListCtrl, FALSE );
-				RemoveWinscoreEntry(getNoLogKey(pcFlight->m_strCID, cDate));
-				cStrArray.Add(pcFlight->m_strCID);
-				}
+			pcFlight->AddToPreContestList( ListCtrl, contestantList.GetByContestNo(pcFlight->m_strCID), FALSE );
 			}
+		else
+			pcFlight->AddToList( ListCtrl, FALSE );
+
+		RemoveWinscoreEntry(getNoLogKey(pcFlight->m_strCID, cDate));
+		cStrArray.Add(pcFlight->m_strCID);
+
 		}
+
 //  Ok, now add the contestants who don't have a flight log and give them the "No Log Found" status
 	CStringArray strArContestNo, strArName, strArStatus;
 	pos = contestantList.GetHeadPosition();
