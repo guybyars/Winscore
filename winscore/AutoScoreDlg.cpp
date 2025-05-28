@@ -927,7 +927,6 @@ UINT __cdecl AutoScoreProc( LPVOID lpParameter)
 		CString strError;
 		CString strLogPath	=pView->m_pModlessAutoScoreDlg->m_cIGCDirs.GetFlightLogPath(pView->m_pModlessAutoScoreDlg->m_cDate,
 																						pView->m_pModlessAutoScoreDlg->m_bPreContest);
-		pView->m_pModlessAutoScoreDlg->AddStatusRecord(strLogPath);
 
 		if( CheckAutoScoreStop(pView) ) return 0;
 		int nLogs=pView->m_pModlessAutoScoreDlg->ScanEmailForLogs( pView->m_pModlessAutoScoreDlg->m_cDate,  pView->m_pModlessAutoScoreDlg->m_nDays, strIMAPServer, strUsername, strPassword, strMailbox, iPortID, bUseSSL, strLogPath, strError );

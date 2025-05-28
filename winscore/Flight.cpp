@@ -24,6 +24,7 @@
 #include <afxtempl.h>
 #include "median.h"
 #include "xmlmgr.h"
+#include "vector"
 
 #ifdef _DEBUG
 #undef THIS_FILE
@@ -3628,7 +3629,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 			CPosition* pcPos=GetPosition(iPos);
 			int iVal=pcPos->m_iEngineNoiseLevel;
 			if( iVal<37 ) continue;  //Since we normalized to 150, make sure we have sufficent signal.
-			if( double(iVal)>((1.0*dStdDev)+dAve) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>25. )
+			if( double(iVal)>((1.0*dStdDev)+dAve) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>5. )
 				{
 				pcPos->AddStatus( FAN_MOTOR_ON);
 				}
@@ -3645,7 +3646,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 			CPosition* pcPos=GetPosition(iPos);
 			int iVal=pcPos->m_iMOPLevel;
 			if( iVal<37 ) continue;  //Since we normalized to 150, make sure we have sufficent signal.
-			if( double(iVal)>((1.0*dStdDevMOP)+dAveMOP) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>25. )
+			if( double(iVal)>((1.0*dStdDevMOP)+dAveMOP) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>5. )
 				{
 				pcPos->AddStatus( FAN_MOTOR_ON);
 				}
@@ -3688,11 +3689,11 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 			else if ( pcPrevPos->CheckStatus(FAN_MOTOR_ON) &&
 			          !pcPos->CheckStatus(FAN_MOTOR_ON) 	)
 				{
-				//Motor turned off, check for spike of 10 fixes or less
+				//Motor turned off, check for spike of 5 fixes or less
 				if( bSearching )
 					{
 					bSearching=false;
-					if( nON>0 && nON<10 )
+					if( nON>0 && nON<5 )
 						{
 						for( int iON=0; iON<nON; iON++)
 							pcMotorON[iON]->RemoveStatus(FAN_MOTOR_ON);
@@ -3825,13 +3826,13 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 		}
 
 
-	if( cLongestMotorONTime.GetTotalSeconds()>45 &&
+	if( cLongestMotorONTime.GetTotalSeconds()>30 &&
 		!CheckOption(FLT_SLANDINGPOINTLOCKED)	 &&
 		!CheckOption(FLT_LANDINGTIMELOCKED)		 &&
 		!CheckOption(FLT_FINISHTIMELOCKED)		 &&
 		!CheckOption(FLT_TURNPOINTSLOCKED)		 &&
 		pcLongestMotorOn!=NULL                   &&
-		iDiff>-20 )
+		iDiff>-100 )
 		{
 		// Run Detected
 		if( bPreContest ) 
@@ -5546,55 +5547,80 @@ void  CFlight::FindPEVWindows()
 	{
 	if( !m_cStartGate.IsPEVStart() || !IsStartTimeValid() ) return;
 
-	int nPEV=0;
-	// Check for PEVs
-	//int iRollPos=FindEvent( FAN_ROLLING, 0, FORWARD );
 
-	if( FindEvent( FAN_PEV, 0, FORWARD )<0 ) 
+	std::vector<int> vPEV;
+	int iPos=0;
+	while (1)
+		{
+		iPos=FindEvent( FAN_PEV, iPos, FORWARD );
+		if( iPos<0 ) break;
+		vPEV.push_back(iPos++);
+		}
+
+	if( vPEV.size()==0 )
 		{
 		// Error, no PEV events in Log.
 		CString strPEV;
 		strPEV.Format("No PEV events found in log. ");
 		AddWarning(eStart, 30, strPEV );
-		return;
+		return
 		}
 
-	int iPEVPos = FindTime(GetStartTime(),0,FORWARD);
-	int iStartPos=iPEVPos;	
 
-	iPEVPos=FindEvent( FAN_PEV, iPEVPos, BACKWARD );
-	if( iPEVPos<0 )
+// Now remove any PEVs after the latest start
+	for (std::vector<int>::iterator it = vPEV.begin(); it != vPEV.end(); )
 		{
-		//Nothig before the start, try Forward, if not found, bail.
-		iPEVPos=FindEvent( FAN_PEV, iStartPos, FORWARD );
-		if( iPEVPos<0 ) return;
-		}
-	CPosition *pcPosPEV=GetPosition(iPEVPos);
-	if( !pcPosPEV ) return;
-
-	int nTries=0;
-	while( nTries++<3 )
-		{
-		// Check for other PEV within 30 sec.
-		int iTempPEV=FindEvent( FAN_PEV, iPEVPos-1, BACKWARD );
-		if( iTempPEV>0 )
-			{
-			//Check if within 30 sec.
-			CPosition *pcPosTempPEV=GetPosition(iTempPEV);
-			if( !pcPosTempPEV ) break;
-
-			int iTime=pcPosPEV->m_cTime.GetTime() - pcPosTempPEV->m_cTime.GetTime();
-			if( iTime < 30 ) 
-				{
-				iPEVPos=iTempPEV;
-				pcPosPEV=pcPosTempPEV;
-				}
-			else
-				break;
-			}
+		CPosition *pcPosPEV=GetPosition(*it);
+		if( !pcPosPEV ) break;
+		if( pcPosPEV->m_cTime>m_cStartTime )
+			it=vPEV.erase(it);
 		else
-			break;
+			++it;
 		}
-	m_pPEVStart=pcPosPEV;
+
+	if ( vPEV.size()>1 )
+		{
+		//Now remove any PEVs which are <30 seconds apart
+		for (std::vector<int>::iterator it = vPEV.begin(); it != vPEV.end(); ++it)
+			{
+			CPosition *pcPosPEV1=GetPosition(*it);
+			if( !pcPosPEV1 ) break;
+
+			for (std::vector<int>::iterator it2 = it+1; it2 != vPEV.end(); )
+				{
+				CPosition *pcPosPEV2=GetPosition(*it2);
+				if( !pcPosPEV2 ) break;
+
+				CTimeSpan cSpan=pcPosPEV2->m_cTime-pcPosPEV1->m_cTime;
+				if(cSpan.GetTotalSeconds()<=30 )
+					{
+					it2=vPEV.erase(it2);
+					}
+				else
+					++it2;
+				}
+			}
+		}
+
+	int nPEV=vPEV.size();
+	if( nPEV==0 )
+		{
+		// Error, no PEV events before latest start.
+		CString strPEV;
+		strPEV.Format("No PEV events found before latest start. ");
+		AddWarning(eStart, 30, strPEV );
+		}
+	else if( nPEV<=3 )
+		{
+		// 3 or less, take the last one
+		m_pPEVStart=GetPosition(vPEV.back());
+		}
+	else 
+		{
+		// 4 or more, take the 3rd one
+		m_pPEVStart=GetPosition(vPEV[2]);
+		}
+	return;
+
 
 	}

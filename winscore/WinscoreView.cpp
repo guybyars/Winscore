@@ -2234,9 +2234,9 @@ void CWinscoreView::OnFlightlogsAnalyzeflight()
 				AfxMessageBox(_T("IGC file for this pilot could not be found.\n Cannot analyze flight without it."));
 				pcFlight->SetIGCFileMissing();
 				if( m_eViewType==eFlightLogView )
-					pcFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+					pcFlight->AddToList( GetListCtrl(), TRUE, cIntArray[iSel] );
 				else
-					pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, GetSelectedItem() );
+					pcFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pcFlight->m_strCID), TRUE, cIntArray[iSel] );
 				return;
 				}
 			else
@@ -4159,10 +4159,10 @@ void CWinscoreView::OnSetFDRID()
 			pContestant->m_strFDR_ID=pFlight->m_strFDRID;
 
 			if( m_eViewType==eFlightLogView )
-				pFlight->AddToList( GetListCtrl(), TRUE, GetSelectedItem() );
+				pFlight->AddToList( GetListCtrl(), TRUE, cIntArray[i] );
 			else
 				{
-				pFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pFlight->m_strCID), TRUE, GetSelectedItem() );
+				pFlight->AddToPreContestList( GetListCtrl(), pDocument->m_contestantList.GetByContestNo(pFlight->m_strCID), TRUE, cIntArray[i] );
 				}
 
 			pDocument->SetModifiedFlag();

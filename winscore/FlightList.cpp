@@ -282,7 +282,7 @@ void CFlightList::LoadFlightList(CListCtrl& ListCtrl, CTime cDate, int nDays, EC
 		pcFlight=GetNext(pos,cDate,nDays);
 		if( !pcFlight ) continue;
 		if( bPreContest  && !pcFlight->IsContestant()) continue;
-		if( !bPreContest && !pcFlight->m_eClass==eClass ) continue;
+		if( !bPreContest && pcFlight->m_eClass!=eClass ) continue;
 
 		pcFlight->m_eUnits=eUnits;
 		if( bPreContest )
