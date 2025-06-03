@@ -36,6 +36,10 @@ CContestant::CContestant()
 	m_fSpan=0;
 	m_fWinglet=0;
 	m_fWeight=0;
+	m_iENLMin=0;
+	m_iENLMax=0;
+	m_iMOPMin=0;
+	m_iMOPMax=0;
 	}
 
 CContestant::~CContestant()
@@ -107,6 +111,10 @@ CContestant::CContestant(CContestant *pcContestant)
 	 m_fWinglet		= pcContestant->m_fWinglet;
 	 m_fWeight		= pcContestant->m_fWeight;
 	 m_cGliderInfo	= pcContestant->m_cGliderInfo;
+	 m_iENLMin		= pcContestant->m_iENLMin;
+	 m_iENLMax		= pcContestant->m_iENLMax;
+	 m_iMOPMin		= pcContestant->m_iMOPMin;
+	 m_iMOPMax		= pcContestant->m_iMOPMax;
 }
 
 
@@ -137,6 +145,10 @@ CContestant::CContestant(
 	 m_fWinglet=0;
 	 m_fWeight=0;
 	 m_iOptions=0;
+	 m_iENLMin=0;
+	 m_iENLMax=0;
+	 m_iMOPMin=0;
+	 m_iMOPMax=0;
 
 	 m_strContestNo = strContestNo;
 	 m_strLastName = strLastName;
@@ -271,8 +283,8 @@ int CALLBACK CompareContestantName(LPARAM lParam1, LPARAM lParam2,
 						((CContestant*)lParam2)->CitizenText() );
 		break;
 	case 7:
-		iR=strcmp(  ((CContestant*)lParam1)->m_strFDR_ID,
-						((CContestant*)lParam2)->m_strFDR_ID );
+		iR=strcmp(  ((CContestant*)lParam1)->GetFDRID(),
+					((CContestant*)lParam2)->GetFDRID() );
 		break;
 	case 8:
 		iR=	strcmp(  ((CContestant*)lParam1)->AddressText(),
@@ -303,7 +315,7 @@ ostream& operator <<(ostream &os,  CContestant& cCont )
 	PutString( os, cCont.m_strState );
 	PutString( os, cCont.m_strZipcode1 );
 	PutString( os, cCont.m_strZipcode2 );
-	PutString( os, cCont.m_strFDR_ID );
+	PutString( os, cCont.GetFDRID() );
 	os<< cCont.m_iSSANumber << TAB
 		   << cCont.m_fHandicap << TAB
 		   << (WORD)cCont.m_eClass << TAB
@@ -358,7 +370,7 @@ istream& operator >>(istream &is,  CContestant& cCont )
 		cCont.m_strState =ExtractString(is);
 		cCont.m_strZipcode1=ExtractString(is);
 		cCont.m_strZipcode2=ExtractString(is);
-		cCont.m_strFDR_ID=ExtractString(is);
+		cCont.SetFDRID(ExtractString(is));
 		is  >> cCont.m_iSSANumber; 
 		is  >> cCont.m_fHandicap; 
 		is  >> w;
@@ -532,6 +544,11 @@ bool CContestant::GetXML(CXMLMgr &cMgr, IDispatch *pIdsp )
 	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("Options"),	m_iOptions));
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("FDR_ID"),	LPCSTR(m_strFDR_ID)));
 
+	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MinENL"),			m_iENLMin));
+	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MaxENL"),			m_iENLMax));
+	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MinMOP"),			m_iMOPMin));
+	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MaxMOP"),			m_iMOPMax));
+
 	if( GetClass(m_eClass).IsHandicapped() )
 		{
 		if( m_fHandicap>0.0 )
@@ -615,6 +632,10 @@ bool CContestant::GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pIDOMNode )
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("Zip2"),		LPCSTR(m_strZipcode2)));
 
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("FDR_ID"),	LPCSTR(m_strFDR_ID)));
+	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MinENL"), m_iENLMin));
+	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MaxENL"), m_iENLMax));
+	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MinMOP"), m_iMOPMin));
+	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MaxMOP"), m_iMOPMax));
 
 	return true;
 }
@@ -808,6 +829,11 @@ CContestant::CContestant(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pContestant, boo
 	cMgr.SelectChildSTR( pContestant, _T("Zip2"),		m_strZipcode2);
 	cMgr.SelectChildSTR( pContestant, _T("FDR_ID"),		m_strFDR_ID);
 
+	GET_XML_INT( cMgr, pContestant, _T("MinENL"),			int, m_iENLMin,0);
+	GET_XML_INT( cMgr, pContestant, _T("MaxENL"),			int, m_iENLMax,0);
+	GET_XML_INT( cMgr, pContestant, _T("MinMOP"),			int, m_iMOPMin,0);
+	GET_XML_INT( cMgr, pContestant, _T("MaxMOP"),			int, m_iMOPMax,0);
+
 	GET_XML_DBL	( cMgr, pContestant, _T("Weight"), float, m_fWeight,		0.0);
 	GET_XML_DBL	( cMgr, pContestant, _T("Winglet"),double, m_fWinglet,	    0.0);
 	GET_XML_DBL	( cMgr, pContestant, _T("Span"),	 float, m_fSpan,		0.0);
@@ -826,6 +852,25 @@ CContestant::CContestant(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pContestant, boo
 		cMgr.SelectChildSTR ( pGliderInfo, _T("Notes"),			m_cGliderInfo.m_strNotes);
 		}
 
+	}
+
+void CContestant::SetFDRID(CString & strFDRID, int iENLMax, int iENLMin, int iMOPMax, int iMOPMin )
+	{
+	m_strFDR_ID = strFDRID;
+	if( strFDRID.GetLength()==0 )
+		{
+		m_iENLMin=0;
+		m_iENLMax=0;
+		m_iMOPMin=0;
+		m_iMOPMax=0;
+		}
+	else
+		{
+		m_iENLMin=iENLMin;
+		m_iENLMax=iENLMax;
+		m_iMOPMin=iMOPMin;
+		m_iMOPMax=iMOPMax;
+		}
 	}
 
 void CContestant::UpdateHandicap(CGliderInfoList &cGIList)

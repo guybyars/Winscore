@@ -272,19 +272,19 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 			{
 			if( !bPreContest )
 				{
-				if( pcContestant->m_strFDR_ID.GetLength()==0 )
+				if( pcContestant->GetFDRID().GetLength()==0 )
 					{
 					AddWarning(eNoFDR,0,"No flight recorder ID has been set for this contestant");
 					}
-				else if( pcContestant->m_strFDR_ID!=m_strFDRID )
+				else if( pcContestant->GetFDRID()!=m_strFDRID )
 					{
 					CString strWarn;
-					strWarn.Format("FDR ID \"%s\" in this log does not match FDR ID \"%s\" set for this contestant",m_strFDRID, pcContestant->m_strFDR_ID);
+					strWarn.Format("FDR ID \"%s\" in this log does not match FDR ID \"%s\" set for this contestant",m_strFDRID, pcContestant->GetFDRID());
 					AddWarning(eWrongFDR,0,strWarn);
 					}
-				CheckMotorRun();   // regular check
+				CheckMotorRun(pcContestant);   // regular check
 				}
-			CheckMotorRun(true,bPreContest); // before start check
+			CheckMotorRun(pcContestant,true,bPreContest); // before start check
 			}
 
 		//PreContest, all we care about is the motor run
@@ -2848,7 +2848,7 @@ int  CFlight::AddToPreContestList(CListCtrl & ListCtrl, CContestant *pcContestan
 			strStatus="Not a Motorized Glider";
 		else
 			strStatus= GetStatusText();
-		strFDRContestant=pcContestant->m_strFDR_ID;
+		strFDRContestant=pcContestant->GetFDRID();
 		}
 	ListCtrl.SetItemText(iItem,i++, strStatus );
 
@@ -3470,7 +3470,7 @@ void CFlight::CheckBFI()
 }
 
 
-void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
+void CFlight::CheckMotorRun(CContestant *pcContestant, bool bCheckBeforeStart, bool bPreContest)
 {
 	CPosition* pcPrevPos=NULL;
 	CTimeSpan cTotalMotorONTime(0);
@@ -3485,6 +3485,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 
 	if( bPreContest ) m_eStatus = eNOPreContestMotorRun;
 
+	if( !pcContestant ) return;
 
 // First, check for any signal at all
 	bool bSignal=false;
@@ -3508,11 +3509,27 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 		return;
 		}
 
+	int iEMax=0;
+	int iMMax=0;
 //Check for adequate signal in entire trace
-	int iEMax=cENLNoise.GetMax();
-	int iMMax=cMOPNoise.GetMax();
+	if( pcContestant->GetENLMax()==0 &&
+		pcContestant->GetMOPMax()==0 )
+		{
+		// No Contestand baseline FDR data
+		iEMax=cENLNoise.GetMax();
+		iMMax=cMOPNoise.GetMax();
+		}
+	else
+		{
+		// Use Contestant FDR data
+		iEMax=max(cENLNoise.GetMax(), pcContestant->GetENLMax() );
+		iMMax=max(cMOPNoise.GetMax(), pcContestant->GetMOPMax() );
+		}
+
+	//Now check from the contestants motor run
 
 	if( iEMax<25 && iMMax<50 ) return;
+
 	cENLNoise.clear();
 	cMOPNoise.clear();
 
@@ -3525,7 +3542,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 	if( iFinishPos<0 ) 
 			{
 			iFinishPos=FindEvent(FAN_LANDED, GetNumPoints()-1, BACKWARD );
-	if( iFinishPos<0 ) iFinishPos=GetNumPoints();
+			if( iFinishPos<0 ) iFinishPos=GetNumPoints();
 			}
 
 	// Now smooth the data with a rolling average
@@ -3555,17 +3572,44 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 		cENLNoise.AddSample(pcPos->m_iEngineNoiseLevelRAW);
 		cMOPNoise.AddSample(pcPos->m_iMOPLevelRAW);
 		}
-	int iENLRange=cENLNoise.GetMax();
-	iENLRange-=cENLNoise.GetMin();
-	int iMOPRange=cMOPNoise.GetMax();
-	iMOPRange-=cMOPNoise.GetMin();
-	
+
+	int iENLRange=0;
+	int iMOPRange=0;
+
+	if( pcContestant->GetENLMax()==0 &&
+		pcContestant->GetMOPMax()==0 )
+		{
+		iENLRange =cENLNoise.GetMax();
+		iENLRange-=cENLNoise.GetMin();
+
+		iMOPRange =cMOPNoise.GetMax();
+		iMOPRange-=cMOPNoise.GetMin();
+
+		iMax	  =cENLNoise.GetMax();
+		if( !bCheckBeforeStart )
+			{
+			CString strInfo;
+			strInfo.Format("No baseline engine run data found for this contestant.");
+			AddWarning(eInformation,0,strInfo);
+			}
+		}
+	else
+		{
+		CString strInfo;
+		if( !bCheckBeforeStart )
+			{
+			strInfo.Format("Using contestant baseline engine info ENL %i/%i, MOP %i/%i",pcContestant->GetENLMin(), pcContestant->GetENLMax(), pcContestant->GetMOPMin(), pcContestant->GetMOPMax() );
+			AddWarning(eInformation,0,strInfo);
+			}
+		iENLRange=pcContestant->GetENLMax()-pcContestant->GetENLMin();
+		iMOPRange=pcContestant->GetMOPMax()-pcContestant->GetMOPMin();
+		iMax	=pcContestant->GetENLMax();
+		}
+
 	if( iENLRange<25 && iMOPRange<25 ) return;  // Not enough amplitude, no run.
-
-
+	
 	//Experimental code to consider both MOP and ENL.
 
-	iMax	=cENLNoise.GetMax();
 	// Normalize to 150 for baro display.
 	for( int iPos=0; iPos<GetNumPoints(); iPos++ )
 		{
@@ -3574,7 +3618,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 		pcPos->m_iEngineNoiseLevel=int(dPercent*150.);
 		}
 
-	iMax	=cMOPNoise.GetMax();
+	iMax	=max(cMOPNoise.GetMax(),pcContestant->GetMOPMax());
 	double dAve2=0.0;
 	CMedian cAveragerMOP;
 	if( iMax > 100 )
@@ -3628,7 +3672,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 			{
 			CPosition* pcPos=GetPosition(iPos);
 			int iVal=pcPos->m_iEngineNoiseLevel;
-			if( iVal<37 ) continue;  //Since we normalized to 150, make sure we have sufficent signal.
+			if( iVal<50 ) continue;  //Since we normalized to 150, make sure we have sufficent signal.
 			if( double(iVal)>((1.0*dStdDev)+dAve) && pcPos->m_dSpeed<100. && pcPos->m_dSpeed>5. )
 				{
 				pcPos->AddStatus( FAN_MOTOR_ON);
@@ -3832,7 +3876,7 @@ void CFlight::CheckMotorRun(bool bCheckBeforeStart, bool bPreContest)
 		!CheckOption(FLT_FINISHTIMELOCKED)		 &&
 		!CheckOption(FLT_TURNPOINTSLOCKED)		 &&
 		pcLongestMotorOn!=NULL                   &&
-		iDiff>-100 )
+		iDiff>-150 )
 		{
 		// Run Detected
 		if( bPreContest ) 
@@ -5563,7 +5607,7 @@ void  CFlight::FindPEVWindows()
 		CString strPEV;
 		strPEV.Format("No PEV events found in log. ");
 		AddWarning(eStart, 30, strPEV );
-		return
+		return;
 		}
 
 

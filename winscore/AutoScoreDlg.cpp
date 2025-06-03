@@ -484,9 +484,6 @@ void CAutoScoreDlg::UpdateDate(void)
 	strText+=m_cIGCDirs.GetFlightLogPath(m_cDate, iSel==0);
 	m_cAnalyzeCheck.SetWindowText(strText);
 
-	m_cSendScoreslCheck.EnableWindow(iSel>0);
-	m_cSendScoreslCheck.SetCheck(iSel);
-
 	m_bPreContest=iSel==0;
 
 	if( iSel==0 ) 

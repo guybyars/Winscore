@@ -244,7 +244,7 @@ void CContestant1Dlg::UpdateFromContestant( CContestant* pcContestant )
 	m_strCity=pcContestant->m_strCity;
 	m_strState=pcContestant->m_strState;
 	m_strZipcode1=pcContestant->m_strZipcode1;
-	m_strFDR_ID=pcContestant->m_strFDR_ID;
+	m_strFDR_ID=pcContestant->GetFDRID();
 	m_bGuest=pcContestant->IsGuest();
 	m_bForeign=pcContestant->IsForeign();
 	m_eClass=pcContestant->m_eClass;

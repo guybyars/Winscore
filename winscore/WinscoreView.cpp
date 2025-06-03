@@ -2604,7 +2604,9 @@ void CWinscoreView::OnFlightlogsDisplay()
 		cFlight.Analyze(	pDocument->m_taskList.GetByDateClass(cDate, pcFlight->m_eClass), 
 							pDocument->m_turnpointArray,
 							&pDocument->m_contestantList,
-							pDocument->m_eUnits);
+							pDocument->m_eUnits,
+							false,
+							m_eViewType==ePreContestView );
 
 		dlg.m_pcFlight= &cFlight;
 		dlg.m_pcTask=pDocument->m_taskList.GetByDateClass(cDate, cFlight.m_eClass);
@@ -4156,7 +4158,11 @@ void CWinscoreView::OnSetFDRID()
 			CString strCID = pFlight->m_strCID;
 			CContestant *pContestant = pDocument->m_contestantList.GetByContestNo(strCID);
 			if( !pContestant ) continue;
-			pContestant->m_strFDR_ID=pFlight->m_strFDRID;
+			pContestant->SetFDRID(	pFlight->m_strFDRID, 
+									pFlight->m_iENLMax, 
+									pFlight->m_iENLMin,
+									pFlight->m_iMOPMax,
+									pFlight->m_iMOPMin );
 
 			if( m_eViewType==eFlightLogView )
 				pFlight->AddToList( GetListCtrl(), TRUE, cIntArray[i] );

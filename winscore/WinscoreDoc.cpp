@@ -273,9 +273,9 @@
 		bool bAnyGrids=false;
    		for( int j=0; j<NUMCLASSES; j++ )
     		{
+    		if( m_bGridPositionCalculated[j] ) bAnyGrids=true;
 			if( !GetClass(j).IsActive() ) continue;
 			GetClass(j).GetXML(cMgr, pClasses);
-    		if( m_bGridPositionCalculated[j] ) bAnyGrids=true;
     		}
 
 		if( bAnyGrids )
@@ -3158,7 +3158,7 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
     
     	CString  cLine, cFDRText;
     
-    	if( pcTask->IsAreaTask() || pcTask->m_eType== eAssigned || pcTask->m_eType== eModifiedAssigned )
+    	if( pcTask->IsAreaTask() || pcTask->IsAssignedTask() || pcTask->m_eType== eModifiedAssigned )
     		{
     		if( pcTask->m_eType==eAssigned )
     			cText=_T("Assigned Task");

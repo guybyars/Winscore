@@ -259,6 +259,47 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 			m_cPEVButton.EnableWindow();
 			}
 
+		if( m_pcTask &&
+			m_pcTask->m_cStartGate.IsPEVStart() &&
+			pcPos && pcPrevPos )
+			{
+			CTime cOpenTime=m_pcFlight->GetPEVStartTime()+m_pcTask->m_cStartGate.GetPEVWaitTimeSec();
+			if( pcPrevPos->m_cTime<cOpenTime && pcPos->m_cTime>=cOpenTime )
+				{
+				// PEV Window opens
+				i=0;
+				lvi.iItem=itm++; 
+				int iItem=m_cListCtrl.InsertItem(&lvi);
+				CString cInt;
+				cInt.Format(_T("%d"), iPoint+1 );
+				m_cListCtrl.SetItemText(iItem,i++,_T("***"));
+				m_cListCtrl.SetItemText(iItem,i++,cOpenTime.Format( _T("%H:%M:%S"))  );
+				m_cListCtrl.SetItemText(iItem,i++,_T(" ***PEV START WINDOW OPEN ***"));
+				m_vPEVPos.push_back(lvi.iItem);
+				m_cPEVButton.EnableWindow();
+				}
+			}
+		if( m_pcTask &&
+			pcPos && pcPrevPos &&
+			m_pcTask->m_cStartGate.IsPEVStart() )
+			{
+			CTime cCloseTime=m_pcFlight->GetPEVStartTime()+m_pcTask->m_cStartGate.GetPEVWaitTimeSec()+m_pcTask->m_cStartGate.GetPEVStartWindowSec();
+			if( pcPrevPos->m_cTime<cCloseTime && pcPos->m_cTime>=cCloseTime )
+				// PEV Window CLOSES
+				{
+				i=0;
+				lvi.iItem=itm++; 
+				int iItem=m_cListCtrl.InsertItem(&lvi);
+				CString cInt;
+				cInt.Format(_T("%d"), iPoint+1 );
+				m_cListCtrl.SetItemText(iItem,i++,_T("***"));
+				m_cListCtrl.SetItemText(iItem,i++,cCloseTime.Format( _T("%H:%M:%S")) );
+				m_cListCtrl.SetItemText(iItem,i++,_T(" *** PEV START WINDOW CLOSE ***"));
+				m_vPEVPos.push_back(lvi.iItem);
+				m_cPEVButton.EnableWindow();
+				}
+			}
+
 		/*
 	_T("Point"), 
 	_T("Time"), 

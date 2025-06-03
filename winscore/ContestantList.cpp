@@ -248,7 +248,7 @@ void CContestantList::SetContestantItem(CListCtrl& ListCtrl, int iItem, CContest
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->HandicapText());
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->SSANumberText());
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->CitizenText());
-	ListCtrl.SetItemText(iItem,iCol++,pcContestant->m_strFDR_ID);
+	ListCtrl.SetItemText(iItem,iCol++,pcContestant->GetFDRID());
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->AddressText());
 	ListCtrl.SetItemData(iItem, (LPARAM)pcContestant);
 	}
@@ -380,7 +380,7 @@ void CContestantList::DrawContestantList(	CDC		*pDC,
 			if( pcContestant->IsMotorized() ) cGlider+=_T(" (Motorized)");
 
 			CString strFDR;
-			strFDR=_T(", FDR ID ")+pcContestant->m_strFDR_ID;
+			strFDR=_T(", FDR ID ")+pcContestant->GetFDRID();
 
 			cText=	pcContestant->m_strLastName+_T(", ")+
 					pcContestant->m_strFirstName+_T(" ")+

@@ -371,7 +371,11 @@ void  CShowWarningsDlg::LoadWarningsFromFlight(int iSel)
 void CShowWarningsDlg::OnBnClickedUpdateFdrId()
 {
 	CContestant* pcContestant = m_pDoc->m_contestantList.GetByContestNo(m_pcFlight->m_strCID);
-	pcContestant->m_strFDR_ID = m_pcFlight->m_strFDRID;
+	pcContestant->SetFDRID(	m_pcFlight->m_strFDRID,
+							m_pcFlight->m_iENLMax, 
+							m_pcFlight->m_iENLMin,
+							m_pcFlight->m_iMOPMax,
+							m_pcFlight->m_iMOPMin );
 
 	int iItem=m_cListCtrl.GetNextItem(-1, LVNI_SELECTED);
 	if(iItem<0 ) return;

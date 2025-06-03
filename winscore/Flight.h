@@ -305,7 +305,7 @@ public:
 	void LocateFurthestProgess(TASKCLASS *pcTask, CGate &cFinish, TURNPOINTCLASSARRAY &cTurnpointArray);
 	int GetTaskPointID(int iTskPt);
 	void SetAcheviedTurnpoint(int i, int IID);
-	void CheckMotorRun(bool bBeforeStart=false, bool bPreContest=false);
+	void CheckMotorRun(CContestant* pcContestant, bool bBeforeStart=false, bool bPreContest=false );
 	void CheckBFI();
 	bool UpdateCID(CONTESTANTLISTCLASS *contestantList);
 	void CheckAllTimes();

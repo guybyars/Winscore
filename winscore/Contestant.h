@@ -37,6 +37,13 @@ using namespace std;
 class CContestant : public CObject  
 {
 	
+private:
+	CString m_strFDR_ID;
+	int			m_iENLMin;
+	int			m_iENLMax;
+	int			m_iMOPMin;
+	int			m_iMOPMax;
+
 protected:	
 	DECLARE_SERIAL(CContestant)
 
@@ -51,6 +58,15 @@ public:
 	CString GetWeightText();
 	CString GetGateText();
 	bool IsGuest();
+	CString GetFDRID() {return m_strFDR_ID;};
+
+	int	GetENLMin() {return m_iENLMin;};
+	int	GetENLMax() {return m_iENLMax;};
+	int	GetMOPMin() {return m_iMOPMin;};
+	int	GetMOPMax() {return m_iMOPMax;};
+
+	void SetFDRID(CString & strFDRID, int iENLMax=0, int iENLMin=0, int iMOPMax=0, int iMOPMin=0 );
+
 
 	void ExcludeFromFlightFiles(BOOL b);
 	bool IsExcludedFromFlightFiles() {return m_iOptions & CON_EXCLUDED;};
@@ -90,7 +106,7 @@ public:
 	CString m_strState;
 	CString m_strZipcode1;
 	CString m_strZipcode2;
-	CString m_strFDR_ID;
+
 
 	int		m_iSSANumber;
 	double	m_fHandicap;

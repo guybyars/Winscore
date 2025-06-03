@@ -70,7 +70,8 @@ public:
 	int GetPreStartAltitude() {return m_iPreStartAltitude;}
 	int GetPEVStartWindow() {return m_iPEVStartWindow;}
 	int GetPEVWaitTime() {return	m_iPEVWaitTime;}
-
+	int GetPEVWaitTimeSec() {return	m_iPEVWaitTime*60;}
+	int GetPEVStartWindowSec() {return m_iPEVStartWindow*60;}
 
 	bool ScoreOutTheTop();
 	bool IsPreStartAltitude();
