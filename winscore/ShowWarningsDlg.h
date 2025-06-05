@@ -61,7 +61,6 @@ public:
 	CButton m_cPenaltyButton;
 	CButton m_cSecurityButton;
 	CButton m_cClearButton;
-	CButton m_cFDRButton;
 
 	void LoadWarningsFromFlight(int iSel);
 

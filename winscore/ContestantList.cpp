@@ -248,7 +248,7 @@ void CContestantList::SetContestantItem(CListCtrl& ListCtrl, int iItem, CContest
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->HandicapText());
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->SSANumberText());
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->CitizenText());
-	ListCtrl.SetItemText(iItem,iCol++,pcContestant->GetFDRID());
+	ListCtrl.SetItemText(iItem,iCol++,pcContestant->GetFDRID(true));
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->AddressText());
 	ListCtrl.SetItemData(iItem, (LPARAM)pcContestant);
 	}

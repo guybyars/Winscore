@@ -272,11 +272,7 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 			{
 			if( !bPreContest )
 				{
-				if( pcContestant->GetFDRID().GetLength()==0 )
-					{
-					AddWarning(eNoFDR,0,"No flight recorder ID has been set for this contestant");
-					}
-				else if( pcContestant->GetFDRID()!=m_strFDRID )
+				if( pcContestant->HasFDR() && pcContestant->GetFDRID()!=m_strFDRID )
 					{
 					CString strWarn;
 					strWarn.Format("FDR ID \"%s\" in this log does not match FDR ID \"%s\" set for this contestant",m_strFDRID, pcContestant->GetFDRID());
@@ -285,6 +281,10 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 				CheckMotorRun(pcContestant);   // regular check
 				}
 			CheckMotorRun(pcContestant,true,bPreContest); // before start check
+			if( !pcContestant->HasFDR() )
+				{
+				AddWarning(eNoFDR,0,"No flight recorder ID has been set for this contestant");
+				}
 			}
 
 		//PreContest, all we care about is the motor run
@@ -3386,6 +3386,10 @@ CString CFlight::GetFlightText(TASKCLASS *pcTask, TURNPOINTCLASSARRAY *pTURNPOIN
 	strOut+=strSeparator;
 	strOut+=_T("Distance: ")+GetDistanceText();
 	strOut+=strSeparator;
+	strOut+=_T("ENL: ")+GetENLText();
+	strOut+=strSeparator;
+	strOut+=_T("MOP: ")+GetMOPText();
+	strOut+=strSeparator;
 
 	if( pTURNPOINTCLASSArray!=NULL )
 		{
@@ -3879,6 +3883,25 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, bool bCheckBeforeStart, b
 		iDiff>-150 )
 		{
 		// Run Detected
+
+		// Use this FDR as baseline if not already set.
+		if( !pcContestant->HasFDR() )
+			{
+			CString strInfo;
+			strInfo.Format(_T("Added FDR to this contestant, FDRID: %s, ENL: %i/%i,  MOP: %i/%i"),
+																			m_strFDRID, 
+																			m_iENLMin, 
+																			m_iENLMax,
+																			m_iMOPMin,
+																			m_iMOPMax );
+			AddWarning(eInformation,0,strInfo);
+			pcContestant->SetFDRID(	m_strFDRID, 
+									m_iENLMax, 
+									m_iENLMin,
+									m_iMOPMax,
+									m_iMOPMin );
+			}
+
 		if( bPreContest ) 
 			{
 			m_eStatus = ePreContestMotorRun;
@@ -5309,6 +5332,21 @@ bool CFlight::MotorRunLandoutWarning()
 	return false;
 	}
 
+bool CFlight::DidMotorRun()
+	{
+	if( m_eStatus==ePreContestMotorRun )	return true;
+	if( m_eStatus==eNOPreContestMotorRun )	return false;
+	if( m_iMOPMax<10 && m_iENLMax<10 )		return false;
+
+	for( int iWarn=0; iWarn<NumberOfWarnings(); iWarn++ )
+		{
+		if( m_cWarningArray[iWarn]->GetType()==eMotorRunLandout ||
+			m_cWarningArray[iWarn]->GetType()==eMotorRunStart
+			) return true; 
+		}
+	return false;
+	}
+
 
 void CFlight::ResetAllWarnings()
 	{
@@ -5668,3 +5706,16 @@ void  CFlight::FindPEVWindows()
 
 
 	}
+CString CFlight::GetENLText()
+	{
+	CString strENL;
+	strENL.Format("%i/%i",m_iENLMin, m_iENLMax);
+	return strENL;
+	}
+CString CFlight::GetMOPText()
+	{
+	CString strMOP;
+	strMOP.Format("%i/%i",m_iMOPMin, m_iMOPMax);
+	return strMOP;
+	}
+

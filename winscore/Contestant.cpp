@@ -944,3 +944,33 @@ void CContestant::UpdateHandicap(CGliderInfoList &cGIList)
 			}
 		}
 
+	bool CContestant::HasFDR() 
+		{
+		if(m_strFDR_ID.GetLength()==0 || (m_iENLMax==0 && m_iMOPMax==0) ) 
+			return false;
+		else
+			return true; 
+		}
+	CString CContestant::GetFDRENLMOPText()
+		{
+		CString strInfo;
+		CString strENL, strMOP;
+		if( m_iENLMax>0 )
+			strENL.Format("ENL: %i/%i ",m_iENLMin, m_iENLMax);
+		if( m_iMOPMax>0 ) 
+			strMOP.Format("MOP: %i/%i",m_iMOPMin, m_iMOPMax);
+		strInfo=strENL+strMOP;
+		return strInfo;
+		}
+
+	CString CContestant::GetFDRID(bool bIncludeENL)
+		{
+
+		if(!bIncludeENL ) return m_strFDR_ID;
+
+		if(!HasFDR() ) return "";
+		CString strOut=m_strFDR_ID;
+		strOut+="   ";
+		strOut+=GetFDRENLMOPText();
+		return strOut;
+		}

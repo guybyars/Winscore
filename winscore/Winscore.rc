@@ -232,7 +232,7 @@ BEGIN
         MENUITEM "View Analysis...",            ID_FLIGHTLOGS_VIEWANALYSIS
         MENUITEM "Info...",                     ID_ANALYZE_INFO
         MENUITEM "Display...",                  ID_FLIGHTLOGS_DISPLAY
-        MENUITEM "Set Contestant FDR ID",       ID_SET_FDR_ID
+        MENUITEM "Assign FDR to Contestant",    ID_SET_FDR_ID
         MENUITEM "Recheck Latest Start",        ID_FLIGHTLOGS_RECHECKLATESTSTART
         POPUP "Security"
         BEGIN
@@ -353,7 +353,7 @@ BEGIN
         MENUITEM "Analyze...",                  ID_FLIGHTLOGS_ANALYZEFLIGHT
         MENUITEM "View Analysis...",            ID_FLIGHTLOGS_VIEWANALYSIS
         MENUITEM "Display...",                  ID_FLIGHTLOGS_DISPLAY
-        MENUITEM "Set Contestant FDR ID",       ID_SET_FDR_ID
+        MENUITEM "Assign FDR to Contestant",    ID_SET_FDR_ID
         MENUITEM "Check Security",              32875
         MENUITEM "Delete",                      32833
     END
@@ -915,11 +915,10 @@ FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     PUSHBUTTON      "Close",IDC_CLOSE,430,207,81,14
     PUSHBUTTON      "Recheck Latest Start",IDC_RECHECK_LATEST,6,207,81,14
-    PUSHBUTTON      "Apply Penalty",IDC_APPLY_PENALTY,89,207,81,14
-    PUSHBUTTON      "Mark Security Passed",IDC_SECURITY_PASSED,175,207,81,14
-    PUSHBUTTON      "Clear Warning",IDC_CLEAR,345,207,81,14
+    PUSHBUTTON      "Apply Penalty",IDC_APPLY_PENALTY,109,207,81,14
+    PUSHBUTTON      "Mark Security Passed",IDC_SECURITY_PASSED,231,207,81,14
+    PUSHBUTTON      "Clear Warning",IDC_CLEAR,334,207,81,14
     CONTROL         "",IDC_LISTCTRL,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,7,7,504,192
-    PUSHBUTTON      "Update FDR ID",IDC_UPDATE_FDR_ID,260,207,81,14
 END
 
 IDD_EDIT_FLIGHT DIALOGEX 0, 0, 351, 190

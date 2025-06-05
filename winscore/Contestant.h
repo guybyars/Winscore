@@ -58,7 +58,8 @@ public:
 	CString GetWeightText();
 	CString GetGateText();
 	bool IsGuest();
-	CString GetFDRID() {return m_strFDR_ID;};
+	CString GetFDRID(bool bIncludeENL=false);
+	CString GetFDRENLMOPText() ;
 
 	int	GetENLMin() {return m_iENLMin;};
 	int	GetENLMax() {return m_iENLMax;};
@@ -66,7 +67,7 @@ public:
 	int	GetMOPMax() {return m_iMOPMax;};
 
 	void SetFDRID(CString & strFDRID, int iENLMax=0, int iENLMin=0, int iMOPMax=0, int iMOPMin=0 );
-
+	bool HasFDR();
 
 	void ExcludeFromFlightFiles(BOOL b);
 	bool IsExcludedFromFlightFiles() {return m_iOptions & CON_EXCLUDED;};

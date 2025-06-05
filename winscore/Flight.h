@@ -310,6 +310,8 @@ public:
 	bool UpdateCID(CONTESTANTLISTCLASS *contestantList);
 	void CheckAllTimes();
 	CString GetFlightText(TASKCLASS *pcTask=NULL, TURNPOINTCLASSARRAY *pcTurnpointArray=NULL, CString strSeparator="\t");
+	CString GetMOPText();
+	CString GetENLText();
 	void SetLandingLocation( CLocation &cLocation );
 	CString GetTaskPointText( int nDisplay );
 	CString GetNumWarningsText();
@@ -317,6 +319,7 @@ public:
 	void ClearStartWarning();
 	bool HasStartWarning();
 	bool MotorRunLandoutWarning();
+	bool DidMotorRun();
 	void	  GetWarningsArray(CStringArray &strArray);
 	void	  SetWarningsArray(CStringArray &strArray);
 	void	  ResetAllWarnings();

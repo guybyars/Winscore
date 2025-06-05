@@ -4158,6 +4158,13 @@ void CWinscoreView::OnSetFDRID()
 			CString strCID = pFlight->m_strCID;
 			CContestant *pContestant = pDocument->m_contestantList.GetByContestNo(strCID);
 			if( !pContestant ) continue;
+			if(pContestant->IsMotorized() && !pFlight->DidMotorRun() )
+				{
+				CString strInfo;
+				strInfo.Format("No motor run detected in log for %s.  Update anyway?", pFlight->m_strCID);
+				if( AfxMessageBox(strInfo, MB_YESNO)==IDNO ) continue;
+				}
+
 			pContestant->SetFDRID(	pFlight->m_strFDRID, 
 									pFlight->m_iENLMax, 
 									pFlight->m_iENLMin,
@@ -4184,7 +4191,7 @@ void CWinscoreView::OnSetFDRID()
 		}
 	if( nSelected==1 ) 
 		{
-		AfxMessageBox( "No Log Found or Not a Contestant.",  MB_ICONINFORMATION   );
+		AfxMessageBox( "FDR not updated.",  MB_ICONINFORMATION   );
 		}
 	}
 
