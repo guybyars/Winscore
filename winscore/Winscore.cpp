@@ -107,7 +107,6 @@ AfxMessageBox(_T("Winscore Beta version.  Evaluation only, not to be used for ac
 		}
 	if( hMutex!= NULL ) ReleaseMutex(hMutex);
 
-
 	// CG: The following block was inserted by 'Status Bar' component.
 	{
 		//Set up date and time defaults so they're the same as system defaults
@@ -292,15 +291,22 @@ void CWinscoreApp::OnAppExit()
 {
 	//  Application exit,
 
-	//RemindAboutScores();
-
 	CWinApp::OnAppExit();
 
 }
 
 int CWinscoreApp::ExitInstance() 
 {
-	return CWinApp::ExitInstance();
+	int iCode=CWinApp::ExitInstance();
+
+	if( iCode>0 ) 
+		{
+		CString strError;
+		strError.Format("Winscore exit code returned %i",iCode);
+		AfxMessageBox(strError);
+		}
+
+	return iCode;
 }
 
 BOOL CAboutDlg::OnInitDialog() 

@@ -14,6 +14,7 @@
     #endif // _MSC_VER >= 1000
     
     #include "ContestantList.h"
+    #include "FDRecorderList.h"
     #include "EventList.h"
     #include "TaskList.h"
     #include "ScoreRecordList.h"
@@ -178,6 +179,7 @@
     	BOOL			m_bGridPositionCalculated[NUMCLASSES];
     
     	//  Data Arrays/Lists
+		CFDRecorderList	 m_recorderList;
     	CTurnpointArray  m_turnpointArray;
     	CContestantList	 m_contestantList;
         CEventList       m_eventList;

@@ -1013,6 +1013,7 @@ UINT __cdecl AutoScoreProc( LPVOID lpParameter)
 					bool bRet=	pcFlight->Analyze(	pcTask, 
 													pView->m_pModlessAutoScoreDlg->m_pDocument->m_turnpointArray,
 													&pView->m_pModlessAutoScoreDlg->m_pDocument->m_contestantList,
+													pView->m_pModlessAutoScoreDlg->m_pDocument->m_recorderList,
 													pView->m_pModlessAutoScoreDlg->m_pDocument->m_eUnits,
 													true);  //true for silent mode
 					if( !bRet ) 

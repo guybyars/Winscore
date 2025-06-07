@@ -195,6 +195,7 @@
     <ClCompile Include="FDRAnalysisSettingsPropPage.cpp" />
     <ClCompile Include="FDRecorder.cpp" />
     <ClCompile Include="FDRecorderInfo.cpp" />
+    <ClCompile Include="FDRecorderList.cpp" />
     <ClCompile Include="FDRSettings.cpp" />
     <ClCompile Include="FDRSettingsPropPage.cpp" />
     <ClCompile Include="FDRSettingsPropSheet.cpp" />
@@ -757,6 +758,7 @@
     <ClInclude Include="FDRAnalysisSettingsPropPage.h" />
     <ClInclude Include="FDRecorder.h" />
     <ClInclude Include="FDRecorderInfo.h" />
+    <ClInclude Include="FDRecorderList.h" />
     <ClInclude Include="FDRSettings.h" />
     <ClInclude Include="FDRSettingsPropPage.h" />
     <ClInclude Include="FDRSettingsPropSheet.h" />

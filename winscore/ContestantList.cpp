@@ -148,7 +148,22 @@ CContestant* CContestantList::GetNext(POSITION& pos)
 	return (CContestant*)CObList::GetNext(pos);
 }
 
+void CContestantList::RemoveFDRIDFromContestants(CString strFDRID)
+	{
+	if( strFDRID.GetLength()==0  )  return ;
 
+	CContestant *pcContestant;
+	POSITION thispos, pos = GetHeadPosition();
+	while( pos )
+		{
+		thispos=pos;
+		pcContestant=(CContestant*)GetNext(pos);
+		if( pcContestant->GetFDRID()==strFDRID) 
+			{
+			pcContestant->SetFDRID("");
+			}
+		}
+	}
 
 void CContestantList::RemoveByPointer(CContestant* pcRemContestant)
 	{
@@ -248,7 +263,7 @@ void CContestantList::SetContestantItem(CListCtrl& ListCtrl, int iItem, CContest
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->HandicapText());
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->SSANumberText());
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->CitizenText());
-	ListCtrl.SetItemText(iItem,iCol++,pcContestant->GetFDRID(true));
+	ListCtrl.SetItemText(iItem,iCol++,pcContestant->GetFDRID());
 	ListCtrl.SetItemText(iItem,iCol++,pcContestant->AddressText());
 	ListCtrl.SetItemData(iItem, (LPARAM)pcContestant);
 	}

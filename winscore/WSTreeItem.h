@@ -21,7 +21,8 @@ public:
 	eScores			,
 	eLogs			,
 	eSetup          ,
-	ePreContest
+	ePreContest		,
+	eRecorders
 	}	ETreeType;	
 
 	CWSTreeItem(ETreeType eTreeType, CTime cTime=CTime(0), EClass eClass=eStandard);

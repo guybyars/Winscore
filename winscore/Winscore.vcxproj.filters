@@ -399,6 +399,9 @@
     <ClCompile Include="EmailSettingsDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FDRecorderList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Winscore.rc">
@@ -1988,6 +1991,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="wsversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FDRecorderList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

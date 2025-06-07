@@ -217,6 +217,7 @@
 				m_caPracticeDays[i]=m_CContestStartDate-CTimeSpan(i+1,0,0,0);
 
    		m_turnpointArray.ImportXML	(cMgr, pIDOMWinscoreNode);
+		m_recorderList.ImportXML	(cMgr, pIDOMWinscoreNode);
 	  	m_contestantList.ImportXML	(cMgr, pIDOMWinscoreNode,nSkipped);
 		ImportXMLClasses			(cMgr, pIDOMWinscoreNode);
 		ImportXMLGridPositions		(cMgr, pIDOMWinscoreNode);
@@ -306,6 +307,8 @@
     	m_ScoreRecordList.GetXML(cMgr, pIDOMWinscoreNode);
     	m_PenalityList.GetXML(cMgr, pIDOMWinscoreNode);
 		m_FlightList.GetXML(cMgr, pIDOMWinscoreNode);
+		m_recorderList.GetXML(cMgr, pIDOMWinscoreNode);
+
 		GetRegistryXML(cMgr, pIDOMWinscoreNode );
 
 		if( m_straPassedLogs.GetSize() >0 )
@@ -581,6 +584,7 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     
     	m_turnpointArray.Purge();
     	m_contestantList.Purge();
+		m_recorderList.Purge();
     	m_taskList.Purge();
     	m_ScoreRecordList.Purge();
     	m_PenalityList.Purge();

@@ -357,6 +357,9 @@ void CMainFrame::ProcessViewChange(EViews eNewView)
 	else if( eNewView==eTurnpointView ) 
 		pcView->ViewTurnpointList();
 
+	else if( eNewView==eRecorderView ) 
+		pcView->ViewRecorderList();
+
 	else if( eNewView==eTurnpointGridView ) 
 		pcView->ViewTurnpointGrid();
 
@@ -460,6 +463,10 @@ BOOL CMainFrame::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult)
 			else if( pItem->m_eTreeType==CWSTreeItem::eControlPoints )
 				{
 				ProcessViewChange(eTurnpointView);
+				}
+			else if( pItem->m_eTreeType==CWSTreeItem::eRecorders )
+				{
+				ProcessViewChange(eRecorderView);
 				}
 
 			else if( pItem->m_eTreeType==CWSTreeItem::eTasks )

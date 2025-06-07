@@ -36,10 +36,6 @@ CContestant::CContestant()
 	m_fSpan=0;
 	m_fWinglet=0;
 	m_fWeight=0;
-	m_iENLMin=0;
-	m_iENLMax=0;
-	m_iMOPMin=0;
-	m_iMOPMax=0;
 	}
 
 CContestant::~CContestant()
@@ -111,10 +107,6 @@ CContestant::CContestant(CContestant *pcContestant)
 	 m_fWinglet		= pcContestant->m_fWinglet;
 	 m_fWeight		= pcContestant->m_fWeight;
 	 m_cGliderInfo	= pcContestant->m_cGliderInfo;
-	 m_iENLMin		= pcContestant->m_iENLMin;
-	 m_iENLMax		= pcContestant->m_iENLMax;
-	 m_iMOPMin		= pcContestant->m_iMOPMin;
-	 m_iMOPMax		= pcContestant->m_iMOPMax;
 }
 
 
@@ -145,10 +137,6 @@ CContestant::CContestant(
 	 m_fWinglet=0;
 	 m_fWeight=0;
 	 m_iOptions=0;
-	 m_iENLMin=0;
-	 m_iENLMax=0;
-	 m_iMOPMin=0;
-	 m_iMOPMax=0;
 
 	 m_strContestNo = strContestNo;
 	 m_strLastName = strLastName;
@@ -544,11 +532,6 @@ bool CContestant::GetXML(CXMLMgr &cMgr, IDispatch *pIdsp )
 	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("Options"),	m_iOptions));
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("FDR_ID"),	LPCSTR(m_strFDR_ID)));
 
-	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MinENL"),			m_iENLMin));
-	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MaxENL"),			m_iENLMax));
-	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MinMOP"),			m_iMOPMin));
-	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MaxMOP"),			m_iMOPMax));
-
 	if( GetClass(m_eClass).IsHandicapped() )
 		{
 		if( m_fHandicap>0.0 )
@@ -632,10 +615,6 @@ bool CContestant::GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pIDOMNode )
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("Zip2"),		LPCSTR(m_strZipcode2)));
 
 	TESTHR(cMgr.CreateElement( pIDOMChildNode, _T("FDR_ID"),	LPCSTR(m_strFDR_ID)));
-	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MinENL"), m_iENLMin));
-	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MaxENL"), m_iENLMax));
-	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MinMOP"), m_iMOPMin));
-	TESTHR(cMgr.CreateElementIntC( pIDOMChildNode, _T("MaxMOP"), m_iMOPMax));
 
 	return true;
 }
@@ -829,11 +808,6 @@ CContestant::CContestant(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pContestant, boo
 	cMgr.SelectChildSTR( pContestant, _T("Zip2"),		m_strZipcode2);
 	cMgr.SelectChildSTR( pContestant, _T("FDR_ID"),		m_strFDR_ID);
 
-	GET_XML_INT( cMgr, pContestant, _T("MinENL"),			int, m_iENLMin,0);
-	GET_XML_INT( cMgr, pContestant, _T("MaxENL"),			int, m_iENLMax,0);
-	GET_XML_INT( cMgr, pContestant, _T("MinMOP"),			int, m_iMOPMin,0);
-	GET_XML_INT( cMgr, pContestant, _T("MaxMOP"),			int, m_iMOPMax,0);
-
 	GET_XML_DBL	( cMgr, pContestant, _T("Weight"), float, m_fWeight,		0.0);
 	GET_XML_DBL	( cMgr, pContestant, _T("Winglet"),double, m_fWinglet,	    0.0);
 	GET_XML_DBL	( cMgr, pContestant, _T("Span"),	 float, m_fSpan,		0.0);
@@ -854,23 +828,9 @@ CContestant::CContestant(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pContestant, boo
 
 	}
 
-void CContestant::SetFDRID(CString & strFDRID, int iENLMax, int iENLMin, int iMOPMax, int iMOPMin )
+void CContestant::SetFDRID(CString strFDRID )
 	{
 	m_strFDR_ID = strFDRID;
-	if( strFDRID.GetLength()==0 )
-		{
-		m_iENLMin=0;
-		m_iENLMax=0;
-		m_iMOPMin=0;
-		m_iMOPMax=0;
-		}
-	else
-		{
-		m_iENLMin=iENLMin;
-		m_iENLMax=iENLMax;
-		m_iMOPMin=iMOPMin;
-		m_iMOPMax=iMOPMax;
-		}
 	}
 
 void CContestant::UpdateHandicap(CGliderInfoList &cGIList)
@@ -944,33 +904,11 @@ void CContestant::UpdateHandicap(CGliderInfoList &cGIList)
 			}
 		}
 
-	bool CContestant::HasFDR() 
+
+	CString CContestant::GetFDRID()
 		{
-		if(m_strFDR_ID.GetLength()==0 || (m_iENLMax==0 && m_iMOPMax==0) ) 
-			return false;
+		if( IsMotorized() )
+			return m_strFDR_ID;
 		else
-			return true; 
-		}
-	CString CContestant::GetFDRENLMOPText()
-		{
-		CString strInfo;
-		CString strENL, strMOP;
-		if( m_iENLMax>0 )
-			strENL.Format("ENL: %i/%i ",m_iENLMin, m_iENLMax);
-		if( m_iMOPMax>0 ) 
-			strMOP.Format("MOP: %i/%i",m_iMOPMin, m_iMOPMax);
-		strInfo=strENL+strMOP;
-		return strInfo;
-		}
-
-	CString CContestant::GetFDRID(bool bIncludeENL)
-		{
-
-		if(!bIncludeENL ) return m_strFDR_ID;
-
-		if(!HasFDR() ) return "";
-		CString strOut=m_strFDR_ID;
-		strOut+="   ";
-		strOut+=GetFDRENLMOPText();
-		return strOut;
+			return "<n/a>";
 		}

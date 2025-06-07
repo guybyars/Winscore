@@ -417,6 +417,7 @@ void CFlightList::AnalyzeAll(	void* pFrame,
 					bool bRet=	pcFlight->Analyze(	taskList.GetByDateClass(cDate, eClass), 
 													turnpointArray,
 													&contestantList,
+													pcView->GetDocument()->m_recorderList,
 													eUnits);
 					if( !bRet && pcFlight->GetStatus()!=eNoTaskSpecified ) 
 						{

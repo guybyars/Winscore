@@ -188,7 +188,7 @@ public:
 	void ViewTurnpointGrid();
 	void ViewContestantList();
 	void ViewTurnpointList();
-//	void ViewInvalidLegList();
+	void ViewRecorderList();
 	void ViewFlightLogs(CTime cDate, EClass eClass, bool bPreContest=false);
 	void UpdateFlightLogs(CMainFrame* pFrame, CTime cDate, EClass eClass, CFlight *pcFlight);
 
@@ -251,6 +251,7 @@ public:
 	afx_msg void OnUpdateFileCheckfornewversionatstartup(CCmdUI *pCmdUI);
 	afx_msg void OnAutomaticSaveOptions();
 	afx_msg void OnLogstatusCheckedandok();
+	afx_msg void OnRecorderDelete();
 };
 
 #ifndef _DEBUG  // debug version in RListVw.cpp

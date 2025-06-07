@@ -214,8 +214,6 @@ CString CTurnpoint::CUPLatText()
 
 
 
-
-
 int CALLBACK CompareTurnpoint(LPARAM lParam1, LPARAM lParam2, 
     LPARAM iColumn)
 {

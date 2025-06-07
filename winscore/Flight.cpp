@@ -11,13 +11,16 @@
 #include "Global_Prototypes.h"
 
 #include "winscoredoc.h"
+#include "Flight.h"
+#include "FDRecorderList.h"
+
 #include "sua.h"
 #include "suautil.h"
 #include "DontShowDlg.h"
 
 #include "position.h"
 #include "IGCFile.h"
-#include "Flight.h"
+
 
 #include "averager.h"
 #include <math.h>
@@ -105,8 +108,9 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 	bool CFlight::Analyze(	TASKCLASS			*pcTask, 
 							TURNPOINTCLASSARRAY &turnpointArray,
 							CONTESTANTLISTCLASS *pContestantList,
+							CFDRecorderList		&cFDRecorderList,
 							EUnits				eUnits,
-							bool				bSilent,
+							bool    			bSilent,
 							bool				bPreContest)
 	{
 	CSingleLock cLock(&m_cSem_Analyze);
@@ -272,19 +276,9 @@ void CFlight::SetHomePoint( TURNPOINTCLASS *pcHomePoint )
 			{
 			if( !bPreContest )
 				{
-				if( pcContestant->HasFDR() && pcContestant->GetFDRID()!=m_strFDRID )
-					{
-					CString strWarn;
-					strWarn.Format("FDR ID \"%s\" in this log does not match FDR ID \"%s\" set for this contestant",m_strFDRID, pcContestant->GetFDRID());
-					AddWarning(eWrongFDR,0,strWarn);
-					}
-				CheckMotorRun(pcContestant);   // regular check
+				CheckMotorRun(pcContestant,cFDRecorderList);   // regular check
 				}
-			CheckMotorRun(pcContestant,true,bPreContest); // before start check
-			if( !pcContestant->HasFDR() )
-				{
-				AddWarning(eNoFDR,0,"No flight recorder ID has been set for this contestant");
-				}
+			CheckMotorRun(pcContestant,cFDRecorderList,true,bPreContest); // before start check
 			}
 
 		//PreContest, all we care about is the motor run
@@ -3474,7 +3468,7 @@ void CFlight::CheckBFI()
 }
 
 
-void CFlight::CheckMotorRun(CContestant *pcContestant, bool bCheckBeforeStart, bool bPreContest)
+void CFlight::CheckMotorRun(CContestant *pcContestant, CFDRecorderList &cRecorderList, bool bCheckBeforeStart, bool bPreContest)
 {
 	CPosition* pcPrevPos=NULL;
 	CTimeSpan cTotalMotorONTime(0);
@@ -3513,11 +3507,19 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, bool bCheckBeforeStart, b
 		return;
 		}
 
+	CFDRecorder* pcRecorder=cRecorderList.GetByRecorderID(m_strFDRID);
+	if( pcRecorder )
+		{
+		pcContestant->SetFDRID(m_strFDRID);
+		pcRecorder->SetCID(m_strCID);
+		}
+
 	int iEMax=0;
 	int iMMax=0;
 //Check for adequate signal in entire trace
-	if( pcContestant->GetENLMax()==0 &&
-		pcContestant->GetMOPMax()==0 )
+	if( !pcRecorder ||
+		(pcRecorder->GetENLMax()==0 &&
+		 pcRecorder->GetMOPMax()==0 ) )
 		{
 		// No Contestand baseline FDR data
 		iEMax=cENLNoise.GetMax();
@@ -3525,9 +3527,9 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, bool bCheckBeforeStart, b
 		}
 	else
 		{
-		// Use Contestant FDR data
-		iEMax=max(cENLNoise.GetMax(), pcContestant->GetENLMax() );
-		iMMax=max(cMOPNoise.GetMax(), pcContestant->GetMOPMax() );
+		// Use FDR data from baseline
+		iEMax=max(cENLNoise.GetMax(), pcRecorder->GetENLMax() );
+		iMMax=max(cMOPNoise.GetMax(), pcRecorder->GetMOPMax() );
 		}
 
 	//Now check from the contestants motor run
@@ -3580,8 +3582,9 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, bool bCheckBeforeStart, b
 	int iENLRange=0;
 	int iMOPRange=0;
 
-	if( pcContestant->GetENLMax()==0 &&
-		pcContestant->GetMOPMax()==0 )
+	if( !pcRecorder ||
+		(pcRecorder->GetENLMax()==0 &&
+		 pcRecorder->GetMOPMax()==0 ))
 		{
 		iENLRange =cENLNoise.GetMax();
 		iENLRange-=cENLNoise.GetMin();
@@ -3602,12 +3605,12 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, bool bCheckBeforeStart, b
 		CString strInfo;
 		if( !bCheckBeforeStart )
 			{
-			strInfo.Format("Using contestant baseline engine info ENL %i/%i, MOP %i/%i",pcContestant->GetENLMin(), pcContestant->GetENLMax(), pcContestant->GetMOPMin(), pcContestant->GetMOPMax() );
+			strInfo.Format("Using contestant baseline engine info ENL %i/%i, MOP %i/%i",pcRecorder->GetENLMin(), pcRecorder->GetENLMax(), pcRecorder->GetMOPMin(), pcRecorder->GetMOPMax() );
 			AddWarning(eInformation,0,strInfo);
 			}
-		iENLRange=pcContestant->GetENLMax()-pcContestant->GetENLMin();
-		iMOPRange=pcContestant->GetMOPMax()-pcContestant->GetMOPMin();
-		iMax	=pcContestant->GetENLMax();
+		iENLRange=pcRecorder->GetENLMax()-pcRecorder->GetENLMin();
+		iMOPRange=pcRecorder->GetMOPMax()-pcRecorder->GetMOPMin();
+		iMax	=pcRecorder->GetENLMax();
 		}
 
 	if( iENLRange<25 && iMOPRange<25 ) return;  // Not enough amplitude, no run.
@@ -3622,7 +3625,7 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, bool bCheckBeforeStart, b
 		pcPos->m_iEngineNoiseLevel=int(dPercent*150.);
 		}
 
-	iMax	=max(cMOPNoise.GetMax(),pcContestant->GetMOPMax());
+	iMax	=max(cMOPNoise.GetMax(),pcRecorder==NULL?0:pcRecorder->GetMOPMax());
 	double dAve2=0.0;
 	CMedian cAveragerMOP;
 	if( iMax > 100 )
@@ -3885,21 +3888,18 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, bool bCheckBeforeStart, b
 		// Run Detected
 
 		// Use this FDR as baseline if not already set.
-		if( !pcContestant->HasFDR() )
+		if( !pcRecorder )
 			{
+			cRecorderList.AddToList(new CFDRecorder(this));
+			pcContestant->SetFDRID(m_strFDRID);
 			CString strInfo;
-			strInfo.Format(_T("Added FDR to this contestant, FDRID: %s, ENL: %i/%i,  MOP: %i/%i"),
+			strInfo.Format(_T("Added FDR to this baseline list, FDRID: %s, ENL: %i/%i,  MOP: %i/%i"),
 																			m_strFDRID, 
 																			m_iENLMin, 
 																			m_iENLMax,
 																			m_iMOPMin,
 																			m_iMOPMax );
 			AddWarning(eInformation,0,strInfo);
-			pcContestant->SetFDRID(	m_strFDRID, 
-									m_iENLMax, 
-									m_iENLMin,
-									m_iMOPMax,
-									m_iMOPMin );
 			}
 
 		if( bPreContest ) 

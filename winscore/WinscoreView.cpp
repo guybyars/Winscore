@@ -239,6 +239,7 @@ ON_COMMAND(ID_FILE_CHECKFORNEWVERSIONATSTARTUP, &CWinscoreView::OnFileCheckforne
 ON_UPDATE_COMMAND_UI(ID_FILE_CHECKFORNEWVERSIONATSTARTUP, &CWinscoreView::OnUpdateFileCheckfornewversionatstartup)
 ON_COMMAND(ID_Menu, &CWinscoreView::OnAutomaticSaveOptions)
 ON_COMMAND(ID_LOGSTATUS_CHECKEDANDOK, &CWinscoreView::OnLogstatusCheckedandok)
+ON_COMMAND(ID_RECORDER_DELETE, &CWinscoreView::OnRecorderDelete)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -394,6 +395,29 @@ void CWinscoreView::ViewContestantList()
 	
 }
 
+
+void CWinscoreView::ViewRecorderList() 
+{
+	SaveColumnWidths();
+	CListCtrl& ListCtrl = GetListCtrl();
+	CWinscoreDoc* pDocument=GetDocument();
+
+  	CMainFrame* pFrame=(CMainFrame*)CWnd::GetParentFrame();
+	pFrame->SetViewCombo(eRecorderView);
+
+	m_eViewType=eRecorderView;
+
+	DeleteColumnsItems();
+	pDocument->m_recorderList.CreateControlColumns( ListCtrl );
+	pDocument->m_recorderList.LoadRecorderList( ListCtrl );
+	ListCtrl.SortItems( CompareRecorders, m_iSortedColumn[m_eViewType] );
+
+	RestoreColumnWidths();
+
+	UpdateStatusLine();
+
+	return;
+}
 
 void CWinscoreView::ViewTurnpointList() 
 {
@@ -661,9 +685,6 @@ void CWinscoreView::OnColumnclick(NMHDR* pNMHDR, LRESULT* pResult)
 	case eTurnpointView:
 		ListCtrl.SortItems( CompareTurnpoint, m_iSortedColumn[m_eViewType] );
 		return;
-//	case eTimesView:
-//		ListCtrl.SortItems( CompareEvents, m_iSortedColumn[m_eViewType] );
-//		return;
 	case eTaskView:
 		ListCtrl.SortItems( CompareTasks, m_iSortedColumn[m_eViewType] );
 		return;
@@ -675,6 +696,9 @@ void CWinscoreView::OnColumnclick(NMHDR* pNMHDR, LRESULT* pResult)
 		return;		
 	case ePreContestView:
 		ListCtrl.SortItems( ComparePreContestFlight, m_iSortedColumn[m_eViewType] );
+		return;	
+	case eRecorderView:
+		ListCtrl.SortItems( CompareRecorders, m_iSortedColumn[m_eViewType] );
 		return;	
 	}
 
@@ -2139,6 +2163,8 @@ void CWinscoreView::OnContextMenu(CWnd* pWnd, CPoint point)
 		iMenu=IDR_COPYMENU;
 	else if( eView==eContestantView )
 		iMenu=IDR_CONTESTANT1;
+	else if( eView==eRecorderView )
+		iMenu=IDR_RECORDER_MENU;
 	else
 		return;
 
@@ -2267,6 +2293,7 @@ void CWinscoreView::OnFlightlogsAnalyzeflight()
 		pcFlight->Analyze(	pDocument->m_taskList.GetByDateClass(cDate, eClass), 
 							pDocument->m_turnpointArray,
 							&pDocument->m_contestantList,
+							pDocument->m_recorderList,
 							pDocument->m_eUnits,
 							false,
 							m_eViewType==ePreContestView );
@@ -2444,6 +2471,7 @@ void CWinscoreView::OnFlightlogsViewanalysis()
 	bool bSuccess=cFlight.Analyze(	pDocument->m_taskList.GetByDateClass(cDate, pcFlight->m_eClass), 
 										pDocument->m_turnpointArray,
 										&pDocument->m_contestantList,
+										pDocument->m_recorderList,
 										pDocument->m_eUnits,
 										false,
 										m_eViewType==ePreContestView);
@@ -2604,6 +2632,7 @@ void CWinscoreView::OnFlightlogsDisplay()
 		cFlight.Analyze(	pDocument->m_taskList.GetByDateClass(cDate, pcFlight->m_eClass), 
 							pDocument->m_turnpointArray,
 							&pDocument->m_contestantList,
+							pDocument->m_recorderList,
 							pDocument->m_eUnits,
 							false,
 							m_eViewType==ePreContestView );
@@ -3224,6 +3253,7 @@ void CWinscoreView::OnImportFlashcard()
 				pcFlight->Analyze(	pDocument->m_taskList.GetByDateClass(cDate, eClass), 
 									pDocument->m_turnpointArray,
 									&pDocument->m_contestantList,
+									pDocument->m_recorderList,
 									pDocument->m_eUnits);
 				pcFlight->FreePositionData();
 				pDocument->SetModifiedFlag();
@@ -3779,6 +3809,7 @@ bool Rechecklateststart(CFlight* pcFlight,CWinscoreDoc *pDocument, bool bBatch, 
 		pcFlight->Analyze(	pcTask, 
 							pDocument->m_turnpointArray,
 							&pDocument->m_contestantList,
+							pDocument->m_recorderList,
 							pDocument->m_eUnits);
 		}
 
@@ -4144,10 +4175,7 @@ void CWinscoreView::OnSetFDRID()
 	CListCtrl& ListCtrl = GetListCtrl();
 
 	int nSelected=GetSelectedItems(cIntArray);
-	if( nSelected==0 ) 
-		{
-		AfxMessageBox( "No Log Found.",  MB_ICONINFORMATION   );
-		}
+	if( nSelected==0 ) return;
 
 	int nChanged=0;
 	for( int i=nSelected-1; i>=0; i-- )
@@ -4155,21 +4183,25 @@ void CWinscoreView::OnSetFDRID()
 		CFlight* pFlight=(CFlight*)ListCtrl.GetItemData(cIntArray[i]);
 		if( pFlight )
 			{
-			CString strCID = pFlight->m_strCID;
-			CContestant *pContestant = pDocument->m_contestantList.GetByContestNo(strCID);
-			if( !pContestant ) continue;
-			if(pContestant->IsMotorized() && !pFlight->DidMotorRun() )
+			CContestant *pContestant = pDocument->m_contestantList.GetByContestNo(pFlight->m_strCID);
 				{
-				CString strInfo;
-				strInfo.Format("No motor run detected in log for %s.  Update anyway?", pFlight->m_strCID);
-				if( AfxMessageBox(strInfo, MB_YESNO)==IDNO ) continue;
+				if( pContestant && !pContestant->IsMotorized() )
+					{
+					CString str;
+					str.Format(_T("%s is not registered as a motorglider."), pFlight->m_strCID);
+					AfxMessageBox(str, MB_ICONINFORMATION);
+					continue;
+					}
 				}
-
-			pContestant->SetFDRID(	pFlight->m_strFDRID, 
-									pFlight->m_iENLMax, 
-									pFlight->m_iENLMin,
-									pFlight->m_iMOPMax,
-									pFlight->m_iMOPMin );
+			if( pDocument->m_recorderList.GetByRecorderID(pFlight->m_strFDRID)!=NULL )
+				{
+				CString str;
+				str.Format(_T("A baseline already exists for %s, replace?"), pFlight->m_strFDRID);
+				if( AfxMessageBox(str, MB_YESNO)==IDNO ) continue; 
+				}
+			pDocument->m_recorderList.AddToList(new CFDRecorder(pFlight));
+			CString strCID = pFlight->m_strCID;
+			if( pContestant ) pContestant->SetFDRID( pFlight->m_strFDRID );
 
 			if( m_eViewType==eFlightLogView )
 				pFlight->AddToList( GetListCtrl(), TRUE, cIntArray[i] );
@@ -4185,17 +4217,55 @@ void CWinscoreView::OnSetFDRID()
 	if( nChanged>0 )
 		{
 		CString cStatus;
-		cStatus.Format( _T("%d Contestant(s) FDR IDs successfully updated."), nChanged );
+		cStatus.Format( _T("%d baseline FDR data successfully updated."), nChanged );
 		AfxMessageBox( cStatus,  MB_ICONINFORMATION   );
 		return;
 		}
-	if( nSelected==1 ) 
-		{
-		AfxMessageBox( "FDR not updated.",  MB_ICONINFORMATION   );
-		}
+
 	}
 
 void CWinscoreView::OnUpdateSetFDRID(CCmdUI* pCmdUI)
 	{
 	pCmdUI->Enable(  IsFlightSelected()	);
-	}
+}
+
+void CWinscoreView::OnRecorderDelete()
+{
+	if( m_eViewType!=eRecorderView  ) return;
+
+	CWinscoreDoc *pDocument=GetDocument();
+	CArray<int,int> cIntArray;
+	CListCtrl& ListCtrl = GetListCtrl();
+
+	int nSelected=GetSelectedItems(cIntArray);
+	if( nSelected==0 ) return;
+
+	CString str;
+	str.Format(_T("Ok to delete %d recorder(s)?"), nSelected);
+	if( AfxMessageBox(str, MB_YESNO)==IDNO ) return; 
+
+	int nChanged=0;
+	for( int i=nSelected-1; i>=0; i-- )
+		{
+		CFDRecorder* pRecorder=(CFDRecorder*)ListCtrl.GetItemData(cIntArray[i]);
+		if( pRecorder )
+			{
+			CString strRemovedFDRID=pRecorder->GetFDRID();
+			if( pDocument->m_recorderList.RemoveByPointer(pRecorder) ) 
+				{
+				nChanged++;
+				pDocument->m_contestantList.RemoveFDRIDFromContestants(strRemovedFDRID);
+				}
+			pDocument->SetModifiedFlag();
+			}
+		}
+	if( nChanged>0 )
+		{
+		ViewRecorderList();
+		CString cStatus;
+		cStatus.Format( _T("%d recorders deleted."), nChanged );
+		AfxMessageBox( cStatus,  MB_ICONINFORMATION   );
+		return;
+		}
+
+}

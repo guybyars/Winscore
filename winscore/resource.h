@@ -118,6 +118,8 @@
 #define IDR_COPY_ANALYSIS               269
 #define IDR_PRECONTESTFLIGHTMENU        270
 #define IDD_AUTOSAVE_OPTIONS            271
+#define IDR_RECORDER_MENU               272
+#define IDR_MENU1                       273
 #define IDR_AVI1                        402
 #define IDC_TURNPOINT_ID                1000
 #define IDC_CONTEST_NAME                1000
@@ -792,6 +794,8 @@
 #define ID_ANALYZE_SETCONTESTANTFDRID   32912
 #define ID_SETCONTESTANTFDRID           32913
 #define ID_SET_FDR_ID                   32914
+#define ID_RECORDER_DELETE              32915
+#define ID_RECORDER_DELETE32916         32916
 #define NO_ROLL_TIME_DNC                61250
 #define NO_FINISH_TIME                  61251
 #define FINISHED_BUT_LANDOUT            61252
@@ -830,8 +834,8 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        272
-#define _APS_NEXT_COMMAND_VALUE         32915
+#define _APS_NEXT_RESOURCE_VALUE        274
+#define _APS_NEXT_COMMAND_VALUE         32917
 #define _APS_NEXT_CONTROL_VALUE         1532
 #define _APS_NEXT_SYMED_VALUE           107
 #endif

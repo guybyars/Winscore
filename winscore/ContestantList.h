@@ -37,7 +37,7 @@ public:
 	void LoadContestantList(CListCtrl&);
 	void RemoveByPointer(CContestant* pcContestant);
 	void SetContestantItem(CListCtrl& ListCtrl, int iItem, CContestant *pcContestant);
-
+	void RemoveFDRIDFromContestants(CString);
 
 	CContestant* GetNext( POSITION& pos);
 

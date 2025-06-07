@@ -9,7 +9,6 @@
 using namespace std;
 
 #include <afx.h>
-#include "FDRecorder.h"
 #include "winscore.h"
 #include "GliderInfo.h"
 #include "GliderInfoList.h"
@@ -39,10 +38,6 @@ class CContestant : public CObject
 	
 private:
 	CString m_strFDR_ID;
-	int			m_iENLMin;
-	int			m_iENLMax;
-	int			m_iMOPMin;
-	int			m_iMOPMax;
 
 protected:	
 	DECLARE_SERIAL(CContestant)
@@ -58,16 +53,9 @@ public:
 	CString GetWeightText();
 	CString GetGateText();
 	bool IsGuest();
-	CString GetFDRID(bool bIncludeENL=false);
-	CString GetFDRENLMOPText() ;
 
-	int	GetENLMin() {return m_iENLMin;};
-	int	GetENLMax() {return m_iENLMax;};
-	int	GetMOPMin() {return m_iMOPMin;};
-	int	GetMOPMax() {return m_iMOPMax;};
-
-	void SetFDRID(CString & strFDRID, int iENLMax=0, int iENLMin=0, int iMOPMax=0, int iMOPMin=0 );
-	bool HasFDR();
+	CString GetFDRID();
+	void SetFDRID(CString strFDRID );
 
 	void ExcludeFromFlightFiles(BOOL b);
 	bool IsExcludedFromFlightFiles() {return m_iOptions & CON_EXCLUDED;};

@@ -5,13 +5,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_FLIGHT_H__6F701641_D984_11D2_B0BD_0080C84B0161__INCLUDED_)
-#define AFX_FLIGHT_H__6F701641_D984_11D2_B0BD_0080C84B0161__INCLUDED_
-
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
+
 
 
 #include "Winscore.h"	
@@ -34,7 +29,7 @@
 #include "WinscoreDefs.h"	// Added by ClassView
 #include <afxtempl.h>
 #include "warning.h"
-
+#include "FDRecorderList.h"
 
 #define FORWARD	   0
 #define BACKWARD   1
@@ -91,11 +86,12 @@ public:
 
 
 	bool Analyze(	TASKCLASS			*pcTask, 
-				TURNPOINTCLASSARRAY &turnpointArray,
-				CONTESTANTLISTCLASS	*contestantList,
-				EUnits				eUnits,
-				bool				bSilent=false,
-				bool				bPreContest=false);
+					TURNPOINTCLASSARRAY &turnpointArray,
+					CONTESTANTLISTCLASS	*contestantList,
+					CFDRecorderList		&cFDRecorderList,
+					EUnits				eUnits,
+					bool				bSilent=false,
+					bool				bPreContest=false);
 
 
 	void	AssignPositionStatus(	TASKCLASS* pcTask, 
@@ -108,7 +104,6 @@ public:
 									CArray<double,double> &dSpeedArray);
 
 private:
-
 	void	FindStartsAndFinish(CTask *pcTask);
 	int		FindAcheivedTurnpoint(int iEvent, int iTpt, int iStartPos, int iDirection=FORWARD, int iTPPos=-1);
 	CTime	InterpolateStartPoints( CPosition *pPos, CPosition *pPrevPoss, CLocation &cStartFix );
@@ -305,7 +300,7 @@ public:
 	void LocateFurthestProgess(TASKCLASS *pcTask, CGate &cFinish, TURNPOINTCLASSARRAY &cTurnpointArray);
 	int GetTaskPointID(int iTskPt);
 	void SetAcheviedTurnpoint(int i, int IID);
-	void CheckMotorRun(CContestant* pcContestant, bool bBeforeStart=false, bool bPreContest=false );
+	void CheckMotorRun(CContestant* pcContestant, CFDRecorderList &cRecorderList, bool bBeforeStart=false, bool bPreContest=false );
 	void CheckBFI();
 	bool UpdateCID(CONTESTANTLISTCLASS *contestantList);
 	void CheckAllTimes();
@@ -364,6 +359,3 @@ private:
 
 int CALLBACK CompareFlight(LPARAM lParam1, LPARAM lParam2, LPARAM iColumn);
 int CALLBACK ComparePreContestFlight(LPARAM lParam1, LPARAM lParam2, LPARAM iColumn);
-
-#endif // !defined(AFX_FLIGHT_H__6F701641_D984_11D2_B0BD_0080C84B0161__INCLUDED_)
-

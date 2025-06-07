@@ -232,7 +232,7 @@ BEGIN
         MENUITEM "View Analysis...",            ID_FLIGHTLOGS_VIEWANALYSIS
         MENUITEM "Info...",                     ID_ANALYZE_INFO
         MENUITEM "Display...",                  ID_FLIGHTLOGS_DISPLAY
-        MENUITEM "Assign FDR to Contestant",    ID_SET_FDR_ID
+        MENUITEM "Set this FDR run as engine baseline", ID_SET_FDR_ID
         MENUITEM "Recheck Latest Start",        ID_FLIGHTLOGS_RECHECKLATESTSTART
         POPUP "Security"
         BEGIN
@@ -353,9 +353,17 @@ BEGIN
         MENUITEM "Analyze...",                  ID_FLIGHTLOGS_ANALYZEFLIGHT
         MENUITEM "View Analysis...",            ID_FLIGHTLOGS_VIEWANALYSIS
         MENUITEM "Display...",                  ID_FLIGHTLOGS_DISPLAY
-        MENUITEM "Assign FDR to Contestant",    ID_SET_FDR_ID
+        MENUITEM "Set this FDR run as engine baseline", ID_SET_FDR_ID
         MENUITEM "Check Security",              32875
         MENUITEM "Delete",                      32833
+    END
+END
+
+IDR_RECORDER_MENU MENU
+BEGIN
+    POPUP "Recorder"
+    BEGIN
+        MENUITEM "Delete",                      ID_RECORDER_DELETE
     END
 END
 

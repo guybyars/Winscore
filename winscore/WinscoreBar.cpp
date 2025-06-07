@@ -231,6 +231,10 @@ int CWinscoreBar::LoadTreeCtrl(CDocument *pD)
 	GetTreeCtrl().SetItemData(iTtem,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eDistanceGrid));
 	GetTreeCtrl().SetItemImage(iTtem, 1, 1 );
 
+	iTtem = m_wndTree.InsertItem (_T("FD Recorders"),m_hSetup);
+	GetTreeCtrl().SetItemData(iTtem,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eRecorders));
+	GetTreeCtrl().SetItemImage(iTtem, 15, 15 );
+
 	iTtem = m_wndTree.InsertItem (_T("Takeoff Grid Positions"),m_hSetup);
 	GetTreeCtrl().SetItemData(iTtem,(DWORD_PTR)new CWSTreeItem(CWSTreeItem::eNone));
 	LoadClassesInTree(iTtem,false,CWSTreeItem::eGridPositions, 0);

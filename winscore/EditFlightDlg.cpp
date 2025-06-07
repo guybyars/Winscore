@@ -14,6 +14,7 @@
 #include "LandingLocationDlg.h"
 #include "ChangeTurnpointLocDlg.h"
 #include "AlternateStartDlg.h"
+#include "FDRecorderList.h"
 
 
 
@@ -232,6 +233,7 @@ void CEditFlightDlg::UpdateFlightFromDlg()
 					m_pcFlight->Analyze(	m_pcTask, 
 											m_pDoc->m_turnpointArray,
 											&m_pDoc->m_contestantList,
+											m_pDoc->m_recorderList,
 											m_pDoc->m_eUnits);
 					/*
 					m_pcFlight->FindStartFix();
@@ -470,6 +472,7 @@ void CEditFlightDlg::OnRecalculate()
 	m_pcFlight->Analyze(	m_pcTask, 
 							m_pDoc->m_turnpointArray,
 							&m_pDoc->m_contestantList,
+							m_pDoc->m_recorderList,
 							m_pDoc->m_eUnits);
 
 
@@ -643,6 +646,7 @@ void CEditFlightDlg::OnAltStart()
 	m_pcFlight->Analyze(	m_pcTask, 
 							m_pDoc->m_turnpointArray,
 							&m_pDoc->m_contestantList,
+							m_pDoc->m_recorderList,
 							m_pDoc->m_eUnits);
 
 	CAlternateStartDlg dlg;
