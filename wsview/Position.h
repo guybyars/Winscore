@@ -69,6 +69,7 @@ public:
 	int		m_iPressureAltitude;
 	int		m_iGPSAltitude;
 	int		m_iCorrectedAltitude;
+	int		m_iCorrectedFinishAltitude;
 	int     m_iStatus;
 	double	m_dAccuracy;
 	int		m_iEngineNoiseLevel;

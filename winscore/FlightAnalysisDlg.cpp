@@ -360,6 +360,23 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 			{
 			cInt.Format(_T("%5d"), pcPos->m_iCorrectedAltitude );
 			}
+		if( pcPos->m_cTime>m_pcFlight->GetFinishTime()-CTimeSpan(0,0,0,60))
+			{
+			CString strTemp;
+			// Added Finish corrected height
+			if( m_eUnits==eKilometers )
+				{
+				float dAlt=(float)pcPos->m_iCorrectedFinishAltitude;
+				strTemp.Format(_T(" / %4.1lf"), dAlt/m_to_ft );
+				}
+			else
+				{
+				strTemp.Format(_T(" / %5d"), pcPos->m_iCorrectedFinishAltitude );
+				}
+			cInt+=strTemp;
+			}
+
+
 
 		if( pcPos->CheckStatus(FAN_ABOVE_START_CYL) ) 
 			{
@@ -444,7 +461,7 @@ static int _gnColumnWidth[NUM_COLUMNS] =
 	60, //speed
 	75, //altitude
 	75, //altitude
-	75, //altitude
+	95, //altitude
 	95, //altitude
 	75, //accuracy
 	75, //ENL

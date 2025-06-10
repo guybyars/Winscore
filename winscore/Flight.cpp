@@ -914,6 +914,7 @@ void	CFlight::AssignPositionStatus(TASKCLASS* pcTask, bool bAutoTask, TURNPOINTC
 		pcPos=GetPosition(iPoint);
 		if(pcPos==NULL) break;
 		pcPos->m_iCorrectedAltitude=pcPos->m_iPressureAltitude+iMSLCorrection;
+		pcPos->m_iCorrectedFinishAltitude=pcPos->m_iPressureAltitude+iMSLFinishCorrection;
 		}
 //
 //
@@ -3603,11 +3604,11 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, CFDRecorderList &cRecorde
 	else
 		{
 		CString strInfo;
-		if( !bCheckBeforeStart )
-			{
-			strInfo.Format("Using contestant baseline engine info ENL %i/%i, MOP %i/%i",pcRecorder->GetENLMin(), pcRecorder->GetENLMax(), pcRecorder->GetMOPMin(), pcRecorder->GetMOPMax() );
-			AddWarning(eInformation,0,strInfo);
-			}
+		//if( !bCheckBeforeStart )
+		//	{
+		//	strInfo.Format("Using contestant baseline engine info ENL %i/%i, MOP %i/%i",pcRecorder->GetENLMin(), pcRecorder->GetENLMax(), pcRecorder->GetMOPMin(), pcRecorder->GetMOPMax() );
+		//	AddWarning(eInformation,0,strInfo);
+		//	}
 		iENLRange=pcRecorder->GetENLMax()-pcRecorder->GetENLMin();
 		iMOPRange=pcRecorder->GetMOPMax()-pcRecorder->GetMOPMin();
 		iMax	=pcRecorder->GetENLMax();

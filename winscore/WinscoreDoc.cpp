@@ -637,7 +637,14 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     			m_caContestDays[i].GetYear() ==cDefaultDay.GetYear()		) iSel=iPos;
     		cComboBox.SetItemDataPtr( iPos, &m_caContestDays[i] );
     		}
-    	if( iSel<0 ) iSel=0;
+    	if( iSel<0 ) 
+			{
+			CTime cCurrentTime(CTime::GetCurrentTime());
+			if(cCurrentTime.GetTime()>m_caContestDays[m_iNumContestDays-1].GetTime() )
+				iSel=cComboBox.GetCount()-1;
+			else
+				iSel=0;
+			}
     	cComboBox.SetCurSel(iSel);
     }
     
