@@ -1041,7 +1041,7 @@ UINT __cdecl AutoScoreProc( LPVOID lpParameter)
 
 	if( CheckAutoScoreStop(pView) ) return 0;
 
-	if( pView->m_pModlessAutoScoreDlg->m_cSendScoreslCheck.GetCheck() && (nNew>0 || bScoreSheetError) )
+	if( !pView->m_pModlessAutoScoreDlg->m_bPreContest && pView->m_pModlessAutoScoreDlg->m_cSendScoreslCheck.GetCheck() && (nNew>0 || bScoreSheetError) )
 		{
 		if( CheckAutoScoreStop(pView) ) return 0;
 		pView->m_pModlessAutoScoreDlg->AddStatusRecord("Sending Scoresheet to ssa.org...");

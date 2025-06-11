@@ -360,7 +360,7 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 			{
 			cInt.Format(_T("%5d"), pcPos->m_iCorrectedAltitude );
 			}
-		if( pcPos->m_cTime>m_pcFlight->GetFinishTime()-CTimeSpan(0,0,0,60))
+		if( m_pcFlight->IsFinishTimeValid() && pcPos->m_cTime>m_pcFlight->GetFinishTime()-CTimeSpan(0,0,0,60))
 			{
 			CString strTemp;
 			// Added Finish corrected height
