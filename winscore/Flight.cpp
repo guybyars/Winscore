@@ -3545,12 +3545,18 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, CFDRecorderList &cRecorde
 	int iStartPos=FindEvent(bCheckBeforeStart?FAN_ROLLING:FAN_LATEST_START, 0, FORWARD );
 	if( iStartPos<0 ) iStartPos=0;
 
-	int iFinishPos=FindEvent(bCheckBeforeStart?FAN_LATEST_START:FAN_FINISH, GetNumPoints()-1, BACKWARD );
-	if( iFinishPos<0 ) 
-			{
-			iFinishPos=FindEvent(FAN_LANDED, GetNumPoints()-1, BACKWARD );
-			if( iFinishPos<0 ) iFinishPos=GetNumPoints();
-			}
+	int iFinishPos=GetNumPoints()-1;
+	if( !bPreContest)
+		{
+		// In a pre contest check, a task might not be defined, so starts and finishes would be irrelevant, 
+		// So only do this if a not precontest.
+		iFinishPos=FindEvent(bCheckBeforeStart?FAN_LATEST_START:FAN_FINISH, GetNumPoints()-1, BACKWARD );
+		if( iFinishPos<0 ) 
+				{
+				iFinishPos=FindEvent(FAN_LANDED, GetNumPoints()-1, BACKWARD );
+				if( iFinishPos<0 ) iFinishPos=GetNumPoints();
+				}
+		}
 
 	// Now smooth the data with a rolling average
 	int nAve=5;
@@ -3878,7 +3884,7 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, CFDRecorderList &cRecorde
 		}
 
 
-	if( cLongestMotorONTime.GetTotalSeconds()>30 &&
+	if( cLongestMotorONTime.GetTotalSeconds()>45 &&
 		!CheckOption(FLT_SLANDINGPOINTLOCKED)	 &&
 		!CheckOption(FLT_LANDINGTIMELOCKED)		 &&
 		!CheckOption(FLT_FINISHTIMELOCKED)		 &&

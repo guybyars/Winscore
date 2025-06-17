@@ -3,16 +3,22 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2025
-#define WINSCOREVERSION		_T("2025 Rev 6")
-#define SHORTVERSION			 _T("Rev 6")
+#define WINSCOREVERSION		_T("2025 Rev 7")
+#define SHORTVERSION			 _T("Rev 7")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2025
 
+Rev 7
+	* Corrected issues with PreContest motor run detection
+	* Refined motor run detection tolerances
+	* Fix to avoid the "another instance is running" warnings
+
 Rev 6
 	* Added precontest motor run detections
+	* Added flight recorder baselines
 
 Rev 5
 	* Corrected additional PEV start issues.

@@ -306,6 +306,7 @@ int CWinscoreApp::ExitInstance()
 		AfxMessageBox(strError);
 		}
 
+	ExitProcess(1);  // Added to kill any stray processes
 	return iCode;
 }
 
