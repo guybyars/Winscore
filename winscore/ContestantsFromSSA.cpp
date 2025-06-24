@@ -103,8 +103,9 @@ void CContestantsFromSSA::OnLookupButton()
 			}
 
 		int nSkipped=0;
+		CString strSkipped;
 		m_cContestantList.Purge();
-		int nImported=m_cContestantList.ImportSSA(cMgr,cMgr.GetRoot(), m_pDoc->m_contestantList, nSkipped);
+		int nImported=m_cContestantList.ImportSSA(cMgr,cMgr.GetRoot(), m_pDoc->m_contestantList, nSkipped,strSkipped);
 
 		m_cContestantList.CheckClasses(m_pDoc->m_eContest);
 
@@ -116,8 +117,11 @@ void CContestantsFromSSA::OnLookupButton()
 		CString strStatus;
 		if( nSkipped==0 ) 
 			strStatus.Format( _T("%d contestants read from ssa.org"), nImported);
+		else if( nSkipped>0 && nSkipped <20 )
+			strStatus.Format( _T("%d new contestants read from ssa.org. %d contestant(s) were either already entered, or duplicate CIDs were imported from ssa.org.\n The following are highly suspect:\n%s"), nImported, nSkipped,strSkipped);
 		else
 			strStatus.Format( _T("%d new contestants read from ssa.org. %d contestant(s) were either already entered, or duplicate CIDs were imported from ssa.org."), nImported, nSkipped);
+
 		AfxMessageBox( strStatus,  MB_ICONINFORMATION      );
 
 		m_cOK.EnableWindow(nImported>0);

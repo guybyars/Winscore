@@ -665,7 +665,7 @@ int CContestantList::ImportXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pWinscore, 
 	return nImported;
 	}
 
-int CContestantList::ImportSSA(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pWinscore, CContestantList &cExistingContestantList, int &nSkipped)
+int CContestantList::ImportSSA(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pWinscore, CContestantList &cExistingContestantList, int &nSkipped, CString &strCIDSkipped)
 	{
 	int nImported=0;
 	nSkipped=0;
@@ -695,6 +695,10 @@ int CContestantList::ImportSSA(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pWinscore, 
 			pcContestant=new CContestant(cMgr, pContestant, true );
 			if( cExistingContestantList.GetByContestNo(pcContestant->m_strContestNo) )
 				{
+				strCIDSkipped+=pcContestant->m_strContestNo;
+				strCIDSkipped+="-";
+				strCIDSkipped+=pcContestant->m_strLastName;
+				strCIDSkipped+="\n";
 				delete pcContestant;
 				nSkipped++;
 				continue;
@@ -707,10 +711,32 @@ int CContestantList::ImportSSA(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pWinscore, 
 			continue;
 			}
 
+		CContestant *pExistingContestant=GetByContestNo(pcContestant->m_strContestNo);
+		if( pExistingContestant )
+			{
+			// There is an existing one which will be overwritten in AddToList below, save it now for the message
+			CString strClassName=GetClass(pExistingContestant->m_eClass).GetName();
+			strCIDSkipped+=pExistingContestant->m_strContestNo;
+			strCIDSkipped+="-";
+			strCIDSkipped+=pExistingContestant->m_strLastName;
+			strCIDSkipped+="-";
+			strCIDSkipped+=strClassName;
+			strCIDSkipped+="\n";
+			}
+
 		if( AddToList(pcContestant) ) 
 			nImported++;
 		else
+			{
+			CString strClassName=GetClass(pcContestant->m_eClass).GetName();
+			strCIDSkipped+=pcContestant->m_strContestNo;
+			strCIDSkipped+="-";
+			strCIDSkipped+=pcContestant->m_strLastName;
+			strCIDSkipped+="-";
+			strCIDSkipped+=strClassName;
+			strCIDSkipped+="\n\n";
 			nSkipped++;
+			}
 		}
 
 	return nImported;

@@ -3381,6 +3381,8 @@ CString CFlight::GetFlightText(TASKCLASS *pcTask, TURNPOINTCLASSARRAY *pTURNPOIN
 	strOut+=strSeparator;
 	strOut+=_T("Distance: ")+GetDistanceText();
 	strOut+=strSeparator;
+	strOut+=_T("FDR ID: ")+GetFDRID();
+	strOut+=strSeparator;
 	strOut+=_T("ENL: ")+GetENLText();
 	strOut+=strSeparator;
 	strOut+=_T("MOP: ")+GetMOPText();

@@ -3,13 +3,16 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2025
-#define WINSCOREVERSION		_T("2025 Rev 7")
-#define SHORTVERSION			 _T("Rev 7")
+#define WINSCOREVERSION		_T("2025 Rev 8")
+#define SHORTVERSION			 _T("Rev 8")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2025
+
+Rev 8
+	* Reported duplicates in SSA contestant import.
 
 Rev 7
 	* Corrected issues with PreContest motor run detection

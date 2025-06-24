@@ -54,6 +54,7 @@ public:
 	int			GetNumPoints();
 	bool		ReadFlight(bool bReadWaypoints=false);
 	CString		SummaryText();
+	CString		GetFDRID() {return m_strFDRID;};
 
 	CSemaphore m_cSem_ReadFlight,m_cSem_FreePositionData;
 

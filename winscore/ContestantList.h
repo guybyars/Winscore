@@ -24,7 +24,7 @@ public:
 	int CheckClasses(EContest);
 	void UpdateHandicaps(EContest eContest, CGliderInfoList &cGIList);
 	int ImportXML(CXMLMgr &cMgr,MSXML2::IXMLDOMNodePtr pIDOMWinscoreNode, int &nSkipped);
-	int ImportSSA(CXMLMgr &cMgr,MSXML2::IXMLDOMNodePtr pWinscore, CContestantList &cExistingContestantList, int &nSkipped);
+	int ImportSSA(CXMLMgr &cMgr,MSXML2::IXMLDOMNodePtr pWinscore, CContestantList &cExistingContestantList, int &nSkipped, CString &strCIDSkipped);
 
 	int GetXML	 (CXMLMgr &cMgr, IDispatch *pIDOMNode, bool bHandicappedOnly=false);
 	CContestant* GetByPilotName(CString cName);
