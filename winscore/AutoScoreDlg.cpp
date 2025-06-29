@@ -190,7 +190,7 @@ void CAutoScoreDlg::OnBnClickedStart()
 
 	iDrives=GetLogicalDrives();
 
-	if( m_cAnalyzeCheck.GetCheck() )
+	if( !m_bPreContest && m_cAnalyzeCheck.GetCheck() )
 		{
   		for( int iClass=0; iClass<NUMCLASSES; iClass++)
 			{
