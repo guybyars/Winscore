@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<HandicapList Title="SSA HC List Modified 2/8/2025 8:41:00 PM"><Codes><Code>
+<HandicapList Title="SSA HC List Modified 5/27/2025 11:10:00 AM"><Codes><Code>
 	<ID>F</ID>
 	<Description>F = Fixed gear (when both fixed and retractable variants exist)</Description></Code><Code>
 	<ID>R</ID>
@@ -1497,6 +1497,20 @@
 	<Handicap>1.18</Handicap>
 	<Modified>2/20/2014 6:34:00 PM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Marske</Manufacturer>
+	<Model>Monarch E</Model>
+	<Span>12.8</Span>
+	<Weight>420</Weight>
+	<Notes>F</Notes>
+	<Handicap>1.8</Handicap>
+	<Modified>5/27/2025 11:05:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Marske</Manufacturer>
+	<Model>Monarch G</Model>
+	<Span>12.8</Span>
+	<Weight>360</Weight>
+	<Notes>F</Notes>
+	<Handicap>1.855</Handicap>
+	<Modified>5/27/2025 11:10:00 AM</Modified></Aircraft><Aircraft>
+	<Manufacturer>Marske</Manufacturer>
 	<Model>Pioneer 3</Model>
 	<Span>15</Span>
 	<Weight>580</Weight>
@@ -1506,10 +1520,10 @@
 	<Manufacturer>Marske</Manufacturer>
 	<Model>Pioneer 4 Prototype</Model>
 	<Span>15</Span>
-	<Weight>650</Weight>
+	<Weight>730</Weight>
 	<Notes>SFC</Notes>
 	<Handicap>0.94</Handicap>
-	<Modified>11/2/2024 9:57:00 PM</Modified></Aircraft><Aircraft>
+	<Modified>5/27/2025 11:02:00 AM</Modified></Aircraft><Aircraft>
 	<Manufacturer>Marske</Manufacturer>
 	<Model>Pioneer IID</Model>
 	<Span>13</Span>

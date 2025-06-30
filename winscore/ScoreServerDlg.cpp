@@ -527,7 +527,7 @@ int CScoreServerDlg::SendFlightLogs(CString &strFileName, CString &strUsername, 
 
 		CFileStatus filestatus;
         CFile::GetStatus( strZipFileName, filestatus );
-		int iSize=filestatus.m_size/1024;
+		int iSize=(int)filestatus.m_size/1024;
 		iSize=iSize/1000;
 
 		if( iSize==0 )

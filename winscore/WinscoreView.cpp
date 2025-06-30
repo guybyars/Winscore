@@ -37,7 +37,6 @@
 #include "PlannerDlg.h"
 #include "WinscoreFonts.h"
 #include "ScoreRecordList.h"
-#include "ImportDataDlg.h"
 #include <fstream>
 #include "DontShowDlg.h"
 #include "AutoExport.h"

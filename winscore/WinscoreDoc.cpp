@@ -1689,7 +1689,6 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
     	CTimeSpan cSTI, cFlightTime, cSTICalculated;
     	CString cError, cSTIstr, cSTICalstr;
     	int uPenalityMask;
- 		CEvent cEvent;
     
     	BOOL	fContestant, fFinisher;
     	double	dDistance=0., dSpeed=0., dHours=0., dHdcapDist=0., dHdcapSpeed=0., dScoredDistance=0.;

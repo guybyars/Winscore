@@ -3,13 +3,17 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2025
-#define WINSCOREVERSION		_T("2025 Rev 8")
-#define SHORTVERSION			 _T("Rev 8")
+#define WINSCOREVERSION		_T("2025 Rev 9")
+#define SHORTVERSION			 _T("Rev 9")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2025
+
+Rev 9
+    * Upgrade to VS 2022
+	* Removed no task error in upload to precontest
 
 Rev 8
 	* Reported duplicates in SSA contestant import.

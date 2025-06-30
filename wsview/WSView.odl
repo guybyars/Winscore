@@ -1,11 +1,4 @@
-// WSView.odl : type library source for ActiveX Control project.
 
-// This file will be processed by the Make Type Library (mktyplib) tool to
-// produce the type library (WSView.tlb) that will become a resource in
-// WSView.ocx.
-
-#include <olectl.h>
-#include <idispids.h>
 
 [ uuid(E0748843-5814-11D3-BA96-0010A4043281), version(1.0),
   helpfile("WSView.hlp"),
@@ -15,6 +8,9 @@
 
 library WSVIEWLib
 {
+#include <olectl.h>
+#include <idispids.h>
+
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

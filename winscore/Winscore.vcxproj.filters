@@ -574,28 +574,10 @@
     <ClInclude Include="IGCFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ImportDataDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ImportFlightsDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ImportFlightSettings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InvalidLeg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InvalidLegDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="InvalidLegList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LandingCard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LandingCardList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LandingLocationDlg.h">
@@ -632,9 +614,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Position.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PreviewDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PrintGridDlg.h">
@@ -776,9 +755,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FDRSettings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LandingCardDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ServerSettings.h">
@@ -1994,6 +1970,42 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FDRecorderList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoScoreDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Contestant1Dlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EmailSettingsDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SSAPicker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IGCDirectories.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModulVer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NoLogFoundStatus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskLibraryDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Warning.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinscoreBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WSTreeItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SSAContestLoginDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
