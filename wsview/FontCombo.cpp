@@ -82,7 +82,7 @@ BEGIN_MESSAGE_MAP(CFontCombo, CComboBox)
 	ON_CONTROL_REFLECT(CBN_KILLFOCUS, OnKillfocus)
 	ON_CONTROL_REFLECT(CBN_SETFOCUS, OnSetfocus)
 	ON_CONTROL_REFLECT(CBN_CLOSEUP, OnCloseUp)
-	ON_WM_TIMER()
+	//ON_WM_TIMER()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -134,7 +134,8 @@ void CFontCombo::DrawItem(LPDRAWITEMSTRUCT lpDIS)
 	CDC *pDC = CDC::FromHandle(lpDIS->hDC);
 	
 	ASSERT(pDC); // Attached failed
-	
+	if (!pDC) return;
+
 	CRect rc(lpDIS->rcItem);
 	
 	// Draw focus rectangle
@@ -237,7 +238,6 @@ BOOL CFontCombo::EnumerateFonts()
 		// GetPrinterDC returns a HDC so attach it
 		hDC= dlg.CreatePrinterDC();
 		ASSERT(hDC != NULL);
-
 		ZeroMemory(&lf,sizeof(lf));
 		lf.lfCharSet = ANSI_CHARSET;
 

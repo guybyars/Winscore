@@ -152,6 +152,7 @@ BEGIN_MESSAGE_MAP(CWinscoreView, CListViewEx)
 	ON_UPDATE_COMMAND_UI(ID_FLIGHTLOGS_DELETE, OnUpdateFlightlogsDelete)
 	ON_UPDATE_COMMAND_UI(ID_FLIGHTLOGS_ANALYZEALL, OnUpdateFlightlogsAnalyzeall)
 	ON_COMMAND(ID_EDIT_COPY, OnEditCopy)
+	ON_COMMAND(ID_COPY_FORMATTED_TABLE, OnCopyFormattedTable)
 	ON_COMMAND(ID_SET_FDR_ID, OnSetFDRID)
 	ON_UPDATE_COMMAND_UI(ID_SET_FDR_ID, OnUpdateSetFDRID)
 	ON_COMMAND(ID_EXPORT_TO_TASK_LIBRARY, OnExportTaskToLibrary)
@@ -1990,6 +1991,23 @@ void CWinscoreView::OnUpdateFlightlogsAnalyzeall(CCmdUI* pCmdUI)
 
 	pCmdUI->Enable(  pDocument->Valid() &&
 					 pFrame->GetViewCombo()==eFlightLogView );
+}
+
+
+void CWinscoreView::OnCopyFormattedTable()
+{
+	//	Name	Dist(Miles)	Radius	 Alt(MSL)
+
+
+	CString strHtml;
+	CWinscoreDoc* pDocument = GetDocument();
+
+	CTask* pcTask = (CTask*)GetSelectedPtr();
+	if (!pcTask) return;
+
+	strHtml += pcTask->GetHTML(pDocument->m_turnpointArray, pDocument->m_eUnits);
+
+	CopyHTML((LPCSTR)(LPCTSTR)strHtml);
 }
 
 void CWinscoreView::OnEditCopy() 

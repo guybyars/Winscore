@@ -126,6 +126,7 @@ public:
 	afx_msg void OnBnClickedOk();
 	afx_msg void OnBnClickedExport();
 	afx_msg void OnBnClickedImport();
+	afx_msg void OnCopyFormatted();
 	afx_msg void OnBnClickedTaskPlanner2();
 	CWSView	m_cWSViewCtrl;
 	CListCtrl m_cStatusListCtrl;

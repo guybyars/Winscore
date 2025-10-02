@@ -169,6 +169,26 @@ enum ELogTime	{ eSystemTime	=0,
 				}\
 	  			strOut+=cLine; }\
 
+#define OUTPUT_TPT_TASK_HTML( pcTurnpoint, dDist, dRadius, strAltitude, cLine, strOut  ) {\
+				\
+				if( dRadius>0 )\
+				{\
+  				cLine.Format(_T("<tr><td>%d</td><td>%s</td><td>%6.2lf</td><td>%6.1lf</td><td>%s</td></tr>"),\
+    								pcTurnpoint->m_iID,\
+    								pcTurnpoint->m_strName,\
+    								dDist,\
+									dRadius,\
+									strAltitude);\
+				}\
+				else\
+				{\
+  				cLine.Format(_T("<tr><td>%d</td><td>%s</td><td>%6.2lf</td><td></td><td>%s</td></tr>"),\
+    								pcTurnpoint->m_iID,\
+    								pcTurnpoint->m_strName,\
+    								dDist,\
+									strAltitude);\
+				}\
+	  			strOut+=cLine; }\
 
 #endif // !defined(WINSCOREDEFS.H)
 

@@ -350,6 +350,7 @@
 #define IDC_18METER_CHECK               1188
 #define IDC_FORMAT_COMBO                1189
 #define IDC_IMPORT                      1190
+#define IDC_IMPORT2                     1191
 #define IDC_AIRFIELD                    1192
 #define IDC_HOME_CHECK                  1193
 #define IDC_START_CHECK                 1194
@@ -696,6 +697,7 @@
 #define IDC_WAIT_TIME_EDIT              1529
 #define IDC_PEV_START_WINDOW_EDIT       1530
 #define IDC_FDR_ID                      1531
+#define IDC_COPY_FORMATTED              1532
 #define IDB_SMALLICONS                  26018
 #define IDB_LARGEICONS                  26019
 #define ID_CONTEST_INFO_TURNPOINT       32771
@@ -796,6 +798,8 @@
 #define ID_SET_FDR_ID                   32914
 #define ID_RECORDER_DELETE              32915
 #define ID_RECORDER_DELETE32916         32916
+#define ID_ANALYZE_COPYFORMATTEDTABLE   32917
+#define ID_COPY_FORMATTED_TABLE         32918
 #define NO_ROLL_TIME_DNC                61250
 #define NO_FINISH_TIME                  61251
 #define FINISHED_BUT_LANDOUT            61252
@@ -834,9 +838,9 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        274
-#define _APS_NEXT_COMMAND_VALUE         32917
-#define _APS_NEXT_CONTROL_VALUE         1532
+#define _APS_NEXT_RESOURCE_VALUE        275
+#define _APS_NEXT_COMMAND_VALUE         32919
+#define _APS_NEXT_CONTROL_VALUE         1533
 #define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif

@@ -110,6 +110,10 @@
 
     CWinscoreDoc::CWinscoreDoc()
     {
+        // Allocate classes
+        CWSClass::AllocateClasses();
+
+
     	// Initialize defaults here
     	InitializeDefaultContest();
     
@@ -117,7 +121,7 @@
     
     CWinscoreDoc::~CWinscoreDoc()
 		{
-
+        CWSClass::FreeClasses();
 		}
 
     void CWinscoreDoc::ImportXMLClasses(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr pWinscore )
@@ -1035,7 +1039,12 @@ BOOL CWinscoreDoc::NoContestDay(CTime cDate, EClass eClass)
 						pcPenalty=NULL;
     					}
     	
-    				if( m_taskList.NoContestDay(pcScoreRecord->m_cDate, eClass) ) continue;
+                    if (m_taskList.NoContestDay(pcScoreRecord->m_cDate, eClass))
+                        {
+                        //No contest day, just update the cum points from previous total, then continue
+                        pcScoreRecord->m_dCumPoints = dCumPts;
+                        continue;
+                        };
 					
 					numOfficialDays++;
 
@@ -1795,8 +1804,13 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
     
             if( eClass==eSports )
 				fFinisher=( pcFlight->IsFinishTimeValid()  && dDistance>(cClass.GetMinTaskDistance(SYSTEMUNITS)/((cClass.IsHandicapped())?(pcContestant->m_fHandicap):(1.0))) );
-			else
-				fFinisher=( pcFlight->IsFinishTimeValid()  && dDistance>cClass.GetMinTaskDistance(SYSTEMUNITS) );
+            else
+                {
+                if (!pcTask->IsFAITask())
+                    fFinisher = (pcFlight->IsFinishTimeValid() && dDistance > cClass.GetMinTaskDistance(SYSTEMUNITS));
+                else
+                    fFinisher = pcFlight->IsFinishTimeValid();
+                }
     		
 			// Mark designated airfield.
     		if( !fFinisher && 
@@ -3787,7 +3801,7 @@ bool CWinscoreDoc::ExportDayXML( CString &strFile, int nClasses, EClass aeClasse
 			cMgr.CreateElement( pClassNode, _T("Name"),	LPCSTR(cClass.GetName(true)) );
 
 			CTask* pcTask=m_taskList.GetByDateClass(cDate, aeClasses[iClass]);
-    		if( pcTask==NULL || pcTask->m_eStatus==eNoContest )
+    		if( pcTask==NULL )//|| pcTask->m_eStatus==eNoContest )
     			{
 				cMgr.CreateElement( pClassNode, _T("Status"),	_T("No Contest Day") );
 				MSXML2::IXMLDOMNodePtr pIDOMChildNode;
@@ -3799,7 +3813,7 @@ bool CWinscoreDoc::ExportDayXML( CString &strFile, int nClasses, EClass aeClasse
     		CString		cStatus;
     		if( IsPracticeDay(cDate)>0  )
     			cStatus=_T("Practice Day");
-    		else
+            else if (pcTask->m_eStatus != eNoContest)
     			cStatus.Format(_T("Contest Day %d"), GetContestDay(cDate, aeClasses[iClass]) );
 			cMgr.CreateElement( pClassNode, _T("Status"), cStatus);
 			bool bHandicapped=cClass.IsHandicapped();
@@ -3855,11 +3869,18 @@ bool CWinscoreDoc::ExportDayXML( CString &strFile, int nClasses, EClass aeClasse
 				cMgr.CreateElement(	pScoreRecord, _T("LastName"),		LPCSTR(pcContestant->m_strLastName) );
 				cMgr.CreateElement(	pScoreRecord, _T("Glider"),			LPCSTR(pcContestant->m_strGlider) );
 
-				cMgr.CreateElementInt(	pScoreRecord, _T("DayRank"),		pcScoreRecord->m_iDayRank);
+                if (pcTask->m_eStatus == eNoContest)
+                    {
+                    cMgr.CreateElementInt(pScoreRecord, _T("DayRank"), 1);
+                    cMgr.CreateElementInt(pScoreRecord, _T("Points"), 0);
+                    }
+                else
+                    {
+                    cMgr.CreateElementInt(pScoreRecord, _T("DayRank"), pcScoreRecord->m_iDayRank);
+                    cMgr.CreateElementInt(pScoreRecord, _T("Points"), (int)pcScoreRecord->m_dPoints);
+                    }
 				cMgr.CreateElement(	pScoreRecord, _T("CumRank"),			pcScoreRecord->m_cCumRankText);
 
-
-				cMgr.CreateElementInt(	pScoreRecord, _T("Points"),			(int)pcScoreRecord->m_dPoints);
 				int iCPoints = max(0,(int)pcScoreRecord->m_dCumPoints);
 				cMgr.CreateElementInt(	pScoreRecord, _T("CPoints"), iCPoints);
 

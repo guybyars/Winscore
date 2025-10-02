@@ -50,7 +50,7 @@ void CFDRecorderList::SetRecorderItem(CListCtrl& ListCtrl, int iItem, CFDRecorde
 static _TCHAR *_gszColumnLabel[NUM_COLUMNS] =
 {
 	_T("FDR ID"), _T("Baseline Date"), _T("CID"), _T("Manufacturer"), _T("Hardware Version"), _T("Baseline File Name"),
-	 _T("ENL (min/max)"), _T("MOP (min/max") 
+	 _T("ENL (min/max)"), _T("MOP (min/max)") 
 };
 
 static int _gnColumnFmt[NUM_COLUMNS] = 

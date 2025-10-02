@@ -110,6 +110,8 @@ EClass GetDefaultClass();
 CTime	LocalToGMT(CTime cLocalTime );
 CTime	GMTToLocal(CTime cGMTTime );
 
+void CopyHTML(const char* html);
+
 void  WriteProfileDouble( LPCTSTR lpszSection, LPCTSTR lpszEntry, double dVal );
 double  GetProfileDouble( LPCTSTR lpszSection, LPCTSTR lpszEntry, double dDefault );
 

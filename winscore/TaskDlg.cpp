@@ -48,6 +48,7 @@ CTaskDlg::CTaskDlg(CWnd* pParent /*=NULL*/)
 
     SetControlInfo(IDC_EXPORT,			ANCHORE_BOTTOM);
     SetControlInfo(IDC_IMPORT,			ANCHORE_BOTTOM);
+	SetControlInfo(IDC_COPY_FORMATTED,  ANCHORE_BOTTOM);
     SetControlInfo(IDC_TASK_PLANNER2,	ANCHORE_BOTTOM);
 
     SetControlInfo(IDC_STATUS_LIST,		RESIZE_VER);
@@ -102,6 +103,7 @@ BEGIN_MESSAGE_MAP(CTaskDlg, CResizingDialog)
 	ON_BN_CLICKED(IDC_OK, &CTaskDlg::OnBnClickedOk)
 	ON_BN_CLICKED(IDC_EXPORT, &CTaskDlg::OnBnClickedExport)
 	ON_BN_CLICKED(IDC_IMPORT, &CTaskDlg::OnBnClickedImport)
+	ON_BN_CLICKED(IDC_COPY_FORMATTED, &CTaskDlg::OnCopyFormatted)
 	ON_BN_CLICKED(IDC_TASK_PLANNER2, &CTaskDlg::OnBnClickedTaskPlanner2)
 END_MESSAGE_MAP()
 
@@ -704,11 +706,10 @@ void CTaskDlg::OnBnClickedOk()
 bool CTaskDlg::ValidateTask()
 	{
 
-//	if( m_cTask.IsFAITask() && bNag) 
-//		{
-//		AfxMessageBox( "Notice: The FAI tasks are experimental and not to be used in a SSA contest without a waiver", MB_OK  );
-//		bNag=false;
-//		}
+	if( m_cTask.IsFAITask() && m_pDoc->m_eContest==eRegional) 
+		{
+		AfxMessageBox( "The FAI tasks should not be used in SSA Regional contests.  Do you know what you are doing?", MB_OK  );
+		}
 
 	if( m_cTask.m_eType==eAssigned || 
         m_cTask.m_eType==eFAIRacing ||
@@ -797,7 +798,14 @@ void CTaskDlg::OnBnClickedExport()
 	cList.ExportToTaskLibrary();
 	}
 
+void CTaskDlg::OnCopyFormatted()
+	{
+	CString strHtml;
 
+	strHtml += m_cTask.GetHTML(m_pDoc->m_turnpointArray, m_pDoc->m_eUnits);
+
+	CopyHTML((LPCSTR)(LPCTSTR)strHtml);
+	}
 
 void CTaskDlg::OnBnClickedImport()
 {

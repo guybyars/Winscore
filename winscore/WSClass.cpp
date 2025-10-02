@@ -18,13 +18,31 @@ static char THIS_FILE[]=__FILE__;
 #define new DEBUG_NEW
 #endif
 
-static	CWSClass	acClasses[NUMCLASSES];
+static	CWSClass*	pcClasses[NUMCLASSES];
 
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 IMPLEMENT_SERIAL( CWSClass, CWSClass, VERSIONABLE_SCHEMA|2)
+
+void CWSClass::AllocateClasses()
+	{
+	for (int i = 0; i < NUMCLASSES; i++)
+		{
+		pcClasses[i] = new CWSClass();
+		}
+	}
+
+void CWSClass::FreeClasses()
+{
+	for (int i = 0; i < NUMCLASSES; i++)
+	{
+		delete pcClasses[i];
+		pcClasses[i] = NULL;
+	}
+}
+
 
 CWSClass::CWSClass()
 	{
@@ -43,7 +61,7 @@ CWSClass::CWSClass()
 	m_dMDP_M_ASGNED	= -.25;
 	m_dMDP_B_ASGNED =.65;
 
-	m_dMSP_M_POST	=800;	//2004;
+	m_dMSP_M_POST	=800;	
 	m_dMSP_B_POST	=400;
 	m_dMDP_M_POST	= -.25;
 	m_dMDP_B_POST	=.65;
@@ -238,18 +256,18 @@ void CWSClass::Initialize(EContest eContest, EClass eClass)
 
 	if( eClass==eStandard || eClass== e15Meter)
 		{
-		m_dD1=ConvertDistance(300, eKilometers, SYSTEMUNITS);
-		m_dDm=ConvertDistance(120., eKilometers, SYSTEMUNITS);
+		m_dD1=ConvertDistance(186., eStatute, SYSTEMUNITS);
+		m_dDm=ConvertDistance(75., eStatute, SYSTEMUNITS);
 		}
 	else if( eClass==e18Meter || eClass== eOpen)
 		{
-		m_dD1=ConvertDistance(350, eKilometers, SYSTEMUNITS);
-		m_dDm=ConvertDistance(140., eKilometers, SYSTEMUNITS);
+		m_dD1=ConvertDistance(217., eStatute, SYSTEMUNITS);
+		m_dDm=ConvertDistance(87., eStatute, SYSTEMUNITS);
 		}
 	else 
 		{
-		m_dD1=ConvertDistance(250, eKilometers, SYSTEMUNITS);
-		m_dDm=ConvertDistance(100., eKilometers, SYSTEMUNITS);
+		m_dD1=ConvertDistance(155., eStatute, SYSTEMUNITS);
+		m_dDm=ConvertDistance(62., eStatute, SYSTEMUNITS);
 		}
 }
 
@@ -295,7 +313,7 @@ void CWSClass::SetMinTaskTime(double dHours)
 
 CWSClass& GetClass(int i)
 	{
-	return acClasses[i];
+	return *pcClasses[i];
 	}
 
 
@@ -306,8 +324,8 @@ CWSClass& GetClass(EClass eClass, bool bActiveOnly)
 		{
 		for( int i=0; i<NUMCLASSES; i++ )
 			{
-			if( acClasses[i].GetType()==eClass &&
-				acClasses[i].IsActive()			) 
+			if( pcClasses[i]->GetType()==eClass &&
+				pcClasses[i]->IsActive()			) 
 				{
 				iSel=i;
 				break;
@@ -318,7 +336,7 @@ CWSClass& GetClass(EClass eClass, bool bActiveOnly)
 		{
 		for( int i=0; i<NUMCLASSES; i++ )
 			{
-			if( acClasses[i].GetType()==eClass 	) 
+			if( pcClasses[i]->GetType()==eClass 	) 
 				{
 				iSel=i;
 				break;
@@ -326,7 +344,7 @@ CWSClass& GetClass(EClass eClass, bool bActiveOnly)
 			}
 		}
 
-	return acClasses[iSel];
+	return *pcClasses[iSel];
 	}
 
 CWSClass& GetClass(EContest eContest, EClass eClass)
@@ -334,14 +352,14 @@ CWSClass& GetClass(EContest eContest, EClass eClass)
 	int iSel=0;
 	for( int i=0; i<NUMCLASSES; i++ )
 		{
-		if( acClasses[i].GetType()	==eClass &&
-			acClasses[i].m_eContest	==eContest ) 
+		if( pcClasses[i]->GetType()	==eClass &&
+			pcClasses[i]->m_eContest	==eContest ) 
 			{
 			iSel=i;
 			break;
 			}
 		}	
-	return acClasses[iSel];
+	return *pcClasses[iSel];
 	}
 
 int GetClassPos(EContest eContest, EClass eClass)
@@ -349,8 +367,8 @@ int GetClassPos(EContest eContest, EClass eClass)
 	int iSel=0;
 	for( int i=0; i<NUMCLASSES; i++ )
 		{
-		if( acClasses[i].GetType()	==eClass &&
-			acClasses[i].m_eContest	==eContest ) 
+		if( pcClasses[i]->GetType()	==eClass &&
+			pcClasses[i]->m_eContest	==eContest ) 
 			{
 			iSel=i;
 			break;

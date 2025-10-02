@@ -108,6 +108,7 @@ protected:
 	afx_msg void OnUpdateFlightlogsDelete(CCmdUI* pCmdUI);
 	afx_msg void OnUpdateFlightlogsAnalyzeall(CCmdUI* pCmdUI);
 	afx_msg void OnEditCopy();
+	afx_msg void OnCopyFormattedTable();
 	afx_msg void OnUpdateEditCopy(CCmdUI* pCmdUI);
 	afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
 	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);

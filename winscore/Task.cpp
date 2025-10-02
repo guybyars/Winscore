@@ -75,7 +75,7 @@ CString CTask::GetStatusText()
 CString CTask::GetStatusText(EStatus eStatus)
 {
   if( eStatus==eNoContest )
-	  return _T("No_Contest_Day");
+	  return _T("No Contest Day");
   else if( eStatus==eOfficial )
 	  return _T("Official");
   else if( eStatus==eUnofficial )
@@ -953,7 +953,8 @@ CString CTask::GetText(CTurnpointArray &turnpointArray, EUnits eUnits)
    		CTurnpoint *pcTurnpoint=NULL, *pcPrevTurnpoint=NULL;
     
 		pcTurnpoint=turnpointArray[m_cStartGate.GetPointID()-1];
-		OUTPUT_TPT_TEXT( pcTurnpoint, dDist,m_cStartGate.IsGPSCylinder()?(ConvertDistance(m_cStartGate.GetRadius(),SYSTEMUNITS, eUnits)):(0.0), cLine, true, "", strOut );
+		double dRadius = ConvertDistance(m_cStartGate.GetRadius(), SYSTEMUNITS, eUnits);
+		OUTPUT_TPT_TEXT( pcTurnpoint, dDist, dRadius, cLine, true, "", strOut );
 		strOut+=GetStartCeilingText();
 		strOut+=" Max";
 		strOut+=strNEWLINE;
@@ -1325,4 +1326,121 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 	cFile.Close();
 
 	return 0;
+}
+CString CTask::GetHTML(CTurnpointArray& turnpointArray, EUnits eUnits)
+{
+	CString strOut;
+	CString cLine;
+
+	CString strStyle;
+	strStyle += "<style>";
+	strStyle += "table{";
+	strStyle += "width: 100%;";
+	strStyle += "border: 1px solid black";
+	strStyle += "border-collapse: collapse;";
+	strStyle += "margin: 1px 0;";
+	strStyle += "}";
+		strStyle += "th, td{";
+		strStyle += "border: 1px solid black;";
+		strStyle += "padding: 0px;";
+		strStyle += "text-align: left;";
+		strStyle += "}";
+	strStyle += "</style>";
+
+	strOut = strStyle;
+
+	if (IsAreaTask() || m_eType == eAssigned || m_eType == eModifiedAssigned || m_eType == eFAIRacing)
+	{
+		strOut +="<p style=font-size: 40px;><b>";
+		if (m_eType == eAssigned)
+			strOut += _T("Assigned Task");
+		else if (m_eType == eModifiedAssigned)
+			strOut += _T("Modified Assigned Task");
+		else if (m_eType == eTurnArea)
+			strOut += _T("Turn Area Task");
+		else if (m_eType == eFAIRacing)
+			strOut += _T("FAI Racing Task");
+		else if (m_eType == eFAIAssignedArea)
+			strOut += _T("FAI Assigned Area Task");
+		strOut += "</b></p>";
+
+		if (IsTimedTask())
+		{
+			strOut += "<p style=font-size: 20px;><b>";
+			cLine = m_cPostTime.Format(_T("Minimum Time: %H:%M"));
+			strOut += cLine;
+			strOut += "</b></p>";
+		}
+
+		strOut += "<table cellspacing=\"0\">";
+		strOut += "<tr>";
+
+
+		strOut += _T("<th>ID</th>");
+		strOut += _T("<th>Name</th>");
+		strOut += _T("<th>Distance (");
+		strOut += UnitsTextShort(eUnits);
+		strOut += _T(")</th>");
+		if (IsAreaTask() ||
+			m_cStartGate.IsGPSCylinder() ||
+			m_cFinishGate.IsGPSCylinder())
+			{
+			strOut += _T("<th>Radius</th>  <th>Alt(MSL)</th>");
+			}
+		else
+			strOut += _T("<th></th><th></th>");
+
+
+		double dDist = 0.0;
+		CTurnpoint* pcTurnpoint = NULL, * pcPrevTurnpoint = NULL;
+
+		pcTurnpoint = turnpointArray[m_cStartGate.GetPointID() - 1];
+		double dRadius = ConvertDistance(m_cStartGate.GetRadius(), SYSTEMUNITS, eUnits);
+		CString strAltitude = GetStartCeilingText() + " Max";
+		OUTPUT_TPT_TASK_HTML(pcTurnpoint, dDist, dRadius, strAltitude, cLine, strOut);
+		
+		pcPrevTurnpoint = pcTurnpoint;
+
+		if (m_cStartGate.IsGPSCylinder())
+			dDist -= ConvertDistance(m_cStartGate.GetRadius(), SYSTEMUNITS, eUnits);
+
+		for (int iTpt = 0; iTpt < GetNumTurnpoints(); iTpt++)
+		{
+			pcPrevTurnpoint = pcTurnpoint;
+			pcTurnpoint = turnpointArray[GetTurnpointID(iTpt) - 1];
+			dDist += pcPrevTurnpoint->DistanceTo(pcTurnpoint, eUnits);
+			OUTPUT_TPT_TASK_HTML(pcTurnpoint, dDist, (IsAreaTask()) ? (ConvertDistance(GetTurnpointRadius(iTpt), SYSTEMUNITS, eUnits)) : (0.0), "", cLine, strOut);
+			pcPrevTurnpoint = pcTurnpoint;
+		}
+
+		pcTurnpoint = turnpointArray[m_cFinishGate.GetPointID() - 1];
+		dDist += pcPrevTurnpoint->DistanceTo(pcTurnpoint, eUnits);
+
+		if (m_cFinishGate.IsGPSCylinder())
+			dDist -= ConvertDistance(m_cFinishGate.GetRadius(), SYSTEMUNITS, eUnits);
+
+		pcTurnpoint = turnpointArray[m_cFinishGate.GetPointID() - 1];
+		strAltitude= GetFinishBaseText()+ " Min";
+		OUTPUT_TPT_TASK_HTML(pcTurnpoint, dDist, m_cFinishGate.IsGPSCylinder() ? (ConvertDistance(m_cFinishGate.GetRadius(), SYSTEMUNITS, eUnits)) : (0.0), strAltitude, cLine, strOut);
+
+
+		strOut += "</table>";
+
+		if (m_eType == eAssigned || m_eType == eFAIRacing)
+		{
+			cLine.Format(_T("<h3>Total Distance: %6.2lf %s</h3>"), dDist, UnitsText(eUnits));
+			strOut += cLine;
+		}
+		else if (IsAreaTask())
+		{
+			double dMin, dDist, dMax;
+			GetTurnAreaDistances(turnpointArray, dMin, dDist, dMax);
+
+			cLine.Format(_T("<p style=font - size: 20px;><b>Distance (%s)- %6.2lf Min: %6.2lf, Max: %6.2lf</b></p>"), UnitsText(eUnits), ConvertDistance(dDist, SYSTEMUNITS, eUnits),
+				ConvertDistance(dMin, SYSTEMUNITS, eUnits),
+				ConvertDistance(dMax, SYSTEMUNITS, eUnits));
+			strOut += cLine;
+		}
+	}
+		return strOut;
 }

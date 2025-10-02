@@ -274,6 +274,7 @@ BEGIN
     POPUP "Analyze"
     BEGIN
         MENUITEM "Copy    Ctrl+C",              ID_EDIT_COPY
+        MENUITEM "Copy Formatted Table",        ID_COPY_FORMATTED_TABLE
         MENUITEM "Export to Task Library...",   ID_EXPORT_TO_TASK_LIBRARY
         MENUITEM "Export Task to CUP File...",  ID_EXPORT_TASK_TO_CUP
     END
@@ -618,11 +619,12 @@ BEGIN
     PUSHBUTTON      "Start Gate (B)...",IDC_START_GATE_BUTTON_B,117,89,56,14
     CONTROL         "",IDC_2ND_GATE_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,92,8,8
     PUSHBUTTON      "Apply",IDC_APPLY,89,317,60,14
-    PUSHBUTTON      "Export to Library...",IDC_EXPORT,9,293,87,14
-    PUSHBUTTON      "Import from Library...",IDC_IMPORT,162,293,87,14
+    PUSHBUTTON      "Export to Library...",IDC_EXPORT,5,295,71,14
+    PUSHBUTTON      "Import from Library...",IDC_IMPORT,81,295,74,14
     CONTROL         "",IDC_WSVIEWCTRL1,
                     "{E0748846-5814-11D3-BA96-0010A4043281}",WS_TABSTOP,261,7,292,324
     CONTROL         "",IDC_STATUS_LIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,5,196,238,91
+    PUSHBUTTON      "Copy Formatted",IDC_COPY_FORMATTED,163,295,74,14
 END
 
 IDD_LANDING DIALOG 0, 0, 266, 266
@@ -1783,7 +1785,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2025,0,0,9
+ FILEVERSION 2025,0,1,0
  PRODUCTVERSION 2,0,2,5
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -1800,12 +1802,12 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "FileDescription", "Winscore MFC Application"
-            VALUE "FileVersion", "2025.0.0.9"
+            VALUE "FileVersion", "2025.0.1.0"
             VALUE "InternalName", "Winscore"
             VALUE "LegalCopyright", "Copyright (C) 2025"
             VALUE "OriginalFilename", "Winscore.EXE"
             VALUE "ProductName", "Winscore Application"
-            VALUE "ProductVersion", "2025-09.00"
+            VALUE "ProductVersion", "2025-10.00"
         END
     END
     BLOCK "VarFileInfo"
@@ -2568,7 +2570,7 @@ END
 IDD_TASK DLGINIT
 BEGIN
     IDC_WSVIEWCTRL1, 0x376, 53, 0
-0x0000, 0x0000, 0x0000, 0x0001, 0x2d45, 0x0000, 0x32bf, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0001, 0x2d45, 0x0000, 0x3678, 0x0000, 0x0000, 
 0x0000, 0xffff, 0x00ff, 0x80ff, 0x0080, 0xff80, 0x0080, 0x0000, 0x00ff, 
 0x0000, 0x0000, 0x8000, 0x0000, 0xffff, 0x0080, 0x001e, 0x0000, "\001" 
     0
@@ -2591,6 +2593,17 @@ IDC_CURSOR1             CURSOR                  "res\\cursor1.cur"
 IDR_DOWNLOAD_ANIMATION  AVI                     "res\\inetdownload.avi"
 
 IDR_AVI1                AVI                     "res\\upload.avi"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_TASK AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
 
 
 /////////////////////////////////////////////////////////////////////////////

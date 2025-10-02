@@ -2437,3 +2437,81 @@ void  FormatFlightLogZipName( CString &strZipFileName, int iSSA_ID, CTime *pcTim
 	 					  iSSA_ID,
 			  			  pcTime->Format(_T("%d-%b-%Y")));
 	}
+
+void CopyHTML(const char* html)
+{
+	// Convert incoming html text to a format that will trigger html code in paste buffer
+
+	// Create temporary buffer for HTML header...
+	size_t bSize = 400 + strlen(html);
+	char* buf = new char[bSize];
+	if (!buf) return;
+
+
+	// Get clipboard id for HTML format...
+	static int cfid = 0;
+	if (!cfid) cfid = RegisterClipboardFormat("HTML Format");
+
+	// Create a template string for the HTML header...
+	strcpy_s(buf, bSize,
+		"Version:0.9\r\n"
+		"StartHTML:00000000\r\n"
+		"EndHTML:00000000\r\n"
+		"StartFragment:00000000\r\n"
+		"EndFragment:00000000\r\n"
+		"<html><body>\r\n"
+		"<!--StartFragment -->\r\n");
+
+	// Append the HTML...
+	strcat_s(buf, bSize, html);
+	strcat_s(buf, bSize, "\r\n");
+	// Finish up the HTML format...
+	strcat_s(buf, bSize,
+		"<!--EndFragment-->\r\n"
+		"</body>\r\n"
+		"</html>");
+
+	// Now go back, calculate all the lengths, and write out the
+	// necessary header information. Note, wsprintf() truncates the
+	// string when you overwrite it so you follow up with code to replace
+	// the 0 appended at the end with a '\r'...
+	char* ptr = strstr(buf, "StartHTML");
+	sprintf(ptr + 10, "%08u", unsigned int(strstr(buf, "<html>") - buf));
+	*(ptr + 10 + 8) = '\r';
+
+	ptr = strstr(buf, "EndHTML");
+	sprintf(ptr + 8, "%08u", unsigned int(strlen(buf)));
+	*(ptr + 8 + 8) = '\r';
+
+	ptr = strstr(buf, "StartFragment");
+	sprintf(ptr + 14, "%08u", unsigned int(strstr(buf, "<!--StartFrag") - buf));
+	*(ptr + 14 + 8) = '\r';
+
+	ptr = strstr(buf, "EndFragment");
+	sprintf(ptr + 12, "%08u", unsigned int(strstr(buf, "<!--EndFrag") - buf));
+	*(ptr + 12 + 8) = '\r';
+
+	// Now you have everything in place ready to put on the clipboard.
+	// Open the clipboard...
+	if (OpenClipboard(0))
+	{
+		// Empty what's in there...
+		EmptyClipboard();
+
+		// Allocate global memory for transfer...
+		HGLOBAL hText = GlobalAlloc(GMEM_MOVEABLE | GMEM_DDESHARE, strlen(buf) + 4);
+
+		// Put your string in the global memory...
+		char* ptr = (char*)GlobalLock(hText);
+		strcpy(ptr, buf);
+		GlobalUnlock(hText);
+
+		::SetClipboardData(cfid, hText);
+
+		CloseClipboard();
+		// Free memory...
+		GlobalFree(hText);
+	}
+	// Clean up...
+	delete[] buf;
+}

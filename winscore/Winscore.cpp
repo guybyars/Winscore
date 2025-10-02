@@ -297,6 +297,9 @@ void CWinscoreApp::OnAppExit()
 
 int CWinscoreApp::ExitInstance() 
 {
+
+	CoUninitialize();
+
 	int iCode=CWinApp::ExitInstance();
 
 	if( iCode>0 ) 

@@ -25,6 +25,7 @@ protected:
 public:
 	void Initialize();
 	CString GetText(CTurnpointArray &turnpointArray,  EUnits eUnits);
+	CString GetHTML(CTurnpointArray& turnpointArray, EUnits eUnits);
 
 	bool		GetXML(CXMLMgr &cMgr,MSXML2::IXMLDOMNodePtr &pParentNode);
 	bool		GetSSAXML(CXMLMgr &cMgr,MSXML2::IXMLDOMNodePtr &pParentNode,EUnits eUnits, CTurnpointArray  &cTurnpointArray, bool bDateOutput=false);

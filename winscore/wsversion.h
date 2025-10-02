@@ -3,17 +3,31 @@
 
 //#define	WINSCOREBETA         1
 #define CURRENTYEAR			 2025
-#define WINSCOREVERSION		_T("2025 Rev 9")
-#define SHORTVERSION			 _T("Rev 9")
+#define WINSCOREVERSION		_T("2025 Rev 10")
+#define SHORTVERSION			 _T("Rev 10")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 2025
+Rev 10
+	* Added HTML formatted copy for pasting tasks into Word
+	* Ported Wsview OCX to 64 bit so the resource editor would work for with the OCXes
+
+Rev 9c
+	* For no contest day, upload scores, but mark as 0 daily and same cum as previous days
+
+Rev 9b
+	* corrected issue task copy was misaligned when a line gate was specified
+	* Corrected FAI D1 and Dm defaults, rounded to nearest mile.
+
+Rev 9a
+	* corrected issue where SMTD was applied to FAI tasks
 
 Rev 9
     * Upgrade to VS 2022
 	* Removed no task error in upload to precontest
+	* Corrected the computation of n1 for FAI tasks
 
 Rev 8
 	* Reported duplicates in SSA contestant import.

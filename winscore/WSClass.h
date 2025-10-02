@@ -30,6 +30,10 @@ protected:
 	DECLARE_SERIAL(CWSClass)
 
 public:
+
+	static void AllocateClasses();
+	static void FreeClasses();
+
 	void ImportXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pClass);
 	void GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode);
 	void SetMinTaskTime(double dHours);

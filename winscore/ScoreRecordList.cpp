@@ -731,7 +731,7 @@ void CScoreRecordList::GetFAISummary(	CTime		cDate,
 		double dDistance=GetClass(eClass).IsHandicapped()?(pcScoreRecord->m_dHandicappedDistance):(pcScoreRecord->m_dDistance);
 
 		 // n1 - Number of competitors who achieve a Handicapped Distance (Dh) of at least Dm
-		if( pcScoreRecord->m_dDistance >= cSummary.m_dDm  ) cSummary.m_in1++;
+		if( dDistance >= cSummary.m_dDm  ) cSummary.m_in1++;
 
 		 // n2 - Number of finishers exceeding 2/3 of best Handicapped Speed (Vo)
 		if( pcScoreRecord->m_fFinisher && dSpeed >= cSummary.m_dVo*(2./3.) ) cSummary.m_in2++;

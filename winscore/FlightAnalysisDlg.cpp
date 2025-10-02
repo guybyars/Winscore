@@ -95,6 +95,7 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 	m_cFinishButton.EnableWindow(FALSE);
 	m_cPEVButton.EnableWindow(FALSE);
 
+	m_cListCtrl.SetRedraw(FALSE);
 	m_cListCtrl.SetExtendedStyle( LVS_EX_FULLROWSELECT  );
 
 	bool bStarted=false;
@@ -424,6 +425,7 @@ BOOL CFlightAnalysisDlg::OnInitDialog()
 		m_cListCtrl.SetItemText(iItem,i++,pcPos->GetFormattedInfo() );
 
 		}
+	m_cListCtrl.SetRedraw(TRUE);
 	UpdateData(FALSE);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
@@ -613,27 +615,30 @@ void CFlightAnalysisDlg::OnClose()
 void CFlightAnalysisDlg::OnOK() 
 {
 	CWaitCursor cWait;
-    int iTotal=m_cListCtrl.GetItemCount();
-    if( iTotal>2000 )
-	   {
-		CWinApp* theApp = AfxGetApp();
-		CFrameWnd* pcwndMainFrame = (CFrameWnd *) theApp->m_pMainWnd;
+	
+	m_cListCtrl.SetRedraw(FALSE);
 
-		ShowWindow( SW_HIDE     );
-		pcwndMainFrame->ShowWindow( SW_SHOW  );
-		pcwndMainFrame->SetActiveWindow();
-		pcwndMainFrame->UpdateWindow();
+  //  int iTotal=m_cListCtrl.GetItemCount();
+  //  if( iTotal>2000 )
+	 //  {
+		//CWinApp* theApp = AfxGetApp();
+		//CFrameWnd* pcwndMainFrame = (CFrameWnd *) theApp->m_pMainWnd;
 
-		CProgressBar cBar(0, iTotal, _T("Closing View...") );
+		//ShowWindow( SW_HIDE     );
+		//pcwndMainFrame->ShowWindow( SW_SHOW  );
+		//pcwndMainFrame->SetActiveWindow();
+		//pcwndMainFrame->UpdateWindow();
 
-		for( int i=iTotal-1; i>0; i-- )
-				{
-				m_cListCtrl.DeleteItem(i);
-				if( ((iTotal-i)%1000)==0 )
-						cBar.UpdateProgressBar(iTotal-i);
-				}
-    
-	   }
+		//CProgressBar cBar(0, iTotal, _T("Closing View...") );
+
+		//for( int i=iTotal-1; i>0; i-- )
+		//		{
+		//		m_cListCtrl.DeleteItem(i);
+		//		if( ((iTotal-i)%1000)==0 )
+		//				cBar.UpdateProgressBar(iTotal-i);
+		//		}
+  //  
+	 //  }
     CDialog::OnOK();
 }
 

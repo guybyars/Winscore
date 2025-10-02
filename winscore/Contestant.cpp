@@ -271,8 +271,20 @@ int CALLBACK CompareContestantName(LPARAM lParam1, LPARAM lParam2,
 						((CContestant*)lParam2)->CitizenText() );
 		break;
 	case 7:
-		iR=strcmp(  ((CContestant*)lParam1)->GetFDRID(),
-					((CContestant*)lParam2)->GetFDRID() );
+		{
+		if ( ((CContestant*)lParam1)->IsMotorized() &&
+			 ((CContestant*)lParam2)->IsMotorized()		)
+		{
+			iR = strcmp(((CContestant*)lParam1)->GetFDRID(),
+						((CContestant*)lParam2)->GetFDRID());
+		}
+		else if ( ((CContestant*)lParam1)->IsMotorized() &&
+				 !((CContestant*)lParam2)->IsMotorized())
+			iR = -1;
+		else if (!((CContestant*)lParam1)->IsMotorized() &&
+				  ((CContestant*)lParam2)->IsMotorized())
+			iR = 1;
+		}
 		break;
 	case 8:
 		iR=	strcmp(  ((CContestant*)lParam1)->AddressText(),

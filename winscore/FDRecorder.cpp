@@ -146,7 +146,7 @@ CTime CFDRecorder::GetTime()
 	}
 
 
-//	_T("FDR ID"), _T("Date"), _T("CID"), _T("Manufacturer"), _T("Hardware Version"), _T("File Name"),  _T("ENL (min/max)"), _T("MOP (min/max") 
+//	_T("FDR ID"), _T("Date"), _T("CID"), _T("Manufacturer"), _T("Hardware Version"), _T("File Name"),  _T("ENL (min/max)"), _T("MOP (min/max)") 
 int CALLBACK CompareRecorders(LPARAM lParam1, LPARAM lParam2, 
     LPARAM iColumn)
 {
