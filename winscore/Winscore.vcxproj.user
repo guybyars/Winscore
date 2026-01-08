@@ -7,5 +7,6 @@
     <LocalDebuggerCommandArguments Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
     <DebuggerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WindowsLocalDebugger</DebuggerFlavor>
     <DebuggerFlavor Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WindowsLocalDebugger</DebuggerFlavor>
+    <RESOURCE_FILE>Winscore.rc</RESOURCE_FILE>
   </PropertyGroup>
 </Project>

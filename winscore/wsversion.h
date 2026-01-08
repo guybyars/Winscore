@@ -1,14 +1,19 @@
 #if !defined(WSVERSION_H_INCLUDED_)
 #define WSVERSION_H_INCLUDED_
 
-//#define	WINSCOREBETA         1
-#define CURRENTYEAR			 2025
-#define WINSCOREVERSION		_T("2025 Rev 10")
-#define SHORTVERSION			 _T("Rev 10")
+#define	WINSCOREBETA         1
+#define CURRENTYEAR			 2026
+#define WINSCOREVERSION		_T("2026 Beta")
+#define SHORTVERSION			 _T("Beta")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
+* 
+2026
+Beta 
+	No change from previous year
+* 
 2025
 Rev 10
 	* Added HTML formatted copy for pasting tasks into Word
