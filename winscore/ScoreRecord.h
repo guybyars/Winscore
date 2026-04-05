@@ -60,6 +60,8 @@ public:
 	EClass	m_eClass;
 	bool	m_bGuest;
 	double	m_dPoints;
+	double  m_dSpeedPoints;
+	double  m_dDistancePoints;
 	double	m_dWDSA;
 	double  m_dSpeed;
 	double  m_dScoredSpeed;

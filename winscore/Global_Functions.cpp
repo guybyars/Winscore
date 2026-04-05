@@ -2476,19 +2476,19 @@ void CopyHTML(const char* html)
 	// string when you overwrite it so you follow up with code to replace
 	// the 0 appended at the end with a '\r'...
 	char* ptr = strstr(buf, "StartHTML");
-	sprintf(ptr + 10, "%08u", unsigned int(strstr(buf, "<html>") - buf));
+	sprintf_s(ptr + 10, bSize, "%08u", unsigned int(strstr(buf, "<html>") - buf));
 	*(ptr + 10 + 8) = '\r';
 
 	ptr = strstr(buf, "EndHTML");
-	sprintf(ptr + 8, "%08u", unsigned int(strlen(buf)));
+	sprintf_s(ptr + 8, bSize, "%08u", unsigned int(strlen(buf)));
 	*(ptr + 8 + 8) = '\r';
 
 	ptr = strstr(buf, "StartFragment");
-	sprintf(ptr + 14, "%08u", unsigned int(strstr(buf, "<!--StartFrag") - buf));
+	sprintf_s(ptr + 14, bSize, "%08u", unsigned int(strstr(buf, "<!--StartFrag") - buf));
 	*(ptr + 14 + 8) = '\r';
 
 	ptr = strstr(buf, "EndFragment");
-	sprintf(ptr + 12, "%08u", unsigned int(strstr(buf, "<!--EndFrag") - buf));
+	sprintf_s(ptr + 12, bSize, "%08u", unsigned int(strstr(buf, "<!--EndFrag") - buf));
 	*(ptr + 12 + 8) = '\r';
 
 	// Now you have everything in place ready to put on the clipboard.
@@ -2503,7 +2503,7 @@ void CopyHTML(const char* html)
 
 		// Put your string in the global memory...
 		char* ptr = (char*)GlobalLock(hText);
-		strcpy(ptr, buf);
+		strcpy_s(ptr, bSize, buf);
 		GlobalUnlock(hText);
 
 		::SetClipboardData(cfid, hText);

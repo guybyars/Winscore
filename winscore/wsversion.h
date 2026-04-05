@@ -1,23 +1,32 @@
 #if !defined(WSVERSION_H_INCLUDED_)
 #define WSVERSION_H_INCLUDED_
 
-#define	WINSCOREBETA         1
+//#define	WINSCOREBETA         0
 #define CURRENTYEAR			 2026
-#define WINSCOREVERSION		_T("2026 Beta")
-#define SHORTVERSION			 _T("Beta")
+#define WINSCOREVERSION		_T("2026 Rev 2")
+#define SHORTVERSION			 _T("Rev 2")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 * 
 2026
-Beta 
+
+Rev 2 
+	* Added racing task tp radii output in formatted text.
+	* Added tracking of FAI speed/dist points to display in detailed info
+	* Added Finish Penalty consideration not to penalize greater than dist points.  FAI only at this time
+
+Beta / Rev 1
 	No change from previous year
 * 
 2025
 Rev 10
 	* Added HTML formatted copy for pasting tasks into Word
-	* Ported Wsview OCX to 64 bit so the resource editor would work for with the OCXes
+	* Ported Wsview OCX to 64 bit so the resource editor would work for with the OCXes.  But the 64 bit OCX is only
+	  used when editing the dialog boxes that use the OCX because the resource editor no longer supports 32 bit OCX
+	  controls.  The 64 bit version does not work, so it must be deregistered and the 32 bit version used in the released
+	  product.
 
 Rev 9c
 	* For no contest day, upload scores, but mark as 0 daily and same cum as previous days

@@ -15,6 +15,7 @@
 
 #include "winscoredefs.h"
 #include "summary.h"
+#include "ScoreRecord.h"
 
 
 #define WSC_HANDICAPPED		0x00001
@@ -104,8 +105,10 @@ public:
 private:
 
 	int m_iOptions;
-
-
+	double GetAssignedSpeedPoints(CScoreRecord* pcScoreRecord, CSummary cSummary, CTask* pcTask);
+	double GetAreaSpeedPoints(CScoreRecord* pcScoreRecord, CSummary cSummary, CTask* pcTask);
+	double GetAssignedDistancePoints(CScoreRecord* pcScoreRecord, CSummary cSummary, CTask* pcTask);
+	double GetAreaDistancePoints(CScoreRecord* pcScoreRecord, CSummary cSummary, CTask* pcTask);
 };
 
 

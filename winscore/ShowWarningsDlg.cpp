@@ -18,6 +18,11 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
+static bool bFinishOverride			= false;
+static int	iUpdatedFinishPenalty	= 0;
+
+
+
 /////////////////////////////////////////////////////////////////////////////
 // CShowWarningsDlg dialog
 
@@ -74,6 +79,10 @@ BOOL CShowWarningsDlg::OnInitDialog()
 	CDialog::OnInitDialog();
 	if( !m_pcFlight ) return TRUE;
 	
+
+	bFinishOverride = false;
+	iUpdatedFinishPenalty = 0;
+
 	CString cWinText="Warnings for ";
 	cWinText+=m_pcFlight->m_strPilot;
 
@@ -161,6 +170,7 @@ void CShowWarningsDlg::OnBnClickedApplyPenalty()
 	if(iItem<0 ) return;
 	CWarning *pcWarning=(CWarning*)m_cListCtrl.GetItemData( iItem );
 	if( pcWarning->m_iPenalty==0 ) return;
+	int iPenalty = pcWarning->m_iPenalty;
 	int iCode=-1;
 	if(  pcWarning->GetType()==eStart			||
 		 pcWarning->GetType()==eTurnpoint		||
@@ -173,8 +183,22 @@ void CShowWarningsDlg::OnBnClickedApplyPenalty()
 		iCode=4;
 	else if( pcWarning->GetType()==eTurnpoint)
 		iCode=3;
-	else if(  pcWarning->GetType()==eFinish	)
-		iCode=2;
+	else if (pcWarning->GetType() == eFinish)
+		{
+		iCode = 2;
+		if (bFinishOverride)
+			{
+			iPenalty = iUpdatedFinishPenalty;
+			double dRatio = m_pDoc->GetLogTurninRatio(m_pcFlight->GetStartTime(), m_pcFlight->m_eClass);
+			if (dRatio < .80)
+				{
+				CString strWarn;
+				strWarn.Format(_T("Only %2.0f%% of the logs have been turned in.  Since this penalty has been reduced based on current score,You should wait until 80%% or more logs have been scored.  Continue anyway?"), dRatio * 100);
+				int iAnswer = AfxMessageBox(strWarn, MB_YESNOCANCEL);
+				if (iAnswer != IDYES) return;
+				}
+			}
+		}
 	else if(  pcWarning->GetType()==eAirspaceMinor)
 		iCode=0;
 	else if(  pcWarning->GetType()==eAirspaceMajor)
@@ -221,13 +245,13 @@ static _TCHAR *_gszPredefinedDescriptions[NUMCODES] =
 				}
 			else
 				{
-				strMess.Format("Ok to apply a %d point  Airspace/Contest Penalty to %s for this day?  This will also result in zero distance for the day.", pcWarning->m_iPenalty, m_pcFlight->m_strCID);
+				strMess.Format("Ok to apply a %d point  Airspace/Contest Penalty to %s for this day?  This will also result in zero distance for the day.", iPenalty, m_pcFlight->m_strCID);
 				int iAnswer=AfxMessageBox( strMess, MB_YESNOCANCEL | MB_ICONQUESTION   );
 				if( iAnswer!=IDYES ) return;
 				}	
 			cCode=CString("AS");
 			cReason=CString("Airspace Penalty");
-			pcPenalty=new CPenality( m_pcFlight->m_strCID,  m_pcFlight->GetRollTime(), eContestPenalty, cCode, cReason, (double)(pcWarning->m_iPenalty)  );
+			pcPenalty=new CPenality( m_pcFlight->m_strCID,  m_pcFlight->GetRollTime(), eContestPenalty, cCode, cReason, (double)(iPenalty)  );
 			}
 		else
 			{
@@ -240,7 +264,7 @@ static _TCHAR *_gszPredefinedDescriptions[NUMCODES] =
 				}	
 			else
 				{
-				strMess.Format("Ok to apply a %d point penalty to %s for this day?", pcWarning->m_iPenalty, m_pcFlight->m_strCID);
+				strMess.Format("Ok to apply a %d point penalty to %s for this day?", iPenalty, m_pcFlight->m_strCID);
 				int iAnswer=AfxMessageBox( strMess, MB_YESNOCANCEL | MB_ICONQUESTION   );
 				if( iAnswer!=IDYES ) return;
 				}	
@@ -248,13 +272,13 @@ static _TCHAR *_gszPredefinedDescriptions[NUMCODES] =
 			cCode=CString(_gszPredefinedCodes[iCode]);
 			cReason=CString(_gszPredefinedDescriptions[iCode]);
 
-			pcPenalty=new CPenality( m_pcFlight->m_strCID,  m_pcFlight->GetRollTime(), eDayPoint, cCode, cReason, (double)(pcWarning->m_iPenalty)  );
+			pcPenalty=new CPenality( m_pcFlight->m_strCID,  m_pcFlight->GetRollTime(), eDayPoint, cCode, cReason, (double)(iPenalty)  );
 
 			}
 		m_pDoc->m_PenalityList.AddToList(pcPenalty);
 
 		CString strMess;
-		strMess.Format("A %d point %s was applied to %s for this day.", pcWarning->m_iPenalty, cReason, m_pcFlight->m_strCID);
+		strMess.Format("A %d point %s was applied to %s for this day.", iPenalty, cReason, m_pcFlight->m_strCID);
 		AfxMessageBox( strMess, MB_ICONINFORMATION  );
 
 		pcWarning->Clear();
@@ -352,7 +376,34 @@ void  CShowWarningsDlg::LoadWarningsFromFlight(int iSel)
 			if(  pcWarning->m_iPenalty==0 )
 				memset(buff,0,10);
 			else
-				_itot_s( pcWarning->m_iPenalty, buff, 10,10);
+				{
+				int iPenalty = pcWarning->m_iPenalty;
+				if (pcWarning->GetType() == eFinish)
+					{
+					CSummary cSummary;
+					CWinscoreListCtrl  cDum;
+					cDum.m_fReport = FALSE;
+					m_pDoc->CalculateScores(m_pcFlight->GetRollTime(), m_pcFlight->m_eClass, cDum, cSummary);
+
+					auto pcScoreRecord = m_pDoc->m_ScoreRecordList.Get(m_pcFlight->GetContestID(), m_pcFlight->GetRollTime());
+					if (pcScoreRecord && pcScoreRecord->m_dSpeedPoints > 0 && pcScoreRecord->m_dDistancePoints > 0)
+						{
+						if (pcScoreRecord->m_dSpeedPoints - pcWarning->m_iPenalty < pcScoreRecord->m_dDistancePoints)
+							{
+							iPenalty = (int)Roundoff((pcScoreRecord->m_dSpeedPoints - pcScoreRecord->m_dDistancePoints));
+
+							CString strWarn;
+							strWarn.Format(_T("Finish penalty of %d has been reduced to %d to keep resulting score above distance points."),pcWarning->m_iPenalty, iPenalty );
+							AfxMessageBox(strWarn);
+
+							bFinishOverride = true;
+							iUpdatedFinishPenalty = iPenalty;
+							}
+						}
+					}
+
+				_itot_s(iPenalty, buff, 10, 10);
+				}
 			m_cListCtrl.SetItemText(iItem,iColumn++,buff ); 
 
 			m_cListCtrl.SetItemText(iItem,iColumn++,pcWarning->m_strWarning ); 

@@ -1312,9 +1312,16 @@ void CScoreRecordList::CalculatePoints(	CTime		cDate,
     
 	    		double dS = pcScoreRecord->m_dPoints * min(1.0, 200./dDenom);
 				pcScoreRecord->m_dPoints=dS;
-
 				//	Now as a "final calculation step" roundoff the FAI points
-				pcScoreRecord->m_dPoints=Roundoff(pcScoreRecord->m_dPoints);
+				pcScoreRecord->m_dPoints = Roundoff(pcScoreRecord->m_dPoints);
+
+				dS = pcScoreRecord->m_dSpeedPoints * min(1.0, 200. / dDenom);
+				pcScoreRecord->m_dSpeedPoints = dS;
+				pcScoreRecord->m_dSpeedPoints = Roundoff(pcScoreRecord->m_dSpeedPoints);
+
+				dS = pcScoreRecord->m_dDistancePoints * min(1.0, 200. / dDenom);
+				pcScoreRecord->m_dDistancePoints = dS;
+				pcScoreRecord->m_dDistancePoints = Roundoff(pcScoreRecord->m_dDistancePoints);
 
 				// Now add the Bonus
 				if( pcScoreRecord->m_uPenalityMask & WSP_AIRFIELDBONUS )

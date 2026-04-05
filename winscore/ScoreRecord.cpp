@@ -43,6 +43,8 @@ CScoreRecord::CScoreRecord()
 	m_eClass=eStandard;
 	m_bGuest=0;
 	m_dPoints=0;
+	m_dSpeedPoints=0;
+	m_dDistancePoints=0;
 	m_dWDSA=0;
 	m_dSpeed=0;
 	m_dScoredSpeed=0;
@@ -81,6 +83,8 @@ CScoreRecord::CScoreRecord(CString cContestNo,
 
 	m_dAppliedPenalityPoints=0.0;
 	m_dPoints=0.0;
+	m_dSpeedPoints=0;
+	m_dDistancePoints=0;
 	m_dSpeed=0.;
 	m_dScoredSpeed=0.;
 	m_dDistance=0.;
@@ -136,6 +140,8 @@ CScoreRecord::CScoreRecord(
 
 	m_dAppliedPenalityPoints=0.0;
 	m_dPoints=		0.0;
+	m_dSpeedPoints=0;
+	m_dDistancePoints=0;
 	m_dSpeed=		dSpeed;
 	m_dScoredSpeed=	dScoredSpeed; 
 	m_dDistance=	dDistance;
@@ -167,6 +173,8 @@ CScoreRecord::CScoreRecord(CScoreRecord* pcRecord)
 	m_dAppliedPenalityPoints=pcRecord->m_dAppliedPenalityPoints;
 
 	m_dPoints					=pcRecord->m_dPoints;
+	m_dSpeedPoints			=pcRecord->m_dSpeedPoints;
+	m_dDistancePoints		=pcRecord->m_dDistancePoints;
 	m_dSpeed					=pcRecord->m_dSpeed;
 	m_dScoredSpeed				=pcRecord->m_dScoredSpeed;
 	m_dDistance					=pcRecord->m_dDistance;
@@ -432,6 +440,10 @@ bool CScoreRecord::GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode)
 	cMgr.CreateElementInt(	pIDOMChildNode, _T("ClassID"),		m_eClass);
 	cMgr.CreateElementIntC(	pIDOMChildNode, _T("Contestant"),	m_fContestant);
 	cMgr.CreateElementIntC(	pIDOMChildNode, _T("Points"),		(int)m_dPoints);
+
+	cMgr.CreateElementIntC(pIDOMChildNode, _T("SpeedPoints"), (int)m_dSpeedPoints);
+	cMgr.CreateElementIntC(pIDOMChildNode, _T("DistancePoints"), (int)m_dDistancePoints);
+
 	cMgr.CreateElementIntC(	pIDOMChildNode, _T("CPoints"),		(int)m_dCumPoints);
 	if( m_fContestant )
 		{
@@ -476,6 +488,10 @@ CScoreRecord::CScoreRecord(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pIDOMChildNode
 	GET_XML_INT(	cMgr, pIDOMChildNode, _T("ClassID"),	EClass, m_eClass, eStandard);
 	GET_XML_BOOL(	cMgr, pIDOMChildNode, _T("Contestant"),  m_fContestant, false);
 	GET_XML_DBL(	cMgr, pIDOMChildNode, _T("Points"),	double,	m_dPoints, 0);
+
+	GET_XML_DBL(cMgr, pIDOMChildNode, _T("SpeedPoints"), double, m_dSpeedPoints, 0);
+	GET_XML_DBL(cMgr, pIDOMChildNode, _T("DistancePoints"), double, m_dDistancePoints, 0);
+
 	GET_XML_DBL(	cMgr, pIDOMChildNode, _T("CPoints"),	double, m_dCumPoints, 0);
 
 	ImportXMLTime(  cMgr, pIDOMChildNode, _T("StartTime2"), m_cStartTime, m_cDate.GetYear(), m_cDate.GetMonth(), m_cDate.GetDay());

@@ -86,6 +86,19 @@ BOOL CDetailedScoreInfoDlg::OnInitDialog()
 	cText.Format(_T("%4.0lf"), m_pcRecord->m_dPoints);
 	AddTwoStringItem(_T("Points"),  cText);
 
+	if (m_pcRecord->m_dSpeedPoints > 0)
+		{
+		cText.Format(_T("%4.0lf"), m_pcRecord->m_dSpeedPoints);
+		AddTwoStringItem(_T("Speed Points"), cText);
+		}
+
+	if (m_pcRecord->m_dDistancePoints > 0)
+		{
+		cText.Format(_T("%4.0lf"), m_pcRecord->m_dDistancePoints);
+		AddTwoStringItem(_T("Distance Points"), cText);
+		}
+
+
 	cText.Format(_T("%4.0lf"), m_pcRecord->m_dCumPoints);
 	AddTwoStringItem(_T("Cum Points"),  cText);
 

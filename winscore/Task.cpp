@@ -1409,7 +1409,7 @@ CString CTask::GetHTML(CTurnpointArray& turnpointArray, EUnits eUnits)
 			pcPrevTurnpoint = pcTurnpoint;
 			pcTurnpoint = turnpointArray[GetTurnpointID(iTpt) - 1];
 			dDist += pcPrevTurnpoint->DistanceTo(pcTurnpoint, eUnits);
-			OUTPUT_TPT_TASK_HTML(pcTurnpoint, dDist, (IsAreaTask()) ? (ConvertDistance(GetTurnpointRadius(iTpt), SYSTEMUNITS, eUnits)) : (0.0), "", cLine, strOut);
+			OUTPUT_TPT_TASK_HTML(pcTurnpoint, dDist, (/*IsAreaTask()*/ true) ? (ConvertDistance(GetTurnpointRadius(iTpt), SYSTEMUNITS, eUnits)) : (0.0), "", cLine, strOut);
 			pcPrevTurnpoint = pcTurnpoint;
 		}
 

@@ -449,11 +449,6 @@ double CWSClass::GetShortTaskFactor(CSummary &cSummary)
 void CWSClass::GetPoints( CTask *pcTask, CObject *pObject,  CSummary &cSummary)
 {
 	CScoreRecord *pcScoreRecord=(CScoreRecord*)pObject;
-	double	dShortTaskFactor=GetShortTaskFactor( cSummary);
-	double	dContestantFactor=GetContestantFactor( cSummary);
-	double	dMaxSpeedPoints	=dShortTaskFactor*dContestantFactor*GetMaximumSpeedPoints(	 pcTask->m_eType, cSummary);
-	double	dMaxDistPoints	=dShortTaskFactor*dContestantFactor*GetMaximumDistancePoints(	 pcTask->m_eType, cSummary);
-	double BESTDIST=0.0;
 	double dPv, dPd;
 
     if( pcTask->m_eType== eFAIRacing || pcTask->m_eType== eFAIAssignedArea  ) 
@@ -492,6 +487,8 @@ void CWSClass::GetPoints( CTask *pcTask, CObject *pObject,  CSummary &cSummary)
 
 		//This is actually the provisional score Sp, need to compute S later when all the Sp's are in.
 		pcScoreRecord->m_dPoints = cSummary.m_dF * cSummary.m_dFCR * max(dPv,dPd);
+		pcScoreRecord->m_dDistancePoints = cSummary.m_dF * cSummary.m_dFCR * dPd;
+		pcScoreRecord->m_dSpeedPoints = cSummary.m_dF * cSummary.m_dFCR * dPv;
 
 		}
 
@@ -499,131 +496,37 @@ void CWSClass::GetPoints( CTask *pcTask, CObject *pObject,  CSummary &cSummary)
 		{
 		if( pcScoreRecord->m_fFinisher )
 			{// Finished Assigned Task
+			pcScoreRecord->m_dPoints=GetAssignedSpeedPoints(pcScoreRecord, cSummary, pcTask);
 
-				{
-				double dPoints =0;
-				double dPoints1=0;
-				double dPoints2=0;
-				double dPoints3=0;
-
-				if( IsHandicapped() )
-					{
-   					dPoints1=	dMaxSpeedPoints * 
-    							(pcScoreRecord->m_dHandicappedSpeed/cSummary.m_dBestHdcapSpeed);
-  					dPoints2=	dMaxDistPoints + 30 +
-								(dMaxSpeedPoints*.2*
-    							((pcScoreRecord->m_dHandicappedSpeed/cSummary.m_dBestHdcapSpeed)-0.4));
-  					dPoints3=	dMaxDistPoints + 30.;
-					dPoints=max(dPoints1,dPoints);
-					dPoints=max(dPoints2,dPoints);
-					dPoints=max(dPoints3,dPoints);
-					}
-				else
-					{
-   					dPoints1=	dMaxSpeedPoints * 
-    							(pcScoreRecord->m_dSpeed/cSummary.m_dBestSpeed);
-  					dPoints2=	dMaxDistPoints + 30 +
-								(dMaxSpeedPoints*.2*
-    							((pcScoreRecord->m_dSpeed/cSummary.m_dBestSpeed)-0.4));
-  					dPoints3=	dMaxDistPoints + 30.;
-					dPoints=max(dPoints1,dPoints);
-					dPoints=max(dPoints2,dPoints);
-					dPoints=max(dPoints3,dPoints);
-					}
-
-				pcScoreRecord->m_dPoints=	max( dPoints, (m_iAirfieldBonusPoints+dMaxDistPoints) );
-				}
-
+			pcScoreRecord->m_dSpeedPoints	= pcScoreRecord->m_dPoints;
+			pcScoreRecord->m_dDistancePoints = GetAssignedDistancePoints(pcScoreRecord, cSummary, pcTask);
 			}
 		else //non-finishers
 			{
+			pcScoreRecord->m_dPoints = GetAssignedDistancePoints(pcScoreRecord, cSummary, pcTask);
 
-			if( cSummary.m_nFinishers==0 )
-				{
-				// No Finishers at all
-				if( IsHandicapped() )
-    				pcScoreRecord->m_dPoints= dMaxDistPoints * (pcScoreRecord->m_dHandicappedDistance/cSummary.m_dBestHdcapDist);
-				else
-    				pcScoreRecord->m_dPoints= dMaxDistPoints  * (pcScoreRecord->m_dDistance/cSummary.m_dTaskDistance);
-				}
-			else
-				{
-				// Points for non finisher
-				if( IsHandicapped() )
-    				pcScoreRecord->m_dPoints=	dMaxDistPoints * 
-    											pcScoreRecord->m_dHandicappedDistance/cSummary.m_dBestHdcapDist;
-				else
-    				pcScoreRecord->m_dPoints=	dMaxDistPoints * 
-    											(pcScoreRecord->m_dDistance/cSummary.m_dTaskDistance);
-				}
+			pcScoreRecord->m_dDistancePoints = pcScoreRecord->m_dPoints;
+			pcScoreRecord->m_dSpeedPoints	= GetAssignedSpeedPoints(pcScoreRecord, cSummary, pcTask);
 			}
 		}
    	else if( pcTask->m_eType==eTurnArea || pcTask->m_eType==eModifiedAssigned )
 		{
 
 		if( pcScoreRecord->m_fFinisher )
-			{// Finished Post or modified Task
+			{// Finished Area or modified Task
 
-			double dPoints =0;
-			double dPoints1=0;
-			double dPoints2=0;
-			double dPoints3=0;
+			pcScoreRecord->m_dPoints= GetAreaSpeedPoints(pcScoreRecord, cSummary, pcTask);
 
-			if( IsHandicapped() )
-				{
-   				dPoints1=	dMaxSpeedPoints * 
-    						(pcScoreRecord->m_dScoredHandicappedSpeed/cSummary.m_dBestScoredHdcapSpeed);
-  				dPoints2=	dMaxDistPoints *
-							(pcScoreRecord->m_dHandicappedDistance/cSummary.m_dBestHdcapDist)+30;
-				dPoints2= min(dPoints2,(dMaxDistPoints +30.));		
-				dPoints = max(dPoints2,dPoints1);
-				}
-			else
-				{
-   				dPoints1=	dMaxSpeedPoints * 
-    						(pcScoreRecord->m_dScoredSpeed/cSummary.m_dBestScoredSpeed);
-  				dPoints2=	dMaxDistPoints *
-							(pcScoreRecord->m_dDistance/cSummary.m_dBestDistance)+30;
-				dPoints2= min(dPoints2,(dMaxDistPoints +30.));		
-				dPoints = max(dPoints2,dPoints1);
-				}
-
-			pcScoreRecord->m_dPoints=dPoints;
+			pcScoreRecord->m_dSpeedPoints = pcScoreRecord->m_dPoints;
+			pcScoreRecord->m_dDistancePoints = GetAreaDistancePoints(pcScoreRecord, cSummary, pcTask);
 
 			}
 		else 
 			{
-			if( cSummary.m_nFinishers==0 )
-				{
-				// No Finishers at all in post task
+			pcScoreRecord->m_dPoints = GetAreaDistancePoints(pcScoreRecord, cSummary, pcTask);
 
-				if( IsHandicapped() )
-    				pcScoreRecord->m_dPoints= dMaxDistPoints * (pcScoreRecord->m_dHandicappedDistance/cSummary.m_dBestHdcapDist);
-				else
-    				pcScoreRecord->m_dPoints= dMaxDistPoints  * (pcScoreRecord->m_dDistance/cSummary.m_dBestDistance);
-
-				}
-			else
-				{
-				// Points for non finisher of MAT & TAT task
-
-    			double dMinTimeHours=(double)pcTask->m_cPostTime.GetTotalSeconds()/(60.*60.);
-				
-				if( IsHandicapped() )
-					{
-					BESTDIST=max(cSummary.m_dBestHdcapDistFinisher,cSummary.m_dBestHdcapSpeed*dMinTimeHours);
-    				pcScoreRecord->m_dPoints=	dMaxDistPoints * 
-    											pcScoreRecord->m_dHandicappedDistance/BESTDIST;
-					}
-				else
-					{
-					BESTDIST=max(cSummary.m_dBestDistanceFinisher,cSummary.m_dBestSpeed*dMinTimeHours);
-    				pcScoreRecord->m_dPoints=	dMaxDistPoints * 
-    											pcScoreRecord->m_dDistance/BESTDIST;
-					}
-				pcScoreRecord->m_dPoints=	min( pcScoreRecord->m_dPoints, dMaxDistPoints );
-
-				}
+			pcScoreRecord->m_dDistancePoints = pcScoreRecord->m_dPoints;
+			pcScoreRecord->m_dSpeedPoints = GetAreaSpeedPoints(pcScoreRecord, cSummary, pcTask);
 			}
 		}
 
@@ -812,3 +715,140 @@ void CWSClass::ImportXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pIDOMChildNode)
 	GET_XML_DBL ( cMgr, pIDOMChildNode, _T("Dm"),  double, m_dDm, m_dDm);
 	}
 
+double CWSClass::GetAssignedSpeedPoints(CScoreRecord *pcScoreRecord, CSummary cSummary, CTask *pcTask)
+	{
+	double dPoints = 0;
+	double dPoints1 = 0;
+	double dPoints2 = 0;
+	double dPoints3 = 0;
+
+	double	dShortTaskFactor = GetShortTaskFactor(cSummary);
+	double	dContestantFactor = GetContestantFactor(cSummary);
+	double	dMaxSpeedPoints = dShortTaskFactor * dContestantFactor * GetMaximumSpeedPoints(pcTask->m_eType, cSummary);
+	double	dMaxDistPoints = dShortTaskFactor * dContestantFactor * GetMaximumDistancePoints(pcTask->m_eType, cSummary);
+
+	if (IsHandicapped())
+	{
+		dPoints1 = dMaxSpeedPoints *
+			(pcScoreRecord->m_dHandicappedSpeed / cSummary.m_dBestHdcapSpeed);
+		dPoints2 = dMaxDistPoints + 30 +
+			(dMaxSpeedPoints * .2 *
+				((pcScoreRecord->m_dHandicappedSpeed / cSummary.m_dBestHdcapSpeed) - 0.4));
+		dPoints3 = dMaxDistPoints + 30.;
+		dPoints = max(dPoints1, dPoints);
+		dPoints = max(dPoints2, dPoints);
+		dPoints = max(dPoints3, dPoints);
+	}
+	else
+	{
+		dPoints1 = dMaxSpeedPoints *
+			(pcScoreRecord->m_dSpeed / cSummary.m_dBestSpeed);
+		dPoints2 = dMaxDistPoints + 30 +
+			(dMaxSpeedPoints * .2 *
+				((pcScoreRecord->m_dSpeed / cSummary.m_dBestSpeed) - 0.4));
+		dPoints3 = dMaxDistPoints + 30.;
+		dPoints = max(dPoints1, dPoints);
+		dPoints = max(dPoints2, dPoints);
+		dPoints = max(dPoints3, dPoints);
+	}
+
+	return  max(dPoints, (m_iAirfieldBonusPoints + dMaxDistPoints));
+	}
+
+double CWSClass::GetAssignedDistancePoints(CScoreRecord* pcScoreRecord, CSummary cSummary, CTask* pcTask)
+	{	
+	double	dShortTaskFactor = GetShortTaskFactor(cSummary);
+	double	dContestantFactor = GetContestantFactor(cSummary);
+	double	dMaxDistPoints = dShortTaskFactor * dContestantFactor * GetMaximumDistancePoints(pcTask->m_eType, cSummary);
+
+	if (cSummary.m_nFinishers == 0)
+		{
+			// No Finishers at all
+			if (IsHandicapped())
+				return dMaxDistPoints * (pcScoreRecord->m_dHandicappedDistance / cSummary.m_dBestHdcapDist);
+			else
+				return dMaxDistPoints * (pcScoreRecord->m_dDistance / cSummary.m_dTaskDistance);
+		}
+		else
+		{
+			// Points for non finisher
+			if (IsHandicapped())
+				return dMaxDistPoints * pcScoreRecord->m_dHandicappedDistance / cSummary.m_dBestHdcapDist;
+			else
+				return dMaxDistPoints * (pcScoreRecord->m_dDistance / cSummary.m_dTaskDistance);
+		}
+	}
+
+double CWSClass::GetAreaSpeedPoints(CScoreRecord* pcScoreRecord, CSummary cSummary, CTask* pcTask)
+{
+	double dPoints = 0;
+	double dPoints1 = 0;
+	double dPoints2 = 0;
+	double dPoints3 = 0;
+
+	double	dShortTaskFactor = GetShortTaskFactor(cSummary);
+	double	dContestantFactor = GetContestantFactor(cSummary);
+	double	dMaxSpeedPoints = dShortTaskFactor * dContestantFactor * GetMaximumSpeedPoints(pcTask->m_eType, cSummary);
+	double	dMaxDistPoints = dShortTaskFactor * dContestantFactor * GetMaximumDistancePoints(pcTask->m_eType, cSummary);
+
+
+	if (IsHandicapped())
+	{
+		dPoints1 = dMaxSpeedPoints *
+			(pcScoreRecord->m_dScoredHandicappedSpeed / cSummary.m_dBestScoredHdcapSpeed);
+		dPoints2 = dMaxDistPoints *
+			(pcScoreRecord->m_dHandicappedDistance / cSummary.m_dBestHdcapDist) + 30;
+		dPoints2 = min(dPoints2, (dMaxDistPoints + 30.));
+		dPoints = max(dPoints2, dPoints1);
+	}
+	else
+	{
+		dPoints1 = dMaxSpeedPoints *
+			(pcScoreRecord->m_dScoredSpeed / cSummary.m_dBestScoredSpeed);
+		dPoints2 = dMaxDistPoints *
+			(pcScoreRecord->m_dDistance / cSummary.m_dBestDistance) + 30;
+		dPoints2 = min(dPoints2, (dMaxDistPoints + 30.));
+		dPoints = max(dPoints2, dPoints1);
+	}
+
+	return dPoints;
+}
+
+
+double CWSClass::GetAreaDistancePoints(CScoreRecord* pcScoreRecord, CSummary cSummary, CTask* pcTask)
+{
+	double	dShortTaskFactor = GetShortTaskFactor(cSummary);
+	double	dContestantFactor = GetContestantFactor(cSummary);
+	double	dMaxDistPoints = dShortTaskFactor * dContestantFactor * GetMaximumDistancePoints(pcTask->m_eType, cSummary);
+	double BESTDIST = 0.0;
+
+	if (cSummary.m_nFinishers == 0)
+		{
+		// No Finishers at all in post task
+
+		if (IsHandicapped())
+			return dMaxDistPoints * (pcScoreRecord->m_dHandicappedDistance / cSummary.m_dBestHdcapDist);
+		else
+			return dMaxDistPoints * (pcScoreRecord->m_dDistance / cSummary.m_dBestDistance);
+
+		}
+	else
+		{
+		// Points for non finisher of MAT & TAT task
+
+		double dMinTimeHours = (double)pcTask->m_cPostTime.GetTotalSeconds() / (60. * 60.);
+		double dPoints = 0;
+		if (IsHandicapped())
+		{
+			BESTDIST = max(cSummary.m_dBestHdcapDistFinisher, cSummary.m_dBestHdcapSpeed * dMinTimeHours);
+			dPoints = dMaxDistPoints *	pcScoreRecord->m_dHandicappedDistance / BESTDIST;
+		}
+		else
+		{
+			BESTDIST = max(cSummary.m_dBestDistanceFinisher, cSummary.m_dBestSpeed * dMinTimeHours);
+			dPoints = dMaxDistPoints *	pcScoreRecord->m_dDistance / BESTDIST;
+		}
+		return min(dPoints, dMaxDistPoints);
+	}
+
+}
