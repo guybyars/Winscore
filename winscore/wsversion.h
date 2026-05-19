@@ -3,14 +3,21 @@
 
 //#define	WINSCOREBETA         0
 #define CURRENTYEAR			 2026
-#define WINSCOREVERSION		_T("2026 Rev 2")
-#define SHORTVERSION			 _T("Rev 2")
+#define WINSCOREVERSION		_T("2026 Rev 3")
+#define SHORTVERSION			 _T("Rev 3")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 * 
 2026
+
+Rev 3
+	* Fixed issue where IGC file name flight version was not propigated properly.
+	* Made start line default for FAI tasks
+	* Fixed racing task radii in copy formated task info
+	* After a warning is cleared, it goes on to the next warning
+	* Fixed output to CUP file so WeGlide will now read it.
 
 Rev 2 
 	* Added racing task tp radii output in formatted text.

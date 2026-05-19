@@ -363,24 +363,25 @@ void CTaskDlg::OnTypeRadio()
 {
 	UpdateData(true);
 
+	float fTurnpointRadius = (float)GetWinscoreDouble(INNERRADIUS, ConvertDistance(DEFAULTINNERRADIUS, eStatute, SYSTEMUNITS));
 
 	switch (m_iType)
 		{
 		case 0:
 			m_cTask.m_eType=eAssigned;
-			for( int i=0; i<MAXTASKTPS; i++) m_cTask.SetTurnpointRadius(i,(float)ConvertDistance(1, eStatute, SYSTEMUNITS ));
-			break;
+			for (int i = 0; i < MAXTASKTPS; i++) m_cTask.SetTurnpointRadius(i, fTurnpointRadius);			break;
 		case 1:
 			m_cTask.m_eType=eModifiedAssigned;
-			for( int i=0; i<MAXTASKTPS; i++) m_cTask.SetTurnpointRadius(i,(float)ConvertDistance(1, eStatute, SYSTEMUNITS ));
-			break;
+			for (int i = 0; i < MAXTASKTPS; i++) m_cTask.SetTurnpointRadius(i, fTurnpointRadius);			break;
 		case 2:
 			m_cTask.m_eType=eTurnArea;
 			break;
 		case 3:
 			m_cTask.m_eType=eFAIRacing;
-			for( int i=0; i<MAXTASKTPS; i++) m_cTask.SetTurnpointRadius(i,(float)ConvertDistance(1, eStatute, SYSTEMUNITS ));
+			{
+			for (int i = 0; i < MAXTASKTPS; i++) m_cTask.SetTurnpointRadius(i, fTurnpointRadius);
 			break;
+			}
 		case 4:
 			m_cTask.m_eType=eFAIAssignedArea;
 			break;

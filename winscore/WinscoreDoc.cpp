@@ -1740,15 +1740,18 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
      
 			if( !pcFlight )
 				{
-    			uPenalityMask |=WSP_NOFLIGHTLOG;
-    			cStatus.AddTwoStringItem(pcContestant->m_strContestNo,
-    									_T("NO FLIGHT LOG - A flight log is required to calculate a score.") );
-    			cScoreRecordList.DNC(	pcContestant->m_strContestNo, 
-    									eClass, 
-    									cDate,
-    									pcContestant->IsGuest(),
-    									uPenalityMask);						
-    			continue;
+                if (!pcContestant->HasWithdrawn())
+                    {
+                    uPenalityMask |= WSP_NOFLIGHTLOG;
+                    cStatus.AddTwoStringItem(pcContestant->m_strContestNo,
+                        _T("NO FLIGHT LOG - A flight log is required to calculate a score."));
+                    cScoreRecordList.DNC(pcContestant->m_strContestNo,
+                        eClass,
+                        cDate,
+                        pcContestant->IsGuest(),
+                        uPenalityMask);
+                    }
+                continue;
 				}
   			else
   				{

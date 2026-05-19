@@ -36,7 +36,7 @@ CGate::CGate( ) :
 	m_iHeight(5000),
 	m_dHeading(0),
 	m_bFirstLegAtExit(false),
-	m_bPerpToCourse(false),
+	m_bPerpToCourse(true),
 	m_bScoreOutTheTop(true),
 	m_bPreStartAltitude(false),
 	m_dMaxGroundSpeed(86.839069079077575), //100 mph
@@ -250,7 +250,7 @@ bool CGate::IsPreStartAltitude()
 
 bool CGate::IsPerpToCourse()
 	{
-	return m_bPerpToCourse && m_eGateType==eLine;
+	return m_bPerpToCourse /* && m_eGateType == eLine*/;
 	}
 bool CGate::GetCrossingLocation(CLocation &cP1, CLocation &cP2, CLocation &cLoc)
 	{
@@ -334,7 +334,7 @@ bool CGate::FromXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParent)
 	GET_XML_INT( cMgr, pGate, _T("PointID"), int, m_iGatePointID, -1);
 	GET_XML_INT( cMgr, pGate, _T("Type"), EGateType, m_eGateType, eCylinder);
 	GET_XML_BOOL( cMgr, pGate, _T("FirstLegAtExit"), m_bFirstLegAtExit, false);
-	GET_XML_BOOL( cMgr, pGate, _T("PerpToCourse"), m_bPerpToCourse, false);
+	GET_XML_BOOL( cMgr, pGate, _T("PerpToCourse"), m_bPerpToCourse, true);
 	GET_XML_BOOL( cMgr, pGate, _T("ScoreOutTheTop"), m_bScoreOutTheTop, true);
 
 	GET_XML_INT( cMgr, pGate, _T("Base"), int, m_iBase, 0);

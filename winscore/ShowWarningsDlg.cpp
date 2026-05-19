@@ -320,6 +320,20 @@ void CShowWarningsDlg::OnBnClickedClear()
 	CWarning *pcWarning=(CWarning*)m_cListCtrl.GetItemData( iItem );
 	pcWarning->Clear();
 	m_cListCtrl.SetItemText(iItem,0,"Cleared" );  
+
+
+	// Deselect the current item
+	if (iItem != -1) {
+		m_cListCtrl.SetItemState(iItem, 0, LVIS_SELECTED | LVIS_FOCUSED);
+	}
+
+	// Calculate the next item's index (wrapping around if needed)
+	int nNextItem = iItem + 1;
+	if (nNextItem >= m_cListCtrl.GetItemCount()) {
+		nNextItem = 0; // Wrap back to the start or stop here
+	}
+	m_cListCtrl.SetItemState(nNextItem, LVIS_SELECTED | LVIS_FOCUSED, LVIS_SELECTED | LVIS_FOCUSED);
+
 	m_pDoc->SetModifiedFlag();
 }
 

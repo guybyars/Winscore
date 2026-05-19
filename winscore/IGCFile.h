@@ -40,6 +40,7 @@ public:
 	static CString	GetDatePrefix(int iYear, int iMonth, int iDay);
 	static CString	GetLongDatePrefix(int iYear, int iMonth, int iDay);
 	static bool GetARecord(CString strIGCFile, CString &strLongName );
+	CString GetVersionText();
 
 	CPtrArray	m_caTasks;
 
@@ -102,6 +103,8 @@ public:
 	int			m_iENLMax;
 	int			m_iMOPMin;
 	int			m_iMOPMax;
+
+	int			m_iVer;
 
 	bool		m_bCONVCAM;
 

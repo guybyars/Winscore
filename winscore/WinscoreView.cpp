@@ -3926,7 +3926,7 @@ void  CWinscoreView::OnExportTaskToCUP()
 
 	if( cFileDlg.DoModal()==IDOK )
 		{
-		if( pTask->ExportCUP(cFileDlg.GetPathName(),pDocument->m_turnpointArray,pDocument->m_eUnits )==0 )
+		if( pTask->ExportCUP(cFileDlg.GetPathName(), pDocument->m_strContestName,pDocument->m_turnpointArray,pDocument->m_eUnits )==0 )
 			{
 			CString cStatus;
 		    cStatus.Format( _T("%s CUP file successfully written."), cFileDlg.GetPathName()  );

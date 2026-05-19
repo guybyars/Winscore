@@ -3387,6 +3387,9 @@ CString CFlight::GetFlightText(TASKCLASS *pcTask, TURNPOINTCLASSARRAY *pTURNPOIN
 	strOut+=strSeparator;
 	strOut+=_T("MOP: ")+GetMOPText();
 	strOut+=strSeparator;
+	strOut += _T("Ver: ") + GetVersionText();
+	strOut += strSeparator;
+
 
 	if( pTURNPOINTCLASSArray!=NULL )
 		{

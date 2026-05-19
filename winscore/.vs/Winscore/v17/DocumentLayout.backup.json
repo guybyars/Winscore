@@ -1,7 +1,59 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\projects\\GitHub\\Winscore\\winscore\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\Task.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:Task.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\Task.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:Task.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\WinscoreView.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:WinscoreView.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\Turnpoint.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:Turnpoint.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\wsversion.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:wsversion.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\ShowWarningsDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:ShowWarningsDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\Winscore.rc||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:Winscore.rc||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\WinscoreDoc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:WinscoreDoc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\WSClass.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:WSClass.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\TaskDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:TaskDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\IGCFile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:IGCFile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|C:\\projects\\GitHub\\Winscore\\winscore\\ContestantsFromSSA.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{380A570F-E5A0-FCDE-F05D-EBFE937AC73F}|Winscore.vcxproj|solutionrelative:ContestantsFromSSA.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3774B99F-9B73-1BC6-A2CC-F3EC9FB70E61}|..\\wsview\\WSView.vcxproj|C:\\projects\\GitHub\\Winscore\\wsview\\Trace.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,15 +61,171 @@
       "DocumentGroups": [
         {
           "DockedHeight": 327,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Task.h",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\Task.h",
+              "RelativeDocumentMoniker": "Task.h",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\Task.h",
+              "RelativeToolTip": "Task.h",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAkwHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-19T18:25:05.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Turnpoint.cpp",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\Turnpoint.cpp",
+              "RelativeDocumentMoniker": "Turnpoint.cpp",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\Turnpoint.cpp",
+              "RelativeToolTip": "Turnpoint.cpp",
+              "ViewState": "AgIAAJoBAAAAAAAAAAAawKQBAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-19T18:11:20.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WinscoreView.cpp",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\WinscoreView.cpp",
+              "RelativeDocumentMoniker": "WinscoreView.cpp",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\WinscoreView.cpp*",
+              "RelativeToolTip": "WinscoreView.cpp*",
+              "ViewState": "AgIAAEcPAAAAAAAAAAAlwGIPAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-19T10:48:51.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShowWarningsDlg.cpp",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\ShowWarningsDlg.cpp",
+              "RelativeDocumentMoniker": "ShowWarningsDlg.cpp",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\ShowWarningsDlg.cpp",
+              "RelativeToolTip": "ShowWarningsDlg.cpp",
+              "ViewState": "AgIAAD0BAAAAAAAAAAAcwFEBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-18T21:11:21.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WSClass.cpp",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\WSClass.cpp",
+              "RelativeDocumentMoniker": "WSClass.cpp",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\WSClass.cpp",
+              "RelativeToolTip": "WSClass.cpp",
+              "ViewState": "AgIAAN4BAAAAAAAAAAAnwOoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-17T10:50:56.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WinscoreDoc.cpp",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\WinscoreDoc.cpp",
+              "RelativeDocumentMoniker": "WinscoreDoc.cpp",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\WinscoreDoc.cpp",
+              "RelativeToolTip": "WinscoreDoc.cpp",
+              "ViewState": "AgIAAKcGAAAAAAAAAAAMwNkGAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-17T10:49:34.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TaskDlg.cpp",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\TaskDlg.cpp",
+              "RelativeDocumentMoniker": "TaskDlg.cpp",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\TaskDlg.cpp",
+              "RelativeToolTip": "TaskDlg.cpp",
+              "ViewState": "AgIAAGQBAAAAAAAAAADgv20BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-15T17:54:22.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Winscore.rc",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\Winscore.rc",
+              "RelativeDocumentMoniker": "Winscore.rc",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\Winscore.rc",
+              "RelativeToolTip": "Winscore.rc",
+              "ViewState": "AgIAAJ4DAAAAAAAAAAAvwKoDAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-05-15T17:12:08.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "wsversion.h",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\wsversion.h",
+              "RelativeDocumentMoniker": "wsversion.h",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\wsversion.h",
+              "RelativeToolTip": "wsversion.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwBIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-12T23:52:17.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ContestantsFromSSA.cpp",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\ContestantsFromSSA.cpp",
+              "RelativeDocumentMoniker": "ContestantsFromSSA.cpp",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\ContestantsFromSSA.cpp",
+              "RelativeToolTip": "ContestantsFromSSA.cpp",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAawGQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-08T23:28:12.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Trace.cpp",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\wsview\\Trace.cpp",
+              "RelativeDocumentMoniker": "..\\wsview\\Trace.cpp",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\wsview\\Trace.cpp",
+              "RelativeToolTip": "..\\wsview\\Trace.cpp",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAvwIUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-01T19:54:28.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Task.cpp",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\Task.cpp",
+              "RelativeDocumentMoniker": "Task.cpp",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\Task.cpp*",
+              "RelativeToolTip": "Task.cpp*",
+              "ViewState": "AgIAAKQEAAAAAAAAAAAuwLwEAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-29T14:59:55.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IGCFile.h",
+              "DocumentMoniker": "C:\\projects\\GitHub\\Winscore\\winscore\\IGCFile.h",
+              "RelativeDocumentMoniker": "IGCFile.h",
+              "ToolTip": "C:\\projects\\GitHub\\Winscore\\winscore\\IGCFile.h",
+              "RelativeToolTip": "IGCFile.h",
+              "ViewState": "AgIAAGYAAAAAAAAAAAApwHIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-29T14:43:22.544Z"
             }
           ]
         }

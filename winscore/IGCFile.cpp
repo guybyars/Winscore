@@ -53,6 +53,7 @@ CIGCFile::CIGCFile()
 	m_iENLMax=0;
 	m_iMOPMin=0;
 	m_iMOPMax=0;
+	m_iVer = 1;
 	}
 
 CIGCFile::~CIGCFile()
@@ -86,6 +87,7 @@ CIGCFile::CIGCFile(CString strIGCFileName)
 	m_iENLMax=0;
 	m_iMOPMin=0;
 	m_iMOPMax=0;
+	m_iVer = 1;
 
 	char  cRecord[MAXLINELEN] ;
 	CTime	cCurrentDate;	
@@ -100,6 +102,19 @@ CIGCFile::CIGCFile(CString strIGCFileName)
 	cfile.Close();
 	m_mtime=rStatus.m_mtime;
 	
+	//Get version
+	int iLen = m_strFileName.GetLength();
+	CString strVer = m_strFileName.Mid(iLen - 5, 1);
+	if (iLen == 12 || iLen==25)
+		{//Short version
+		int iVer = atoi(strVer);
+		iVer = min(iVer, 9);
+		iVer = max(iVer, 1);
+		m_iVer = iVer;
+		}
+
+
+
 
 	//  Use the ifstream class to do I/O on the ascii files.
 	cIfstream.open(strIGCFileName, ios::binary  );
@@ -169,13 +184,20 @@ bool CIGCFile::ProcessARecord(CString strRecord)
 	m_strFDRID=strRecord.Mid(4,6);
 	m_strFDRID.TrimLeft();
 	m_strFDRID.TrimRight();
+	int iFlight = strRecord.Find("FLIGHT:");
 
 	if( m_strFDRID[3]=='_' || m_strFDRID[3]==',' )
 		{
 		m_strFDRID=m_strFDRID.Left(3);
 		}
-	else if( strRecord.Mid(7,6)=="FLIGHT" )
+	else if( iFlight > 0)
 		{
+		if (iFlight > 6)
+			{
+			m_iVer = atoi(strRecord.Mid(iFlight + 7, (strRecord.GetLength() - iFlight + 7)));
+			m_iVer = min(m_iVer, 9);
+			m_iVer = max(m_iVer, 1);
+			}
 		m_strFDRID=m_strFDRID.Left(3);
 		}
 
@@ -403,6 +425,15 @@ bool CIGCFile::GetARecord(CString strIGCFile,  CString &strLongName )
 	//  Use the ifstream class to do I/O on the ascii files.
 	cIfstream.open(strIGCFile, ios::binary    );
 	if (cIfstream.is_open()==0) return false;
+
+	int iLen = strIGCFile.GetLength();
+	CString strVer = strIGCFile.Mid(iLen - 5, 1);
+	if (iLen == 12 || iLen == 25)
+		{
+		iVer = atoi(strVer);
+		iVer = min(iVer, 9);
+		iVer = max(iVer, 1);
+		}
 
 	bool bFoundA=false, bFoundHDTE=false;
 	while( !cIfstream.eof() && (!bFoundA || !bFoundHDTE) )
@@ -860,6 +891,14 @@ CString CIGCFile::GetValidFileName()
 	}
 
 
+
+CString CIGCFile::GetVersionText()
+{
+	CString str;
+	str.Format(_T("%d"), m_iVer);
+	return str;
+}
+
 CString	CIGCFile::GetDatePrefix(int iYear, int iMonth, int iDay)
 	{
 	CString strAlphabet=_T("123456789abcdefghijklmnopqrstuv");
@@ -916,6 +955,7 @@ CIGCFile::CIGCFile(CIGCFile *pcIGCFile)
 	m_iENLMax			=pcIGCFile->m_iENLMax;
 	m_iMOPMin			=pcIGCFile->m_iMOPMin;
 	m_iMOPMax			=pcIGCFile->m_iMOPMax;
+	m_iVer				=pcIGCFile->m_iVer;
 	}
 
 
@@ -1022,6 +1062,7 @@ void CIGCFile::GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode)
 	cMgr.CreateElementIntC( pChildNode, _T("MaxENL"),			m_iENLMax);
 	cMgr.CreateElementIntC( pChildNode, _T("MinMOP"),			m_iMOPMin);
 	cMgr.CreateElementIntC( pChildNode, _T("MaxMOP"),			m_iMOPMax);
+	cMgr.CreateElementIntC( pChildNode, _T("Version"),			m_iVer);
 	}
 
 void CIGCFile::ImportXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pIGCNode)
@@ -1059,6 +1100,7 @@ void CIGCFile::ImportXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pIGCNode)
 	GET_XML_INT( cMgr, pChildNode, _T("MaxENL"),			int, m_iENLMax,0);
 	GET_XML_INT( cMgr, pChildNode, _T("MinMOP"),			int, m_iMOPMin,0);
 	GET_XML_INT( cMgr,pChildNode,  _T("MaxMOP"),			int, m_iMOPMax,0);
+	GET_XML_INT( cMgr, pChildNode, _T("Version"),			int, m_iVer, 1);
 
 	}
 

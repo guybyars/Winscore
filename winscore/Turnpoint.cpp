@@ -190,7 +190,7 @@ CString CTurnpoint::CUPLongText()
 	{
 	CString cTemp1, strLon;
 	(m_eLongDirection==eWEST ) ? (strLon=_T("W")) : (strLon=_T("E"));
-	cTemp1.Format(_T("%2d%06.3lf%s"), 
+	cTemp1.Format(_T("%03d%06.3lf%s"), 
 		m_iLongDegrees,
 		m_dLongMinutes, 
 		strLon);

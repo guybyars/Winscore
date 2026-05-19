@@ -1161,7 +1161,7 @@ bool CTask::IsOfficial(void)
 }
 
 
-int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUnits eUnit)
+int CTask::ExportCUP(CString strFileName, CString strName, CTurnpointArray& cTurnpointArray, EUnits eUnit)
 {
 	CString strCUPUnits="m";
 	//if( eUnit==eStatute )
@@ -1211,7 +1211,7 @@ int CTask::ExportCUP(CString strFileName, CTurnpointArray& cTurnpointArray, EUni
 
 
 	cFile.WriteString("\"");
-	cFile.WriteString( DateText() );
+	cFile.WriteString(strName+ " " + DateText());
 	cFile.WriteString(" - ");
 	cFile.WriteString(GetClass(m_eClass).GetName());
 	cFile.WriteString("\",\"???\",\"");

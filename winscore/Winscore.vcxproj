@@ -369,7 +369,9 @@
     <ClCompile Include="HandicapCalcDlg.cpp" />
     <ClCompile Include="HScrollListBox.cpp" />
     <ClCompile Include="IGCDirectories.cpp" />
-    <ClCompile Include="IGCFile.cpp" />
+    <ClCompile Include="IGCFile.cpp">
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp17</LanguageStandard>
+    </ClCompile>
     <ClCompile Include="ImportFlightsDlg.cpp" />
     <ClCompile Include="ImportFlightSettings.cpp" />
     <ClCompile Include="LandingLocationDlg.cpp" />
