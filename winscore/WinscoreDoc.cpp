@@ -1713,7 +1713,7 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
     		CContestant* pcContestant=m_contestantList.GetNext(posContestant);
     		if (pcContestant->m_eClass!=eClass) continue;
     
-  			CFlight*		pcFlight		=m_FlightList.Get( cDate, pcContestant->m_strContestNo);
+  			CFlight*		pcFlight		=m_FlightList.Get( cDate, pcContestant->m_strContestNo, pcTask);
 
       		fFinisher=FALSE;
     		fContestant=FALSE;

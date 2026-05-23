@@ -26,7 +26,7 @@ public:
 	void GetXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode);
 
 	int GetNumberFlights( CTime &cDate, int nClasses, EClass aeClasses[] );
-	CFlight* Get(CTime &cDate, CString &strContestNo);
+	CFlight* Get(CTime &cDate, CString &strContestNo, CTask* pcTask=NULL);
 	bool LoadListFromIGC(CString strPath, CTime cDate, int nDays, CContestantList &contestantList, bool bSilent=false, CListCtrl *pList=NULL );
 	void RemoveByPointer(CFlight*);
 

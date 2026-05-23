@@ -18,6 +18,7 @@ Rev 3
 	* Fixed racing task radii in copy formated task info
 	* After a warning is cleared, it goes on to the next warning
 	* Fixed output to CUP file so WeGlide will now read it.
+	* Added consideration of MINTIME when selecting which log produces the best score.
 
 Rev 2 
 	* Added racing task tp radii output in formatted text.

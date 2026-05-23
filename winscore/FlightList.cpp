@@ -591,7 +591,7 @@ CFlight* CFlightList::LoadIGC(CString &strIGCFileName, CContestantList &contesta
 
 
 
-CFlight* CFlightList::Get(CTime &cDate, CString &strContestNo)
+CFlight* CFlightList::Get(CTime &cDate, CString &strContestNo, CTask* pcTask)
 {
 	int nMissingENL=0;
 	CPtrArray cPtFlights;
@@ -630,6 +630,12 @@ CFlight* CFlightList::Get(CTime &cDate, CString &strContestNo)
 				{
 				CTimeSpan cSpan=pcFlight->GetFinishTime()-pcFlight->GetStartTime();
 				double dHours=(double)cSpan.GetTotalSeconds()/3600;
+				if (pcTask && pcTask->IsTimedTask())
+					{
+					CTimeSpan cMinTime = pcTask->GetTaskTime();
+					double dTaskHours= (double)cMinTime.GetTotalSeconds() / 3600;
+					dHours = max(dHours, dTaskHours);
+					}
 				double dSpeed=0.0;
 				if( dHours>.01 ) dSpeed=pcFlight->GetDistance()/dHours;
 				if( dSpeed>dBestSpeed)
