@@ -55,7 +55,8 @@ public:
 				EClass eClass, 
 				CTime cDate, 						  
 				bool  bGuest,
-				int uPenalityMask=0 );
+				int uPenalityMask=0,
+				bool bContestant=false);
 
 	void LoadScoreRecordList(	CListCtrl&	ListCtrl, 
 								CTime		cDate, 

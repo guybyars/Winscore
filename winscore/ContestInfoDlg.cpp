@@ -146,13 +146,18 @@ void CContestInfoDlg::OnOK()
 		};
 
 
+
 	for(int i=0; i<NUMCLASSES; i++ )
 		{
-		if( m_cClassListCtrl.IsChecked( m_acClass[i].GetType()) && m_acClass[i].m_eContest==m_eContest )
-			m_acClass[i].SetActive( true );
+		if (m_cClassListCtrl.IsChecked(m_acClass[i].GetType()) && m_acClass[i].m_eContest == m_eContest)
+			{
+			m_acClass[i].SetActive(true);
+			}
 		else
 			m_acClass[i].SetActive( false );			
 		}
+
+
 
 	CDialog::OnOK();
 }

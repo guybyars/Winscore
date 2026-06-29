@@ -712,7 +712,7 @@ bool CTask::GetSSAXML(CXMLMgr &cMgr, MSXML2::IXMLDOMNodePtr &pParentNode, EUnits
 		else
 			{
 			float fTurnpointRadius		= (float)GetWinscoreDouble(INNERRADIUS, ConvertDistance(DEFAULTINNERRADIUS, eStatute, SYSTEMUNITS) );
-   			strRadius.Format(_T("%4.1lf"), fTurnpointRadius);
+   			strRadius.Format(_T("%4.1lf"),  ConvertDistance(fTurnpointRadius, SYSTEMUNITS, eStatute ));
 			}
 
 		cMgr.CreateElement( pTurnpoint, _T("Radius"), strRadius );

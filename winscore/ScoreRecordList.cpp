@@ -601,7 +601,8 @@ void CScoreRecordList::DNC(CString cContestNo,
 						   EClass eClass, 
 						   CTime cDate, 
 						   bool  bGuest,
-						   int uMask)
+						   int uMask,
+						   bool fContestant)
 	{
 	CScoreRecord* pcNewScoreRecord = new CScoreRecord(	cContestNo, 
 														eClass, 
@@ -609,6 +610,8 @@ void CScoreRecordList::DNC(CString cContestNo,
 														bGuest );
 
 	pcNewScoreRecord->m_uPenalityMask=uMask;
+	pcNewScoreRecord->m_fContestant = fContestant;
+
 
 	//  If a ScoreRecord with this date is there already, remove it
 	if( !IsEmpty() ) 

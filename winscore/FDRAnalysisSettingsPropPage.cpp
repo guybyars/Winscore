@@ -81,6 +81,10 @@ BOOL CFDRAnalysisSettingsPropPage::OnInitDialog()
 	m_dInnerRadius=(float)ConvertDistance(dInnerRadius, SYSTEMUNITS, eUnits );
 	m_dOuterRadius=(float)ConvertDistance(dOuterRadius, SYSTEMUNITS, eUnits );	
 
+	m_dInnerRadius = std::round(m_dInnerRadius * 1000.0) / 1000.0;
+	m_dOuterRadius = std::round(m_dOuterRadius * 1000.0) / 1000.0;
+
+
 	m_iTimeZoneOption=	 GetWinscoreInt( LOGTIMEOPTION, eSystemTime );
 
     m_cUserTimezone.EnableWindow(m_iTimeZoneOption == eUserTime);

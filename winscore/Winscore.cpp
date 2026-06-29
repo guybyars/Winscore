@@ -54,7 +54,6 @@ END_MESSAGE_MAP()
 
 CWinscoreApp::CWinscoreApp()
 {
-
 	// TODO: add construction code here,
 	// Place all significant initialization in InitInstance
 }
@@ -176,6 +175,7 @@ AfxMessageBox(_T("Winscore Beta version.  Evaluation only, not to be used for ac
 
 	CoInitialize(NULL);
 
+
 	// If no file was specified on the command line, use the last one.
 	if( cmdInfo.m_strFileName.GetLength()==0 )
 		{
@@ -195,8 +195,7 @@ AfxMessageBox(_T("Winscore Beta version.  Evaluation only, not to be used for ac
 			}
 		}
 
-
-	
+		
 	CheckLaterVersion();
 
 	return TRUE;

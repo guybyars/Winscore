@@ -529,11 +529,22 @@ void CWinscoreDoc::SetAvailableClasses(CComboBox *pcComboBox )
     			m_caContestDays[i]=m_caContestDays[i-1]+cOneDay ; 
     			}
 
-
+            bool bSports = false;
 			for( int iClass=0; iClass<NUMCLASSES; iClass++ )
 				{
 				GetClass(iClass)=dlg.m_acClass[iClass];
+                if (dlg.m_acClass[iClass].IsActive() && dlg.m_acClass[iClass].m_eContest == m_eContest && dlg.m_acClass[iClass].GetType() == eSports) bSports = true;
 				}
+
+
+            // Now Override the turnpoint default of 1.0
+
+            if (m_eContest == eNational && !bSports)
+                {
+                WriteWinscoreDouble(INNERRADIUS, ConvertDistance(0.3, eStatute, SYSTEMUNITS));
+                WriteWinscoreDouble(OUTERRADIUS, ConvertDistance(1.3, eStatute, SYSTEMUNITS));
+                }
+
     
     		SetTitle(m_strContestName);
     		SetModifiedFlag(TRUE);
@@ -1779,7 +1790,8 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
 			uPenalityMask|=WSP_NOSTART;
 			cScoreRecordList.DNC(	pcContestant->m_strContestNo, eClass, cDate,
     								pcContestant->IsGuest(),
-    								uPenalityMask	);
+    								uPenalityMask,
+                                    pcTask->IsFAITask());
     		continue;
     		}
 
@@ -1803,7 +1815,7 @@ void CWinscoreDoc::CalculateHandicapData(	CScoreRecordList& cScoreRecordList,
     			fContestant=dDistance>0.0001;
 				}
 
-    
+   
             if( eClass==eSports )
 				fFinisher=( pcFlight->IsFinishTimeValid()  && dDistance>(cClass.GetMinTaskDistance(SYSTEMUNITS)/((cClass.IsHandicapped())?(pcContestant->m_fHandicap):(1.0))) );
             else

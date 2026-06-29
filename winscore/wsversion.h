@@ -3,14 +3,21 @@
 
 //#define	WINSCOREBETA         0
 #define CURRENTYEAR			 2026
-#define WINSCOREVERSION		_T("2026 Rev 3")
-#define SHORTVERSION			 _T("Rev 3")
+#define WINSCOREVERSION		_T("2026 Rev 5")
+#define SHORTVERSION			 _T("Rev 5")
 #define WINSCOREWEB			_T("www.gfbyars.com/winscore")
 
 
 /*	Version Notes:
 * 
 2026
+Rev 5
+	* For National contests, made the default radius for racing tasks to .3 mi.
+	* For FAI tasks, anyone who launches is a contestant, regardless of what they did after launch.
+
+Rev 4
+	* Fixed assigned turnpoint radius output in XML Format
+	* Relaxed motor run detection in pre contest checks.
 
 Rev 3
 	* Fixed issue where IGC file name flight version was not propigated properly.

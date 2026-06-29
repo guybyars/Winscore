@@ -3873,7 +3873,7 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, CFDRecorderList &cRecorde
 		pcPrevPos=pcPos;
 		}
 
-	if( pcLongestMotorOn )
+	if( pcLongestMotorOn && !bPreContest)
 		{
 		// Find average altitude during this motor run
 		int iMotorOn=FindTime(pcLongestMotorOn->m_cTime, 1, FORWARD);
@@ -3888,8 +3888,9 @@ void CFlight::CheckMotorRun(CContestant *pcContestant, CFDRecorderList &cRecorde
 		iDiff=iAveAltitude-pcLongestMotorOn->m_iCorrectedAltitude; //Difference between motor on and ave motor run +means climbs
 		}
 
+	int iMotorRunCheckTime = bPreContest ? 15: 45;
 
-	if( cLongestMotorONTime.GetTotalSeconds()>45 &&
+	if( cLongestMotorONTime.GetTotalSeconds()> iMotorRunCheckTime &&
 		!CheckOption(FLT_SLANDINGPOINTLOCKED)	 &&
 		!CheckOption(FLT_LANDINGTIMELOCKED)		 &&
 		!CheckOption(FLT_FINISHTIMELOCKED)		 &&
